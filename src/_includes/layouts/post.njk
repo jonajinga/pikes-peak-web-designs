@@ -1,0 +1,80 @@
+---
+layout: layouts/base.njk
+ogType: article
+---
+<section class="post-hero">
+  <div class="container">
+    <span class="section-label">{{ label }}</span>
+    <h1 class="post-title">{{ title }}</h1>
+    <div class="post-meta">
+      <span>{{ content | readingTime }}</span>
+      <span>&middot;</span>
+      <span>By Pikes Peak Web Designs</span>
+    </div>
+  </div>
+</section>
+
+<div class="post-body">
+  <div class="post-main">
+    <a href="/blog/" class="post-back">&larr; Back to Blog</a>
+    <div class="post-content">
+      {{ content | safe }}
+    </div>
+
+    <nav class="post-nav" aria-label="More articles">
+      <a href="/blog/" class="btn btn-outline-dark">Browse all articles &rarr;</a>
+    </nav>
+  </div>
+
+  <aside class="post-sidebar">
+    <div class="sidebar-card sidebar-card--cta">
+      <h4>Ready to Grow Your Business?</h4>
+      <p>Custom-coded websites for small businesses across the U.S. and Canada. $175/month flat rate — no surprises.</p>
+      <a href="/contact/" class="btn btn-gold">Get Started &rarr;</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>More Articles</h4>
+      <ul class="sidebar-post-list">
+        {% set otherPosts = collections.posts | limit(8) %}
+        {% for post in otherPosts %}
+          {% if post.url !== page.url %}
+            <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+        <li><a href="/blog/" class="footer-view-all">View All Posts &rarr;</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>What We Build</h4>
+      <ul class="sidebar-service-list">
+        <li>Custom-coded websites — no WordPress</li>
+        <li>High Google PageSpeed scores</li>
+        <li>Local SEO foundation built in</li>
+        <li>Mobile-first, fully responsive</li>
+        <li>Contact forms &amp; click-to-call</li>
+        <li>Ongoing hosting &amp; maintenance</li>
+      </ul>
+      <a href="/whats-included/" class="btn btn-outline-dark" style="margin-top:16px;">See What&rsquo;s Included</a>
+    </div>
+
+    <div class="sidebar-card sidebar-pricing-card">
+      <div class="sidebar-price">$175<span>/mo</span></div>
+      <div class="sidebar-price-note">Flat rate. Everything included.</div>
+      <a href="/pricing/" class="btn btn-primary">See Pricing</a>
+    </div>
+  </aside>
+</div>
+
+<section class="section cta-section section--dark">
+  <div class="container text-center">
+    <span class="section-label" style="color:var(--gold);">{{ ctaLabel if ctaLabel else 'Built for Small Businesses' }}</span>
+    <h2>{{ ctaHeading if ctaHeading else 'A website that brings in calls — not just traffic.' }}</h2>
+    <p class="section-subtitle">{{ ctaText if ctaText else 'We specialize in custom-coded sites for small businesses. Service pages, city pages, emergency call-outs — all included. $175/month.' }}</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-gold btn-lg">Get Started</a>
+      <a href="/blog/" class="btn btn-outline btn-lg">More Articles</a>
+    </div>
+  </div>
+</section>

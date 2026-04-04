@@ -1,0 +1,15 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in collections.all %}
+    {% if page.url and not page.url.startsWith('/feed') and not page.data.noindex %}
+    <url>
+      <loc>https://pikespeakwebdesigns.com{{ page.url }}</loc>
+      {% if page.date %}<lastmod>{{ page.date | dateISO }}</lastmod>{% endif %}
+    </url>
+    {% endif %}
+  {% endfor %}
+</urlset>

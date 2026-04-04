@@ -1,0 +1,97 @@
+---
+layout: layouts/base.njk
+---
+<section class="area-hero">
+  <div class="area-hero-inner">
+    <div class="area-breadcrumb">
+      <a href="/">Home</a> &rsaquo;
+      <a href="/service-areas/">Service Areas</a> &rsaquo;
+      <span>{{ area.city }}, {{ area.stateCode }}</span>
+    </div>
+    <span class="section-label" style="color:var(--gold-bright);">Serving {{ area.city }}, {{ area.stateCode }}</span>
+    <h1>Custom Web Design for {{ area.city }} Service Businesses</h1>
+    <p class="area-hero-sub">custom-coded, fast-loading websites that rank on Google and convert visitors into calls — built specifically for service businesses in {{ area.metro }}.</p>
+    <div class="area-trust-row">
+      <span class="trust-chip">98&ndash;100 PageSpeed Score</span>
+      <span class="trust-chip">$175/mo Flat Rate</span>
+      <span class="trust-chip">No Large Design Deposit</span>
+      <span class="trust-chip">Fully Remote &mdash; Serving {{ area.city }}</span>
+    </div>
+    <div class="area-hero-ctas">
+      <a href="/contact/" class="btn btn-gold btn-lg">Get Started</a>
+      <a href="/how-it-works/" class="btn btn-outline btn-lg">How It Works</a>
+    </div>
+  </div>
+</section>
+
+<div class="area-body">
+  <div class="area-grid">
+
+    <div class="area-content">
+      <h2>The {{ area.city }} Service Business Market</h2>
+      <p>{{ area.marketIntro }}</p>
+
+      <h2>Why {{ area.city }} Service Businesses Need a Strong Website</h2>
+      <p>{{ area.whyWebsite }}</p>
+      <p>When a homeowner in {{ area.metro }} searches for "plumber near me" or "HVAC repair {{ area.city }}" on Google, they click one of the first three results — and they call the first business that looks credible. Your website is that first impression. It either earns the call or loses it to a competitor who invested in their online presence.</p>
+
+      <h2>What We Build for {{ area.city }} Contractors</h2>
+      <p>Every site we build for a {{ area.city }}-area service business is custom-coded from scratch — no WordPress, no page builders, no bloated themes. The result is a website that loads in under a second, scores 98&ndash;100 on Google PageSpeed, and is structured specifically to rank for local service searches in {{ area.metro }}.</p>
+      <ul>
+        <li>Custom homepage with your services, service area, phone number, and trust signals</li>
+        <li>Dedicated service pages targeting "{{ area.city }}" + your specific services</li>
+        <li>Service area pages for the suburbs and communities you serve</li>
+        <li>Contact form and click-to-call phone button</li>
+        <li>Google-optimized title tags, meta descriptions, and structured headings</li>
+        <li>Mobile-first design — most {{ area.city }} searches happen on phones</li>
+        <li>Monthly hosting, maintenance, and updates included</li>
+      </ul>
+
+      <h2>Local SEO Insight for {{ area.city }}</h2>
+      <p>{{ area.seoInsight }}</p>
+      <p>We build your website with {{ area.city }}-specific SEO built in from day one — not added as an afterthought. That means your service pages use the phrases your customers actually search for, your contact and service area information is consistent and complete, and your site is structured the way Google expects for local service businesses.</p>
+
+      <h2>How We Work With {{ area.city }} Businesses</h2>
+      <p>We're based in Colorado Springs, CO, and we work with service businesses across the U.S. and Canada entirely remotely. That means no awkward in-person meetings, no travel charges, and no geographic limitations on what we can build for you.</p>
+      <p>The process is simple: you tell us about your business, your services, and your service area. We build the site, present it to you for review, make your requested changes, and launch it. After that, we handle all hosting and maintenance — you never have to think about the technical side of your website again.</p>
+      <p>Most sites are live within 3&ndash;4 weeks of our first conversation.</p>
+    </div>
+
+    <aside class="area-sidebar">
+      <div class="area-cta-card">
+        <span class="section-label" style="color:var(--gold-bright); margin-bottom:10px;">Serving {{ area.city }}, {{ area.stateCode }}</span>
+        <h3>Ready to get more calls from {{ area.city }} customers?</h3>
+        <p>$175/month flat rate. No large design deposit. We build the site, you run your business.</p>
+        <a href="/contact/" class="btn btn-gold btn-full" style="margin-top:4px;">Get Started Today</a>
+      </div>
+
+      <div class="area-industries-card">
+        <h4>Industries We Serve in {{ area.city }}</h4>
+        <div class="area-industry-tags">
+          {% for tag in area.industries %}
+            <span class="area-tag">{{ tag | safe }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="area-nearby-card">
+        <h4>Also Serving Nearby Communities</h4>
+        {% for community in area.nearby %}
+          <a href="/service-areas/">{{ community }}</a>
+        {% endfor %}
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section class="section cta-section section--dark">
+  <div class="container text-center">
+    <span class="section-label" style="color:var(--gold);">Ready to Grow in {{ area.city }}?</span>
+    <h2>A website built for the {{ area.city }} market.</h2>
+    <p class="section-subtitle">custom-coded, fast-loading, SEO-optimized for {{ area.city }}, {{ area.stateCode }} service searches. $175/month, no large design deposit, everything included.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-gold btn-lg">Get Started Today</a>
+      <a href="/service-areas/" class="btn btn-outline btn-lg">View All Service Areas</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title if title else site.name }}</title>
+  <meta name="description" content="{{ description if description else site.description }}">
+  {% if canonicalUrl %}<link rel="canonical" href="{{ canonicalUrl }}">{% else %}<link rel="canonical" href="{{ site.url }}{{ page.url }}">{% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <meta property="og:title" content="{{ title if title else site.name }}">
+  <meta property="og:description" content="{{ description if description else site.description }}">
+  <meta property="og:type" content="{{ ogType if ogType else 'website' }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ ogImage if ogImage else site.ogImage }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ site.url }}{{ ogImage if ogImage else site.ogImage }}">
+  {% if extraHead %}{{ extraHead | safe }}{% endif %}
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+{% include "partials/topbar.njk" %}
+{% include "partials/nav.njk" %}
+
+<main id="main-content">
+  {{ content | safe }}
+</main>
+
+{% include "partials/footer.njk" %}
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

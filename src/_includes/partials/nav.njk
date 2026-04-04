@@ -1,0 +1,67 @@
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="/" class="logo">Pikes Peak <span class="logo-accent">Web Designs</span></a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      {% for item in nav.primary %}
+        <a href="{{ item.url }}"{% if page.url | startsWith(item.url) %} class="active"{% endif %}>{{ item.label }}</a>
+      {% endfor %}
+      <div class="nav-dropdown">
+        <a href="/service-areas/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/service-areas/') or page.url | startsWith('/areas/') %} class="active"{% endif %}>Service Areas <span class="nav-arrow">&#9660;</span></a>
+        <div class="mega-menu" role="navigation" aria-label="Service areas by region">
+          <div class="mega-col">
+            <h5>{{ nav.megaMenu.southwest.label }}</h5>
+            {% for city in nav.megaMenu.southwest.cities %}
+              <a href="/areas/{{ city.slug }}/">{{ city.label }}</a>
+            {% endfor %}
+          </div>
+          <div class="mega-col">
+            <h5>{{ nav.megaMenu.south.label }}</h5>
+            {% for city in nav.megaMenu.south.cities %}
+              <a href="/areas/{{ city.slug }}/">{{ city.label }}</a>
+            {% endfor %}
+          </div>
+          <div class="mega-col">
+            <h5>{{ nav.megaMenu.east.label }}</h5>
+            {% for city in nav.megaMenu.east.cities %}
+              <a href="/areas/{{ city.slug }}/">{{ city.label }}</a>
+            {% endfor %}
+          </div>
+          <div class="mega-canada">
+            <h5>&#127464;&#127462; {{ nav.megaMenu.canada.label }}</h5>
+            <div class="mega-canada-cities">
+              {% for city in nav.megaMenu.canada.cities %}
+                <a href="/areas/{{ city.slug }}/">{{ city.label }}</a>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="mega-foot">
+            <span>All 50 U.S. states &amp; Canada</span>
+            <a href="/service-areas/">View All Service Areas &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <a href="/contact/" class="btn btn-primary">Get Started</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  {% for item in nav.primary %}
+    <a href="{{ item.url }}"{% if page.url | startsWith(item.url) %} class="active"{% endif %}>{{ item.label }}</a>
+  {% endfor %}
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" aria-expanded="false">Service Areas <span class="mobile-arrow">&#9660;</span></button>
+    <div class="mobile-dropdown-menu">
+      {% for city in nav.mobileHighlights %}
+        <a href="/areas/{{ city.slug }}/">{{ city.label }}{% if city.canada %} &#127464;&#127462;{% endif %}</a>
+      {% endfor %}
+      <a href="/service-areas/" class="mobile-view-all">View All Service Areas &rarr;</a>
+    </div>
+  </div>
+  <a href="/contact/" class="btn btn-primary btn-full">Get Started</a>
+</div>

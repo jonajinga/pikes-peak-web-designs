@@ -1,0 +1,109 @@
+---
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{% if pagination.pageNumber > 0 %}Blog — Page {{ pagination.pageNumber + 1 }} | Pikes Peak Web Designs{% else %}Blog | Pikes Peak Web Designs{% endif %}"
+  description: "{% if pagination.pageNumber > 0 %}Web design tips and local SEO guides for small businesses — page {{ pagination.pageNumber + 1 }}.{% else %}Web design tips, local SEO guides, and industry-specific advice for small businesses across the U.S. and Canada.{% endif %}"
+pagination:
+  data: collections.posts
+  size: 6
+  alias: posts
+  before: function(data) { return data.slice(1); }
+permalink: /blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}
+---
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Resources &amp; Guides</span>
+    <h1>The Pikes Peak Web Designs Blog</h1>
+    <p class="page-hero-sub">Web design tips, local SEO guides, and practical advice for small businesses across the U.S. and Canada.</p>
+  </div>
+</section>
+
+<div class="blog-page-layout">
+  <div class="blog-main-col">
+
+    {% if pagination.pageNumber === 0 and collections.posts.length > 0 %}
+    {% set featured = collections.posts[0] %}
+    <div class="blog-featured">
+      <div class="blog-featured-thumb thumb--dark">
+        <span class="blog-featured-label">{{ featured.data.label }}</span>
+      </div>
+      <div class="blog-featured-body">
+        <span class="blog-cat">Featured</span>
+        <h2><a href="{{ featured.url }}">{{ featured.data.title }}</a></h2>
+        <p>{{ featured.data.description }}</p>
+        <div class="blog-featured-meta">
+          <span>{{ featured.templateContent | readingTime }}</span>
+        </div>
+        <a href="{{ featured.url }}" class="blog-read-more">Read article &rarr;</a>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if posts.length > 0 %}
+    <div class="blog-grid">
+      {% for post in posts %}
+        <article class="blog-card">
+          <div class="blog-card-thumb {% if loop.index % 3 === 0 %}thumb--dark{% elif loop.index % 3 === 2 %}thumb--gold{% endif %}">
+            <span class="blog-thumb-label">{{ post.data.label }}</span>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-cat">{{ post.data.label }}</span>
+            <h2 class="blog-card-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+            <p class="blog-card-excerpt">{{ post.data.description }}</p>
+          </div>
+          <div class="blog-card-footer">
+            <span>{{ post.templateContent | readingTime }}</span>
+            <a href="{{ post.url }}" class="blog-read-more">Read &rarr;</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if pagination.pages.length > 1 %}
+    <nav class="pagination" aria-label="Blog pages">
+      {% if pagination.href.previous %}
+        <a href="{{ pagination.href.previous }}" class="btn btn-outline-dark">&larr; Newer</a>
+      {% endif %}
+      <span class="pagination-info">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
+      {% if pagination.href.next %}
+        <a href="{{ pagination.href.next }}" class="btn btn-outline-dark">Older &rarr;</a>
+      {% endif %}
+    </nav>
+    {% endif %}
+
+  </div>
+
+  <aside class="blog-listing-sidebar">
+    <div class="sidebar-card sidebar-card--cta">
+      <h4>Ready to Grow Your Business?</h4>
+      <p>Custom-coded websites for small businesses. $175/month flat rate — everything included.</p>
+      <a href="/contact/" class="btn btn-gold">Start a Conversation &rarr;</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Browse by Topic</h4>
+      <ul class="sidebar-topic-list">
+        <li><a href="/blog/">All Articles</a></li>
+        <li><a href="/blog/electrician-website-guide/">Industry: Electrical</a></li>
+        <li><a href="/blog/hvac-website-tips/">Industry: HVAC</a></li>
+        <li><a href="/blog/roofing-website-guide/">Industry: Roofing</a></li>
+        <li><a href="/blog/local-seo-for-plumbers/">Industry: Plumbing</a></li>
+        <li><a href="/blog/how-to-rank-on-google-maps/">Local SEO</a></li>
+        <li><a href="/blog/why-page-speed-matters/">Website Performance</a></li>
+        <li><a href="/blog/website-builders-vs-custom/">Custom vs. Builders</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Quick Links</h4>
+      <ul class="sidebar-post-list">
+        <li><a href="/pricing/">Pricing — $175/month</a></li>
+        <li><a href="/how-it-works/">How It Works</a></li>
+        <li><a href="/whats-included/">What's Included</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/service-areas/">Service Areas</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>

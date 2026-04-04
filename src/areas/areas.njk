@@ -1,0 +1,13 @@
+---
+pagination:
+  data: areas
+  size: 1
+  alias: area
+permalink: /areas/{{ area.slug }}/
+layout: layouts/area.njk
+eleventyComputed:
+  title: "{{ area.title }}"
+  description: "{{ area.description }}"
+  extraHead: >-
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"{{ site.name }}","url":"{{ site.url }}/areas/{{ area.slug }}/","email":"{{ site.email }}","telephone":"+1-{{ site.phone }}","areaServed":"{{ area.city }}, {{ area.stateCode }}","address":{"@type":"PostalAddress","addressLocality":"{{ site.address.city }}","addressRegion":"{{ site.address.state }}","addressCountry":"{{ site.address.country }}"}}</script>
+---
