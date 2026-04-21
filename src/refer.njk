@@ -1,0 +1,111 @@
+---
+layout: layouts/base.njk
+title: "Refer a Business | Pikes Peak Web Designs"
+description: "Know a small business that needs a real website? Send them our way. We'll thank you when we thank them."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Refer a business</span>
+    </nav>
+    <span class="section-label">Referrals</span>
+    <h1>Know a business that <em>needs a real website?</em></h1>
+    <p>Send them our way. If they become a client, we'll credit one month of hosting to your account as a thank-you, or send you a plain cash thank-you if you're not a client.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:720px">
+    <div class="contact-form-card">
+      <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:0.35rem">Tell us about them</h2>
+      <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:1.5rem">Just a few details. We'll reach out to them, mention you by name, and keep you in the loop.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=referral" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New referral: Pikes Peak Web Designs">
+        <input type="hidden" name="from_name" value="Pikes Peak Referral">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <fieldset class="fieldset">
+          <legend>About you</legend>
+          <div class="form-row" style="margin-top:1rem">
+            <div class="form-group">
+              <label for="yourName">Your name <span class="req">*</span></label>
+              <input type="text" id="yourName" name="yourName" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="yourEmail">Your email <span class="req">*</span></label>
+              <input type="email" id="yourEmail" name="yourEmail" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="yourRelationship">Are you a Pikes Peak client?</label>
+            <select id="yourRelationship" name="yourRelationship">
+              <option value="">Choose one…</option>
+              <option value="client">Yes, current client</option>
+              <option value="past-client">Past client</option>
+              <option value="friend">Friend / associate of the business</option>
+              <option value="industry">Peer in the industry</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>About the business you're referring</legend>
+          <div class="form-row" style="margin-top:1rem">
+            <div class="form-group">
+              <label for="referredName">Business name <span class="req">*</span></label>
+              <input type="text" id="referredName" name="referredName" required>
+            </div>
+            <div class="form-group">
+              <label for="referredContact">Owner or contact name</label>
+              <input type="text" id="referredContact" name="referredContact">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="referredEmail">Their email (if you have it)</label>
+              <input type="email" id="referredEmail" name="referredEmail">
+            </div>
+            <div class="form-group">
+              <label for="referredPhone">Their phone (if you have it)</label>
+              <input type="tel" id="referredPhone" name="referredPhone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="referredWebsite">Current website (if any)</label>
+            <input type="url" id="referredWebsite" name="referredWebsite" placeholder="https://">
+          </div>
+          <div class="form-group">
+            <label for="referredIndustry">Industry / what they do</label>
+            <input type="text" id="referredIndustry" name="referredIndustry" placeholder="e.g. residential plumbing in Denver metro">
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="context">Anything we should know before reaching out?</label>
+          <textarea id="context" name="context" rows="4" placeholder="Optional. What their pain is, who referred you to them, how you'd like us to position the intro, timing sensitivities, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>How should we contact them?</label>
+          <div style="display:flex;flex-wrap:wrap;gap:1rem;padding:0.5rem 0;font-size:0.92rem">
+            <label style="display:inline-flex;gap:0.4rem;align-items:center;font-weight:400"><input type="checkbox" name="contactMethod" value="email"> Email</label>
+            <label style="display:inline-flex;gap:0.4rem;align-items:center;font-weight:400"><input type="checkbox" name="contactMethod" value="phone"> Phone</label>
+            <label style="display:inline-flex;gap:0.4rem;align-items:center;font-weight:400"><input type="checkbox" name="contactMethod" value="intro-email"> Send me a template I can forward</label>
+            <label style="display:inline-flex;gap:0.4rem;align-items:center;font-weight:400"><input type="checkbox" name="contactMethod" value="ask-me"> Check with me first</label>
+          </div>
+        </div>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong. Please try again or email us at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Submit referral</button>
+        <p class="form-hint" style="text-align:center;margin-top:0.75rem">We'll email you when we reach out, and again if they sign on.</p>
+      </form>
+    </div>
+  </div>
+</section>

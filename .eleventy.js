@@ -5,6 +5,7 @@ import Image from "@11ty/eleventy-img";
 import metagen from "eleventy-plugin-metagen";
 import faviconsPlugin from "eleventy-plugin-gen-favicons";
 import autoCacheBuster from "eleventy-auto-cache-buster";
+import { execSync } from "child_process";
 
 export default function (eleventyConfig) {
   // Passthrough
@@ -87,6 +88,17 @@ export default function (eleventyConfig) {
   eleventyConfig.addCollection("posts", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/blog/posts/*.md").reverse()
   );
+
+  // Pagefind search index — run after every build (works with Cloudflare Pages)
+  eleventyConfig.on("eleventy.after", () => {
+    try {
+      execSync("npx pagefind --site _site --output-path _site/pagefind", {
+        stdio: "inherit",
+      });
+    } catch (e) {
+      console.warn("Pagefind indexing failed:", e.message);
+    }
+  });
 
   return {
     dir: {

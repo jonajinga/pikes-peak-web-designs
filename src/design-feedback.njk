@@ -1,0 +1,87 @@
+---
+layout: layouts/base.njk
+title: "Design Feedback | Pikes Peak Web Designs"
+description: "For clients reviewing a preview link during the build: give structured feedback so we nail the next round. Love it, change something, or just a question; all fine."
+noindex: true
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/client-portal/">Client Portal</a><span class="sep">/</span><span>Design Feedback</span>
+    </nav>
+    <span class="section-label">During the build</span>
+    <h1>Tell us what you <em>really think.</em></h1>
+    <p>Reviewing a preview link? Use this form so every note is in one place. Be honest: we'd rather hear "I don't love this" now than after we launch.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:720px">
+    <div class="contact-form-card">
+      <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:0.35rem">Your feedback on the preview</h2>
+      <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:1.5rem">You don't have to be polite or precise. Plain language beats polished notes every time.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=design-feedback" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="Design feedback: Pikes Peak Web Designs preview">
+        <input type="hidden" name="from_name" value="Pikes Peak Design Feedback">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="businessName">Business name <span class="req">*</span></label>
+            <input type="text" id="businessName" name="businessName" required autocomplete="organization">
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reviewedPage">Which preview page did you review?</label>
+          <input type="text" id="reviewedPage" name="reviewedPage" placeholder="e.g. preview.pikespeak.dev/homepage/ or 'the whole site'">
+        </div>
+
+        <div class="form-group">
+          <label for="overallImpression">Overall impression? <span class="req">*</span></label>
+          <select id="overallImpression" name="overallImpression" required>
+            <option value="">Choose one…</option>
+            <option value="love-it">Love it; ready to launch</option>
+            <option value="close">Close; just a few tweaks</option>
+            <option value="mostly-right">Mostly right, but one section needs rethinking</option>
+            <option value="not-there-yet">Not there yet; I want to step back and talk</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="whatsWorking">What's working well?</label>
+          <textarea id="whatsWorking" name="whatsWorking" rows="4" placeholder="What feels right, what you're excited about, what your team liked."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="changes">What needs to change? <span class="req">*</span></label>
+          <textarea id="changes" name="changes" rows="8" placeholder="Be specific where you can. Examples:&#10;&#10;- The hero text should say 'serving Colorado Springs &amp; Pueblo' instead of just 'Colorado Springs'&#10;- The blue on the Services page feels too dark&#10;- Add our BBB logo next to the credentials&#10;- The team photo on About should be the one from the company picnic&#10;- I don't love how the testimonial section looks" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="stakeholders">Anyone else we should hear from?</label>
+          <input type="text" id="stakeholders" name="stakeholders" placeholder="e.g. 'my wife looked at it and hated the footer' or 'my manager wants to see it Thursday'">
+        </div>
+
+        <div class="form-group">
+          <label for="questions">Any questions for us?</label>
+          <textarea id="questions" name="questions" rows="3" placeholder="Anything you're unsure about or want to understand better."></textarea>
+        </div>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong. Please try again or email us at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Send feedback</button>
+        <p class="form-hint" style="text-align:center;margin-top:0.75rem">We turn around most revision rounds in 1&ndash;2 business days. No charge, no limit.</p>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,87 @@
+---
+layout: layouts/base.njk
+title: "Content Update Request | Pikes Peak Web Designs"
+description: "Existing clients: request a content change on your site. New service, new hours, new photo, typo fix; we handle it, usually same business day."
+noindex: true
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/client-portal/">Client Portal</a><span class="sep">/</span><span>Content Update</span>
+    </nav>
+    <span class="section-label">For current clients</span>
+    <h1>Request a <em>content update.</em></h1>
+    <p>New service, updated hours, a team photo to swap, a price change, a typo; just tell us what you want changed and we handle it. Usually the same business day.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:720px">
+    <div class="contact-form-card">
+      <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:0.35rem">Tell us what to change</h2>
+      <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:1.5rem">Be as specific or as rough as you like. We'll reply to confirm and flag anything that needs clarification.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=content-update" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="Content update request: Pikes Peak Web Designs">
+        <input type="hidden" name="from_name" value="Pikes Peak Content Update">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="businessName">Business name <span class="req">*</span></label>
+            <input type="text" id="businessName" name="businessName" required autocomplete="organization">
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="urgency">How urgent is this?</label>
+          <select id="urgency" name="urgency">
+            <option value="normal">Normal (within 1 business day)</option>
+            <option value="this-week">Whenever you can this week</option>
+            <option value="specific-date">I have a specific date in mind</option>
+            <option value="urgent-today">I need it live today if possible</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="targetDate">If you have a target date, when does it need to be live?</label>
+          <input type="text" id="targetDate" name="targetDate" placeholder="e.g. by Friday, or before Nov 15">
+        </div>
+
+        <div class="form-group">
+          <label for="whatToChange">What do you want changed? <span class="req">*</span></label>
+          <textarea id="whatToChange" name="whatToChange" rows="7" placeholder="e.g.&#10;Our new hours are Mon-Fri 7am-6pm, Sat 8am-2pm.&#10;Please add a new service page for gutter cleaning with a $99 minimum.&#10;Swap the team photo on the About page for the new one (attached/in Dropbox)." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="links">Any links, files, or photos we need?</label>
+          <textarea id="links" name="links" rows="3" placeholder="Paste any URLs to shared folders (Drive, Dropbox, etc.) or just describe what you've sent."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="pageUrl">Which page(s) does this affect? (if known)</label>
+          <input type="text" id="pageUrl" name="pageUrl" placeholder="e.g. yourbusiness.com/services/ or About page">
+        </div>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong. Please try again or email us at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Send update request</button>
+        <p class="form-hint" style="text-align:center;margin-top:0.75rem">Prefer email or phone? <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a> or <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. All three go to the same place.</p>
+      </form>
+    </div>
+
+    <div style="margin-top:2.5rem;padding:1.5rem;background:var(--bg-alt-2);border:1px solid var(--line);border-radius:var(--radius)">
+      <h3 style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem">Is it urgent or broken?</h3>
+      <p style="font-size:0.92rem;color:var(--text-muted);margin-bottom:1rem">If the site is down or displaying something harmful to your business right now, use the emergency form instead so we can triage it faster.</p>
+      <a href="/emergency/" class="btn btn-outline-dark">Emergency support &rarr;</a>
+    </div>
+  </div>
+</section>

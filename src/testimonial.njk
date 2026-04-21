@@ -1,0 +1,98 @@
+---
+layout: layouts/base.njk
+title: "Share a Testimonial | Pikes Peak Web Designs"
+description: "Leave a testimonial for Pikes Peak Web Designs. We read every one, and the best ones end up (with your permission) on the Samples page."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Share a testimonial</span>
+    </nav>
+    <span class="section-label">Testimonials</span>
+    <h1>Got something nice to say? <em>We'd love to hear it.</em></h1>
+    <p>If working with us has been good for your business, a short note helps us a lot; and, with your permission, might help another small business feel confident picking us.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:720px">
+    <div class="contact-form-card">
+      <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:0.35rem">Share your experience</h2>
+      <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:1.5rem">A few sentences is plenty. You control what's public: we never post anything without your explicit yes.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=testimonial" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New testimonial: Pikes Peak Web Designs">
+        <input type="hidden" name="from_name" value="Pikes Peak Testimonial">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Your name <span class="req">*</span></label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="businessName">Business name <span class="req">*</span></label>
+            <input type="text" id="businessName" name="businessName" required autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="role">Your role</label>
+            <input type="text" id="role" name="role" placeholder="Owner, Office Manager, etc.">
+          </div>
+          <div class="form-group">
+            <label for="city">City / state</label>
+            <input type="text" id="city" name="city" placeholder="Colorado Springs, CO">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="rating">Overall rating <span class="req">*</span></label>
+          <select id="rating" name="rating" required>
+            <option value="">Choose one…</option>
+            <option value="5">5 stars; couldn't be happier</option>
+            <option value="4">4 stars; very good, minor notes</option>
+            <option value="3">3 stars; okay, could be better</option>
+            <option value="2">2 stars; struggled</option>
+            <option value="1">1 star; would not recommend</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="quote">In your own words <span class="req">*</span></label>
+          <textarea id="quote" name="quote" rows="6" placeholder="Anything you'd want another small business owner to know. What was it like working with us? What changed after the site went live? What surprised you? No pressure to be eloquent; honest beats polished." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="outcome">Any measurable outcome since launch? (optional)</label>
+          <textarea id="outcome" name="outcome" rows="3" placeholder="e.g. 'We went from 3 calls a week to 10.' Or 'We finally stopped paying for Wix.' Real numbers help, but a feeling is fine too."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>May we publish this?</label>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;padding:0.5rem 0;font-size:0.92rem">
+            <label style="display:inline-flex;gap:0.4rem;align-items:flex-start;font-weight:400"><input type="radio" name="publishPermission" value="full" style="margin-top:0.25rem"> Yes; with my name, business, and city</label>
+            <label style="display:inline-flex;gap:0.4rem;align-items:flex-start;font-weight:400"><input type="radio" name="publishPermission" value="first-name" style="margin-top:0.25rem"> Yes; but use only my first name and city</label>
+            <label style="display:inline-flex;gap:0.4rem;align-items:flex-start;font-weight:400"><input type="radio" name="publishPermission" value="anonymous" style="margin-top:0.25rem"> Yes; but keep me anonymous ("a Colorado contractor")</label>
+            <label style="display:inline-flex;gap:0.4rem;align-items:flex-start;font-weight:400"><input type="radio" name="publishPermission" value="no" style="margin-top:0.25rem"> No; this is just between us</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="photoLink">Headshot or business photo link (optional)</label>
+          <input type="url" id="photoLink" name="photoLink" placeholder="https://">
+        </div>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong. Please try again or email us at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Submit testimonial</button>
+        <p class="form-hint" style="text-align:center;margin-top:0.75rem">Thank you, seriously. We read every one.</p>
+      </form>
+    </div>
+  </div>
+</section>

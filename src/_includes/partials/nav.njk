@@ -1,14 +1,37 @@
 <header class="header" id="header">
   <div class="header-inner">
-    <a href="/" class="logo">Pikes Peak <span class="logo-accent">Web Designs</span></a>
+    <a href="/" class="logo" aria-label="Pikes Peak Web Designs, Home">Pikes Peak <span class="logo-accent">Web Designs</span></a>
 
     <nav class="nav-links" aria-label="Main navigation">
-      {% for item in nav.primary %}
-        <a href="{{ item.url }}"{% if page.url | startsWith(item.url) %} class="active"{% endif %}>{{ item.label }}</a>
-      {% endfor %}
       <div class="nav-dropdown">
-        <a href="/service-areas/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/service-areas/') or page.url | startsWith('/areas/') %} class="active"{% endif %}>Service Areas <span class="nav-arrow">&#9660;</span></a>
-        <div class="mega-menu" role="navigation" aria-label="Service areas by region">
+        <a href="/how-it-works/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/how-it-works/') or page.url | startsWith('/whats-included/') or page.url | startsWith('/samples/') or page.url | startsWith('/pricing/') %} class="active" aria-current="page"{% endif %}>Services <span class="nav-arrow">&#9660;</span></a>
+        <div class="mega-menu mega-menu--panel" role="menu" aria-label="Services menu">
+          <a href="/how-it-works/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+            <span><span class="mega-item-title">How It Works</span><span class="mega-item-desc">Discovery call, design, build, launch, and we handle everything after.</span></span>
+          </a>
+          <a href="/whats-included/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><span class="mega-item-title">What's Included</span><span class="mega-item-desc">Custom design, hosting, updates, SEO. every inclusion in your monthly plan.</span></span>
+          </a>
+          <a href="/samples/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg></span>
+            <span><span class="mega-item-title">Samples</span><span class="mega-item-desc">Design concepts for contractors, HVAC, plumbers, electricians, and more.</span></span>
+          </a>
+          <a href="/sample-forms/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></span>
+            <span><span class="mega-item-title">Sample Forms</span><span class="mega-item-desc">Industry-specific form examples for HVAC, plumbing, roofing, and more.</span></span>
+          </a>
+          <a href="/pricing/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            <span><span class="mega-item-title">Pricing</span><span class="mega-item-desc">$175/month flat or $4,000 lump-sum. $0 down either way.</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <a href="/service-areas/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/service-areas/') or page.url | startsWith('/areas/') %} class="active" aria-current="page"{% endif %}>Service Areas <span class="nav-arrow">&#9660;</span></a>
+        <div class="mega-menu mega-menu--wide" role="navigation" aria-label="Service areas by region">
           <div class="mega-col">
             <h5>{{ nav.megaMenu.southwest.label }}</h5>
             {% for city in nav.megaMenu.southwest.cities %}
@@ -28,7 +51,7 @@
             {% endfor %}
           </div>
           <div class="mega-canada">
-            <h5>&#127464;&#127462; {{ nav.megaMenu.canada.label }}</h5>
+            <h5>{{ nav.megaMenu.canada.label }}</h5>
             <div class="mega-canada-cities">
               {% for city in nav.megaMenu.canada.cities %}
                 <a href="/areas/{{ city.slug }}/">{{ city.label }}</a>
@@ -37,31 +60,123 @@
           </div>
           <div class="mega-foot">
             <span>All 50 U.S. states &amp; Canada</span>
-            <a href="/service-areas/">View All Service Areas &rarr;</a>
+            <a href="/service-areas/">View all service areas &rarr;</a>
           </div>
         </div>
       </div>
-      <a href="/contact/" class="btn btn-primary">Get Started</a>
+
+      <div class="nav-dropdown">
+        <a href="/blog/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/blog/') or page.url | startsWith('/glossary/') or page.url | startsWith('/faq/') or page.url | startsWith('/owners-guide/') %} class="active" aria-current="page"{% endif %}>Resources <span class="nav-arrow">&#9660;</span></a>
+        <div class="mega-menu mega-menu--panel" role="menu" aria-label="Resources menu">
+          <a href="/blog/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+            <span><span class="mega-item-title">Blog</span><span class="mega-item-desc">Practical guides on local SEO, page speed, and service-business websites.</span></span>
+          </a>
+          <a href="/faq/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+            <span><span class="mega-item-title">FAQ</span><span class="mega-item-desc">Straight answers on pricing, process, ownership, and support.</span></span>
+          </a>
+          <a href="/glossary/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            <span><span class="mega-item-title">Glossary</span><span class="mega-item-desc">Plain-language definitions for web design, hosting, and SEO terminology.</span></span>
+          </a>
+          <a href="/owners-guide/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+            <span><span class="mega-item-title">Owner's Guide</span><span class="mega-item-desc">Sample of what we hand you on launch day. a short plain-language guide.</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <a href="/about/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/about/') or page.url | startsWith('/style-guide/') or page.url | startsWith('/accessibility/') or page.url | startsWith('/sitemap/') %} class="active" aria-current="page"{% endif %}>Company <span class="nav-arrow">&#9660;</span></a>
+        <div class="mega-menu mega-menu--panel" role="menu" aria-label="Company menu">
+          <a href="/about/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
+            <span><span class="mega-item-title">About</span><span class="mega-item-desc">A small, U.S.-based team. Meet the person who'll actually build your site.</span></span>
+          </a>
+          <a href="/style-guide/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 0 0 0 20 3 3 0 0 0 3-3 2.5 2.5 0 0 1 2.5-2.5H19a3 3 0 0 0 3-3A10 10 0 0 0 12 2z"/></svg></span>
+            <span><span class="mega-item-title">Style Guide</span><span class="mega-item-desc">Our design system: colors, type, spacing, and the patterns we use.</span></span>
+          </a>
+          <a href="/accessibility/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="8" r="1"/><path d="M10 10h4v6"/><path d="M12 14v4"/></svg></span>
+            <span><span class="mega-item-title">Accessibility</span><span class="mega-item-desc">Our WCAG 2.2 AA commitment and how to reach us about access issues.</span></span>
+          </a>
+          <a href="/sitemap/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
+            <span><span class="mega-item-title">Sitemap</span><span class="mega-item-desc">A plain-language map of every page on this site.</span></span>
+          </a>
+        </div>
+      </div>
+
+      <button class="nav-icon-btn" id="searchOpen" type="button" aria-label="Search the site" data-open-search>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+
+      <button class="nav-icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+
+      <a href="/contact/" class="btn btn-primary">Start a Conversation</a>
     </nav>
 
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
+
 <div class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-  {% for item in nav.primary %}
-    <a href="{{ item.url }}"{% if page.url | startsWith(item.url) %} class="active"{% endif %}>{{ item.label }}</a>
-  {% endfor %}
+  <button class="mobile-search-trigger" type="button" data-open-search aria-label="Search the site">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <span>Search the site...</span>
+  </button>
+
   <div class="mobile-dropdown">
-    <button class="mobile-dropdown-toggle" aria-expanded="false">Service Areas <span class="mobile-arrow">&#9660;</span></button>
+    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Services <span class="mobile-arrow" aria-hidden="true"></span></button>
     <div class="mobile-dropdown-menu">
-      {% for city in nav.mobileHighlights %}
-        <a href="/areas/{{ city.slug }}/">{{ city.label }}{% if city.canada %} &#127464;&#127462;{% endif %}</a>
-      {% endfor %}
-      <a href="/service-areas/" class="mobile-view-all">View All Service Areas &rarr;</a>
+      <a href="/how-it-works/">How It Works</a>
+      <a href="/whats-included/">What's Included</a>
+      <a href="/samples/">Samples</a>
+      <a href="/sample-forms/">Sample Forms</a>
+      <a href="/pricing/">Pricing</a>
     </div>
   </div>
-  <a href="/contact/" class="btn btn-primary btn-full">Get Started</a>
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Service Areas <span class="mobile-arrow" aria-hidden="true"></span></button>
+    <div class="mobile-dropdown-menu">
+      {% for city in nav.mobileHighlights %}
+        <a href="/areas/{{ city.slug }}/">{{ city.label }}</a>
+      {% endfor %}
+      <a href="/service-areas/" class="mobile-view-all">View all service areas &rarr;</a>
+    </div>
+  </div>
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Resources <span class="mobile-arrow" aria-hidden="true"></span></button>
+    <div class="mobile-dropdown-menu">
+      <a href="/blog/">Blog</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/glossary/">Glossary</a>
+      <a href="/owners-guide/">Owner's Guide</a>
+      <a href="/client-portal/">Client Portal</a>
+    </div>
+  </div>
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Company <span class="mobile-arrow" aria-hidden="true"></span></button>
+    <div class="mobile-dropdown-menu">
+      <a href="/about/">About</a>
+      <a href="/style-guide/">Style Guide</a>
+      <a href="/accessibility/">Accessibility</a>
+      <a href="/sitemap/">Sitemap</a>
+    </div>
+  </div>
+  <button class="mobile-theme-toggle" id="themeToggleMobile" type="button" aria-label="Toggle dark mode">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+    <span class="mobile-theme-label">Toggle theme</span>
+  </button>
+  <a href="/contact/" class="btn btn-primary btn-full mobile-nav-cta">Start a Conversation</a>
 </div>

@@ -30,15 +30,15 @@ tags: [post]
 
 <h2>Before-and-After Photos Are Non-Negotiable</h2>
 
-<p>Roofing is entirely visual. A homeowner deciding whether to hire you wants to see your work. Real before-and-after photos of actual roofs you've replaced — especially in the specific styles and materials common in your area — build more credibility than any copywriting.</p>
+<p>Roofing is entirely visual. A homeowner deciding whether to hire you wants to see your work. Real before-and-after photos of actual roofs you've replaced; especially in the specific styles and materials common in your area; build more credibility than any copywriting.</p>
 
 <p>Take photos of every job. Even simple smartphone photos from ground level are usable. Over time, build a gallery that shows: different roof styles (architectural shingles, metal, tile), full replacements vs. repairs, commercial vs. residential. The more variety, the more potential customers who see something that looks like their roof.</p>
 
 <h2>Manufacturer Certifications and Warranties</h2>
 
-<p>Premium roofing manufacturers — GAF, Owens Corning, CertainTeed, Atlas — have certified contractor programs that allow certified installers to offer extended workmanship warranties. A standard contractor might offer a 5-year workmanship warranty. A GAF Master Elite contractor can offer a 25-year workmanship warranty backed by the manufacturer.</p>
+<p>Premium roofing manufacturers; GAF, Owens Corning, CertainTeed, Atlas; have certified contractor programs that allow certified installers to offer extended workmanship warranties. A standard contractor might offer a 5-year workmanship warranty. A GAF Master Elite contractor can offer a 25-year workmanship warranty backed by the manufacturer.</p>
 
-<p>That's a significant differentiator, and it's one that needs to be on your website front and center. Homeowners who understand the value of a manufacturer-backed warranty will specifically seek out certified contractors — but only if they can find that information easily.</p>
+<p>That's a significant differentiator, and it's one that needs to be on your website front and center. Homeowners who understand the value of a manufacturer-backed warranty will specifically seek out certified contractors, but only if they can find that information easily.</p>
 
 <h2>Licensing, Insurance, and Years in Business</h2>
 
@@ -54,19 +54,19 @@ tags: [post]
 
 <h2>A Dedicated Roof Replacement vs. Repair Page</h2>
 
-<p>Homeowners often don't know whether they need a full replacement or a repair. A page that explains the difference — and helps them understand when each makes sense — does two things: it answers a common question (good for SEO) and it positions you as a knowledgeable expert rather than a salesperson.</p>
+<p>Homeowners often don't know whether they need a full replacement or a repair. A page that explains the difference, and helps them understand when each makes sense; does two things: it answers a common question (good for SEO) and it positions you as a knowledgeable expert rather than a salesperson.</p>
 
 <p>Something like "How to Know If You Need a Roof Repair or Full Replacement" as a page or blog post is highly searchable and demonstrates expertise. The same page can naturally lead into your process and a call to action for a free inspection.</p>
 
 <div class="post-cta-box">
   <h3>A roofing website that captures storm leads when they spike.</h3>
-  <p>Storm damage pages, before-and-after galleries, insurance claim content, manufacturer certification display — we build it all. $175/month flat rate.</p>
+  <p>Storm damage pages, before-and-after galleries, insurance claim content, manufacturer certification display; we build it all. $175/month flat rate.</p>
   <a href="/contact/" class="btn btn-primary">Get Started</a>
 </div>
 
 <h2>Commercial Roofing: Separate It From Residential</h2>
 
-<p>If you do both residential and commercial work, treat them as separate parts of your website. Commercial roofing clients — property managers, building owners, general contractors — are looking for different information than homeowners. They want to see commercial project photos, references, bonding information, and experience with flat roofs, TPO, EPDM, and metal standing seam.</p>
+<p>If you do both residential and commercial work, treat them as separate parts of your website. Commercial roofing clients; property managers, building owners, general contractors; are looking for different information than homeowners. They want to see commercial project photos, references, bonding information, and experience with flat roofs, TPO, EPDM, and metal standing seam.</p>
 
 <p>Mixing commercial and residential content into the same pages dilutes your message to both audiences. A dedicated commercial roofing page, or ideally a separate section, serves commercial prospects much better.</p>
 
@@ -74,7 +74,7 @@ tags: [post]
 
 <p>When hail falls, every roofing company in the affected area starts getting calls simultaneously. Homeowners searching for "roof damage repair [city]" are deciding in real-time. Your website has seconds to convince them to call you instead of your competitor.</p>
 
-<p>That means your website needs to load fast, your phone number needs to be impossible to miss, and your call to action — free inspection, free estimate, call now — needs to be in the first screenful they see. Not below the fold. Not after a paragraph of copy. Immediately visible.</p>
+<p>That means your website needs to load fast, your phone number needs to be impossible to miss, and your call to action; free inspection, free estimate, call now; needs to be in the first screenful they see. Not below the fold. Not after a paragraph of copy. Immediately visible.</p>
 
 <p>The roofing companies that consistently win the storm surge are the ones who are ready before the storm comes. That readiness starts with a website built to convert when volume spikes.</p>
 

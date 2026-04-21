@@ -5,7 +5,7 @@ label: "Making the Right Choice"
 description: "Website builders promise simplicity. Custom code delivers results. Here's an honest comparison for service business owners."
 ctaLabel: "No Templates. No Builders."
 ctaHeading: "Custom code. Real results."
-ctaText: "custom-coded from scratch — no Wix, no Squarespace, no WordPress. $175/month flat rate."
+ctaText: "custom-coded from scratch. No Wix, no Squarespace, no WordPress. $175/month flat rate."
 layout: layouts/post.njk
 tags: [post]
 ---
@@ -26,13 +26,13 @@ tags: [post]
   <li>Templates that look modern enough</li>
 </ul>
 
-<p>If all you need is a digital business card — something to point people to when they ask if you have a website — a Wix or Squarespace site can fulfill that function.</p>
+<p>If all you need is a digital business card; something to point people to when they ask if you have a website; a Wix or Squarespace site can fulfill that function.</p>
 
 <h2>Where They Fall Short for Service Businesses</h2>
 
 <h3>Performance and Page Speed</h3>
 
-<p>Website builders generate bloated code. Every platform has overhead — JavaScript libraries, CSS frameworks, tracking scripts, plugin integrations — that gets loaded on every page regardless of what your site actually needs. The result is slow load times.</p>
+<p>Website builders generate bloated code. Every platform has overhead; JavaScript libraries, CSS frameworks, tracking scripts, plugin integrations, that gets loaded on every page regardless of what your site actually needs. The result is slow load times.</p>
 
 <p>Wix in particular has historically scored poorly on Google PageSpeed Insights. Scores in the 30–55 range on mobile are common for Wix sites. As we covered in our article on page speed, this directly suppresses your Google ranking and increases your bounce rate.</p>
 
@@ -51,7 +51,7 @@ tags: [post]
 
 <h3>You Don't Own Your Website</h3>
 
-<p>This is the one most business owners don't consider until it's too late. Your Wix or Squarespace website lives on their servers, in their proprietary format. If they raise prices, change their terms of service, or go out of business, your website is affected — and you have no way to simply move it to a different host.</p>
+<p>This is the one most business owners don't consider until it's too late. Your Wix or Squarespace website lives on their servers, in their proprietary format. If they raise prices, change their terms of service, or go out of business, your website is affected, and you have no way to simply move it to a different host.</p>
 
 <p>A custom-coded website is yours. The files are yours. You can host it anywhere.</p>
 
@@ -63,7 +63,7 @@ tags: [post]
 
 <h2>The GoDaddy Web Design Trap</h2>
 
-<p>GoDaddy offers a "professional website" service where they'll build the site for you. It looks appealing — done-for-you, relatively affordable. The catch: you're still locked into their ecosystem, the sites are templated with minimal customization, and the SEO structure is basic at best.</p>
+<p>GoDaddy offers a "professional website" service where they'll build the site for you. It looks appealing; done-for-you, relatively affordable. The catch: you're still locked into their ecosystem, the sites are templated with minimal customization, and the SEO structure is basic at best.</p>
 
 <p>We regularly talk to contractors who spent $500–$1,500 on a GoDaddy "done for you" site and get zero phone calls from it. The site exists. It just doesn't rank.</p>
 
@@ -76,22 +76,22 @@ tags: [post]
   <li>PageSpeed scores of 98–100</li>
   <li>Clean HTML structure that Google crawls easily</li>
   <li>Service-area and service-specific pages built around how people actually search</li>
-  <li>You own the files — no platform lock-in</li>
+  <li>You own the files. No platform lock-in</li>
 </ul>
 
 <p>It's built to generate leads, not just to exist.</p>
 
 <div class="post-cta-box">
   <h3>Ditch the website builder. Get a site that actually works.</h3>
-  <p>We build custom-coded websites for service businesses — no Wix, no WordPress, no templates. $175/month flat rate, everything included.</p>
+  <p>We build custom-coded websites for service businesses. No Wix, no WordPress, no templates. $175/month flat rate, everything included.</p>
   <a href="/contact/" class="btn btn-primary">Get Started</a>
 </div>
 
 <h2>When a Website Builder Is Fine</h2>
 
-<p>If your business gets most of its customers through word of mouth, referrals, or social media — and you just need a basic online presence — a website builder is a perfectly reasonable choice. Not every business needs a high-performance SEO machine.</p>
+<p>If your business gets most of its customers through word of mouth, referrals, or social media, and you just need a basic online presence; a website builder is a perfectly reasonable choice. Not every business needs a high-performance SEO machine.</p>
 
-<p>But if Google search is a meaningful part of how customers find you — or how you want them to find you — the performance and SEO limitations of website builders will cost you leads. The math of lost customers adds up faster than most people expect.</p>
+<p>But if Google search is a meaningful part of how customers find you, or how you want them to find you; the performance and SEO limitations of website builders will cost you leads. The math of lost customers adds up faster than most people expect.</p>
 
 <p>The question isn't whether a custom site costs more per month. It's whether the customers it brings in justify the cost. For most service businesses doing real volume, the answer is clearly yes.</p>
 

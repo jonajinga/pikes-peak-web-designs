@@ -1,0 +1,93 @@
+---
+layout: layouts/base.njk
+title: "Emergency Support | Pikes Peak Web Designs"
+description: "For existing clients: site down, dangerous error, or anything costing you business right now. We triage fast and fix urgent issues within the hour during business hours."
+noindex: true
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/client-portal/">Client Portal</a><span class="sep">/</span><span>Emergency Support</span>
+    </nav>
+    <span class="section-label">Urgent issues</span>
+    <h1>Something's wrong. <em>We fix it fast.</em></h1>
+    <p>Use this form if your site is down, displaying wrong information that's costing you business, or has a security concern. We triage immediately: usually within the hour during business hours, same day on weekends.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:720px">
+    <div style="margin-bottom:2rem;padding:1.25rem 1.5rem;background:rgba(161,25,15,0.08);border:1px solid rgba(161,25,15,0.35);border-radius:var(--radius);color:var(--text)">
+      <strong style="color:var(--danger);display:block;font-size:0.95rem;margin-bottom:0.35rem">Call us if it's truly urgent.</strong>
+      <span style="font-size:0.92rem">Text or call <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a> for immediate attention. The form is a backup and a way to put all the detail in one place, but phone is faster when the clock matters.</span>
+    </div>
+
+    <div class="contact-form-card">
+      <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:0.35rem">Describe the emergency</h2>
+      <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:1.5rem">Give us as much detail as you can. Screenshots help. We'll start investigating the moment the form lands.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=emergency" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="[EMERGENCY] Pikes Peak Web Designs client">
+        <input type="hidden" name="from_name" value="Pikes Peak Emergency">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="businessName">Business name <span class="req">*</span></label>
+            <input type="text" id="businessName" name="businessName" required autocomplete="organization">
+          </div>
+          <div class="form-group">
+            <label for="phone">Best phone to reach you <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" required autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="severity">How bad is it right now? <span class="req">*</span></label>
+          <select id="severity" name="severity" required>
+            <option value="">Choose one…</option>
+            <option value="site-down">Site is completely down</option>
+            <option value="partial-outage">Part of the site is broken (form, page, checkout, etc.)</option>
+            <option value="wrong-info">Wrong information is live and costing us business</option>
+            <option value="security">Security concern (suspicious activity, defaced content)</option>
+            <option value="other-urgent">Other urgent issue; I'll explain below</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="whenStarted">When did the issue start?</label>
+          <input type="text" id="whenStarted" name="whenStarted" placeholder="e.g. 'About 2 hours ago' or 'Since this morning'">
+        </div>
+
+        <div class="form-group">
+          <label for="affectedUrl">Which URL or page is affected?</label>
+          <input type="text" id="affectedUrl" name="affectedUrl" placeholder="e.g. yourbusiness.com/contact/">
+        </div>
+
+        <div class="form-group">
+          <label for="description">What's happening? <span class="req">*</span></label>
+          <textarea id="description" name="description" rows="6" placeholder="Describe what you or your customers are seeing. Include any error messages. If you have a screenshot, paste a link to it." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="screenshotLink">Screenshot link (if you have one)</label>
+          <input type="url" id="screenshotLink" name="screenshotLink" placeholder="https://">
+        </div>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong submitting this. Please call <a href="tel:{{ site.phone }}">{{ site.phoneDisplay }}</a> immediately.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Submit emergency request</button>
+        <p class="form-hint" style="text-align:center;margin-top:0.75rem">If this is truly time-critical, <strong>call us</strong> at <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>; we pick up or call back quickly.</p>
+      </form>
+    </div>
+  </div>
+</section>

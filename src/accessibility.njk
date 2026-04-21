@@ -1,0 +1,74 @@
+---
+layout: layouts/base.njk
+title: "Accessibility Statement | Pikes Peak Web Designs"
+description: "Our commitment to WCAG 2.2 AA accessibility on this website, on every site we build, and how to reach us if something doesn't work for you."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Accessibility</span>
+    </nav>
+    <span class="section-label">Accessibility</span>
+    <h1>Everyone should be able to <em>use the web.</em></h1>
+    <p>We build every website to WCAG 2.2 AA as the baseline; not the goal. If something on this site doesn't work for you, we want to hear about it.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container prose" style="max-width:var(--max-prose)">
+    <p><strong>Last updated:</strong> April 2026</p>
+
+    <h2>Our commitment</h2>
+    <p>Accessibility is a baseline on every site we design and build, including this one. Our working standard is <strong>WCAG 2.2 Level AA</strong>; the Web Content Accessibility Guidelines from the W3C. This covers things like color contrast, keyboard navigation, screen-reader support, focus visibility, and clear labeling. It's the same standard we write into our client agreements.</p>
+
+    <h2>What we do on every site</h2>
+    <ul>
+      <li><strong>Real contrast ratios.</strong> We verify every text/background combination against WCAG AA (4.5:1 for normal text, 3:1 for large text). We don't just eyeball it.</li>
+      <li><strong>Full keyboard navigation.</strong> Every interactive control is reachable by <kbd>Tab</kbd> and operable by keyboard alone. Focus rings are visible and predictable.</li>
+      <li><strong>Semantic HTML.</strong> Headings in order, landmarks labeled, lists that are actually lists, buttons that are actually buttons. Screen readers get a clean structure to work with.</li>
+      <li><strong>Skip links and landmarks.</strong> "Skip to content" appears for keyboard users. Each region of the page is labeled with an appropriate ARIA role or landmark.</li>
+      <li><strong>Image alt text.</strong> Decorative SVGs are hidden from assistive technology with <code>aria-hidden="true"</code>. Meaningful images get real alt text.</li>
+      <li><strong>Motion respected.</strong> Animations honor <code>prefers-reduced-motion</code>. If your system says slow things down, we do.</li>
+      <li><strong>Forms with proper labels.</strong> Every field has a visible label, not just placeholder text. Errors are announced and explained in plain language.</li>
+      <li><strong>Light and dark themes.</strong> Color pairs meet contrast targets in both modes.</li>
+      <li><strong>44px touch targets.</strong> Interactive elements are comfortably large on a phone.</li>
+    </ul>
+
+    <h2>What we've tested</h2>
+    <p>On this site specifically, we've tested with:</p>
+    <ul>
+      <li>Keyboard-only navigation from top to bottom of every page</li>
+      <li>VoiceOver (macOS &amp; iOS) and NVDA (Windows)</li>
+      <li>Browser zoom up to 200% without horizontal scrolling</li>
+      <li>Color-contrast analyzers on every text/background combo in both themes</li>
+      <li>Automated audits via Lighthouse, axe DevTools, and WAVE</li>
+    </ul>
+
+    <h2>Known limitations</h2>
+    <p>We're not perfect and we don't pretend to be. If you find something that doesn't work, please tell us. We fix accessibility issues on the same day we hear about them whenever possible. usually within one business day.</p>
+
+    <h2>How to reach us</h2>
+    <p>If any part of this website isn't working for you, or if you need information in a different format (large text, audio, printed), contact us any way you like. We'll respond quickly and work with you to fix it.</p>
+    <ul>
+      <li>Email: <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a></li>
+      <li>Call or text: <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a></li>
+      <li>Contact form: <a href="/contact/" class="inline-link">our contact page</a></li>
+    </ul>
+
+    <h2>Our commitment on client sites</h2>
+    <p>Every site we build for a client ships with an accessibility statement like this one, tuned to that business. It's one of the six operational pages we include on every project, at no extra cost and without counting against your page total.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">A real person, always</span>
+    <h2>If something doesn't work, tell us.</h2>
+    <p>We can't fix what we don't know about. Reach out any way you want; we'll hear from you and get on it.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-primary btn-lg">Contact us</a>
+      <a href="mailto:{{ site.email }}" class="btn btn-outline btn-lg">Email directly</a>
+    </div>
+  </div>
+</section>

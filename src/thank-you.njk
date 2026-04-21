@@ -1,67 +1,150 @@
 ---
 layout: layouts/base.njk
-title: "Message Received | Pikes Peak Web Designs"
-description: "Thanks for reaching out. We'll be in touch within one business day."
+title: "Thanks! | Pikes Peak Web Designs"
+description: "We got your message. Here's what happens next and how to reach us while you wait."
 noindex: true
 ---
 
 <section class="page-hero">
   <div class="container">
-    <span class="section-label" style="color:var(--gold);">You're All Set</span>
-    <h1>We got your message.</h1>
-    <p>Thanks for reaching out. Someone from our team will be in touch within one business day — usually much sooner.</p>
+    <span class="section-label">Got it</span>
+    <h1 id="thankHeading">We got your message.</h1>
+    <p id="thankSubcopy">Thanks for reaching out. We'll be in touch within one business day. usually sooner.</p>
   </div>
 </section>
 
-
 <section class="section">
-  <div class="container" style="max-width:680px;">
-
-    <div style="background:var(--light);border-radius:var(--radius-lg);padding:40px;text-align:center;margin-bottom:48px;">
-      <div style="width:64px;height:64px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <h2 style="font-size:clamp(1.3rem,2.5vw,1.75rem);margin-bottom:12px;">What happens next?</h2>
-      <p style="color:var(--text-muted);margin:0;">Here's what you can expect over the next day or two.</p>
+  <div class="container" style="max-width:640px;text-align:center">
+    <div style="width:72px;height:72px;margin:0 auto 1.5rem;background:var(--navy-900);border-radius:50%;display:inline-flex;align-items:center;justify-content:center">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#DDB13D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
+    <span class="section-label">What happens next</span>
+    <h2 class="section-title" style="margin-inline:auto" id="thankNextTitle">Three simple steps.</h2>
+    <p class="section-subtitle" style="margin-inline:auto" id="thankNextSub">Here's what to expect over the next business day or two.</p>
 
-    <ol style="list-style:none;display:flex;flex-direction:column;gap:24px;margin-bottom:48px;">
-      <li style="display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start;">
-        <span style="width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:1rem;font-weight:800;color:white;flex-shrink:0;">1</span>
+    <ol class="next-steps" id="thankSteps">
+      <li class="next-step">
+        <span class="next-step-num">1</span>
         <div>
-          <h3 style="font-size:1rem;margin-bottom:6px;">We read your message</h3>
-          <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">We review every inquiry personally. You're not going into a ticket queue — a real person will read what you wrote.</p>
+          <h4>We read your message.</h4>
+          <p>A real person, not a ticket queue. usually within an hour or two during business hours.</p>
         </div>
       </li>
-      <li style="display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start;">
-        <span style="width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:1rem;font-weight:800;color:white;flex-shrink:0;">2</span>
+      <li class="next-step">
+        <span class="next-step-num">2</span>
         <div>
-          <h3 style="font-size:1rem;margin-bottom:6px;">We reach back out within one business day</h3>
-          <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">You'll hear from us by email — usually faster than that. We'll ask a few follow-up questions if needed, or suggest a time to talk.</p>
+          <h4>We reply within one business day.</h4>
+          <p>You'll hear from us by email with any follow-up questions and a couple of times that work for a call.</p>
         </div>
       </li>
-      <li style="display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start;">
-        <span style="width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:1rem;font-weight:800;color:white;flex-shrink:0;">3</span>
+      <li class="next-step">
+        <span class="next-step-num">3</span>
         <div>
-          <h3 style="font-size:1rem;margin-bottom:6px;">We schedule a free 20-minute call</h3>
-          <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">No pressure, no pitch. Just a conversation about your business, your goals, and whether we're a good fit. If we are, you'll know exactly what comes next.</p>
+          <h4>A 20-minute call on Google Meet.</h4>
+          <p>No pressure, no pitch. just a conversation about your business and whether we're the right fit.</p>
         </div>
       </li>
     </ol>
 
-    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:48px;">
-      <a href="/" class="btn btn-primary btn-lg">Back to Home</a>
-      <a href="/how-it-works/" class="btn btn-outline-dark btn-lg">See How It Works</a>
+    <div class="cta-buttons" style="justify-content:center;margin-top:2.5rem">
+      <a href="/" class="btn btn-primary">Back to Home</a>
+      <a href="/how-it-works/" class="btn btn-outline-dark">See How It Works</a>
     </div>
 
-    <div style="border-top:1px solid var(--border);padding-top:32px;text-align:center;">
-      <p style="font-size:0.875rem;color:var(--text-muted);">Need to reach us directly in the meantime?</p>
-      <p style="margin-top:8px;">
-        <a href="tel:9283159094" style="color:var(--blue);font-weight:600;">(928) 315-9094</a>
-        &nbsp;&middot;&nbsp;
-        <a href="mailto:hello@pikespeakwebdesigns.com" style="color:var(--blue);font-weight:600;">hello@pikespeakwebdesigns.com</a>
-      </p>
-    </div>
-
+    <p style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--line);color:var(--text-muted);font-size:0.9rem">
+      Need to reach us directly? <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a> &middot; <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a>
+    </p>
   </div>
 </section>
+
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var type = params.get('type');
+  var variants = {
+    'onboarding': {
+      h: 'Onboarding received.',
+      s: "Thanks for taking the time; that's everything we need to get started. We'll confirm receipt today and kick off the build this week.",
+      nt: 'What happens next.',
+      ns: "You won't hear silence from us. Here's what to expect.",
+      steps: [
+        ['Today: confirmation email.', 'You\'ll get a short note from us today confirming we received everything and outlining the schedule.'],
+        ['This week: design kickoff.', 'We start the design based on what you sent. You\'ll get a live preview link within 3 to 5 business days.'],
+        ['Within 2 to 3 weeks: launch.', 'After your feedback and any revisions, we handle DNS, SSL, sitemap submission, and the launch-day owner\'s guide.']
+      ]
+    },
+    'content-update': {
+      h: 'Update request received.',
+      s: "We got it. Routine updates are usually live within one business day; we'll email you when it's done.",
+      nt: 'What happens next.',
+      ns: "Here's the typical flow for a content update.",
+      steps: [
+        ['We review your request.', 'Usually within an hour or two during business hours. If anything is unclear, we\'ll reply for clarification.'],
+        ['We make the change.', 'Routine updates go live the same business day. Bigger changes get a timeline first, so you know what to expect.'],
+        ['We confirm when it\'s live.', 'You\'ll get a "done" email with a link to the updated page. No dashboard to check; it just shows up in your inbox.']
+      ]
+    },
+    'emergency': {
+      h: 'Emergency request received.',
+      s: "We’re on it. If you haven’t already, please also call or text us so we can triage by voice.",
+      nt: 'What happens next.',
+      ns: 'Emergency requests skip the queue.',
+      steps: [
+        ['We acknowledge within minutes.', 'You\'ll get an email confirming we saw the request and are investigating. If it\'s critical, we\'ll call you.'],
+        ['We diagnose.', 'We check hosting, DNS, the code, recent changes; whatever it takes to identify the problem.'],
+        ['We fix and confirm.', 'Most emergencies are resolved within the hour during business hours. You\'ll get a "fixed" email explaining what we did and what, if anything, changed.']
+      ]
+    },
+    'design-feedback': {
+      h: 'Feedback received. Thank you.',
+      s: "We read every note. Most revision rounds turn around in one to two business days; we’ll email when the preview is updated.",
+      nt: 'What happens next.',
+      ns: "Here's how the revision cycle usually goes.",
+      steps: [
+        ['We review your notes.', 'Today or tomorrow morning at the latest. We\'ll flag anything that needs clarification by email.'],
+        ['We implement the changes.', 'Usually one to two business days. If any note is bigger than expected, we\'ll tell you before we start.'],
+        ['We send the updated preview.', 'Back to you for another pass. No limit on rounds until you\'re happy; we\'d rather get it right than get it fast.']
+      ]
+    },
+    'referral': {
+      h: 'Referral received. Thank you.',
+      s: "We take referrals seriously, yours especially. We’ll reach out to them soon and keep you in the loop.",
+      nt: 'What happens next.',
+      ns: "Here's how referrals typically go from here.",
+      steps: [
+        ['We reach out to the business.', 'Within one to two business days, mentioning you by name (unless you asked us not to). No pushy sales pitch; just an introduction.'],
+        ['We tell you we\'ve made contact.', 'A quick email so you know the intro happened and roughly how it went.'],
+        ['We thank you properly if they sign.', 'One month of hosting credited to your account if you\'re a client, or a simple cash thank-you if you\'re not.']
+      ]
+    },
+    'testimonial': {
+      h: 'Testimonial received. Thank you.',
+      s: "This genuinely helps, more than we can say. We’ll read it carefully and follow your preferences on publishing.",
+      nt: 'What happens next.',
+      ns: "Here's what we do with it.",
+      steps: [
+        ['We read it; every word.', 'Personally. The whole team. Testimonials are rare and we treat them that way.'],
+        ['We follow your permission choice.', 'If you said "publish with my name," it goes on the Samples page within a week. If you said "keep it between us," it stays there.'],
+        ['We say thank you back.', 'A real email, not an autoresponder. If there\'s anything we can do for you in return, we\'ll offer.']
+      ]
+    }
+  };
+  if (type && variants[type]) {
+    var v = variants[type];
+    var h = document.getElementById('thankHeading');
+    var s = document.getElementById('thankSubcopy');
+    var nt = document.getElementById('thankNextTitle');
+    var ns = document.getElementById('thankNextSub');
+    var stepsEl = document.getElementById('thankSteps');
+    if (h) h.textContent = v.h;
+    if (s) s.textContent = v.s;
+    if (nt) nt.textContent = v.nt;
+    if (ns) ns.textContent = v.ns;
+    if (stepsEl && v.steps) {
+      stepsEl.innerHTML = v.steps.map(function (step, i) {
+        return '<li class="next-step"><span class="next-step-num">' + (i + 1) + '</span><div><h4>' + step[0] + '</h4><p>' + step[1] + '</p></div></li>';
+      }).join('');
+    }
+  }
+}());
+</script>

@@ -1,0 +1,168 @@
+---
+layout: layouts/base.njk
+title: "Style Guide | Design System | Pikes Peak Web Designs"
+description: "The documented design system behind every site we build: colors, typography, spacing, and components. Every client gets their own version of this."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Style Guide</span>
+    </nav>
+    <span class="section-label">Style Guide</span>
+    <h1>The design system <em>behind this site.</em></h1>
+    <p>Every site we build comes with a living style guide like this one; a plain record of the colors, type, spacing, and patterns that make up your brand.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="sg-section">
+      <div class="sg-title">Colors</div>
+      <p class="sg-desc">A restrained palette: deep navy as the foundation, warm gold for accent, and a full text scale tuned for WCAG AA contrast on both light and dark surfaces.</p>
+
+      <h3 style="margin-top:1.5rem;font-size:1.1rem">Brand</h3>
+      <div class="sg-swatches">
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#0A1F44"></div><div class="sg-swatch-label"><strong>Navy 900</strong><code>#0A1F44</code></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#05102A"></div><div class="sg-swatch-label"><strong>Navy 950</strong><code>#05102A</code></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#1B3C7E"></div><div class="sg-swatch-label"><strong>Navy 700</strong><code>#1B3C7E</code></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#BE9018"></div><div class="sg-swatch-label"><strong>Gold 500</strong><code>#BE9018</code></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#DDB13D"></div><div class="sg-swatch-label"><strong>Gold 400</strong><code>#DDB13D</code></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#EBCD6D"></div><div class="sg-swatch-label"><strong>Gold 300</strong><code>#EBCD6D</code></div></div>
+      </div>
+
+      <h3 style="margin-top:2rem;font-size:1.1rem">Surfaces</h3>
+      <div class="sg-swatches">
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#FFFFFF;border-bottom:1px solid var(--line)"></div><div class="sg-swatch-label"><strong>Paper</strong><code>#FFFFFF</code></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#FBF7EE"></div><div class="sg-swatch-label"><strong>Cream</strong><code>#FBF7EE</code></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#F1F4FA"></div><div class="sg-swatch-label"><strong>Mist</strong><code>#F1F4FA</code></div></div>
+      </div>
+
+      <h3 style="margin-top:2rem;font-size:1.1rem">Text</h3>
+      <div class="sg-swatches">
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#10172A"></div><div class="sg-swatch-label"><strong>Text</strong><code>#10172A &middot; 17.2:1 AAA</code></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#4A5463"></div><div class="sg-swatch-label"><strong>Text muted</strong><code>#4A5463 &middot; 7.4:1 AAA</code></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#64707E"></div><div class="sg-swatch-label"><strong>Text soft</strong><code>#64707E &middot; 4.8:1 AA</code></div></div>
+      </div>
+    </div>
+
+    <div class="sg-section">
+      <div class="sg-title">Typography</div>
+      <p class="sg-desc">Playfair Display for display headings, Inter for body and UI. Fluid type scale using <code>clamp()</code> for responsive sizing.</p>
+
+      <div class="sg-type-sample">
+        <div class="label">Display &middot; Playfair Display, 700</div>
+        <h1 style="margin:0">A website you can rely on.</h1>
+      </div>
+      <div class="sg-type-sample">
+        <div class="label">H2 &middot; Playfair Display, 600</div>
+        <h2 style="margin:0">Common questions, answered straight.</h2>
+      </div>
+      <div class="sg-type-sample">
+        <div class="label">H3 &middot; Playfair Display, 600</div>
+        <h3 style="margin:0">We handle the whole website.</h3>
+      </div>
+      <div class="sg-type-sample">
+        <div class="label">Body &middot; Inter, 400</div>
+        <p style="margin:0">We write every line of code by hand. No WordPress, no page builders. Every site loads fast, scores high on Google PageSpeed, and stays secure because there's nothing to patch.</p>
+      </div>
+      <div class="sg-type-sample">
+        <div class="label">UI label &middot; Inter, 700</div>
+        <div style="font-family:var(--font-body);font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase">Section label example</div>
+      </div>
+    </div>
+
+    <div class="sg-section">
+      <div class="sg-title">Buttons</div>
+      <p class="sg-desc">Minimum 44×44px target, visible focus ring, and verified WCAG AA contrast on every state. Rule of thumb: hover darkens primary buttons, inverts outline buttons, and never reduces contrast.</p>
+
+      <h3 style="margin-top:1.5rem;font-size:1.05rem">Primary (default call-to-action)</h3>
+      <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.35rem;margin-bottom:0.85rem">Navy background, white text. On hover: deeper navy, text stays white. Used on all "Start a Conversation" CTAs on light sections.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+        <a href="#" class="btn btn-primary">Default</a>
+        <a href="#" class="btn btn-primary" style="background:var(--navy-950);border-color:var(--navy-950);color:#fff;transform:translateY(-1px)">Hover</a>
+        <a href="#" class="btn btn-primary btn-lg">Default (large)</a>
+      </div>
+
+      <h3 style="margin-top:1.5rem;font-size:1.05rem">Gold (on dark surfaces)</h3>
+      <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.35rem;margin-bottom:0.85rem">Gold background, navy text. On hover: lighter gold, navy text stays. Used inside navy hero sections and CTA bands. Text is always navy, never white; white on gold fails contrast.</p>
+      <div style="padding:1.25rem;background:var(--navy-900);border-radius:var(--radius);display:flex;flex-wrap:wrap;gap:0.75rem">
+        <a href="#" class="btn btn-gold">Default</a>
+        <a href="#" class="btn btn-gold" style="background:var(--gold-400);border-color:var(--gold-400);color:var(--navy-900);transform:translateY(-1px)">Hover</a>
+      </div>
+
+      <h3 style="margin-top:1.5rem;font-size:1.05rem">Outline (dark)</h3>
+      <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.35rem;margin-bottom:0.85rem">Transparent background with navy border and navy text. On hover: navy fills in, text flips to white. Used as a secondary CTA on light sections.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+        <a href="#" class="btn btn-outline-dark">Default</a>
+        <a href="#" class="btn btn-outline-dark" style="background:var(--navy-900);color:#fff">Hover</a>
+      </div>
+
+      <h3 style="margin-top:1.5rem;font-size:1.05rem">Outline; light (on dark)</h3>
+      <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.35rem;margin-bottom:0.85rem">Transparent with a white border. On hover: subtle white tint fills in, text stays white. Used inside hero and CTA bands.</p>
+      <div style="padding:1.25rem;background:var(--navy-900);border-radius:var(--radius);display:flex;flex-wrap:wrap;gap:0.75rem">
+        <a href="#" class="btn btn-outline">Default</a>
+        <a href="#" class="btn btn-outline" style="background:rgba(255,255,255,0.12);border-color:#fff">Hover</a>
+      </div>
+
+      <h3 style="margin-top:1.5rem;font-size:1.05rem">Ghost (tertiary)</h3>
+      <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.35rem;margin-bottom:0.85rem">No background or border. Used inline for low-emphasis links that still need a click target.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+        <a href="#" class="btn btn-ghost">Default</a>
+        <a href="#" class="btn btn-ghost" style="background:var(--bg-alt-2);color:var(--navy-900)">Hover</a>
+      </div>
+
+      <h3 style="margin-top:1.5rem;font-size:1.05rem">Contrast rules</h3>
+      <ul style="font-size:0.93rem;line-height:1.7;margin:0.5rem 0 0 1.25rem">
+        <li>Text vs. background: always 4.5:1 or better (AA normal text); 3:1 minimum on large display text.</li>
+        <li>Hover states never reduce contrast below the default state.</li>
+        <li>Navy buttons in the global nav must NOT inherit the nav-link hover background; nav-link hover is scoped to <code>a:not(.btn)</code>.</li>
+        <li>Gold buttons always pair with navy (not white) text. Navy buttons always pair with white text.</li>
+        <li>Focus state is an outlined gold ring with 3px offset on every button.</li>
+      </ul>
+    </div>
+
+    <div class="sg-section">
+      <div class="sg-title">Components</div>
+      <p class="sg-desc">A sample of the components that show up across the site.</p>
+      <div class="sg-grid">
+        <div>
+          <h4 style="font-size:1rem">Card</h4>
+          <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.35rem">Default surface with subtle hover elevation.</p>
+        </div>
+        <div>
+          <h4 style="font-size:1rem">Form input</h4>
+          <input type="text" placeholder="Your business name" style="width:100%;margin-top:0.5rem;padding:0.7rem 0.9rem;border:1.5px solid var(--line-strong);border-radius:var(--radius-sm);font-size:0.95rem">
+        </div>
+        <div>
+          <h4 style="font-size:1rem">Badge</h4>
+          <div style="margin-top:0.5rem"><span class="sample-tag">WCAG AA</span> <span class="sample-tag">Mobile-first</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-section">
+      <div class="sg-title">Spacing &amp; layout</div>
+      <p class="sg-desc">Spacing uses a rem-based scale, and section padding is fluid: <code>clamp(4.5rem, 8vw, 7rem)</code>. Maximum content widths: <strong>1200px</strong> (wide), <strong>780px</strong> (narrow), <strong>68ch</strong> (prose).</p>
+    </div>
+
+    <div class="sg-section">
+      <div class="sg-title">Accessibility</div>
+      <p class="sg-desc">Visible focus rings using the gold accent, skip link that appears on focus, semantic landmarks, reduced-motion respected. See <a href="/accessibility/" class="inline-link">our accessibility statement</a> for full detail.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Want this for your brand?</span>
+    <h2>Every site ships with its own style guide.</h2>
+    <p>Documented colors, type, spacing, and components, so when you hire someone to design a flyer or a truck wrap, they have a clear reference.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-primary btn-lg">Start a Conversation</a>
+      <a href="/whats-included/" class="btn btn-outline btn-lg">See What's Included</a>
+    </div>
+  </div>
+</section>

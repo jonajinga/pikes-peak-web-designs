@@ -10,17 +10,17 @@ layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>It's a common pattern among small service businesses: a Facebook business page, maybe some Instagram posts, a Google Business Profile — but no actual website. The logic seems sound. Facebook is free. It's where people are. It shows photos, contact info, and reviews. Why pay for a website?</p>
+<p>It's a common pattern among small service businesses: a Facebook business page, maybe some Instagram posts, a Google Business Profile, but no actual website. The logic seems sound. Facebook is free. It's where people are. It shows photos, contact info, and reviews. Why pay for a website?</p>
 
-<p>Here's why that strategy has a serious ceiling — and why the contractors who are consistently busy in competitive markets all have real websites.</p>
+<p>Here's why that strategy has a serious ceiling, and why the contractors who are consistently busy in competitive markets all have real websites.</p>
 
 <h2>Facebook Doesn't Rank on Google</h2>
 
-<p>This is the core problem. When someone searches "electrician near me" or "roof repair [city]" on Google, Facebook pages don't show up meaningfully in those results. Google has its own ecosystem — Google Business Profile, Google Search, Google Maps — and it heavily favors websites that are optimized for search.</p>
+<p>This is the core problem. When someone searches "electrician near me" or "roof repair [city]" on Google, Facebook pages don't show up meaningfully in those results. Google has its own ecosystem; Google Business Profile, Google Search, Google Maps, and it heavily favors websites that are optimized for search.</p>
 
 <p>A business without a website is invisible to anyone who starts their search on Google. And the data is clear: the vast majority of people looking for local service businesses start with a Google search, not by browsing Facebook.</p>
 
-<p>Facebook is a platform for people who are already connected to your network or who see your paid ads. Google is where people go when they have a specific need right now and don't already know who to call. Those are fundamentally different audiences — and the Google audience converts at a much higher rate.</p>
+<p>Facebook is a platform for people who are already connected to your network or who see your paid ads. Google is where people go when they have a specific need right now and don't already know who to call. Those are fundamentally different audiences, and the Google audience converts at a much higher rate.</p>
 
 <h2>You Don't Own Your Facebook Page</h2>
 
@@ -40,11 +40,11 @@ tags: [post]
 
 <h2>Facebook's Organic Reach Has Collapsed</h2>
 
-<p>Organic reach on Facebook — how many of your followers actually see your posts without paid promotion — has declined steadily for years. In 2012, a post to your business page might reach 16% of your followers. Today, that number is often 1–3%.</p>
+<p>Organic reach on Facebook; how many of your followers actually see your posts without paid promotion; has declined steadily for years. In 2012, a post to your business page might reach 16% of your followers. Today, that number is often 1–3%.</p>
 
 <p>Facebook has deliberately throttled organic reach to push businesses toward paid advertising. If you're relying on Facebook posts to reach potential customers, you're on a platform that's actively fighting against your ability to do that for free.</p>
 
-<p>A website with good SEO, by contrast, can send you organic traffic indefinitely once it's ranking — with no ongoing ad spend required.</p>
+<p>A website with good SEO, by contrast, can send you organic traffic indefinitely once it's ranking; with no ongoing ad spend required.</p>
 
 <h2>Instagram and NextDoor Have the Same Problem</h2>
 
@@ -56,7 +56,7 @@ tags: [post]
 
 <div class="post-cta-box">
   <h3>Your website is your best salesperson.</h3>
-  <p>We build sites that work around the clock to bring in leads from Google search — no social media required. $175/month flat rate, everything included.</p>
+  <p>We build sites that work around the clock to bring in leads from Google search. No social media required. $175/month flat rate, everything included.</p>
   <a href="/contact/" class="btn btn-primary">Get Started</a>
 </div>
 
@@ -71,13 +71,13 @@ tags: [post]
   <li>Running targeted paid ads when you want a quick volume boost</li>
 </ul>
 
-<p>But treat it as a supplement to your website, not a replacement for it. Your website is where serious customers land. Your website is what Google sends people to. Your website is what separates you from the hundreds of other contractors who don't have one — or who have one that doesn't work.</p>
+<p>But treat it as a supplement to your website, not a replacement for it. Your website is where serious customers land. Your website is what Google sends people to. Your website is what separates you from the hundreds of other contractors who don't have one, or who have one that doesn't work.</p>
 
 <h2>The Cost Argument Falls Apart Fast</h2>
 
 <p>The most common objection to building a website is cost. "Facebook is free. A website costs money."</p>
 
-<p>One additional customer per month from Google search — a plumbing job, an HVAC repair, a landscaping contract — likely pays for an entire year of a website. Most businesses that switch from Facebook-only to a properly built website with local SEO see that return within the first 60–90 days.</p>
+<p>One additional customer per month from Google search; a plumbing job, an HVAC repair, a landscaping contract; likely pays for an entire year of a website. Most businesses that switch from Facebook-only to a properly built website with local SEO see that return within the first 60–90 days.</p>
 
 <p>The question isn't whether a website costs money. It's whether the revenue it generates exceeds the cost. For nearly every service business, it does.</p>
 

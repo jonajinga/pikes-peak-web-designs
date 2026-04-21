@@ -3,23 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A1F44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#071125" media="(prefers-color-scheme: dark)">
   <title>{{ title if title else site.name }}</title>
   <meta name="description" content="{{ description if description else site.description }}">
   {% if canonicalUrl %}<link rel="canonical" href="{{ canonicalUrl }}">{% else %}<link rel="canonical" href="{{ site.url }}{{ page.url }}">{% endif %}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap">
+  {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+
+  <script>(function(){try{var t=localStorage.getItem('pp-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700|playfair-display:400,500,600,700&display=swap">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/style.css">
-  {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" onerror="this.remove()">
+  <link rel="preload" href="/pagefind/pagefind-ui.js" as="script">
+
   <meta property="og:title" content="{{ title if title else site.name }}">
   <meta property="og:description" content="{{ description if description else site.description }}">
   <meta property="og:type" content="{{ ogType if ogType else 'website' }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:image" content="{{ site.url }}{{ ogImage if ogImage else site.ogImage }}">
+  <meta property="og:site_name" content="{{ site.name }}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title if title else site.name }}">
+  <meta name="twitter:description" content="{{ description if description else site.description }}">
   <meta name="twitter:image" content="{{ site.url }}{{ ogImage if ogImage else site.ogImage }}">
   {% if extraHead %}{{ extraHead | safe }}{% endif %}
+
+  {# Analytics — Umami + Cloudflare (swap the YOUR-*-ID tokens for live site IDs) #}
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR-UMAMI-ID"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR-CLOUDFLARE-BEACON-TOKEN"}'></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -33,6 +47,26 @@
 
 {% include "partials/footer.njk" %}
 
-<script src="/assets/js/main.js"></script>
+<button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-label="Search the site" hidden>
+  <div class="search-modal-backdrop" data-close-search></div>
+  <div class="search-modal-panel">
+    <div class="search-modal-head">
+      <span class="section-label" style="margin:0">Search</span>
+      <button class="search-modal-close" type="button" aria-label="Close search" data-close-search>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="pagefind-search" class="search-panel"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="/assets/js/main.js" defer></script>
+<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>
 </html>

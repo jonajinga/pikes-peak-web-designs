@@ -1,0 +1,91 @@
+---
+layout: layouts/base.njk
+title: "Client Portal | Pikes Peak Web Designs"
+description: "Existing clients: quick forms for content updates, design feedback, emergency support, referrals, and testimonials. One place for everything."
+noindex: true
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Client Portal</span>
+    </nav>
+    <span class="section-label">For existing clients</span>
+    <h1>Everything you need, <em>in one place.</em></h1>
+    <p>Bookmark this page. It's the fastest way to reach us for updates, feedback, and anything urgent. Your request lands in our inbox and we act on it.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:980px">
+    <div class="text-center" style="max-width:640px;margin:0 auto 2.5rem">
+      <span class="section-label">Pick what you need</span>
+      <h2 class="section-title" style="margin-inline:auto">Five short forms. That's it.</h2>
+      <p class="section-subtitle" style="margin-inline:auto">Or just email <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a>; we read every message. The forms just make things faster.</p>
+    </div>
+
+    <div class="portal-grid">
+      <a href="/content-update/" class="portal-card">
+        <span class="portal-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </span>
+        <h3>Content update</h3>
+        <p>New hours, new service, photo swap, typo fix, price change. Usually handled the same business day.</p>
+        <span class="portal-arrow">Start a request &rarr;</span>
+      </a>
+
+      <a href="/emergency/" class="portal-card portal-card--urgent">
+        <span class="portal-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </span>
+        <h3>Emergency support</h3>
+        <p>Site down, wrong info live, security concern. Triaged immediately; usually within the hour during business hours.</p>
+        <span class="portal-arrow">Report an emergency &rarr;</span>
+      </a>
+
+      <a href="/design-feedback/" class="portal-card">
+        <span class="portal-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 0 0 0 20 3 3 0 0 0 3-3 2.5 2.5 0 0 1 2.5-2.5H19a3 3 0 0 0 3-3A10 10 0 0 0 12 2z"/></svg>
+        </span>
+        <h3>Design feedback</h3>
+        <p>Reviewing a preview link? Structured notes get us to the right revisions faster. Unlimited rounds.</p>
+        <span class="portal-arrow">Give feedback &rarr;</span>
+      </a>
+
+      <a href="/refer/" class="portal-card">
+        <span class="portal-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
+        </span>
+        <h3>Refer a business</h3>
+        <p>Know someone who needs a real website? Send them our way. One month of hosting credited to your account if they sign on.</p>
+        <span class="portal-arrow">Make an intro &rarr;</span>
+      </a>
+
+      <a href="/testimonial/" class="portal-card">
+        <span class="portal-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </span>
+        <h3>Leave a testimonial</h3>
+        <p>A few sentences about working with us. You control what (if anything) gets published.</p>
+        <span class="portal-arrow">Share a review &rarr;</span>
+      </a>
+
+      <a href="mailto:{{ site.email }}" class="portal-card portal-card--quiet">
+        <span class="portal-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+        </span>
+        <h3>Just email us</h3>
+        <p>None of the forms fit? Email's fine. <strong>{{ site.email }}</strong> goes to the same place.</p>
+        <span class="portal-arrow">Open email &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">One more thing</span>
+    <h2>You are never stuck with a form.</h2>
+    <p>If you'd rather just call or text, do that. <a href="tel:{{ site.phone }}" style="color:var(--gold-400);font-weight:500">{{ site.phoneDisplay }}</a>. The forms just make your request easier for us to act on; they're a convenience, not a gate.</p>
+  </div>
+</section>
