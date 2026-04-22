@@ -8,28 +8,65 @@
   const $  = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
-  /* -------- Theme toggle -------- */
+  /* -------- Theme system (Light / Auto / Dark) -------- */
   const THEME_KEY = 'pp-theme';
-  const setTheme = (t) => {
-    document.documentElement.setAttribute('data-theme', t);
-    try { localStorage.setItem(THEME_KEY, t); } catch (e) {}
+  const systemPrefersDark = () =>
+    typeof matchMedia !== 'undefined' && matchMedia('(prefers-color-scheme: dark)').matches;
+  const applyTheme = (mode) => {
+    const resolved = mode === 'system' ? (systemPrefersDark() ? 'dark' : 'light') : mode;
+    document.documentElement.setAttribute('data-theme', resolved);
   };
+  const getStoredTheme = () => {
+    try { return localStorage.getItem(THEME_KEY) || 'system'; } catch (e) { return 'system'; }
+  };
+  const setStoredTheme = (mode) => {
+    try {
+      if (mode === 'system') localStorage.removeItem(THEME_KEY);
+      else localStorage.setItem(THEME_KEY, mode);
+    } catch (e) {}
+  };
+  const updateThemeControls = () => {
+    const active = getStoredTheme();
+    $$('.theme-switch-btn').forEach(btn => {
+      const isActive = btn.dataset.themeSet === active;
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
+    });
+  };
+
+  // Segmented control buttons (Light / Auto / Dark)
+  $$('.theme-switch-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.themeSet;
+      setStoredTheme(mode);
+      applyTheme(mode);
+      updateThemeControls();
+    });
+  });
+
+  // Header icon toggles (Light <-> Dark only)
   const toggleTheme = () => {
-    const cur = document.documentElement.getAttribute('data-theme') || 'light';
-    setTheme(cur === 'dark' ? 'light' : 'dark');
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    setStoredTheme(next);
+    applyTheme(next);
+    updateThemeControls();
   };
-  $$('#themeToggle, #themeToggleMobile, .theme-toggle, .mobile-theme-toggle').forEach(btn => {
+  $$('#themeToggle, .theme-toggle:not(.theme-switch-btn)').forEach(btn => {
     btn.addEventListener('click', toggleTheme);
   });
-  // Respect system change if user hasn't set a preference
+
+  // React to system theme changes while on "auto"
   try {
-    const saved = localStorage.getItem(THEME_KEY);
-    if (!saved && matchMedia) {
-      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem(THEME_KEY)) setTheme(e.matches ? 'dark' : 'light');
+    if (typeof matchMedia !== 'undefined') {
+      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (getStoredTheme() === 'system') applyTheme('system');
       });
     }
   } catch (e) {}
+
+  // Initial sync for segmented control
+  updateThemeControls();
 
   /* -------- Mobile Nav -------- */
   const hamburger = $('#hamburger');
@@ -71,6 +108,8 @@
 
   if (hamburger) hamburger.addEventListener('click', toggleMobileNav);
   if (backdrop) backdrop.addEventListener('click', closeMobileNav);
+  const mobileNavClose = $('#mobileNavClose');
+  if (mobileNavClose) mobileNavClose.addEventListener('click', closeMobileNav);
   if (mobileNav) {
     // Close when a nav link is tapped (but not a dropdown toggle or theme toggle)
     mobileNav.querySelectorAll('a').forEach(link =>
@@ -213,42 +252,50 @@
   if (document.readyState === 'complete') initTippy();
   else window.addEventListener('load', initTippy);
 
-  /* -------- Pagefind search (lazy-loaded classic script) -------- */
-  let pagefindLoaded = false;
-  let pagefindLoading = null;
-  const loadPagefind = () => {
-    if (pagefindLoaded) return Promise.resolve();
-    if (pagefindLoading) return pagefindLoading;
-    pagefindLoading = new Promise((resolve, reject) => {
-      if (window.PagefindUI) { pagefindLoaded = true; return resolve(); }
+  /* -------- Pagefind search (lazy-loaded, supports multiple mount points) -------- */
+  let pagefindScriptPromise = null;
+  const mountedSearchElements = new WeakSet();
+
+  const loadPagefindScript = () => {
+    if (window.PagefindUI) return Promise.resolve();
+    if (pagefindScriptPromise) return pagefindScriptPromise;
+    pagefindScriptPromise = new Promise((resolve, reject) => {
       const s = document.createElement('script');
       s.src = '/pagefind/pagefind-ui.js';
-      s.onload = () => {
-        pagefindLoaded = true;
-        try {
-          new window.PagefindUI({
-            element: '#pagefind-search',
-            showSubResults: true,
-            resetStyles: false,
-            showImages: false,
-            placeholder: 'Search articles, pages, and service areas...',
-          });
-        } catch (e) { console.warn('PagefindUI init failed:', e); }
-        resolve();
-      };
+      s.onload = () => resolve();
       s.onerror = () => reject(new Error('pagefind script failed to load'));
       document.head.appendChild(s);
     });
-    return pagefindLoading;
+    return pagefindScriptPromise;
   };
 
-  // Initialize on any page that has an inline #pagefind-search container (e.g. /sitemap/)
-  if ($('#pagefind-search:not(.search-modal #pagefind-search)')) {
-    loadPagefind().catch(() => {
-      const c = $('#pagefind-search');
-      if (c) c.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem">Search isn\'t available yet. Try the <a href="/sitemap/" class="inline-link">site map</a> or <a href="/blog/" class="inline-link">blog index</a>.</p>';
+  const mountPagefind = (selectorOrElement, options = {}) => {
+    return loadPagefindScript().then(() => {
+      const el = typeof selectorOrElement === 'string'
+        ? document.querySelector(selectorOrElement)
+        : selectorOrElement;
+      if (!el || mountedSearchElements.has(el) || !window.PagefindUI) return;
+      try {
+        new window.PagefindUI(Object.assign({
+          element: el,
+          showSubResults: true,
+          resetStyles: false,
+          showImages: false,
+          placeholder: 'Search articles, pages, and service areas...',
+        }, options));
+        mountedSearchElements.add(el);
+      } catch (e) { console.warn('PagefindUI init failed:', e); }
     });
-  }
+  };
+
+  // Mount immediately on any inline #pagefind-search container (e.g. /search/ page)
+  $$('#pagefind-search').forEach(el => {
+    // Skip the one inside the modal (lazy-loaded on modal open)
+    if (el.closest('.search-modal')) return;
+    mountPagefind(el).catch(() => {
+      el.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem">Search isn\'t available yet. Try the <a href="/sitemap/" class="inline-link">site map</a>.</p>';
+    });
+  });
 
   /* -------- Search modal -------- */
   const searchModal = $('#searchModal');
@@ -257,13 +304,17 @@
     searchModal.hidden = false;
     document.body.style.overflow = 'hidden';
     closeMobileNav();
-    loadPagefind().then(() => {
-      const input = searchModal.querySelector('input[type="search"], input[type="text"]');
-      if (input) setTimeout(() => input.focus(), 50);
-    }).catch(() => {
-      const c = searchModal.querySelector('#pagefind-search');
-      if (c) c.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem;padding:1rem">Search isn\'t available yet. Try the <a href="/sitemap/" class="inline-link">site map</a>.</p>';
-    });
+    const modalContainer = searchModal.querySelector('#pagefind-search');
+    if (modalContainer) {
+      mountPagefind(modalContainer, { placeholder: 'Search the site...' })
+        .then(() => {
+          const input = searchModal.querySelector('input[type="search"], input[type="text"]');
+          if (input) setTimeout(() => input.focus(), 50);
+        })
+        .catch(() => {
+          modalContainer.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem;padding:1rem">Search isn\'t available yet. Try the <a href="/sitemap/" class="inline-link">site map</a>.</p>';
+        });
+    }
   };
   const closeSearch = () => {
     if (!searchModal) return;
@@ -274,11 +325,25 @@
   $$('[data-close-search]').forEach(btn => btn.addEventListener('click', closeSearch));
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && searchModal && !searchModal.hidden) closeSearch();
-    // Keyboard shortcut: / opens search (ignore when typing in inputs)
     if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
       e.preventDefault();
       openSearch();
     }
   });
+
+  /* -------- Inline mobile-nav search -------- */
+  const mobileSearchEl = $('#mobileSearch');
+  if (mobileSearchEl) {
+    // Mount on first open so Pagefind only loads when the user actually reaches for search
+    const hamburgerEl = $('#hamburger');
+    const mountOnce = () => {
+      mountPagefind(mobileSearchEl, { placeholder: 'Search the site...' }).catch(() => {
+        mobileSearchEl.innerHTML = '<p style="color:var(--text-muted);font-size:0.88rem;padding:0.5rem 0">Search is offline. Try the <a href="/sitemap/" class="inline-link">site map</a>.</p>';
+      });
+    };
+    if (hamburgerEl) {
+      hamburgerEl.addEventListener('click', mountOnce, { once: true });
+    }
+  }
 
 }());
