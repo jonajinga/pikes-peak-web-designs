@@ -4817,6 +4817,20 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
+/* Outline button on light sections — dark text + dark border for AA contrast */
+.demo-section--cream .demo-btn-outline,
+.demo-section--cream-warm .demo-btn-outline,
+.demo-section--white .demo-btn-outline {
+  color: var(--rc-black);
+  border-color: var(--rc-black);
+}
+.demo-section--cream .demo-btn-outline:hover,
+.demo-section--cream-warm .demo-btn-outline:hover,
+.demo-section--white .demo-btn-outline:hover {
+  background: var(--rc-black);
+  color: #FFFFFF;
+  border-color: var(--rc-black);
+}
 .demo-btn-safety {
   background: var(--rc-safety);
   color: var(--rc-black);
@@ -4894,7 +4908,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   border-radius: 2px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.25);
 }
-.demo-hero-card h3 {
+.demo-hero-card h2 {
   font-size: 1.2rem;
   color: var(--rc-black);
   margin-bottom: 0.5rem;
@@ -5050,14 +5064,14 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--rc-red);
+  color: var(--rc-red-dark);
   margin-bottom: 1.25rem;
 }
 .demo-eyebrow::before {
   content: '';
   width: 42px;
   height: 3px;
-  background: var(--rc-red);
+  background: var(--rc-red-dark);
 }
 .demo-section--dark .demo-eyebrow, .demo-section--red .demo-eyebrow, .demo-section--striped .demo-eyebrow { color: var(--rc-safety); }
 .demo-section--dark .demo-eyebrow::before, .demo-section--red .demo-eyebrow::before, .demo-section--striped .demo-eyebrow::before { background: var(--rc-safety); }
