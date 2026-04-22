@@ -131,7 +131,7 @@ tags: [post]
 
 <div class="post-cta-box">
   <h3>Want a Website That Gets Your Electrical Business Found?</h3>
-  <p>We build custom, custom-coded websites for electricians and electrical contractors across the U.S. and Canada. Fast, licensed-and-insured trust signals built in, local SEO optimized, and ready to convert. $175/month. No large upfront deposit.</p>
+  <p>We build custom-coded websites for electricians and electrical contractors across the U.S. and Canada. Fast, licensed-and-insured trust signals built in, local SEO optimized, and ready to convert. $175/month. No large upfront deposit.</p>
   <a href="/contact/" class="btn btn-primary">Get Started &rarr;</a>
 </div>
 
