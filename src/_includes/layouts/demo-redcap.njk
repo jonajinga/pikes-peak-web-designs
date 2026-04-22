@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1A1F2E">
+  <title>{{ title if title else "Redcap Roofing | Colorado Springs Roofing & Storm Damage Specialists" }}</title>
+  <meta name="description" content="{{ description if description else 'Family-owned Colorado Springs roofing company. Free inspections, insurance claim assistance, GAF Master Elite certified. Same-day estimates, 5-year workmanship warranty.' }}">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://pikespeakwebdesigns.com{{ page.url }}">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700|playfair-display:400,500,600,700&display=swap">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="demo-site">
+
+<div class="demo-banner" role="note" aria-label="Demo site notice">
+  <span class="demo-banner-label">Live Demo &middot; Sample site built by Pikes Peak Web Designs</span>
+  <div class="demo-banner-actions">
+    <a href="/samples/">&larr; Back to Samples</a>
+    <a href="/contact/">Get a site like this &rarr;</a>
+  </div>
+</div>
+
+<header class="demo-header">
+  <div class="demo-header-inner">
+    <a href="/demo/redcap-roofing/" class="demo-logo">
+      <span class="demo-logo-mark">R</span>
+      <span>Redcap <span class="demo-logo-accent">Roofing</span></span>
+    </a>
+
+    <nav class="demo-nav" aria-label="Main navigation">
+      <a href="/demo/redcap-roofing/"{% if page.url == '/demo/redcap-roofing/' %} class="is-active"{% endif %}>Home</a>
+      <a href="/demo/redcap-roofing/services/"{% if page.url | startsWith('/demo/redcap-roofing/services/') or page.url | startsWith('/demo/redcap-roofing/residential/') or page.url | startsWith('/demo/redcap-roofing/commercial/') %} class="is-active"{% endif %}>Services</a>
+      <a href="/demo/redcap-roofing/service-area/"{% if page.url | startsWith('/demo/redcap-roofing/service-area/') %} class="is-active"{% endif %}>Service Area</a>
+      <a href="/demo/redcap-roofing/about/"{% if page.url | startsWith('/demo/redcap-roofing/about/') %} class="is-active"{% endif %}>About</a>
+      <span class="demo-nav-phone">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (719) 555-0143
+      </span>
+      <a href="/demo/redcap-roofing/contact/" class="demo-nav-cta">Free Inspection</a>
+    </nav>
+
+    <button class="demo-menu-toggle" type="button" aria-label="Toggle menu" onclick="document.getElementById('demoMobileNav').classList.toggle('is-open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="demo-mobile-nav" id="demoMobileNav">
+  <a href="/demo/redcap-roofing/">Home</a>
+  <a href="/demo/redcap-roofing/services/">Services</a>
+  <a href="/demo/redcap-roofing/residential/">Residential</a>
+  <a href="/demo/redcap-roofing/commercial/">Commercial</a>
+  <a href="/demo/redcap-roofing/service-area/">Service Area</a>
+  <a href="/demo/redcap-roofing/about/">About</a>
+  <a href="tel:7195550143">(719) 555-0143</a>
+  <a href="/demo/redcap-roofing/contact/" class="demo-nav-cta">Free Inspection</a>
+</div>
+
+<main id="main-content">
+  {{ content | safe }}
+</main>
+
+<footer class="demo-footer">
+  <div class="demo-footer-grid">
+    <div class="demo-footer-brand">
+      <a href="/demo/redcap-roofing/" class="demo-logo">
+        <span class="demo-logo-mark">R</span>
+        <span>Redcap <span class="demo-logo-accent">Roofing</span></span>
+      </a>
+      <p>Family-owned Colorado Springs roofing specialists. Installing, repairing, and replacing roofs along the Front Range since 2009. Licensed, insured, and GAF Master Elite certified.</p>
+      <p style="color:var(--demo-accent);font-weight:600;font-size:0.88rem;margin:0">&#9733;&#9733;&#9733;&#9733;&#9733; 4.9 on Google &middot; 218 reviews</p>
+    </div>
+
+    <div>
+      <h4>Services</h4>
+      <a href="/demo/redcap-roofing/residential/">Residential Roofing</a>
+      <a href="/demo/redcap-roofing/commercial/">Commercial Roofing</a>
+      <a href="/demo/redcap-roofing/services/#storm-damage">Storm Damage</a>
+      <a href="/demo/redcap-roofing/services/#insurance-claims">Insurance Claims</a>
+      <a href="/demo/redcap-roofing/services/#gutters">Gutters</a>
+      <a href="/demo/redcap-roofing/services/#maintenance">Roof Maintenance</a>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <a href="/demo/redcap-roofing/about/">About</a>
+      <a href="/demo/redcap-roofing/service-area/">Service Area</a>
+      <a href="/demo/redcap-roofing/contact/">Contact</a>
+      <a href="/demo/redcap-roofing/contact/">Free Inspection</a>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p style="margin-bottom:0.5rem"><strong style="color:#FFFFFF">Redcap Roofing</strong></p>
+      <a href="tel:7195550143" style="color:var(--demo-accent);font-weight:600">(719) 555-0143</a>
+      <a href="mailto:roof@redcaproofing.example">roof@redcaproofing.example</a>
+      <p style="margin-top:0.5rem;font-size:0.88rem">2100 N. Circle Drive<br>Colorado Springs, CO 80909</p>
+      <p style="font-size:0.82rem;color:rgba(255,255,255,0.58)">Mon&ndash;Fri 7am&ndash;5pm<br>24/7 storm response</p>
+    </div>
+  </div>
+
+  <div class="demo-footer-bottom">
+    <div>&copy; {{ "" | currentYear }} Redcap Roofing &middot; License CO-RF-18432 &middot; GAF Master Elite #ME-4432</div>
+    <div>
+      <a href="/demo/redcap-roofing/contact/">Privacy</a> &middot;
+      <a href="/demo/redcap-roofing/contact/">Terms</a> &middot;
+      <a href="/demo/redcap-roofing/contact/">Accessibility</a> &middot;
+      <a href="https://pikespeakwebdesigns.com/" class="demo-footer-pp" rel="noopener">Site by Pikes Peak Web Designs</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

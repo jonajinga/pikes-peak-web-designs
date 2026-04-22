@@ -1,0 +1,173 @@
+---
+layout: layouts/base.njk
+title: "Changelog | Pikes Peak Web Designs"
+description: "What we've shipped, added, fixed, and improved on pikespeakwebdesigns.com. Updated as we ship, not quarterly."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Changelog</span>
+    </nav>
+    <span class="section-label">Changelog</span>
+    <h1>What we've shipped, <em>in public.</em></h1>
+    <p>A running record of the changes we make to pikespeakwebdesigns.com. Published because we think the cadence and quality of an agency's own site tells you more than any pitch deck.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:820px">
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-22" class="changelog-date">April 22, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Live demo</span>
+      </header>
+      <h2 class="changelog-title">Live demo site + flagship blog post + changelog</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>New:</strong> fully functional seven-page demo site at <a href="/demo/redcap-roofing/" class="inline-link">/demo/redcap-roofing/</a> &mdash; home, services, residential, commercial, service-area, about, contact. Working Web3Forms inquiry form. Lighthouse scores cited on the homepage (test them yourself at <a href="https://pagespeed.web.dev" class="inline-link" rel="noopener">pagespeed.web.dev</a>).</li>
+          <li><strong>New:</strong> this changelog. Published on every ship.</li>
+          <li><strong>New:</strong> flagship blog post &mdash; <a href="/blog/wordpress-alternatives-small-business/" class="inline-link">WordPress Alternatives for Small Business Websites in 2026</a>.</li>
+          <li><strong>Improved:</strong> the <a href="/samples/" class="inline-link">Sample Websites</a> page now prominently features the live demo as a call-out, with a "View live demo" CTA on the Redcap Roofing sample card.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-21" class="changelog-date">April 21, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Credibility</span>
+      </header>
+      <h2 class="changelog-title">Technical Approach page published</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>New:</strong> <a href="/technical-approach/" class="inline-link">Technical Approach</a> &mdash; a ~2,000-word deep dive aimed at developers and evaluators. Covers the full stack, why we use it, performance targets, accessibility pipeline, security posture, and the build &amp; deploy flow.</li>
+          <li><strong>Improved:</strong> wired into the Company mega menu (desktop + mobile), footer, and HTML sitemap.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-21" class="changelog-date">April 21, 2026</time>
+        <span class="changelog-tag">Consistency</span>
+      </header>
+      <h2 class="changelog-title">Form audit &amp; voice cleanup</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>Improved:</strong> standardized every form heading (<code>.form-heading</code> = 1.5rem/700), form intro (<code>.form-intro</code>), callouts (<code>.form-callout</code> + <code>.form-callout--danger</code>), and radio/checkbox groups (<code>.form-radio-group</code> / <code>.form-checkbox-group</code>) across all seven forms: contact, onboarding, content-update, emergency, design-feedback, refer, testimonial.</li>
+          <li><strong>A11y:</strong> radio and checkbox groups now use <code>role="radiogroup"</code>/<code>role="group"</code> + <code>aria-labelledby</code>. Native <code>accent-color</code> ties the brand to the theme.</li>
+          <li><strong>Copy:</strong> renamed every mention of "hand-coded" / "hand-written" / "by hand" to "custom-coded" / "from scratch" &mdash; 13 replacements across 8 files.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-21" class="changelog-date">April 21, 2026</time>
+        <span class="changelog-tag">Mobile</span>
+      </header>
+      <h2 class="changelog-title">Mobile-first audit &amp; revamp</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>Fixed:</strong> hero order on mobile (main copy was appearing below the pricing card &mdash; now above).</li>
+          <li><strong>Fixed:</strong> topbar was stacking awkwardly; now a compact single row with just phone + Client Portal on narrow screens.</li>
+          <li><strong>Fixed:</strong> header was covering the hamburger menu (z-index bug) &mdash; mobile nav now sits above the header with an explicit close button inside the panel.</li>
+          <li><strong>Improved:</strong> every form input forced to 16px on mobile to stop iOS auto-zoom. Complex grids collapse to a single column at ≤720px. Tables scroll horizontally. Container/section padding tightens at ≤480px and again at ≤360px for budget phones.</li>
+          <li><strong>Improved:</strong> every interactive control gets <code>min-height: 44px</code> + <code>touch-action: manipulation</code> (no 300ms tap delay).</li>
+          <li><strong>Improved:</strong> the "Toggle theme" button is now a proper Light / Auto / Dark segmented control with live system-preference tracking.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-20" class="changelog-date">April 20, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Forms</span>
+      </header>
+      <h2 class="changelog-title">Client Portal + 5 operational forms + sample-forms gallery</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>New:</strong> <a href="/client-portal/" class="inline-link">Client Portal</a> &mdash; a hub for existing clients linking to every operational form.</li>
+          <li><strong>New:</strong> five operational forms, each with its own thank-you variant on the shared <a href="/thank-you/" class="inline-link">/thank-you/</a> page:
+            <a href="/content-update/" class="inline-link">content update</a>,
+            <a href="/emergency/" class="inline-link">emergency support</a>,
+            <a href="/design-feedback/" class="inline-link">design feedback</a>,
+            <a href="/refer/" class="inline-link">referral</a>,
+            <a href="/testimonial/" class="inline-link">testimonial</a>.
+          </li>
+          <li><strong>New:</strong> <a href="/sample-forms/" class="inline-link">Sample Forms</a> gallery &mdash; eight industry-specific form previews (HVAC, plumbing, electrician, roofing, contractor, landscaper, home inspector, commercial inspector).</li>
+          <li><strong>Business model clarification:</strong> every client site now ships with 8 operational pages (privacy, accessibility, terms, contact, thank-you, testimonials, style guide, sitemap) plus 8 technical files (robots.txt, humans.txt, sitemap.xml, feed.xml, security.txt, 404, favicon suite, OG/Twitter images). None of it counts against the 10 content pages.</li>
+          <li><strong>New:</strong> lump-sum plan now includes up to 10 content pages (previously 5) &mdash; matches the monthly plan.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-20" class="changelog-date">April 20, 2026</time>
+        <span class="changelog-tag">Infrastructure</span>
+      </header>
+      <h2 class="changelog-title">Search + glossary + Tippy.js + analytics stack</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>New:</strong> site-wide full-text search via <a href="https://pagefind.app" class="inline-link" rel="noopener">Pagefind</a> &mdash; dedicated <a href="/search/" class="inline-link">/search/</a> page, a header modal (tap the search icon or press <kbd>/</kbd>), and an inline search box at the top of the mobile nav.</li>
+          <li><strong>New:</strong> <a href="/glossary/" class="inline-link">/glossary/</a> A&ndash;Z definitions with Tippy.js-powered hover tooltips. Technical terms throughout the site like <span class="term" data-term="A lightweight third-party form backend that handles submissions without needing a server. Fast, spam-resistant, cookie-free.">Web3Forms</span> get inline definitions.</li>
+          <li><strong>New:</strong> <a href="https://instant.page" class="inline-link" rel="noopener">instant.page</a> prefetching for hover-time link priming.</li>
+          <li><strong>New:</strong> analytics stack of <a href="https://umami.is" class="inline-link" rel="noopener">Umami</a> + <a href="https://www.cloudflare.com/web-analytics/" class="inline-link" rel="noopener">Cloudflare Web Analytics</a>. Both cookie-free, both GDPR-compliant by design, no cookie banner needed.</li>
+          <li><strong>Improved:</strong> Pagefind now indexes on every build via an <code>eleventy.after</code> hook so Cloudflare Pages' default preset handles it without a custom build script.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-18" class="changelog-date">April 18, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Design</span>
+      </header>
+      <h2 class="changelog-title">World-class agency overhaul</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>New design system:</strong> Playfair Display + Inter via Bunny Fonts, navy + gold palette, full light/dark theme with no-flash inline script, WCAG AA contrast across every state.</li>
+          <li><strong>New:</strong> <a href="/about/" class="inline-link">About</a> page with founder photo, six principles, four differentiators.</li>
+          <li><strong>New:</strong> <a href="/accessibility/" class="inline-link">Accessibility</a>, <a href="/style-guide/" class="inline-link">Style Guide</a>, <a href="/sitemap/" class="inline-link">HTML Sitemap</a>, <a href="/glossary/" class="inline-link">Glossary</a>, <a href="/owners-guide/" class="inline-link">Owner's Guide</a>, <a href="/terms-of-use/" class="inline-link">Terms of Use</a>, and <a href="/agreement/" class="inline-link">Service Agreement</a>.</li>
+          <li><strong>New:</strong> <a href="/onboarding/" class="inline-link">Onboarding form</a> &mdash; nine-section detailed intake for new clients.</li>
+          <li><strong>Copy:</strong> removed all 532 em-dashes site-wide. Rewrote homepage, about, pricing, how-it-works in conversational tone centered on "we handle the whole website."</li>
+          <li><strong>Nav:</strong> rebuilt with mega menus for Services, Service Areas, Resources, Company. Theme toggle, search, accessible hamburger.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-16" class="changelog-date">April 16, 2026</time>
+        <span class="changelog-tag">Launch</span>
+      </header>
+      <h2 class="changelog-title">Initial site live</h2>
+      <div class="changelog-body">
+        <ul>
+          <li>pikespeakwebdesigns.com launched on <a href="https://pages.cloudflare.com" class="inline-link" rel="noopener">Cloudflare Pages</a>. Repo on <a href="https://github.com/jonajinga/pikes-peak-web-designs" class="inline-link" rel="noopener">GitHub</a>.</li>
+          <li>Initial content: home, about, pricing, how-it-works, what's-included, samples, service-areas, blog (17 posts), 30 service area pages, contact, privacy policy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);font-size:0.92rem;color:var(--text-muted);text-align:center">
+      We publish every substantive change here. For the raw commit history, see the repo on <a href="https://github.com/jonajinga/pikes-peak-web-designs" class="inline-link" rel="noopener">GitHub</a>.
+    </p>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Active development</span>
+    <h2>The website we sell is the website we ship.</h2>
+    <p>If this site is improving weekly, your site will improve weekly. That's the pitch.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-primary btn-lg">Start a Conversation</a>
+      <a href="/technical-approach/" class="btn btn-outline btn-lg">Technical Approach</a>
+    </div>
+  </div>
+</section>
