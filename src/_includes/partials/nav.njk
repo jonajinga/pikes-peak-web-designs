@@ -92,11 +92,15 @@
       </div>
 
       <div class="nav-dropdown">
-        <a href="/about/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/about/') or page.url | startsWith('/style-guide/') or page.url | startsWith('/accessibility/') or page.url | startsWith('/sitemap/') %} class="active" aria-current="page"{% endif %}>Company <span class="nav-arrow">&#9660;</span></a>
+        <a href="/about/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/about/') or page.url | startsWith('/style-guide/') or page.url | startsWith('/technical-approach/') or page.url | startsWith('/accessibility/') or page.url | startsWith('/sitemap/') %} class="active" aria-current="page"{% endif %}>Company <span class="nav-arrow">&#9660;</span></a>
         <div class="mega-menu mega-menu--panel" role="menu" aria-label="Company menu">
           <a href="/about/" class="mega-item" role="menuitem">
             <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
             <span><span class="mega-item-title">About</span><span class="mega-item-desc">A small, U.S.-based team. Meet the person who'll actually build your site.</span></span>
+          </a>
+          <a href="/technical-approach/" class="mega-item" role="menuitem">
+            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+            <span><span class="mega-item-title">Technical Approach</span><span class="mega-item-desc">The stack, the pipeline, and the reasoning behind every site we ship.</span></span>
           </a>
           <a href="/style-guide/" class="mega-item" role="menuitem">
             <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 0 0 0 20 3 3 0 0 0 3-3 2.5 2.5 0 0 1 2.5-2.5H19a3 3 0 0 0 3-3A10 10 0 0 0 12 2z"/></svg></span>
@@ -173,6 +177,7 @@
     <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Company <span class="mobile-arrow" aria-hidden="true"></span></button>
     <div class="mobile-dropdown-menu">
       <a href="/about/">About</a>
+      <a href="/technical-approach/">Technical Approach</a>
       <a href="/style-guide/">Style Guide</a>
       <a href="/accessibility/">Accessibility</a>
       <a href="/sitemap/">Sitemap</a>

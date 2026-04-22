@@ -1,0 +1,208 @@
+---
+layout: layouts/base.njk
+title: "Technical Approach | How We Build | Pikes Peak Web Designs"
+description: "The stack, the pipeline, and the reasoning behind every site we build. 11ty, vanilla CSS, Cloudflare Pages, Pagefind, and Web3Forms. Performance targets, accessibility pipeline, and measurement methods."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Technical Approach</span>
+    </nav>
+    <span class="section-label">How we build</span>
+    <h1>The stack, the pipeline, and <em>the reasoning.</em></h1>
+    <p>Written for developers, agency evaluators, and the technically-minded business owners who want to verify we know what we're doing before they hire us. No hand-waving; the actual tools, targets, and measurements.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:var(--max-prose)">
+    <div class="prose">
+
+      <h2>Table of contents</h2>
+      <ol style="columns:2;column-gap:2rem;margin-top:0.5rem">
+        <li><a href="#stack" class="inline-link">The stack</a></li>
+        <li><a href="#why-static" class="inline-link">Why static over dynamic</a></li>
+        <li><a href="#performance" class="inline-link">Performance targets &amp; methods</a></li>
+        <li><a href="#accessibility" class="inline-link">Accessibility pipeline</a></li>
+        <li><a href="#security" class="inline-link">Security posture</a></li>
+        <li><a href="#build" class="inline-link">Build &amp; deploy pipeline</a></li>
+        <li><a href="#measurement" class="inline-link">Measurement &amp; monitoring</a></li>
+        <li><a href="#faq" class="inline-link">Technical Q&amp;A</a></li>
+      </ol>
+
+      <h2 id="stack">The stack</h2>
+      <p>Every site we ship runs on the same foundation. We pick tools that are fast, maintainable, boring in the best sense, and that don't require us to babysit a runtime.</p>
+
+      <h3>Core</h3>
+      <ul>
+        <li><strong><a href="https://www.11ty.dev" class="inline-link" rel="noopener">Eleventy (11ty) v3 ESM</a></strong> &mdash; our static-site generator. Converts Nunjucks templates, Markdown content, and JavaScript data files into flat HTML at build time.</li>
+        <li><strong><a href="https://mozilla.github.io/nunjucks/" class="inline-link" rel="noopener">Nunjucks</a></strong> &mdash; templating. Supports inheritance, partials, filters, and JavaScript data.</li>
+        <li><strong>Vanilla CSS</strong> with custom properties, <code>clamp()</code>, <code>@container</code> queries where appropriate, and zero framework. One stylesheet, concatenated at build time from partials. No <code>@import</code> in production (it causes request waterfalls).</li>
+        <li><strong>Vanilla JavaScript</strong> &mdash; no framework, no build step for JS, no hydration. Progressive enhancement only. The site works fully without JS.</li>
+      </ul>
+
+      <h3>Fonts &amp; assets</h3>
+      <ul>
+        <li><strong><a href="https://fonts.bunny.net" class="inline-link" rel="noopener">Bunny Fonts</a></strong> &mdash; GDPR-compliant Google Fonts mirror. Zero cookies, zero tracking, instant loading, respects EU privacy law without a cookie banner.</li>
+        <li><strong><a href="https://www.11ty.dev/docs/plugins/image/" class="inline-link" rel="noopener">@11ty/eleventy-img</a></strong> &mdash; generates AVIF, WebP, and JPEG variants with width-based <code>srcset</code>, native lazy loading, and dimension hints to prevent CLS.</li>
+        <li><strong>Favicon suite</strong> &mdash; generated via <code>eleventy-plugin-gen-favicons</code> for every device and browser size.</li>
+      </ul>
+
+      <h3>Functional services</h3>
+      <ul>
+        <li><strong><a href="https://pagefind.app" class="inline-link" rel="noopener">Pagefind</a></strong> &mdash; static, client-side full-text search. Indexed at build time, served as static JSON chunks, no server required. Works on a $0 CDN.</li>
+        <li><strong><a href="https://web3forms.com" class="inline-link" rel="noopener">Web3Forms</a></strong> &mdash; static-site-friendly form backend. Submissions POST directly to their API; we never touch a server-side form handler.</li>
+        <li><strong><a href="https://tippyjs.bootcss.com" class="inline-link" rel="noopener">Tippy.js</a></strong> + <a href="https://popper.js.org" class="inline-link" rel="noopener">Popper</a> &mdash; accessible tooltip library for glossary terms across the site.</li>
+        <li><strong><a href="https://instant.page" class="inline-link" rel="noopener">instant.page</a></strong> &mdash; prefetches links on hover so navigation feels instantaneous. 1.5 KB, no API.</li>
+      </ul>
+
+      <h3>Analytics</h3>
+      <ul>
+        <li><strong><a href="https://umami.is" class="inline-link" rel="noopener">Umami</a></strong> &mdash; open-source, cookie-free analytics. Primary traffic data.</li>
+        <li><strong><a href="https://www.cloudflare.com/web-analytics/" class="inline-link" rel="noopener">Cloudflare Web Analytics</a></strong> &mdash; server-side Real User Monitoring (RUM) for Core Web Vitals. Zero client-side tracking, no cookies, GDPR-compliant by design.</li>
+      </ul>
+
+      <h3>Hosting &amp; DNS</h3>
+      <ul>
+        <li><strong><a href="https://pages.cloudflare.com" class="inline-link" rel="noopener">Cloudflare Pages</a></strong> &mdash; static hosting with global Anycast CDN, automatic HTTPS via free SSL, HTTP/3 by default, unlimited bandwidth on the Free tier.</li>
+        <li><strong>DNS</strong> &mdash; Cloudflare nameservers for clients we host; for clients who prefer to self-manage, we point their existing registrar's DNS at our hosting.</li>
+        <li><strong>Your domain stays in your name.</strong> We never own a client's domain.</li>
+      </ul>
+
+      <h3>Source control &amp; deploy</h3>
+      <ul>
+        <li><strong><a href="https://github.com" class="inline-link" rel="noopener">GitHub</a></strong> &mdash; every client site lives in a private repo. Commit history is available to the client on request.</li>
+        <li><strong>CI/CD</strong> &mdash; Cloudflare Pages' built-in build preset runs <code>npx @11ty/eleventy</code> on every push to <code>main</code>. Preview deploys for every non-<code>main</code> branch. Roll-backs in one click.</li>
+      </ul>
+
+      <h2 id="why-static">Why static over dynamic</h2>
+      <p>For the kind of sites we build &mdash; small-business marketing, service-area pages, blogs &mdash; there's no technical reason to be running a database, a PHP runtime, or a Node server on the critical path of a page request. Every layer of runtime infrastructure we remove is a layer that can't break, can't be hacked, and can't introduce latency.</p>
+
+      <h3>WordPress</h3>
+      <p>WordPress powers ~40% of the web, runs on PHP + MySQL, and is the single most-attacked web platform by a large margin. Every plugin adds attack surface. Every missed update is a vulnerability. Core Web Vitals are a constant fight because of bloated themes, render-blocking scripts, and unoptimized database queries. Even well-tuned WordPress sites struggle to hit the Good threshold on Core Web Vitals without aggressive caching plugins and a page builder that undoes half the optimization.</p>
+      <p>We don't build on WordPress because the upside (a familiar admin panel) doesn't outweigh the downsides (ongoing maintenance, recurring vulnerabilities, performance ceilings, runtime dependence on a PHP host). Clients do not miss the admin panel once they realize they can just email us what they want changed.</p>
+
+      <h3>Next.js, Astro, SvelteKit, Remix</h3>
+      <p>Modern meta-frameworks are excellent tools for application-shaped problems &mdash; apps with user accounts, real-time state, interactive dashboards, e-commerce with live inventory. For a six-to-twelve-page service-business website, they are overkill. They add a JavaScript runtime that the client never sees the benefit of, they shift complexity onto the developer (and therefore onto the recurring bill), and they require a Node server or a serverless platform on the hot path, which introduces cold starts, cost variability, and another thing to monitor.</p>
+      <p>Astro is the closest analogue to what we'd reach for if 11ty didn't exist, and its island architecture is elegant. We stay on 11ty because the sites we build don't need islands &mdash; they need clean HTML and CSS served from a CDN with sub-100ms TTFB, and 11ty ships exactly that with less abstraction.</p>
+
+      <h3>Squarespace, Wix, Webflow, Framer</h3>
+      <p>Hosted builders are great for absolute beginners and for businesses that want a website but never plan to grow one. The tradeoff is you're locked into a proprietary platform, pay $16&ndash;$50/month forever just to keep the lights on, and your SEO is capped by the platform's decisions. Switching away typically means rebuilding. We'd rather our clients own the site outright (or lease it from us with an always-available buyout) than build on rented infrastructure.</p>
+
+      <h2 id="performance">Performance targets &amp; methods</h2>
+      <p>We target the Good threshold on every Core Web Vital for both mobile and desktop, on every page of every site we ship. Specifically:</p>
+      <ul>
+        <li><strong>Largest Contentful Paint (LCP):</strong> &lt; 1.0s (Google's Good threshold is &lt; 2.5s)</li>
+        <li><strong>Cumulative Layout Shift (CLS):</strong> &lt; 0.05 (Good: &lt; 0.1)</li>
+        <li><strong>Interaction to Next Paint (INP):</strong> &lt; 100ms (Good: &lt; 200ms)</li>
+        <li><strong>Total Blocking Time (TBT):</strong> &lt; 100ms</li>
+        <li><strong>First Contentful Paint (FCP):</strong> &lt; 800ms</li>
+        <li><strong>Google PageSpeed score:</strong> 95&ndash;100 on mobile and desktop</li>
+      </ul>
+
+      <h3>How we hit those numbers</h3>
+      <ul>
+        <li><strong>Zero render-blocking JavaScript.</strong> All scripts use <code>defer</code> or are type="module". We ship under 10KB of gzipped JS on a typical page.</li>
+        <li><strong>Responsive images with AVIF + WebP fallback.</strong> Every image has explicit width and height attributes to prevent layout shift, native <code>loading="lazy"</code> for below-the-fold content, and <code>decoding="async"</code> for progressive rendering.</li>
+        <li><strong>System font fallback stack.</strong> Bunny Fonts preconnect + <code>font-display: swap</code> means the page renders in a system font if custom fonts take &gt;100ms, eliminating flash-of-invisible-text.</li>
+        <li><strong>CSS concatenated at build.</strong> One stylesheet, one HTTP request. No <code>@import</code> cascading requests. Inline cache-busting via query string based on content hash (<code>?v=4a701c154dc9</code>).</li>
+        <li><strong>Minified HTML, CSS, JS.</strong> Production builds run through <code>html-minifier-terser</code> with <code>minifyCSS</code> and <code>minifyJS</code> enabled.</li>
+        <li><strong>Cloudflare's edge.</strong> Static files served from the CDN closest to the visitor. HTTP/3, Brotli compression, and Early Hints where supported.</li>
+        <li><strong>No web fonts on Firstline content.</strong> The hero uses system fonts as a fallback so the first paint always has readable text.</li>
+      </ul>
+
+      <h2 id="accessibility">Accessibility pipeline</h2>
+      <p>Our working baseline is <span class="term" data-term="Web Content Accessibility Guidelines, version 2.2, Level AA. The W3C accessibility standard for web content.">WCAG 2.2 Level AA</span>. We test against it on every site before launch and every time we ship a significant change. Methods:</p>
+      <ul>
+        <li><strong>Automated audits:</strong> Lighthouse (built into Chrome DevTools), <a href="https://www.deque.com/axe/devtools/" class="inline-link" rel="noopener">axe DevTools</a>, and <a href="https://wave.webaim.org" class="inline-link" rel="noopener">WAVE</a> from WebAIM. We aim for zero criticals and zero serious issues.</li>
+        <li><strong>Keyboard-only navigation</strong> from the first focusable element to the last, on every page. Every interactive control must be reachable and operable.</li>
+        <li><strong>Screen reader testing:</strong> VoiceOver on macOS and iOS, NVDA on Windows. We read every page top to bottom with the screen reader to catch landmark, heading, and label issues.</li>
+        <li><strong>Contrast verification</strong> using <a href="https://www.tpgi.com/color-contrast-checker/" class="inline-link" rel="noopener">TPGi Colour Contrast Analyser</a> against the 4.5:1 (normal text) and 3:1 (large text / UI components) thresholds. Every text/background combination in both light and dark modes.</li>
+        <li><strong>Zoom testing:</strong> up to 200% browser zoom without horizontal scrolling and without content clipping.</li>
+        <li><strong>Reduced-motion:</strong> every animation and transition is disabled when <code>prefers-reduced-motion: reduce</code> is set. We test this with the OS-level setting enabled.</li>
+      </ul>
+
+      <h3>What that means in practice</h3>
+      <ul>
+        <li>Semantic HTML &mdash; proper <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code> landmarks, heading order, lists that are lists, buttons that are buttons.</li>
+        <li>Skip-to-content link as the first focusable element.</li>
+        <li>Visible focus rings (3px gold ring at 3px offset) on every interactive control.</li>
+        <li>44&times;44 CSS pixel minimum tap targets.</li>
+        <li>Form labels bound to inputs via <code>for</code>/<code>id</code>. Errors announced via <code>role="alert"</code>.</li>
+        <li>Radio/checkbox groups wrapped in <code>role="radiogroup"</code> / <code>role="group"</code> with <code>aria-labelledby</code> pointing at the visible label.</li>
+        <li>Decorative SVGs get <code>aria-hidden="true"</code> and <code>focusable="false"</code>. Meaningful images get real <code>alt</code>.</li>
+        <li>Color is never the only way information is conveyed.</li>
+      </ul>
+
+      <h2 id="security">Security posture</h2>
+      <p>The easiest-to-hack code is the code that doesn't exist. We keep our attack surface close to zero by staying static:</p>
+      <ul>
+        <li><strong>No server-side runtime.</strong> No PHP, no Node runtime, no application server on the hot path. There's nothing to RCE, no database to SQL-inject, no session store to hijack.</li>
+        <li><strong>No plugins.</strong> WordPress plugin ecosystems are a decade-long source of CVEs. We have zero of them.</li>
+        <li><strong>No database.</strong> No credentials to leak, no backups to orchestrate, no PII retained on infrastructure we control (Web3Forms submissions flow straight to client email).</li>
+        <li><strong>HTTPS on day one.</strong> Automatic SSL via Cloudflare's managed certs. HSTS headers with preload.</li>
+        <li><strong>Content Security Policy &amp; security headers</strong> configured via <code>_headers</code> for every site.</li>
+        <li><strong><code>security.txt</code></strong> shipped on every site so researchers know how to responsibly disclose.</li>
+        <li><strong>Dependabot</strong> on every repo for alerting on npm package vulnerabilities, though our surface area is small (a handful of build-time dev dependencies, zero runtime deps).</li>
+      </ul>
+
+      <h2 id="build">Build &amp; deploy pipeline</h2>
+      <ol>
+        <li><strong>Commit</strong> &mdash; changes get reviewed and committed to the <code>main</code> branch on GitHub. We sign every commit.</li>
+        <li><strong>CI trigger</strong> &mdash; Cloudflare Pages detects the push and spins up a clean build container.</li>
+        <li><strong>Build</strong> &mdash; <code>npx @11ty/eleventy</code> compiles templates, processes images into AVIF/WebP/JPEG responsive variants, generates favicons, writes the RSS feed, writes the sitemap.xml and HTML sitemap.</li>
+        <li><strong>Minification</strong> &mdash; in production, HTML/CSS/JS runs through <code>html-minifier-terser</code> with conservative settings (preserves semantic whitespace where it matters).</li>
+        <li><strong>Pagefind indexing</strong> &mdash; runs in an <code>eleventy.after</code> hook so the Cloudflare Pages preset works out of the box. Generates <code>/pagefind/*</code> with pre-indexed search chunks.</li>
+        <li><strong>Cache busting</strong> &mdash; <code>eleventy-auto-cache-buster</code> appends a content-hash query string to every stylesheet and script reference so upgrades ship immediately to returning visitors without stale assets.</li>
+        <li><strong>Deploy</strong> &mdash; Cloudflare pushes the build to the global edge in under 60 seconds. A preview URL is generated for every non-<code>main</code> branch so we can share in-progress work with the client.</li>
+        <li><strong>Roll-back</strong> &mdash; every prior deploy remains available; if anything is wrong we revert in one click.</li>
+      </ol>
+
+      <h2 id="measurement">Measurement &amp; monitoring</h2>
+      <ul>
+        <li><strong>Core Web Vitals</strong> via Cloudflare's server-side RUM. Real-user data, aggregated across the entire visitor population, no client-side cookies needed.</li>
+        <li><strong>Uptime monitoring</strong> via Cloudflare's status API plus an external ping monitor (UptimeRobot) that alerts us by SMS if the site is down.</li>
+        <li><strong>Google Search Console</strong> connected at launch for every client, so we can see actual search impressions, clicks, and Core Web Vitals reports from Google's own crawl data.</li>
+        <li><strong>Bing Webmaster Tools</strong> &mdash; underrated, still worth ~10&ndash;15% of service-business traffic depending on the industry.</li>
+        <li><strong>Lighthouse CI</strong> on major changes to catch regressions in performance or accessibility before they go live.</li>
+      </ul>
+
+      <h2 id="faq">Technical Q&amp;A</h2>
+
+      <h3>Why 11ty over Astro?</h3>
+      <p>Astro is a great tool; if it had existed when we started we might have picked it. Today, for service-business marketing sites, 11ty has less abstraction overhead, a stabler plugin ecosystem for our use case, and equivalent output. We'd evaluate Astro case-by-case for anything that genuinely benefits from islands; most of our builds don't.</p>
+
+      <h3>Why no JavaScript framework?</h3>
+      <p>Our sites don't have application state. There's no shopping cart, no multi-step form with validation across pages, no dashboard. Everything a framework is good at, we don't need. Progressive enhancement with a few hundred lines of vanilla JS covers every interaction on our sites &mdash; theme toggle, mobile menu, FAQ accordion, form submission, site search, glossary tooltips. A framework would add 30&ndash;100 KB of runtime and force us to care about hydration; that's a large cost for no benefit.</p>
+
+      <h3>How do you handle a blog with 200+ posts?</h3>
+      <p>11ty handles it fine; we've done it. Build times scale roughly linearly with post count. A 200-post blog builds in under 10 seconds on Cloudflare's CI. Incremental builds (the <code>--incremental</code> flag) are under a second locally while authoring. Pagefind indexes the entire corpus in milliseconds because it operates on the static HTML, not the source templates.</p>
+
+      <h3>What if we need a contact form that does something other than email?</h3>
+      <p>Web3Forms covers roughly 95% of small-business form needs. For the other 5% &mdash; CRM integrations, automated routing by zip code, conditional logic between steps &mdash; we use Cloudflare Workers (serverless edge functions). Still no server to maintain. For anything genuinely app-shaped (booking calendars, live chat, client portals with accounts), we integrate purpose-built SaaS (Calendly, Tawk.to, etc.) rather than building from scratch.</p>
+
+      <h3>Can I see the source code before I buy?</h3>
+      <p>Yes. The site you're reading is representative of what we build. You can view source in your browser. We're happy to share the GitHub repo of this site on request.</p>
+
+      <h3>What's in your build pipeline that a typical agency doesn't have?</h3>
+      <p>Honestly, nothing exotic. Our edge is discipline, not novelty. We commit more time to measurement (Lighthouse CI, real-user monitoring, manual accessibility testing) than to shiny tooling. The right tools for a marketing site have been stable for five years; we've just chosen to use them well.</p>
+
+      <h3>What's the worst thing about your approach?</h3>
+      <p>Dynamic content from non-technical clients is a weak point. If a client's use case genuinely needs "edit in a browser" content management (say, a 30-person team that each needs to write blog posts), our "email us what to change" model doesn't scale. In that narrow case we either bolt on a headless CMS (Sanity, Decap) or recommend the client work with an agency that specializes in WordPress or a full-fledged CMS. Most small-business clients don't have this problem; most small-business "CMS needs" are better served by three emails a month to the person who built the site.</p>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Still evaluating?</span>
+    <h2>The code is the pitch.</h2>
+    <p>If you want to view source, pull the GitHub repo, run Lighthouse yourself, or ask specific technical questions, we're happy to engage at that level. No sales filter.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-primary btn-lg">Ask a technical question</a>
+      <a href="mailto:{{ site.email }}" class="btn btn-outline btn-lg">Email directly</a>
+    </div>
+  </div>
+</section>
