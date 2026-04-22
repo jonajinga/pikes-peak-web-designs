@@ -4474,9 +4474,10 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   letter-spacing: 0.02em;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: center;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  text-align: center;
   position: sticky;
   top: 0;
   z-index: 200;
