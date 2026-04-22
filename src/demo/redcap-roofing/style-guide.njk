@@ -1,0 +1,147 @@
+---
+layout: layouts/demo-redcap.njk
+title: "Style Guide | Redcap Roofing"
+description: "Redcap Roofing's brand guidelines, color palette, typography, and component library. Internal reference for the website's design system."
+permalink: /demo/redcap-roofing/style-guide/
+---
+
+<section class="demo-page-hero">
+  <div class="demo-container">
+    <nav class="demo-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/redcap-roofing/">Home</a><span class="sep">/</span><span>Style Guide</span>
+    </nav>
+    <h1>Brand &amp; <em>Style Guide</em></h1>
+    <p>The design system behind redcaproofing.example. Every color, every typeface, every component &mdash; on one page so nothing drifts over time.</p>
+  </div>
+</section>
+
+<section class="demo-section demo-section--white">
+  <div class="demo-container">
+    <span class="demo-eyebrow">01 &middot; Palette</span>
+    <h2 class="demo-h2">Color</h2>
+    <p class="demo-lead" style="max-width:60ch">Industrial, high-contrast, legible at a glance. Red signals urgency (call now, storm damage, emergency). Safety yellow highlights information. Everything else keeps out of the way.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:2rem">
+      <div style="background:#DC2626;color:#fff;padding:1.5rem;border:1px solid #991B1B">
+        <div style="font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">Redcap Red</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.82rem;margin-top:0.5rem">#DC2626</div>
+        <div style="font-size:0.82rem;margin-top:0.25rem;opacity:0.9">Primary &middot; CTAs, accents</div>
+      </div>
+      <div style="background:#0F131D;color:#fff;padding:1.5rem;border:1px solid #0F131D">
+        <div style="font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">Industrial Black</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.82rem;margin-top:0.5rem">#0F131D</div>
+        <div style="font-size:0.82rem;margin-top:0.25rem;opacity:0.8">Dark sections, header</div>
+      </div>
+      <div style="background:#F7D046;color:#14171F;padding:1.5rem;border:1px solid #D9B229">
+        <div style="font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">Safety Yellow</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.82rem;margin-top:0.5rem">#F7D046</div>
+        <div style="font-size:0.82rem;margin-top:0.25rem;opacity:0.9">Highlights, warnings</div>
+      </div>
+      <div style="background:#F7F5F0;color:#14171F;padding:1.5rem;border:1px solid #E5E0D5">
+        <div style="font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">Warm Cream</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.82rem;margin-top:0.5rem">#F7F5F0</div>
+        <div style="font-size:0.82rem;margin-top:0.25rem;opacity:0.75">Page background</div>
+      </div>
+      <div style="background:#14171F;color:#fff;padding:1.5rem;border:1px solid #14171F">
+        <div style="font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">Text Primary</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.82rem;margin-top:0.5rem">#14171F</div>
+        <div style="font-size:0.82rem;margin-top:0.25rem;opacity:0.8">Body copy</div>
+      </div>
+      <div style="background:#4E5460;color:#fff;padding:1.5rem;border:1px solid #4E5460">
+        <div style="font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">Text Muted</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.82rem;margin-top:0.5rem">#4E5460</div>
+        <div style="font-size:0.82rem;margin-top:0.25rem;opacity:0.85">Secondary text</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section demo-section--cream">
+  <div class="demo-container">
+    <span class="demo-eyebrow">02 &middot; Type</span>
+    <h2 class="demo-h2">Typography</h2>
+    <p class="demo-lead" style="max-width:60ch">Oswald for headlines &mdash; condensed, confident, the right aesthetic for a trade business. IBM Plex Sans for body &mdash; clean, readable, work-site practical. IBM Plex Mono for code and technical callouts.</p>
+
+    <div style="background:#fff;border:1px solid var(--rc-line);border-left:4px solid var(--rc-red);padding:2rem;margin-top:2rem">
+      <div style="font-family:'Oswald',sans-serif;font-size:clamp(2.5rem, 6vw, 4.5rem);font-weight:600;line-height:1;color:var(--rc-black)">H1 Heading Display</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--rc-text-muted);margin-top:0.5rem">Oswald 600 &middot; clamp(2.5rem, 6vw, 4.5rem) &middot; 1.1 line-height</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--rc-line);border-left:4px solid var(--rc-red);padding:2rem;margin-top:1rem">
+      <div style="font-family:'Oswald',sans-serif;font-size:clamp(1.75rem, 3.5vw, 2.5rem);font-weight:600;line-height:1.15;color:var(--rc-black)">H2 Section Heading</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--rc-text-muted);margin-top:0.5rem">Oswald 600 &middot; clamp(1.75rem, 3.5vw, 2.5rem)</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--rc-line);border-left:4px solid var(--rc-safety);padding:2rem;margin-top:1rem">
+      <div style="font-family:'IBM Plex Sans',sans-serif;font-size:1rem;line-height:1.55;color:var(--rc-text);max-width:60ch">Body copy. IBM Plex Sans at 1rem. This is what paragraphs and most standard content looks like on the site. Line length is capped around 60 characters for readability, line height 1.55 for comfortable scanning on long-form pages like services and about.</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--rc-text-muted);margin-top:0.5rem">IBM Plex Sans 400 &middot; 1rem &middot; 1.55 line-height</div>
+    </div>
+    <div style="background:#0F131D;color:#fff;border:1px solid #0F131D;padding:2rem;margin-top:1rem">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.92rem;color:var(--rc-safety)">const roof = { type: 'GAF Timberline HDZ', warranty: '50yr' };</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:rgba(255,255,255,0.6);margin-top:0.5rem">IBM Plex Mono 400 &middot; for technical callouts only</div>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section demo-section--white">
+  <div class="demo-container">
+    <span class="demo-eyebrow">03 &middot; Components</span>
+    <h2 class="demo-h2">Buttons</h2>
+
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;align-items:flex-start">
+      <a href="#" class="demo-btn demo-btn-primary">Get a Free Inspection</a>
+      <a href="#" class="demo-btn demo-btn-outline">Call (719) 555-0143</a>
+      <a href="#" class="demo-btn demo-btn-dark">See our work</a>
+    </div>
+
+    <h2 class="demo-h2" style="margin-top:3rem">Eyebrow labels</h2>
+    <div style="margin-top:1rem">
+      <span class="demo-eyebrow">Colorado Springs since 2009</span>
+    </div>
+
+    <h2 class="demo-h2" style="margin-top:3rem">Stats block</h2>
+    <div class="demo-stats" style="margin-top:1rem">
+      <div class="demo-stat">
+        <div class="demo-stat-num">218</div>
+        <div class="demo-stat-label">Google Reviews</div>
+      </div>
+      <div class="demo-stat">
+        <div class="demo-stat-num">4.9</div>
+        <div class="demo-stat-label">Average Rating</div>
+      </div>
+      <div class="demo-stat">
+        <div class="demo-stat-num">17</div>
+        <div class="demo-stat-label">Years in Business</div>
+      </div>
+      <div class="demo-stat">
+        <div class="demo-stat-num">5yr</div>
+        <div class="demo-stat-label">Workmanship Warranty</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section demo-section--cream">
+  <div class="demo-container demo-container--narrow">
+    <span class="demo-eyebrow">04 &middot; Voice</span>
+    <h2 class="demo-h2">Tone &amp; copy rules</h2>
+
+    <div class="demo-prose">
+      <ul>
+        <li><strong>Plain language, blue-collar confident.</strong> We speak like people who've been on roofs for twenty years, not like a marketing agency.</li>
+        <li><strong>Specifics over adjectives.</strong> Not "the best roofers in town" &mdash; "$2M liability, license CO-RF-18432, 17 full-time W-2 employees."</li>
+        <li><strong>Own the tradeoffs.</strong> We're not the cheapest and we say so. Trust is earned by being honest about what we aren't.</li>
+        <li><strong>No exclamation marks.</strong> Ever. A calm voice during a storm is the product.</li>
+        <li><strong>No industry jargon without translation.</strong> If we say "ice-and-water shield," we explain what it does on first use.</li>
+        <li><strong>Phone number is always clickable and always prominent.</strong> On desktop and on mobile. Calls close deals, not forms.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section demo-section--dark">
+  <div class="demo-container" style="text-align:center">
+    <span class="demo-eyebrow">05 &middot; Credit</span>
+    <h2 class="demo-h2" style="color:#fff">Site by Pikes Peak Web Designs</h2>
+    <p class="demo-lead" style="color:rgba(255,255,255,0.78);max-width:60ch;margin:1rem auto 2rem">This entire site (code, design, hosting, maintenance) is built and run by Pikes Peak Web Designs for Redcap Roofing. $0 down, $175/month flat.</p>
+    <a href="/" class="demo-btn demo-btn-primary">Visit Pikes Peak Web Designs</a>
+  </div>
+</section>

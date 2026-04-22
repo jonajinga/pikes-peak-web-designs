@@ -262,26 +262,26 @@ description: "Family-owned Colorado Springs roofing company. Free inspections, i
   <div class="demo-container demo-container--narrow" style="text-align:center">
     <span class="demo-eyebrow" style="color:var(--navy-700)">Pikes Peak Web Designs</span>
     <h2 class="demo-h2" style="color:var(--navy-900);margin-bottom:0.75rem">This is what a <em style="color:var(--gold-600);font-style:italic">custom-coded site</em> looks like.</h2>
-    <p class="demo-lead" style="margin:0 auto 2rem;max-width:52ch">This entire site is a live demo. Zero WordPress, zero plugins, zero database. It was built, hosted, and shipped by Pikes Peak Web Designs. The scores below are real &mdash; test them yourself.</p>
+    <p class="demo-lead" style="margin:0 auto 2rem;max-width:56ch">This entire site is a live demo. Zero WordPress, zero plugins, zero database. It was built, hosted, and shipped by Pikes Peak Web Designs. The scores below are the actual PageSpeed numbers &mdash; pulled today, not cherry-picked.</p>
 
     <div class="lighthouse-card">
       <div class="lighthouse-head">
-        <h3>Google Lighthouse &middot; Mobile</h3>
-        <code class="lighthouse-url">redcap-roofing demo</code>
+        <h3>Google PageSpeed &middot; Mobile</h3>
+        <code class="lighthouse-url">/demo/redcap-roofing/</code>
       </div>
       <div class="lighthouse-scores">
         <div class="lighthouse-score">
           <div class="lighthouse-ring">
-            <div class="lighthouse-ring-circle" style="background:conic-gradient(#0CCE6B 0% 98%, rgba(255,255,255,0.1) 98% 100%)">
-              <span class="lighthouse-ring-number">98</span>
+            <div class="lighthouse-ring-circle" style="background:conic-gradient(#0CCE6B 0% 94%, rgba(255,255,255,0.1) 94% 100%)">
+              <span class="lighthouse-ring-number">94</span>
             </div>
           </div>
           <div class="lighthouse-label">Performance</div>
         </div>
         <div class="lighthouse-score">
           <div class="lighthouse-ring">
-            <div class="lighthouse-ring-circle" style="background:conic-gradient(#0CCE6B 0% 100%, rgba(255,255,255,0.1) 100% 100%)">
-              <span class="lighthouse-ring-number">100</span>
+            <div class="lighthouse-ring-circle" style="background:conic-gradient(#0CCE6B 0% 98%, rgba(255,255,255,0.1) 98% 100%)">
+              <span class="lighthouse-ring-number">98</span>
             </div>
           </div>
           <div class="lighthouse-label">Accessibility</div>
@@ -296,16 +296,16 @@ description: "Family-owned Colorado Springs roofing company. Free inspections, i
         </div>
         <div class="lighthouse-score">
           <div class="lighthouse-ring">
-            <div class="lighthouse-ring-circle" style="background:conic-gradient(#0CCE6B 0% 100%, rgba(255,255,255,0.1) 100% 100%)">
-              <span class="lighthouse-ring-number">100</span>
+            <div class="lighthouse-ring-circle" style="background:conic-gradient(#FFA400 0% 58%, rgba(255,255,255,0.1) 58% 100%)">
+              <span class="lighthouse-ring-number">58<sup style="font-size:0.45em;color:#FFA400">*</sup></span>
             </div>
           </div>
           <div class="lighthouse-label">SEO</div>
         </div>
       </div>
-      <div class="lighthouse-foot">
-        <span>LCP 0.8s &middot; CLS 0.02 &middot; INP 48ms</span>
-        <span>Verify: <a href="https://pagespeed.web.dev" rel="noopener" style="color:var(--gold-400);text-decoration:underline">pagespeed.web.dev</a></span>
+      <div class="lighthouse-foot" style="flex-direction:column;align-items:flex-start;gap:0.5rem">
+        <span style="font-size:0.82rem;line-height:1.5;color:rgba(255,255,255,0.78)"><strong style="color:#FFA400">*SEO 58 is intentional.</strong> This demo sets <code style="color:#FFA400">meta robots="noindex"</code> so Google won't rank a fake company. Lighthouse penalizes noindex by design &mdash; on real client sites that flag is removed and SEO returns 100.</span>
+        <span>Run it yourself: <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fpikespeakwebdesigns.com%2Fdemo%2Fredcap-roofing%2F" rel="noopener" target="_blank" style="color:var(--gold-400);text-decoration:underline">pagespeed.web.dev</a></span>
       </div>
     </div>
 
