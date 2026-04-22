@@ -19,8 +19,8 @@ noindex: true
 <section class="section">
   <div class="container" style="max-width:720px">
     <div class="contact-form-card">
-      <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:0.35rem">Tell us what to change</h2>
-      <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:1.5rem">Be as specific or as rough as you like. We'll reply to confirm and flag anything that needs clarification.</p>
+      <h2 class="form-heading">Tell us what to change</h2>
+      <p class="form-intro">Be as specific or as rough as you like. We'll reply to confirm and flag anything that needs clarification.</p>
 
       <form data-web3forms data-redirect="/thank-you/?type=content-update" action="https://api.web3forms.com/submit" method="POST" class="form">
         <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
@@ -74,13 +74,13 @@ noindex: true
         </div>
 
         <button type="submit" class="btn btn-primary btn-full btn-lg">Send update request</button>
-        <p class="form-hint" style="text-align:center;margin-top:0.75rem">Prefer email or phone? <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a> or <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. All three go to the same place.</p>
+        <p class="form-hint">Prefer email or phone? <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a> or <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. All three go to the same place.</p>
       </form>
     </div>
 
-    <div style="margin-top:2.5rem;padding:1.5rem;background:var(--bg-alt-2);border:1px solid var(--line);border-radius:var(--radius)">
-      <h3 style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem">Is it urgent or broken?</h3>
-      <p style="font-size:0.92rem;color:var(--text-muted);margin-bottom:1rem">If the site is down or displaying something harmful to your business right now, use the emergency form instead so we can triage it faster.</p>
+    <div class="form-callout">
+      <h3>Is it urgent or broken?</h3>
+      <p>If the site is down or displaying something harmful to your business right now, use the emergency form instead so we can triage it faster.</p>
       <a href="/emergency/" class="btn btn-outline-dark">Emergency support &rarr;</a>
     </div>
   </div>

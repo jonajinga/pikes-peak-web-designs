@@ -18,8 +18,8 @@ description: "Leave a testimonial for Pikes Peak Web Designs. We read every one,
 <section class="section">
   <div class="container" style="max-width:720px">
     <div class="contact-form-card">
-      <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:0.35rem">Share your experience</h2>
-      <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:1.5rem">A few sentences is plenty. You control what's public: we never post anything without your explicit yes.</p>
+      <h2 class="form-heading">Share your experience</h2>
+      <p class="form-intro">A few sentences is plenty. You control what's public: we never post anything without your explicit yes.</p>
 
       <form data-web3forms data-redirect="/thank-you/?type=testimonial" action="https://api.web3forms.com/submit" method="POST" class="form">
         <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
@@ -72,12 +72,12 @@ description: "Leave a testimonial for Pikes Peak Web Designs. We read every one,
         </div>
 
         <div class="form-group">
-          <label>May we publish this?</label>
-          <div style="display:flex;flex-direction:column;gap:0.5rem;padding:0.5rem 0;font-size:0.92rem">
-            <label style="display:inline-flex;gap:0.4rem;align-items:flex-start;font-weight:400"><input type="radio" name="publishPermission" value="full" style="margin-top:0.25rem"> Yes; with my name, business, and city</label>
-            <label style="display:inline-flex;gap:0.4rem;align-items:flex-start;font-weight:400"><input type="radio" name="publishPermission" value="first-name" style="margin-top:0.25rem"> Yes; but use only my first name and city</label>
-            <label style="display:inline-flex;gap:0.4rem;align-items:flex-start;font-weight:400"><input type="radio" name="publishPermission" value="anonymous" style="margin-top:0.25rem"> Yes; but keep me anonymous ("a Colorado contractor")</label>
-            <label style="display:inline-flex;gap:0.4rem;align-items:flex-start;font-weight:400"><input type="radio" name="publishPermission" value="no" style="margin-top:0.25rem"> No; this is just between us</label>
+          <label id="publishPermissionLabel">May we publish this?</label>
+          <div class="form-radio-group" role="radiogroup" aria-labelledby="publishPermissionLabel">
+            <label><input type="radio" name="publishPermission" value="full"> Yes, with my name, business, and city</label>
+            <label><input type="radio" name="publishPermission" value="first-name"> Yes, but use only my first name and city</label>
+            <label><input type="radio" name="publishPermission" value="anonymous"> Yes, but keep me anonymous ("a Colorado contractor")</label>
+            <label><input type="radio" name="publishPermission" value="no"> No, this is just between us</label>
           </div>
         </div>
 
@@ -91,7 +91,7 @@ description: "Leave a testimonial for Pikes Peak Web Designs. We read every one,
         </div>
 
         <button type="submit" class="btn btn-primary btn-full btn-lg">Submit testimonial</button>
-        <p class="form-hint" style="text-align:center;margin-top:0.75rem">Thank you, seriously. We read every one.</p>
+        <p class="form-hint">Thank you, seriously. We read every one.</p>
       </form>
     </div>
   </div>

@@ -18,14 +18,14 @@ noindex: true
 
 <section class="section">
   <div class="container" style="max-width:720px">
-    <div style="margin-bottom:2rem;padding:1.25rem 1.5rem;background:rgba(161,25,15,0.08);border:1px solid rgba(161,25,15,0.35);border-radius:var(--radius);color:var(--text)">
-      <strong style="color:var(--danger);display:block;font-size:0.95rem;margin-bottom:0.35rem">Call us if it's truly urgent.</strong>
-      <span style="font-size:0.92rem">Text or call <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a> for immediate attention. The form is a backup and a way to put all the detail in one place, but phone is faster when the clock matters.</span>
+    <div class="form-callout form-callout--danger">
+      <strong>Call us if it's truly urgent.</strong>
+      <span>Text or call <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a> for immediate attention. The form is a backup and a way to put all the detail in one place, but phone is faster when the clock matters.</span>
     </div>
 
     <div class="contact-form-card">
-      <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:0.35rem">Describe the emergency</h2>
-      <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:1.5rem">Give us as much detail as you can. Screenshots help. We'll start investigating the moment the form lands.</p>
+      <h2 class="form-heading">Describe the emergency</h2>
+      <p class="form-intro">Give us as much detail as you can. Screenshots help. We'll start investigating the moment the form lands.</p>
 
       <form data-web3forms data-redirect="/thank-you/?type=emergency" action="https://api.web3forms.com/submit" method="POST" class="form">
         <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
@@ -86,7 +86,7 @@ noindex: true
         </div>
 
         <button type="submit" class="btn btn-primary btn-full btn-lg">Submit emergency request</button>
-        <p class="form-hint" style="text-align:center;margin-top:0.75rem">If this is truly time-critical, <strong>call us</strong> at <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>; we pick up or call back quickly.</p>
+        <p class="form-hint">If this is truly time-critical, <strong>call us</strong> at <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>; we pick up or call back quickly.</p>
       </form>
     </div>
   </div>
