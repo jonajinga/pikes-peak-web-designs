@@ -359,9 +359,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 
 /* ========== SECTION HEADER ========== */
 .section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
+  display: inline-block;
   font-family: var(--font-body);
   font-size: 0.74rem;
   font-weight: 700;
@@ -371,14 +369,6 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   margin-bottom: 1rem;
 }
 :root[data-theme="dark"] .section-label { color: var(--gold-400); }
-.section-label::before {
-  content: '';
-  display: block;
-  width: 1.75rem;
-  height: 2px;
-  background: var(--gold-500);
-  flex-shrink: 0;
-}
 .section--dark .section-label,
 .section--navy .section-label,
 .page-hero .section-label,
@@ -4897,6 +4887,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   border-radius: 2px;
   padding: 2.25rem;
   max-width: 460px;
+  min-height: 380px;
   margin-left: auto;
   box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,0,0,0.08);
   border-top: 5px solid var(--rc-red);
@@ -5065,9 +5056,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 
 /* Section labels — big, uppercase, industrial */
 .demo-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.85rem;
+  display: inline-block;
   font-family: 'Oswald', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
@@ -5075,12 +5064,6 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   text-transform: uppercase;
   color: var(--rc-red-dark);
   margin-bottom: 1.25rem;
-}
-.demo-eyebrow::before {
-  content: '';
-  width: 42px;
-  height: 3px;
-  background: var(--rc-red-dark);
 }
 .demo-section--dark .demo-eyebrow, .demo-section--red .demo-eyebrow, .demo-section--striped .demo-eyebrow { color: var(--rc-safety); }
 .demo-section--dark .demo-eyebrow::before, .demo-section--red .demo-eyebrow::before, .demo-section--striped .demo-eyebrow::before { background: var(--rc-safety); }
@@ -6078,9 +6061,9 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   content: '';
   position: absolute;
   left: 0;
-  top: 0.65em;
-  width: 0.5rem;
-  height: 1px;
+  top: 0.68em;
+  width: 6px;
+  height: 6px;
   background: var(--rc-red-dark);
 }
 .demo-site .sg-voice-list strong {
@@ -6095,6 +6078,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   .demo-site .demo-hero-card {
     transform: none;
     max-width: 100%;
+    min-height: 0;
     margin-left: 0;
     padding: 1.75rem 1.5rem;
   }
