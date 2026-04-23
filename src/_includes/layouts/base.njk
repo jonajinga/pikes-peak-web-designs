@@ -31,9 +31,16 @@
   <meta name="twitter:image" content="{{ site.url }}{{ ogImage if ogImage else site.ogImage }}">
   {% if extraHead %}{{ extraHead | safe }}{% endif %}
 
-  {# Analytics — Umami + Cloudflare (swap the YOUR-*-ID tokens for live site IDs) #}
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR-UMAMI-ID"></script>
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR-CLOUDFLARE-BEACON-TOKEN"}'></script>
+  {# Analytics — only injected when real IDs are set in site data. Placeholder
+     IDs would trigger CORS / 400 errors and leak into the console, so we
+     conditionally render. Set site.umamiWebsiteId / site.cloudflareBeaconToken
+     to enable. #}
+  {% if site.umamiWebsiteId %}
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.umamiWebsiteId }}"></script>
+  {% endif %}
+  {% if site.cloudflareBeaconToken %}
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflareBeaconToken }}"}'></script>
+  {% endif %}
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>

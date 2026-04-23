@@ -2770,7 +2770,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 
 .footer-brand .logo { margin-bottom: 1rem; }
 .footer-brand p {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 0.92rem;
   line-height: 1.65;
   margin-bottom: 1.25rem;
@@ -2794,14 +2794,15 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   flex-shrink: 0;
 }
 
-.footer-col h4 {
+.footer-col-title {
   font-family: var(--font-body);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold-400);
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
+  line-height: 1.2;
 }
 .footer-col a {
   display: block;
@@ -2832,7 +2833,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 .footer-contact-address {
   font-size: 0.86rem;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
 }
 .footer-contact-address strong {
@@ -2843,20 +2844,20 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 .footer-contact-address em {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.82);
   display: block;
   margin-top: 0.25rem;
 }
 
 .footer-bottom {
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.75rem;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(255, 255, 255, 0.85);
 }
 .footer-bottom a { color: inherit; }
 .footer-bottom a:hover { color: var(--gold-400); }
