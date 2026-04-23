@@ -966,15 +966,18 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   transform: translateY(0);
 }
 
-/* Wide mega menu for service areas */
+/* Wide mega menu for service areas — opens in the same direction as the
+   other mega menus (anchored to the left edge of the parent nav-dropdown).
+   Viewport overflow on narrow desktops is handled by max-width clamp. */
 .mega-menu--wide {
-  min-width: 780px;
+  min-width: min(780px, 92vw);
+  max-width: 92vw;
   padding: 2rem 2rem 1.25rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 1.75rem;
-  right: 0;
-  left: auto;
+  left: 0;
+  right: auto;
 }
 
 .mega-menu--panel {
@@ -2237,12 +2240,13 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 :root[data-theme="dark"] .local-icon { color: var(--gold-400); }
 .local-icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.local-point h4 {
+.local-point h3 {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 0.35rem;
+  margin: 0 0 0.35rem;
+  line-height: 1.3;
 }
 .local-point p {
   font-size: 0.93rem;
@@ -3481,12 +3485,13 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 :root[data-theme="dark"] .contact-info-item .icon { color: var(--gold-400); }
 .contact-info-item .icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-info-item h4 {
+.contact-info-item h3 {
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 0.2rem;
+  margin: 0 0 0.2rem;
+  line-height: 1.3;
 }
 .contact-info-item p, .contact-info-item a {
   font-size: 0.95rem;
@@ -3537,11 +3542,12 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   flex-shrink: 0;
 }
 :root[data-theme="dark"] .next-step-num { background: var(--gold-500); color: var(--navy-900); }
-.next-step h4 {
+.next-step h3 {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 0.2rem;
+  margin: 0 0 0.2rem;
+  line-height: 1.3;
   font-family: var(--font-body);
 }
 .next-step p {
@@ -5731,14 +5737,15 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 @media (max-width: 760px) { .demo-footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
 @media (max-width: 500px) { .demo-footer-grid { grid-template-columns: 1fr; } }
-.demo-footer h4 {
+.demo-footer-col-title {
   color: var(--rc-safety);
   font-family: 'Oswald', sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.18em;
+  line-height: 1.2;
   text-transform: uppercase;
-  margin-bottom: 1.15rem;
+  margin: 0 0 1.15rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid rgba(247, 208, 70, 0.15);
 }

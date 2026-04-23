@@ -63,7 +63,7 @@ layout: layouts/base.njk
         </div>
 
         <div style="padding:1.5rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)">
-          <h4 style="font-family:var(--font-body);font-size:0.76rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy-700);margin-bottom:0.85rem">Industries in {{ area.city }}</h4>
+          <h3 style="font-family:var(--font-body);font-size:0.76rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy-700);margin-bottom:0.85rem">Industries in {{ area.city }}</h3>
           <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
             {% for tag in area.industries %}
               <span class="sample-tag">{{ tag | safe }}</span>
@@ -72,7 +72,7 @@ layout: layouts/base.njk
         </div>
 
         <div style="padding:1.5rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)">
-          <h4 style="font-family:var(--font-body);font-size:0.76rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy-700);margin-bottom:0.85rem">Nearby communities</h4>
+          <h3 style="font-family:var(--font-body);font-size:0.76rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy-700);margin-bottom:0.85rem">Nearby communities</h3>
           <div style="display:flex;flex-wrap:wrap;gap:0.3rem 0.5rem">
             {% for community in area.nearby %}
               <span style="font-size:0.85rem;color:var(--text-muted)">{{ community }}{% if not loop.last %},{% endif %}</span>

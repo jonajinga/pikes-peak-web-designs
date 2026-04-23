@@ -26,21 +26,21 @@ noindex: true
       <li class="next-step">
         <span class="next-step-num">1</span>
         <div>
-          <h4>We read your message.</h4>
+          <h3>We read your message.</h3>
           <p>A real person, not a ticket queue. usually within an hour or two during business hours.</p>
         </div>
       </li>
       <li class="next-step">
         <span class="next-step-num">2</span>
         <div>
-          <h4>We reply within one business day.</h4>
+          <h3>We reply within one business day.</h3>
           <p>You'll hear from us by email with any follow-up questions and a couple of times that work for a call.</p>
         </div>
       </li>
       <li class="next-step">
         <span class="next-step-num">3</span>
         <div>
-          <h4>A 20-minute call on Google Meet.</h4>
+          <h3>A 20-minute call on Google Meet.</h3>
           <p>No pressure, no pitch. just a conversation about your business and whether we're the right fit.</p>
         </div>
       </li>
@@ -142,7 +142,7 @@ noindex: true
     if (ns) ns.textContent = v.ns;
     if (stepsEl && v.steps) {
       stepsEl.innerHTML = v.steps.map(function (step, i) {
-        return '<li class="next-step"><span class="next-step-num">' + (i + 1) + '</span><div><h4>' + step[0] + '</h4><p>' + step[1] + '</p></div></li>';
+        return '<li class="next-step"><span class="next-step-num">' + (i + 1) + '</span><div><h3>' + step[0] + '</h3><p>' + step[1] + '</p></div></li>';
       }).join('');
     }
   }
