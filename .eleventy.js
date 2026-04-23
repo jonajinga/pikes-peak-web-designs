@@ -92,23 +92,54 @@ export default function (eleventyConfig) {
     collectionApi.getFilteredByGlob("src/blog/posts/*.md").reverse()
   );
 
-  // Minify CSS output (copied via passthrough) — runs before Pagefind indexes.
-  // This converts the dev-friendly multi-line CSS into production-compressed
-  // output, removing comments and whitespace for a ~20% payload reduction.
+  // Post-build CSS pipeline:
+  //   1. Extract the DEMO SITE block into its own demo.css so demo pages
+  //      don't ship the full site stylesheet (~75% smaller payload for
+  //      /demo/* routes, big LCP + main-thread win).
+  //   2. Minify both style.css and demo.css with clean-css.
   eleventyConfig.on("eleventy.after", () => {
     const cssFile = path.resolve("./_site/assets/css/style.css");
-    if (fs.existsSync(cssFile)) {
-      try {
-        const src = fs.readFileSync(cssFile, "utf8");
-        const minified = new CleanCSS({ returnPromise: false, level: 1 }).minify(src);
-        if (!minified.errors.length) {
-          fs.writeFileSync(cssFile, minified.styles);
-        } else {
-          console.warn("CSS minify errors:", minified.errors);
-        }
-      } catch (e) {
-        console.warn("CSS minify failed:", e.message);
+    const demoFile = path.resolve("./_site/assets/css/demo.css");
+    if (!fs.existsSync(cssFile)) return;
+
+    try {
+      const src = fs.readFileSync(cssFile, "utf8");
+
+      // Extract the .demo-site block into its own stylesheet. The demo defines
+      // its own palette under .demo-site so we only need a tiny shared reset,
+      // not the full Pikes Peak design token system.
+      const demoStart = src.indexOf("/* =============================================================\n   DEMO SITE — REDCAP ROOFING");
+      const demoEnd = src.indexOf("/* =============================================================\n   MOBILE-FIRST OPTIMIZATIONS");
+      let demoCSS = "";
+      if (demoStart !== -1 && demoEnd !== -1) {
+        const demoReset = `
+*,*::before,*::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
+html, body { margin: 0; padding: 0; }
+body { min-height: 100vh; }
+img, svg { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+:focus-visible { outline: 3px solid #F7D046; outline-offset: 2px; }
+`;
+        demoCSS = demoReset + src.slice(demoStart, demoEnd);
       }
+
+      const minifier = new CleanCSS({ returnPromise: false, level: 1 });
+
+      // Minify the full site stylesheet in place
+      const minStyle = minifier.minify(src);
+      if (!minStyle.errors.length) fs.writeFileSync(cssFile, minStyle.styles);
+      else console.warn("style.css minify errors:", minStyle.errors);
+
+      // Write minified demo.css (if extraction succeeded)
+      if (demoCSS) {
+        const minDemo = new CleanCSS({ returnPromise: false, level: 1 }).minify(demoCSS);
+        if (!minDemo.errors.length) fs.writeFileSync(demoFile, minDemo.styles);
+        else console.warn("demo.css minify errors:", minDemo.errors);
+      }
+    } catch (e) {
+      console.warn("CSS build failed:", e.message);
     }
   });
 
