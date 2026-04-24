@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0C4A6E">
+  <title>{{ title if title else "Clearwater Plumbing | Salt Lake City Family Plumbers" }}</title>
+  <meta name="description" content="{{ description if description else 'Family-run plumbers in Salt Lake City. Leaks, water heaters, drain cleaning, repipe, remodel. Flat-rate pricing and same-week scheduling.' }}">
+  <link rel="canonical" href="https://pikespeakwebdesigns.com/samples/">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/dm-serif-display/files/dm-serif-display-latin-400-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/dm-sans/files/dm-sans-latin-400-normal.woff2" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=dm-serif-display:400|dm-sans:400,500,600,700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.bunny.net/css?family=dm-serif-display:400|dm-sans:400,500,600,700&display=swap"></noscript>
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/clearwater.css">
+</head>
+<body class="clearwater-site">
+
+<div class="clearwater-banner" role="note" aria-label="Demo site notice">
+  <span class="clearwater-banner-label">Live Demo &middot; Sample by Pikes Peak Web Designs</span>
+  <div class="clearwater-banner-actions">
+    <a href="/samples/">&larr; Samples</a>
+    <a href="/contact/">Get a site like this &rarr;</a>
+  </div>
+</div>
+
+<header class="clearwater-header">
+  <div class="clearwater-header-inner">
+    <a href="/demo/clearwater-plumbing/" class="clearwater-logo">
+      <span class="clearwater-logo-mark">C</span>
+      <span>Clearwater <em class="clearwater-logo-accent">Plumbing</em></span>
+    </a>
+    <nav class="clearwater-nav" aria-label="Main navigation">
+      <a href="/demo/clearwater-plumbing/"{% if page.url == '/demo/clearwater-plumbing/' %} class="is-active"{% endif %}>Home</a>
+      <a href="/demo/clearwater-plumbing/services/"{% if page.url | startsWith('/demo/clearwater-plumbing/services/') %} class="is-active"{% endif %}>Services</a>
+      <a href="/demo/clearwater-plumbing/about/"{% if page.url | startsWith('/demo/clearwater-plumbing/about/') %} class="is-active"{% endif %}>About</a>
+      <a href="tel:8015550134" class="clearwater-nav-phone">(801) 555-0134</a>
+      <a href="/demo/clearwater-plumbing/contact/" class="clearwater-nav-cta">Book Service</a>
+    </nav>
+    <button class="clearwater-menu-toggle" type="button" aria-label="Toggle menu" onclick="document.getElementById('clearwaterMobileNav').classList.toggle('is-open')">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="clearwater-mobile-nav" id="clearwaterMobileNav">
+  <a href="tel:8015550134">Call (801) 555-0134</a>
+  <a href="/demo/clearwater-plumbing/">Home</a>
+  <a href="/demo/clearwater-plumbing/services/">Services</a>
+  <a href="/demo/clearwater-plumbing/about/">About</a>
+  <a href="/demo/clearwater-plumbing/contact/">Book Service</a>
+</div>
+
+<main id="main-content">
+  {{ content | safe }}
+</main>
+
+<footer class="clearwater-footer">
+  <div class="clearwater-footer-grid">
+    <div class="clearwater-footer-brand">
+      <a href="/demo/clearwater-plumbing/" class="clearwater-logo" style="color:#FEF9F3">
+        <span class="clearwater-logo-mark">C</span>
+        <span>Clearwater <em style="color:#FED7AA">Plumbing</em></span>
+      </a>
+      <p>A family-run plumbing shop serving Salt Lake City since 1997. Flat-rate pricing, clean jobsites, and actual humans answering the phone.</p>
+    </div>
+    <div>
+      <h3 class="clearwater-footer-col-title">Services</h3>
+      <a href="/demo/clearwater-plumbing/services/#emergency">Emergency leaks</a>
+      <a href="/demo/clearwater-plumbing/services/#water-heaters">Water heaters</a>
+      <a href="/demo/clearwater-plumbing/services/#drains">Drain cleaning</a>
+      <a href="/demo/clearwater-plumbing/services/#repipe">Whole-home repipe</a>
+      <a href="/demo/clearwater-plumbing/services/#remodel">Remodel plumbing</a>
+    </div>
+    <div>
+      <h3 class="clearwater-footer-col-title">Company</h3>
+      <a href="/demo/clearwater-plumbing/about/">About</a>
+      <a href="/demo/clearwater-plumbing/services/">Services</a>
+      <a href="/demo/clearwater-plumbing/contact/">Book service</a>
+    </div>
+    <div>
+      <h3 class="clearwater-footer-col-title">Reach us</h3>
+      <a href="tel:8015550134">(801) 555-0134</a>
+      <a href="mailto:hello@clearwaterslc.example">hello@clearwaterslc.example</a>
+      <a href="#">948 S State St, SLC, UT 84111</a>
+    </div>
+  </div>
+  <div class="clearwater-footer-bottom">
+    <span>&copy; {{ "" | currentYear }} Clearwater Plumbing &middot; License UT-MP-8124</span>
+    <span>Site by <a href="https://pikespeakwebdesigns.com/" class="clearwater-footer-pp" rel="noopener">Pikes Peak Web Designs</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

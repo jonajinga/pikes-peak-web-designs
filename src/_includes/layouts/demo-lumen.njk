@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>{{ title if title else "Lumen Electric | Fort Collins Master Electricians" }}</title>
+  <meta name="description" content="{{ description if description else 'Licensed master electricians in Fort Collins. Residential, light commercial, EV chargers, panel upgrades, whole-home rewires.' }}">
+  <link rel="canonical" href="https://pikespeakwebdesigns.com/samples/">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/archivo-black/files/archivo-black-latin-400-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/archivo/files/archivo-latin-500-normal.woff2" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=archivo-black:400|archivo:500,700,800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.bunny.net/css?family=archivo-black:400|archivo:500,700,800&display=swap"></noscript>
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/lumen.css">
+</head>
+<body class="lumen-site">
+
+<div class="lumen-banner" role="note" aria-label="Demo site notice">
+  <span class="lumen-banner-label">Live Demo &middot; Sample by Pikes Peak Web Designs</span>
+  <div class="lumen-banner-actions">
+    <a href="/samples/">&larr; Samples</a>
+    <a href="/contact/">Get a site like this &rarr;</a>
+  </div>
+</div>
+
+<header class="lumen-header">
+  <div class="lumen-header-inner">
+    <a href="/demo/lumen-electric/" class="lumen-logo">LUMEN<span class="lumen-logo-dot">.</span></a>
+    <nav class="lumen-nav" aria-label="Main navigation">
+      <a href="/demo/lumen-electric/"{% if page.url == '/demo/lumen-electric/' %} class="is-active"{% endif %}>Home</a>
+      <a href="/demo/lumen-electric/services/"{% if page.url | startsWith('/demo/lumen-electric/services/') %} class="is-active"{% endif %}>Services</a>
+      <a href="/demo/lumen-electric/about/"{% if page.url | startsWith('/demo/lumen-electric/about/') %} class="is-active"{% endif %}>Shop</a>
+      <a href="tel:9705550309" style="font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:0.05em">(970) 555-0309</a>
+      <a href="/demo/lumen-electric/contact/" class="lumen-nav-cta">Book Job</a>
+    </nav>
+    <button class="lumen-menu-toggle" type="button" aria-label="Toggle menu" onclick="document.getElementById('lumenMobileNav').classList.toggle('is-open')">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="lumen-mobile-nav" id="lumenMobileNav">
+  <a href="tel:9705550309">Call (970) 555-0309</a>
+  <a href="/demo/lumen-electric/">Home</a>
+  <a href="/demo/lumen-electric/services/">Services</a>
+  <a href="/demo/lumen-electric/about/">Shop</a>
+  <a href="/demo/lumen-electric/contact/">Book Job</a>
+</div>
+
+<main id="main-content">
+  {{ content | safe }}
+</main>
+
+<footer class="lumen-footer">
+  <div class="lumen-footer-grid">
+    <div class="lumen-footer-brand">
+      <div class="lumen-logo" style="color:#FFFFFF">LUMEN<span class="lumen-logo-dot">.</span></div>
+      <p>Licensed master electricians in Fort Collins, Colorado. Residential + light commercial. Panel upgrades, whole-home rewires, EV chargers, heavy-up. Since 2014.</p>
+    </div>
+    <div>
+      <h3 class="lumen-footer-col-title">Services</h3>
+      <a href="/demo/lumen-electric/services/#panels">Panel upgrades</a>
+      <a href="/demo/lumen-electric/services/#ev">EV charger installs</a>
+      <a href="/demo/lumen-electric/services/#rewire">Whole-home rewire</a>
+      <a href="/demo/lumen-electric/services/#commercial">Light commercial</a>
+    </div>
+    <div>
+      <h3 class="lumen-footer-col-title">Shop</h3>
+      <a href="/demo/lumen-electric/about/">About</a>
+      <a href="/demo/lumen-electric/services/">Capabilities</a>
+      <a href="/demo/lumen-electric/contact/">Book a job</a>
+    </div>
+    <div>
+      <h3 class="lumen-footer-col-title">Contact</h3>
+      <a href="tel:9705550309">(970) 555-0309</a>
+      <a href="mailto:shop@lumenelectric.example">shop@lumenelectric.example</a>
+      <a href="#">412 Linden St, Fort Collins, CO</a>
+    </div>
+  </div>
+  <div class="lumen-footer-bottom">
+    <span>&copy; {{ "" | currentYear }} LUMEN ELECTRIC &middot; LIC CO-ME-2708</span>
+    <span>Site by <a href="https://pikespeakwebdesigns.com/" class="lumen-footer-pp" rel="noopener">Pikes Peak Web Designs</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

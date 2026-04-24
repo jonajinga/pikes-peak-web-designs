@@ -1,0 +1,107 @@
+---
+layout: layouts/demo-meadow.njk
+title: "Start a Project | Meadow &amp; Stone"
+description: "Start a conversation about your garden. Consultations are $175 for the first 90 minutes and credited back if we work together."
+---
+
+<section class="meadow-page-hero">
+  <div class="meadow-container">
+    <nav class="meadow-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/meadow-stone/">Studio</a><span class="sep">/</span><span>Start a project</span>
+    </nav>
+    <span class="meadow-eyebrow">First conversations</span>
+    <h1>Start a <em>conversation.</em></h1>
+    <p class="meadow-lead">The way to start a project with us is a 90-minute on-site consultation. $175, credited back against design fees if we end up working together. Either way you'll leave with an honest read on the site and our take on what it wants to be.</p>
+  </div>
+</section>
+
+<section class="meadow-section meadow-section--bone">
+  <div class="meadow-container">
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,5vw,4rem);align-items:start" class="meadow-contact-grid">
+
+      <div>
+        <div style="background:#FFFFFF;border-radius:14px;padding:2rem;box-shadow:0 18px 40px rgba(46,64,51,0.1);margin-bottom:1.25rem">
+          <span class="meadow-eyebrow">Reach the studio</span>
+          <h3 style="margin:0 0 1rem;font-size:1.5rem">(303) 555-0147</h3>
+          <p style="margin:0 0 0.5rem;font-size:0.95rem;color:var(--me-text)">Tue–Sat, 10 am – 4 pm. Voicemail rolls to Elena.</p>
+          <a href="tel:3035550147" class="meadow-btn meadow-btn-terra" style="margin-top:1rem">Call the studio</a>
+        </div>
+        <div style="background:#FFFFFF;border-radius:14px;padding:1.75rem;box-shadow:0 18px 40px rgba(46,64,51,0.1)">
+          <span class="meadow-eyebrow">Or write</span>
+          <p style="margin:0 0 0.5rem"><a href="mailto:studio@meadowstone.example" style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--me-charcoal)">studio@meadowstone.example</a></p>
+          <p style="margin:0;font-size:0.9rem;color:var(--me-text-muted)">We reply to every note within two business days.</p>
+        </div>
+
+        <div style="margin-top:1.25rem;padding:1.75rem;background:var(--me-sage);color:var(--me-cream);border-radius:14px">
+          <span style="display:block;font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:#F1CBB2;font-weight:600;margin-bottom:0.75rem">Calendar right now</span>
+          <p style="margin:0 0 0.5rem;font-family:'Cormorant Garamond',serif;font-size:1.55rem;line-height:1.25;font-style:italic">Fall 2026 install openings: 2 remaining.</p>
+          <p style="margin:0;font-size:0.9rem;color:rgba(255,255,255,0.86)">Spring 2027 consultations open Jan 5.</p>
+        </div>
+      </div>
+
+      <div>
+        <form class="meadow-form" action="https://api.web3forms.com/submit" method="POST" style="background:#FFFFFF;padding:2.5rem;border-radius:14px;box-shadow:0 24px 50px rgba(46,64,51,0.12)">
+          <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+          <input type="hidden" name="subject" value="Meadow & Stone — Demo inquiry">
+          <input type="hidden" name="from_name" value="Meadow & Stone demo">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <h3 style="margin:0 0 0.5rem;font-size:1.65rem">Tell us about your garden.</h3>
+          <p style="margin:0 0 1.5rem;color:var(--me-text-muted);font-size:0.95rem">A few details now save everyone a round of email later.</p>
+
+          <div class="meadow-form-row">
+            <div>
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+
+          <div class="meadow-form-row">
+            <div>
+              <label for="address">Project location</label>
+              <input type="text" id="address" name="address" placeholder="Neighborhood is fine" required>
+            </div>
+            <div>
+              <label for="size">Rough project size</label>
+              <select id="size" name="size">
+                <option>Under 1/4 acre</option>
+                <option>1/4 to 1/2 acre</option>
+                <option>Over 1/2 acre</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="scope">What are you hoping to do?</label>
+            <select id="scope" name="scope">
+              <option>Full garden design from scratch</option>
+              <option>Replace existing turf with something else</option>
+              <option>Hardscape / walls / terracing</option>
+              <option>Planting plan only (keeping existing hardscape)</option>
+              <option>Just want a professional eye on what I've started</option>
+              <option>Not sure — want to talk through options</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="story">Tell us anything you want us to know.</label>
+            <textarea id="story" name="story" rows="5" placeholder="How you use the space, what you've tried before, what you've seen that you like, when you're hoping to install — anything."></textarea>
+          </div>
+
+          <button type="submit" class="meadow-btn" style="justify-content:center;width:100%">Send to the studio</button>
+          <p style="font-size:0.82rem;color:var(--me-text-muted);text-align:center;margin:0.75rem 0 0">We reply within two business days.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

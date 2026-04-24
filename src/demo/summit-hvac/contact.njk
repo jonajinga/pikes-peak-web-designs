@@ -1,0 +1,126 @@
+---
+layout: layouts/demo-summit.njk
+title: "Request Estimate | Summit HVAC"
+description: "Request a free estimate with a proper load calculation. Denver metro only. We typically schedule within 4 business days."
+---
+
+<section class="summit-page-hero">
+  <div class="summit-container">
+    <nav class="summit-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/summit-hvac/">Overview</a><span class="sep">/</span><span>Request estimate</span>
+    </nav>
+    <h1>Request an estimate.</h1>
+    <p class="summit-lead">Free load calculation and itemized proposal on every qualifying residential project. Denver metro only — we stay small geographically to stay sharp technically.</p>
+  </div>
+</section>
+
+<section class="summit-section">
+  <div class="summit-container">
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,4vw,3.5rem);align-items:start" class="summit-contact-grid">
+
+      <div>
+        <span class="summit-eyebrow">Reach the office</span>
+        <div style="display:grid;gap:1.25rem;margin-top:1rem">
+          <div style="padding:1.5rem;border:1px solid var(--su-line-light);border-radius:8px;background:var(--su-ice)">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--su-text-muted);margin-bottom:0.4rem">Call</div>
+            <a href="tel:3035550275" style="font-family:'Space Grotesk',sans-serif;font-size:1.6rem;color:var(--su-navy-deep);font-weight:700;text-decoration:none">(303) 555-0275</a>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--su-text-muted);margin-top:0.4rem">Mon–Fri 7am–5pm, Sat 8am–1pm</div>
+          </div>
+          <div style="padding:1.5rem;border:1px solid var(--su-line-light);border-radius:8px;background:var(--su-ice)">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--su-text-muted);margin-bottom:0.4rem">Email</div>
+            <a href="mailto:service@summithvac.example" style="font-family:'Space Grotesk',sans-serif;font-size:1.18rem;color:var(--su-navy-deep);font-weight:600;text-decoration:none;word-break:break-all">service@summithvac.example</a>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--su-text-muted);margin-top:0.4rem">Reply within 1 business day</div>
+          </div>
+          <div style="padding:1.5rem;border:1px solid var(--su-line-light);border-radius:8px;background:var(--su-ice)">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--su-text-muted);margin-bottom:0.4rem">Emergency after-hours</div>
+            <a href="tel:3035550275" style="font-family:'Space Grotesk',sans-serif;font-size:1.18rem;color:var(--su-navy-deep);font-weight:600;text-decoration:none">(303) 555-0275, ext. 9</a>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--su-text-muted);margin-top:0.4rem">For no-heat situations below 20°F or no-cool above 95°F</div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;padding:1.5rem;background:var(--su-navy-deep);color:var(--su-pale);border-radius:8px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--su-cyan);font-weight:600;margin-bottom:0.75rem">What you'll get</div>
+          <ol style="font-family:'Inter',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.88);line-height:1.65;margin:0;padding-left:1.25rem">
+            <li>Call-back within 1 business day to scope.</li>
+            <li>On-site visit: 60–90 min, load measurements + return air audit.</li>
+            <li>Manual J heat-load calc within 3 business days.</li>
+            <li>Itemized proposal with 2–3 equipment options.</li>
+            <li>Install, then commissioning documentation on site.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div>
+        <form class="summit-form" action="https://api.web3forms.com/submit" method="POST" style="padding:2rem;border:1px solid var(--su-line-light);border-radius:8px;background:var(--su-white)">
+          <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+          <input type="hidden" name="subject" value="Summit HVAC — Demo estimate request">
+          <input type="hidden" name="from_name" value="Summit HVAC demo">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <h3 style="margin:0 0 0.5rem;font-size:1.5rem">Estimate request</h3>
+          <p style="margin:0 0 1.5rem;color:var(--su-text-muted);font-size:0.95rem">Fields marked * are required. Everything else helps us scope faster.</p>
+
+          <div class="summit-form-row">
+            <div>
+              <label for="name">Full name *</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div>
+              <label for="phone">Phone *</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+
+          <div class="summit-form-row">
+            <div>
+              <label for="address">Property address *</label>
+              <input type="text" id="address" name="address" required>
+            </div>
+            <div>
+              <label for="sqft">Sq ft (approx)</label>
+              <input type="text" id="sqft" name="sqft" placeholder="e.g. 2100">
+            </div>
+          </div>
+
+          <div class="summit-form-row">
+            <div>
+              <label for="year">Year built</label>
+              <input type="text" id="year" name="year" placeholder="e.g. 1952">
+            </div>
+            <div>
+              <label for="project">Project type *</label>
+              <select id="project" name="project" required>
+                <option value="">Select…</option>
+                <option>Heat pump (replace furnace + AC)</option>
+                <option>AC replacement only</option>
+                <option>Furnace replacement only</option>
+                <option>Ductless mini-split</option>
+                <option>Indoor air quality (filter / humidifier / ERV)</option>
+                <option>Service / repair existing system</option>
+                <option>Not sure — need assessment</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="current">Current system (if known)</label>
+            <input type="text" id="current" name="current" placeholder="e.g. 2010 Lennox 80% furnace + 3-ton Carrier AC">
+          </div>
+
+          <div>
+            <label for="notes">Anything else?</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Unusual layout, known duct issues, timing constraints, specific equipment you want us to quote, etc."></textarea>
+          </div>
+
+          <button type="submit" class="summit-btn" style="justify-content:center;width:100%">Submit estimate request</button>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--su-text-muted);text-align:center;margin:0.75rem 0 0">1 business day response &middot; Denver metro only</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,123 @@
+---
+layout: layouts/demo-alpine.njk
+title: "Book an Inspection | Alpine Home Inspectors"
+description: "Schedule a home, pre-listing, sewer, radon, or infrared inspection. We confirm by end-of-day Mon–Fri."
+---
+
+<section class="alpine-page-hero">
+  <div class="alpine-container">
+    <nav class="alpine-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/alpine-inspectors/">Home</a><span class="sep">/</span><span>Book an Inspection</span>
+    </nav>
+    <h1>Book an inspection.</h1>
+    <p class="alpine-lead">Call, email, or fill the form. We confirm by end-of-day Mon–Fri and get you on the schedule within 3–5 business days most weeks.</p>
+  </div>
+</section>
+
+<section class="alpine-section">
+  <div class="alpine-container">
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,5vw,4.5rem);align-items:start" class="alpine-contact-grid">
+
+      <div>
+        <div class="alpine-sentinel"><strong>§ 01</strong>Direct contact</div>
+        <div style="display:grid;gap:1.5rem">
+          <div>
+            <strong style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--al-taupe);margin-bottom:0.35rem">Call or text</strong>
+            <a href="tel:7195550188" style="font-family:'Source Serif 4',serif;font-size:1.6rem;color:var(--al-ink);text-decoration:none">(719) 555-0188</a>
+            <div style="font-size:0.9rem;color:var(--al-text-muted);margin-top:0.25rem">Sarah answers Mon–Fri 7am–5pm MT.</div>
+          </div>
+          <div>
+            <strong style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--al-taupe);margin-bottom:0.35rem">Email</strong>
+            <a href="mailto:hello@alpine.example" style="font-family:'Source Serif 4',serif;font-size:1.35rem;color:var(--al-ink);text-decoration:none">hello@alpine.example</a>
+            <div style="font-size:0.9rem;color:var(--al-text-muted);margin-top:0.25rem">Reply by end-of-day, Mon–Fri.</div>
+          </div>
+          <div>
+            <strong style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--al-taupe);margin-bottom:0.35rem">Service area</strong>
+            <div style="font-family:'Source Serif 4',serif;font-size:1.15rem;color:var(--al-ink);line-height:1.4">Pikes Peak region<br>Colorado Springs &middot; Monument &middot; Falcon<br>Black Forest &middot; Fountain &middot; Woodland Park</div>
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem;padding:1.5rem;background:var(--al-cream-deep);border-left:3px solid var(--al-forest)">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--al-forest);font-weight:600;margin-bottom:0.5rem">What happens next</div>
+          <ol style="font-family:'Inter',sans-serif;font-size:0.92rem;color:var(--al-text);line-height:1.7;margin:0;padding-left:1.25rem">
+            <li>Sarah replies by end-of-day to confirm availability.</li>
+            <li>We schedule a time with your agent or title company.</li>
+            <li>Ron arrives 15 minutes before the scheduled time, walks the home 3–4 hours.</li>
+            <li>Report delivered via email in 24 business hours.</li>
+            <li>Ron is available by phone for 30 days after delivery.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div>
+        <div class="alpine-sentinel"><strong>§ 02</strong>Booking form</div>
+        <form class="alpine-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+          <input type="hidden" name="subject" value="Alpine Home Inspectors — Demo inquiry">
+          <input type="hidden" name="from_name" value="Alpine demo">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="alpine-form-row">
+            <div>
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+
+          <div class="alpine-form-row">
+            <div>
+              <label for="address">Property address</label>
+              <input type="text" id="address" name="address" required>
+            </div>
+            <div>
+              <label for="sqft">Approx. sq ft</label>
+              <input type="text" id="sqft" name="sqft" placeholder="e.g. 2400">
+            </div>
+          </div>
+
+          <div class="alpine-form-row">
+            <div>
+              <label for="service">Service needed</label>
+              <select id="service" name="service" required>
+                <option value="">Select…</option>
+                <option>Full residential inspection</option>
+                <option>Pre-listing inspection</option>
+                <option>New-construction warranty</option>
+                <option>Sewer scope only</option>
+                <option>Radon test only</option>
+                <option>Infrared scan only</option>
+                <option>Not sure — please recommend</option>
+              </select>
+            </div>
+            <div>
+              <label for="timing">Ideal timing</label>
+              <select id="timing" name="timing">
+                <option>This week if possible</option>
+                <option>Within 2 weeks</option>
+                <option>Flexible — best rate</option>
+                <option>Under contract — need by a specific date</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="notes">Anything we should know?</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Agent details, access logistics, specific concerns, etc."></textarea>
+          </div>
+
+          <button type="submit" class="alpine-btn" style="justify-content:center">Request inspection</button>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.76rem;color:var(--al-text-muted);text-align:center;margin:0.5rem 0 0">We reply by end of business day, Mon–Fri.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

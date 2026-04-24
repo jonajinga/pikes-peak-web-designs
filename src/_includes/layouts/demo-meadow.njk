@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2E4033">
+  <title>{{ title if title else "Meadow &amp; Stone | Landscape Design in Boulder, CO" }}</title>
+  <meta name="description" content="{{ description if description else 'Landscape design + build studio in Boulder, Colorado. Native planting, stonework, and the seasons — done slowly, on purpose.' }}">
+  <link rel="canonical" href="https://pikespeakwebdesigns.com/samples/">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/inter/files/inter-latin-400-normal.woff2" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=cormorant-garamond:400,500|cormorant:400,500&family=inter:400,500,600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.bunny.net/css?family=cormorant-garamond:400,500|cormorant:400,500&family=inter:400,500,600&display=swap"></noscript>
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/meadow.css">
+</head>
+<body class="meadow-site">
+
+<div class="meadow-banner" role="note" aria-label="Demo site notice">
+  <span class="meadow-banner-label">Live Demo &middot; Sample by Pikes Peak Web Designs</span>
+  <div class="meadow-banner-actions">
+    <a href="/samples/">&larr; Back to Samples</a>
+    <a href="/contact/">Get a site like this &rarr;</a>
+  </div>
+</div>
+
+<header class="meadow-header">
+  <div class="meadow-header-inner">
+    <a href="/demo/meadow-stone/" class="meadow-logo">Meadow <em>&amp;</em> Stone</a>
+    <nav class="meadow-nav" aria-label="Main navigation">
+      <a href="/demo/meadow-stone/"{% if page.url == '/demo/meadow-stone/' %} class="is-active"{% endif %}>Studio</a>
+      <a href="/demo/meadow-stone/services/"{% if page.url | startsWith('/demo/meadow-stone/services/') %} class="is-active"{% endif %}>Work</a>
+      <a href="/demo/meadow-stone/about/"{% if page.url | startsWith('/demo/meadow-stone/about/') %} class="is-active"{% endif %}>Studio Notes</a>
+      <a href="/demo/meadow-stone/contact/" class="meadow-nav-cta">Start a project</a>
+    </nav>
+    <button class="meadow-menu-toggle" type="button" aria-label="Toggle menu" onclick="document.getElementById('meadowMobileNav').classList.toggle('is-open')">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="meadow-mobile-nav" id="meadowMobileNav">
+  <a href="tel:3035550147">Call (303) 555-0147</a>
+  <a href="/demo/meadow-stone/">Studio</a>
+  <a href="/demo/meadow-stone/services/">Work</a>
+  <a href="/demo/meadow-stone/about/">Studio Notes</a>
+  <a href="/demo/meadow-stone/contact/">Start a project</a>
+</div>
+
+<main id="main-content">
+  {{ content | safe }}
+</main>
+
+<footer class="meadow-footer">
+  <div class="meadow-footer-grid">
+    <div class="meadow-footer-brand">
+      <a href="/demo/meadow-stone/" class="meadow-logo" style="color:#F5F3ED">Meadow <em>&amp;</em> Stone</a>
+      <p>A two-designer landscape studio in Boulder, Colorado. Native and climate-adapted planting, drystone walls, and slow, considered design for residences along the Front Range.</p>
+    </div>
+    <div>
+      <h3 class="meadow-footer-col-title">Studio</h3>
+      <a href="/demo/meadow-stone/">Overview</a>
+      <a href="/demo/meadow-stone/services/">Our work</a>
+      <a href="/demo/meadow-stone/about/">Studio notes</a>
+      <a href="/demo/meadow-stone/contact/">Start a project</a>
+    </div>
+    <div>
+      <h3 class="meadow-footer-col-title">Services</h3>
+      <a href="/demo/meadow-stone/services/#design">Full garden design</a>
+      <a href="/demo/meadow-stone/services/#stonework">Drystone walls</a>
+      <a href="/demo/meadow-stone/services/#planting">Native planting plans</a>
+      <a href="/demo/meadow-stone/services/#maintenance">Seasonal care</a>
+    </div>
+    <div>
+      <h3 class="meadow-footer-col-title">Visit</h3>
+      <a href="tel:3035550147">(303) 555-0147</a>
+      <a href="mailto:studio@meadowstone.example">studio@meadowstone.example</a>
+      <a href="#">2114 Pearl St, Boulder, CO 80302</a>
+    </div>
+  </div>
+  <div class="meadow-footer-bottom">
+    <span>&copy; {{ "" | currentYear }} Meadow &amp; Stone Landscape Studio</span>
+    <span>Site by <a href="https://pikespeakwebdesigns.com/" class="meadow-footer-pp" rel="noopener">Pikes Peak Web Designs</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

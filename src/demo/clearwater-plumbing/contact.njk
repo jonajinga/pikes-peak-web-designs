@@ -1,0 +1,117 @@
+---
+layout: layouts/demo-clearwater.njk
+title: "Book Service | Clearwater Plumbing"
+description: "Book plumbing service in Salt Lake City. Real humans answer 7 am – 7 pm. Same-week scheduling; same-hour emergency response."
+---
+
+<section class="clearwater-page-hero">
+  <div class="clearwater-container">
+    <nav class="clearwater-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/clearwater-plumbing/">Home</a><span class="sep">/</span><span>Book Service</span>
+    </nav>
+    <span class="clearwater-eyebrow">Reach the shop</span>
+    <h1>Book <em>service.</em></h1>
+    <p class="clearwater-lead">Phones open 7 am – 7 pm, seven days a week. Emergency line rolls over to on-call tech after hours. Or fill the form and we'll call you back inside two business hours.</p>
+  </div>
+</section>
+
+<section class="clearwater-section clearwater-section--cream-deep">
+  <div class="clearwater-container">
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,4vw,3.5rem);align-items:start" class="clearwater-contact-grid">
+
+      <div style="display:grid;gap:1.25rem">
+        <div style="background:#FFFFFF;border-radius:var(--cw-radius);padding:1.75rem;box-shadow:var(--cw-shadow)">
+          <span class="clearwater-eyebrow" style="margin-bottom:0.75rem">Call the shop</span>
+          <a href="tel:8015550134" style="font-family:'DM Serif Display',serif;font-size:1.85rem;color:var(--cw-ink);text-decoration:none;display:block;margin-bottom:0.35rem">(801) 555-0134</a>
+          <div style="font-size:0.9rem;color:var(--cw-text-muted)">7 am – 7 pm, seven days a week. Tess or Mike answers.</div>
+        </div>
+
+        <div style="background:#FFFFFF;border-radius:var(--cw-radius);padding:1.75rem;box-shadow:var(--cw-shadow)">
+          <span class="clearwater-eyebrow" style="margin-bottom:0.75rem">Email us</span>
+          <a href="mailto:hello@clearwaterslc.example" style="font-family:'DM Serif Display',serif;font-size:1.35rem;color:var(--cw-ink);text-decoration:none;word-break:break-all;display:block;margin-bottom:0.35rem">hello@clearwaterslc.example</a>
+          <div style="font-size:0.9rem;color:var(--cw-text-muted)">Reply within 2 business hours.</div>
+        </div>
+
+        <div style="background:var(--cw-peach-deep);color:var(--cw-ink);border-radius:var(--cw-radius);padding:1.75rem">
+          <span class="clearwater-eyebrow" style="background:rgba(0,0,0,0.12);color:var(--cw-ink);margin-bottom:0.75rem">24/7 emergency</span>
+          <p style="font-family:'DM Serif Display',serif;font-size:1.35rem;line-height:1.3;margin:0 0 0.5rem">Flooding? Burst pipe? Gas smell?</p>
+          <p style="font-size:0.95rem;color:var(--cw-ink);margin:0">Call (801) 555-0134 and press 9. On-call tech dispatched within 60 minutes.</p>
+        </div>
+
+        <div style="background:#FFFFFF;border-radius:var(--cw-radius);padding:1.75rem;box-shadow:var(--cw-shadow)">
+          <span class="clearwater-eyebrow" style="margin-bottom:0.75rem">Drop by</span>
+          <p style="font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--cw-ink);line-height:1.4;margin:0 0 0.35rem">948 South State Street<br>Salt Lake City, UT 84111</p>
+          <div style="font-size:0.9rem;color:var(--cw-text-muted)">Free parts-counter consultations Mon–Fri 8–5.</div>
+        </div>
+      </div>
+
+      <div>
+        <form class="clearwater-form" action="https://api.web3forms.com/submit" method="POST" style="background:#FFFFFF;padding:2.25rem;border-radius:var(--cw-radius-lg);box-shadow:var(--cw-shadow-lg)">
+          <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+          <input type="hidden" name="subject" value="Clearwater Plumbing — Demo service request">
+          <input type="hidden" name="from_name" value="Clearwater demo">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <h3 style="font-size:1.85rem;margin:0 0 0.5rem">Service request</h3>
+          <p style="margin:0 0 1.5rem;color:var(--cw-text-muted);font-size:0.95rem">Tell us what's going on. We'll call you back inside two business hours.</p>
+
+          <div class="clearwater-form-row">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+
+          <div class="clearwater-form-row">
+            <div>
+              <label for="address">Service address</label>
+              <input type="text" id="address" name="address" required>
+            </div>
+            <div>
+              <label for="urgency">Urgency</label>
+              <select id="urgency" name="urgency">
+                <option>Emergency — call me now</option>
+                <option>Today if possible</option>
+                <option>This week</option>
+                <option>Flexible — best rate</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="service">What's the issue?</label>
+            <select id="service" name="service" required>
+              <option value="">Select…</option>
+              <option>Leak (active)</option>
+              <option>Water heater issue</option>
+              <option>Clogged drain</option>
+              <option>No hot water</option>
+              <option>Low water pressure</option>
+              <option>Remodel / new install</option>
+              <option>Whole-home repipe quote</option>
+              <option>Annual maintenance plan</option>
+              <option>Other (describe below)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="details">Tell us more</label>
+            <textarea id="details" name="details" rows="4" placeholder="How long has it been happening, what you've tried, where it's located, etc."></textarea>
+          </div>
+
+          <button type="submit" class="clearwater-btn" style="width:100%;justify-content:center">Send Request</button>
+          <p style="font-size:0.84rem;color:var(--cw-text-muted);text-align:center;margin:0.75rem 0 0">2 business hour response &middot; never sold, never spammed</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

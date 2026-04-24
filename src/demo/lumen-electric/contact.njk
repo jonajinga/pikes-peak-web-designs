@@ -1,0 +1,91 @@
+---
+layout: layouts/demo-lumen.njk
+title: "Book a Job | Lumen Electric"
+description: "Book a panel upgrade, EV charger install, rewire, or commercial job. Licensed electricians in Fort Collins."
+---
+
+<section class="lumen-page-hero">
+  <div class="lumen-container">
+    <nav class="lumen-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/lumen-electric/">Home</a><span class="sep">/</span><span>Book a Job</span>
+    </nav>
+    <h1>Book a job.</h1>
+    <p class="lumen-lead">Call the shop, email the shop, or fill the form. Ray reads every inquiry personally and usually responds inside 4 business hours.</p>
+  </div>
+</section>
+
+<section class="lumen-section">
+  <div class="lumen-container">
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,4vw,3.5rem);align-items:start" class="lumen-contact-grid">
+
+      <div>
+        <div style="border:3px solid var(--lu-black);padding:1.75rem;margin-bottom:1.25rem;background:var(--lu-bone)">
+          <div style="font-family:'Archivo',sans-serif;font-size:0.76rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--lu-gray);margin-bottom:0.5rem">Call the shop</div>
+          <a href="tel:9705550309" style="font-family:'Archivo Black',sans-serif;font-size:2rem;color:var(--lu-black);letter-spacing:-0.02em;display:block;margin-bottom:0.5rem">(970) 555-0309</a>
+          <div style="font-family:'Archivo',sans-serif;font-size:0.86rem;color:var(--lu-gray);font-weight:500">Tue–Sat 7am–5pm &middot; Ray answers</div>
+        </div>
+        <div style="border:3px solid var(--lu-black);padding:1.75rem;margin-bottom:1.25rem;background:var(--lu-bone)">
+          <div style="font-family:'Archivo',sans-serif;font-size:0.76rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--lu-gray);margin-bottom:0.5rem">Email</div>
+          <a href="mailto:shop@lumenelectric.example" style="font-family:'Archivo Black',sans-serif;font-size:1.15rem;color:var(--lu-black);letter-spacing:-0.01em;word-break:break-all;display:block">shop@lumenelectric.example</a>
+        </div>
+        <div style="background:var(--lu-yellow);border:3px solid var(--lu-black);padding:1.75rem">
+          <div style="font-family:'Archivo',sans-serif;font-size:0.76rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--lu-black);margin-bottom:0.5rem">After hours emergency</div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:1.3rem;color:var(--lu-black);line-height:1.3">Sparks, smoke, or no-power? Call the main line and press 9. On-call tech dispatched inside 90 minutes.</div>
+        </div>
+      </div>
+
+      <div>
+        <form class="lumen-form" action="https://api.web3forms.com/submit" method="POST" style="background:var(--lu-bone);border:3px solid var(--lu-black);padding:2.25rem">
+          <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+          <input type="hidden" name="subject" value="Lumen Electric — Demo job request">
+          <input type="hidden" name="from_name" value="Lumen Electric demo">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:1.75rem;margin:0 0 1.5rem;color:var(--lu-black)">Job request</h3>
+
+          <div class="lumen-form-row">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+
+          <div>
+            <label for="address">Job address</label>
+            <input type="text" id="address" name="address" required>
+          </div>
+
+          <div>
+            <label for="job">Job type</label>
+            <select id="job" name="job" required>
+              <option value="">Select —</option>
+              <option>Panel upgrade / heavy-up</option>
+              <option>EV charger install</option>
+              <option>Whole-home rewire</option>
+              <option>Light commercial</option>
+              <option>Troubleshooting / repair</option>
+              <option>Not sure — need a site visit</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="details">Details</label>
+            <textarea id="details" name="details" rows="5" placeholder="Age of home, current service size if known, timing constraints, what's failing, etc."></textarea>
+          </div>
+
+          <button type="submit" class="lumen-btn" style="width:100%;justify-content:center">Submit Request</button>
+          <p style="font-family:'Archivo',sans-serif;font-size:0.78rem;color:var(--lu-gray);text-align:center;margin:0.75rem 0 0;font-weight:500">4 business hour response</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
