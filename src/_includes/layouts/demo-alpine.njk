@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0F3E2E">
+  <title>{{ title if title else "Alpine Home Inspectors | Colorado Springs Home Inspection" }}</title>
+  <meta name="description" content="{{ description if description else 'InterNACHI-certified Colorado Springs home inspectors. Full residential, sewer scope, radon, infrared. Same-week scheduling. Reports in 24 hours.' }}">
+  <link rel="canonical" href="https://pikespeakwebdesigns.com/samples/">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/source-serif-4/files/source-serif-4-latin-600-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/inter/files/inter-latin-400-normal.woff2" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=source-serif-4:400,600|inter:400,500,600|jetbrains-mono:400,500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.bunny.net/css?family=source-serif-4:400,600|inter:400,500,600|jetbrains-mono:400,500&display=swap"></noscript>
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/alpine.css">
+</head>
+<body class="alpine-site">
+
+<div class="alpine-banner" role="note" aria-label="Demo site notice">
+  <span class="alpine-banner-label">Live Demo &middot; Sample site built by Pikes Peak Web Designs</span>
+  <div class="alpine-banner-actions">
+    <a href="/samples/">&larr; Back to Samples</a>
+    <a href="/contact/">Get a site like this &rarr;</a>
+  </div>
+</div>
+
+<header class="alpine-header">
+  <div class="alpine-header-inner">
+    <a href="/demo/alpine-inspectors/" class="alpine-logo">
+      Alpine Home Inspectors<em>Certified &middot; Colorado Springs</em>
+    </a>
+    <nav class="alpine-nav" aria-label="Main navigation">
+      <a href="/demo/alpine-inspectors/"{% if page.url == '/demo/alpine-inspectors/' %} class="is-active"{% endif %}>Home</a>
+      <a href="/demo/alpine-inspectors/services/"{% if page.url | startsWith('/demo/alpine-inspectors/services/') %} class="is-active"{% endif %}>Services</a>
+      <a href="/demo/alpine-inspectors/about/"{% if page.url | startsWith('/demo/alpine-inspectors/about/') %} class="is-active"{% endif %}>About</a>
+      <a href="/demo/alpine-inspectors/contact/"{% if page.url | startsWith('/demo/alpine-inspectors/contact/') %} class="is-active"{% endif %}>Contact</a>
+      <a href="tel:7195550188" class="alpine-nav-phone">(719) 555-0188</a>
+    </nav>
+    <button class="alpine-menu-toggle" type="button" aria-label="Toggle menu" onclick="document.getElementById('alpineMobileNav').classList.toggle('is-open')">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="alpine-mobile-nav" id="alpineMobileNav">
+  <a href="tel:7195550188">Call (719) 555-0188</a>
+  <a href="/demo/alpine-inspectors/">Home</a>
+  <a href="/demo/alpine-inspectors/services/">Services</a>
+  <a href="/demo/alpine-inspectors/about/">About</a>
+  <a href="/demo/alpine-inspectors/contact/">Contact</a>
+</div>
+
+<main id="main-content">
+  {{ content | safe }}
+</main>
+
+<footer class="alpine-footer">
+  <div class="alpine-footer-grid">
+    <div class="alpine-footer-brand">
+      <div class="alpine-logo" style="color:#FFFFFF">Alpine Home Inspectors<em style="color:#D6CBB4">Certified &middot; Colorado Springs</em></div>
+      <p style="margin-top:1rem">Family-run home inspection firm serving the Pikes Peak region since 2011. InterNACHI-certified, HAAG-certified, Colorado-licensed. We walk every roof, open every panel, and write the report you wish every inspector wrote.</p>
+    </div>
+    <div>
+      <h3 class="alpine-footer-col-title">Inspections</h3>
+      <a href="/demo/alpine-inspectors/services/#residential">Residential</a>
+      <a href="/demo/alpine-inspectors/services/#pre-listing">Pre-listing</a>
+      <a href="/demo/alpine-inspectors/services/#sewer-scope">Sewer scope</a>
+      <a href="/demo/alpine-inspectors/services/#radon">Radon</a>
+      <a href="/demo/alpine-inspectors/services/#infrared">Infrared</a>
+    </div>
+    <div>
+      <h3 class="alpine-footer-col-title">Company</h3>
+      <a href="/demo/alpine-inspectors/about/">About</a>
+      <a href="/demo/alpine-inspectors/contact/">Contact</a>
+      <a href="/demo/alpine-inspectors/services/">Services</a>
+    </div>
+    <div>
+      <h3 class="alpine-footer-col-title">Reach us</h3>
+      <a href="tel:7195550188">(719) 555-0188</a>
+      <a href="mailto:hello@alpine.example">hello@alpine.example</a>
+      <a href="/demo/alpine-inspectors/contact/">Book an inspection</a>
+    </div>
+  </div>
+  <div class="alpine-footer-bottom">
+    <span>&copy; {{ "" | currentYear }} Alpine Home Inspectors &middot; License CO-HI-08214</span>
+    <span>Site by <a href="https://pikespeakwebdesigns.com/" class="alpine-footer-pp" rel="noopener">Pikes Peak Web Designs</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

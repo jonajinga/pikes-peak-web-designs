@@ -105,14 +105,10 @@ export default function (eleventyConfig) {
     try {
       const src = fs.readFileSync(cssFile, "utf8");
 
-      // Extract the .demo-site block into its own stylesheet. The demo defines
-      // its own palette under .demo-site so we only need a tiny shared reset,
-      // not the full Pikes Peak design token system.
-      const demoStart = src.indexOf("/* =============================================================\n   DEMO SITE — REDCAP ROOFING");
-      const demoEnd = src.indexOf("/* =============================================================\n   MOBILE-FIRST OPTIMIZATIONS");
-      let demoCSS = "";
-      if (demoStart !== -1 && demoEnd !== -1) {
-        const demoReset = `
+      // Tiny reset shared by every per-demo stylesheet. Each demo defines its
+      // own palette under its root body class, so we don't need the full Pikes
+      // Peak design token system in these extracted files.
+      const demoReset = `
 *,*::before,*::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
 html, body { margin: 0; padding: 0; }
@@ -120,10 +116,21 @@ body { min-height: 100vh; }
 img, svg { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
-:focus-visible { outline: 3px solid #F7D046; outline-offset: 2px; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 2px; }
 `;
-        demoCSS = demoReset + src.slice(demoStart, demoEnd);
-      }
+
+      // Each entry is a demo CSS block bounded by its opening comment and the
+      // next block's opening comment (or the MOBILE-FIRST sentinel for the
+      // last one). Extracting each into its own file so a /demo/<slug>/ page
+      // only ships its own tokens + components, not the full site stylesheet.
+      const demos = [
+        { file: "demo.css",       start: "DEMO SITE — REDCAP ROOFING",    end: "DEMO SITE — ALPINE INSPECTORS" },
+        { file: "alpine.css",     start: "DEMO SITE — ALPINE INSPECTORS", end: "DEMO SITE — MEADOW & STONE" },
+        { file: "meadow.css",     start: "DEMO SITE — MEADOW & STONE",    end: "DEMO SITE — SUMMIT HVAC" },
+        { file: "summit.css",     start: "DEMO SITE — SUMMIT HVAC",       end: "DEMO SITE — LUMEN ELECTRIC" },
+        { file: "lumen.css",      start: "DEMO SITE — LUMEN ELECTRIC",    end: "DEMO SITE — CLEARWATER PLUMBING" },
+        { file: "clearwater.css", start: "DEMO SITE — CLEARWATER PLUMBING", end: "MOBILE-FIRST OPTIMIZATIONS" },
+      ];
 
       const minifier = new CleanCSS({ returnPromise: false, level: 1 });
 
@@ -132,11 +139,20 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
       if (!minStyle.errors.length) fs.writeFileSync(cssFile, minStyle.styles);
       else console.warn("style.css minify errors:", minStyle.errors);
 
-      // Write minified demo.css (if extraction succeeded)
-      if (demoCSS) {
-        const minDemo = new CleanCSS({ returnPromise: false, level: 1 }).minify(demoCSS);
-        if (!minDemo.errors.length) fs.writeFileSync(demoFile, minDemo.styles);
-        else console.warn("demo.css minify errors:", minDemo.errors);
+      // Extract + minify each demo stylesheet
+      for (const d of demos) {
+        const openMarker = `/* =============================================================\n   ${d.start}`;
+        const closeMarker = `/* =============================================================\n   ${d.end}`;
+        const s = src.indexOf(openMarker);
+        const e = src.indexOf(closeMarker);
+        if (s === -1 || e === -1) continue; // demo not yet written
+        const block = demoReset + src.slice(s, e);
+        const result = new CleanCSS({ returnPromise: false, level: 1 }).minify(block);
+        if (!result.errors.length) {
+          fs.writeFileSync(path.resolve("./_site/assets/css/", d.file), result.styles);
+        } else {
+          console.warn(`${d.file} minify errors:`, result.errors);
+        }
       }
     } catch (e) {
       console.warn("CSS build failed:", e.message);
