@@ -6080,8 +6080,20 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   font-weight: 600;
 }
 
-/* ----- Demo-specific mobile polish ----- */
+/* ----- Demo-specific mobile polish + overflow safety ----- */
+.demo-site, .demo-site main { overflow-x: clip; max-width: 100%; }
+.demo-site img, .demo-site svg { max-width: 100%; height: auto; }
+.demo-site h1, .demo-site h2, .demo-site h3 { overflow-wrap: break-word; word-break: break-word; }
+.demo-site .demo-hero-card { min-width: 0; }
 @media (max-width: 880px) {
+  /* Beat any inline grid-template-columns on demo content pages */
+  .demo-site .demo-contact-grid,
+  .demo-site .demo-area-grid,
+  .demo-site .demo-team-grid,
+  .demo-site main > section .demo-container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
   .demo-site .demo-hero { padding: clamp(2.5rem, 7vw, 4rem) 0 clamp(3rem, 8vw, 5rem); }
   .demo-site .demo-hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
   .demo-site .demo-hero-card {
@@ -6159,7 +6171,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   --al-slate-deep: #1E293B;
   --al-forest: #0F3E2E;
   --al-forest-light: #145B42;
-  --al-taupe: #A89A82;
+  --al-taupe: #6B5C49;
   --al-taupe-light: #D6CBB4;
   --al-cream: #FAF7F0;
   --al-cream-deep: #F2EDE0;
@@ -6759,11 +6771,45 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 .alpine-form textarea { min-height: 150px; resize: vertical; line-height: 1.6; }
 
-/* ---------- Mobile tweaks ---------- */
+/* ---------- Mobile tweaks + safety net ---------- */
+.alpine-site, .alpine-site main { overflow-x: clip; max-width: 100%; }
+.alpine-site img, .alpine-site svg { max-width: 100%; height: auto; }
+.alpine-site h1, .alpine-site h2, .alpine-site h3 { overflow-wrap: break-word; word-break: break-word; }
+.alpine-site .alpine-hero-card,
+.alpine-site .alpine-spec { min-width: 0; }
+.alpine-site code { word-break: break-word; white-space: normal; }
+@media (max-width: 880px) {
+  /* Beat any inline grid-template-columns on content pages */
+  .alpine-site .alpine-contact-grid,
+  .alpine-site .alpine-team-grid,
+  .alpine-site main > section .alpine-container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+  }
+  .alpine-site .alpine-report-item { padding: 1.5rem 0; }
+  .alpine-site .alpine-hero-meta { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 720px) {
   .alpine-site .alpine-hero-actions { flex-direction: column; align-items: stretch; }
   .alpine-site .alpine-hero-actions .alpine-btn { width: 100%; justify-content: center; }
   .alpine-site .alpine-hero-meta { grid-template-columns: 1fr; }
+  .alpine-site .alpine-cta { padding-left: 1rem; padding-right: 1rem; }
+  .alpine-site .alpine-cta h2 { font-size: clamp(1.65rem, 6vw, 2.25rem); }
+  .alpine-site .alpine-stats { grid-template-columns: repeat(2, 1fr); }
+  .alpine-site .alpine-services-grid { grid-template-columns: 1fr; }
+  .alpine-site .alpine-form-row { grid-template-columns: 1fr; }
+  .alpine-site .alpine-banner-actions { gap: 0.85rem; font-size: 0.7rem; }
+  .alpine-site .alpine-header-inner { padding: 0.85rem 1.1rem; gap: 1rem; }
+  .alpine-site .alpine-section { padding: clamp(2.75rem, 8vw, 4rem) 0; }
+  .alpine-site .alpine-page-hero { padding: 2.5rem 0; }
+}
+@media (max-width: 480px) {
+  .alpine-site .alpine-hero h1 { font-size: clamp(1.85rem, 9vw, 2.6rem); }
+  .alpine-site .alpine-hero-sub { font-size: 1rem; }
+  .alpine-site .alpine-lead { font-size: 1rem; }
+  .alpine-site .alpine-stats { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .alpine-site .alpine-hero-meta { padding: 1.25rem; }
+  .alpine-site .alpine-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
 }
 
 /* =============================================================
@@ -7148,13 +7194,13 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 
 /* ---------- CTA ---------- */
 .meadow-cta {
-  background: var(--me-terracotta);
+  background: var(--me-terracotta-deep);
   color: var(--me-cream);
   padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 3vw, 2rem);
   text-align: center;
 }
 .meadow-cta h2 { color: #FFFFFF; margin: 0 auto 1rem; max-width: 22ch; text-wrap: balance; font-weight: 400; }
-.meadow-cta p { color: rgba(255,255,255,0.86); max-width: 50ch; margin: 0 auto 2rem; }
+.meadow-cta p { color: rgba(255,255,255,0.94); max-width: 50ch; margin: 0 auto 2rem; }
 .meadow-cta .meadow-btn { background: var(--me-cream); color: var(--me-deep); border-color: var(--me-cream); }
 .meadow-cta .meadow-btn:hover { background: #FFFFFF; }
 .meadow-cta .meadow-btn-outline { background: transparent; color: var(--me-cream); border-color: var(--me-cream); }
@@ -7223,9 +7269,45 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 .meadow-form textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
 
+/* ---------- Meadow mobile safety net ---------- */
+.meadow-site, .meadow-site main { overflow-x: clip; max-width: 100%; }
+.meadow-site img, .meadow-site svg { max-width: 100%; height: auto; }
+.meadow-site h1, .meadow-site h2, .meadow-site h3 { overflow-wrap: break-word; word-break: break-word; }
+.meadow-site .meadow-hero-card { min-width: 0; }
+@media (max-width: 880px) {
+  /* Override any inline grid-template-columns on content pages */
+  .meadow-site .meadow-contact-grid,
+  .meadow-site .meadow-team-grid,
+  .meadow-site main > section .meadow-container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+  }
+  .meadow-site .meadow-features { grid-template-columns: 1fr 1fr; }
+  .meadow-site .meadow-stats { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 720px) {
   .meadow-site .meadow-hero-actions { flex-direction: column; align-items: stretch; }
   .meadow-site .meadow-hero-actions .meadow-btn { width: 100%; justify-content: center; }
+  .meadow-site .meadow-features { grid-template-columns: 1fr; }
+  .meadow-site .meadow-testimonials { grid-template-columns: 1fr; }
+  .meadow-site .meadow-form-row { grid-template-columns: 1fr; }
+  .meadow-site .meadow-section { padding: clamp(2.75rem, 8vw, 4rem) 0; }
+  .meadow-site .meadow-page-hero { padding: 2.5rem 0; }
+  .meadow-site .meadow-cta { padding-left: 1rem; padding-right: 1rem; }
+  .meadow-site .meadow-cta h2 { font-size: clamp(1.65rem, 6vw, 2.25rem); }
+  .meadow-site .meadow-banner-actions { gap: 0.85rem; font-size: 0.74rem; }
+  .meadow-site .meadow-header-inner { padding: 0 0.5rem; gap: 1rem; }
+  .meadow-site .meadow-editorial-media { aspect-ratio: 16 / 10; }
+  .meadow-site .meadow-editorial-media::after { font-size: 1.2rem; left: 1rem; right: 1rem; bottom: 1rem; }
+}
+@media (max-width: 480px) {
+  .meadow-site .meadow-hero h1 { font-size: clamp(2rem, 10vw, 2.85rem); }
+  .meadow-site .meadow-stats { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .meadow-site .meadow-stat-num { font-size: clamp(2.5rem, 12vw, 3rem); }
+  .meadow-site .meadow-hero-card { padding: 1.5rem 1.25rem; min-height: 280px; }
+  .meadow-site .meadow-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
+  .meadow-site .meadow-testimonial { padding: 1.5rem; }
+  .meadow-site .meadow-feature { padding: 1.5rem 1.25rem; }
 }
 
 /* =============================================================
@@ -7674,9 +7756,45 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 .summit-form textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
 
+/* ---------- Summit mobile safety net ---------- */
+.summit-site, .summit-site main { overflow-x: clip; max-width: 100%; }
+.summit-site img, .summit-site svg { max-width: 100%; height: auto; }
+.summit-site h1, .summit-site h2, .summit-site h3 { overflow-wrap: break-word; word-break: break-word; }
+.summit-site .summit-spec, .summit-site .summit-hero-badge { min-width: 0; }
+.summit-site code, .summit-site .summit-spec-row .v { word-break: break-word; white-space: normal; }
+@media (max-width: 880px) {
+  .summit-site .summit-contact-grid,
+  .summit-site main > section .summit-container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+  }
+  .summit-site .summit-services { grid-template-columns: 1fr 1fr; }
+  .summit-site .summit-testimonials { grid-template-columns: 1fr; }
+  .summit-site .summit-spec-row { grid-template-columns: 100px 1fr; gap: 0.5rem; }
+}
 @media (max-width: 720px) {
   .summit-site .summit-hero-actions { flex-direction: column; align-items: stretch; }
   .summit-site .summit-hero-actions .summit-btn { width: 100%; justify-content: center; }
+  .summit-site .summit-services { grid-template-columns: 1fr; }
+  .summit-site .summit-stats { grid-template-columns: 1fr 1fr; }
+  .summit-site .summit-form-row { grid-template-columns: 1fr; }
+  .summit-site .summit-section { padding: clamp(2.75rem, 8vw, 4rem) 0; }
+  .summit-site .summit-page-hero { padding: 2.5rem 0; }
+  .summit-site .summit-cta { padding-left: 1rem; padding-right: 1rem; }
+  .summit-site .summit-cta h2 { font-size: clamp(1.65rem, 6vw, 2.25rem); }
+  .summit-site .summit-banner-actions { gap: 0.85rem; font-size: 0.7rem; }
+  .summit-site .summit-header-inner { gap: 0.85rem; }
+  .summit-site .summit-spec { padding: 1.5rem 1.25rem; min-height: 0; }
+  .summit-site .summit-hero-badges { gap: 0.4rem; }
+  .summit-site .summit-hero-badge { font-size: 0.7rem; padding: 0.3rem 0.6rem; }
+}
+@media (max-width: 480px) {
+  .summit-site .summit-hero h1 { font-size: clamp(1.85rem, 9vw, 2.65rem); }
+  .summit-site .summit-stat { padding: 1.25rem 1rem; }
+  .summit-site .summit-stat-num { font-size: clamp(1.75rem, 8vw, 2.5rem); }
+  .summit-site .summit-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
+  .summit-site .summit-spec-row { grid-template-columns: 1fr; gap: 0.15rem; padding-bottom: 0.85rem; }
+  .summit-site .summit-spec-row .k { font-size: 0.68rem; }
 }
 
 /* =============================================================
@@ -7987,7 +8105,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .lumen-testimonial-author span {
   display: block;
   font-weight: 500; letter-spacing: 0.04em;
-  color: var(--lu-gray-light); margin-top: 0.25rem;
+  color: var(--lu-gray); margin-top: 0.25rem;
   text-transform: none;
 }
 
@@ -8063,9 +8181,47 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 .lumen-form textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
 
+/* ---------- Lumen mobile safety net ---------- */
+.lumen-site, .lumen-site main { overflow-x: clip; max-width: 100%; }
+.lumen-site img, .lumen-site svg { max-width: 100%; height: auto; }
+.lumen-site h1, .lumen-site h2, .lumen-site h3 { overflow-wrap: break-word; word-break: break-word; }
+@media (max-width: 880px) {
+  .lumen-site .lumen-contact-grid,
+  .lumen-site main > section .lumen-container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .lumen-site .lumen-stats { grid-template-columns: 1fr 1fr; }
+  .lumen-site .lumen-stat { border-right: 0; border-bottom: 2px solid rgba(255,255,255,0.15); padding: 1.5rem 1.25rem; }
+  .lumen-site .lumen-stat:nth-last-child(-n+2) { border-bottom: 0; }
+  .lumen-site .lumen-testimonials { grid-template-columns: 1fr; }
+  .lumen-site .lumen-testimonial { border-right: 0; }
+}
 @media (max-width: 720px) {
   .lumen-site .lumen-hero-actions { flex-direction: column; align-items: stretch; }
   .lumen-site .lumen-hero-actions .lumen-btn { width: 100%; justify-content: center; }
+  .lumen-site .lumen-form-row { grid-template-columns: 1fr; }
+  .lumen-site .lumen-section { padding: clamp(2.75rem, 8vw, 4rem) 0; }
+  .lumen-site .lumen-page-hero { padding: 2.5rem 0; }
+  .lumen-site .lumen-cta { padding-left: 1rem; padding-right: 1rem; }
+  .lumen-site .lumen-cta h2 { font-size: clamp(2rem, 8vw, 2.85rem); max-width: 100%; }
+  .lumen-site .lumen-banner-actions { gap: 0.85rem; font-size: 0.68rem; }
+  .lumen-site .lumen-header-inner { gap: 0.85rem; }
+  .lumen-site .lumen-hero::after { display: none; }
+  .lumen-site .lumen-hero h1 { max-width: 100%; }
+  .lumen-site .lumen-hero-fact { grid-template-columns: 1fr; gap: 0.5rem; padding: 1rem 1.25rem; }
+  .lumen-site .lumen-hero-fact-num { font-size: 2.25rem; }
+  .lumen-site .lumen-service { grid-template-columns: auto 1fr; }
+  .lumen-site .lumen-service-num { font-size: 2.25rem; }
+  .lumen-site .lumen-service-tag { grid-column: 1 / -1; justify-self: start; margin-top: 0.5rem; }
+}
+@media (max-width: 480px) {
+  .lumen-site .lumen-hero h1 { font-size: clamp(2.4rem, 11vw, 3.5rem); }
+  .lumen-site .lumen-stats { grid-template-columns: 1fr; }
+  .lumen-site .lumen-stat:nth-last-child(-n+2) { border-bottom: 2px solid rgba(255,255,255,0.15); }
+  .lumen-site .lumen-stat:last-child { border-bottom: 0; }
+  .lumen-site .lumen-stat-num { font-size: clamp(2.75rem, 13vw, 3.5rem); }
+  .lumen-site .lumen-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
 }
 
 /* =============================================================
@@ -8438,22 +8594,32 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .clearwater-testimonial-author strong { display: block; color: var(--cw-ink); font-weight: 700; font-size: 0.95rem; }
 .clearwater-testimonial-author span { color: var(--cw-text-muted); font-size: 0.82rem; }
 
-/* CTA */
+/* CTA — navy bg for AA contrast on white headline + body copy. */
 .clearwater-cta {
-  background: var(--cw-aqua);
+  background: var(--cw-navy-deep);
   color: var(--cw-cream);
   padding: clamp(4rem, 7vw, 5.5rem) clamp(1.25rem, 3vw, 2rem);
   text-align: center;
   border-radius: var(--cw-radius-lg);
   max-width: 1100px;
   margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
 }
+.clearwater-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 0%, rgba(6, 182, 212, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.clearwater-cta > * { position: relative; z-index: 1; }
 .clearwater-cta h2 { color: #FFFFFF; margin: 0 auto 1rem; max-width: 22ch; text-wrap: balance; }
 .clearwater-cta p { color: rgba(255,255,255,0.9); max-width: 48ch; margin: 0 auto 2rem; }
-.clearwater-cta .clearwater-btn { background: var(--cw-cream); color: var(--cw-navy-deep); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
+.clearwater-cta .clearwater-btn { background: var(--cw-peach-deep); color: var(--cw-ink); box-shadow: 0 12px 24px rgba(251, 146, 60, 0.3); }
 .clearwater-cta .clearwater-btn:hover { background: #FFFFFF; color: var(--cw-navy-deep); }
 .clearwater-cta .clearwater-btn-outline { background: transparent; color: #FFFFFF; box-shadow: inset 0 0 0 2px #FFFFFF; }
-.clearwater-cta .clearwater-btn-outline:hover { background: #FFFFFF; color: var(--cw-aqua-deep); box-shadow: inset 0 0 0 2px #FFFFFF; }
+.clearwater-cta .clearwater-btn-outline:hover { background: #FFFFFF; color: var(--cw-navy-deep); box-shadow: inset 0 0 0 2px #FFFFFF; }
 
 /* Footer */
 .clearwater-footer {
@@ -8520,9 +8686,43 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 .clearwater-form textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
 
+/* ---------- Clearwater mobile safety net ---------- */
+.clearwater-site, .clearwater-site main { overflow-x: clip; max-width: 100%; }
+.clearwater-site img, .clearwater-site svg { max-width: 100%; height: auto; }
+.clearwater-site h1, .clearwater-site h2, .clearwater-site h3 { overflow-wrap: break-word; word-break: break-word; }
+.clearwater-site .clearwater-hero-card { min-width: 0; }
+@media (max-width: 880px) {
+  .clearwater-site .clearwater-contact-grid,
+  .clearwater-site main > section .clearwater-container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+  }
+  .clearwater-site .clearwater-services { grid-template-columns: 1fr 1fr; }
+  .clearwater-site .clearwater-testimonials { grid-template-columns: 1fr; }
+  .clearwater-site .clearwater-stats { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 720px) {
   .clearwater-site .clearwater-hero-actions { flex-direction: column; align-items: stretch; }
   .clearwater-site .clearwater-hero-actions .clearwater-btn { width: 100%; justify-content: center; }
+  .clearwater-site .clearwater-services { grid-template-columns: 1fr; }
+  .clearwater-site .clearwater-form-row { grid-template-columns: 1fr; }
+  .clearwater-site .clearwater-section { padding: clamp(2.75rem, 8vw, 4rem) 0; }
+  .clearwater-site .clearwater-page-hero { padding: 2.5rem 0; }
+  .clearwater-site .clearwater-cta { padding-left: 1rem; padding-right: 1rem; margin-left: 1rem; margin-right: 1rem; }
+  .clearwater-site .clearwater-cta h2 { font-size: clamp(1.75rem, 7vw, 2.4rem); }
+  .clearwater-site .clearwater-banner-actions { gap: 0.85rem; font-size: 0.74rem; }
+  .clearwater-site .clearwater-header-inner { padding: 0 0.5rem; gap: 1rem; }
+  .clearwater-site .clearwater-hero-card { padding: 1.75rem 1.5rem; min-height: 280px; }
+  .clearwater-site .clearwater-hero-trust { font-size: 0.82rem; }
+}
+@media (max-width: 480px) {
+  .clearwater-site .clearwater-hero h1 { font-size: clamp(2.1rem, 10vw, 2.85rem); }
+  .clearwater-site .clearwater-stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .clearwater-site .clearwater-stat { padding: 1.25rem 0.75rem; }
+  .clearwater-site .clearwater-stat-num { font-size: clamp(2.2rem, 11vw, 2.85rem); }
+  .clearwater-site .clearwater-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
+  .clearwater-site .clearwater-testimonial { padding: 1.5rem 1.25rem; }
+  .clearwater-site .clearwater-service { padding: 1.5rem 1.25rem; }
 }
 
 /* =============================================================
