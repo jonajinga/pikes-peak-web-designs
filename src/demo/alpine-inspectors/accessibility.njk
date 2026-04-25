@@ -1,0 +1,54 @@
+---
+layout: layouts/demo-alpine.njk
+title: "Accessibility | Alpine Home Inspectors"
+description: "Alpine's commitment to making the website and the inspection report accessible to people with disabilities. WCAG 2.2 AA target."
+permalink: /demo/alpine-inspectors/accessibility/
+---
+
+<section class="alpine-page-hero">
+  <div class="alpine-container">
+    <nav class="alpine-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/alpine-inspectors/">Home</a><span class="sep">/</span><span>Accessibility</span>
+    </nav>
+    <h1>Accessibility</h1>
+    <p class="alpine-lead">We design every Alpine touchpoint &mdash; the website, the booking form, and the PDF report &mdash; to meet WCAG 2.2 AA. Below is what that means, what we've done, and how to tell us if we've missed something.</p>
+  </div>
+</section>
+
+<section class="alpine-section">
+  <div class="alpine-container alpine-container--narrow">
+    <div class="alpine-prose">
+      <div class="alpine-sentinel"><strong>§ 01</strong>Standard</div>
+      <h2>WCAG 2.2 AA, verified at every release.</h2>
+      <p>Web Content Accessibility Guidelines (WCAG) 2.2, Level AA, is our standard. Every change we ship to this site is checked against an automated WCAG audit AND a manual screen-reader pass before deployment. Our PDF inspection reports are also generated to be screen-reader compatible (tagged headings, alt text on photographs, semantic table structure).</p>
+
+      <div class="alpine-sentinel" style="margin-top:3rem"><strong>§ 02</strong>Website</div>
+      <h2>What we've done on this site.</h2>
+      <ul>
+        <li><strong>Keyboard.</strong> Every interactive element is reachable and usable with a keyboard. Tab order matches visual order. Focus indicators are visible everywhere.</li>
+        <li><strong>Screen readers.</strong> Headings are semantic (h1 &rarr; h2 &rarr; h3 in order), landmarks are labeled, every image has alt text or is marked decorative, every form field has a programmatically-associated label.</li>
+        <li><strong>Color contrast.</strong> Text meets 4.5:1 minimum (3:1 for large text). Interactive states (hover, focus, active) all maintain that contrast.</li>
+        <li><strong>Motion.</strong> We respect <code>prefers-reduced-motion</code>. The site has no auto-playing video, no carousel, no parallax.</li>
+        <li><strong>Zoom.</strong> Content reflows at 400% zoom without horizontal scroll on the main viewport.</li>
+        <li><strong>Forms.</strong> Required fields are marked with an asterisk and a screen-reader-friendly label. Errors are announced via <code>role="alert"</code>.</li>
+      </ul>
+
+      <div class="alpine-sentinel" style="margin-top:3rem"><strong>§ 03</strong>Inspection day</div>
+      <h2>Accommodations during the inspection.</h2>
+      <p>If you'd like to attend the inspection in person but need accommodation (mobility, hearing, vision, sensory processing, or anything else), please tell us during booking. We'll make reasonable arrangements: a slower walkthrough, written summaries delivered as we go, or a video walkthrough with audio description after the inspection so you can review at your own pace.</p>
+
+      <div class="alpine-sentinel" style="margin-top:3rem"><strong>§ 04</strong>The report</div>
+      <h2>PDF report accessibility.</h2>
+      <p>Our PDF reports are tagged for screen readers. Photographs include alt text describing what's pictured (with our written observations as the surrounding context). Headings, lists, and tables use semantic markup. The report includes a plain-text summary at the front so a screen-reader user gets the priorities up front before navigating to specific sections.</p>
+
+      <div class="alpine-sentinel" style="margin-top:3rem"><strong>§ 05</strong>Tell us when we miss</div>
+      <h2>How to report an accessibility issue.</h2>
+      <p>If something on this site or in your report is inaccessible to you, please tell us. We treat accessibility issues with the same priority as a security issue.</p>
+      <ul>
+        <li>Email <a href="mailto:hello@alpine.example">hello@alpine.example</a> with the subject "Accessibility issue".</li>
+        <li>Call <a href="tel:7195550188">(719) 555-0188</a> &mdash; Sarah will take the report.</li>
+      </ul>
+      <p>We aim to respond within 2 business days and resolve where we can within 10.</p>
+    </div>
+  </div>
+</section>

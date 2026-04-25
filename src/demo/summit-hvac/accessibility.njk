@@ -1,0 +1,53 @@
+---
+layout: layouts/demo-summit.njk
+title: "Accessibility | Summit HVAC"
+description: "Summit HVAC's commitment to website and service-document accessibility. WCAG 2.2 AA target, in-home accommodations available."
+permalink: /demo/summit-hvac/accessibility/
+---
+
+<section class="summit-page-hero">
+  <div class="summit-container">
+    <nav class="summit-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/summit-hvac/">Overview</a><span class="sep">/</span><span>Accessibility</span>
+    </nav>
+    <h1>Accessibility</h1>
+    <p class="summit-lead">Engineering-grade about everything, including how we deliver information. WCAG 2.2 AA on the website. Tagged PDFs on every proposal. Reasonable accommodations on every site visit.</p>
+  </div>
+</section>
+
+<section class="summit-section summit-section--pale">
+  <div class="summit-container summit-container--narrow">
+    <div class="summit-prose">
+      <span class="summit-eyebrow">01 / Standard</span>
+      <h2>WCAG 2.2 AA, every release.</h2>
+      <p>Web Content Accessibility Guidelines 2.2, Level AA, is the conformance target. Every change shipped to summithvac.example passes both an automated audit (axe / Lighthouse) and a manual screen-reader pass before going live.</p>
+
+      <span class="summit-eyebrow" style="display:block;margin-top:3rem">02 / Site</span>
+      <h2>What we've done here.</h2>
+      <ul>
+        <li><strong>Keyboard.</strong> Every interactive element is reachable, operable, and visibly focused via keyboard.</li>
+        <li><strong>Screen readers.</strong> Semantic heading order (h1 &rarr; h2 &rarr; h3), labeled landmarks, programmatic form labels, alt text on imagery, ARIA only where HTML can't carry the meaning.</li>
+        <li><strong>Color contrast.</strong> 4.5:1 on body text, 3:1 on large text and UI components. Meets AA at every page.</li>
+        <li><strong>Motion.</strong> No autoplay video, no carousel. Site honors <code>prefers-reduced-motion</code>.</li>
+        <li><strong>Tap targets.</strong> 44&times;44 minimum on every button and link on touch devices.</li>
+        <li><strong>Forms.</strong> Required fields are programmatically marked, errors are announced via <code>role="alert"</code>, focus moves to the error on submit.</li>
+      </ul>
+
+      <span class="summit-eyebrow" style="display:block;margin-top:3rem">03 / Proposals &amp; reports</span>
+      <h2>PDF accessibility.</h2>
+      <p>Every proposal we send is generated as a tagged PDF: semantic headings, table structure preserved, alt text on diagrams, reading order matches visual order. The Manual J load calculation is delivered both as a tagged PDF and (on request) as an Excel workbook for clients who prefer to read structured data with their screen reader.</p>
+
+      <span class="summit-eyebrow" style="display:block;margin-top:3rem">04 / Site visits</span>
+      <h2>In-home accommodations.</h2>
+      <p>If you'd like accommodation during the on-site estimate or the install &mdash; sign-language interpretation (we work with a local agency on 48 hours notice), large-print printed materials, video-call walk-throughs in lieu of in-person visits &mdash; tell us during scheduling. We'll arrange.</p>
+
+      <span class="summit-eyebrow" style="display:block;margin-top:3rem">05 / Office access</span>
+      <h2>1208 Santa Fe Drive.</h2>
+      <p>Our shop is single-story with a level entrance and a 36" door. The customer-facing counter is 34" tall. ADA-accessible parking is in front. If anything else would help your visit, call ahead.</p>
+
+      <span class="summit-eyebrow" style="display:block;margin-top:3rem">06 / Reporting issues</span>
+      <h2>Tell us when we miss.</h2>
+      <p>If anything on this site or in your proposal is inaccessible to you, please tell us. Email <a href="mailto:service@summithvac.example">service@summithvac.example</a> with subject "Accessibility" or call <a href="tel:3035550275">(303) 555-0275</a> &mdash; ask for Tess. Response within 2 business days.</p>
+    </div>
+  </div>
+</section>
