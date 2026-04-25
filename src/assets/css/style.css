@@ -4231,6 +4231,245 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 :root[data-theme="dark"] .portal-card:hover .portal-arrow { color: var(--gold-300); }
 .portal-card--urgent .portal-arrow { color: var(--danger); }
 
+/* Two-column variant for stages with paired card + info */
+.portal-grid--two { grid-template-columns: 1fr 1fr; }
+@media (max-width: 760px) { .portal-grid--two { grid-template-columns: 1fr; } }
+
+/* Info card variant (no link, no hover, accent border) */
+.portal-card--info {
+  background: var(--bg-alt);
+  border-color: var(--line);
+  cursor: default;
+}
+.portal-card--info:hover { transform: none; box-shadow: none; border-color: var(--line); }
+.portal-icon--info { background: rgba(10, 31, 68, 0.06); color: var(--navy-700); }
+:root[data-theme="dark"] .portal-icon--info { background: rgba(221, 177, 61, 0.1); color: var(--gold-400); }
+
+/* Bullet list inside an info card */
+.portal-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0;
+  display: grid;
+  gap: 0.55rem;
+}
+.portal-bullets li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+.portal-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  background: var(--gold-500);
+  border-radius: 50%;
+}
+
+/* Stage section header (above each portal grid) */
+.portal-stage-header {
+  margin-bottom: 1.75rem;
+}
+.portal-stage-tag {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  background: var(--bg-alt-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy-700);
+  margin-bottom: 1rem;
+}
+:root[data-theme="dark"] .portal-stage-tag { color: var(--gold-400); }
+.portal-stage-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 1.3rem + 1.4vw, 2.1rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+.portal-stage-header > p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 60ch;
+}
+.portal-stage-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 1.5rem 0 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-alt);
+  border-left: 3px solid var(--gold-500);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.portal-stage-meta > div { font-size: 0.88rem; color: var(--text); line-height: 1.5; }
+.portal-stage-meta strong {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+@media (max-width: 760px) {
+  .portal-stage-meta { grid-template-columns: 1fr; padding: 1rem 1.25rem; }
+}
+
+/* Quick callout row inside stage 3 (truly time-critical) */
+.portal-quick-row {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(161, 25, 15, 0.06);
+  border: 1px solid rgba(161, 25, 15, 0.25);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  font-size: 0.94rem;
+}
+.portal-quick-row strong { color: var(--danger); }
+
+/* Journey selector — 4-card grid that anchors to each stage section */
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 880px) { .journey-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .journey-grid { grid-template-columns: 1fr; } }
+.journey-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.35rem 1.35rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--dur), box-shadow var(--dur), transform var(--dur);
+  text-decoration: none;
+  color: inherit;
+}
+.journey-card:hover {
+  border-color: var(--navy-700);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+:root[data-theme="dark"] .journey-card:hover { border-color: var(--gold-400); }
+.journey-stage {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 0.5rem;
+}
+:root[data-theme="dark"] .journey-stage { color: var(--gold-400); }
+.journey-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+  color: var(--text);
+}
+.journey-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0 0 1rem;
+  flex: 1;
+}
+.journey-arrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-700);
+  transition: color var(--dur);
+}
+:root[data-theme="dark"] .journey-arrow { color: var(--gold-400); }
+.journey-card:hover .journey-arrow { color: var(--gold-600); }
+
+/* Direct contact (3-up grid, simple) */
+.portal-direct-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 760px) { .portal-direct-grid { grid-template-columns: 1fr; } }
+.portal-direct {
+  padding: 1.75rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: left;
+}
+.portal-direct h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.portal-direct-target {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  margin-bottom: 0.65rem;
+  text-decoration: none;
+  word-break: break-word;
+}
+:root[data-theme="dark"] .portal-direct-target { color: var(--gold-400); }
+.portal-direct-target:hover { text-decoration: underline; text-underline-offset: 4px; }
+.portal-direct p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+
+/* Self-serve resources grid */
+.portal-resources {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 880px) { .portal-resources { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .portal-resources { grid-template-columns: 1fr; } }
+.portal-resource {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color var(--dur), background var(--dur);
+}
+.portal-resource:hover {
+  border-color: var(--navy-700);
+  background: var(--bg-alt);
+}
+:root[data-theme="dark"] .portal-resource:hover { border-color: var(--gold-400); }
+.portal-resource strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+:root[data-theme="dark"] .portal-resource strong { color: var(--gold-400); }
+.portal-resource span {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 /* ========== SAMPLE FORMS GALLERY ========== */
 .sample-form-grid {
   display: grid;

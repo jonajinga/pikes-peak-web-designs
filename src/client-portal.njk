@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Client Portal | Pikes Peak Web Designs"
-description: "Existing clients: quick forms for content updates, design feedback, emergency support, referrals, and testimonials. One place for everything."
+description: "Self-serve portal for Pikes Peak Web Designs clients. Onboarding form, content updates, design feedback, emergency support, referrals, and direct contact — all in one place."
 noindex: true
 ---
 
@@ -11,17 +11,129 @@ noindex: true
       <a href="/">Home</a><span class="sep">/</span><span>Client Portal</span>
     </nav>
     <span class="section-label">For existing clients</span>
-    <h1>Everything you need, <em>in one place.</em></h1>
-    <p>Bookmark this page. It's the fastest way to reach us for updates, feedback, and anything urgent. Your request lands in our inbox and we act on it.</p>
+    <h1>Welcome. <em>Everything you need is here.</em></h1>
+    <p>Bookmark this page. Whatever stage you're in &mdash; brand-new client, mid-build, or live and humming &mdash; the right form is below. Pick the section that fits where you are.</p>
   </div>
 </section>
 
-<section class="section">
+<!-- ===================== JOURNEY SELECTOR ===================== -->
+<section class="section section--cream">
   <div class="container" style="max-width:980px">
-    <div class="text-center" style="max-width:640px;margin:0 auto 2.5rem">
-      <span class="section-label">Pick what you need</span>
-      <h2 class="section-title" style="margin-inline:auto">Five short forms. That's it.</h2>
-      <p class="section-subtitle" style="margin-inline:auto">Or just email <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a>; we read every message. The forms just make things faster.</p>
+    <div class="text-center" style="max-width:640px;margin:0 auto 2rem">
+      <span class="section-label">Where are you in the process?</span>
+      <h2 class="section-title" style="margin-inline:auto">Jump straight to what you need.</h2>
+      <p class="section-subtitle" style="margin-inline:auto">Four stages. Each one has its own section below; the link below jumps you to it.</p>
+    </div>
+
+    <div class="journey-grid">
+      <a href="#onboarding" class="journey-card">
+        <span class="journey-stage">Stage 1</span>
+        <h3>Just signed up</h3>
+        <p>Fill out the intake. We need it to start building. Takes about 20 minutes.</p>
+        <span class="journey-arrow">Start onboarding &darr;</span>
+      </a>
+
+      <a href="#in-build" class="journey-card">
+        <span class="journey-stage">Stage 2</span>
+        <h3>In active build</h3>
+        <p>Reviewing a preview link. Give us structured feedback so the next round nails it.</p>
+        <span class="journey-arrow">Send feedback &darr;</span>
+      </a>
+
+      <a href="#live" class="journey-card">
+        <span class="journey-stage">Stage 3</span>
+        <h3>Site is live</h3>
+        <p>Need a content update, hit an issue, or want to schedule something seasonal.</p>
+        <span class="journey-arrow">Update or report &darr;</span>
+      </a>
+
+      <a href="#anytime" class="journey-card">
+        <span class="journey-stage">Anytime</span>
+        <h3>Refer / review / ask</h3>
+        <p>Refer a business, leave a testimonial, or just ask us something.</p>
+        <span class="journey-arrow">Other actions &darr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 1: ONBOARDING ===================== -->
+<section class="section" id="onboarding">
+  <div class="container" style="max-width:760px">
+    <div class="portal-stage-header">
+      <span class="portal-stage-tag">Stage 1 &middot; New clients</span>
+      <h2>Onboarding intake.</h2>
+      <p>This is the form we send after the discovery call. The more detail you give us up front, the faster we launch &mdash; usually 3 to 4 weeks of build time once this comes back. Save what you have and reload to keep going; nothing here is required to fill out in one sitting.</p>
+
+      <div class="portal-stage-meta">
+        <div>
+          <strong>Typical time</strong>
+          15&ndash;25 minutes
+        </div>
+        <div>
+          <strong>What happens next</strong>
+          We schedule a 30-minute follow-up to fill any gaps and align on timeline
+        </div>
+        <div>
+          <strong>Privacy</strong>
+          Confidential, never shared. <a href="/privacy-policy/" class="inline-link">Privacy policy</a>.
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-card">
+      <h3 class="form-heading">Tell us about your business</h3>
+      <p class="form-intro">All fields optional unless marked <span class="req">*</span>. If you don't know something, leave it blank and we'll follow up.</p>
+
+      {% include "partials/onboarding-form.njk" %}
+    </div>
+
+    <p style="margin-top:2rem;font-size:0.92rem;color:var(--text-muted);text-align:center">Prefer to send this some other way? Email a Google Doc, Dropbox Paper, or Notion page to <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a>. Same place either way.</p>
+  </div>
+</section>
+
+<!-- ===================== STAGE 2: IN BUILD ===================== -->
+<section class="section section--cream" id="in-build">
+  <div class="container" style="max-width:980px">
+    <div class="portal-stage-header">
+      <span class="portal-stage-tag">Stage 2 &middot; In active build</span>
+      <h2>Reviewing your preview link.</h2>
+      <p>Once your design is in our hands, we'll send a private preview URL. The form below is how you give us structured feedback &mdash; what's working, what to change, what to question. Unlimited revision rounds; honest notes always beat polite ones.</p>
+    </div>
+
+    <div class="portal-grid portal-grid--two">
+      <a href="/design-feedback/" class="portal-card">
+        <span class="portal-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 0 0 0 20 3 3 0 0 0 3-3 2.5 2.5 0 0 1 2.5-2.5H19a3 3 0 0 0 3-3A10 10 0 0 0 12 2z"/></svg>
+        </span>
+        <h3>Design feedback</h3>
+        <p>Structured notes get us to the right revisions faster. Drop the preview URL, tell us what's working and what isn't, and how urgent the changes are.</p>
+        <span class="portal-arrow">Give feedback &rarr;</span>
+      </a>
+
+      <div class="portal-card portal-card--info">
+        <span class="portal-icon portal-icon--info">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        </span>
+        <h3>How feedback rounds work</h3>
+        <ul class="portal-bullets">
+          <li>Round 1: design preview &rarr; your feedback &rarr; revisions in 2&ndash;3 business days</li>
+          <li>Round 2: refined preview &rarr; targeted notes &rarr; usually one more pass</li>
+          <li>Round 3+: rare; we usually nail it by round 2 with good notes</li>
+          <li>Final approval: you sign off, we ship to staging for content load</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 3: LIVE ===================== -->
+<section class="section" id="live">
+  <div class="container" style="max-width:980px">
+    <div class="portal-stage-header">
+      <span class="portal-stage-tag">Stage 3 &middot; Site is live</span>
+      <h2>Day-to-day requests.</h2>
+      <p>Once your site is live, three forms cover most of what you'll need. Use the urgency cue at the top of each &mdash; emergency goes through a different channel than a routine update.</p>
     </div>
 
     <div class="portal-grid">
@@ -30,8 +142,8 @@ noindex: true
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </span>
         <h3>Content update</h3>
-        <p>New hours, new service, photo swap, typo fix, price change. Usually handled the same business day.</p>
-        <span class="portal-arrow">Start a request &rarr;</span>
+        <p>New hours, new service, photo swap, typo fix, price change, seasonal callout. Usually live the same business day.</p>
+        <span class="portal-arrow">Submit a change &rarr;</span>
       </a>
 
       <a href="/emergency/" class="portal-card portal-card--urgent">
@@ -39,25 +151,48 @@ noindex: true
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </span>
         <h3>Emergency support</h3>
-        <p>Site down, wrong info live, security concern. Triaged immediately; usually within the hour during business hours.</p>
+        <p>Site down, wrong info live, security concern, billing issue showing. Triaged immediately &mdash; usually within the hour during business hours.</p>
         <span class="portal-arrow">Report an emergency &rarr;</span>
       </a>
 
-      <a href="/design-feedback/" class="portal-card">
-        <span class="portal-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 0 0 0 20 3 3 0 0 0 3-3 2.5 2.5 0 0 1 2.5-2.5H19a3 3 0 0 0 3-3A10 10 0 0 0 12 2z"/></svg>
+      <div class="portal-card portal-card--info">
+        <span class="portal-icon portal-icon--info">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </span>
-        <h3>Design feedback</h3>
-        <p>Reviewing a preview link? Structured notes get us to the right revisions faster. Unlimited rounds.</p>
-        <span class="portal-arrow">Give feedback &rarr;</span>
-      </a>
+        <h3>What "emergency" means</h3>
+        <ul class="portal-bullets">
+          <li>Your site is fully down or returning errors to visitors</li>
+          <li>Wrong contact info live and customers are calling the wrong number</li>
+          <li>You see a defaced page, suspicious form submissions, or any security concern</li>
+          <li>A new product / promo is live with the wrong price</li>
+        </ul>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin:0.85rem 0 0">Anything else &mdash; new service page, photo swap, copy change &mdash; use the content-update form. We get to those same business day.</p>
+      </div>
+    </div>
 
+    <div class="portal-quick-row">
+      <strong>Truly time-critical?</strong>
+      <span>Don't wait for the form. Call or text <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a> &mdash; we pick up or call back fast.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ANYTIME ===================== -->
+<section class="section section--cream" id="anytime">
+  <div class="container" style="max-width:980px">
+    <div class="portal-stage-header">
+      <span class="portal-stage-tag">Anytime</span>
+      <h2>Refer, review, or just say hi.</h2>
+      <p>Three forms that aren't tied to a build phase. Use them whenever they fit.</p>
+    </div>
+
+    <div class="portal-grid">
       <a href="/refer/" class="portal-card">
         <span class="portal-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
         </span>
         <h3>Refer a business</h3>
-        <p>Know someone who needs a real website? Send them our way. One month of hosting credited to your account if they sign on.</p>
+        <p>Know someone who needs a real website? Send them our way. One month of hosting credited to your account if they sign on, or a cash thank-you if you'd prefer.</p>
         <span class="portal-arrow">Make an intro &rarr;</span>
       </a>
 
@@ -66,7 +201,7 @@ noindex: true
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </span>
         <h3>Leave a testimonial</h3>
-        <p>A few sentences about working with us. You control what (if anything) gets published.</p>
+        <p>A few sentences about working with us. You control what (if anything) gets published &mdash; full name, first name only, anonymous, or just between us.</p>
         <span class="portal-arrow">Share a review &rarr;</span>
       </a>
 
@@ -75,26 +210,86 @@ noindex: true
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </span>
         <h3>General contact</h3>
-        <p>Question that doesn't fit the other forms? Billing, account, or anything else. We read every message.</p>
+        <p>Question that doesn't fit the other forms? Billing, account, vendor referral, anything else. We read every message.</p>
         <span class="portal-arrow">Send a message &rarr;</span>
       </a>
+    </div>
+  </div>
+</section>
 
-      <a href="/onboarding/" class="portal-card">
+<!-- ===================== DIRECT CONTACT REFERENCE ===================== -->
+<section class="section" id="contact-reference">
+  <div class="container" style="max-width:980px">
+    <div class="text-center" style="max-width:640px;margin:0 auto 2rem">
+      <span class="section-label">If forms aren't your thing</span>
+      <h2 class="section-title" style="margin-inline:auto">Direct contact, three ways.</h2>
+      <p class="section-subtitle" style="margin-inline:auto">All three reach the same person. Pick whichever's easiest.</p>
+    </div>
+
+    <div class="portal-direct-grid">
+      <div class="portal-direct">
         <span class="portal-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </span>
-        <h3>New client onboarding</h3>
-        <p>Just signed up? This is the detailed intake form we send after the discovery call. Everything we need to start building.</p>
-        <span class="portal-arrow">Start onboarding &rarr;</span>
-      </a>
+        <h3>Phone or text</h3>
+        <a href="tel:{{ site.phone }}" class="portal-direct-target">{{ site.phoneDisplay }}</a>
+        <p>Mon&ndash;Fri 8am&ndash;6pm MT. Voicemail rolls to mobile after-hours.</p>
+      </div>
 
-      <a href="mailto:{{ site.email }}" class="portal-card portal-card--quiet">
+      <div class="portal-direct">
         <span class="portal-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
         </span>
-        <h3>Just email us</h3>
-        <p>None of the forms fit? Email's fine. <strong>{{ site.email }}</strong> goes to the same place.</p>
-        <span class="portal-arrow">Open email &rarr;</span>
+        <h3>Email</h3>
+        <a href="mailto:{{ site.email }}" class="portal-direct-target">{{ site.email }}</a>
+        <p>Reply within one business day. Use this for anything that needs a paper trail.</p>
+      </div>
+
+      <div class="portal-direct">
+        <span class="portal-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="m6 12 4 2 4-2"/></svg>
+        </span>
+        <h3>Google Meet</h3>
+        <a href="/contact/" class="portal-direct-target">Book a call &rarr;</a>
+        <p>20-minute video calls for anything that's easier to talk through. No app needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HELPFUL RESOURCES ===================== -->
+<section class="section section--cream">
+  <div class="container" style="max-width:980px">
+    <div class="text-center" style="max-width:640px;margin:0 auto 2rem">
+      <span class="section-label">Self-serve resources</span>
+      <h2 class="section-title" style="margin-inline:auto">Bookmarks worth keeping.</h2>
+      <p class="section-subtitle" style="margin-inline:auto">Things you might want to pull up without contacting us.</p>
+    </div>
+
+    <div class="portal-resources">
+      <a href="/owners-guide/" class="portal-resource">
+        <strong>Owner's Guide</strong>
+        <span>How your site works, what we maintain, how to read your monthly invoice.</span>
+      </a>
+      <a href="/faq/" class="portal-resource">
+        <strong>FAQ</strong>
+        <span>The questions clients ask most often, with honest answers.</span>
+      </a>
+      <a href="/agreement/" class="portal-resource">
+        <strong>Service Agreement</strong>
+        <span>Your contract terms in plain English. Always available, always current.</span>
+      </a>
+      <a href="/privacy-policy/" class="portal-resource">
+        <strong>Privacy Policy</strong>
+        <span>How we handle your data and what we never do with it.</span>
+      </a>
+      <a href="/changelog/" class="portal-resource">
+        <strong>Site Changelog</strong>
+        <span>What we've shipped to client sites recently &mdash; new features, improvements, fixes.</span>
+      </a>
+      <a href="/glossary/" class="portal-resource">
+        <strong>Web Glossary</strong>
+        <span>Plain-language definitions for the technical terms that come up in conversations.</span>
       </a>
     </div>
   </div>
@@ -102,8 +297,9 @@ noindex: true
 
 <section class="cta-section">
   <div class="cta-inner">
-    <span class="section-label">One more thing</span>
+    <span class="section-label">Bookmark this page</span>
     <h2>You are never stuck with a form.</h2>
     <p>If you'd rather just call or text, do that. <a href="tel:{{ site.phone }}" style="color:var(--gold-400);font-weight:500">{{ site.phoneDisplay }}</a>. The forms just make your request easier for us to act on; they're a convenience, not a gate.</p>
+    <p style="margin-top:1.5rem;font-size:0.92rem;color:rgba(255,255,255,0.78)">Save this page (<code style="background:rgba(255,255,255,0.1);padding:0.1rem 0.4rem;border-radius:3px;color:var(--gold-400)">/client-portal/</code>) as a bookmark or add it to your phone's home screen. Everything you'll ever need is here.</p>
   </div>
 </section>
