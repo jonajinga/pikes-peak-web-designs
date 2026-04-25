@@ -2592,13 +2592,18 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
+/* Fieldset legend matches a .form-group label — same font, size, weight, and
+   color as every other field title, so the form reads as one consistent
+   visual system instead of a serif-heading + sans-label mash-up. */
 .fieldset legend {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text);
+  letter-spacing: 0.005em;
   padding: 0 0.5rem;
   margin-left: -0.5rem;
+  margin-bottom: 0.1rem;
 }
 /* Consistent vertical rhythm inside fieldsets — no inline margin-top needed */
 .fieldset > .form-row,
