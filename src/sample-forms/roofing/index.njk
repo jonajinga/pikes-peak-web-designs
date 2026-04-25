@@ -1,0 +1,215 @@
+---
+layout: layouts/base.njk
+title: "Roofing Free Inspection Form (live demo) | Pikes Peak Web Designs"
+description: "A working sample roofing inspection form. Insurance-claim ready, captures roof age, storm context, and HOA constraints so the inspector arrives prepared."
+permalink: /sample-forms/roofing/
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/sample-forms/">Sample forms</a><span class="sep">/</span><span>Roofing inspection</span>
+    </nav>
+    <span class="section-label">Roofing &middot; live working form</span>
+    <h1>Free inspection request, <em>insurance-ready.</em></h1>
+    <p>A real working form for a roofing company. Captures roof age, storm context, insurance claim status, and HOA constraints so the inspector arrives prepared and the office can pre-stage paperwork.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <div class="contact-form-card">
+      <h2 class="form-heading">Schedule your free inspection</h2>
+      <p class="form-intro">Inspections take 30&ndash;60 minutes. We climb the roof, photograph everything, and email a written assessment within 24 hours &mdash; whether or not you hire us.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=sample-roofing" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+        <input type="hidden" name="subject" value="[Sample Roofing] Free inspection request">
+        <input type="hidden" name="from_name" value="Pikes Peak — Sample roofing form">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <fieldset class="fieldset">
+          <legend>1. Contact</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Best phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>2. Property</legend>
+          <div class="form-group">
+            <label for="address">Property address <span class="req">*</span></label>
+            <input type="text" id="address" name="address" required autocomplete="street-address">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="zip">ZIP code <span class="req">*</span></label>
+              <input type="text" id="zip" name="zip" required inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code">
+            </div>
+            <div class="form-group">
+              <label for="propertyType">Property type</label>
+              <select id="propertyType" name="propertyType">
+                <option>Single-family home (owner)</option>
+                <option>Single-family home (renter)</option>
+                <option>Townhouse</option>
+                <option>Condo (HOA)</option>
+                <option>Multi-family / rental owner</option>
+                <option>Commercial</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="stories">Number of stories</label>
+              <select id="stories" name="stories">
+                <option>1 story</option>
+                <option>1.5 stories</option>
+                <option>2 stories</option>
+                <option>2.5 stories</option>
+                <option>3+ stories</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pitch">Roof pitch (if known)</label>
+              <select id="pitch" name="pitch">
+                <option value="">Not sure</option>
+                <option>Walkable (under 6/12)</option>
+                <option>Steep but walkable (6/12&ndash;9/12)</option>
+                <option>Very steep (9/12+)</option>
+                <option>Flat / low-slope</option>
+                <option>Mixed</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>3. The roof</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="material">Current roof material</label>
+              <select id="material" name="material">
+                <option value="">Not sure</option>
+                <option>Architectural asphalt shingle</option>
+                <option>3-tab asphalt shingle</option>
+                <option>Standing-seam metal</option>
+                <option>Metal shingle / shake</option>
+                <option>Tile (clay or concrete)</option>
+                <option>Cedar shake</option>
+                <option>Flat / TPO / EPDM (commercial)</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="roofAge">Approx. roof age</label>
+              <select id="roofAge" name="roofAge">
+                <option value="">Not sure</option>
+                <option>Less than 5 years</option>
+                <option>5&ndash;10 years</option>
+                <option>10&ndash;15 years</option>
+                <option>15&ndash;20 years</option>
+                <option>20+ years</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="reasonLabel">Why are you requesting an inspection? (check all)</label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="reasonLabel">
+              <label><input type="checkbox" name="reason" value="recent-storm"> Recent storm / hail damage</label>
+              <label><input type="checkbox" name="reason" value="leak"> Active leak</label>
+              <label><input type="checkbox" name="reason" value="missing-shingles"> Missing or damaged shingles</label>
+              <label><input type="checkbox" name="reason" value="age"> Roof is aging out</label>
+              <label><input type="checkbox" name="reason" value="real-estate"> Real estate transaction</label>
+              <label><input type="checkbox" name="reason" value="warranty"> Warranty / builder concern</label>
+              <label><input type="checkbox" name="reason" value="solar"> Planning solar install</label>
+              <label><input type="checkbox" name="reason" value="other"> Other (explain below)</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>4. Insurance &amp; storm context</legend>
+          <div class="form-group">
+            <label id="claimLabel">Storm / hail claim status</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="claimLabel">
+              <label><input type="radio" name="claim" value="open-claim"> Claim is open &mdash; have claim number</label>
+              <label><input type="radio" name="claim" value="adjuster-scheduled"> Adjuster visit scheduled</label>
+              <label><input type="radio" name="claim" value="adjuster-completed"> Adjuster visit completed</label>
+              <label><input type="radio" name="claim" value="denied"> Claim denied / underpaid</label>
+              <label><input type="radio" name="claim" value="thinking"> Thinking about filing &mdash; want guidance</label>
+              <label><input type="radio" name="claim" value="no-claim"> No claim &mdash; not insurance-related</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="carrier">Insurance carrier (if applicable)</label>
+              <input type="text" id="carrier" name="carrier" placeholder="e.g. State Farm, USAA, Allstate">
+            </div>
+            <div class="form-group">
+              <label for="claimNumber">Claim number (if known)</label>
+              <input type="text" id="claimNumber" name="claimNumber">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="stormDate">Approx. storm date(s)</label>
+            <input type="text" id="stormDate" name="stormDate" placeholder="e.g. June 13 hail; recent windstorm">
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>5. Constraints</legend>
+          <div class="form-group">
+            <label id="hoaLabel">HOA / architectural review constraints?</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="hoaLabel">
+              <label><input type="radio" name="hoa" value="none"> No HOA</label>
+              <label><input type="radio" name="hoa" value="approved"> HOA approved already</label>
+              <label><input type="radio" name="hoa" value="pending"> HOA approval pending</label>
+              <label><input type="radio" name="hoa" value="needed"> Yes &mdash; need help with the application</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="materialPreference">Material preferences (if any)</label>
+            <input type="text" id="materialPreference" name="materialPreference" placeholder="e.g. class 4 impact, lifetime warranty, cool-roof color, no metal">
+          </div>
+          <div class="form-group">
+            <label for="notes">Anything else we should know?</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Skylights, solar, satellite dishes, structural concerns, deadlines."></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>6. Scheduling</legend>
+          <div class="form-group">
+            <label id="urgencyLabel">When would you like us out? <span class="req">*</span></label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="urgencyLabel">
+              <label><input type="radio" name="urgency" value="asap" required> ASAP &mdash; active leak or pressing claim deadline</label>
+              <label><input type="radio" name="urgency" value="this-week"> This week if possible</label>
+              <label><input type="radio" name="urgency" value="next-week"> Next week is fine</label>
+              <label><input type="radio" name="urgency" value="flexible"> Flexible &mdash; best fit for your schedule</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong. Please try again or call us directly.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Schedule free inspection</button>
+        <p class="form-hint">Sample form &mdash; submissions land in a demo inbox at Pikes Peak Web Designs.</p>
+      </form>
+    </div>
+
+    <p style="margin-top:2rem;font-size:0.92rem;color:var(--text-muted);text-align:center"><a href="/sample-forms/" class="inline-link">&larr; Back to all sample forms</a> &middot; <a href="/contact/" class="inline-link">Want one like this?</a></p>
+  </div>
+</section>

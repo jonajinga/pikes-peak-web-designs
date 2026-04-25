@@ -1,0 +1,232 @@
+---
+layout: layouts/base.njk
+title: "Commercial Inspection Intake Form (live demo) | Pikes Peak Web Designs"
+description: "A working sample commercial property condition assessment intake form. Captures lender, scope (PCA, Phase I ESA, roof, HVAC), rentable SF, and deadlines."
+permalink: /sample-forms/commercial-inspector/
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/sample-forms/">Sample forms</a><span class="sep">/</span><span>Commercial inspection</span>
+    </nav>
+    <span class="section-label">Commercial Inspector &middot; live working form</span>
+    <h1>Commercial intake, <em>scoped to lender requirements.</em></h1>
+    <p>A real working form for a commercial property-condition assessor. Built around the kind of detail a commercial transaction or lender needs &mdash; PCA scope, Phase I, roof, HVAC, deadlines, deliverable format.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <div class="contact-form-card">
+      <h2 class="form-heading">Property condition intake</h2>
+      <p class="form-intro">Fields with <span class="req">*</span> are required. The more you tell us up front, the faster we can scope the proposal and meet your closing deadline.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=sample-commercial-inspector" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+        <input type="hidden" name="subject" value="[Sample Commercial Inspector] Property intake">
+        <input type="hidden" name="from_name" value="Pikes Peak — Sample commercial inspector form">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <fieldset class="fieldset">
+          <legend>1. Client</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="clientName">Client / requestor name <span class="req">*</span></label>
+              <input type="text" id="clientName" name="clientName" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="company">Company / entity</label>
+              <input type="text" id="company" name="company" autocomplete="organization">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="roleLabel">Your role in the transaction</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="roleLabel">
+              <label><input type="radio" name="role" value="buyer"> Buyer / purchaser</label>
+              <label><input type="radio" name="role" value="seller"> Seller</label>
+              <label><input type="radio" name="role" value="broker"> Broker</label>
+              <label><input type="radio" name="role" value="lender"> Lender</label>
+              <label><input type="radio" name="role" value="counsel"> Legal counsel</label>
+              <label><input type="radio" name="role" value="owner-rep"> Owner rep / property manager</label>
+              <label><input type="radio" name="role" value="other"> Other</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>2. Property</legend>
+          <div class="form-group">
+            <label for="propertyAddress">Property address <span class="req">*</span></label>
+            <input type="text" id="propertyAddress" name="propertyAddress" required autocomplete="street-address">
+          </div>
+          <div class="form-group">
+            <label for="propertyName">Property / project name (if any)</label>
+            <input type="text" id="propertyName" name="propertyName" placeholder="e.g. Westgate Office Park, 123 Main retail center">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="propertyType">Property type <span class="req">*</span></label>
+              <select id="propertyType" name="propertyType" required>
+                <option value="">Choose one&hellip;</option>
+                <option>Class A office</option>
+                <option>Class B / C office</option>
+                <option>Medical / professional office</option>
+                <option>Multi-tenant retail / strip</option>
+                <option>Single-tenant retail / NNN</option>
+                <option>Industrial / warehouse</option>
+                <option>Flex / R&amp;D</option>
+                <option>Multifamily (5+ units)</option>
+                <option>Hospitality / hotel</option>
+                <option>Self-storage</option>
+                <option>Mixed use</option>
+                <option>Special-purpose</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="rentableSF">Rentable SF</label>
+              <input type="text" id="rentableSF" name="rentableSF" placeholder="e.g. 28,400">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="acreage">Land area (acres)</label>
+              <input type="text" id="acreage" name="acreage" placeholder="e.g. 1.6">
+            </div>
+            <div class="form-group">
+              <label for="yearBuilt">Year built / renovated</label>
+              <input type="text" id="yearBuilt" name="yearBuilt" placeholder="e.g. 1986; reno 2014">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="numBuildings">Number of buildings</label>
+              <input type="text" id="numBuildings" name="numBuildings" placeholder="e.g. 1, 3, 7">
+            </div>
+            <div class="form-group">
+              <label for="numStories">Stories</label>
+              <input type="text" id="numStories" name="numStories" placeholder="e.g. 2; varies 1&ndash;4">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="occupancy">Current occupancy / tenant status</label>
+            <input type="text" id="occupancy" name="occupancy" placeholder="e.g. 78% occupied, 12 tenants; vacant">
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>3. Scope of work</legend>
+          <div class="form-group">
+            <label id="scopeLabel">Reports needed <span class="req">*</span></label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="scopeLabel">
+              <label><input type="checkbox" name="scope" value="pca-astm" required> Standard PCA (ASTM E2018-15)</label>
+              <label><input type="checkbox" name="scope" value="pca-lender"> Lender-required PCA (with cap-ex tables)</label>
+              <label><input type="checkbox" name="scope" value="phase-1"> Phase I ESA (ASTM E1527-21)</label>
+              <label><input type="checkbox" name="scope" value="phase-2"> Phase II ESA (limited subsurface)</label>
+              <label><input type="checkbox" name="scope" value="roof"> Stand-alone roof condition report</label>
+              <label><input type="checkbox" name="scope" value="hvac"> HVAC condition / spec audit</label>
+              <label><input type="checkbox" name="scope" value="ada"> ADA compliance review</label>
+              <label><input type="checkbox" name="scope" value="seismic"> Seismic risk assessment</label>
+              <label><input type="checkbox" name="scope" value="zoning"> Zoning / code review</label>
+              <label><input type="checkbox" name="scope" value="appraisal-coordination"> Appraisal team coordination</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="capexLabel">Reserve / cap-ex schedule needed?</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="capexLabel">
+              <label><input type="radio" name="capex" value="5-year"> 5-year</label>
+              <label><input type="radio" name="capex" value="10-year"> 10-year</label>
+              <label><input type="radio" name="capex" value="15-year"> 15-year</label>
+              <label><input type="radio" name="capex" value="not-needed"> Not needed</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>4. Lender / transaction</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="lenderName">Lender (if applicable)</label>
+              <input type="text" id="lenderName" name="lenderName">
+            </div>
+            <div class="form-group">
+              <label for="loanType">Loan / financing type</label>
+              <select id="loanType" name="loanType">
+                <option value="">Choose one&hellip;</option>
+                <option>Conventional commercial</option>
+                <option>Agency (Fannie / Freddie)</option>
+                <option>SBA (504 or 7a)</option>
+                <option>CMBS / conduit</option>
+                <option>Bridge / hard money</option>
+                <option>Owner financing / cash</option>
+                <option>Refinance</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="closing">Closing / decision date <span class="req">*</span></label>
+              <input type="text" id="closing" name="closing" required placeholder="e.g. April 30 contingency, May 15 closing">
+            </div>
+            <div class="form-group">
+              <label for="dueDate">Report needed by <span class="req">*</span></label>
+              <input type="text" id="dueDate" name="dueDate" required placeholder="e.g. April 22">
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="ccLabel">Should we cc anyone on the report?</label>
+            <textarea id="ccList" name="ccList" rows="3" placeholder="Name + email for buyer's broker, lender contact, attorney, etc."></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>5. Access &amp; logistics</legend>
+          <div class="form-group">
+            <label for="contactOnSite">On-site contact &amp; phone</label>
+            <input type="text" id="contactOnSite" name="contactOnSite" placeholder="e.g. property manager Sally Reed, 303-555-0199">
+          </div>
+          <div class="form-group">
+            <label id="walkLabel">Tenant walk requirements</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="walkLabel">
+              <label><input type="radio" name="walk" value="all-tenants"> All tenant spaces</label>
+              <label><input type="radio" name="walk" value="representative"> Representative sample (10&ndash;25%)</label>
+              <label><input type="radio" name="walk" value="common-only"> Common areas + vacancies only</label>
+              <label><input type="radio" name="walk" value="not-sure"> Not sure &mdash; advise based on lender</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="docsAvailable">Documents already provided to broker (check all that apply)</label>
+            <textarea id="docsAvailable" name="docsAvailable" rows="3" placeholder="e.g. rent roll, prior PCA, building plans, tenant leases, environmental records, structural reports"></textarea>
+          </div>
+          <div class="form-group">
+            <label id="deliverableLabel">Deliverable preference</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="deliverableLabel">
+              <label><input type="radio" name="deliverable" value="pdf-final"> PDF, final only</label>
+              <label><input type="radio" name="deliverable" value="pdf-draft-final"> PDF, draft + final</label>
+              <label><input type="radio" name="deliverable" value="word-pdf"> Word + PDF (lender markup)</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong. Please try again or call us directly.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Request a proposal</button>
+        <p class="form-hint">Sample form. We'd build the same intake for your firm pointing at your dispatcher / proposal desk.</p>
+      </form>
+    </div>
+
+    <p style="margin-top:2rem;font-size:0.92rem;color:var(--text-muted);text-align:center"><a href="/sample-forms/" class="inline-link">&larr; Back to all sample forms</a> &middot; <a href="/contact/" class="inline-link">Want this form for your firm?</a></p>
+  </div>
+</section>

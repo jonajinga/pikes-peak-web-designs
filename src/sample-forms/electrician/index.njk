@@ -1,0 +1,249 @@
+---
+layout: layouts/base.njk
+title: "EV Charger Installation Quote (live demo) | Pikes Peak Web Designs"
+description: "A working sample EV charger quote form. Captures panel size, vehicle, charger spec, garage details, and load calc inputs so the electrician can quote accurately."
+permalink: /sample-forms/electrician/
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/sample-forms/">Sample forms</a><span class="sep">/</span><span>EV charger quote</span>
+    </nav>
+    <span class="section-label">Electrician &middot; live working form</span>
+    <h1>EV charger quote, <em>scoped before the visit.</em></h1>
+    <p>Real working form. Captures panel size, vehicle, charger model, run length, and garage conditions so the electrician quotes accurately on the first call. No surprise change-orders.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <div class="contact-form-card">
+      <h2 class="form-heading">Tell us about your install</h2>
+      <p class="form-intro">All photos welcome. Even a quick phone shot of your panel saves a site visit.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=sample-electrician" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+        <input type="hidden" name="subject" value="[Sample Electrician] EV charger quote">
+        <input type="hidden" name="from_name" value="Pikes Peak — Sample EV form">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <fieldset class="fieldset">
+          <legend>1. About you</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="bestTime">Best time to call</label>
+              <select id="bestTime" name="bestTime">
+                <option value="">Anytime</option>
+                <option>Morning</option>
+                <option>Mid-day</option>
+                <option>Evening</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>2. Property</legend>
+          <div class="form-group">
+            <label for="address">Property address <span class="req">*</span></label>
+            <input type="text" id="address" name="address" required autocomplete="street-address">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="propertyType">Property type</label>
+              <select id="propertyType" name="propertyType">
+                <option>Single-family home (owned)</option>
+                <option>Single-family home (rented)</option>
+                <option>Townhouse / condo (owned)</option>
+                <option>Multi-unit / HOA</option>
+                <option>Light commercial</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="yearBuilt">Year built</label>
+              <input type="text" id="yearBuilt" name="yearBuilt" placeholder="e.g. 1998">
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="hoaLabel">If condo/HOA, do you have approval?</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="hoaLabel">
+              <label><input type="radio" name="hoa" value="not-applicable"> N/A &mdash; single-family home</label>
+              <label><input type="radio" name="hoa" value="approved"> Yes, written approval in hand</label>
+              <label><input type="radio" name="hoa" value="pending"> Submitted, waiting</label>
+              <label><input type="radio" name="hoa" value="not-yet"> Not yet started</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>3. Electrical service</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="serviceSize">Main service size</label>
+              <select id="serviceSize" name="serviceSize">
+                <option value="">Not sure</option>
+                <option>100 amp</option>
+                <option>125 amp</option>
+                <option>150 amp</option>
+                <option>200 amp</option>
+                <option>400 amp</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="panelBrand">Panel brand (if known)</label>
+              <input type="text" id="panelBrand" name="panelBrand" placeholder="e.g. Square D, Siemens, Eaton, FPE">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="panelLocation">Where is the panel?</label>
+            <select id="panelLocation" name="panelLocation">
+              <option value="">Not sure</option>
+              <option>Garage (interior wall)</option>
+              <option>Garage (exterior wall)</option>
+              <option>Basement</option>
+              <option>Utility room / closet</option>
+              <option>Outside the home</option>
+              <option>In the unit (condo)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label id="spaceLabel">Open breaker slots in panel?</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="spaceLabel">
+              <label><input type="radio" name="space" value="2plus"> 2+ open spaces</label>
+              <label><input type="radio" name="space" value="1"> 1 open space</label>
+              <label><input type="radio" name="space" value="full"> Panel is full / unsure</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="panelPhoto">Panel photo URL (Drive, Dropbox, iCloud)</label>
+            <input type="url" id="panelPhoto" name="panelPhoto" placeholder="https://&hellip; or paste a public link">
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.4rem">A photo of the open panel saves us a site visit and gets you a real quote faster.</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>4. Vehicle &amp; charger</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vehicleMake">EV make / model</label>
+              <input type="text" id="vehicleMake" name="vehicleMake" placeholder="e.g. Tesla Model Y, Ford F-150 Lightning, Rivian R1S">
+            </div>
+            <div class="form-group">
+              <label for="vehicleQty">How many EVs?</label>
+              <select id="vehicleQty" name="vehicleQty">
+                <option>1</option>
+                <option>2</option>
+                <option>3+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="chargerStatusLabel">Do you have a charger picked out?</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="chargerStatusLabel">
+              <label><input type="radio" name="chargerStatus" value="have"> Yes, already purchased</label>
+              <label><input type="radio" name="chargerStatus" value="picked"> Picked but not bought yet</label>
+              <label><input type="radio" name="chargerStatus" value="recommend"> No &mdash; recommend one for me</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="chargerModel">Charger model (if known)</label>
+              <input type="text" id="chargerModel" name="chargerModel" placeholder="e.g. Tesla Wall Connector, ChargePoint Home Flex, Wallbox Pulsar Plus">
+            </div>
+            <div class="form-group">
+              <label for="amperage">Desired amperage</label>
+              <select id="amperage" name="amperage">
+                <option value="">Not sure</option>
+                <option>32A (slowest, simplest)</option>
+                <option>40A (typical)</option>
+                <option>48A (faster)</option>
+                <option>60A+ (fastest, larger panel needed)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="connectionLabel">Hardwired or NEMA 14-50 outlet?</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="connectionLabel">
+              <label><input type="radio" name="connection" value="hardwired"> Hardwired (cleaner, required for 48A+)</label>
+              <label><input type="radio" name="connection" value="outlet"> NEMA 14-50 outlet (portable charger)</label>
+              <label><input type="radio" name="connection" value="not-sure"> Not sure &mdash; you decide</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>5. Install location</legend>
+          <div class="form-group">
+            <label for="chargerLocation">Where will the charger be installed?</label>
+            <input type="text" id="chargerLocation" name="chargerLocation" placeholder="e.g. attached garage, detached garage, carport, driveway exterior wall">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="runLength">Approx. distance from panel to charger</label>
+              <select id="runLength" name="runLength">
+                <option value="">Not sure</option>
+                <option>Under 10 ft (next to panel)</option>
+                <option>10&ndash;25 ft</option>
+                <option>25&ndash;50 ft</option>
+                <option>50&ndash;100 ft</option>
+                <option>Over 100 ft (long run)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="finishLevel">Garage / install area finish</label>
+              <select id="finishLevel" name="finishLevel">
+                <option value="">Doesn't matter</option>
+                <option>Unfinished (open studs)</option>
+                <option>Drywalled (will need fishing)</option>
+                <option>Finished + painted (drywall repair planned)</option>
+                <option>Outdoor / exterior conduit OK</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="notes">Anything else we should know?</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Solar plans, future EV additions, panel quirks, timeline pressures, etc."></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>6. Timing</legend>
+          <div class="form-group">
+            <label id="timingLabel">When do you need it installed? <span class="req">*</span></label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="timingLabel">
+              <label><input type="radio" name="timing" value="asap" required> ASAP &mdash; vehicle delivery is imminent</label>
+              <label><input type="radio" name="timing" value="2-weeks"> Within 2 weeks</label>
+              <label><input type="radio" name="timing" value="month"> Within a month</label>
+              <label><input type="radio" name="timing" value="flexible"> Flexible &mdash; best price wins</label>
+              <label><input type="radio" name="timing" value="quote-only"> Quote only, planning ahead</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong. Please try again or call us directly.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Get a quote</button>
+        <p class="form-hint">Sample form &mdash; submissions go to a demo inbox at Pikes Peak Web Designs.</p>
+      </form>
+    </div>
+
+    <p style="margin-top:2rem;font-size:0.92rem;color:var(--text-muted);text-align:center"><a href="/sample-forms/" class="inline-link">&larr; Back to all sample forms</a> &middot; <a href="/contact/" class="inline-link">Want this kind of intake for your shop?</a></p>
+  </div>
+</section>

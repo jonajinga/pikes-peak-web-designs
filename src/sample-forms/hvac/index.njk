@@ -1,0 +1,228 @@
+---
+layout: layouts/base.njk
+title: "HVAC Emergency Service Form (live demo) | Pikes Peak Web Designs"
+description: "A working sample HVAC service-request form. Routes by urgency, captures system + symptoms, and pre-stages the dispatcher with everything needed to send the right tech."
+permalink: /sample-forms/hvac/
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/sample-forms/">Sample forms</a><span class="sep">/</span><span>HVAC service request</span>
+    </nav>
+    <span class="section-label">HVAC &middot; live working form</span>
+    <h1>HVAC service request, <em>built to dispatch.</em></h1>
+    <p>This is a real working form, not a screenshot. Fill it out and it submits via Web3Forms to a sample inbox. Built for an HVAC company that wants to triage urgency, system type, and symptoms before the office calls back.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <div class="contact-form-card">
+      <h2 class="form-heading">Tell us what's wrong</h2>
+      <p class="form-intro">All fields marked <span class="req">*</span> required. The more you tell us, the faster we can dispatch the right technician with the right truck.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=sample-hvac" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+        <input type="hidden" name="subject" value="[Sample HVAC] Service request">
+        <input type="hidden" name="from_name" value="Pikes Peak — Sample HVAC form">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <fieldset class="fieldset">
+          <legend>1. Urgency</legend>
+          <div class="form-group">
+            <label id="urgencyLabel">How urgent is this? <span class="req">*</span></label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="urgencyLabel">
+              <label><input type="radio" name="urgency" value="emergency" required> <strong>Emergency</strong> &mdash; no heat below 20&deg;F or no cool above 95&deg;F</label>
+              <label><input type="radio" name="urgency" value="same-day"> <strong>Same-day</strong> &mdash; system not working but temperatures are tolerable</label>
+              <label><input type="radio" name="urgency" value="this-week"> <strong>This week</strong> &mdash; system limping along but functional</label>
+              <label><input type="radio" name="urgency" value="planned"> <strong>Planned</strong> &mdash; replacement quote or maintenance</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>2. Contact</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Best phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="bestTime">Best time to call you back</label>
+            <select id="bestTime" name="bestTime">
+              <option value="">No preference &mdash; ASAP works</option>
+              <option>Morning (7am&ndash;11am)</option>
+              <option>Mid-day (11am&ndash;2pm)</option>
+              <option>Afternoon (2pm&ndash;5pm)</option>
+              <option>Evening (5pm&ndash;8pm)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>3. Property &amp; service area</legend>
+          <div class="form-group">
+            <label for="address">Service address <span class="req">*</span></label>
+            <input type="text" id="address" name="address" required autocomplete="street-address" placeholder="Street, city, state">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="zip">ZIP code <span class="req">*</span></label>
+              <input type="text" id="zip" name="zip" required inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code">
+            </div>
+            <div class="form-group">
+              <label for="propertyType">Property type</label>
+              <select id="propertyType" name="propertyType">
+                <option>Single-family home</option>
+                <option>Townhouse / condo</option>
+                <option>Multi-family / rental</option>
+                <option>Light commercial</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sqft">Sq ft (approx)</label>
+              <input type="text" id="sqft" name="sqft" placeholder="e.g. 2200">
+            </div>
+            <div class="form-group">
+              <label for="yearBuilt">Year built</label>
+              <input type="text" id="yearBuilt" name="yearBuilt" placeholder="e.g. 1998">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>4. The system</legend>
+          <div class="form-group">
+            <label id="systemLabel">System type(s) involved (check all)</label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="systemLabel">
+              <label><input type="checkbox" name="systems" value="central-ac"> Central AC</label>
+              <label><input type="checkbox" name="systems" value="heat-pump"> Heat pump (heat + cool)</label>
+              <label><input type="checkbox" name="systems" value="furnace"> Gas / electric furnace</label>
+              <label><input type="checkbox" name="systems" value="mini-split"> Ductless mini-split</label>
+              <label><input type="checkbox" name="systems" value="boiler"> Boiler / hydronic</label>
+              <label><input type="checkbox" name="systems" value="water-heater"> Water heater</label>
+              <label><input type="checkbox" name="systems" value="thermostat"> Thermostat / controls</label>
+              <label><input type="checkbox" name="systems" value="not-sure"> Not sure &mdash; please diagnose</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="systemAge">Approx. system age</label>
+              <select id="systemAge" name="systemAge">
+                <option value="">Not sure</option>
+                <option>Less than 5 years</option>
+                <option>5&ndash;10 years</option>
+                <option>10&ndash;15 years</option>
+                <option>15&ndash;20 years</option>
+                <option>20+ years</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="systemBrand">Brand (if known)</label>
+              <input type="text" id="systemBrand" name="systemBrand" placeholder="e.g. Carrier, Lennox, Trane">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastService">When was it last serviced?</label>
+            <select id="lastService" name="lastService">
+              <option value="">Not sure</option>
+              <option>Within the last year</option>
+              <option>1&ndash;2 years ago</option>
+              <option>3&ndash;5 years ago</option>
+              <option>5+ years ago</option>
+              <option>Never serviced</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>5. Symptoms &amp; description</legend>
+          <div class="form-group">
+            <label id="symptomLabel">What's the system doing? (check all)</label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="symptomLabel">
+              <label><input type="checkbox" name="symptoms" value="not-running"> Not running at all</label>
+              <label><input type="checkbox" name="symptoms" value="running-no-output"> Running but no heat/cool</label>
+              <label><input type="checkbox" name="symptoms" value="short-cycle"> Cycling on/off rapidly</label>
+              <label><input type="checkbox" name="symptoms" value="loud"> Loud or unusual noises</label>
+              <label><input type="checkbox" name="symptoms" value="smell"> Burning / unusual smell</label>
+              <label><input type="checkbox" name="symptoms" value="leak"> Water leaking from unit</label>
+              <label><input type="checkbox" name="symptoms" value="ice"> Ice on outdoor unit</label>
+              <label><input type="checkbox" name="symptoms" value="thermostat"> Thermostat unresponsive</label>
+              <label><input type="checkbox" name="symptoms" value="weak-airflow"> Weak / no airflow</label>
+              <label><input type="checkbox" name="symptoms" value="uneven"> Uneven temperatures room to room</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="problemStarted">When did the problem start?</label>
+            <input type="text" id="problemStarted" name="problemStarted" placeholder="e.g. last Tuesday morning, gradually over a week, suddenly today">
+          </div>
+          <div class="form-group">
+            <label for="description">Describe what's happening <span class="req">*</span></label>
+            <textarea id="description" name="description" rows="5" required placeholder="What you're seeing, hearing, smelling. Any error codes on the thermostat or unit. Whether you've tried a breaker reset."></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>6. Helpful extras (optional)</legend>
+          <div class="form-group">
+            <label for="filterAge">When were filters last changed?</label>
+            <select id="filterAge" name="filterAge">
+              <option value="">Not sure</option>
+              <option>Within the last month</option>
+              <option>1&ndash;3 months ago</option>
+              <option>3&ndash;6 months ago</option>
+              <option>6&ndash;12 months ago</option>
+              <option>Over a year ago</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="petsAtHome">Pets we should know about?</label>
+            <input type="text" id="petsAtHome" name="petsAtHome" placeholder="e.g. two friendly dogs, indoor cats, none">
+          </div>
+          <div class="form-group">
+            <label id="memberLabel">Are you a maintenance plan member?</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="memberLabel">
+              <label><input type="radio" name="member" value="yes"> Yes &mdash; please prioritize me</label>
+              <label><input type="radio" name="member" value="no"> No, but tell me about your plan</label>
+              <label><input type="radio" name="member" value="not-interested"> No, not interested in a plan</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="referral">How did you find us?</label>
+            <select id="referral" name="referral">
+              <option value="">Choose one&hellip;</option>
+              <option>Google search</option>
+              <option>Friend / neighbor referral</option>
+              <option>Saw the truck</option>
+              <option>Realtor / property manager</option>
+              <option>Online review</option>
+              <option>Repeat customer</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong. Please try again or call us directly.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Submit service request</button>
+        <p class="form-hint">All entries are routed to a sample inbox at Pikes Peak Web Designs. We'd build the same form for your shop pointing at your dispatcher.</p>
+      </form>
+    </div>
+
+    <p style="margin-top:2rem;font-size:0.92rem;color:var(--text-muted);text-align:center"><a href="/sample-forms/" class="inline-link">&larr; Back to all sample forms</a> &middot; <a href="/contact/" class="inline-link">Want one like this for your business?</a></p>
+  </div>
+</section>

@@ -1,0 +1,222 @@
+---
+layout: layouts/base.njk
+title: "Landscape Seasonal Service Form (live demo) | Pikes Peak Web Designs"
+description: "A working sample seasonal service signup. Captures lawn size, services, mowing schedule, irrigation, and access notes for the whole year of work."
+permalink: /sample-forms/landscaper/
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/sample-forms/">Sample forms</a><span class="sep">/</span><span>Seasonal service signup</span>
+    </nav>
+    <span class="section-label">Landscaper &middot; live working form</span>
+    <h1>Seasonal service signup, <em>year-round in one form.</em></h1>
+    <p>Real working form. Captures the property, the services across all four seasons, the schedule, billing preference, and access notes &mdash; so the crew can show up and work without an intro call every visit.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <div class="contact-form-card">
+      <h2 class="form-heading">Sign up for service</h2>
+      <p class="form-intro">Pick whatever services apply &mdash; you can add or drop seasons later. We'll email a fixed-price proposal for what you've selected within two business days.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=sample-landscaper" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+        <input type="hidden" name="subject" value="[Sample Landscape] Seasonal signup">
+        <input type="hidden" name="from_name" value="Pikes Peak — Sample landscape form">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <fieldset class="fieldset">
+          <legend>1. Contact</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="address">Service address <span class="req">*</span></label>
+            <input type="text" id="address" name="address" required autocomplete="street-address">
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>2. About the property</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="lotSize">Lot size</label>
+              <select id="lotSize" name="lotSize">
+                <option>Under 1/8 acre</option>
+                <option>1/8 &ndash; 1/4 acre</option>
+                <option>1/4 &ndash; 1/2 acre</option>
+                <option>1/2 &ndash; 1 acre</option>
+                <option>1 &ndash; 2 acres</option>
+                <option>2+ acres</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="lawnPct">Approx. lawn area</label>
+              <select id="lawnPct" name="lawnPct">
+                <option>Mostly lawn (75%+)</option>
+                <option>Half lawn / half beds</option>
+                <option>Mostly garden beds</option>
+                <option>Native / xeriscape (low-mow)</option>
+                <option>No lawn</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="terrainLabel">Terrain (check all)</label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="terrainLabel">
+              <label><input type="checkbox" name="terrain" value="flat"> Mostly flat</label>
+              <label><input type="checkbox" name="terrain" value="sloped"> Some slope / hill</label>
+              <label><input type="checkbox" name="terrain" value="steep"> Steep grades</label>
+              <label><input type="checkbox" name="terrain" value="rocky"> Rocky areas</label>
+              <label><input type="checkbox" name="terrain" value="trees"> Mature trees with roots</label>
+              <label><input type="checkbox" name="terrain" value="garden-beds"> Multiple garden beds</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="irrigation">Irrigation system</label>
+            <select id="irrigation" name="irrigation">
+              <option value="">Not sure</option>
+              <option>Yes &mdash; in-ground sprinklers</option>
+              <option>Yes &mdash; drip system in beds</option>
+              <option>Yes &mdash; both</option>
+              <option>Hand-watered only</option>
+              <option>No irrigation</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>3. Services you'd like</legend>
+          <div class="form-group">
+            <label id="springLabel">&#127807; Spring (check all)</label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="springLabel">
+              <label><input type="checkbox" name="spring" value="cleanup"> Spring cleanup</label>
+              <label><input type="checkbox" name="spring" value="mulching"> Mulch refresh</label>
+              <label><input type="checkbox" name="spring" value="pruning"> Pruning / cutback</label>
+              <label><input type="checkbox" name="spring" value="aeration"> Aeration</label>
+              <label><input type="checkbox" name="spring" value="overseed"> Overseed</label>
+              <label><input type="checkbox" name="spring" value="fertilization"> Fertilization start</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="summerLabel">&#9728; Summer (check all)</label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="summerLabel">
+              <label><input type="checkbox" name="summer" value="weekly-mow"> Weekly mowing</label>
+              <label><input type="checkbox" name="summer" value="biweekly-mow"> Bi-weekly mowing</label>
+              <label><input type="checkbox" name="summer" value="edging"> Edging + trim</label>
+              <label><input type="checkbox" name="summer" value="weed"> Weed control</label>
+              <label><input type="checkbox" name="summer" value="bed-maintenance"> Bed maintenance</label>
+              <label><input type="checkbox" name="summer" value="irrigation-tuning"> Irrigation tuning</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="fallLabel">&#127809; Fall (check all)</label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="fallLabel">
+              <label><input type="checkbox" name="fall" value="leaf"> Leaf removal</label>
+              <label><input type="checkbox" name="fall" value="cutback"> Perennial cutback</label>
+              <label><input type="checkbox" name="fall" value="mulching"> Fall mulch</label>
+              <label><input type="checkbox" name="fall" value="winterize-irrigation"> Irrigation winterization</label>
+              <label><input type="checkbox" name="fall" value="overseed-fall"> Fall overseed</label>
+              <label><input type="checkbox" name="fall" value="bulb-planting"> Bulb planting</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="winterLabel">&#10052; Winter (check all)</label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="winterLabel">
+              <label><input type="checkbox" name="winter" value="snow-driveway"> Driveway snow removal</label>
+              <label><input type="checkbox" name="winter" value="snow-walks"> Walks &amp; entries</label>
+              <label><input type="checkbox" name="winter" value="ice-melt"> Ice melt application</label>
+              <label><input type="checkbox" name="winter" value="dormant-pruning"> Dormant pruning</label>
+              <label><input type="checkbox" name="winter" value="holiday-lights"> Holiday lighting</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>4. Schedule &amp; access</legend>
+          <div class="form-group">
+            <label id="dayLabel">Preferred service day</label>
+            <div class="form-radio-group form-radio-group--inline" role="radiogroup" aria-labelledby="dayLabel">
+              <label><input type="radio" name="day" value="any"> Any day</label>
+              <label><input type="radio" name="day" value="mon-tue"> Mon&ndash;Tue</label>
+              <label><input type="radio" name="day" value="wed-thu"> Wed&ndash;Thu</label>
+              <label><input type="radio" name="day" value="fri"> Friday</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gate">Gate / fence access</label>
+              <select id="gate" name="gate">
+                <option>No gate</option>
+                <option>Side gate, unlocked</option>
+                <option>Gate code (provide below)</option>
+                <option>Locked, key in lockbox</option>
+                <option>Other (explain)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pets">Pets in the yard</label>
+              <input type="text" id="pets" name="pets" placeholder="e.g. friendly lab; bring crew in only when in house">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="accessNotes">Access notes (gate code, key location, alarm)</label>
+            <input type="text" id="accessNotes" name="accessNotes">
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>5. Billing</legend>
+          <div class="form-group">
+            <label id="billingLabel">Preferred billing</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="billingLabel">
+              <label><input type="radio" name="billing" value="invoice-monthly"> Monthly invoice (email)</label>
+              <label><input type="radio" name="billing" value="autopay-monthly"> Monthly auto-pay (card or bank)</label>
+              <label><input type="radio" name="billing" value="per-visit"> Pay per visit</label>
+              <label><input type="radio" name="billing" value="annual-prepay"> Annual pre-pay (5% off)</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="notes">Anything else we should know?</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Garden quirks, irrigation issues, neighbor sensitivities, sprinkler heads we should be careful around, etc."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="referral">How did you find us?</label>
+            <select id="referral" name="referral">
+              <option value="">Choose one&hellip;</option>
+              <option>Neighbor referral</option>
+              <option>Google search</option>
+              <option>Saw the truck</option>
+              <option>HOA recommendation</option>
+              <option>Past client</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong. Please try again or call us directly.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Start service</button>
+        <p class="form-hint">Sample form &mdash; we'd build the same one for your crew, pointed at your inbox.</p>
+      </form>
+    </div>
+
+    <p style="margin-top:2rem;font-size:0.92rem;color:var(--text-muted);text-align:center"><a href="/sample-forms/" class="inline-link">&larr; Back to all sample forms</a> &middot; <a href="/contact/" class="inline-link">Want this form for your business?</a></p>
+  </div>
+</section>

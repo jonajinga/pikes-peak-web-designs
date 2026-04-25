@@ -1,0 +1,208 @@
+---
+layout: layouts/base.njk
+title: "Plumbing Emergency Form (live demo) | Pikes Peak Web Designs"
+description: "A working sample plumbing emergency intake form. Fast triage, water-shutoff status, location detail, water-damage assessment."
+permalink: /sample-forms/plumbing/
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/sample-forms/">Sample forms</a><span class="sep">/</span><span>Plumbing emergency</span>
+    </nav>
+    <span class="section-label">Plumbing &middot; live working form</span>
+    <h1>Plumbing emergency, <em>triaged in 60 seconds.</em></h1>
+    <p>This is a real working form. Built so a panicked homeowner can get the right help even with one hand on a shut-off valve. Critical questions first, full detail second.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <div class="form-callout form-callout--danger">
+      <strong>Sample form, real submission.</strong>
+      <span>Submissions go to a Pikes Peak Web Designs inbox so we can show you what data lands. For real plumbing emergencies, please call your local plumber.</span>
+    </div>
+
+    <div class="contact-form-card">
+      <h2 class="form-heading">Tell us what's wrong</h2>
+      <p class="form-intro">If water is actively flowing or there's a gas smell, <strong>shut off your main water valve and call us first.</strong> Otherwise, the more you tell us, the faster we can get the right plumber to your door.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=sample-plumbing" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+        <input type="hidden" name="subject" value="[Sample Plumbing] Emergency call">
+        <input type="hidden" name="from_name" value="Pikes Peak — Sample plumbing form">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <fieldset class="fieldset">
+          <legend>1. Critical first</legend>
+          <div class="form-group">
+            <label id="waterStatusLabel">Is water actively flowing? <span class="req">*</span></label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="waterStatusLabel">
+              <label><input type="radio" name="waterStatus" value="actively-flowing" required> <strong>Yes, water is actively flowing</strong> &mdash; we need to come now</label>
+              <label><input type="radio" name="waterStatus" value="shut-off"> Water shut off, no longer flowing</label>
+              <label><input type="radio" name="waterStatus" value="contained"> Slow leak, contained for now</label>
+              <label><input type="radio" name="waterStatus" value="no-water"> No water (no leak, just no service)</label>
+              <label><input type="radio" name="waterStatus" value="other"> Other &mdash; explain below</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Best phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="name">Your name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>2. Location</legend>
+          <div class="form-group">
+            <label for="address">Service address <span class="req">*</span></label>
+            <input type="text" id="address" name="address" required autocomplete="street-address">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="zip">ZIP code <span class="req">*</span></label>
+              <input type="text" id="zip" name="zip" required inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code">
+            </div>
+            <div class="form-group">
+              <label for="propertyType">Property type</label>
+              <select id="propertyType" name="propertyType">
+                <option>Single-family home</option>
+                <option>Townhouse / condo</option>
+                <option>Apartment / rental</option>
+                <option>Light commercial</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="access">Access notes (gate code, lockbox, dog, etc.)</label>
+            <input type="text" id="access" name="access" placeholder="e.g. gate code 1234, friendly dog in yard, side gate is unlocked">
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>3. The problem</legend>
+          <div class="form-group">
+            <label for="issueType">What kind of issue is this? <span class="req">*</span></label>
+            <select id="issueType" name="issueType" required>
+              <option value="">Choose one&hellip;</option>
+              <option>Burst / flooding pipe</option>
+              <option>Slow leak (under sink, behind wall, etc.)</option>
+              <option>Clogged drain (single fixture)</option>
+              <option>Clogged main / sewer line</option>
+              <option>Toilet won't flush / overflowing</option>
+              <option>No hot water</option>
+              <option>No water at all</option>
+              <option>Low water pressure</option>
+              <option>Water heater leaking</option>
+              <option>Sewer smell / backup</option>
+              <option>Frozen pipes</option>
+              <option>Other &mdash; explain below</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label id="locationLabel">Where in the home? (check all that apply)</label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="locationLabel">
+              <label><input type="checkbox" name="location" value="kitchen"> Kitchen</label>
+              <label><input type="checkbox" name="location" value="main-bath"> Main bathroom</label>
+              <label><input type="checkbox" name="location" value="master-bath"> Master bathroom</label>
+              <label><input type="checkbox" name="location" value="laundry"> Laundry room</label>
+              <label><input type="checkbox" name="location" value="basement"> Basement</label>
+              <label><input type="checkbox" name="location" value="crawl-space"> Crawl space</label>
+              <label><input type="checkbox" name="location" value="garage"> Garage</label>
+              <label><input type="checkbox" name="location" value="outdoor"> Outdoor / yard</label>
+              <label><input type="checkbox" name="location" value="main-line"> Main line / from street</label>
+              <label><input type="checkbox" name="location" value="not-sure"> Not sure</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="started">When did this start?</label>
+            <input type="text" id="started" name="started" placeholder="e.g. 30 minutes ago, this morning, gradually over a week">
+          </div>
+          <div class="form-group">
+            <label for="description">Describe what's happening <span class="req">*</span></label>
+            <textarea id="description" name="description" rows="5" required placeholder="What you're seeing, where the water is going, what you've already tried."></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>4. Damage &amp; risk</legend>
+          <div class="form-group">
+            <label id="damageLabel">Has water damaged anything? (check all)</label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="damageLabel">
+              <label><input type="checkbox" name="damage" value="floor"> Flooring (carpet, hardwood, tile)</label>
+              <label><input type="checkbox" name="damage" value="walls"> Walls / drywall</label>
+              <label><input type="checkbox" name="damage" value="ceiling"> Ceiling (drip from above)</label>
+              <label><input type="checkbox" name="damage" value="cabinets"> Cabinets / vanity</label>
+              <label><input type="checkbox" name="damage" value="electronics"> Electronics or appliances</label>
+              <label><input type="checkbox" name="damage" value="basement"> Basement / finished space</label>
+              <label><input type="checkbox" name="damage" value="none"> No visible damage yet</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="insuranceLabel">Have you contacted insurance?</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="insuranceLabel">
+              <label><input type="radio" name="insurance" value="claim-open"> Yes, claim is open</label>
+              <label><input type="radio" name="insurance" value="not-yet"> Not yet, planning to</label>
+              <label><input type="radio" name="insurance" value="no"> No, not pursuing</label>
+              <label><input type="radio" name="insurance" value="not-sure"> Not sure if it qualifies</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>5. Scheduling</legend>
+          <div class="form-group">
+            <label id="urgencyLabel">When do you need us? <span class="req">*</span></label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="urgencyLabel">
+              <label><input type="radio" name="urgency" value="now" required> <strong>Right now</strong> &mdash; emergency dispatch</label>
+              <label><input type="radio" name="urgency" value="today"> Today if possible</label>
+              <label><input type="radio" name="urgency" value="tomorrow"> Tomorrow morning</label>
+              <label><input type="radio" name="urgency" value="this-week"> This week, flexible</label>
+              <label><input type="radio" name="urgency" value="quote-only"> Quote only, no service yet</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="bestTime">If we can't reach you immediately, best time to call back</label>
+            <select id="bestTime" name="bestTime">
+              <option value="">No preference</option>
+              <option>Morning (7am&ndash;11am)</option>
+              <option>Mid-day (11am&ndash;2pm)</option>
+              <option>Afternoon (2pm&ndash;5pm)</option>
+              <option>Evening (5pm&ndash;8pm)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="referral">How did you find us?</label>
+            <select id="referral" name="referral">
+              <option value="">Choose one&hellip;</option>
+              <option>Google search</option>
+              <option>Friend / neighbor</option>
+              <option>Saw the truck</option>
+              <option>Realtor / property manager</option>
+              <option>Repeat customer</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong. Please try again or call us directly.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Send to dispatch</button>
+        <p class="form-hint">Sample form. All submissions land in a demo inbox at Pikes Peak Web Designs.</p>
+      </form>
+    </div>
+
+    <p style="margin-top:2rem;font-size:0.92rem;color:var(--text-muted);text-align:center"><a href="/sample-forms/" class="inline-link">&larr; Back to all sample forms</a> &middot; <a href="/contact/" class="inline-link">Want one like this for your shop?</a></p>
+  </div>
+</section>

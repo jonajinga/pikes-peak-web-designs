@@ -1,0 +1,220 @@
+---
+layout: layouts/base.njk
+title: "Home Inspection Booking Form (live demo) | Pikes Peak Web Designs"
+description: "A working sample home inspection booking form. Captures buyer + agent + property details, square footage, age, and add-on services."
+permalink: /sample-forms/home-inspector/
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/sample-forms/">Sample forms</a><span class="sep">/</span><span>Home inspection booking</span>
+    </nav>
+    <span class="section-label">Home Inspector &middot; live working form</span>
+    <h1>Inspection booking, <em>everything before arrival.</em></h1>
+    <p>Real working form. Captures the buyer, the agent (CC'd on the report), the property details, and any add-on services. Built so the inspector arrives with the right gear and the right paperwork already prepped.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <div class="contact-form-card">
+      <h2 class="form-heading">Schedule an inspection</h2>
+      <p class="form-intro">Most weeks we're 3&ndash;5 business days out. Same-week scheduling for repeat clients and contract-deadline jobs.</p>
+
+      <form data-web3forms data-redirect="/thank-you/?type=sample-home-inspector" action="https://api.web3forms.com/submit" method="POST" class="form">
+        <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+        <input type="hidden" name="subject" value="[Sample Home Inspector] Inspection booking">
+        <input type="hidden" name="from_name" value="Pikes Peak — Sample home inspector form">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <fieldset class="fieldset">
+          <legend>1. Buyer / client</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="buyerName">Buyer / client name <span class="req">*</span></label>
+              <input type="text" id="buyerName" name="buyerName" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="buyerPhone">Buyer phone <span class="req">*</span></label>
+              <input type="tel" id="buyerPhone" name="buyerPhone" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="buyerEmail">Buyer email <span class="req">*</span></label>
+            <input type="email" id="buyerEmail" name="buyerEmail" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label id="attendLabel">Will the buyer be on site?</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="attendLabel">
+              <label><input type="radio" name="attend" value="full"> Yes, the whole time</label>
+              <label><input type="radio" name="attend" value="walkthrough"> Just for the walkthrough at the end</label>
+              <label><input type="radio" name="attend" value="no"> No &mdash; agent will be there</label>
+              <label><input type="radio" name="attend" value="virtual"> Virtual walkthrough requested (FaceTime)</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>2. Agent (cc on report)</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="agentName">Agent name</label>
+              <input type="text" id="agentName" name="agentName">
+            </div>
+            <div class="form-group">
+              <label for="agentBrokerage">Brokerage</label>
+              <input type="text" id="agentBrokerage" name="agentBrokerage">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="agentEmail">Agent email</label>
+              <input type="email" id="agentEmail" name="agentEmail">
+            </div>
+            <div class="form-group">
+              <label for="agentPhone">Agent phone</label>
+              <input type="tel" id="agentPhone" name="agentPhone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="referralLabel">Referred by</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="referralLabel">
+              <label><input type="radio" name="referral" value="agent"> Agent recommended us</label>
+              <label><input type="radio" name="referral" value="buyer-research"> Buyer found us independently</label>
+              <label><input type="radio" name="referral" value="repeat"> Repeat client</label>
+              <label><input type="radio" name="referral" value="other"> Other</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>3. Property</legend>
+          <div class="form-group">
+            <label for="address">Property address <span class="req">*</span></label>
+            <input type="text" id="address" name="address" required autocomplete="street-address">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sqft">Heated sq ft <span class="req">*</span></label>
+              <input type="text" id="sqft" name="sqft" required placeholder="e.g. 2400">
+            </div>
+            <div class="form-group">
+              <label for="yearBuilt">Year built <span class="req">*</span></label>
+              <input type="text" id="yearBuilt" name="yearBuilt" required placeholder="e.g. 1998">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="stories">Stories</label>
+              <select id="stories" name="stories">
+                <option>1 story</option>
+                <option>1.5 stories</option>
+                <option>2 stories</option>
+                <option>2.5 stories</option>
+                <option>3+ stories</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="basementType">Basement</label>
+              <select id="basementType" name="basementType">
+                <option>None / slab on grade</option>
+                <option>Crawl space</option>
+                <option>Unfinished basement</option>
+                <option>Partially finished basement</option>
+                <option>Fully finished basement</option>
+                <option>Walk-out basement</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="featuresLabel">Property features (check all)</label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="featuresLabel">
+              <label><input type="checkbox" name="features" value="garage"> Attached garage</label>
+              <label><input type="checkbox" name="features" value="detached-garage"> Detached garage</label>
+              <label><input type="checkbox" name="features" value="adu"> ADU / casita</label>
+              <label><input type="checkbox" name="features" value="pool"> Pool</label>
+              <label><input type="checkbox" name="features" value="spa"> Spa / hot tub</label>
+              <label><input type="checkbox" name="features" value="solar"> Solar panels</label>
+              <label><input type="checkbox" name="features" value="well"> Well water</label>
+              <label><input type="checkbox" name="features" value="septic"> Septic system</label>
+              <label><input type="checkbox" name="features" value="acreage"> Substantial acreage</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>4. Inspection scope</legend>
+          <div class="form-group">
+            <label id="scopeLabel">Inspection type(s) <span class="req">*</span></label>
+            <div class="form-checkbox-group" role="group" aria-labelledby="scopeLabel">
+              <label><input type="checkbox" name="scope" value="full" required> Full residential inspection</label>
+              <label><input type="checkbox" name="scope" value="pre-listing"> Pre-listing inspection (seller-side)</label>
+              <label><input type="checkbox" name="scope" value="warranty"> 11-month warranty inspection</label>
+              <label><input type="checkbox" name="scope" value="sewer"> Sewer scope</label>
+              <label><input type="checkbox" name="scope" value="radon"> Radon (48 hr)</label>
+              <label><input type="checkbox" name="scope" value="infrared"> Infrared / thermal scan</label>
+              <label><input type="checkbox" name="scope" value="mold"> Mold sampling</label>
+              <label><input type="checkbox" name="scope" value="water"> Water quality</label>
+              <label><input type="checkbox" name="scope" value="pool"> Pool / spa inspection</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contractDeadline">Contract / contingency deadline</label>
+            <input type="text" id="contractDeadline" name="contractDeadline" placeholder="e.g. inspection objections due Mar 15">
+          </div>
+          <div class="form-group">
+            <label for="concerns">Anything we should look at closely?</label>
+            <textarea id="concerns" name="concerns" rows="4" placeholder="Concerns from the listing, seller's disclosure issues, things the buyer is worried about, recent renovations, etc."></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>5. Scheduling &amp; access</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="preferredDate">Preferred date</label>
+              <input type="text" id="preferredDate" name="preferredDate" placeholder="e.g. Tue Mar 12 or 'this Friday'">
+            </div>
+            <div class="form-group">
+              <label for="preferredTime">Preferred time</label>
+              <select id="preferredTime" name="preferredTime">
+                <option>Anytime</option>
+                <option>Morning (8am&ndash;noon)</option>
+                <option>Afternoon (12&ndash;4pm)</option>
+                <option>Late afternoon (3&ndash;5pm)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="accessLabel">Property access</label>
+            <div class="form-radio-group" role="radiogroup" aria-labelledby="accessLabel">
+              <label><input type="radio" name="access" value="agent-meets"> Agent will meet us at the property</label>
+              <label><input type="radio" name="access" value="lockbox"> Lockbox / supra access</label>
+              <label><input type="radio" name="access" value="seller-home"> Seller will be home</label>
+              <label><input type="radio" name="access" value="vacant"> Vacant property</label>
+              <label><input type="radio" name="access" value="other"> Other (explain in notes)</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="paymentLabel">Payment preference</label>
+            <div class="form-radio-group form-radio-group--inline" role="radiogroup" aria-labelledby="paymentLabel">
+              <label><input type="radio" name="payment" value="card"> Card</label>
+              <label><input type="radio" name="payment" value="check"> Check at closing</label>
+              <label><input type="radio" name="payment" value="title"> Pay through title company</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div id="form-error" role="alert" class="form-error">
+          Something went wrong. Please try again or call us directly.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Schedule inspection</button>
+        <p class="form-hint">Sample form &mdash; submissions land in a demo inbox at Pikes Peak Web Designs.</p>
+      </form>
+    </div>
+
+    <p style="margin-top:2rem;font-size:0.92rem;color:var(--text-muted);text-align:center"><a href="/sample-forms/" class="inline-link">&larr; Back to all sample forms</a> &middot; <a href="/contact/" class="inline-link">Want this form for your inspection firm?</a></p>
+  </div>
+</section>
