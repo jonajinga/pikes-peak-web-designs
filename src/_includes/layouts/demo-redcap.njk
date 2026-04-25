@@ -18,7 +18,7 @@
 <body class="demo-site">
 
 <div class="demo-banner" role="note" aria-label="Demo site notice">
-  <span class="demo-banner-label">Live Demo &middot; Sample site built by Pikes Peak Web Designs</span>
+  <span class="demo-banner-label">Live Demo &middot; Pikes Peak Web Designs</span>
   <div class="demo-banner-actions">
     <a href="/samples/">&larr; Back to Samples</a>
     <a href="/contact/">Get a site like this &rarr;</a>
@@ -37,6 +37,7 @@
       <a href="/demo/redcap-roofing/services/"{% if page.url | startsWith('/demo/redcap-roofing/services/') or page.url | startsWith('/demo/redcap-roofing/residential/') or page.url | startsWith('/demo/redcap-roofing/commercial/') %} class="is-active"{% endif %}>Services</a>
       <a href="/demo/redcap-roofing/service-area/"{% if page.url | startsWith('/demo/redcap-roofing/service-area/') %} class="is-active"{% endif %}>Service Area</a>
       <a href="/demo/redcap-roofing/about/"{% if page.url | startsWith('/demo/redcap-roofing/about/') %} class="is-active"{% endif %}>About</a>
+      <a href="/demo/redcap-roofing/pricing/"{% if page.url | startsWith('/demo/redcap-roofing/pricing/') %} class="is-active"{% endif %}>Pricing</a>
       <a href="tel:7195550143" class="demo-nav-phone">(719) 555-0143</a>
       <a href="/demo/redcap-roofing/contact/" class="demo-nav-cta">Free Inspection</a>
     </nav>
@@ -48,6 +49,9 @@
 </header>
 
 <div class="demo-mobile-nav" id="demoMobileNav">
+  <button class="demo-mobile-nav-close" type="button" aria-label="Close menu" onclick="document.getElementById('demoMobileNav').classList.remove('is-open')">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
   <a href="tel:7195550143">Call (719) 555-0143</a>
   <a href="/demo/redcap-roofing/">Home</a>
   <a href="/demo/redcap-roofing/services/">Services</a>
@@ -55,6 +59,7 @@
   <a href="/demo/redcap-roofing/commercial/">Commercial</a>
   <a href="/demo/redcap-roofing/service-area/">Service Area</a>
   <a href="/demo/redcap-roofing/about/">About</a>
+  <a href="/demo/redcap-roofing/pricing/">Pricing</a>
   <a href="/demo/redcap-roofing/contact/" class="demo-nav-cta">Free Inspection</a>
 </div>
 

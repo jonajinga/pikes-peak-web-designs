@@ -18,7 +18,7 @@
 <body class="meadow-site">
 
 <div class="meadow-banner" role="note" aria-label="Demo site notice">
-  <span class="meadow-banner-label">Live Demo &middot; Sample by Pikes Peak Web Designs</span>
+  <span class="meadow-banner-label">Live Demo &middot; Pikes Peak Web Designs</span>
   <div class="meadow-banner-actions">
     <a href="/samples/">&larr; Back to Samples</a>
     <a href="/contact/">Get a site like this &rarr;</a>
@@ -32,6 +32,7 @@
       <a href="/demo/meadow-stone/"{% if page.url == '/demo/meadow-stone/' %} class="is-active"{% endif %}>Studio</a>
       <a href="/demo/meadow-stone/services/"{% if page.url | startsWith('/demo/meadow-stone/services/') %} class="is-active"{% endif %}>Work</a>
       <a href="/demo/meadow-stone/about/"{% if page.url | startsWith('/demo/meadow-stone/about/') %} class="is-active"{% endif %}>Studio Notes</a>
+      <a href="/demo/meadow-stone/pricing/"{% if page.url | startsWith('/demo/meadow-stone/pricing/') %} class="is-active"{% endif %}>Investment</a>
       <a href="/demo/meadow-stone/contact/" class="meadow-nav-cta">Start a project</a>
     </nav>
     <button class="meadow-menu-toggle" type="button" aria-label="Toggle menu" onclick="document.getElementById('meadowMobileNav').classList.toggle('is-open')">
@@ -41,10 +42,14 @@
 </header>
 
 <div class="meadow-mobile-nav" id="meadowMobileNav">
+  <button class="meadow-mobile-nav-close" type="button" aria-label="Close menu" onclick="document.getElementById('meadowMobileNav').classList.remove('is-open')">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
   <a href="tel:3035550147">Call (303) 555-0147</a>
   <a href="/demo/meadow-stone/">Studio</a>
   <a href="/demo/meadow-stone/services/">Work</a>
   <a href="/demo/meadow-stone/about/">Studio Notes</a>
+  <a href="/demo/meadow-stone/pricing/">Investment</a>
   <a href="/demo/meadow-stone/contact/">Start a project</a>
 </div>
 
