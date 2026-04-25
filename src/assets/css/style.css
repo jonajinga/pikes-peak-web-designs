@@ -2587,14 +2587,16 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 
 .fieldset {
-  padding: clamp(1.1rem, 3vw, 1.5rem);
+  padding: 0.75rem clamp(1.1rem, 3vw, 1.5rem) clamp(1.1rem, 3vw, 1.5rem);
   background: var(--bg-alt);
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
 /* Fieldset legend matches a .form-group label — same font, size, weight, and
    color as every other field title, so the form reads as one consistent
-   visual system instead of a serif-heading + sans-label mash-up. */
+   visual system instead of a serif-heading + sans-label mash-up. The legend
+   "owns" its first field — small, explicit gap below; first row sits flush
+   with no extra top margin so the section title hugs its content. */
 .fieldset legend {
   font-family: var(--font-body);
   font-size: 0.85rem;
@@ -2603,13 +2605,12 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   letter-spacing: 0.005em;
   padding: 0 0.5rem;
   margin-left: -0.5rem;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.45rem;
 }
-/* Consistent vertical rhythm inside fieldsets — no inline margin-top needed */
 .fieldset > .form-row,
 .fieldset > .form-group { margin-top: 1rem; }
 .fieldset > .form-row:first-of-type,
-.fieldset > .form-group:first-of-type { margin-top: 0.85rem; }
+.fieldset > .form-group:first-of-type { margin-top: 0; }
 .form-group label .req {
   color: var(--danger);
   margin-left: 0.15rem;
