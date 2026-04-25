@@ -2586,26 +2586,33 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   margin-top: 0.75rem;
 }
 
+/* Fieldset has a soft surface background. The legend gets lifted ABOVE the
+   surface (position: absolute, top: -1.55rem) so the section title reads as
+   floating cleanly above the box instead of being baked into its top edge.
+   Each fieldset gets extra margin-top to hold space for the lifted legend,
+   added to the .form's flex gap. */
 .fieldset {
-  padding: 0.75rem clamp(1.1rem, 3vw, 1.5rem) clamp(1.1rem, 3vw, 1.5rem);
+  position: relative;
+  padding: clamp(1.1rem, 3vw, 1.5rem);
   background: var(--bg-alt);
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
-/* Fieldset legend matches a .form-group label — same font, size, weight, and
-   color as every other field title, so the form reads as one consistent
-   visual system instead of a serif-heading + sans-label mash-up. The legend
-   "owns" its first field — small, explicit gap below; first row sits flush
-   with no extra top margin so the section title hugs its content. */
+.form > .fieldset { margin-top: 1.6rem; }
+.form > .fieldset:first-child { margin-top: 0.5rem; }
 .fieldset legend {
+  position: absolute;
+  top: -1.55rem;
+  left: 0;
   font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
   color: var(--text);
   letter-spacing: 0.005em;
-  padding: 0 0.5rem;
-  margin-left: -0.5rem;
-  margin-bottom: 0.45rem;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  line-height: 1.2;
 }
 .fieldset > .form-row,
 .fieldset > .form-group { margin-top: 1rem; }
