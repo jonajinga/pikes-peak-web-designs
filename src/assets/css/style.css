@@ -832,11 +832,21 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   overflow-y: auto;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  background: var(--bg-alt);
+  background: var(--bg-alt-2);
 }
 .mobile-search-box .pagefind-ui__search-input {
   font-size: 0.95rem;
   padding: 0.7rem 0.9rem 0.7rem 2.25rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+.mobile-search-box .pagefind-ui__search-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.85;
+}
+:root[data-theme="dark"] .mobile-search-box .pagefind-ui__drawer {
+  border-color: var(--line-strong);
 }
 
 /* Mobile nav footer link (subtle Client Portal entry at the bottom) */
@@ -849,8 +859,9 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .mobile-nav-footer-link {
   display: inline-block;
   padding: 0.5rem 0.75rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
   text-decoration: none;
   transition: color var(--dur);
 }
@@ -1193,20 +1204,37 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   justify-content: space-between;
   align-items: center;
   border-radius: var(--radius-sm);
-  border: 1px solid transparent;
-  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  background: var(--bg-alt-2);
   transition: background var(--dur), border-color var(--dur), color var(--dur);
   cursor: pointer;
   width: 100%;
   margin-bottom: 0.2rem;
 }
-.mobile-dropdown-toggle:hover { background: var(--bg-alt-2); border-color: var(--line); }
-.mobile-dropdown-toggle.open {
+:root[data-theme="dark"] .mobile-dropdown-toggle {
+  border-color: var(--line-strong);
   background: var(--bg-alt-2);
+}
+.mobile-dropdown-toggle:hover {
+  background: var(--surface);
   border-color: var(--line-strong);
   color: var(--navy-900);
 }
-:root[data-theme="dark"] .mobile-dropdown-toggle.open { color: var(--gold-400); }
+:root[data-theme="dark"] .mobile-dropdown-toggle:hover {
+  background: var(--surface-raised);
+  border-color: var(--gold-400);
+  color: var(--gold-400);
+}
+.mobile-dropdown-toggle.open {
+  background: var(--surface);
+  border-color: var(--navy-700);
+  color: var(--navy-900);
+}
+:root[data-theme="dark"] .mobile-dropdown-toggle.open {
+  background: var(--surface-raised);
+  border-color: var(--gold-400);
+  color: var(--gold-400);
+}
 .mobile-arrow {
   width: 12px;
   height: 12px;
@@ -1287,22 +1315,23 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 .theme-switch-label {
   font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.74rem;
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text);
   padding-left: 0.15rem;
 }
 .theme-switch-controls {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  background: var(--bg-alt);
+  background: var(--bg-alt-2);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   padding: 3px;
 }
+:root[data-theme="dark"] .theme-switch-controls { border-color: var(--line-strong); }
 .theme-switch-btn {
   display: inline-flex;
   align-items: center;
@@ -1312,24 +1341,33 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   background: transparent;
   border: none;
   border-radius: calc(var(--radius-sm) - 2px);
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  font-weight: 500;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 600;
   cursor: pointer;
   transition: background var(--dur), color var(--dur), box-shadow var(--dur);
   min-height: 40px;
 }
 .theme-switch-btn:hover {
-  color: var(--text);
+  color: var(--navy-900);
+  background: rgba(10, 31, 68, 0.06);
+}
+:root[data-theme="dark"] .theme-switch-btn:hover {
+  color: var(--gold-400);
+  background: rgba(221, 177, 61, 0.08);
 }
 .theme-switch-btn.is-active {
   background: var(--surface);
   color: var(--navy-900);
-  box-shadow: var(--shadow-xs);
-  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  font-weight: 700;
+  border: 1px solid var(--line);
+  padding: calc(0.6rem - 1px) calc(0.5rem - 1px);
 }
 :root[data-theme="dark"] .theme-switch-btn.is-active {
+  background: var(--surface-raised);
   color: var(--gold-400);
+  border-color: var(--gold-500);
 }
 .theme-switch-btn svg {
   width: 15px;
