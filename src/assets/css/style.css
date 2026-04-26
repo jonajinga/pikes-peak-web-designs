@@ -9926,8 +9926,31 @@ a { touch-action: manipulation; }
 }
 :root[data-theme="dark"] .service-area-map { border-color: var(--line); box-shadow: 0 14px 36px rgba(0,0,0,0.6); }
 .leaflet-container { font-family: var(--font-body); font-size: 0.9rem; }
-.leaflet-popup-content { margin: 0.5rem 0.6rem; line-height: 1.45; }
-.leaflet-popup-content strong { color: var(--text); font-weight: 600; }
+/* Leaflet popups are hard-coded white. Force readable colors regardless of site theme so dark-mode visitors don't get light-on-white text. */
+.leaflet-popup-content-wrapper {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18) !important;
+}
+.leaflet-popup-tip { background: #FFFFFF !important; box-shadow: 0 4px 14px rgba(0,0,0,0.18) !important; }
+.leaflet-popup-content { margin: 0.65rem 0.85rem; line-height: 1.45; color: #0F172A; }
+.leaflet-popup-content strong { color: #0F172A; font-weight: 700; }
+.leaflet-popup-content a {
+  color: #1D4ED8;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.leaflet-popup-content a:hover { color: #1E3A8A; }
+.leaflet-popup-close-button {
+  color: #475569 !important;
+  font-size: 18px !important;
+  padding: 4px 6px !important;
+  width: 28px !important;
+  height: 28px !important;
+}
+.leaflet-popup-close-button:hover { color: #0F172A !important; background: #F1F5F9 !important; border-radius: 4px; }
 .leaflet-control-attribution {
   background: rgba(255,255,255,0.85) !important;
   font-size: 0.7rem !important;
