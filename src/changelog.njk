@@ -21,6 +21,23 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
     <div class="changelog-entry">
       <header class="changelog-head">
         <time datetime="2026-04-26" class="changelog-date">April 26, 2026</time>
+        <span class="changelog-tag">Mobile</span>
+      </header>
+      <h2 class="changelog-title">Sitemap presentation rebuilt, mobile-first</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>Fixed:</strong> the HTML <a href="/sitemap/" class="inline-link">/sitemap/</a> page had a hardcoded <code>grid-template-columns: 1fr 1fr</code> that forced two cramped columns at every viewport, including phones. Replaced with a proper mobile-first <code>.sitemap-grid</code> that goes 1 column under 640 px, 2 up to 999 px, 3 above.</li>
+          <li><strong>Improved:</strong> every link now has a 44 px minimum touch target with a hover state that slides text 0.45 rem on focus. Dashed dividers replace the previous gap-only spacing for stronger visual rhythm.</li>
+          <li><strong>Improved:</strong> each section gets a numbered eyebrow (gold, tracked uppercase) plus a gold-underlined h2; the typography hierarchy is now obvious at a glance instead of relying on color alone.</li>
+          <li><strong>Improved:</strong> service-area cities and demo links promoted from inline anchor lists to pill cards in their own responsive grid (1 / 2 / 3 / 4 columns by viewport). Each pill is a 44 px tap target with a gold-bordered hover state.</li>
+          <li><strong>New:</strong> two missing sections added: SEO &amp; feeds (sitemap.xml, feed.xml, robots.txt, security.txt) and Live demos (all six demo sites with quick-link pills).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-26" class="changelog-date">April 26, 2026</time>
         <span class="changelog-tag changelog-tag--major">Demo pages</span>
       </header>
       <h2 class="changelog-title">Sitemaps and brand-guideline pages on every demo</h2>

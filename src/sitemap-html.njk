@@ -12,82 +12,101 @@ description: "A plain-language map of every page on the Pikes Peak Web Designs w
     </nav>
     <span class="section-label">Sitemap</span>
     <h1>Every page on this <em>website.</em></h1>
-    <p>A clean, human-readable map. Use it if you're looking for something specific or want to get a sense of how the site is organized.</p>
+    <p>A clean, human-readable map. Use it if you're looking for something specific, or just want a sense of how the site is organized.</p>
   </div>
 </section>
 
 <section class="section">
-  <div class="container" style="max-width:980px">
+  <div class="container" style="max-width:1100px">
 
-    <div style="margin-bottom:2.5rem;padding:1.25rem 1.5rem;background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--radius);display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between">
-      <div>
-        <strong style="display:block;font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:0.15rem">Looking for something specific?</strong>
-        <span style="color:var(--text-muted);font-size:0.92rem">Try the full-text search instead.</span>
+    <div class="sitemap-search">
+      <div class="sitemap-search-text">
+        <strong>Looking for something specific?</strong>
+        <span>Try the full-text search instead.</span>
       </div>
       <a href="/search/" class="btn btn-outline-dark">Search the site &rarr;</a>
     </div>
 
-    <div class="sg-grid" style="grid-template-columns:1fr 1fr">
-      <div>
-        <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid var(--gold-500);display:inline-block">Core</h2>
-        <ul style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
-          <li><a href="/" class="inline-link">Home</a> &middot; the main pitch</li>
-          <li><a href="/about/" class="inline-link">About</a> &middot; who we are and how we work</li>
-          <li><a href="/how-it-works/" class="inline-link">How It Works</a> &middot; the process end to end</li>
-          <li><a href="/whats-included/" class="inline-link">What's Included</a> &middot; every inclusion in your plan</li>
-          <li><a href="/samples/" class="inline-link">Sample Websites</a> &middot; design concepts by industry</li>
-          <li><a href="/sample-forms/" class="inline-link">Sample Forms</a> &middot; industry-specific form examples</li>
-          <li><a href="/pricing/" class="inline-link">Pricing</a> &middot; monthly and lump-sum plans</li>
+    <div class="sitemap-grid">
+
+      <div class="sitemap-section">
+        <span class="sitemap-eyebrow">01 / Pitch</span>
+        <h2>Core</h2>
+        <ul class="sitemap-list">
+          <li><a href="/">Home<span>The main pitch</span></a></li>
+          <li><a href="/about/">About<span>Who we are and how we work</span></a></li>
+          <li><a href="/how-it-works/">How It Works<span>The process end to end</span></a></li>
+          <li><a href="/whats-included/">What's Included<span>Every inclusion in your plan</span></a></li>
+          <li><a href="/samples/">Sample Websites<span>Six live demos by industry</span></a></li>
+          <li><a href="/sample-forms/">Sample Forms<span>Eight industry-specific intakes</span></a></li>
+          <li><a href="/pricing/">Pricing<span>Monthly and lump-sum plans</span></a></li>
         </ul>
       </div>
 
-      <div>
-        <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid var(--gold-500);display:inline-block">Resources</h2>
-        <ul style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
-          <li><a href="/blog/" class="inline-link">Blog</a> &middot; guides and articles</li>
-          <li><a href="/faq/" class="inline-link">FAQ</a> &middot; every question, answered</li>
-          <li><a href="/glossary/" class="inline-link">Glossary</a> &middot; plain-language definitions</li>
-          <li><a href="/owners-guide/" class="inline-link">Owner's Guide</a> &middot; sample launch-day handover</li>
-          <li><a href="/search/" class="inline-link">Search</a> &middot; full-text site search</li>
+      <div class="sitemap-section">
+        <span class="sitemap-eyebrow">02 / Reference</span>
+        <h2>Resources</h2>
+        <ul class="sitemap-list">
+          <li><a href="/blog/">Blog<span>Long-form guides and articles</span></a></li>
+          <li><a href="/faq/">FAQ<span>Every question, answered straight</span></a></li>
+          <li><a href="/glossary/">Glossary<span>Plain-language term definitions</span></a></li>
+          <li><a href="/owners-guide/">Owner's Guide<span>The 18-section launch-day handover</span></a></li>
+          <li><a href="/changelog/">Changelog<span>What we ship, in public</span></a></li>
+          <li><a href="/search/">Search<span>Full-text site search</span></a></li>
         </ul>
       </div>
 
-      <div>
-        <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid var(--gold-500);display:inline-block">Company</h2>
-        <ul style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
-          <li><a href="/technical-approach/" class="inline-link">Technical Approach</a> &middot; the stack, pipeline, and reasoning</li>
-          <li><a href="/style-guide/" class="inline-link">Style Guide</a> &middot; our design system</li>
-          <li><a href="/accessibility/" class="inline-link">Accessibility</a> &middot; WCAG 2.2 AA commitment</li>
-          <li><a href="/contact/" class="inline-link">Contact</a> &middot; start a conversation</li>
-          <li><a href="/onboarding/" class="inline-link">Onboarding Form</a> &middot; for new clients after the call</li>
+      <div class="sitemap-section">
+        <span class="sitemap-eyebrow">03 / Engineering</span>
+        <h2>Company</h2>
+        <ul class="sitemap-list">
+          <li><a href="/technical-approach/">Technical Approach<span>The stack, pipeline, and reasoning</span></a></li>
+          <li><a href="/style-guide/">Style Guide<span>Our design system</span></a></li>
+          <li><a href="/accessibility/">Accessibility<span>WCAG 2.2 AA commitment</span></a></li>
+          <li><a href="/contact/">Contact<span>Start a 20-minute discovery call</span></a></li>
+          <li><a href="/onboarding/">Onboarding Form<span>For new clients after the call</span></a></li>
         </ul>
       </div>
 
-      <div>
-        <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid var(--gold-500);display:inline-block">Client Portal</h2>
-        <ul style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
-          <li><a href="/client-portal/" class="inline-link">Client Portal home</a> &middot; all operational forms</li>
-          <li><a href="/content-update/" class="inline-link">Content update request</a></li>
-          <li><a href="/emergency/" class="inline-link">Emergency support</a></li>
-          <li><a href="/design-feedback/" class="inline-link">Design feedback</a></li>
-          <li><a href="/refer/" class="inline-link">Refer a business</a></li>
-          <li><a href="/testimonial/" class="inline-link">Share a testimonial</a></li>
+      <div class="sitemap-section">
+        <span class="sitemap-eyebrow">04 / For clients</span>
+        <h2>Client Portal</h2>
+        <ul class="sitemap-list">
+          <li><a href="/client-portal/">Client Portal home<span>All operational forms in one place</span></a></li>
+          <li><a href="/content-update/">Content update request<span>Same-day for routine changes</span></a></li>
+          <li><a href="/emergency/">Emergency support<span>Site down or wrong info live</span></a></li>
+          <li><a href="/design-feedback/">Design feedback<span>Notes during build</span></a></li>
+          <li><a href="/refer/">Refer a business<span>One month hosting credit</span></a></li>
+          <li><a href="/testimonial/">Share a testimonial<span>Public or just-for-us</span></a></li>
         </ul>
       </div>
 
-      <div>
-        <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid var(--gold-500);display:inline-block">Legal</h2>
-        <ul style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
-          <li><a href="/privacy-policy/" class="inline-link">Privacy Policy</a></li>
-          <li><a href="/terms-of-use/" class="inline-link">Terms of Use</a></li>
-          <li><a href="/agreement/" class="inline-link">Service Agreement</a> &middot; what you sign to start</li>
+      <div class="sitemap-section">
+        <span class="sitemap-eyebrow">05 / Compliance</span>
+        <h2>Legal</h2>
+        <ul class="sitemap-list">
+          <li><a href="/privacy-policy/">Privacy Policy<span>What we collect, what we don't</span></a></li>
+          <li><a href="/terms-of-use/">Terms of Use<span>Site usage terms</span></a></li>
+          <li><a href="/agreement/">Service Agreement<span>What you sign to start</span></a></li>
         </ul>
       </div>
 
-      <div style="grid-column:1/-1">
-        <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid var(--gold-500);display:inline-block">Service Areas</h2>
-        <p style="color:var(--text-muted);margin:0.75rem 0 1rem">We serve every U.S. state and all of Canada. Here are our 30 major-metro city pages:</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.35rem 1rem">
+      <div class="sitemap-section">
+        <span class="sitemap-eyebrow">06 / Discoverability</span>
+        <h2>SEO &amp; feeds</h2>
+        <ul class="sitemap-list">
+          <li><a href="/sitemap.xml">XML sitemap<span>For search-engine crawlers</span></a></li>
+          <li><a href="/feed.xml">RSS feed<span>Subscribe to the blog</span></a></li>
+          <li><a href="/robots.txt">robots.txt<span>Crawl directives</span></a></li>
+          <li><a href="/security.txt">security.txt<span>Responsible-disclosure contact</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sitemap-section sitemap-section--full">
+        <span class="sitemap-eyebrow">07 / Where we work</span>
+        <h2>Service Areas</h2>
+        <p>We serve every U.S. state and all of Canada. Below are our 30 major-metro pages; the <a href="/service-areas/" class="inline-link">service-areas hub</a> has the full state-by-state list and an interactive map.</p>
+        <div class="sitemap-areas">
           <a href="/areas/atlanta-ga/">Atlanta, GA</a>
           <a href="/areas/austin-tx/">Austin, TX</a>
           <a href="/areas/baltimore-md/">Baltimore, MD</a>
@@ -119,20 +138,35 @@ description: "A plain-language map of every page on the Pikes Peak Web Designs w
           <a href="/areas/toronto-on/">Toronto, ON</a>
           <a href="/areas/vancouver-bc/">Vancouver, BC</a>
         </div>
-        <p style="margin-top:1rem"><a href="/service-areas/" class="inline-link">See the full state-by-state view &rarr;</a></p>
       </div>
 
-      <div style="grid-column:1/-1">
-        <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid var(--gold-500);display:inline-block">Blog</h2>
-        <ul style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0.5rem 1rem;margin-top:0.75rem">
+      <div class="sitemap-section sitemap-section--full">
+        <span class="sitemap-eyebrow">08 / Reading list</span>
+        <h2>Blog posts</h2>
+        <ul class="sitemap-blog">
           {% for post in collections.posts %}
-            <li><a href="{{ post.url }}" class="inline-link">{{ post.data.title }}</a></li>
+            <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
           {% endfor %}
         </ul>
       </div>
+
+      <div class="sitemap-section sitemap-section--full">
+        <span class="sitemap-eyebrow">09 / Live demos</span>
+        <h2>Sample sites</h2>
+        <p>Six full demo sites; each is a complete operational build with home, services, pricing, about, contact, plus legal, sitemap, and brand-guideline pages.</p>
+        <div class="sitemap-areas">
+          <a href="/demo/redcap-roofing/">Redcap Roofing</a>
+          <a href="/demo/alpine-inspectors/">Alpine Inspectors</a>
+          <a href="/demo/meadow-stone/">Meadow &amp; Stone</a>
+          <a href="/demo/summit-hvac/">Summit HVAC</a>
+          <a href="/demo/lumen-electric/">Lumen Electric</a>
+          <a href="/demo/clearwater-plumbing/">Clearwater Plumbing</a>
+        </div>
+      </div>
+
     </div>
 
-    <p style="margin-top:2.5rem;font-size:0.88rem;color:var(--text-muted);text-align:center">Looking for the machine-readable version? See <a href="/sitemap.xml" class="inline-link">sitemap.xml</a> or the <a href="/feed.xml" class="inline-link">RSS feed</a>.</p>
+    <p style="margin-top:3rem;font-size:0.88rem;color:var(--text-muted);text-align:center">Looking for the machine-readable version? See <a href="/sitemap.xml" class="inline-link">sitemap.xml</a> or the <a href="/feed.xml" class="inline-link">RSS feed</a>.</p>
 
   </div>
 </section>
