@@ -8840,25 +8840,32 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   .lumen-site .lumen-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
 }
 
-/* ---- Lumen button hardening: lock colors + remove link underline on buttons + nav CTA ---- */
+/* ---- Lumen button hardening: lock colors per section, kill the global a underline on buttons ---- */
+/* Default: black bg + yellow text (lock against generic .lumen-site a color) */
 .lumen-site a.lumen-btn,
-.lumen-site a.lumen-btn:visited { color: var(--lu-black); text-decoration: none; border-bottom: 0; }
+.lumen-site a.lumen-btn:visited { color: var(--lu-yellow); background: var(--lu-black); text-decoration: none; border-bottom: 0; }
 .lumen-site a.lumen-btn:hover,
-.lumen-site a.lumen-btn:focus { color: var(--lu-black); border-bottom: 0; }
+.lumen-site a.lumen-btn:focus { color: var(--lu-black); background: var(--lu-yellow); border-bottom: 0; }
+/* Outline: transparent bg + black text + black inset border */
 .lumen-site a.lumen-btn-outline,
-.lumen-site a.lumen-btn-outline:visited { color: var(--lu-black); text-decoration: none; border-bottom: 0; }
+.lumen-site a.lumen-btn-outline:visited { color: var(--lu-black); background: transparent; text-decoration: none; border-bottom: 0; }
 .lumen-site a.lumen-btn-outline:hover,
 .lumen-site a.lumen-btn-outline:focus { color: var(--lu-yellow); background: var(--lu-black); border-bottom: 0; }
+/* Black-bg sections flip the default: yellow bg + black text */
 .lumen-site .lumen-section--black a.lumen-btn,
 .lumen-site .lumen-section--black a.lumen-btn:visited { color: var(--lu-black); background: var(--lu-yellow); border-bottom: 0; }
 .lumen-site .lumen-section--black a.lumen-btn:hover { background: #FFFFFF; color: var(--lu-black); }
 .lumen-site .lumen-section--black a.lumen-btn-outline,
-.lumen-site .lumen-section--black a.lumen-btn-outline:visited { color: #FFFFFF; border-bottom: 0; }
+.lumen-site .lumen-section--black a.lumen-btn-outline:visited { color: #FFFFFF; background: transparent; border-bottom: 0; }
 .lumen-site .lumen-section--black a.lumen-btn-outline:hover { background: #FFFFFF; color: var(--lu-black); }
-.lumen-site .lumen-cta a.lumen-btn { color: var(--lu-yellow); background: var(--lu-black); }
+/* CTA section (yellow bg): primary stays black bg / yellow text; outline is transparent + black text + black border */
+.lumen-site .lumen-cta a.lumen-btn,
+.lumen-site .lumen-cta a.lumen-btn:visited { color: var(--lu-yellow); background: var(--lu-black); border-bottom: 0; }
 .lumen-site .lumen-cta a.lumen-btn:hover { background: #FFFFFF; color: var(--lu-black); }
-.lumen-site .lumen-cta a.lumen-btn-outline { color: var(--lu-black); }
-.lumen-site .lumen-cta a.lumen-btn-outline:hover { background: var(--lu-black); color: var(--lu-yellow); }
+.lumen-site .lumen-cta a.lumen-btn-outline,
+.lumen-site .lumen-cta a.lumen-btn-outline:visited { color: var(--lu-black); background: transparent; border-bottom: 0; box-shadow: inset 0 0 0 3px var(--lu-black); }
+.lumen-site .lumen-cta a.lumen-btn-outline:hover { background: var(--lu-black); color: var(--lu-yellow); box-shadow: inset 0 0 0 3px var(--lu-black); }
+/* Nav CTA: yellow bg with black text by default (matches header), kill underline */
 .lumen-site a.lumen-nav-cta,
 .lumen-site a.lumen-nav-cta:visited { color: var(--lu-black); text-decoration: none; border-bottom: 0; }
 .lumen-site a.lumen-nav-cta:hover { color: var(--lu-black); border-bottom: 0; }
@@ -8868,6 +8875,22 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   outline-offset: 3px;
   box-shadow: 0 0 0 6px rgba(255,255,255,0.95), 0 0 0 9px rgba(0,0,0,0.85);
 }
+
+/* ---- Lumen highlight (em): contain the yellow background to its own line, keep text black ---- */
+/* The hero h1 has line-height: 0.9 which lets em backgrounds bleed into adjacent lines.
+   Lock the em color black-on-yellow regardless of inherited heading color, and clone the
+   highlight across line-breaks instead of letting it span them. */
+.lumen-site em {
+  font-style: normal;
+  background: var(--lu-yellow);
+  color: var(--lu-black);
+  padding: 0 0.1em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.lumen-site h1, .lumen-site h2 { line-height: 1.02; }
+.lumen-hero h1 { line-height: 1.0; }
+.lumen-site h1 em, .lumen-site h2 em { line-height: 0.95; }
 
 /* =============================================================
    DEMO SITE — CLEARWATER PLUMBING
