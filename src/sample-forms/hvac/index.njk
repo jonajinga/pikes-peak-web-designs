@@ -1,4 +1,4 @@
----
+﻿---
 layout: layouts/base.njk
 title: "HVAC Emergency Service Form (live demo) | Pikes Peak Web Designs"
 description: "A working sample HVAC service-request form. Routes by urgency, captures system + symptoms, and pre-stages the dispatcher with everything needed to send the right tech."
@@ -25,7 +25,7 @@ permalink: /sample-forms/hvac/
       <form data-web3forms data-redirect="/thank-you/?type=sample-hvac" action="https://api.web3forms.com/submit" method="POST" class="form">
         <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
         <input type="hidden" name="subject" value="[Sample HVAC] Service request">
-        <input type="hidden" name="from_name" value="Pikes Peak — Sample HVAC form">
+        <input type="hidden" name="from_name" value="Pikes Peak, Sample HVAC form">
         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
         <fieldset class="fieldset">
@@ -33,10 +33,10 @@ permalink: /sample-forms/hvac/
           <div class="form-group">
             <label id="urgencyLabel">How urgent is this? <span class="req">*</span></label>
             <div class="form-radio-group" role="radiogroup" aria-labelledby="urgencyLabel">
-              <label><input type="radio" name="urgency" value="emergency" required> <strong>Emergency</strong> &mdash; no heat below 20&deg;F or no cool above 95&deg;F</label>
-              <label><input type="radio" name="urgency" value="same-day"> <strong>Same-day</strong> &mdash; system not working but temperatures are tolerable</label>
-              <label><input type="radio" name="urgency" value="this-week"> <strong>This week</strong> &mdash; system limping along but functional</label>
-              <label><input type="radio" name="urgency" value="planned"> <strong>Planned</strong> &mdash; replacement quote or maintenance</label>
+              <label><input type="radio" name="urgency" value="emergency" required> <strong>Emergency</strong>, no heat below 20&deg;F or no cool above 95&deg;F</label>
+              <label><input type="radio" name="urgency" value="same-day"> <strong>Same-day</strong>, system not working but temperatures are tolerable</label>
+              <label><input type="radio" name="urgency" value="this-week"> <strong>This week</strong>, system limping along but functional</label>
+              <label><input type="radio" name="urgency" value="planned"> <strong>Planned</strong>, replacement quote or maintenance</label>
             </div>
           </div>
         </fieldset>
@@ -60,7 +60,7 @@ permalink: /sample-forms/hvac/
           <div class="form-group">
             <label for="bestTime">Best time to call you back</label>
             <select id="bestTime" name="bestTime">
-              <option value="">No preference &mdash; ASAP works</option>
+              <option value="">No preference, ASAP works</option>
               <option>Morning (7am&ndash;11am)</option>
               <option>Mid-day (11am&ndash;2pm)</option>
               <option>Afternoon (2pm&ndash;5pm)</option>
@@ -114,7 +114,7 @@ permalink: /sample-forms/hvac/
               <label><input type="checkbox" name="systems" value="boiler"> Boiler / hydronic</label>
               <label><input type="checkbox" name="systems" value="water-heater"> Water heater</label>
               <label><input type="checkbox" name="systems" value="thermostat"> Thermostat / controls</label>
-              <label><input type="checkbox" name="systems" value="not-sure"> Not sure &mdash; please diagnose</label>
+              <label><input type="checkbox" name="systems" value="not-sure"> Not sure, please diagnose</label>
             </div>
           </div>
           <div class="form-row">
@@ -194,7 +194,7 @@ permalink: /sample-forms/hvac/
           <div class="form-group">
             <label id="memberLabel">Are you a maintenance plan member?</label>
             <div class="form-radio-group" role="radiogroup" aria-labelledby="memberLabel">
-              <label><input type="radio" name="member" value="yes"> Yes &mdash; please prioritize me</label>
+              <label><input type="radio" name="member" value="yes"> Yes, please prioritize me</label>
               <label><input type="radio" name="member" value="no"> No, but tell me about your plan</label>
               <label><input type="radio" name="member" value="not-interested"> No, not interested in a plan</label>
             </div>

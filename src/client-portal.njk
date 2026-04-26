@@ -1,7 +1,7 @@
----
+﻿---
 layout: layouts/base.njk
 title: "Client Portal | Pikes Peak Web Designs"
-description: "Self-serve portal for Pikes Peak Web Designs clients. Onboarding form, content updates, design feedback, emergency support, referrals, and direct contact — all in one place."
+description: "Self-serve portal for Pikes Peak Web Designs clients. Onboarding form, content updates, design feedback, emergency support, referrals, and direct contact, all in one place."
 noindex: true
 ---
 
@@ -12,7 +12,7 @@ noindex: true
     </nav>
     <span class="section-label">For existing clients</span>
     <h1>Welcome. <em>Everything you need is here.</em></h1>
-    <p>Bookmark this page. Whatever stage you're in &mdash; brand-new client, mid-build, or live and humming &mdash; the right form is below. Pick the section that fits where you are.</p>
+    <p>Bookmark this page. Whatever stage you're in (brand-new client, mid-build, or live and humming), the right form is below. Pick the section that fits where you are.</p>
   </div>
 </section>
 
@@ -63,7 +63,7 @@ noindex: true
     <div class="portal-stage-header">
       <span class="portal-stage-tag">Stage 1 &middot; New clients</span>
       <h2>Onboarding intake.</h2>
-      <p>This is the form we send after the discovery call. The more detail you give us up front, the faster we launch &mdash; usually 3 to 4 weeks of build time once this comes back. Save what you have and reload to keep going; nothing here is required to fill out in one sitting.</p>
+      <p>This is the form we send after the discovery call. The more detail you give us up front, the faster we launch. Usually 3 to 4 weeks of build time once it comes back. You can save what you have and return later; nothing has to be filled out in one sitting.</p>
 
       <div class="portal-stage-meta">
         <div>
@@ -72,7 +72,7 @@ noindex: true
         </div>
         <div>
           <strong>What happens next</strong>
-          We schedule a 30-minute follow-up to fill any gaps and align on timeline
+          We schedule a 30-minute follow-up to fill any gaps and align on timeline.
         </div>
         <div>
           <strong>Privacy</strong>
@@ -81,12 +81,14 @@ noindex: true
       </div>
     </div>
 
-    <div class="contact-form-card">
-      <h3 class="form-heading">Tell us about your business</h3>
-      <p class="form-intro">All fields optional unless marked <span class="req">*</span>. If you don't know something, leave it blank and we'll follow up.</p>
-
-      {% include "partials/onboarding-form.njk" %}
-    </div>
+    <a href="/onboarding/" class="portal-card portal-card--feature">
+      <span class="portal-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+      </span>
+      <h3>Open the onboarding form</h3>
+      <p>Nine sections covering your business, services, customers, brand, and assets. Submit whatever you have ready; come back later for the rest. Anything you can't put in writing, we'll cover on the follow-up call.</p>
+      <span class="portal-arrow">Start the intake &rarr;</span>
+    </a>
 
     <p style="margin-top:2rem;font-size:0.92rem;color:var(--text-muted);text-align:center">Prefer to send this some other way? Email a Google Doc, Dropbox Paper, or Notion page to <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a>. Same place either way.</p>
   </div>
@@ -98,7 +100,7 @@ noindex: true
     <div class="portal-stage-header">
       <span class="portal-stage-tag">Stage 2 &middot; In active build</span>
       <h2>Reviewing your preview link.</h2>
-      <p>Once your design is in our hands, we'll send a private preview URL. The form below is how you give us structured feedback &mdash; what's working, what to change, what to question. Unlimited revision rounds; honest notes always beat polite ones.</p>
+      <p>Once your design is in our hands, we'll send a private preview URL. The form below is how you give us structured feedback: what's working, what to change, what to question. Unlimited revision rounds; honest notes always beat polite ones.</p>
     </div>
 
     <div class="portal-grid portal-grid--two">
@@ -133,7 +135,7 @@ noindex: true
     <div class="portal-stage-header">
       <span class="portal-stage-tag">Stage 3 &middot; Site is live</span>
       <h2>Day-to-day requests.</h2>
-      <p>Once your site is live, three forms cover most of what you'll need. Use the urgency cue at the top of each &mdash; emergency goes through a different channel than a routine update.</p>
+      <p>Once your site is live, three forms cover most of what you'll need. Use the urgency cue at the top of each; emergency goes through a different channel than a routine update.</p>
     </div>
 
     <div class="portal-grid">
@@ -151,7 +153,7 @@ noindex: true
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </span>
         <h3>Emergency support</h3>
-        <p>Site down, wrong info live, security concern, billing issue showing. Triaged immediately &mdash; usually within the hour during business hours.</p>
+        <p>Site down, wrong info live, security concern, billing issue showing. Triaged immediately, usually within the hour during business hours.</p>
         <span class="portal-arrow">Report an emergency &rarr;</span>
       </a>
 
@@ -166,13 +168,13 @@ noindex: true
           <li>You see a defaced page, suspicious form submissions, or any security concern</li>
           <li>A new product / promo is live with the wrong price</li>
         </ul>
-        <p style="font-size:0.88rem;color:var(--text-muted);margin:0.85rem 0 0">Anything else &mdash; new service page, photo swap, copy change &mdash; use the content-update form. We get to those same business day.</p>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin:0.85rem 0 0">Anything else (new service page, photo swap, copy change) goes through the content-update form. We get to those same business day.</p>
       </div>
     </div>
 
     <div class="portal-quick-row">
       <strong>Truly time-critical?</strong>
-      <span>Don't wait for the form. Call or text <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a> &mdash; we pick up or call back fast.</span>
+      <span>Don't wait for the form. Call or text <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. We pick up or call back fast.</span>
     </div>
   </div>
 </section>
@@ -201,7 +203,7 @@ noindex: true
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </span>
         <h3>Leave a testimonial</h3>
-        <p>A few sentences about working with us. You control what (if anything) gets published &mdash; full name, first name only, anonymous, or just between us.</p>
+        <p>A few sentences about working with us. You control what (if anything) gets published, full name, first name only, anonymous, or just between us.</p>
         <span class="portal-arrow">Share a review &rarr;</span>
       </a>
 
@@ -285,7 +287,7 @@ noindex: true
       </a>
       <a href="/changelog/" class="portal-resource">
         <strong>Site Changelog</strong>
-        <span>What we've shipped to client sites recently &mdash; new features, improvements, fixes.</span>
+        <span>What we've shipped to client sites recently, new features, improvements, fixes.</span>
       </a>
       <a href="/glossary/" class="portal-resource">
         <strong>Web Glossary</strong>

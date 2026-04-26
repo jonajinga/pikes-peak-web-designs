@@ -31,7 +31,7 @@
   <meta name="twitter:image" content="{{ site.url }}{{ ogImage if ogImage else site.ogImage }}">
   {% if extraHead %}{{ extraHead | safe }}{% endif %}
 
-  {# Analytics — only injected when real IDs are set in site data. Placeholder
+  {# Analytics, only injected when real IDs are set in site data. Placeholder
      IDs would trigger CORS / 400 errors and leak into the console, so we
      conditionally render. Set site.umamiWebsiteId / site.cloudflareBeaconToken
      to enable. #}

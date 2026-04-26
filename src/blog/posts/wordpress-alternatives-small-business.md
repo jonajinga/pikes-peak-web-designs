@@ -8,17 +8,17 @@ tags: posts
 permalink: /blog/wordpress-alternatives-small-business/
 ---
 
-WordPress powers about 40% of the internet. If you're a small business owner shopping for a new website in 2026, it's also the first thing most vendors will pitch you — because it's what they already know how to sell.
+WordPress powers about 40% of the internet. If you're a small business owner shopping for a new website in 2026, it's also the first thing most vendors will pitch you, because it's what they already know how to sell.
 
-But "popular" and "right for your business" are different questions. This post walks through the honest tradeoffs of WordPress, the big hosted builders, the modern design tools, and custom-coded sites — specifically for local service businesses that need a site that brings calls, not an admin panel they'll never log into.
+But "popular" and "right for your business" are different questions. This post walks through the honest tradeoffs of WordPress, the big hosted builders, the modern design tools, and custom-coded sites, specifically for local service businesses that need a site that brings calls, not an admin panel they'll never log into.
 
 ## The short version
 
 If you own a service business, most of the "WordPress vs..." debate online is irrelevant to you. The real question is: **do you want to manage a website, or do you want to have one?**
 
-- If you genuinely want the admin panel and will use it — WordPress or Squarespace.
-- If you'd rather email a person and say "change our hours" — a custom-coded site with an agency on retainer.
-- If you have a $20 budget and don't care about rankings — Google Business Profile alone, skip the website.
+- If you genuinely want the admin panel and will use it, WordPress or Squarespace.
+- If you'd rather email a person and say "change our hours", a custom-coded site with an agency on retainer.
+- If you have a $20 budget and don't care about rankings, Google Business Profile alone, skip the website.
 
 The rest of this post is the detail behind that summary.
 
@@ -62,7 +62,7 @@ Similar hosted-builder model as Wix, with a cleaner design sensibility and a sli
 
 **Strengths:** Better visual design defaults than Wix. Slightly better SEO out of the box.
 
-**Weaknesses:** Same fundamental tradeoffs — you rent the site, can't migrate cleanly, and pay forever. Performance is better than Wix but still below what custom code or a well-tuned static site achieves.
+**Weaknesses:** Same fundamental tradeoffs, you rent the site, can't migrate cleanly, and pay forever. Performance is better than Wix but still below what custom code or a well-tuned static site achieves.
 
 **Who should use it:** Design-conscious solo operators who value aesthetics over SEO and don't mind paying rent on their digital storefront.
 
@@ -96,10 +96,10 @@ What we build. A static site generator (we use [Eleventy](https://www.11ty.dev))
 
 **Weaknesses:**
 
-- **Content updates need an email to us** (or whoever built the site). For most service businesses this is a feature, not a bug — you'd rather email one person than learn a CMS. But for a team of ten people who each need to write blog posts, this doesn't scale.
+- **Content updates need an email to us** (or whoever built the site). For most service businesses this is a feature, not a bug, you'd rather email one person than learn a CMS. But for a team of ten people who each need to write blog posts, this doesn't scale.
 - **Requires a developer to build.** You can't download a custom-coded site for $0 and deploy it yourself. There's no "template gallery."
 
-**Who should use it:** Service businesses — plumbers, HVAC, electricians, roofers, contractors, inspectors, landscapers — who care about Google rankings, site speed, and never thinking about the website after launch.
+**Who should use it:** Service businesses, plumbers, HVAC, electricians, roofers, contractors, inspectors, landscapers, who care about Google rankings, site speed, and never thinking about the website after launch.
 
 ## Side by side
 
@@ -123,9 +123,9 @@ Ask yourself two questions:
 
 **1. Who is going to update this site?**
 
-If the answer is "me, regularly, I want to log in and make changes" — WordPress or Squarespace. Squarespace if you value design, WordPress if you need flexibility.
+If the answer is "me, regularly, I want to log in and make changes", WordPress or Squarespace. Squarespace if you value design, WordPress if you need flexibility.
 
-If the answer is "nobody, really — we'll email someone once a month with small changes" — a custom-coded site with a retainer relationship is dramatically better on every technical axis and often cheaper over five years.
+If the answer is "nobody, really, we'll email someone once a month with small changes", a custom-coded site with a retainer relationship is dramatically better on every technical axis and often cheaper over five years.
 
 **2. Is Google traffic part of your growth plan?**
 
@@ -143,11 +143,11 @@ For a typical service-business website, over five years:
 - **Custom-coded monthly plan with us:** $0 initial + $10,500 over five years ($175 × 60 months) = **$10,500**, with the site actively maintained and refreshed every two years at no additional cost
 - **Custom-coded lump-sum with us:** $4,000 initial + $1,800 optional hosting over 5 years + occasional updates = **$5,800–$7,000**, with full code ownership
 
-On a five-year horizon, a custom-coded site is competitive with or cheaper than any of the alternatives — and you avoid the hidden costs of ongoing WordPress maintenance or the forced rebuild when a hosted-builder template goes stale.
+On a five-year horizon, a custom-coded site is competitive with or cheaper than any of the alternatives, and you avoid the hidden costs of ongoing WordPress maintenance or the forced rebuild when a hosted-builder template goes stale.
 
 ## What about "just use AI to build a site"?
 
-We get this question more every month. In 2026, an AI-generated site is a reasonable starting draft — genuinely. It's not yet a finished business-ready site for a small local business, because:
+We get this question more every month. In 2026, an AI-generated site is a reasonable starting draft, genuinely. It's not yet a finished business-ready site for a small local business, because:
 
 - AI-generated sites tend to produce generic copy and layout patterns that rank poorly because Google's algorithms are already tuned to spot them.
 - Accessibility, performance, and mobile responsiveness still require testing and iteration that the current AI tools don't do on their own.
@@ -158,15 +158,15 @@ In five years this calculus may change. Today, AI is a good drafting tool and a 
 
 ## Our honest recommendation
 
-- If you're a **single-owner service business** (plumbing, HVAC, electrical, roofing, landscaping, inspection) and want to show up on Google and take calls — a **custom-coded site with an agency on retainer** is almost always the right call. That's our business, so yes, we're biased, but the math tends to support it over five years.
-- If you're a **solo creative or consultant** and want something that looks polished with minimal fuss — **Squarespace**. Honestly.
-- If you have an **e-commerce store**, especially with a sizable product catalog — **Shopify** (not on this list above, but the right answer for retail). 
-- If you want to **write** — a blog, a newsletter, a publication — **Ghost** or a static site with Markdown.
-- If your **team genuinely needs to collaborate** on frequent content updates — **WordPress with a serious performance-tuning partner**, or a headless CMS like **Sanity** or **Contentful** wired into a modern static framework.
+- If you're a **single-owner service business** (plumbing, HVAC, electrical, roofing, landscaping, inspection) and want to show up on Google and take calls, a **custom-coded site with an agency on retainer** is almost always the right call. That's our business, so yes, we're biased, but the math tends to support it over five years.
+- If you're a **solo creative or consultant** and want something that looks polished with minimal fuss, **Squarespace**. Honestly.
+- If you have an **e-commerce store**, especially with a sizable product catalog, **Shopify** (not on this list above, but the right answer for retail). 
+- If you want to **write**, a blog, a newsletter, a publication, **Ghost** or a static site with Markdown.
+- If your **team genuinely needs to collaborate** on frequent content updates, **WordPress with a serious performance-tuning partner**, or a headless CMS like **Sanity** or **Contentful** wired into a modern static framework.
 
 ## If you'd like to talk through it
 
-[We build custom-coded sites](/) for small service businesses across the U.S. and Canada. $0 down, $175/month flat. If you'd like a 20-minute conversation on Google Meet to figure out which option fits your business — even if the answer is "not us" — [start here](/contact/). We'll tell you honestly.
+[We build custom-coded sites](/) for small service businesses across the U.S. and Canada. $0 down, $175/month flat. If you'd like a 20-minute conversation on Google Meet to figure out which option fits your business, even if the answer is "not us", [start here](/contact/). We'll tell you honestly.
 
 <div class="post-cta-box">
   <h3>Thinking about a new site?</h3>

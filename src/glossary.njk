@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Glossary | Web Design Terminology | Pikes Peak Web Designs"
-description: "Plain-language definitions for web design, hosting, SEO, and accessibility terminology, so you know what's going on without needing to be a developer."
+description: "Plain-language definitions for every web-design, hosting, SEO, and accessibility term we use across the site, so you know what's going on without needing to be a developer."
 ---
 
 <section class="page-hero">
@@ -11,7 +11,7 @@ description: "Plain-language definitions for web design, hosting, SEO, and acces
     </nav>
     <span class="section-label">Glossary</span>
     <h1>Plain-language definitions, <em>no jargon.</em></h1>
-    <p>Throughout the site, underlined terms like this; <span class="term" data-term="A glossary term; a word or phrase that has a specific technical meaning in the context of websites.">glossary term</span>; show a short definition on hover. This page has them all in one place.</p>
+    <p>Throughout the site, underlined terms like this <span class="term" data-term="A glossary term: a word or phrase that has a specific technical meaning in the context of websites.">glossary term</span> show a short definition on hover. This page has them all in one place, organized A through W.</p>
   </div>
 </section>
 
@@ -23,19 +23,34 @@ description: "Plain-language definitions for web design, hosting, SEO, and acces
       <a href="#b" class="glossary-letter">B</a>
       <a href="#c" class="glossary-letter">C</a>
       <a href="#d" class="glossary-letter">D</a>
+      <a href="#e" class="glossary-letter">E</a>
+      <a href="#f" class="glossary-letter">F</a>
+      <a href="#g" class="glossary-letter">G</a>
       <a href="#h" class="glossary-letter">H</a>
+      <a href="#i" class="glossary-letter">I</a>
+      <a href="#j" class="glossary-letter">J</a>
+      <a href="#l" class="glossary-letter">L</a>
+      <a href="#m" class="glossary-letter">M</a>
+      <a href="#n" class="glossary-letter">N</a>
+      <a href="#o" class="glossary-letter">O</a>
       <a href="#p" class="glossary-letter">P</a>
       <a href="#r" class="glossary-letter">R</a>
       <a href="#s" class="glossary-letter">S</a>
+      <a href="#t" class="glossary-letter">T</a>
+      <a href="#u" class="glossary-letter">U</a>
+      <a href="#v" class="glossary-letter">V</a>
       <a href="#w" class="glossary-letter">W</a>
     </nav>
 
     <section class="glossary-section" id="a">
       <h2>A</h2>
       <dl>
-        <div class="glossary-entry"><dt>Accessibility</dt><dd>Designing the site so that everyone: including people using screen readers, keyboard-only navigation, or magnification; can use it. We build every site to WCAG 2.2 AA as a baseline.</dd></div>
-        <div class="glossary-entry"><dt>Alt text</dt><dd>The short written description attached to an image. Screen readers read it aloud, and it shows up if the image fails to load. Meaningful images get real alt text: purely decorative images are hidden from assistive tech.</dd></div>
+        <div class="glossary-entry"><dt>Accessibility</dt><dd>Designing the site so that everyone (including people using screen readers, keyboard-only navigation, or magnification) can use it. We build every site to WCAG 2.2 AA as a baseline.</dd></div>
+        <div class="glossary-entry"><dt>Alt text</dt><dd>The short written description attached to an image. Screen readers read it aloud, and it shows up if the image fails to load. Meaningful images get real alt text; purely decorative images are hidden from assistive tech.</dd></div>
+        <div class="glossary-entry"><dt>Anycast</dt><dd>A network routing technique where the same IP address is announced from many locations worldwide, and traffic automatically goes to the closest one. Cloudflare's edge runs on Anycast, which is why our sites have sub-100ms response times almost everywhere.</dd></div>
+        <div class="glossary-entry"><dt>API</dt><dd>Application Programming Interface: a way for two systems to talk to each other. Our forms POST to Web3Forms' API; our analytics dashboards read from Cloudflare's API. Most things on the modern web run on APIs under the hood.</dd></div>
         <div class="glossary-entry"><dt>ARIA</dt><dd>Accessible Rich Internet Applications: a set of HTML attributes that help assistive technology understand non-standard interface elements. Used sparingly, because semantic HTML already does most of the job.</dd></div>
+        <div class="glossary-entry"><dt>AVIF</dt><dd>A modern image format that compresses photos roughly 50% smaller than JPEG with the same visual quality. Every site we build serves AVIF first, with WebP and JPEG as fallbacks.</dd></div>
       </dl>
     </section>
 
@@ -43,39 +58,141 @@ description: "Plain-language definitions for web design, hosting, SEO, and acces
       <h2>B</h2>
       <dl>
         <div class="glossary-entry"><dt>Backlink</dt><dd>A link to your website from someone else's website. Google uses backlinks from reputable sources as a signal that your site is trustworthy, which can help with ranking.</dd></div>
+        <div class="glossary-entry"><dt>Bounce rate</dt><dd>The percentage of visitors who land on a page and leave without interacting with anything else. A high bounce rate isn't always bad (someone reading an FAQ and getting their answer is fine), but it can flag pages that aren't doing their job.</dd></div>
+        <div class="glossary-entry"><dt>Brotli</dt><dd>A modern compression algorithm that shrinks the size of HTML, CSS, and JS over the wire by 15 to 25% more than gzip. Cloudflare serves all our sites with Brotli enabled.</dd></div>
+        <div class="glossary-entry"><dt>Bunny Fonts</dt><dd>A privacy-respecting mirror of Google Fonts. Same fonts, no cookies, no tracking, no consent banner required. Every site we build uses Bunny by default.</dd></div>
       </dl>
     </section>
 
     <section class="glossary-section" id="c">
       <h2>C</h2>
       <dl>
-        <div class="glossary-entry"><dt>CDN</dt><dd>Content Delivery Network: a network of servers around the world that serve your site's files from whichever server is closest to the visitor. It's one of the reasons our sites load in under a second.</dd></div>
-        <div class="glossary-entry"><dt>Core Web Vitals</dt><dd>Google's three main performance measurements: how fast the main content appears, how quickly the page responds to input, and how much the layout shifts as it loads. We target the "good" threshold on all three.</dd></div>
-        <div class="glossary-entry"><dt>Custom-coded</dt><dd>A website written from scratch from scratch: no WordPress, no page builders, no template shop. Faster, more secure, and completely unique to the business it's built for.</dd></div>
+        <div class="glossary-entry"><dt>Cache busting</dt><dd>Forcing browsers to re-download a file after we change it. We append a content-hash to URLs (e.g. <code>style.css?v=4a701c</code>) so a deploy invalidates returning visitors' caches automatically.</dd></div>
+        <div class="glossary-entry"><dt>Canonical URL</dt><dd>The official "this is the real address of this page" tag in the HTML. Tells search engines to ignore duplicates (e.g. with tracking parameters). Every page on our sites has one.</dd></div>
+        <div class="glossary-entry"><dt>CDN</dt><dd>Content Delivery Network: servers around the world that serve your site's files from whichever location is closest to the visitor. One of the reasons our sites load in under a second.</dd></div>
+        <div class="glossary-entry"><dt>CLS (Cumulative Layout Shift)</dt><dd>One of Google's Core Web Vitals; measures how much the page jumps around as it loads. A good score is under 0.1; we target under 0.05.</dd></div>
+        <div class="glossary-entry"><dt>Cloudflare Pages</dt><dd>Cloudflare's static-site hosting product. Runs on their global edge, free for unlimited bandwidth, automatic HTTPS, one-click rollbacks. Where every site we build is hosted by default.</dd></div>
+        <div class="glossary-entry"><dt>CMS</dt><dd>Content Management System: software that lets non-technical users edit a website through a browser interface. WordPress is the most common. We don't use one by default; clients email us what they want changed instead.</dd></div>
+        <div class="glossary-entry"><dt>Core Web Vitals</dt><dd>Google's three main performance measurements: LCP (loading), INP (interactivity), and CLS (visual stability). Affects search ranking. We hit the "good" threshold on all three on every site.</dd></div>
+        <div class="glossary-entry"><dt>CSP (Content Security Policy)</dt><dd>A security header that tells the browser exactly which sources of scripts, styles, images, and frames are allowed to load. Stops most cross-site scripting attacks. Configured tightly on every site we ship.</dd></div>
+        <div class="glossary-entry"><dt>CSS</dt><dd>Cascading Style Sheets: the language that controls how a website looks (colors, layout, typography, spacing). We write vanilla CSS with custom properties, no framework.</dd></div>
+        <div class="glossary-entry"><dt>Custom-coded</dt><dd>A website written from scratch, with no WordPress, no page builders, and no template shop. Faster, more secure, and unique to the business it's built for.</dd></div>
       </dl>
     </section>
 
     <section class="glossary-section" id="d">
       <h2>D</h2>
       <dl>
+        <div class="glossary-entry"><dt>Dark mode</dt><dd>An alternate color scheme designed for low-light viewing. Our sites support light, dark, and "follow system" modes via a toggle in the header. Saves to your device so the next visit applies it automatically.</dd></div>
+        <div class="glossary-entry"><dt>Defer</dt><dd>An HTML attribute on script tags that says "load this in the background and run it after the page is parsed." Keeps JavaScript from blocking the rendering of your content.</dd></div>
+        <div class="glossary-entry"><dt>Deploy</dt><dd>The act of pushing a new version of the site live. For us this happens automatically when we push to GitHub; Cloudflare builds and deploys in under 60 seconds.</dd></div>
+        <div class="glossary-entry"><dt>DKIM, SPF, DMARC</dt><dd>Three DNS records that prevent spammers from impersonating your domain in email. We set all three at launch for every client domain that handles email.</dd></div>
         <div class="glossary-entry"><dt>DNS</dt><dd>Domain Name System: what translates your domain (like "yourbusiness.com") into the address of the server that holds your site. When we launch, we point your DNS at our hosting.</dd></div>
-        <div class="glossary-entry"><dt>Domain</dt><dd>Your website address (e.g. "yourbusiness.com"). You own it, registered in your name. We never own your domain: we just point its DNS at our hosting while you're a client.</dd></div>
+        <div class="glossary-entry"><dt>Domain</dt><dd>Your website address (e.g. "yourbusiness.com"). You own it, registered in your name. We never own your domain; we just point its DNS at our hosting while you're a client.</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="e">
+      <h2>E</h2>
+      <dl>
+        <div class="glossary-entry"><dt>Edge</dt><dd>The set of servers physically closest to your visitors. The "edge" of a CDN is where your site is actually served from for any given request. Cloudflare's edge has 300+ locations worldwide.</dd></div>
+        <div class="glossary-entry"><dt>Eleventy (11ty)</dt><dd>The static site generator we use to build every site. Open source, fast, written in JavaScript. Takes templates, content, and data and produces flat HTML at build time.</dd></div>
+        <div class="glossary-entry"><dt>Email forwarding</dt><dd>A service that takes mail sent to <code>you@yourdomain.com</code> and forwards it to your existing inbox (Gmail, etc.). Free with most registrars; what we recommend if you don't need a full mailbox.</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="f">
+      <h2>F</h2>
+      <dl>
+        <div class="glossary-entry"><dt>Favicon</dt><dd>The little icon that shows up in browser tabs, bookmarks, and home-screen shortcuts. We generate a full favicon set (every device, every browser, every variant) automatically at build.</dd></div>
+        <div class="glossary-entry"><dt>FCP (First Contentful Paint)</dt><dd>The time from when a visitor clicks your link to when they see anything (text, image) on screen. We target under 800ms.</dd></div>
+        <div class="glossary-entry"><dt>font-display: swap</dt><dd>A CSS rule that tells the browser "render text in the system font immediately, then swap in the web font when it loads." Eliminates the "blank text while font loads" delay.</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="g">
+      <h2>G</h2>
+      <dl>
+        <div class="glossary-entry"><dt>GDPR</dt><dd>General Data Protection Regulation: the EU's privacy law. Requires consent for tracking that uses cookies or shares data outside the EU. Our default analytics stack (Cloudflare + Umami) is GDPR-compliant by design.</dd></div>
+        <div class="glossary-entry"><dt>GitHub</dt><dd>Where we store the source code for every site. Each client site lives in a private repository. Every change is committed, signed, and reversible.</dd></div>
+        <div class="glossary-entry"><dt>Google Business Profile (GBP)</dt><dd>Your free business listing on Google Maps and Search. Separate from your website but tightly tied to it. We wire your site's structured data to your GBP so they're treated as the same entity.</dd></div>
+        <div class="glossary-entry"><dt>Google Search Console</dt><dd>Google's free tool that shows how their crawlers see your site, what searches you appear for, and what errors they hit. Connected at launch for every client.</dd></div>
+        <div class="glossary-entry"><dt>gzip / Brotli</dt><dd>Compression algorithms that shrink files in transit. Cloudflare uses Brotli (slightly better) when the browser supports it, gzip otherwise.</dd></div>
       </dl>
     </section>
 
     <section class="glossary-section" id="h">
       <h2>H</h2>
       <dl>
-        <div class="glossary-entry"><dt>Hosting</dt><dd>The service that stores your website's files and serves them to visitors. On the monthly plan, hosting is included: you don't manage a control panel or a billing relationship with a hosting company.</dd></div>
+        <div class="glossary-entry"><dt>Headless CMS</dt><dd>A content management system without a built-in front end; it provides content via API and a separate site renders it. We use one (Sanity or Decap) only for clients with high-volume editorial workflows.</dd></div>
+        <div class="glossary-entry"><dt>Honeypot</dt><dd>A hidden form field that real visitors never see (and never fill in) but bots usually do. Catches spam without forcing humans through CAPTCHAs.</dd></div>
+        <div class="glossary-entry"><dt>Hosting</dt><dd>The service that stores your website's files and serves them to visitors. On the monthly plan, hosting is included. You don't manage a control panel or a billing relationship with a hosting company.</dd></div>
+        <div class="glossary-entry"><dt>HSTS</dt><dd>HTTP Strict Transport Security: a header that tells browsers "always use HTTPS for this domain." Once a browser sees it, it refuses to connect over plain HTTP, even if a malicious link tries to.</dd></div>
+        <div class="glossary-entry"><dt>HTTP/3</dt><dd>The latest version of the protocol that powers the web. Faster on flaky connections (it doesn't fall over when one packet is lost). Cloudflare serves all our sites with HTTP/3 by default.</dd></div>
         <div class="glossary-entry"><dt>HTTPS / SSL</dt><dd>The little padlock in the browser bar. It means the connection between the visitor and your site is encrypted. Every site we build ships with HTTPS on day one.</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="i">
+      <h2>I</h2>
+      <dl>
+        <div class="glossary-entry"><dt>Image optimization</dt><dd>Making images smaller without making them look worse. Our pipeline emits AVIF, WebP, and JPEG at multiple widths so the browser picks the smallest version that fits the visitor's screen.</dd></div>
+        <div class="glossary-entry"><dt>INP (Interaction to Next Paint)</dt><dd>One of Google's Core Web Vitals; measures how fast the page responds when you tap or click something. Good is under 200ms; we target under 100ms.</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="j">
+      <h2>J</h2>
+      <dl>
+        <div class="glossary-entry"><dt>JavaScript</dt><dd>The language that adds interactivity to web pages. Our sites use vanilla JavaScript (no framework) and ship under 10 KB of it on a typical page. The site works without it; JS just makes a few interactions nicer.</dd></div>
+        <div class="glossary-entry"><dt>JPEG</dt><dd>The 30-year-old standard image format. Universally supported. Still the floor we deliver (after AVIF and WebP) so every browser sees the photo.</dd></div>
+        <div class="glossary-entry"><dt>JSON-LD</dt><dd>The format we use for structured data. A small JSON block in the HTML head that tells search engines what kind of business you are, where, what you charge, and so on. See "schema markup."</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="l">
+      <h2>L</h2>
+      <dl>
+        <div class="glossary-entry"><dt>Lazy loading</dt><dd>Holding off on loading images and other assets until the visitor scrolls near them. Native to modern browsers via <code>loading="lazy"</code>. Massive bandwidth savings on long pages.</dd></div>
+        <div class="glossary-entry"><dt>LCP (Largest Contentful Paint)</dt><dd>One of Google's Core Web Vitals; measures how long until the biggest visible element (usually a hero image or headline) appears. Good is under 2.5s; we target under 1.0s.</dd></div>
+        <div class="glossary-entry"><dt>Lighthouse</dt><dd>Google's open-source auditing tool. Runs in Chrome DevTools or as CI. Checks performance, accessibility, SEO, and best practices. We aim for 95-100 across the board.</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="m">
+      <h2>M</h2>
+      <dl>
+        <div class="glossary-entry"><dt>Markdown</dt><dd>A plain-text writing format that converts to HTML. Used for blog posts and long-form content. Easy to read in raw form; easy to write without knowing HTML.</dd></div>
+        <div class="glossary-entry"><dt>Minification</dt><dd>Stripping whitespace and shortening code in HTML, CSS, and JS without changing how it works. Saves bandwidth. We minify all three on every production deploy.</dd></div>
+        <div class="glossary-entry"><dt>MX records</dt><dd>The DNS records that say "email for this domain goes to this server." We set them at launch for whichever email provider you choose.</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="n">
+      <h2>N</h2>
+      <dl>
+        <div class="glossary-entry"><dt>Nunjucks</dt><dd>The templating language we write our pages in. Looks like HTML with extra <code>&#123;% %&#125;</code> and <code>&#123;&#123; &#125;&#125;</code> markers. Lets us reuse layouts, partials, and data across many pages.</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="o">
+      <h2>O</h2>
+      <dl>
+        <div class="glossary-entry"><dt>Open Graph</dt><dd>The set of HTML tags that controls what your link looks like when someone shares it on Facebook, LinkedIn, Slack, iMessage, or anywhere else. Every page on our sites has them.</dd></div>
+        <div class="glossary-entry"><dt>Operational pages</dt><dd>The infrastructure pages every professional site needs: Privacy Policy, Terms of Use, Accessibility Statement, Sitemap, Style Guide, Contact, Thank-You. Every site we build includes them; they don't count against your page limit.</dd></div>
       </dl>
     </section>
 
     <section class="glossary-section" id="p">
       <h2>P</h2>
       <dl>
-        <div class="glossary-entry"><dt>PageSpeed</dt><dd>Google's tool for measuring how fast your site loads. Scored from 0–100 on both mobile and desktop. We target 95–100 on every site we build.</dd></div>
-        <div class="glossary-entry"><dt>Page builder</dt><dd>A drag-and-drop tool (like Elementor or Divi) that sits on top of WordPress and lets non-developers assemble pages. They produce slow, bloated code: a major reason we don't use them.</dd></div>
+        <div class="glossary-entry"><dt>Pagefind</dt><dd>The full-text search tool we ship on every site. Index is built at compile time; search runs entirely in the visitor's browser. No server, no API, no cookies.</dd></div>
+        <div class="glossary-entry"><dt>PageSpeed</dt><dd>Google's tool for measuring how fast your site loads. Scored from 0-100 on both mobile and desktop. We target 95-100 on every site we build.</dd></div>
+        <div class="glossary-entry"><dt>Page builder</dt><dd>A drag-and-drop tool (like Elementor or Divi) that sits on top of WordPress and lets non-developers assemble pages. They produce slow, bloated code; a major reason we don't use them.</dd></div>
+        <div class="glossary-entry"><dt>Permissions-Policy</dt><dd>A security header that disables browser features you don't need (camera, microphone, geolocation). Every site we ship denies them by default.</dd></div>
+        <div class="glossary-entry"><dt>Preconnect</dt><dd>A hint in the HTML head that opens a network connection to a third-party origin (like fonts.bunny.net) before the CSS asks for it. Shaves a couple hundred milliseconds off cold loads.</dd></div>
+        <div class="glossary-entry"><dt>prefers-color-scheme</dt><dd>A CSS media query that detects whether the visitor's operating system is in light or dark mode. Our sites respect it by default unless the visitor manually overrides.</dd></div>
+        <div class="glossary-entry"><dt>prefers-reduced-motion</dt><dd>A CSS media query that detects whether the visitor has asked their OS to reduce animations (often for vestibular reasons). When set, we disable transitions and animations site-wide.</dd></div>
       </dl>
     </section>
 
@@ -83,24 +200,57 @@ description: "Plain-language definitions for web design, hosting, SEO, and acces
       <h2>R</h2>
       <dl>
         <div class="glossary-entry"><dt>Responsive design</dt><dd>A website that adapts to the screen it's being viewed on: phone, tablet, or desktop. We design mobile-first because 70%+ of service-business searches happen on a phone.</dd></div>
+        <div class="glossary-entry"><dt>Rollback</dt><dd>Reverting the live site to a previous version. Cloudflare Pages keeps every prior deploy; one click puts the old version back. We've never needed it for an emergency, but it's there.</dd></div>
+        <div class="glossary-entry"><dt>RSS feed</dt><dd>An XML file at <code>/feed.xml</code> that lists your latest blog posts in a format any reader app can subscribe to. We generate one automatically for every site with a blog.</dd></div>
+        <div class="glossary-entry"><dt>RUM (Real User Monitoring)</dt><dd>Performance data collected from actual visitors instead of synthetic lab tests. Cloudflare's RUM gives us real-world Core Web Vitals across your entire visitor population without using cookies.</dd></div>
       </dl>
     </section>
 
     <section class="glossary-section" id="s">
       <h2>S</h2>
       <dl>
-        <div class="glossary-entry"><dt>Schema markup</dt><dd>Structured data you add to your site that helps Google understand what kind of business you are, where you serve, what you charge, and so on. We include local-business schema on every site.</dd></div>
-        <div class="glossary-entry"><dt>SEO</dt><dd>Search Engine Optimization: the practice of building your site so that it shows up in Google for the kinds of searches your customers are doing. We build the on-page foundation; rankings come from that plus time, content, and reviews.</dd></div>
-        <div class="glossary-entry"><dt>Semantic HTML</dt><dd>Using HTML elements for their intended purpose: headings for headings, lists for lists, buttons for buttons. This is the foundation for both accessibility and SEO.</dd></div>
+        <div class="glossary-entry"><dt>Schema markup</dt><dd>Structured data you add to your site that helps Google understand what kind of business you are, where you serve, what you charge. We include local-business schema on every site.</dd></div>
+        <div class="glossary-entry"><dt>SEO</dt><dd>Search Engine Optimization: building your site so it shows up in Google for the searches your customers are doing. We build the on-page foundation; rankings come from that plus time, content, and reviews.</dd></div>
+        <div class="glossary-entry"><dt>Semantic HTML</dt><dd>Using HTML elements for their intended purpose: headings for headings, lists for lists, buttons for buttons. The foundation for both accessibility and SEO.</dd></div>
+        <div class="glossary-entry"><dt>Sitemap</dt><dd>A file (usually at <code>/sitemap.xml</code>) that lists every page on your site for search engines to crawl. We generate one automatically and submit it to Google Search Console at launch.</dd></div>
+        <div class="glossary-entry"><dt>SSG (Static Site Generator)</dt><dd>A tool that takes templates and content and produces flat HTML files at build time. Eleventy is the SSG we use. The opposite of a CMS that renders pages on every request.</dd></div>
+        <div class="glossary-entry"><dt>Subdomain</dt><dd>The part before your main domain (e.g. <code>blog.yourbusiness.com</code>, <code>shop.yourbusiness.com</code>). Useful for branding sub-projects without buying a new domain.</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="t">
+      <h2>T</h2>
+      <dl>
+        <div class="glossary-entry"><dt>TBT (Total Blocking Time)</dt><dd>How long the page was unresponsive to input during initial load. We target under 100ms.</dd></div>
+        <div class="glossary-entry"><dt>Theme toggle</dt><dd>The light/dark/system control in our site headers. Saves your choice locally so the next visit applies it before paint, with no flash of the wrong theme.</dd></div>
+        <div class="glossary-entry"><dt>TTFB (Time to First Byte)</dt><dd>How long it takes from a visitor's click to the first byte of HTML arriving. Cloudflare's global edge keeps ours under 100ms for most North American visitors.</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="u">
+      <h2>U</h2>
+      <dl>
+        <div class="glossary-entry"><dt>Umami</dt><dd>Open-source, cookie-free analytics. Same data Google Analytics gives you (page views, referrers, devices) without the cookie banner or the privacy concerns. Optional on any site we build.</dd></div>
+        <div class="glossary-entry"><dt>Uptime</dt><dd>The percentage of time your site is reachable. Ours runs 99.99%+ on Cloudflare's global edge. Monitored every minute from three regions; we get paged before you notice.</dd></div>
+      </dl>
+    </section>
+
+    <section class="glossary-section" id="v">
+      <h2>V</h2>
+      <dl>
+        <div class="glossary-entry"><dt>Variable fonts</dt><dd>A single font file that contains every weight and width as adjustable parameters. Smaller download than shipping each weight separately. We use variable fonts whenever a family supports them.</dd></div>
+        <div class="glossary-entry"><dt>Viewport</dt><dd>The size of the browser window where your site is being viewed. Mobile viewports are typically 360-430 px wide; desktop 1280-1920 px. Our designs respond fluidly across the entire range.</dd></div>
       </dl>
     </section>
 
     <section class="glossary-section" id="w">
       <h2>W</h2>
       <dl>
-        <div class="glossary-entry"><dt>WCAG 2.2 AA</dt><dd>Web Content Accessibility Guidelines, version 2.2, Level AA: the W3C's accessibility standard. It covers contrast, keyboard navigation, screen-reader support, and more. Our working baseline on every site.</dd></div>
-        <div class="glossary-entry"><dt>Web3Forms</dt><dd>A lightweight third-party service that handles contact-form submissions without you needing a backend server. Fast, spam-resistant, and what every one of our sites uses.</dd></div>
-        <div class="glossary-entry"><dt>WordPress</dt><dd>A content management system that runs about 40% of the internet, and is the single most-hacked platform on the web. We don't build on it, for security and performance reasons.</dd></div>
+        <div class="glossary-entry"><dt>WCAG 2.2 AA</dt><dd>Web Content Accessibility Guidelines, version 2.2, Level AA: the W3C's accessibility standard. Covers contrast, keyboard navigation, screen-reader support, and more. Our working baseline on every site.</dd></div>
+        <div class="glossary-entry"><dt>Web3Forms</dt><dd>A lightweight third-party service that handles contact-form submissions without a backend server. Fast, spam-resistant via honeypot and rate limiting, what every one of our sites uses for forms.</dd></div>
+        <div class="glossary-entry"><dt>WebP</dt><dd>An image format that compresses photos roughly 25% smaller than JPEG. Every browser since 2020 supports it. We serve it as the fallback when AVIF isn't supported.</dd></div>
+        <div class="glossary-entry"><dt>WHOIS</dt><dd>The public registry that lists who owns each domain and when it expires. We monitor WHOIS expiration directly so renewal reminders don't depend on the registrar's email.</dd></div>
+        <div class="glossary-entry"><dt>WordPress</dt><dd>A content management system that powers about 40% of the internet, and is the single most-hacked platform on the web. We don't build on it, for security and performance reasons.</dd></div>
       </dl>
     </section>
 

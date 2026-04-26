@@ -1,4 +1,4 @@
----
+﻿---
 layout: layouts/base.njk
 title: "Changelog | Pikes Peak Web Designs"
 description: "What we've shipped, added, fixed, and improved on pikespeakwebdesigns.com. Updated as we ship, not quarterly."
@@ -20,15 +20,120 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
 
     <div class="changelog-entry">
       <header class="changelog-head">
+        <time datetime="2026-04-25" class="changelog-date">April 25, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Reference docs</span>
+      </header>
+      <h2 class="changelog-title">Owner's Guide and Technical Approach rewritten; FAQ, Glossary, Privacy, Accessibility expanded</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>Rewrote:</strong> <a href="/owners-guide/" class="inline-link">Owner's Guide</a> from a one-page handover to an 18-section reference covering what's live, who handles what, asking for changes, emergencies, form submissions, domain ownership, email setup, hosting, security, SEO, analytics, Google Business Profile, content additions, seasonal updates, the monthly invoice, the 2-year refresh, leaving us, and a quick contact card.</li>
+          <li><strong>Rewrote:</strong> <a href="/technical-approach/" class="inline-link">Technical Approach</a>; added image pipeline, font strategy, CSS architecture, JavaScript architecture, theming, search, form architecture, SEO architecture, caching, environments &amp; branching, browser support matrix, and failure modes. Now 20 sections plus 11 technical Q&amp;A items.</li>
+          <li><strong>Expanded:</strong> <a href="/faq/" class="inline-link">FAQ</a> with five new groups: demos &amp; samples, onboarding &amp; client portal, domain/email/ownership, privacy &amp; data, maintenance &amp; the long term.</li>
+          <li><strong>Expanded:</strong> <a href="/glossary/" class="inline-link">Glossary</a> from ~25 terms across 9 letters to ~85 terms across 21 letters, covering every term used elsewhere on the site.</li>
+          <li><strong>Expanded:</strong> <a href="/privacy-policy/" class="inline-link">Privacy Policy</a> with subprocessor list, GDPR / CCPA rights, security details, breach notification, international transfer language.</li>
+          <li><strong>Expanded:</strong> <a href="/accessibility/" class="inline-link">Accessibility Statement</a> with WCAG 2.2 specifics, testing methodology, assistive-tech matrix, escalation paths.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-25" class="changelog-date">April 25, 2026</time>
+        <span class="changelog-tag">Voice</span>
+      </header>
+      <h2 class="changelog-title">Em-dash sweep across main site and all demos</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>Copy:</strong> removed every em-dash from rendered content across the main site and all six demo sites. ~310 instances replaced with commas, semicolons, periods, or parentheses depending on context.</li>
+          <li><strong>Why:</strong> em-dashes were over-used and made the prose feel uniform across very different industry voices. The voice now reads more directly per page.</li>
+          <li><strong>Restored:</strong> en-dashes (used for ranges and number spans) were preserved.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-25" class="changelog-date">April 25, 2026</time>
+        <span class="changelog-tag">Onboarding</span>
+      </header>
+      <h2 class="changelog-title">Client Portal restructured; onboarding moved to its own page</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>Moved:</strong> the full nine-section onboarding form is now hosted only at <a href="/onboarding/" class="inline-link">/onboarding/</a>. The <a href="/client-portal/" class="inline-link">client portal</a> Stage 1 section presents a CTA card linking to it instead of inlining the entire form.</li>
+          <li><strong>Refactored:</strong> the onboarding form into a reusable partial (<code>src/_includes/partials/onboarding-form.njk</code>) so a single source of truth is included on the dedicated page.</li>
+          <li><strong>Improved:</strong> client portal now has a four-stage journey selector at the top: brand-new, in-build, live, anytime. Each stage has its own anchor section with a stage tag, summary, time estimate, and the relevant action cards.</li>
+          <li><strong>Improved:</strong> direct contact section (phone, email, Google Meet) under all stages, plus a self-serve resource grid linking to Owner's Guide, FAQ, Service Agreement, Privacy Policy, Changelog, and Glossary.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-24" class="changelog-date">April 24, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Live demos</span>
+      </header>
+      <h2 class="changelog-title">Five new demo sites; pricing pages and legal pages on every demo</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>New:</strong> five additional industry demos joined Redcap Roofing, each with a distinct visual voice and full operational page set:
+            <a href="/demo/alpine-inspectors/" class="inline-link">Alpine Inspectors</a> (editorial / report-like),
+            <a href="/demo/meadow-stone/" class="inline-link">Meadow &amp; Stone</a> (organic / magazine),
+            <a href="/demo/summit-hvac/" class="inline-link">Summit HVAC</a> (technical / blueprint),
+            <a href="/demo/lumen-electric/" class="inline-link">Lumen Electric</a> (Bauhaus / oversized),
+            <a href="/demo/clearwater-plumbing/" class="inline-link">Clearwater Plumbing</a> (friendly / retail).</li>
+          <li><strong>New:</strong> industry-specific pricing pages on every demo, tuned to that trade's typical job structure (per-job vs. flat-rate vs. estimate-then-quote).</li>
+          <li><strong>New:</strong> Privacy Policy, Terms of Use, and Accessibility Statement on every demo (not just Redcap), so each demo is a complete, defensible build.</li>
+          <li><strong>Improved:</strong> per-demo CSS extracted into separate stylesheets at build time (<code>alpine.css</code>, <code>meadow.css</code>, <code>summit.css</code>, <code>lumen.css</code>, <code>clearwater.css</code>) so demos share zero design tokens. Each demo really is its own visual system.</li>
+          <li><strong>Updated:</strong> phone numbers across all six demos consolidated to a single working number so call-to-action buttons reach a real line.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-23" class="changelog-date">April 23, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Forms</span>
+      </header>
+      <h2 class="changelog-title">Eight sample forms turned into real working Web3Forms</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>New:</strong> the previously preview-only sample forms gallery now contains eight fully-functional Web3Forms-backed intake forms, one per industry: HVAC, plumbing, electrician, roofing, contractor, landscaper, home inspector, commercial inspector.</li>
+          <li><strong>Depth:</strong> each form is intentionally substantive (12 to 20 fields) to show what real triage intake looks like for that trade, not a generic "name + email + message".</li>
+          <li><strong>Spam:</strong> hidden honeypot field on every form. No CAPTCHA. All Web3Forms keys live and active.</li>
+          <li><strong>A11y:</strong> radio and checkbox groups standardized with <code>role="radiogroup"</code> / <code>role="group"</code> and <code>aria-labelledby</code>; labels bound to inputs; errors announced via <code>role="alert"</code>.</li>
+          <li><strong>Fixed:</strong> fieldset legend styling now lifts above its border with consistent typography across all forms (was rendering in display font / bigger than form labels and felt like two separate visual systems).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-23" class="changelog-date">April 23, 2026</time>
+        <span class="changelog-tag">Mobile</span>
+      </header>
+      <h2 class="changelog-title">Demo mobile audit; banner/nav overlap fixes; button contrast pass</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>Fixed:</strong> demo "Live Demo" top banners were wrapping awkwardly on narrow screens; now constrained to a single line at every viewport.</li>
+          <li><strong>Fixed:</strong> demo top banners were obscuring the hamburger menu on phones; raised hamburger z-index above the banner across every demo.</li>
+          <li><strong>Audited:</strong> button color contrast across all six demos; primary, secondary, outline, and inverted variants all hit WCAG AA in both light and dark themes.</li>
+          <li><strong>Improved:</strong> hamburger panel contrast in both light and dark mode. Mobile dropdown toggles now use a distinct background with a visible border (was nearly invisible against the surface in dark mode). Theme switch buttons get higher-contrast type and a clear active state.</li>
+          <li><strong>Improved:</strong> mobile search box inside the slide-in nav now has explicit background and border tokens so it stays legible against the panel.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
         <time datetime="2026-04-22" class="changelog-date">April 22, 2026</time>
         <span class="changelog-tag changelog-tag--major">Live demo</span>
       </header>
       <h2 class="changelog-title">Live demo site + flagship blog post + changelog</h2>
       <div class="changelog-body">
         <ul>
-          <li><strong>New:</strong> fully functional seven-page demo site at <a href="/demo/redcap-roofing/" class="inline-link">/demo/redcap-roofing/</a> &mdash; home, services, residential, commercial, service-area, about, contact. Working Web3Forms inquiry form. Lighthouse scores cited on the homepage (test them yourself at <a href="https://pagespeed.web.dev" class="inline-link" rel="noopener">pagespeed.web.dev</a>).</li>
+          <li><strong>New:</strong> fully functional seven-page demo site at <a href="/demo/redcap-roofing/" class="inline-link">/demo/redcap-roofing/</a>, home, services, residential, commercial, service-area, about, contact. Working Web3Forms inquiry form. Lighthouse scores cited on the homepage (test them yourself at <a href="https://pagespeed.web.dev" class="inline-link" rel="noopener">pagespeed.web.dev</a>).</li>
           <li><strong>New:</strong> this changelog. Published on every ship.</li>
-          <li><strong>New:</strong> flagship blog post &mdash; <a href="/blog/wordpress-alternatives-small-business/" class="inline-link">WordPress Alternatives for Small Business Websites in 2026</a>.</li>
+          <li><strong>New:</strong> flagship blog post, <a href="/blog/wordpress-alternatives-small-business/" class="inline-link">WordPress Alternatives for Small Business Websites in 2026</a>.</li>
           <li><strong>Improved:</strong> the <a href="/samples/" class="inline-link">Sample Websites</a> page now prominently features the live demo as a call-out, with a "View live demo" CTA on the Redcap Roofing sample card.</li>
         </ul>
       </div>
@@ -42,7 +147,7 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
       <h2 class="changelog-title">Technical Approach page published</h2>
       <div class="changelog-body">
         <ul>
-          <li><strong>New:</strong> <a href="/technical-approach/" class="inline-link">Technical Approach</a> &mdash; a ~2,000-word deep dive aimed at developers and evaluators. Covers the full stack, why we use it, performance targets, accessibility pipeline, security posture, and the build &amp; deploy flow.</li>
+          <li><strong>New:</strong> <a href="/technical-approach/" class="inline-link">Technical Approach</a>, a ~2,000-word deep dive aimed at developers and evaluators. Covers the full stack, why we use it, performance targets, accessibility pipeline, security posture, and the build &amp; deploy flow.</li>
           <li><strong>Improved:</strong> wired into the Company mega menu (desktop + mobile), footer, and HTML sitemap.</li>
         </ul>
       </div>
@@ -58,7 +163,7 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
         <ul>
           <li><strong>Improved:</strong> standardized every form heading (<code>.form-heading</code> = 1.5rem/700), form intro (<code>.form-intro</code>), callouts (<code>.form-callout</code> + <code>.form-callout--danger</code>), and radio/checkbox groups (<code>.form-radio-group</code> / <code>.form-checkbox-group</code>) across all seven forms: contact, onboarding, content-update, emergency, design-feedback, refer, testimonial.</li>
           <li><strong>A11y:</strong> radio and checkbox groups now use <code>role="radiogroup"</code>/<code>role="group"</code> + <code>aria-labelledby</code>. Native <code>accent-color</code> ties the brand to the theme.</li>
-          <li><strong>Copy:</strong> renamed every mention of "hand-coded" / "hand-written" / "by hand" to "custom-coded" / "from scratch" &mdash; 13 replacements across 8 files.</li>
+          <li><strong>Copy:</strong> renamed every mention of "hand-coded" / "hand-written" / "by hand" to "custom-coded" / "from scratch", 13 replacements across 8 files.</li>
         </ul>
       </div>
     </div>
@@ -71,10 +176,10 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
       <h2 class="changelog-title">Mobile-first audit &amp; revamp</h2>
       <div class="changelog-body">
         <ul>
-          <li><strong>Fixed:</strong> hero order on mobile (main copy was appearing below the pricing card &mdash; now above).</li>
+          <li><strong>Fixed:</strong> hero order on mobile (main copy was appearing below the pricing card, now above).</li>
           <li><strong>Fixed:</strong> topbar was stacking awkwardly; now a compact single row with just phone + Client Portal on narrow screens.</li>
-          <li><strong>Fixed:</strong> header was covering the hamburger menu (z-index bug) &mdash; mobile nav now sits above the header with an explicit close button inside the panel.</li>
-          <li><strong>Improved:</strong> every form input forced to 16px on mobile to stop iOS auto-zoom. Complex grids collapse to a single column at ≤720px. Tables scroll horizontally. Container/section padding tightens at ≤480px and again at ≤360px for budget phones.</li>
+          <li><strong>Fixed:</strong> header was covering the hamburger menu (z-index bug), mobile nav now sits above the header with an explicit close button inside the panel.</li>
+          <li><strong>Improved:</strong> every form input forced to 16px on mobile to stop iOS auto-zoom. Complex grids collapse to a single column at â‰¤720px. Tables scroll horizontally. Container/section padding tightens at â‰¤480px and again at â‰¤360px for budget phones.</li>
           <li><strong>Improved:</strong> every interactive control gets <code>min-height: 44px</code> + <code>touch-action: manipulation</code> (no 300ms tap delay).</li>
           <li><strong>Improved:</strong> the "Toggle theme" button is now a proper Light / Auto / Dark segmented control with live system-preference tracking.</li>
         </ul>
@@ -89,7 +194,7 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
       <h2 class="changelog-title">Client Portal + 5 operational forms + sample-forms gallery</h2>
       <div class="changelog-body">
         <ul>
-          <li><strong>New:</strong> <a href="/client-portal/" class="inline-link">Client Portal</a> &mdash; a hub for existing clients linking to every operational form.</li>
+          <li><strong>New:</strong> <a href="/client-portal/" class="inline-link">Client Portal</a>, a hub for existing clients linking to every operational form.</li>
           <li><strong>New:</strong> five operational forms, each with its own thank-you variant on the shared <a href="/thank-you/" class="inline-link">/thank-you/</a> page:
             <a href="/content-update/" class="inline-link">content update</a>,
             <a href="/emergency/" class="inline-link">emergency support</a>,
@@ -97,9 +202,9 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
             <a href="/refer/" class="inline-link">referral</a>,
             <a href="/testimonial/" class="inline-link">testimonial</a>.
           </li>
-          <li><strong>New:</strong> <a href="/sample-forms/" class="inline-link">Sample Forms</a> gallery &mdash; eight industry-specific form previews (HVAC, plumbing, electrician, roofing, contractor, landscaper, home inspector, commercial inspector).</li>
+          <li><strong>New:</strong> <a href="/sample-forms/" class="inline-link">Sample Forms</a> gallery, eight industry-specific form previews (HVAC, plumbing, electrician, roofing, contractor, landscaper, home inspector, commercial inspector).</li>
           <li><strong>Business model clarification:</strong> every client site now ships with 8 operational pages (privacy, accessibility, terms, contact, thank-you, testimonials, style guide, sitemap) plus 8 technical files (robots.txt, humans.txt, sitemap.xml, feed.xml, security.txt, 404, favicon suite, OG/Twitter images). None of it counts against the 10 content pages.</li>
-          <li><strong>New:</strong> lump-sum plan now includes up to 10 content pages (previously 5) &mdash; matches the monthly plan.</li>
+          <li><strong>New:</strong> lump-sum plan now includes up to 10 content pages (previously 5), matches the monthly plan.</li>
         </ul>
       </div>
     </div>
@@ -112,7 +217,7 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
       <h2 class="changelog-title">Search + glossary + Tippy.js + analytics stack</h2>
       <div class="changelog-body">
         <ul>
-          <li><strong>New:</strong> site-wide full-text search via <a href="https://pagefind.app" class="inline-link" rel="noopener">Pagefind</a> &mdash; dedicated <a href="/search/" class="inline-link">/search/</a> page, a header modal (tap the search icon or press <kbd>/</kbd>), and an inline search box at the top of the mobile nav.</li>
+          <li><strong>New:</strong> site-wide full-text search via <a href="https://pagefind.app" class="inline-link" rel="noopener">Pagefind</a>, dedicated <a href="/search/" class="inline-link">/search/</a> page, a header modal (tap the search icon or press <kbd>/</kbd>), and an inline search box at the top of the mobile nav.</li>
           <li><strong>New:</strong> <a href="/glossary/" class="inline-link">/glossary/</a> A&ndash;Z definitions with Tippy.js-powered hover tooltips. Technical terms throughout the site like <span class="term" data-term="A lightweight third-party form backend that handles submissions without needing a server. Fast, spam-resistant, cookie-free.">Web3Forms</span> get inline definitions.</li>
           <li><strong>New:</strong> <a href="https://instant.page" class="inline-link" rel="noopener">instant.page</a> prefetching for hover-time link priming.</li>
           <li><strong>New:</strong> analytics stack of <a href="https://umami.is" class="inline-link" rel="noopener">Umami</a> + <a href="https://www.cloudflare.com/web-analytics/" class="inline-link" rel="noopener">Cloudflare Web Analytics</a>. Both cookie-free, both GDPR-compliant by design, no cookie banner needed.</li>
@@ -132,7 +237,7 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
           <li><strong>New design system:</strong> Playfair Display + Inter via Bunny Fonts, navy + gold palette, full light/dark theme with no-flash inline script, WCAG AA contrast across every state.</li>
           <li><strong>New:</strong> <a href="/about/" class="inline-link">About</a> page with founder photo, six principles, four differentiators.</li>
           <li><strong>New:</strong> <a href="/accessibility/" class="inline-link">Accessibility</a>, <a href="/style-guide/" class="inline-link">Style Guide</a>, <a href="/sitemap/" class="inline-link">HTML Sitemap</a>, <a href="/glossary/" class="inline-link">Glossary</a>, <a href="/owners-guide/" class="inline-link">Owner's Guide</a>, <a href="/terms-of-use/" class="inline-link">Terms of Use</a>, and <a href="/agreement/" class="inline-link">Service Agreement</a>.</li>
-          <li><strong>New:</strong> <a href="/onboarding/" class="inline-link">Onboarding form</a> &mdash; nine-section detailed intake for new clients.</li>
+          <li><strong>New:</strong> <a href="/onboarding/" class="inline-link">Onboarding form</a>, nine-section detailed intake for new clients.</li>
           <li><strong>Copy:</strong> removed all 532 em-dashes site-wide. Rewrote homepage, about, pricing, how-it-works in conversational tone centered on "we handle the whole website."</li>
           <li><strong>Nav:</strong> rebuilt with mega menus for Services, Service Areas, Resources, Company. Theme toggle, search, accessible hamburger.</li>
         </ul>
