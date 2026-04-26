@@ -21,6 +21,23 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
     <div class="changelog-entry">
       <header class="changelog-head">
         <time datetime="2026-04-25" class="changelog-date">April 25, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Demo a11y</span>
+      </header>
+      <h2 class="changelog-title">Demo button contrast fix (real one); demo header phone numbers consolidated</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>Fixed (root cause):</strong> per-demo CSS bundles (<code>demo.css</code>, <code>alpine.css</code>, etc.) are extracted at build time from comment-bounded blocks in <code>style.css</code>. The previous "button hardening" pass landed at the bottom of the file, outside any demo block, so it never reached the per-demo bundles. On the Clearwater demo specifically, this meant the generic <code>.clearwater-site a</code> link color (cyan) was bleeding through onto every CTA button (navy "Book Service", peach phone CTA, header "Book Service"); the cyan-on-navy contrast was unreadable.</li>
+          <li><strong>Fixed:</strong> moved button hardening rules INSIDE each demo's CSS block (Redcap, Alpine, Meadow, Summit, Lumen, Clearwater) so they ship in the per-demo bundle. Each demo now locks button text colors for default, hover, focus, and visited via <code>a.&lt;demo&gt;-btn</code> selectors, which beat <code>.&lt;demo&gt;-site a</code> on specificity.</li>
+          <li><strong>Fixed:</strong> Clearwater body link color bumped from <code>--cw-aqua-deep</code> (3.76:1 on cream, fails AA) to <code>--cw-navy</code> (8.8:1, passes).</li>
+          <li><strong>Fixed:</strong> demo layout files (<code>demo-redcap.njk</code>, etc.) had hardcoded fake industry phone numbers in the sticky header that the earlier sweep missed (it only touched <code>src/demo/</code>, not <code>src/_includes/layouts/</code>). All six layouts now show the real working number.</li>
+          <li><strong>A11y:</strong> every demo button gets a high-contrast <code>:focus-visible</code> ring (3 px <code>currentColor</code> + double box-shadow halo).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-25" class="changelog-date">April 25, 2026</time>
         <span class="changelog-tag changelog-tag--major">Maps</span>
       </header>
       <h2 class="changelog-title">Interactive coverage maps via Leaflet + OpenStreetMap</h2>

@@ -6536,6 +6536,39 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   .demo-site .lighthouse-foot { font-size: 0.72rem; }
 }
 
+/* ---- Redcap button hardening: lock colors, add focus-visible ---- */
+.demo-site a.demo-btn,
+.demo-site a.demo-btn:visited { text-decoration: none; }
+.demo-site a.demo-btn-primary,
+.demo-site a.demo-btn-primary:hover,
+.demo-site a.demo-btn-primary:focus,
+.demo-site a.demo-btn-primary:visited { color: #FFFFFF; }
+.demo-site a.demo-btn-dark,
+.demo-site a.demo-btn-dark:hover,
+.demo-site a.demo-btn-dark:focus,
+.demo-site a.demo-btn-dark:visited { color: #FFFFFF; }
+.demo-site a.demo-btn-safety,
+.demo-site a.demo-btn-safety:hover,
+.demo-site a.demo-btn-safety:focus,
+.demo-site a.demo-btn-safety:visited { color: var(--rc-black); }
+.demo-site a.demo-btn-outline { color: #FFFFFF; }
+.demo-site .demo-section--cream a.demo-btn-outline,
+.demo-site .demo-section--cream-warm a.demo-btn-outline,
+.demo-site .demo-section--white a.demo-btn-outline { color: var(--rc-black); border-color: var(--rc-black); }
+.demo-site .demo-section--cream a.demo-btn-outline:hover,
+.demo-site .demo-section--cream-warm a.demo-btn-outline:hover,
+.demo-site .demo-section--white a.demo-btn-outline:hover { background: var(--rc-black); color: #FFFFFF; border-color: var(--rc-black); }
+.demo-site .demo-page-hero a.demo-btn-outline,
+.demo-site .demo-cta-band a.demo-btn-outline { color: #FFFFFF; border-color: rgba(255,255,255,0.55); }
+.demo-site .demo-page-hero a.demo-btn-outline:hover,
+.demo-site .demo-cta-band a.demo-btn-outline:hover { background: rgba(255,255,255,0.12); border-color: #FFFFFF; color: #FFFFFF; }
+.demo-site a.demo-btn:focus-visible,
+.demo-site a.demo-btn-outline:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.95), 0 0 0 9px rgba(0,0,0,0.85);
+}
+
 /* =============================================================
    DEMO SITE — ALPINE INSPECTORS
    Editorial technical-report aesthetic. Serif headlines (Source
@@ -7225,6 +7258,33 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   .alpine-site .alpine-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
 }
 
+/* ---- Alpine button hardening: lock colors + nav CTA ---- */
+.alpine-site a.alpine-btn,
+.alpine-site a.alpine-btn:visited { color: #FFFFFF; text-decoration: none; }
+.alpine-site a.alpine-btn:hover,
+.alpine-site a.alpine-btn:focus { color: #FFFFFF; text-decoration: none; }
+.alpine-site a.alpine-btn-outline,
+.alpine-site a.alpine-btn-outline:visited { color: var(--al-ink); text-decoration: none; }
+.alpine-site a.alpine-btn-outline:hover,
+.alpine-site a.alpine-btn-outline:focus { color: var(--al-cream); background: var(--al-ink); text-decoration: none; }
+.alpine-site .alpine-section--ink a.alpine-btn-outline,
+.alpine-site .alpine-section--ink a.alpine-btn-outline:visited { color: var(--al-cream); border-color: var(--al-cream); }
+.alpine-site .alpine-section--ink a.alpine-btn-outline:hover { background: var(--al-cream); color: var(--al-ink); }
+.alpine-site .alpine-cta a.alpine-btn { color: var(--al-forest); background: var(--al-cream); border-color: var(--al-cream); }
+.alpine-site .alpine-cta a.alpine-btn:hover { background: #FFFFFF; color: var(--al-forest); }
+.alpine-site .alpine-cta a.alpine-btn-outline,
+.alpine-site .alpine-cta a.alpine-btn-outline:visited { color: var(--al-cream); border-color: rgba(255,255,255,0.55); }
+.alpine-site .alpine-cta a.alpine-btn-outline:hover { background: var(--al-cream); color: var(--al-forest); border-color: var(--al-cream); }
+.alpine-site a.alpine-nav-cta,
+.alpine-site a.alpine-nav-cta:visited { color: var(--al-cream); text-decoration: none; }
+.alpine-site a.alpine-nav-cta:hover { color: var(--al-cream); text-decoration: none; }
+.alpine-site a.alpine-btn:focus-visible,
+.alpine-site a.alpine-btn-outline:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.95), 0 0 0 9px rgba(0,0,0,0.85);
+}
+
 /* =============================================================
    DEMO SITE — MEADOW & STONE
    Organic horticultural magazine aesthetic. Cormorant display,
@@ -7734,6 +7794,35 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   .meadow-site .meadow-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
   .meadow-site .meadow-testimonial { padding: 1.5rem; }
   .meadow-site .meadow-feature { padding: 1.5rem 1.25rem; }
+}
+
+/* ---- Meadow button hardening: lock colors + nav CTA ---- */
+.meadow-site a.meadow-btn,
+.meadow-site a.meadow-btn:visited { color: #FFFFFF; text-decoration: none; }
+.meadow-site a.meadow-btn:hover,
+.meadow-site a.meadow-btn:focus { color: #FFFFFF; text-decoration: none; }
+.meadow-site a.meadow-btn-terra,
+.meadow-site a.meadow-btn-terra:visited { color: #FFFFFF; }
+.meadow-site a.meadow-btn-outline,
+.meadow-site a.meadow-btn-outline:visited { color: var(--me-deep); text-decoration: none; }
+.meadow-site a.meadow-btn-outline:hover,
+.meadow-site a.meadow-btn-outline:focus { color: var(--me-cream); background: var(--me-deep); }
+.meadow-site .meadow-section--deep a.meadow-btn-outline,
+.meadow-site .meadow-section--deep a.meadow-btn-outline:visited { color: var(--me-cream); border-color: var(--me-cream); }
+.meadow-site .meadow-section--deep a.meadow-btn-outline:hover { background: var(--me-cream); color: var(--me-deep); }
+.meadow-site .meadow-cta a.meadow-btn { color: var(--me-deep); background: var(--me-cream); border-color: var(--me-cream); }
+.meadow-site .meadow-cta a.meadow-btn:hover { background: #FFFFFF; color: var(--me-deep); }
+.meadow-site .meadow-cta a.meadow-btn-outline,
+.meadow-site .meadow-cta a.meadow-btn-outline:visited { color: var(--me-cream); border-color: var(--me-cream); }
+.meadow-site .meadow-cta a.meadow-btn-outline:hover { background: var(--me-cream); color: var(--me-terracotta-deep); }
+.meadow-site a.meadow-nav-cta,
+.meadow-site a.meadow-nav-cta:visited { color: var(--me-cream); text-decoration: none; }
+.meadow-site a.meadow-nav-cta:hover { color: var(--me-cream); text-decoration: none; }
+.meadow-site a.meadow-btn:focus-visible,
+.meadow-site a.meadow-btn-outline:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.95), 0 0 0 9px rgba(0,0,0,0.85);
 }
 
 /* =============================================================
@@ -8286,6 +8375,32 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   .summit-site .summit-spec-row .k { font-size: 0.68rem; }
 }
 
+/* ---- Summit button hardening: lock colors + nav CTA ---- */
+.summit-site a.summit-btn,
+.summit-site a.summit-btn:visited { color: #FFFFFF; text-decoration: none; }
+.summit-site a.summit-btn:hover,
+.summit-site a.summit-btn:focus { color: #FFFFFF; text-decoration: none; }
+.summit-site a.summit-btn-outline,
+.summit-site a.summit-btn-outline:visited { color: var(--su-navy-deep); text-decoration: none; }
+.summit-site a.summit-btn-outline:hover,
+.summit-site a.summit-btn-outline:focus { color: var(--su-white); background: var(--su-navy-deep); }
+.summit-site .summit-section--navy a.summit-btn,
+.summit-site .summit-section--navy a.summit-btn:visited { color: var(--su-navy-deep); }
+.summit-site .summit-section--navy a.summit-btn-outline,
+.summit-site .summit-section--navy a.summit-btn-outline:visited { color: var(--su-white); border-color: var(--su-cyan); }
+.summit-site .summit-section--navy a.summit-btn-outline:hover { background: var(--su-cyan); color: var(--su-navy-deep); }
+.summit-site a.summit-nav-cta,
+.summit-site a.summit-nav-cta:visited { color: #FFFFFF; text-decoration: none; }
+.summit-site a.summit-nav-cta:hover { color: #FFFFFF; text-decoration: none; }
+.summit-site a.summit-banner a,
+.summit-site .summit-banner a:visited { color: var(--su-cyan); }
+.summit-site a.summit-btn:focus-visible,
+.summit-site a.summit-btn-outline:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.95), 0 0 0 9px rgba(0,0,0,0.85);
+}
+
 /* =============================================================
    DEMO SITE — LUMEN ELECTRIC
    Swiss/Bauhaus bold-minimal. Archivo Black display, Archivo
@@ -8725,6 +8840,35 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   .lumen-site .lumen-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
 }
 
+/* ---- Lumen button hardening: lock colors + remove link underline on buttons + nav CTA ---- */
+.lumen-site a.lumen-btn,
+.lumen-site a.lumen-btn:visited { color: var(--lu-black); text-decoration: none; border-bottom: 0; }
+.lumen-site a.lumen-btn:hover,
+.lumen-site a.lumen-btn:focus { color: var(--lu-black); border-bottom: 0; }
+.lumen-site a.lumen-btn-outline,
+.lumen-site a.lumen-btn-outline:visited { color: var(--lu-black); text-decoration: none; border-bottom: 0; }
+.lumen-site a.lumen-btn-outline:hover,
+.lumen-site a.lumen-btn-outline:focus { color: var(--lu-yellow); background: var(--lu-black); border-bottom: 0; }
+.lumen-site .lumen-section--black a.lumen-btn,
+.lumen-site .lumen-section--black a.lumen-btn:visited { color: var(--lu-black); background: var(--lu-yellow); border-bottom: 0; }
+.lumen-site .lumen-section--black a.lumen-btn:hover { background: #FFFFFF; color: var(--lu-black); }
+.lumen-site .lumen-section--black a.lumen-btn-outline,
+.lumen-site .lumen-section--black a.lumen-btn-outline:visited { color: #FFFFFF; border-bottom: 0; }
+.lumen-site .lumen-section--black a.lumen-btn-outline:hover { background: #FFFFFF; color: var(--lu-black); }
+.lumen-site .lumen-cta a.lumen-btn { color: var(--lu-yellow); background: var(--lu-black); }
+.lumen-site .lumen-cta a.lumen-btn:hover { background: #FFFFFF; color: var(--lu-black); }
+.lumen-site .lumen-cta a.lumen-btn-outline { color: var(--lu-black); }
+.lumen-site .lumen-cta a.lumen-btn-outline:hover { background: var(--lu-black); color: var(--lu-yellow); }
+.lumen-site a.lumen-nav-cta,
+.lumen-site a.lumen-nav-cta:visited { color: var(--lu-black); text-decoration: none; border-bottom: 0; }
+.lumen-site a.lumen-nav-cta:hover { color: var(--lu-black); border-bottom: 0; }
+.lumen-site a.lumen-btn:focus-visible,
+.lumen-site a.lumen-btn-outline:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.95), 0 0 0 9px rgba(0,0,0,0.85);
+}
+
 /* =============================================================
    DEMO SITE — CLEARWATER PLUMBING
    Friendly, approachable, retail. DM Serif Display for friendly
@@ -8771,8 +8915,8 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .clearwater-site h3 { font-size: 1.5rem; }
 .clearwater-site p { margin: 0 0 1rem; }
 .clearwater-site em { font-style: italic; color: var(--cw-aqua-deep); }
-.clearwater-site a { color: var(--cw-aqua-deep); text-underline-offset: 3px; }
-.clearwater-site a:hover { color: var(--cw-navy); text-decoration: underline; }
+.clearwater-site a { color: var(--cw-navy); text-underline-offset: 3px; }
+.clearwater-site a:hover { color: var(--cw-navy-deep); text-decoration: underline; }
 
 /* Banner + header */
 .clearwater-banner {
@@ -9239,6 +9383,49 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   .clearwater-site .clearwater-service { padding: 1.5rem 1.25rem; }
 }
 
+/* ---- Clearwater button hardening: lock colors + nav CTA ---- */
+.clearwater-site a.clearwater-btn,
+.clearwater-site a.clearwater-btn:visited { color: var(--cw-cream); text-decoration: none; }
+.clearwater-site a.clearwater-btn:hover,
+.clearwater-site a.clearwater-btn:focus { color: #FFFFFF; text-decoration: none; }
+.clearwater-site a.clearwater-btn-peach,
+.clearwater-site a.clearwater-btn-peach:visited { color: var(--cw-ink); }
+.clearwater-site a.clearwater-btn-peach:hover,
+.clearwater-site a.clearwater-btn-peach:focus { color: var(--cw-ink); }
+.clearwater-site a.clearwater-btn-outline,
+.clearwater-site a.clearwater-btn-outline:visited { color: var(--cw-navy-deep); text-decoration: none; }
+.clearwater-site a.clearwater-btn-outline:hover,
+.clearwater-site a.clearwater-btn-outline:focus { color: var(--cw-cream); background: var(--cw-navy-deep); }
+.clearwater-site .clearwater-section--aqua a.clearwater-btn,
+.clearwater-site .clearwater-section--aqua a.clearwater-btn:visited,
+.clearwater-site .clearwater-section--navy a.clearwater-btn,
+.clearwater-site .clearwater-section--navy a.clearwater-btn:visited { color: var(--cw-ink); background: var(--cw-peach-deep); }
+.clearwater-site .clearwater-section--aqua a.clearwater-btn:hover,
+.clearwater-site .clearwater-section--navy a.clearwater-btn:hover { color: var(--cw-ink); background: #EA7A22; }
+.clearwater-site .clearwater-section--aqua a.clearwater-btn-outline,
+.clearwater-site .clearwater-section--aqua a.clearwater-btn-outline:visited,
+.clearwater-site .clearwater-section--navy a.clearwater-btn-outline,
+.clearwater-site .clearwater-section--navy a.clearwater-btn-outline:visited { color: var(--cw-cream); border-color: var(--cw-cream); }
+.clearwater-site .clearwater-section--aqua a.clearwater-btn-outline:hover,
+.clearwater-site .clearwater-section--navy a.clearwater-btn-outline:hover { background: var(--cw-cream); color: var(--cw-navy-deep); }
+.clearwater-site .clearwater-cta a.clearwater-btn { color: var(--cw-ink); background: var(--cw-peach-deep); }
+.clearwater-site .clearwater-cta a.clearwater-btn:hover { background: #FFFFFF; color: var(--cw-navy-deep); }
+.clearwater-site .clearwater-cta a.clearwater-btn-outline,
+.clearwater-site .clearwater-cta a.clearwater-btn-outline:visited { color: #FFFFFF; }
+.clearwater-site .clearwater-cta a.clearwater-btn-outline:hover { background: #FFFFFF; color: var(--cw-navy-deep); }
+.clearwater-site a.clearwater-nav-cta,
+.clearwater-site a.clearwater-nav-cta:visited { color: var(--cw-cream); text-decoration: none; }
+.clearwater-site a.clearwater-nav-cta:hover { color: #FFFFFF; text-decoration: none; }
+.clearwater-site a.clearwater-nav-phone,
+.clearwater-site a.clearwater-nav-phone:visited { color: var(--cw-aqua-deep); text-decoration: none; }
+.clearwater-site a.clearwater-nav-phone:hover { color: var(--cw-cream); text-decoration: none; }
+.clearwater-site a.clearwater-btn:focus-visible,
+.clearwater-site a.clearwater-btn-outline:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.95), 0 0 0 9px rgba(0,0,0,0.85);
+}
+
 /* =============================================================
    MOBILE-FIRST OPTIMIZATIONS
    Prevents horizontal overflow, fixes tap targets, scales type
@@ -9550,150 +9737,5 @@ a { touch-action: manipulation; }
 }
 :root[data-theme="dark"] .leaflet-control-attribution a { color: var(--gold-300) !important; }
 
-/* ============================================================
-   Demo button contrast hardening + focus-visible
-   Defends against generic a:hover overriding text color and
-   guarantees keyboard a11y on every demo's CTA buttons.
-   ============================================================ */
-
-/* Universal demo button focus ring (high contrast on every theme) */
-.demo-site .demo-btn:focus-visible,
-.alpine-site .alpine-btn:focus-visible,
-.alpine-site .alpine-btn-outline:focus-visible,
-.meadow-site .meadow-btn:focus-visible,
-.meadow-site .meadow-btn-outline:focus-visible,
-.summit-site .summit-btn:focus-visible,
-.summit-site .summit-btn-outline:focus-visible,
-.lumen-site .lumen-btn:focus-visible,
-.lumen-site .lumen-btn-outline:focus-visible,
-.clearwater-site .clearwater-btn:focus-visible,
-.clearwater-site .clearwater-btn-outline:focus-visible {
-  outline: 3px solid currentColor;
-  outline-offset: 3px;
-  box-shadow: 0 0 0 6px rgba(255,255,255,0.95), 0 0 0 9px rgba(0,0,0,0.85);
-}
-
-/* ---- Redcap (demo-btn) hardening ---- */
-.demo-site .demo-btn,
-.demo-site a.demo-btn,
-.demo-site a.demo-btn:visited { text-decoration: none; }
-.demo-site a.demo-btn-primary,
-.demo-site a.demo-btn-primary:hover,
-.demo-site a.demo-btn-primary:focus,
-.demo-site a.demo-btn-primary:visited { color: #FFFFFF; text-decoration: none; }
-.demo-site a.demo-btn-dark,
-.demo-site a.demo-btn-dark:hover,
-.demo-site a.demo-btn-dark:focus,
-.demo-site a.demo-btn-dark:visited { color: #FFFFFF; text-decoration: none; }
-.demo-site a.demo-btn-safety,
-.demo-site a.demo-btn-safety:hover,
-.demo-site a.demo-btn-safety:focus,
-.demo-site a.demo-btn-safety:visited { color: var(--rc-black); text-decoration: none; }
-/* Outline button on dark hero/section: white text + white border (default already), but lock it */
-.demo-site a.demo-btn-outline,
-.demo-site a.demo-btn-outline:hover,
-.demo-site a.demo-btn-outline:focus,
-.demo-site a.demo-btn-outline:visited { text-decoration: none; }
-/* Outline button on light surfaces: dark text guaranteed */
-.demo-site .demo-section--cream a.demo-btn-outline,
-.demo-site .demo-section--cream-warm a.demo-btn-outline,
-.demo-site .demo-section--white a.demo-btn-outline { color: var(--rc-black); border-color: var(--rc-black); }
-.demo-site .demo-section--cream a.demo-btn-outline:hover,
-.demo-site .demo-section--cream-warm a.demo-btn-outline:hover,
-.demo-site .demo-section--white a.demo-btn-outline:hover { background: var(--rc-black); color: #FFFFFF; border-color: var(--rc-black); }
-/* Outline buttons that fall outside any section context: assume light-on-dark hero context */
-.demo-page-hero a.demo-btn-outline,
-.demo-cta-band a.demo-btn-outline { color: #FFFFFF; border-color: rgba(255,255,255,0.55); }
-.demo-page-hero a.demo-btn-outline:hover,
-.demo-cta-band a.demo-btn-outline:hover { background: rgba(255,255,255,0.12); border-color: #FFFFFF; color: #FFFFFF; }
-
-/* ---- Alpine hardening ---- */
-.alpine-site a.alpine-btn,
-.alpine-site a.alpine-btn:visited { text-decoration: none; color: #FFFFFF; }
-.alpine-site a.alpine-btn:hover,
-.alpine-site a.alpine-btn:focus { color: #FFFFFF; text-decoration: none; }
-.alpine-site a.alpine-btn-outline,
-.alpine-site a.alpine-btn-outline:visited { text-decoration: none; color: var(--al-ink); }
-.alpine-site a.alpine-btn-outline:hover,
-.alpine-site a.alpine-btn-outline:focus { color: var(--al-cream); background: var(--al-ink); text-decoration: none; }
-.alpine-site .alpine-section--ink a.alpine-btn-outline,
-.alpine-site .alpine-section--ink a.alpine-btn-outline:visited { color: var(--al-cream); border-color: var(--al-cream); }
-.alpine-site .alpine-section--ink a.alpine-btn-outline:hover,
-.alpine-site .alpine-section--ink a.alpine-btn-outline:focus { background: var(--al-cream); color: var(--al-ink); }
-.alpine-site .alpine-cta a.alpine-btn { background: var(--al-cream); color: var(--al-forest); border-color: var(--al-cream); }
-.alpine-site .alpine-cta a.alpine-btn:hover { background: #FFFFFF; color: var(--al-forest); }
-.alpine-site .alpine-cta a.alpine-btn-outline { color: var(--al-cream); border-color: rgba(255,255,255,0.55); }
-.alpine-site .alpine-cta a.alpine-btn-outline:hover { background: var(--al-cream); color: var(--al-forest); border-color: var(--al-cream); }
-
-/* ---- Meadow hardening ---- */
-.meadow-site a.meadow-btn,
-.meadow-site a.meadow-btn:visited { color: #FFFFFF; text-decoration: none; }
-.meadow-site a.meadow-btn:hover,
-.meadow-site a.meadow-btn:focus { color: #FFFFFF; text-decoration: none; }
-.meadow-site a.meadow-btn-outline,
-.meadow-site a.meadow-btn-outline:visited { color: var(--me-deep); text-decoration: none; }
-.meadow-site a.meadow-btn-outline:hover,
-.meadow-site a.meadow-btn-outline:focus { color: var(--me-cream); background: var(--me-deep); }
-.meadow-site .meadow-section--deep a.meadow-btn-outline,
-.meadow-site .meadow-section--deep a.meadow-btn-outline:visited { color: var(--me-cream); border-color: var(--me-cream); }
-.meadow-site .meadow-section--deep a.meadow-btn-outline:hover { background: var(--me-cream); color: var(--me-deep); }
-.meadow-site .meadow-cta a.meadow-btn { color: var(--me-deep); background: var(--me-cream); border-color: var(--me-cream); }
-.meadow-site .meadow-cta a.meadow-btn:hover { background: #FFFFFF; color: var(--me-deep); }
-.meadow-site .meadow-cta a.meadow-btn-outline { color: var(--me-cream); border-color: var(--me-cream); }
-.meadow-site .meadow-cta a.meadow-btn-outline:hover { background: var(--me-cream); color: var(--me-terracotta-deep); }
-
-/* ---- Summit hardening ---- */
-.summit-site a.summit-btn,
-.summit-site a.summit-btn:visited { color: #FFFFFF; text-decoration: none; }
-.summit-site a.summit-btn:hover,
-.summit-site a.summit-btn:focus { color: #FFFFFF; text-decoration: none; }
-.summit-site a.summit-btn-outline,
-.summit-site a.summit-btn-outline:visited { color: var(--su-navy-deep); text-decoration: none; }
-.summit-site a.summit-btn-outline:hover,
-.summit-site a.summit-btn-outline:focus { color: var(--su-white); background: var(--su-navy-deep); }
-.summit-site .summit-section--navy a.summit-btn-outline,
-.summit-site .summit-section--navy a.summit-btn-outline:visited { color: var(--su-white); border-color: var(--su-cyan); }
-.summit-site .summit-section--navy a.summit-btn-outline:hover { background: var(--su-cyan); color: var(--su-navy-deep); }
-
-/* ---- Lumen hardening (Bauhaus high-contrast) ---- */
-.lumen-site a.lumen-btn,
-.lumen-site a.lumen-btn:visited { color: var(--lu-black); text-decoration: none; }
-.lumen-site a.lumen-btn:hover,
-.lumen-site a.lumen-btn:focus { color: var(--lu-black); text-decoration: none; }
-.lumen-site a.lumen-btn-outline,
-.lumen-site a.lumen-btn-outline:visited { color: var(--lu-black); text-decoration: none; }
-.lumen-site a.lumen-btn-outline:hover,
-.lumen-site a.lumen-btn-outline:focus { color: var(--lu-yellow); background: var(--lu-black); }
-.lumen-site .lumen-section--black a.lumen-btn,
-.lumen-site .lumen-section--black a.lumen-btn:visited { color: var(--lu-black); background: var(--lu-yellow); }
-.lumen-site .lumen-section--black a.lumen-btn:hover { background: #FFFFFF; color: var(--lu-black); }
-.lumen-site .lumen-section--black a.lumen-btn-outline,
-.lumen-site .lumen-section--black a.lumen-btn-outline:visited { color: #FFFFFF; }
-.lumen-site .lumen-section--black a.lumen-btn-outline:hover { background: #FFFFFF; color: var(--lu-black); }
-.lumen-site .lumen-cta a.lumen-btn { color: var(--lu-yellow); background: var(--lu-black); }
-.lumen-site .lumen-cta a.lumen-btn:hover { background: #FFFFFF; color: var(--lu-black); }
-.lumen-site .lumen-cta a.lumen-btn-outline { color: var(--lu-black); }
-.lumen-site .lumen-cta a.lumen-btn-outline:hover { background: var(--lu-black); color: var(--lu-yellow); }
-
-/* ---- Clearwater hardening ---- */
-.clearwater-site a.clearwater-btn,
-.clearwater-site a.clearwater-btn:visited { color: #FFFFFF; text-decoration: none; }
-.clearwater-site a.clearwater-btn:hover,
-.clearwater-site a.clearwater-btn:focus { color: #FFFFFF; text-decoration: none; }
-.clearwater-site a.clearwater-btn-peach,
-.clearwater-site a.clearwater-btn-peach:hover,
-.clearwater-site a.clearwater-btn-peach:focus,
-.clearwater-site a.clearwater-btn-peach:visited { color: var(--cw-ink); }
-.clearwater-site a.clearwater-btn-outline,
-.clearwater-site a.clearwater-btn-outline:visited { color: var(--cw-navy-deep); text-decoration: none; }
-.clearwater-site a.clearwater-btn-outline:hover,
-.clearwater-site a.clearwater-btn-outline:focus { color: var(--cw-cream); background: var(--cw-navy-deep); }
-.clearwater-site .clearwater-section--navy a.clearwater-btn,
-.clearwater-site .clearwater-section--navy a.clearwater-btn:visited { color: var(--cw-ink); background: var(--cw-peach-deep); }
-.clearwater-site .clearwater-section--navy a.clearwater-btn-outline,
-.clearwater-site .clearwater-section--navy a.clearwater-btn-outline:visited { color: var(--cw-cream); border-color: var(--cw-cream); }
-.clearwater-site .clearwater-section--navy a.clearwater-btn-outline:hover { background: var(--cw-cream); color: var(--cw-navy-deep); }
-.clearwater-site .clearwater-cta a.clearwater-btn { color: var(--cw-ink); background: var(--cw-peach-deep); }
-.clearwater-site .clearwater-cta a.clearwater-btn:hover { background: #FFFFFF; color: var(--cw-navy-deep); }
-.clearwater-site .clearwater-cta a.clearwater-btn-outline { color: #FFFFFF; }
-.clearwater-site .clearwater-cta a.clearwater-btn-outline:hover { background: #FFFFFF; color: var(--cw-navy-deep); }
+/* (Demo button hardening lives inside each demo block so it's
+    included in the per-demo extracted CSS bundle.) */
