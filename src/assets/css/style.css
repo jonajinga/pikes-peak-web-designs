@@ -7270,10 +7270,12 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .alpine-site .alpine-section--ink a.alpine-btn-outline,
 .alpine-site .alpine-section--ink a.alpine-btn-outline:visited { color: var(--al-cream); border-color: var(--al-cream); }
 .alpine-site .alpine-section--ink a.alpine-btn-outline:hover { background: var(--al-cream); color: var(--al-ink); }
-.alpine-site .alpine-cta a.alpine-btn { color: var(--al-forest); background: var(--al-cream); border-color: var(--al-cream); }
-.alpine-site .alpine-cta a.alpine-btn:hover { background: #FFFFFF; color: var(--al-forest); }
+/* Primary CTA button: cream fill + forest text. Excludes outline so cream bg doesn't bleed onto it. */
+.alpine-site .alpine-cta a.alpine-btn:not(.alpine-btn-outline) { color: var(--al-forest); background: var(--al-cream); border-color: var(--al-cream); }
+.alpine-site .alpine-cta a.alpine-btn:not(.alpine-btn-outline):hover { background: #FFFFFF; color: var(--al-forest); }
+/* Outline button: transparent fill + cream text + light border. */
 .alpine-site .alpine-cta a.alpine-btn-outline,
-.alpine-site .alpine-cta a.alpine-btn-outline:visited { color: var(--al-cream); border-color: rgba(255,255,255,0.55); }
+.alpine-site .alpine-cta a.alpine-btn-outline:visited { color: var(--al-cream); background: transparent; border-color: rgba(255,255,255,0.55); }
 .alpine-site .alpine-cta a.alpine-btn-outline:hover { background: var(--al-cream); color: var(--al-forest); border-color: var(--al-cream); }
 .alpine-site a.alpine-nav-cta,
 .alpine-site a.alpine-nav-cta:visited { color: var(--al-cream); text-decoration: none; }
@@ -7813,10 +7815,10 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .meadow-site .meadow-section--deep a.meadow-btn-outline,
 .meadow-site .meadow-section--deep a.meadow-btn-outline:visited { color: var(--me-cream); border-color: var(--me-cream); }
 .meadow-site .meadow-section--deep a.meadow-btn-outline:hover { background: var(--me-cream); color: var(--me-deep); }
-.meadow-site .meadow-cta a.meadow-btn { color: var(--me-deep); background: var(--me-cream); border-color: var(--me-cream); }
-.meadow-site .meadow-cta a.meadow-btn:hover { background: #FFFFFF; color: var(--me-deep); }
+.meadow-site .meadow-cta a.meadow-btn:not(.meadow-btn-outline) { color: var(--me-deep); background: var(--me-cream); border-color: var(--me-cream); }
+.meadow-site .meadow-cta a.meadow-btn:not(.meadow-btn-outline):hover { background: #FFFFFF; color: var(--me-deep); }
 .meadow-site .meadow-cta a.meadow-btn-outline,
-.meadow-site .meadow-cta a.meadow-btn-outline:visited { color: var(--me-cream); border-color: var(--me-cream); }
+.meadow-site .meadow-cta a.meadow-btn-outline:visited { color: var(--me-cream); background: transparent; border-color: var(--me-cream); }
 .meadow-site .meadow-cta a.meadow-btn-outline:hover { background: var(--me-cream); color: var(--me-terracotta-deep); }
 .meadow-site a.meadow-nav-cta,
 .meadow-site a.meadow-nav-cta:visited { color: var(--me-cream); text-decoration: none; }
@@ -8388,8 +8390,8 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .summit-site a.summit-btn-outline:visited { color: var(--su-navy-deep); text-decoration: none; }
 .summit-site a.summit-btn-outline:hover,
 .summit-site a.summit-btn-outline:focus { color: var(--su-white); background: var(--su-navy-deep); }
-.summit-site .summit-section--navy a.summit-btn,
-.summit-site .summit-section--navy a.summit-btn:visited { color: var(--su-navy-deep); }
+.summit-site .summit-section--navy a.summit-btn:not(.summit-btn-outline),
+.summit-site .summit-section--navy a.summit-btn:not(.summit-btn-outline):visited { color: var(--su-navy-deep); }
 .summit-site .summit-section--navy a.summit-btn-outline,
 .summit-site .summit-section--navy a.summit-btn-outline:visited { color: var(--su-white); border-color: var(--su-cyan); }
 .summit-site .summit-section--navy a.summit-btn-outline:hover { background: var(--su-cyan); color: var(--su-navy-deep); }
@@ -8857,16 +8859,16 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .lumen-site a.lumen-btn-outline:hover,
 .lumen-site a.lumen-btn-outline:focus { color: var(--lu-yellow); background: var(--lu-black); border-bottom: 0; }
 /* Black-bg sections flip the default: yellow bg + black text */
-.lumen-site .lumen-section--black a.lumen-btn,
-.lumen-site .lumen-section--black a.lumen-btn:visited { color: var(--lu-black); background: var(--lu-yellow); border-bottom: 0; }
-.lumen-site .lumen-section--black a.lumen-btn:hover { background: #FFFFFF; color: var(--lu-black); }
+.lumen-site .lumen-section--black a.lumen-btn:not(.lumen-btn-outline),
+.lumen-site .lumen-section--black a.lumen-btn:not(.lumen-btn-outline):visited { color: var(--lu-black); background: var(--lu-yellow); border-bottom: 0; }
+.lumen-site .lumen-section--black a.lumen-btn:not(.lumen-btn-outline):hover { background: #FFFFFF; color: var(--lu-black); }
 .lumen-site .lumen-section--black a.lumen-btn-outline,
 .lumen-site .lumen-section--black a.lumen-btn-outline:visited { color: #FFFFFF; background: transparent; border-bottom: 0; }
 .lumen-site .lumen-section--black a.lumen-btn-outline:hover { background: #FFFFFF; color: var(--lu-black); }
 /* CTA section (yellow bg): primary stays black bg / yellow text; outline is transparent + black text + black border */
-.lumen-site .lumen-cta a.lumen-btn,
-.lumen-site .lumen-cta a.lumen-btn:visited { color: var(--lu-yellow); background: var(--lu-black); border-bottom: 0; }
-.lumen-site .lumen-cta a.lumen-btn:hover { background: #FFFFFF; color: var(--lu-black); }
+.lumen-site .lumen-cta a.lumen-btn:not(.lumen-btn-outline),
+.lumen-site .lumen-cta a.lumen-btn:not(.lumen-btn-outline):visited { color: var(--lu-yellow); background: var(--lu-black); border-bottom: 0; }
+.lumen-site .lumen-cta a.lumen-btn:not(.lumen-btn-outline):hover { background: #FFFFFF; color: var(--lu-black); }
 .lumen-site .lumen-cta a.lumen-btn-outline,
 .lumen-site .lumen-cta a.lumen-btn-outline:visited { color: var(--lu-black); background: transparent; border-bottom: 0; box-shadow: inset 0 0 0 3px var(--lu-black); }
 .lumen-site .lumen-cta a.lumen-btn-outline:hover { background: var(--lu-black); color: var(--lu-yellow); box-shadow: inset 0 0 0 3px var(--lu-black); }
@@ -9427,22 +9429,22 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .clearwater-site a.clearwater-btn-outline:visited { color: var(--cw-navy-deep); text-decoration: none; }
 .clearwater-site a.clearwater-btn-outline:hover,
 .clearwater-site a.clearwater-btn-outline:focus { color: var(--cw-cream); background: var(--cw-navy-deep); }
-.clearwater-site .clearwater-section--aqua a.clearwater-btn,
-.clearwater-site .clearwater-section--aqua a.clearwater-btn:visited,
-.clearwater-site .clearwater-section--navy a.clearwater-btn,
-.clearwater-site .clearwater-section--navy a.clearwater-btn:visited { color: var(--cw-ink); background: var(--cw-peach-deep); }
-.clearwater-site .clearwater-section--aqua a.clearwater-btn:hover,
-.clearwater-site .clearwater-section--navy a.clearwater-btn:hover { color: var(--cw-ink); background: #EA7A22; }
+.clearwater-site .clearwater-section--aqua a.clearwater-btn:not(.clearwater-btn-outline),
+.clearwater-site .clearwater-section--aqua a.clearwater-btn:not(.clearwater-btn-outline):visited,
+.clearwater-site .clearwater-section--navy a.clearwater-btn:not(.clearwater-btn-outline),
+.clearwater-site .clearwater-section--navy a.clearwater-btn:not(.clearwater-btn-outline):visited { color: var(--cw-ink); background: var(--cw-peach-deep); }
+.clearwater-site .clearwater-section--aqua a.clearwater-btn:not(.clearwater-btn-outline):hover,
+.clearwater-site .clearwater-section--navy a.clearwater-btn:not(.clearwater-btn-outline):hover { color: var(--cw-ink); background: #EA7A22; }
 .clearwater-site .clearwater-section--aqua a.clearwater-btn-outline,
 .clearwater-site .clearwater-section--aqua a.clearwater-btn-outline:visited,
 .clearwater-site .clearwater-section--navy a.clearwater-btn-outline,
 .clearwater-site .clearwater-section--navy a.clearwater-btn-outline:visited { color: var(--cw-cream); border-color: var(--cw-cream); }
 .clearwater-site .clearwater-section--aqua a.clearwater-btn-outline:hover,
 .clearwater-site .clearwater-section--navy a.clearwater-btn-outline:hover { background: var(--cw-cream); color: var(--cw-navy-deep); }
-.clearwater-site .clearwater-cta a.clearwater-btn { color: var(--cw-ink); background: var(--cw-peach-deep); }
-.clearwater-site .clearwater-cta a.clearwater-btn:hover { background: #FFFFFF; color: var(--cw-navy-deep); }
+.clearwater-site .clearwater-cta a.clearwater-btn:not(.clearwater-btn-outline) { color: var(--cw-ink); background: var(--cw-peach-deep); }
+.clearwater-site .clearwater-cta a.clearwater-btn:not(.clearwater-btn-outline):hover { background: #FFFFFF; color: var(--cw-navy-deep); }
 .clearwater-site .clearwater-cta a.clearwater-btn-outline,
-.clearwater-site .clearwater-cta a.clearwater-btn-outline:visited { color: #FFFFFF; }
+.clearwater-site .clearwater-cta a.clearwater-btn-outline:visited { color: #FFFFFF; background: transparent; }
 .clearwater-site .clearwater-cta a.clearwater-btn-outline:hover { background: #FFFFFF; color: var(--cw-navy-deep); }
 .clearwater-site a.clearwater-nav-cta,
 .clearwater-site a.clearwater-nav-cta:visited { color: var(--cw-cream); text-decoration: none; }
