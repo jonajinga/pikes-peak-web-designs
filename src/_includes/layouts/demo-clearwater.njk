@@ -14,6 +14,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.bunny.net/css?family=dm-serif-display:400|dm-sans:400,500,600,700&display=swap"></noscript>
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/clearwater.css">
+  {% if extraHead %}{{ extraHead | safe }}{% endif %}
 </head>
 <body class="clearwater-site">
 

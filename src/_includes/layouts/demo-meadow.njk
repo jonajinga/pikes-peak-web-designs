@@ -14,6 +14,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.bunny.net/css?family=cormorant-garamond:400,500|cormorant:400,500&family=inter:400,500,600&display=swap"></noscript>
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/meadow.css">
+  {% if extraHead %}{{ extraHead | safe }}{% endif %}
 </head>
 <body class="meadow-site">
 
