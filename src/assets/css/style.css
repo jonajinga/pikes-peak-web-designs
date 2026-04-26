@@ -7278,6 +7278,9 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .alpine-site a.alpine-nav-cta,
 .alpine-site a.alpine-nav-cta:visited { color: var(--al-cream); text-decoration: none; }
 .alpine-site a.alpine-nav-cta:hover { color: var(--al-cream); text-decoration: none; }
+/* Nav CTA / nav-phone padding: beat .alpine-nav a specificity so they get horizontal padding */
+.alpine-nav a.alpine-nav-cta { padding: 0.6rem 1.1rem; background: var(--al-forest); color: var(--al-cream); border-radius: 2px; }
+.alpine-nav a.alpine-nav-phone { padding: 0.4rem 0 0.4rem 1.5rem; }
 .alpine-site a.alpine-btn:focus-visible,
 .alpine-site a.alpine-btn-outline:focus-visible {
   outline: 3px solid currentColor;
@@ -7818,6 +7821,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .meadow-site a.meadow-nav-cta,
 .meadow-site a.meadow-nav-cta:visited { color: var(--me-cream); text-decoration: none; }
 .meadow-site a.meadow-nav-cta:hover { color: var(--me-cream); text-decoration: none; }
+.meadow-nav a.meadow-nav-cta { padding: 0.75rem 1.25rem; }
 .meadow-site a.meadow-btn:focus-visible,
 .meadow-site a.meadow-btn-outline:focus-visible {
   outline: 3px solid currentColor;
@@ -8392,6 +8396,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .summit-site a.summit-nav-cta,
 .summit-site a.summit-nav-cta:visited { color: #FFFFFF; text-decoration: none; }
 .summit-site a.summit-nav-cta:hover { color: #FFFFFF; text-decoration: none; }
+.summit-nav a.summit-nav-cta { padding: 0.6rem 1rem; }
 .summit-site a.summit-banner a,
 .summit-site .summit-banner a:visited { color: var(--su-cyan); }
 .summit-site a.summit-btn:focus-visible,
@@ -8865,10 +8870,13 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .lumen-site .lumen-cta a.lumen-btn-outline,
 .lumen-site .lumen-cta a.lumen-btn-outline:visited { color: var(--lu-black); background: transparent; border-bottom: 0; box-shadow: inset 0 0 0 3px var(--lu-black); }
 .lumen-site .lumen-cta a.lumen-btn-outline:hover { background: var(--lu-black); color: var(--lu-yellow); box-shadow: inset 0 0 0 3px var(--lu-black); }
-/* Nav CTA: yellow bg with black text by default (matches header), kill underline */
+/* Nav CTA: black bg + yellow text (matches the !important rules in the base block).
+   Bump specificity so .lumen-nav a's padding: 0.4rem 0 stops winning and the button
+   actually gets horizontal padding. Without this fix the text overflowed the black box. */
 .lumen-site a.lumen-nav-cta,
-.lumen-site a.lumen-nav-cta:visited { color: var(--lu-black); text-decoration: none; border-bottom: 0; }
+.lumen-site a.lumen-nav-cta:visited { color: var(--lu-yellow); text-decoration: none; border-bottom: 0; }
 .lumen-site a.lumen-nav-cta:hover { color: var(--lu-black); border-bottom: 0; }
+.lumen-nav a.lumen-nav-cta { padding: 0.75rem 1.25rem; }
 .lumen-site a.lumen-btn:focus-visible,
 .lumen-site a.lumen-btn-outline:focus-visible {
   outline: 3px solid currentColor;
@@ -9439,6 +9447,8 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .clearwater-site a.clearwater-nav-cta,
 .clearwater-site a.clearwater-nav-cta:visited { color: var(--cw-cream); text-decoration: none; }
 .clearwater-site a.clearwater-nav-cta:hover { color: #FFFFFF; text-decoration: none; }
+.clearwater-nav a.clearwater-nav-cta { padding: 0.65rem 1.15rem; }
+.clearwater-nav a.clearwater-nav-phone { padding: 0.5rem 0.95rem; }
 .clearwater-site a.clearwater-nav-phone,
 .clearwater-site a.clearwater-nav-phone:visited { color: var(--cw-aqua-deep); text-decoration: none; }
 .clearwater-site a.clearwater-nav-phone:hover { color: var(--cw-cream); text-decoration: none; }
