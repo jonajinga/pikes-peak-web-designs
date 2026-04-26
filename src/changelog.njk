@@ -21,6 +21,38 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
     <div class="changelog-entry">
       <header class="changelog-head">
         <time datetime="2026-04-25" class="changelog-date">April 25, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Maps</span>
+      </header>
+      <h2 class="changelog-title">Interactive coverage maps via Leaflet + OpenStreetMap</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>New:</strong> interactive map at the top of <a href="/service-areas/" class="inline-link">/service-areas/</a> showing all 30 metros with linked-area pages. Click any pin to jump to that local market page.</li>
+          <li><strong>New:</strong> coverage map on the Redcap Roofing demo's <a href="/demo/redcap-roofing/service-area/" class="inline-link">service-area page</a>, showing the shop, every covered neighborhood with zip codes, and a 30-mile radius ring.</li>
+          <li><strong>Stack:</strong> <a href="https://leafletjs.com" rel="noopener" class="inline-link">Leaflet 1.9.4</a> + raw <a href="https://www.openstreetmap.org" rel="noopener" class="inline-link">OpenStreetMap</a> tiles. No Google Maps API, no API key, no cookies, GDPR-compliant.</li>
+          <li><strong>Performance:</strong> Leaflet is lazy-loaded only on pages that have a map. Other pages remain unaffected.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-25" class="changelog-date">April 25, 2026</time>
+        <span class="changelog-tag">A11y</span>
+      </header>
+      <h2 class="changelog-title">Demo button contrast hardening + focus-visible</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>Fixed:</strong> button text colors locked across all six demos for every state (default, hover, focus, visited) so generic <code>a:hover</code> rules can never override and produce poor contrast.</li>
+          <li><strong>Fixed:</strong> outline buttons sitting outside any explicit section context (page heroes, CTA bands) now have explicit text + border color so they never render invisible against any background.</li>
+          <li><strong>A11y:</strong> every demo CTA button now gets a high-contrast focus-visible ring (3 px <code>currentColor</code> + double box-shadow halo) for keyboard navigation. Visible against any theme or section background.</li>
+          <li><strong>Coverage:</strong> Redcap, Alpine, Meadow, Summit, Lumen, and Clearwater button systems all hardened.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-25" class="changelog-date">April 25, 2026</time>
         <span class="changelog-tag changelog-tag--major">Reference docs</span>
       </header>
       <h2 class="changelog-title">Owner's Guide and Technical Approach rewritten; FAQ, Glossary, Privacy, Accessibility expanded</h2>

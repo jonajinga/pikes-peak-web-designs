@@ -2,6 +2,7 @@
 layout: layouts/demo-redcap.njk
 title: "Service Area | Redcap Roofing | Front Range Colorado"
 description: "Redcap Roofing serves Colorado Springs, Monument, Fountain, Black Forest, Woodland Park, Manitou Springs, and the rest of the Pikes Peak region."
+extraHead: '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">'
 ---
 
 <section class="demo-page-hero">
@@ -13,6 +14,81 @@ description: "Redcap Roofing serves Colorado Springs, Monument, Fountain, Black 
     <p>Based in Colorado Springs, on roofs across the Front Range. If you can drive to our shop in 45 minutes, we cover you. If you're a little farther out, call us anyway, we travel for commercial projects.</p>
   </div>
 </section>
+
+<section class="demo-section demo-section--cream">
+  <div class="demo-container">
+    <div style="max-width:760px;margin:0 auto 1.5rem;text-align:center">
+      <span class="demo-eyebrow">Coverage map</span>
+      <h2 class="demo-h2">From the shop in central Springs to every neighborhood we cover.</h2>
+      <p style="font-size:1rem;color:var(--rc-text-muted);margin-bottom:0">Pin in the center is our shop on Circle Drive. Click any other pin to see the neighborhood and its zip codes.</p>
+    </div>
+    <div id="redcap-coverage-map" style="height:460px;border-radius:6px;border:2px solid var(--rc-black);box-shadow:0 12px 32px rgba(0,0,0,0.15)" role="region" aria-label="Map of Redcap Roofing's Front Range Colorado service area"></div>
+    <p style="margin-top:1rem;font-size:0.82rem;color:var(--rc-text-muted);text-align:center">Map tiles &amp; data &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener" style="color:var(--rc-red)">OpenStreetMap</a> contributors.</p>
+  </div>
+</section>
+
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  (function () {
+    var shop = { name: 'Redcap Roofing shop', lat: 38.8567, lng: -104.7956, isShop: true };
+    var areas = [
+      { name: 'Colorado Springs',  zips: '80901&ndash;80951', lat: 38.8339, lng: -104.8214 },
+      { name: 'Monument',          zips: '80132, 80131',      lat: 39.0917, lng: -104.8728 },
+      { name: 'Fountain',          zips: '80817',             lat: 38.6822, lng: -104.7008 },
+      { name: 'Black Forest',      zips: '80908',             lat: 39.0167, lng: -104.7000 },
+      { name: 'Manitou Springs',   zips: '80829',             lat: 38.8597, lng: -104.9172 },
+      { name: 'Old Colorado City', zips: '80904',             lat: 38.8478, lng: -104.8628 },
+      { name: 'Briargate',         zips: '80920, 80923',      lat: 38.9533, lng: -104.7608 },
+      { name: 'Broadmoor',         zips: '80906',             lat: 38.7964, lng: -104.8533 },
+      { name: 'Security-Widefield',zips: '80911',             lat: 38.7458, lng: -104.7236 },
+      { name: 'Cimarron Hills',    zips: '80915',             lat: 38.8736, lng: -104.7156 },
+      { name: 'Falcon',            zips: '80831',             lat: 38.9436, lng: -104.6094 },
+      { name: 'Woodland Park',     zips: '80863',             lat: 38.9939, lng: -105.0569 }
+    ];
+
+    function init() {
+      if (typeof L === 'undefined') { return; }
+      var el = document.getElementById('redcap-coverage-map');
+      if (!el) { return; }
+      var map = L.map(el, {
+        center: [shop.lat, shop.lng],
+        zoom: 10,
+        scrollWheelZoom: false
+      });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+        maxZoom: 18
+      }).addTo(map);
+
+      var redIcon = L.divIcon({
+        className: 'redcap-shop-marker',
+        html: '<span style="display:block;width:22px;height:22px;border-radius:50%;background:#DC2626;border:3px solid #FFFFFF;box-shadow:0 0 0 2px #DC2626"></span>',
+        iconSize: [22, 22],
+        iconAnchor: [11, 11]
+      });
+      L.marker([shop.lat, shop.lng], { icon: redIcon }).addTo(map)
+        .bindPopup('<strong style="color:#DC2626">Our shop</strong><br>2100 N. Circle Drive<br>Colorado Springs, CO 80909');
+
+      var markers = [];
+      areas.forEach(function (a) {
+        var m = L.marker([a.lat, a.lng]).addTo(map);
+        m.bindPopup('<strong>' + a.name + '</strong><br>Zip: ' + a.zips);
+        markers.push(m);
+      });
+
+      L.circle([shop.lat, shop.lng], { radius: 48280, color: '#DC2626', weight: 1.5, fillOpacity: 0.06, dashArray: '6,8' })
+        .addTo(map).bindTooltip('Primary service radius (~30 mi)');
+
+      var group = L.featureGroup(markers.concat([L.marker([shop.lat, shop.lng])]));
+      map.fitBounds(group.getBounds().pad(0.18));
+      map.on('click', function () { map.scrollWheelZoom.enable(); });
+    }
+
+    if (document.readyState !== 'loading') { init(); }
+    else { document.addEventListener('DOMContentLoaded', init); }
+    window.addEventListener('load', init);
+  })();
+</script>
 
 <section class="demo-section demo-section--white">
   <div class="demo-container">
