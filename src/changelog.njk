@@ -20,6 +20,31 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
 
     <div class="changelog-entry">
       <header class="changelog-head">
+        <time datetime="2026-04-27" class="changelog-date">April 27, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Responsive audit</span>
+      </header>
+      <h2 class="changelog-title">Site-wide mobile-first + tablet responsive audit</h2>
+      <div class="changelog-body">
+        <p>The site was built desktop-first using <code>@media (max-width)</code> queries, with most layouts collapsing only at 880&ndash;980 px. That left a recurring tablet-portrait pain band at <strong>768&ndash;820 px</strong> where layouts targeted desktop without yet collapsing, and the few "mobile" rules at 720 px and below hadn't kicked in. Symptoms ranged from a 5-column footer crushed into 768 px, to hero side-cards stuck at ~350 px, to two cramped form inputs side-by-side on iPad portrait, to multi-column stat grids that skipped the tablet break entirely.</p>
+        <p>One pass, ten fixes:</p>
+        <ul>
+          <li><strong>F1 footer:</strong> 5-column footer now collapses through a 4-col intermediate at 1100 px to 2-col at 820 px to 1-col at 560 px (was 5 &rarr; 2 &rarr; 1 with no intermediate).</li>
+          <li><strong>F2 main hero:</strong> introduced an intermediate 1.4fr&nbsp;1fr ratio at 1180 px so iPad landscape stays 2-col without crushing the side card; full stack now happens at 920 px (was 880 px straight to single column).</li>
+          <li><strong>F3 form rows:</strong> stack threshold raised from 560 px &rarr; 720 px on the main <code>.form-row</code> plus all six per-demo equivalents. iPad portrait now gets full-width inputs instead of two cramped ~340 px fields.</li>
+          <li><strong>F4 lighthouse-scores:</strong> 4-col &rarr; 2-col break raised from 560 px &rarr; 820 px so iPad portrait gets a readable 2&times;2 grid instead of cramped four-in-a-row rings.</li>
+          <li><strong>F5 industries-grid:</strong> minmax lowered from 170 px &rarr; 150 px and explicit 2-col rule added at 600 px (1-col below 380 px) so phone portrait gets a guaranteed predictable layout.</li>
+          <li><strong>F6 per-demo grids:</strong> stat and services grids in all six demos now have explicit <code>@820 px</code> partner rules so the tablet-portrait band doesn't fall through to cramped desktop layouts.</li>
+          <li><strong>F7 journey-grid:</strong> client-portal stage selector now goes 4-col &rarr; 2-col at 1024 px &rarr; 1-col at 560 px (was 4 &rarr; 2 &rarr; 1 at 880/480, stranding tablet portrait on cramped 2-col).</li>
+          <li><strong>F8 Leaflet popups:</strong> popup wrapper now respects <code>max-width: calc(100vw &minus; 60px)</code> so 30-pin clustering doesn't push popups off-screen at 360 px.</li>
+          <li><strong>F9 demo nav hide threshold:</strong> Alpine, Meadow, and Lumen headers now hide the inline nav at 980 px (matching the main site) instead of 920&ndash;960 px, so the post-nav-hide gap shrinks.</li>
+          <li><strong>F10 phone-landscape:</strong> rotated phones (568&ndash;736 px wide, ~360 px tall) now get hero-padding and banner-padding tuned for short height so the hero CTAs stay above the fold.</li>
+        </ul>
+        <p>Verified on the 28-template page sample at 360 / 414 / 568 / 768 / 820 / 1024 / 1280 px in both light and dark themes. All six demo CSS bundles re-extracted cleanly; boundary markers untouched.</p>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
         <time datetime="2026-04-26" class="changelog-date">April 26, 2026</time>
         <span class="changelog-tag">Mobile</span>
       </header>
