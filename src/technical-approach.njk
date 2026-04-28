@@ -16,32 +16,36 @@ description: "The stack, the pipeline, and the reasoning behind every site we bu
 </section>
 
 <section class="section">
-  <div class="container" style="max-width:880px">
-    <div class="prose">
+  <div class="container" style="max-width:1180px">
+    <div class="toc-layout">
 
-      <h2>Table of contents</h2>
-      <ol class="ta-toc" style="margin-top:0.5rem">
-        <li><a href="#stack" class="inline-link">The stack</a></li>
-        <li><a href="#why-static" class="inline-link">Why static over dynamic</a></li>
-        <li><a href="#performance" class="inline-link">Performance targets &amp; methods</a></li>
-        <li><a href="#image-pipeline" class="inline-link">Image pipeline</a></li>
-        <li><a href="#fonts" class="inline-link">Font strategy</a></li>
-        <li><a href="#css-architecture" class="inline-link">CSS architecture</a></li>
-        <li><a href="#js-architecture" class="inline-link">JavaScript architecture</a></li>
-        <li><a href="#theming" class="inline-link">Theming &amp; dark mode</a></li>
-        <li><a href="#search" class="inline-link">Site search</a></li>
-        <li><a href="#forms" class="inline-link">Form architecture</a></li>
-        <li><a href="#seo" class="inline-link">SEO architecture</a></li>
-        <li><a href="#accessibility" class="inline-link">Accessibility pipeline</a></li>
-        <li><a href="#security" class="inline-link">Security posture</a></li>
-        <li><a href="#caching" class="inline-link">Caching &amp; invalidation</a></li>
-        <li><a href="#build" class="inline-link">Build &amp; deploy pipeline</a></li>
-        <li><a href="#environments" class="inline-link">Environments &amp; branching</a></li>
-        <li><a href="#measurement" class="inline-link">Measurement &amp; monitoring</a></li>
-        <li><a href="#browser-support" class="inline-link">Browser support matrix</a></li>
-        <li><a href="#failure-modes" class="inline-link">Failure modes</a></li>
-        <li><a href="#faq" class="inline-link">Technical Q&amp;A</a></li>
-      </ol>
+      <aside class="toc-side" aria-label="Page contents">
+        <div class="toc-side-title">Contents</div>
+        <ol class="toc-list">
+          <li><a href="#stack">The stack</a></li>
+          <li><a href="#why-static">Why static over dynamic</a></li>
+          <li><a href="#performance">Performance targets</a></li>
+          <li><a href="#image-pipeline">Image pipeline</a></li>
+          <li><a href="#fonts">Font strategy</a></li>
+          <li><a href="#css-architecture">CSS architecture</a></li>
+          <li><a href="#js-architecture">JavaScript architecture</a></li>
+          <li><a href="#theming">Theming &amp; dark mode</a></li>
+          <li><a href="#search">Site search</a></li>
+          <li><a href="#forms">Form architecture</a></li>
+          <li><a href="#seo">SEO architecture</a></li>
+          <li><a href="#accessibility">Accessibility pipeline</a></li>
+          <li><a href="#security">Security posture</a></li>
+          <li><a href="#caching">Caching &amp; invalidation</a></li>
+          <li><a href="#build">Build &amp; deploy pipeline</a></li>
+          <li><a href="#environments">Environments &amp; branching</a></li>
+          <li><a href="#measurement">Measurement &amp; monitoring</a></li>
+          <li><a href="#browser-support">Browser support matrix</a></li>
+          <li><a href="#failure-modes">Failure modes</a></li>
+          <li><a href="#faq">Technical Q&amp;A</a></li>
+        </ol>
+      </aside>
+
+      <article class="toc-content">
 
       <h2 id="stack">The stack</h2>
       <p>Every site we ship runs on the same foundation. We pick tools that are fast, maintainable, boring in the best sense, and that don't require us to babysit a runtime. Versions and lockfiles are pinned in every repo; you can audit exactly what's running by reading <code>package.json</code>.</p>
@@ -388,6 +392,8 @@ description: "The stack, the pipeline, and the reasoning behind every site we bu
 
       <h3>Can I see your build config?</h3>
       <p>Yes. <code>eleventy.config.js</code> in any of our repos is the entry point. We share it on request. There are no secrets in it; secrets live in environment variables.</p>
+
+      </article>
 
     </div>
   </div>
