@@ -14,6 +14,7 @@ export default function (eleventyConfig) {
   // Passthrough
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
 
   // Plugins
   eleventyConfig.addPlugin(metagen);

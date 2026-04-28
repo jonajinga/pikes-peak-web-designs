@@ -12,11 +12,24 @@
 
   <script>(function(){try{var t=localStorage.getItem('pp-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 
+  {% include "partials/critical-css.njk" %}
+
   <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
-  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700|playfair-display:400,500,600,700&display=swap">
+  {# Preload the two display fonts most commonly involved in LCP (h1 + body). #}
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/playfair-display/files/playfair-display-latin-600-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/inter/files/inter-latin-400-normal.woff2" crossorigin>
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" onerror="this.remove()">
+
+  {# Non-render-blocking CSS: media=print on load swaps to all once fetched.
+     Visitors with JS disabled get a regular stylesheet via the noscript fallback. #}
+  <link rel="preload" href="https://fonts.bunny.net/css?family=inter:400,500,600,700|playfair-display:400,500,600,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700|playfair-display:400,500,600,700&display=swap"></noscript>
+
+  <link rel="preload" href="/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
+
+  <link rel="preload" href="/pagefind/pagefind-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.remove()">
+  <noscript><link rel="stylesheet" href="/pagefind/pagefind-ui.css" onerror="this.remove()"></noscript>
   <link rel="preload" href="/pagefind/pagefind-ui.js" as="script">
 
   <meta property="og:title" content="{{ title if title else site.name }}">
