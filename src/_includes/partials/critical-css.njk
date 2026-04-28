@@ -25,5 +25,12 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.15;mar
 .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.25rem;border-radius:var(--radius);font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;font-size:0.95rem}
 .btn-primary{background:var(--navy-900);color:#fff;border-color:var(--navy-900)}
 .back-to-top{position:fixed;right:1.25rem;bottom:1.25rem;width:44px;height:44px;border-radius:50%;background:var(--navy-900);color:#fff;display:none;align-items:center;justify-content:center;z-index:90}
+/* Mobile nav must be off-screen from first paint. Without this rule in the
+   critical block, the .mobile-nav panel briefly renders flush-right (visible)
+   before the deferred stylesheet's transform: translateX(100%) applies,
+   producing a one-frame flash on every page load. Demo mobile-navs are not
+   affected because their per-demo CSS bundles load synchronously. */
+.mobile-nav{position:fixed;top:0;right:0;bottom:0;width:min(400px,92vw);transform:translateX(100%);z-index:105}
+.mobile-nav.open{transform:translateX(0)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 </style>

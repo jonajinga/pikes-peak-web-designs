@@ -2,6 +2,7 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import { DateTime } from "luxon";
 import { minify } from "html-minifier-terser";
 import CleanCSS from "clean-css";
+import { PurgeCSS } from "purgecss";
 import Image from "@11ty/eleventy-img";
 import metagen from "eleventy-plugin-metagen";
 import faviconsPlugin from "eleventy-plugin-gen-favicons";
@@ -94,11 +95,14 @@ export default function (eleventyConfig) {
   );
 
   // Post-build CSS pipeline:
-  //   1. Extract the DEMO SITE block into its own demo.css so demo pages
-  //      don't ship the full site stylesheet (~75% smaller payload for
-  //      /demo/* routes, big LCP + main-thread win).
-  //   2. Minify both style.css and demo.css with clean-css.
-  eleventyConfig.on("eleventy.after", () => {
+  //   1. Extract each DEMO SITE block into its own per-demo CSS bundle so
+  //      demo pages don't ship the full site stylesheet (~75% smaller
+  //      payload for /demo/* routes).
+  //   2. PurgeCSS the main style.css against the rendered non-demo HTML to
+  //      drop selectors that aren't used on any main-site page. Lighthouse
+  //      flagged ~37 KB of unused rules; this typically removes 60-70%.
+  //   3. Minify the main + each demo bundle with clean-css.
+  eleventyConfig.on("eleventy.after", async () => {
     const cssFile = path.resolve("./_site/assets/css/style.css");
     const demoFile = path.resolve("./_site/assets/css/demo.css");
     if (!fs.existsSync(cssFile)) return;
@@ -135,12 +139,10 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 
       const minifier = new CleanCSS({ returnPromise: false, level: 1 });
 
-      // Minify the full site stylesheet in place
-      const minStyle = minifier.minify(src);
-      if (!minStyle.errors.length) fs.writeFileSync(cssFile, minStyle.styles);
-      else console.warn("style.css minify errors:", minStyle.errors);
-
-      // Extract + minify each demo stylesheet
+      // Extract + minify each demo stylesheet first. We do this BEFORE
+      // purging the main bundle so demo extraction reads from the full
+      // source (each demo's selectors only appear on demo pages, which
+      // are excluded from the main-purge content set).
       for (const d of demos) {
         const openMarker = `/* =============================================================\n   ${d.start}`;
         const closeMarker = `/* =============================================================\n   ${d.end}`;
@@ -155,6 +157,58 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
           console.warn(`${d.file} minify errors:`, result.errors);
         }
       }
+
+      // Purge main style.css against rendered main-site HTML. Demo pages
+      // are excluded because they ship their own bundle. The sample-forms
+      // hub is included (linked from the main nav) but each individual
+      // sample-form template uses the main stylesheet too.
+      const purged = await new PurgeCSS().purge({
+        content: [
+          "_site/**/*.html",
+          "!_site/demo/**/*.html",
+          // Include partials with inline class names so the inlined critical CSS
+          // selectors aren't mistaken for unused.
+          "src/_includes/partials/*.njk",
+          "src/_includes/layouts/base.njk",
+          "src/assets/js/main.js",
+        ],
+        css: [{ raw: src }],
+        defaultExtractor: (content) => content.match(/[A-Za-z0-9_:/-]+/g) || [],
+        safelist: {
+          standard: [
+            // Stateful classes toggled by JS that may not appear in static HTML.
+            "open", "is-open", "active", "is-active", "is-loading", "is-scrolled",
+            "show", "scrolled", "expanded", "collapsed", "is-fixed", "is-hidden",
+          ],
+          deep: [
+            // Theme attribute selector — must be kept on every :root rule.
+            /\[data-theme/,
+            // Runtime-injected libraries: pagefind UI, leaflet maps, tippy tooltips.
+            // deep matches anywhere in compound selectors like
+            // .mobile-search-box .pagefind-ui__drawer.
+            /pagefind/,
+            /leaflet/,
+            /tippy/,
+            // Mark element added by pagefind highlighting.
+            /^mark/,
+          ],
+          keyframes: true,
+          variables: false,
+        },
+      });
+
+      let mainCss = src;
+      if (purged && purged[0] && purged[0].css) {
+        mainCss = purged[0].css;
+        console.log(`[purge] style.css ${src.length} -> ${mainCss.length} bytes (${Math.round(100 - (mainCss.length / src.length) * 100)}% reduction)`);
+      } else {
+        console.warn("[purge] no result; shipping unpurged");
+      }
+
+      // Minify the (purged) main stylesheet in place.
+      const minStyle = minifier.minify(mainCss);
+      if (!minStyle.errors.length) fs.writeFileSync(cssFile, minStyle.styles);
+      else console.warn("style.css minify errors:", minStyle.errors);
     } catch (e) {
       console.warn("CSS build failed:", e.message);
     }
