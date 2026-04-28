@@ -20,6 +20,32 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
 
     <div class="changelog-entry">
       <header class="changelog-head">
+        <time datetime="2026-04-28" class="changelog-date">April 28, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Performance</span>
+      </header>
+      <h2 class="changelog-title">Critical-CSS inlining, deferred stylesheets, font preload, Cloudflare cache headers</h2>
+      <div class="changelog-body">
+        <p>Yesterday's Lighthouse baseline showed main-site mobile performance dragged down to 79 on the homepage by render-blocking CSS. Today's changes target every step of the network dependency tree.</p>
+        <ul>
+          <li><strong>Critical CSS inlined</strong> via <code>partials/critical-css.njk</code> (~3 KB): theme tokens (light + dark), reset, body baseline, container, sticky header, hero / page-hero padding, h1 sizes, primary button, skip-link, reduced-motion. Prevents FOUC during the brief window before the deferred sheet applies.</li>
+          <li><strong>Every stylesheet now non-render-blocking</strong>: <code>style.css</code>, Bunny Fonts CSS, and pagefind-ui.css all switched to the <code>&lt;link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"&gt;</code> pattern with a matching <code>&lt;noscript&gt;</code> fallback.</li>
+          <li><strong>Direct font preload</strong>: Playfair Display 600 + Inter 400 woff2 files preloaded so they start fetching alongside the HTML rather than after the Bunny CSS parses, collapsing the long network dependency chain.</li>
+          <li><strong>Cloudflare Pages <code>_headers</code></strong> shipped: <code>/assets/*</code> and <code>/pagefind/*</code> get one-year immutable cache (filenames are content-hashed via eleventy-img + eleventy-auto-cache-buster, so this is safe). HTML revalidates per request. Security: HSTS preload, X-Frame-Options DENY, X-Content-Type-Options nosniff, strict-origin-when-cross-origin Referrer-Policy, Permissions-Policy denying camera / microphone / geolocation / FLoC by default.</li>
+        </ul>
+        <p><strong>Lighthouse mobile delta</strong> (deployed, simulated throttling):</p>
+        <ul style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:0.86rem;line-height:1.7">
+          <li><strong>/</strong>          79 &rarr; <strong>92</strong> (+13). LCP 4.1 s &rarr; 3.2 s. FCP 3.5 s &rarr; 2.0 s.</li>
+          <li><strong>/samples/</strong>   81 &rarr; <strong>87</strong> (+6). LCP 3.9 s &rarr; 3.6 s. FCP 2.3 s.</li>
+          <li><strong>/pricing/</strong>   87 ~ 82 (within Lighthouse simulated noise; LCP 3.4&ndash;3.9 s).</li>
+          <li><strong>/demo/redcap-roofing/</strong>   96 ~ 95 (noise; demos already at target).</li>
+          <li><strong>/demo/lumen-electric/</strong>   95 ~ 94 (noise).</li>
+        </ul>
+        <p>Accessibility, Best Practices, and SEO all hold at 100 across every page. Demo layouts unchanged because they were already 95+; the work targeted the main-site bottleneck.</p>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
         <time datetime="2026-04-27" class="changelog-date">April 27, 2026</time>
         <span class="changelog-tag changelog-tag--major">Real screenshots</span>
       </header>
