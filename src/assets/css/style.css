@@ -10193,6 +10193,26 @@ a { touch-action: manipulation; }
   .prose--wide blockquote { max-width: none; }
 }
 
+/* Technical-approach + similar long-form pages: TOC styled as a 2-col grid
+   on wide viewports, single column on phone. Avoids the awkward CSS-columns
+   reading order. */
+.ta-toc {
+  list-style: decimal inside;
+  padding-left: 0;
+  margin: 0 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 2rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+@media (max-width: 600px) {
+  .ta-toc { grid-template-columns: 1fr; padding: 1rem 1.15rem; }
+}
+.ta-toc li { padding: 0.15rem 0; }
+
 /* Honor reduced-motion everywhere */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

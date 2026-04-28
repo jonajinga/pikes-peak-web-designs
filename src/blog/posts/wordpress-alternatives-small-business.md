@@ -140,7 +140,7 @@ For a typical service-business website, over five years:
 - **WordPress with an agency partner:** $3,000–$5,000 initial build + $2,400–$6,000 in hosting/plugins/maintenance + roughly $5,000 in developer hours to keep up with updates = **$10,400–$16,000**
 - **Squarespace:** $0 initial + $1,920–$3,540 in subscription + probably a full rebuild by year 5 = **$3,920–$8,540** if you DIY, more if you hire help
 - **Webflow (agency-built):** $3,000–$8,000 initial + $2,600–$5,900 in platform costs = **$5,600–$13,900**
-- **Custom-coded monthly plan with us:** $0 initial + $10,500 over five years ($175 × 60 months) = **$10,500**, with the site actively maintained and refreshed every two years at no additional cost
+- **Custom-coded monthly plan with us:** $0 initial + $10,500 over five years ($175 × 60 months) = **$10,500**, with the site actively maintained, content updates included, and zero hidden fees
 - **Custom-coded lump-sum with us:** $4,000 initial + $1,800 optional hosting over 5 years + occasional updates = **$5,800–$7,000**, with full code ownership
 
 On a five-year horizon, a custom-coded site is competitive with or cheaper than any of the alternatives, and you avoid the hidden costs of ongoing WordPress maintenance or the forced rebuild when a hosted-builder template goes stale.
