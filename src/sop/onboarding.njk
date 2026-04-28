@@ -1,0 +1,133 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/onboarding/
+title: Onboarding
+sopPhase: "04"
+sopPhaseTitle: "Onboarding"
+sopGoal: "Get every asset and answer we need to start the build. Set expectations clearly. Provision the project repo and access we'll need."
+sopPrev:
+  url: /sop/proposal-agreement/
+  label: "Proposal & agreement"
+sopNext:
+  url: /sop/design/
+  label: "Design"
+---
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> Signed agreement received</div>
+  <div><strong>Owner</strong> Lead owner</div>
+  <div><strong>Time</strong> 2-5 business days from agreement to kickoff complete</div>
+  <div><strong>Output</strong> Repo + Drive folder + DNS access + all assets in hand; design starts next</div>
+</div>
+
+<h2>The kickoff call (30 min)</h2>
+<p>Schedule within 5 business days of agreement. Goal: walk through the onboarding form together if they haven't filled it out, capture anything not in writing yet, set the launch date in stone.</p>
+
+<h3>Agenda</h3>
+<ol>
+  <li><strong>Introductions if needed.</strong> Anyone else who'll have approval power on design (spouse, partner, office manager). Decide who has final say.</li>
+  <li><strong>Walk the onboarding form.</strong> If they filled it out, just confirm gaps. If not, fill it together.</li>
+  <li><strong>Confirm launch window.</strong> Pick a specific week. Block it on our calendar.</li>
+  <li><strong>Asset deadline.</strong> Photos, logo, copy, current-site export. We can't start design without these.</li>
+  <li><strong>Communication preferences.</strong> Email vs text vs phone for routine vs urgent. Document in CRM.</li>
+  <li><strong>What to expect.</strong> Two design rounds typical, preview link in 7-10 business days, full preview before any code goes live.</li>
+</ol>
+
+<h2>Asset checklist</h2>
+<p>What we need from them, in order of importance.</p>
+
+<ul class="sop-checklist">
+  <li><strong>Logo</strong> &middot; vector preferred (SVG, AI, EPS, PDF). Raster (PNG/JPG) at 1000px+ acceptable. If no logo: schedule logo design as a separate sub-project.</li>
+  <li><strong>Brand colors</strong> &middot; hex codes if they have them, or a description ("navy + gold," "earth tones") and we'll propose.</li>
+  <li><strong>Photos</strong> &middot; 10-30 high-res photos of their work, team, location. iPhone shots are fine if recent. Avoid stock if at all possible.</li>
+  <li><strong>Copy / content</strong> &middot; existing site text, About page draft, service descriptions, any awards or credentials. Bullet points OK; we'll write it up.</li>
+  <li><strong>Customer testimonials</strong> &middot; verbatim quotes if available. First name + city is the minimum attribution we want.</li>
+  <li><strong>License + insurance details</strong> &middot; license numbers, BBB / industry certifications, insurance amounts. Builds trust on every page.</li>
+  <li><strong>Service areas</strong> &middot; list of cities, counties, or radius from base. Affects how many area pages we build.</li>
+  <li><strong>Current website export</strong> &middot; if they have a WordPress site, an export of pages + media. Otherwise just a list of URLs we should preserve / redirect.</li>
+  <li><strong>Domain registrar access</strong> &middot; we don't take over their account; we just need them to point DNS or add records. Confirm they know their registrar login.</li>
+  <li><strong>Google Business Profile</strong> &middot; URL, current review count. We don't manage GBP, but we wire site schema to match.</li>
+</ul>
+
+<h2>Internal provisioning</h2>
+<p>Once kickoff is done, set up the project infrastructure. Don't wait for the design phase.</p>
+
+<ul class="sop-checklist">
+  <li>Create a private GitHub repo: <code>pikes-peak-{client-slug}</code>.</li>
+  <li>Run the new-project scaffold from the <code>new-project</code> skill (in <code>.claude/skills/</code>).</li>
+  <li>Create a Drive folder: <code>Clients / {Business Name}</code>. Sub-folders: <code>assets, agreements, invoices, communications</code>.</li>
+  <li>Drop the signed agreement in <code>agreements/</code>. Photo of any wet-ink signatures.</li>
+  <li>Add the client to the active-clients spreadsheet with: start date, plan, billing day, primary contact.</li>
+  <li>Provision Web3Forms access keys. Hard-code into the repo <code>_data/site.js</code>.</li>
+  <li>Add their domain to our WHOIS-watch list for renewal monitoring.</li>
+  <li>Create a Cloudflare Pages project with the GitHub repo connected. Note the <code>*.pages.dev</code> preview URL.</li>
+  <li>Send the kickoff-confirmation email below.</li>
+</ul>
+
+<h2>Templates</h2>
+
+<div class="sop-template">
+  <div class="sop-template-label">Kickoff confirmation email</div>
+<pre>Hi {first_name},
+
+Good kickoff. Quick recap so we're aligned:
+
+LAUNCH WINDOW: {date_range}
+ASSETS NEEDED BY: {date}
+COMMUNICATION: {email primary, text for urgent}
+DECISION-MAKER ON DESIGN: {name}
+
+Asset upload link: {drive_folder_link}
+Onboarding form (if not done): https://pikespeakwebdesigns.com/onboarding/
+
+I'll start the wireframe today. First design preview in your inbox by
+{preview_date}. Until then I won't bug you; if questions come up on my
+end, I'll batch them into one email rather than ping you piecemeal.
+
+Anything you remember after this email, just send it. We can absorb
+late additions; we just can't start without the basics above.
+
+— Jonathan
+{phone}</pre>
+</div>
+
+<div class="sop-template">
+  <div class="sop-template-label">Asset reminder (3 days after kickoff if missing)</div>
+<pre>Hi {first_name},
+
+Heads up: I'm waiting on {missing_assets} before I can start the
+{design / specific page}.
+
+If you can get those over by {target_date}, we'll keep the launch on
+schedule. If you need more time, let me know what's realistic and I'll
+adjust the launch window.
+
+Drive link to drop them in: {drive_folder_link}
+
+— Jonathan</pre>
+</div>
+
+<h2>Common issues</h2>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>They don't have photos and don't want stock</strong>
+  Recommend a local photographer (we keep a referral list per metro). Half-day shoot is $400-700 typical. Schedule it FAST; build can't proceed without imagery.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>They want to see "a few designs" before committing assets</strong>
+  Polite firm: wireframes need their content. We can show generic component patterns from /samples/ but won't build a custom design for a non-client.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>The agreement-signer is not the day-to-day contact</strong>
+  Document who's who. Approvals on design must come from the agreement-signer in writing; daily communication can be the day-to-day contact. Avoid surprises at launch ("my husband doesn't like that color").
+</div>
+
+<div class="sop-callout">
+  <strong>They have a logo but it's a low-res JPG</strong>
+  Ask if they have the original AI/SVG. If not, recreate the logo as a vector for them — quick win and builds goodwill. Add to project Drive in the <code>assets/logo/</code> folder.
+</div>
+
+<h2>Exit criteria</h2>
+<p>Kickoff done, all required assets received (or photographer scheduled), repo and Drive folder created, Cloudflare Pages project live (even if empty), launch date locked. Design phase starts the next business day. Move to <a href="/sop/design/">phase 05</a>.</p>

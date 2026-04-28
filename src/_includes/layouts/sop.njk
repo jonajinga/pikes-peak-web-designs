@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+noindex: true
+---
+
+<div data-pagefind-ignore="all">
+
+<section class="page-hero" style="padding-bottom:1.5rem">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/sop/">SOP Portal</a>{% if sopPhase %}<span class="sep">/</span><span>{{ sopPhaseTitle }}</span>{% endif %}
+    </nav>
+    <span class="section-label">SOP &middot; Internal team reference</span>
+    <h1>{{ title or "SOP Portal" }}{% if sopPhase %}<em> &middot; phase {{ sopPhase }}</em>{% endif %}</h1>
+    {% if sopGoal %}<p>{{ sopGoal }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="section" style="padding-top:1rem">
+  <div class="container" style="max-width:1180px">
+    <div class="sop-layout">
+
+      <aside class="sop-sidebar" aria-label="SOP phases">
+        <div class="sop-sidebar-title">Project lifecycle</div>
+        <ol class="sop-nav">
+          <li><a href="/sop/" {% if page.url == "/sop/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">00</span> Overview</a></li>
+          <li><a href="/sop/first-contact/" {% if page.url == "/sop/first-contact/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">01</span> First contact</a></li>
+          <li><a href="/sop/discovery-call/" {% if page.url == "/sop/discovery-call/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">02</span> Discovery call</a></li>
+          <li><a href="/sop/proposal-agreement/" {% if page.url == "/sop/proposal-agreement/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">03</span> Proposal &amp; agreement</a></li>
+          <li><a href="/sop/onboarding/" {% if page.url == "/sop/onboarding/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">04</span> Onboarding</a></li>
+          <li><a href="/sop/design/" {% if page.url == "/sop/design/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">05</span> Design</a></li>
+          <li><a href="/sop/build/" {% if page.url == "/sop/build/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">06</span> Build</a></li>
+          <li><a href="/sop/pre-launch-qa/" {% if page.url == "/sop/pre-launch-qa/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">07</span> Pre-launch QA</a></li>
+          <li><a href="/sop/launch/" {% if page.url == "/sop/launch/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">08</span> Launch</a></li>
+          <li><a href="/sop/maintenance/" {% if page.url == "/sop/maintenance/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">09</span> Maintenance</a></li>
+          <li><a href="/sop/emergencies/" {% if page.url == "/sop/emergencies/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">10</span> Emergencies</a></li>
+          <li><a href="/sop/billing/" {% if page.url == "/sop/billing/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">11</span> Billing &amp; invoicing</a></li>
+          <li><a href="/sop/refresh-offboarding/" {% if page.url == "/sop/refresh-offboarding/" %}class="is-active" aria-current="page"{% endif %}><span class="sop-nav-num">12</span> Refresh &amp; offboarding</a></li>
+        </ol>
+
+        <div class="sop-sidebar-title" style="margin-top:1.75rem">Reference</div>
+        <ul class="sop-nav">
+          <li><a href="/sop/email-templates/" {% if page.url == "/sop/email-templates/" %}class="is-active" aria-current="page"{% endif %}>Email templates</a></li>
+          <li><a href="/sop/checklists/" {% if page.url == "/sop/checklists/" %}class="is-active" aria-current="page"{% endif %}>Checklists</a></li>
+          <li><a href="/sop/tools/" {% if page.url == "/sop/tools/" %}class="is-active" aria-current="page"{% endif %}>Tools &amp; access</a></li>
+        </ul>
+      </aside>
+
+      <article class="sop-content">
+        {{ content | safe }}
+
+        {% if sopNext or sopPrev %}
+        <nav class="sop-prevnext" aria-label="Pager">
+          {% if sopPrev %}<a class="sop-prev" href="{{ sopPrev.url }}"><span>&larr; {{ sopPrev.label }}</span></a>{% else %}<span></span>{% endif %}
+          {% if sopNext %}<a class="sop-next" href="{{ sopNext.url }}"><span>{{ sopNext.label }} &rarr;</span></a>{% else %}<span></span>{% endif %}
+        </nav>
+        {% endif %}
+      </article>
+
+    </div>
+  </div>
+</section>
+
+</div>

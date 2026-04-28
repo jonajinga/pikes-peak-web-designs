@@ -9967,6 +9967,232 @@ a { touch-action: manipulation; }
   .clearwater-banner { padding: 0.4rem 1rem; font-size: 0.7rem; }
 }
 
+/* ============================================================
+   SOP Portal (internal, /sop/*)
+   ============================================================ */
+.sop-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+@media (max-width: 880px) {
+  .sop-layout { grid-template-columns: 1fr; }
+}
+.sop-sidebar {
+  position: sticky;
+  top: 5rem;
+  align-self: start;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1rem;
+  font-size: 0.92rem;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+@media (max-width: 880px) {
+  .sop-sidebar { position: static; max-height: none; }
+}
+.sop-sidebar-title {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 0.65rem 0.5rem;
+}
+.sop-nav { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+.sop-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.92rem;
+  line-height: 1.3;
+  transition: background var(--dur), color var(--dur);
+}
+.sop-nav a:hover, .sop-nav a:focus-visible {
+  background: var(--surface-raised);
+  color: var(--gold-600);
+  outline: none;
+}
+:root[data-theme="dark"] .sop-nav a:hover,
+:root[data-theme="dark"] .sop-nav a:focus-visible { color: var(--gold-300); }
+.sop-nav a.is-active {
+  background: var(--navy-900);
+  color: #fff;
+}
+.sop-nav a.is-active .sop-nav-num { color: var(--gold-300); }
+.sop-nav-num {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  min-width: 1.6em;
+}
+.sop-content { min-width: 0; }
+.sop-content h2 { margin-top: 2.5rem; padding-top: 0; }
+.sop-content h2:first-child { margin-top: 0; }
+.sop-content h3 { margin-top: 1.75rem; }
+.sop-content h2, .sop-content h3 { color: var(--text); font-family: var(--font-display); }
+.sop-content > p, .sop-content ul, .sop-content ol { max-width: 70ch; }
+.sop-content ul.sop-grid-list { max-width: none; }
+.sop-content code, .sop-content kbd {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.88em;
+  background: var(--bg-alt);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+}
+.sop-content pre {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin: 1rem 0;
+  max-width: none;
+}
+.sop-content pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.sop-callout {
+  display: flex;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-alt);
+  border-left: 4px solid var(--gold-500);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+}
+.sop-callout--warn { border-left-color: var(--danger, #A1190F); background: rgba(161, 25, 15, 0.06); }
+.sop-callout--ok   { border-left-color: var(--success, #0F6B3F); background: rgba(15, 107, 63, 0.06); }
+.sop-callout strong { display: block; margin-bottom: 0.25rem; }
+.sop-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+  padding: 1.25rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.sop-meta div { font-size: 0.92rem; }
+.sop-meta strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 0.35rem;
+}
+:root[data-theme="dark"] .sop-meta strong { color: var(--gold-400); }
+.sop-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  max-width: 70ch;
+}
+.sop-checklist li {
+  position: relative;
+  padding-left: 2rem;
+  line-height: 1.55;
+}
+.sop-checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.18rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--line-strong);
+  border-radius: 4px;
+  background: var(--surface);
+}
+.sop-prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.sop-prevnext a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background var(--dur), border-color var(--dur), color var(--dur);
+}
+.sop-prevnext a:hover {
+  background: var(--surface-raised);
+  border-color: var(--gold-500);
+  color: var(--gold-600);
+}
+:root[data-theme="dark"] .sop-prevnext a:hover { color: var(--gold-300); }
+.sop-template {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+}
+.sop-template-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 0.75rem;
+}
+:root[data-theme="dark"] .sop-template-label { color: var(--gold-400); }
+.sop-template pre {
+  margin: 0;
+  background: var(--surface);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Wide prose: keeps the container roomy for headings, lists, code, but
+   constrains running paragraphs to a comfortable reading measure. */
+.prose--wide { max-width: none; }
+.prose--wide p,
+.prose--wide ul,
+.prose--wide ol,
+.prose--wide blockquote { max-width: 70ch; }
+.prose--wide h2 { margin-top: 3rem; }
+.prose--wide h3 { margin-top: 2.25rem; }
+@media (max-width: 720px) {
+  .prose--wide p,
+  .prose--wide ul,
+  .prose--wide ol,
+  .prose--wide blockquote { max-width: none; }
+}
+
 /* Honor reduced-motion everywhere */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

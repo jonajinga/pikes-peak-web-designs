@@ -1,0 +1,52 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/
+title: SOP Portal
+sopGoal: "Internal standard operating procedures, every phase of a client engagement from first contact to offboarding. Built for the team. Not indexed."
+---
+
+<h2>How to use this portal</h2>
+<p>Every phase of a client project is documented as its own page in the sidebar. Each page follows the same shape: <strong>goal</strong>, <strong>trigger</strong>, <strong>who's involved</strong>, <strong>steps</strong>, <strong>templates</strong>, <strong>common issues</strong>, <strong>exit criteria</strong>. Use the prev/next pager at the bottom of each page to walk through a project end-to-end.</p>
+
+<div class="sop-callout">
+  <div>
+    <strong>Confidentiality</strong>
+    Every page in this portal carries <code>noindex</code> + is disallowed in <code>robots.txt</code>. Don't paste contents into Slack, public docs, or AI chat windows that train on inputs. Treat client examples as PII unless explicitly cleared.
+  </div>
+</div>
+
+<h2>Project lifecycle at a glance</h2>
+<p>A typical engagement runs about four to six weeks from first contact to launch, then continues indefinitely on the monthly plan. Phases overlap; this is a checklist, not a Gantt chart.</p>
+
+<div class="sop-meta">
+  <div><strong>Average time to launch</strong> 4-6 weeks from discovery call</div>
+  <div><strong>Median revisions</strong> 2 design rounds, 1 build round</div>
+  <div><strong>SLA, content updates</strong> same business day</div>
+  <div><strong>SLA, emergencies</strong> &lt; 1 hour business hrs / &lt; 4 hrs after-hours</div>
+</div>
+
+<h2>The 12 phases</h2>
+<ol style="display:flex;flex-direction:column;gap:0.85rem;list-style:none;padding:0;max-width:none">
+  <li><strong><a href="/sop/first-contact/">01 &middot; First contact</a>.</strong> Inbound lead handling: where they came from, qualifying triage, when to advance vs decline.</li>
+  <li><strong><a href="/sop/discovery-call/">02 &middot; Discovery call</a>.</strong> 20-minute call. Script, qualification questions, fit assessment, what to send next.</li>
+  <li><strong><a href="/sop/proposal-agreement/">03 &middot; Proposal &amp; agreement</a>.</strong> Quote, contract, deposit (if any), signed agreement returned, project repo created.</li>
+  <li><strong><a href="/sop/onboarding/">04 &middot; Onboarding</a>.</strong> Kickoff email, asset collection (logo, photos, copy), expectations, project kickoff scheduled.</li>
+  <li><strong><a href="/sop/design/">05 &middot; Design</a>.</strong> Wireframe to high-fidelity preview. Feedback loop. Sign-off before build starts.</li>
+  <li><strong><a href="/sop/build/">06 &middot; Build</a>.</strong> Code the design. Performance + accessibility throughout. Internal QA between rounds.</li>
+  <li><strong><a href="/sop/pre-launch-qa/">07 &middot; Pre-launch QA</a>.</strong> Full audit before go-live: links, Lighthouse, accessibility, content, schema, mobile.</li>
+  <li><strong><a href="/sop/launch/">08 &middot; Launch</a>.</strong> DNS migration, Search Console submission, monitoring setup, post-launch checks.</li>
+  <li><strong><a href="/sop/maintenance/">09 &middot; Maintenance</a>.</strong> Ongoing content updates, ticket triage, monthly check-ins.</li>
+  <li><strong><a href="/sop/emergencies/">10 &middot; Emergencies</a>.</strong> What counts, response SLA, communication protocol, post-incident.</li>
+  <li><strong><a href="/sop/billing/">11 &middot; Billing &amp; invoicing</a>.</strong> Monthly invoice cycle, late payments, plan changes, refunds, write-offs.</li>
+  <li><strong><a href="/sop/refresh-offboarding/">12 &middot; Refresh &amp; offboarding</a>.</strong> 2-year design refresh process and the clean-exit playbook when a client leaves.</li>
+</ol>
+
+<h2>Reference pages</h2>
+<ul style="max-width:none">
+  <li><a href="/sop/email-templates/">Email templates</a> &middot; every canonical email we send, ready to copy.</li>
+  <li><a href="/sop/checklists/">Checklists</a> &middot; consolidated launch + post-launch + monthly checklists.</li>
+  <li><a href="/sop/tools/">Tools &amp; access</a> &middot; the full stack we use, where credentials live, who has access.</li>
+</ul>
+
+<h2>Editing this portal</h2>
+<p>SOP pages live at <code>src/sop/*.njk</code> in the main repo. Edit, commit, push; Cloudflare deploys in 60 seconds. The portal is excluded from the public sitemap and from Pagefind's index. Anyone with the URL can read it, so we don't include client-identifying info in the open. Use placeholder names (<em>Acme Roofing</em>, <em>Jane Smith</em>) when documenting examples.</p>

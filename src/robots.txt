@@ -1,5 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /sop/
+Disallow: /client-portal/
+Disallow: /onboarding/
+Disallow: /content-update/
+Disallow: /emergency/
+Disallow: /design-feedback/
+Disallow: /refer/
+Disallow: /testimonial/
 
 Sitemap: https://pikespeakwebdesigns.com/sitemap.xml
-

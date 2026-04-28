@@ -1,0 +1,192 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/launch/
+title: Launch
+sopPhase: "08"
+sopPhaseTitle: "Launch"
+sopGoal: "Move the new site to production. DNS migrated cleanly, monitoring on, Search Console submitted, owner's guide handed over. No downtime, no surprises."
+sopPrev:
+  url: /sop/pre-launch-qa/
+  label: "Pre-launch QA"
+sopNext:
+  url: /sop/maintenance/
+  label: "Maintenance"
+---
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> Sign-off received from QA phase</div>
+  <div><strong>Owner</strong> Lead developer + lead owner (handles client comms)</div>
+  <div><strong>Time</strong> 30-90 min active work + monitoring through 24 hours after</div>
+  <div><strong>Output</strong> Live site at the client's real domain, monitoring active, owner's guide delivered</div>
+</div>
+
+<h2>Pick the launch window</h2>
+<p>Tuesday-Thursday morning Mountain Time is ideal. Avoid:</p>
+<ul>
+  <li>Friday afternoons (weekend issues compound)</li>
+  <li>Mondays (catch-up day, distractions)</li>
+  <li>Days before holidays</li>
+  <li>Dates the client has out-of-office</li>
+  <li>Dates with known industry traffic spikes (storm season, peak booking)</li>
+</ul>
+
+<h2>30 minutes before launch</h2>
+<ul class="sop-checklist">
+  <li>Re-run Lighthouse on the preview URL. Save scores for the post-launch comparison.</li>
+  <li>Confirm DNS TTL is dropped to 5 minutes (do this 24-48 hours before to make rollback fast if needed).</li>
+  <li>Verify the production Cloudflare Pages project has the right environment variables (form keys, analytics IDs).</li>
+  <li>Have the client's domain registrar dashboard open in another tab.</li>
+  <li>Open monitoring tools (Cloudflare status, UptimeRobot dashboard).</li>
+  <li>Notify client launch starts in 30 min.</li>
+</ul>
+
+<h2>The launch itself</h2>
+
+<h3>Step 1: connect the custom domain (5 min)</h3>
+<ul class="sop-checklist">
+  <li>In the Cloudflare Pages project, add the client's domain as a custom domain.</li>
+  <li>Cloudflare provisions an SSL cert and gives the CNAME / A record values.</li>
+</ul>
+
+<h3>Step 2: update DNS at the registrar (5-10 min)</h3>
+<ul class="sop-checklist">
+  <li>If client uses Cloudflare nameservers: update DNS records directly in Cloudflare.</li>
+  <li>If client stays at their registrar: have them (or you, with their permission) update the A / CNAME / AAAA records to point at Cloudflare Pages.</li>
+  <li>Preserve MX, TXT (SPF/DKIM/DMARC), and any other non-A records. We're only updating where the website points, not email.</li>
+</ul>
+
+<h3>Step 3: verify propagation (5-15 min)</h3>
+<ul class="sop-checklist">
+  <li>Use <code>dig +short {domain}</code> from terminal. Should return Cloudflare's IPs.</li>
+  <li>Test the live URL in a fresh browser (incognito). HTTPS works, content loads.</li>
+  <li>If you previously dropped TTL to 5 min, propagation is usually under 10 min globally.</li>
+</ul>
+
+<h3>Step 4: verify SSL + redirects (5 min)</h3>
+<ul class="sop-checklist">
+  <li>HTTPS works without warning.</li>
+  <li>HTTP redirects to HTTPS automatically (Cloudflare default).</li>
+  <li>www.domain.com and domain.com both resolve (canonical URL set in Cloudflare).</li>
+  <li><code>curl -sI https://{domain}/</code> returns expected headers (HSTS, CSP, X-Frame-Options).</li>
+</ul>
+
+<h3>Step 5: post-launch QA (10 min)</h3>
+<ul class="sop-checklist">
+  <li>Click through the navigation: header, footer, mobile nav.</li>
+  <li>Submit a real form (use a +launchtest@ email alias). Verify it lands in client inbox.</li>
+  <li>Open on a real phone via cellular (not WiFi).</li>
+  <li>Open in 2-3 different browsers.</li>
+  <li>Check the search modal works.</li>
+  <li>Check the theme toggle works + persists.</li>
+</ul>
+
+<h3>Step 6: SEO + analytics (5 min)</h3>
+<ul class="sop-checklist">
+  <li>Submit the new sitemap to Google Search Console: <code>https://{domain}/sitemap.xml</code>.</li>
+  <li>If client has an existing Search Console property, verify the new sitemap shows up there.</li>
+  <li>Submit to Bing Webmaster Tools (still ~10-15% of US service-business search).</li>
+  <li>Configure Cloudflare Web Analytics on the new domain if not already.</li>
+  <li>If the client has Umami: confirm tracking script is firing.</li>
+</ul>
+
+<h3>Step 7: monitoring on (5 min)</h3>
+<ul class="sop-checklist">
+  <li>Add the production URL to UptimeRobot. 1-min check interval. SMS alerts to the on-call number.</li>
+  <li>Verify Cloudflare uptime monitoring is on.</li>
+  <li>Add domain to WHOIS-watch list for renewal monitoring.</li>
+  <li>Cloudflare Pages keeps every prior deploy; bookmark the dashboard for one-click rollback if needed.</li>
+</ul>
+
+<h3>Step 8: hand over the owner's guide (10 min)</h3>
+<ul class="sop-checklist">
+  <li>Send the launch confirmation email below.</li>
+  <li>Link to the public <a href="/owners-guide/">/owners-guide/</a>.</li>
+  <li>Send a personalized version with their actual subprocessors, hosting account, etc. (private Notion / PDF).</li>
+  <li>Confirm what email address gets form submissions.</li>
+</ul>
+
+<h2>Templates</h2>
+
+<div class="sop-template">
+  <div class="sop-template-label">Launch confirmation</div>
+<pre>Hi {first_name},
+
+Live.
+
+NEW URL: https://{domain}/
+LAUNCH TIME: {timestamp}
+LIGHTHOUSE: {scores}
+
+What I just did:
+- Migrated DNS to point at our hosting
+- Provisioned SSL (HTTPS works without warning)
+- Submitted the sitemap to Google Search Console
+- Set up uptime monitoring (1-minute checks)
+- Wired the contact form to your inbox
+
+What you should do today:
+- Click through your site, especially on your phone
+- Submit your contact form once to verify it lands in {their_inbox}
+- Check your Google Business Profile and update any phone/address
+  references if they pointed to the old site path
+
+What happens next:
+- The owner's guide (https://pikespeakwebdesigns.com/owners-guide/)
+  walks through everything I'll handle and what you might want to do
+  occasionally
+- Content updates: just email me. Same-day for routine changes.
+- Emergencies: call/text me directly: {phone}
+- The next 2-3 days I'll be watching analytics + uptime closely. If
+  anything looks off, I'll catch it.
+
+You're done.
+
+— Jonathan</pre>
+</div>
+
+<h2>The next 24 hours</h2>
+<ul class="sop-checklist">
+  <li>Check Cloudflare analytics 2-3 times: traffic, error rate, bot activity.</li>
+  <li>Watch UptimeRobot for any flaps.</li>
+  <li>Re-run Lighthouse on the live URL: scores should match preview within 2-3 points.</li>
+  <li>If client reports any issue, respond within an hour.</li>
+  <li>End of day: send "all good" check-in if you haven't heard from them.</li>
+</ul>
+
+<h2>The first week</h2>
+<ul class="sop-checklist">
+  <li>Day 3: check Search Console for crawl errors. Should be zero.</li>
+  <li>Day 5: submit any high-value pages individually for crawling (homepage, top service pages).</li>
+  <li>Day 7: send a 1-week check-in. Ask if anything's come up.</li>
+  <li>Confirm form submissions are arriving (ask client directly).</li>
+</ul>
+
+<h2>Common launch issues</h2>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>DNS won't propagate</strong>
+  Verify TTL was dropped pre-launch. Use <code>dig +short {domain}</code> from multiple regions (or whatsmydns.net). Most "DNS issues" are caching at the user's ISP; affected user just needs to wait or flush DNS.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>HTTPS shows certificate warning</strong>
+  Cloudflare's managed cert can take 5-15 min to provision. If still failing after 30 min, check that the domain is correctly added in Cloudflare Pages and that the registrar's records match what Cloudflare expects.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Old site still showing for the client</strong>
+  Their browser cached the old DNS. Have them flush DNS cache or test in incognito. Within 24 hours, propagation completes globally.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Form submissions not arriving</strong>
+  Check Web3Forms dashboard for the access key. Check the <code>action</code> URL in the form. Test from a fresh browser without ad blockers.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Search Console errors immediately after launch</strong>
+  Normal. Some errors take 24-72 hours to clear as Google re-crawls. Investigate if errors persist past 7 days.
+</div>
+
+<h2>Exit criteria</h2>
+<p>Live site verified working at the production domain. SSL active. Sitemap submitted. Monitoring on. Owner's guide handed over. Client confirmed they can reach the site. Move to <a href="/sop/maintenance/">phase 09</a> (ongoing).</p>

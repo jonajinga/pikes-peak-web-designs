@@ -1,0 +1,182 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/pre-launch-qa/
+title: Pre-launch QA
+sopPhase: "07"
+sopPhaseTitle: "Pre-launch QA"
+sopGoal: "Catch every issue before the public sees it. One full-site sweep across content, performance, accessibility, mobile, schema, and SEO. Nothing ships until this checklist is clean."
+sopPrev:
+  url: /sop/build/
+  label: "Build"
+sopNext:
+  url: /sop/launch/
+  label: "Launch"
+---
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> Build complete (all pages rendering at preview URL)</div>
+  <div><strong>Owner</strong> Lead developer + a second pair of eyes ideally</div>
+  <div><strong>Time</strong> 4-6 hours of focused review across 1-2 days</div>
+  <div><strong>Output</strong> Sign-off doc with all checklist items green; ready to launch</div>
+</div>
+
+<h2>Run it twice, two days</h2>
+<p>Best practice: run the QA checklist on day N. Sleep on it. Run again day N+1 with fresh eyes. Catches things the first pass misses (typos, weird spacing, copy errors).</p>
+
+<h2>1. Content QA</h2>
+<ul class="sop-checklist">
+  <li>Every page reads top-to-bottom without typos or grammar issues.</li>
+  <li>Phone numbers correct everywhere (header, footer, contact page, schema).</li>
+  <li>Email addresses correct + clickable (<code>mailto:</code> links work).</li>
+  <li>Business address consistent (header, footer, contact, schema, GBP).</li>
+  <li>Hours match GBP and the client's actual operations.</li>
+  <li>License numbers, certifications, insurance amounts verified accurate.</li>
+  <li>Testimonials attributed correctly. First name + city minimum.</li>
+  <li>Photo alt text describes the image in context (not just "photo of crew").</li>
+  <li>Internal links work. No 404s when clicking through every page.</li>
+  <li>External links open in new tab where appropriate (<code>rel="noopener"</code>).</li>
+  <li>Footer copyright year is dynamic, current.</li>
+</ul>
+
+<h2>2. Performance QA</h2>
+<ul class="sop-checklist">
+  <li>Lighthouse mobile score 95+ on every page. Document the runs.</li>
+  <li>Lighthouse desktop score 95+ on every page.</li>
+  <li>LCP under 2.5s mobile, under 1.5s desktop.</li>
+  <li>CLS under 0.1.</li>
+  <li>INP under 200ms (Lighthouse may not show; verify in DevTools Performance tab).</li>
+  <li>Hero image is preloaded + has fetchpriority="high".</li>
+  <li>No render-blocking resources (CSS deferred via media=print pattern, JS via defer).</li>
+  <li>Critical CSS inlined for the inlined-tokens + above-the-fold layout.</li>
+  <li>Fonts preloaded (woff2 files for the weights actually used).</li>
+  <li>Bundle sizes within budget: HTML &lt; 25 KB gz, CSS &lt; 30 KB gz, JS &lt; 10 KB gz per page.</li>
+</ul>
+
+<h2>3. Accessibility QA</h2>
+<ul class="sop-checklist">
+  <li>WAVE on every page: zero errors, zero contrast errors.</li>
+  <li>axe DevTools on every page: zero criticals, zero serious.</li>
+  <li>Lighthouse accessibility 100 on every page.</li>
+  <li>Keyboard-only navigation: skip-link, tab order matches visual order, all interactives reachable + operable.</li>
+  <li>Visible focus rings on every interactive element.</li>
+  <li>Touch targets 44x44 px minimum.</li>
+  <li>Screen reader: read every page top to bottom with VoiceOver (mac) or NVDA (Windows). Landmarks announce correctly. Form labels announce.</li>
+  <li>Browser zoom to 200%: no horizontal scrolling, no clipped content.</li>
+  <li>Reduced-motion: animations disabled when OS setting is on.</li>
+  <li>Color is never the sole carrier of meaning.</li>
+  <li>Form errors announced via role="alert".</li>
+</ul>
+
+<h2>4. Responsive / mobile QA</h2>
+<ul class="sop-checklist">
+  <li>Test viewports: 360, 414, 568, 768, 820, 1024, 1180, 1280, 1440 px.</li>
+  <li>No horizontal scrolling at any viewport.</li>
+  <li>Hero CTAs visible above fold at 360x800 (smallest phone).</li>
+  <li>Mobile nav opens, scrolls, closes cleanly. No flash on page load.</li>
+  <li>Forms render with adequate spacing on tablet portrait (768-820 px).</li>
+  <li>Footer collapses through intermediate breakpoints, not a single jarring drop.</li>
+  <li>Sticky headers don't double-stack on iOS Safari.</li>
+  <li>Phone landscape (568-736 px wide, ~360 tall): hero CTAs above fold.</li>
+  <li>Test on actual device if possible (real iPhone + real iPad).</li>
+</ul>
+
+<h2>5. SEO + schema QA</h2>
+<ul class="sop-checklist">
+  <li>Every page has a unique &lt;title&gt; (50-60 chars).</li>
+  <li>Every page has a unique meta description (140-160 chars).</li>
+  <li>Canonical URL on every page. Trailing slash matches.</li>
+  <li>Open Graph + Twitter Card tags on every page. OG image renders correctly when sharing on Slack/iMessage.</li>
+  <li>JSON-LD validates: LocalBusiness on site-wide, Service on service pages, BlogPosting on posts, FAQPage on FAQ. Run through Google's Rich Results Test.</li>
+  <li>sitemap.xml exists, includes every public page, excludes /sop/ and other noindex pages.</li>
+  <li>robots.txt allows crawling, references sitemap, disallows /sop/ + portal forms.</li>
+  <li>404 page renders with helpful navigation back.</li>
+  <li>Internal linking: every page reachable in 2 clicks from home.</li>
+</ul>
+
+<h2>6. Security QA</h2>
+<ul class="sop-checklist">
+  <li>HTTPS works without browser warning.</li>
+  <li>HSTS header present (verify via securityheaders.com).</li>
+  <li>Content-Security-Policy header tightly scoped.</li>
+  <li>X-Frame-Options DENY.</li>
+  <li>X-Content-Type-Options nosniff.</li>
+  <li>Permissions-Policy denying camera/mic/geo by default.</li>
+  <li>security.txt at /.well-known/security.txt with valid contact.</li>
+  <li>No mixed-content warnings.</li>
+  <li>No exposed environment variables, API keys, or secrets in committed code.</li>
+</ul>
+
+<h2>7. Forms QA</h2>
+<ul class="sop-checklist">
+  <li>Every form submits successfully. Real submission lands in the client's inbox.</li>
+  <li>Honeypot field is hidden but present.</li>
+  <li>Validation works: required fields blocked, invalid emails caught.</li>
+  <li>Error message announces via role="alert" when submission fails.</li>
+  <li>Thank-you page renders after success.</li>
+  <li>Auto-reply email goes to the visitor with the client's phone + email.</li>
+</ul>
+
+<h2>8. Cross-browser smoke</h2>
+<ul class="sop-checklist">
+  <li>Chrome desktop (latest).</li>
+  <li>Safari desktop (latest macOS).</li>
+  <li>Safari iOS simulator OR real iPhone.</li>
+  <li>Firefox desktop (latest).</li>
+  <li>Edge desktop (latest).</li>
+  <li>Forced-colors mode on Windows: site renders legibly.</li>
+</ul>
+
+<h2>9. Operational + legal pages</h2>
+<ul class="sop-checklist">
+  <li>Privacy Policy specific to the client (subprocessors named, data flows accurate).</li>
+  <li>Terms of Use match the client's actual liability stance.</li>
+  <li>Accessibility Statement reflects actual conformance level.</li>
+  <li>Brand Guidelines / Style Guide page renders with real palette + type samples.</li>
+  <li>HTML Sitemap renders with all public pages, no broken links.</li>
+  <li>Thank-You page is on the redirect path of every form.</li>
+</ul>
+
+<h2>Pre-launch sign-off</h2>
+<p>Send the QA report to the client for their final approval before launch.</p>
+
+<div class="sop-template">
+  <div class="sop-template-label">Pre-launch sign-off email</div>
+<pre>Hi {first_name},
+
+Build is QA-clean. Launch-ready.
+
+PREVIEW URL: {preview_url}
+LAUNCH WINDOW: {date_range}
+LIGHTHOUSE SCORES: {mobile_perf} / {mobile_a11y} / {mobile_bp} / {mobile_seo} mobile
+LIGHTHOUSE DESKTOP: {desktop_perf} / {desktop_a11y} / {desktop_bp} / {desktop_seo}
+
+Walk through the preview URL one more time. Check anything you'd want
+changed. After today, changes can still happen but they're "post-
+launch" content updates rather than build-phase changes.
+
+If you sign off, reply with "go" and I'll launch on {launch_date}. The
+launch itself takes about 30 minutes; you don't need to be available
+unless we hit a snag.
+
+— Jonathan</pre>
+</div>
+
+<h2>Common QA issues</h2>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Lighthouse score on /pricing/ is 88, not 95+</strong>
+  Don't ship. Diagnose: render-blocking CSS, unoptimized image, render-blocking JS. Fix the cause; re-run.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>WAVE flags a contrast error you don't see</strong>
+  Trust WAVE. Re-check with the TPGi color contrast analyzer. Common culprit: light gold or amber text on white.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Client wants "one more change" mid-QA</strong>
+  Absorb if small. If structural, push to post-launch content update queue. Don't restart QA every time something tweaks.
+</div>
+
+<h2>Exit criteria</h2>
+<p>Every checklist item green. Client signed off in writing. Launch date confirmed. Move to <a href="/sop/launch/">phase 08</a>.</p>

@@ -1,0 +1,135 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/first-contact/
+title: First contact
+sopPhase: "01"
+sopPhaseTitle: "First contact"
+sopGoal: "Triage every inbound lead within the same business day. Decide: discovery call, polite decline, or referral out."
+sopNext:
+  url: /sop/discovery-call/
+  label: "Discovery call"
+---
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> Inbound contact form, email, phone/text, referral, or LinkedIn message</div>
+  <div><strong>Owner</strong> Whoever sees it first; same-day response is the SLA</div>
+  <div><strong>Time</strong> 5-15 min triage + initial reply</div>
+  <div><strong>Output</strong> Reply sent &amp; lead logged in CRM</div>
+</div>
+
+<h2>Channels</h2>
+<p>Five inbound channels. All five reach the same primary email address; we don't split them across multiple inboxes.</p>
+<ul>
+  <li><strong>Contact form</strong> at <code>/contact/</code> &middot; ~70% of leads. Submission goes to Web3Forms which forwards to the primary inbox.</li>
+  <li><strong>Direct email</strong> to the published business address &middot; ~15%. Often referrals or returning visitors.</li>
+  <li><strong>Phone or text</strong> to the published number &middot; ~10%. Voicemail rolls to a transcription.</li>
+  <li><strong>Referrals</strong> from existing clients (and the <code>/refer/</code> form) &middot; ~5%. Highest close rate.</li>
+  <li><strong>LinkedIn / community DMs</strong> &middot; ~&lt;5%. Treat as email.</li>
+</ul>
+
+<h2>Triage decision tree</h2>
+<p>Within 5 minutes of seeing the lead, decide one of four paths.</p>
+
+<h3>A. Strong fit, schedule discovery call</h3>
+<p>Lead is a US/Canada-based small service business, owner-led, has an existing site they want replaced or no site at all, indicates flat-rate pricing is acceptable. Reply within 4 business hours with a discovery-call link.</p>
+
+<h3>B. Strong fit but not yet ready</h3>
+<p>"Maybe in 6 months" / "Just exploring" responses. Reply with a brief educational note, link to <a href="/what-we-build/">/what-we-build/</a>, and add to a follow-up reminder for 90 days out.</p>
+
+<h3>C. Out of scope, refer out</h3>
+<p>E-commerce store with 100+ SKUs, app-shaped problem (booking system with inventory, dashboards), or industry we don't serve well (large enterprise, government, regulated medical). Reply with a polite decline + a recommendation if we know one.</p>
+
+<h3>D. Spam / low-signal</h3>
+<p>SEO outreach, link-building pitches, "we'll boost your rankings" emails, AI-generated cold outbound. Mark as spam in inbox; no reply.</p>
+
+<h2>Steps</h2>
+<ul class="sop-checklist">
+  <li>Open the inbound. Read it once fully before classifying.</li>
+  <li>Check the URL the lead shares (if any) for: existing site stack, current PageSpeed score, location, business size.</li>
+  <li>Open <a href="https://www.google.com/maps">Google Maps</a> for their address. Verify the business is real and the GBP is set up.</li>
+  <li>Decide A/B/C/D from the tree above.</li>
+  <li>Send the matching reply (templates below). Include their name and at least one specific reference to their email so it doesn't read as canned.</li>
+  <li>Log in CRM: name, email, channel, decision, date.</li>
+  <li>If A: schedule the discovery call. If B: set the 90-day follow-up reminder. If C: send the referral if applicable.</li>
+</ul>
+
+<h2>Reply templates</h2>
+
+<div class="sop-template">
+  <div class="sop-template-label">Template A &middot; schedule discovery call</div>
+<pre>Hi {first_name},
+
+Thanks for reaching out, {specific_reference_to_their_email}.
+
+Sounds like a good fit for what we do. Want to grab 20 minutes to talk
+through what you're looking for and what we'd build? No pitch deck, no
+pressure. The first call is just us asking what you've got and what you
+want.
+
+Pick a slot here: {calendar_link}
+
+Or reply with a few times that work and I'll confirm.
+
+— Jonathan
+Pikes Peak Web Designs
+{phone}</pre>
+</div>
+
+<div class="sop-template">
+  <div class="sop-template-label">Template B &middot; not yet ready</div>
+<pre>Hi {first_name},
+
+Appreciate you reaching out. Sounds like a good potential fit; just not
+the right moment to start a build.
+
+I'll bookmark this and circle back in {timeframe}. If you want to move
+faster, our /what-we-build/ page has the full deliverable laid out:
+https://pikespeakwebdesigns.com/what-we-build/
+
+In the meantime, no pressure. Reach out any time you want to talk.
+
+— Jonathan</pre>
+</div>
+
+<div class="sop-template">
+  <div class="sop-template-label">Template C &middot; out of scope, refer out</div>
+<pre>Hi {first_name},
+
+Thanks for the note. Honest answer: this isn't our specialty. We focus on
+small US/Canadian service businesses on flat-rate marketing sites; what
+you're describing is {their_actual_need}, which is a different shape of
+build.
+
+{recommended_specialist} does this well; their site is {url}. I have no
+financial relationship with them, just sending you toward someone who
+can do right by you.
+
+Best of luck with the project.
+
+— Jonathan</pre>
+</div>
+
+<h2>Common issues</h2>
+
+<div class="sop-callout">
+  <strong>The lead is vague ("just curious about pricing")</strong>
+  Don't auto-decline. Reply with a one-liner asking what they currently have for a website. Often the follow-up reveals strong fit.
+</div>
+
+<div class="sop-callout">
+  <strong>The lead is a referral from an existing client</strong>
+  Always reply within 1 hour during business hours, even if it's just "got it, replying in detail tonight." Referrals close 3x; speed matters.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>The lead pushes for an immediate quote without a call</strong>
+  Polite firm: "happy to quote, but the 20-min call lets us scope it correctly. The form alone never gives us enough to commit a price." Don't quote sight-unseen.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Cold outbound from an "agency" offering to buy our domain</strong>
+  Spam. Ignore.
+</div>
+
+<h2>Exit criteria</h2>
+<p>Lead is logged + replied to + classified within 4 business hours. If A, the discovery call is on the calendar. We move to <a href="/sop/discovery-call/">phase 02</a> when the call happens.</p>

@@ -1,0 +1,141 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/tools/
+title: Tools & access
+sopGoal: "The full stack we use, where credentials live, who has access. One source of truth so a team member can find what they need without guessing."
+---
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Don't paste actual credentials on this page.</strong>
+  This page documents <em>where</em> credentials live, not the credentials themselves. Real values go in 1Password / Bitwarden / encrypted Drive. If someone is reading this without our password manager access, they shouldn't have credentials.
+</div>
+
+<h2>Build + dev</h2>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.95rem">
+  <thead><tr style="border-bottom:1px solid var(--line)">
+    <th style="text-align:left;padding:0.5rem 0">Tool</th>
+    <th style="text-align:left;padding:0.5rem 0">Purpose</th>
+    <th style="text-align:left;padding:0.5rem 0">Account</th>
+  </tr></thead>
+  <tbody>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>GitHub</strong></td><td style="padding:0.5rem 0">Source control, every client repo is private under <code>jonajinga</code></td><td style="padding:0.5rem 0">Personal SSH key. 2FA on.</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Eleventy v3</strong></td><td style="padding:0.5rem 0">Static site generator</td><td style="padding:0.5rem 0">npm dev dep per repo</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Node.js</strong></td><td style="padding:0.5rem 0">Build runtime</td><td style="padding:0.5rem 0">v20 LTS pinned via <code>.nvmrc</code></td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>VS Code</strong></td><td style="padding:0.5rem 0">Editor</td><td style="padding:0.5rem 0">Personal license</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Claude Code</strong></td><td style="padding:0.5rem 0">AI pair-programming inside VS Code</td><td style="padding:0.5rem 0">Personal account</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Lighthouse CLI</strong></td><td style="padding:0.5rem 0">Performance + a11y audits</td><td style="padding:0.5rem 0">npx, no install</td></tr>
+    <tr><td style="padding:0.5rem 0"><strong>Pagefind</strong></td><td style="padding:0.5rem 0">Static site search index</td><td style="padding:0.5rem 0">npm dev dep, runs in <code>eleventy.after</code></td></tr>
+  </tbody>
+</table>
+
+<h2>Hosting + DNS</h2>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.95rem">
+  <thead><tr style="border-bottom:1px solid var(--line)">
+    <th style="text-align:left;padding:0.5rem 0">Tool</th>
+    <th style="text-align:left;padding:0.5rem 0">Purpose</th>
+    <th style="text-align:left;padding:0.5rem 0">Account</th>
+  </tr></thead>
+  <tbody>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Cloudflare Pages</strong></td><td style="padding:0.5rem 0">Static hosting + edge CDN + SSL</td><td style="padding:0.5rem 0">Single account; one project per client</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Cloudflare DNS</strong></td><td style="padding:0.5rem 0">DNS for clients who hand over zone management</td><td style="padding:0.5rem 0">Same account as Pages</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Cloudflare Web Analytics</strong></td><td style="padding:0.5rem 0">Server-side RUM + Core Web Vitals</td><td style="padding:0.5rem 0">Same account</td></tr>
+    <tr><td style="padding:0.5rem 0"><strong>UptimeRobot</strong></td><td style="padding:0.5rem 0">External 1-min uptime checks + SMS alerts</td><td style="padding:0.5rem 0">Single account, monitor per client domain</td></tr>
+  </tbody>
+</table>
+
+<h2>Forms + email</h2>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.95rem">
+  <thead><tr style="border-bottom:1px solid var(--line)">
+    <th style="text-align:left;padding:0.5rem 0">Tool</th>
+    <th style="text-align:left;padding:0.5rem 0">Purpose</th>
+    <th style="text-align:left;padding:0.5rem 0">Account</th>
+  </tr></thead>
+  <tbody>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Web3Forms</strong></td><td style="padding:0.5rem 0">Form backend (every client form)</td><td style="padding:0.5rem 0">One access key per client domain</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Bunny Fonts</strong></td><td style="padding:0.5rem 0">Privacy-respecting font CDN</td><td style="padding:0.5rem 0">Public CDN, no account</td></tr>
+    <tr><td style="padding:0.5rem 0"><strong>Google Workspace</strong></td><td style="padding:0.5rem 0">Email for clients who want it</td><td style="padding:0.5rem 0">Client owns the workspace; we configure DNS</td></tr>
+  </tbody>
+</table>
+
+<h2>Business + admin</h2>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.95rem">
+  <thead><tr style="border-bottom:1px solid var(--line)">
+    <th style="text-align:left;padding:0.5rem 0">Tool</th>
+    <th style="text-align:left;padding:0.5rem 0">Purpose</th>
+    <th style="text-align:left;padding:0.5rem 0">Account</th>
+  </tr></thead>
+  <tbody>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Stripe</strong></td><td style="padding:0.5rem 0">Recurring billing (card-on-file)</td><td style="padding:0.5rem 0">Single business account</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Quickbooks</strong></td><td style="padding:0.5rem 0">Bookkeeping</td><td style="padding:0.5rem 0">Single business account</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Google Drive</strong></td><td style="padding:0.5rem 0">Client folders, asset storage, agreement archive</td><td style="padding:0.5rem 0">Workspace account; one folder per client</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Google Calendar</strong></td><td style="padding:0.5rem 0">Discovery calls, kickoffs, launch windows</td><td style="padding:0.5rem 0">Workspace account</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Cal.com</strong></td><td style="padding:0.5rem 0">Public booking link for discovery calls</td><td style="padding:0.5rem 0">Single account; embeds in /contact/</td></tr>
+    <tr><td style="padding:0.5rem 0"><strong>1Password (or Bitwarden)</strong></td><td style="padding:0.5rem 0">Credential vault</td><td style="padding:0.5rem 0">Personal vault; shared client section</td></tr>
+  </tbody>
+</table>
+
+<h2>Audit + monitoring</h2>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.95rem">
+  <thead><tr style="border-bottom:1px solid var(--line)">
+    <th style="text-align:left;padding:0.5rem 0">Tool</th>
+    <th style="text-align:left;padding:0.5rem 0">Purpose</th>
+    <th style="text-align:left;padding:0.5rem 0">Cadence</th>
+  </tr></thead>
+  <tbody>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Lighthouse</strong></td><td style="padding:0.5rem 0">Perf / a11y / BP / SEO scoring</td><td style="padding:0.5rem 0">Pre-launch, post-launch, monthly</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>WAVE (WebAIM)</strong></td><td style="padding:0.5rem 0">Visual a11y audit</td><td style="padding:0.5rem 0">Pre-launch, every release</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>axe DevTools</strong></td><td style="padding:0.5rem 0">Detailed a11y audit</td><td style="padding:0.5rem 0">Pre-launch, every release</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>TPGi Color Contrast Analyser</strong></td><td style="padding:0.5rem 0">Contrast verification</td><td style="padding:0.5rem 0">Per build</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>VoiceOver / NVDA</strong></td><td style="padding:0.5rem 0">Screen reader testing</td><td style="padding:0.5rem 0">Pre-launch</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Google Search Console</strong></td><td style="padding:0.5rem 0">Indexing, crawl errors, CWV</td><td style="padding:0.5rem 0">Weekly check post-launch, monthly thereafter</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>Bing Webmaster Tools</strong></td><td style="padding:0.5rem 0">Bing indexing</td><td style="padding:0.5rem 0">Submit sitemap at launch</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0"><strong>securityheaders.com</strong></td><td style="padding:0.5rem 0">Security header grade</td><td style="padding:0.5rem 0">Pre-launch + monthly</td></tr>
+    <tr><td style="padding:0.5rem 0"><strong>Google Rich Results Test</strong></td><td style="padding:0.5rem 0">JSON-LD schema validation</td><td style="padding:0.5rem 0">Pre-launch</td></tr>
+  </tbody>
+</table>
+
+<h2>Per-client provisioning checklist</h2>
+
+<p>Every new client touches these accounts. Checklist for the lead at kickoff:</p>
+
+<ul class="sop-checklist">
+  <li>GitHub repo created (private, named <code>pikes-peak-{client-slug}</code>)</li>
+  <li>Cloudflare Pages project created + connected to repo</li>
+  <li>Web3Forms access key generated + saved in <code>_data/site.js</code></li>
+  <li>Drive folder created with sub-folders (assets, agreements, invoices, communications)</li>
+  <li>UptimeRobot monitor added (waits until launch to enable)</li>
+  <li>Domain added to WHOIS-watch list</li>
+  <li>Stripe customer created + card-on-file (or ACH preference noted)</li>
+  <li>Quickbooks customer created</li>
+  <li>Active-clients spreadsheet row added (start date, plan, billing day, contact)</li>
+</ul>
+
+<h2>Per-client deprovisioning checklist (offboarding)</h2>
+
+<ul class="sop-checklist">
+  <li>GitHub repo archived (don't delete; private archive)</li>
+  <li>Cloudflare Pages project deleted (after DNS pointed away)</li>
+  <li>Web3Forms account ownership transferred to client</li>
+  <li>Drive folder moved to <code>archive/{client}</code></li>
+  <li>UptimeRobot monitor stopped</li>
+  <li>Domain removed from WHOIS-watch list</li>
+  <li>Stripe subscription canceled (after final invoice paid)</li>
+  <li>Quickbooks customer marked inactive</li>
+  <li>Removed from active-clients spreadsheet; added to former-clients with end date</li>
+</ul>
+
+<h2>Rotating credentials</h2>
+<p>Twice a year (Jan + Jul), audit:</p>
+<ul>
+  <li>Stripe API keys</li>
+  <li>Web3Forms access keys (rotate per client; update in their <code>_data/site.js</code> + redeploy)</li>
+  <li>GitHub personal access tokens</li>
+  <li>Cloudflare API tokens</li>
+  <li>SSH keys (rotate annually)</li>
+</ul>
+<p>If a credential is suspected compromised: rotate same day. Don't wait for the schedule.</p>

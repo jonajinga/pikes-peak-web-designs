@@ -1,0 +1,204 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/emergencies/
+title: Emergencies
+sopPhase: "10"
+sopPhaseTitle: "Emergencies"
+sopGoal: "Triage true emergencies in under one hour during business hours, four hours after-hours and weekends. Communicate clearly. Resolve. Document."
+sopPrev:
+  url: /sop/maintenance/
+  label: "Maintenance"
+sopNext:
+  url: /sop/billing/
+  label: "Billing & invoicing"
+---
+
+<div class="sop-callout sop-callout--warn">
+  <strong>If something is on fire right now</strong>
+  Call/text the on-call number. Don't fill out a form, don't email. Speed beats process.
+</div>
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> Phone call, text, or emergency form submission</div>
+  <div><strong>Owner</strong> On-call rotation. Currently primary owner 24/7.</div>
+  <div><strong>SLA</strong> &lt; 1 hr business hours / &lt; 4 hr after-hours, weekends, holidays</div>
+  <div><strong>Output</strong> Issue resolved + post-incident note in CRM</div>
+</div>
+
+<h2>What counts as an emergency</h2>
+
+<h3>Hard yes (drop everything)</h3>
+<ul>
+  <li>Site is fully down or returning 5xx errors to visitors.</li>
+  <li>Wrong contact info live: customers calling the wrong phone, going to the wrong address.</li>
+  <li>Active promo with the wrong price.</li>
+  <li>Suspicious form submissions (looks like an attack).</li>
+  <li>Defaced page or content that shouldn't be there.</li>
+  <li>Customer reporting a data leak or security concern.</li>
+  <li>Pre-arranged seasonal launch (e.g. "Black Friday banner goes live tonight at midnight") didn't fire.</li>
+</ul>
+
+<h3>Hard no (route to maintenance)</h3>
+<ul>
+  <li>"I want to add a new service page."</li>
+  <li>"Can we change the photo on the About page?"</li>
+  <li>"My friend said the site looks dated."</li>
+  <li>"I forgot my email password."</li>
+  <li>Anything that doesn't have a customer-visible defect.</li>
+</ul>
+
+<h3>Edge cases (judgment call)</h3>
+<ul>
+  <li>"My competitor copied our copy" &rarr; not an emergency from our side; route to maintenance + advice on attribution.</li>
+  <li>"Google ranking dropped" &rarr; investigate within a day; not a same-hour emergency.</li>
+  <li>"Form is slow" &rarr; depends. If slow = broken (timeout, error), emergency. If slow = annoying, maintenance.</li>
+  <li>"GBP got suspended" &rarr; not our infrastructure but we'll help; treat as a high-priority routine task.</li>
+</ul>
+
+<h2>Response sequence</h2>
+
+<h3>Minute 0-5: acknowledge</h3>
+<ul class="sop-checklist">
+  <li>Pick up the phone or reply to the text/email within 5 minutes if at all possible.</li>
+  <li>Get the basics: what is the customer-visible symptom, when did it start, what changed recently if anything.</li>
+  <li>Set expectation: "I'm looking at it now. I'll have an update within 15 minutes."</li>
+</ul>
+
+<h3>Minute 5-15: diagnose</h3>
+<ul class="sop-checklist">
+  <li>Open the site in a fresh browser. Reproduce the issue.</li>
+  <li>Check Cloudflare dashboard: is the site up, is there a Cloudflare incident, is the DNS resolving correctly?</li>
+  <li>Check UptimeRobot: was there a flap? When?</li>
+  <li>Check the most recent deploy: did we ship something that could have caused this?</li>
+  <li>Check the Cloudflare status feed for upstream incidents.</li>
+  <li>If it's content (wrong info live): identify the file + the change needed.</li>
+  <li>If it's infrastructure (down, errors): identify the layer (DNS, edge, origin, app).</li>
+</ul>
+
+<h3>Minute 15-30: mitigate</h3>
+<ul class="sop-checklist">
+  <li>If a recent deploy broke it: roll back via Cloudflare Pages dashboard (one click). Live within 60 sec.</li>
+  <li>If wrong content is live: fix the file, push, deploy. Same flow as routine update but on the clock.</li>
+  <li>If DNS issue: check registrar records; revert to known-good if recently changed.</li>
+  <li>If Cloudflare upstream incident: tell the client honestly + post a status note. Wait it out.</li>
+  <li>If security concern: pull suspicious content offline, audit access logs, rotate any credentials that may be exposed.</li>
+</ul>
+
+<h3>Minute 30+: communicate</h3>
+<ul class="sop-checklist">
+  <li>Update the client every 15-30 minutes during the incident even if status hasn't changed. Silence escalates anxiety.</li>
+  <li>When resolved, send a clear "all clear" with what happened, what's fixed, when.</li>
+  <li>Don't promise root cause analysis on the spot. Promise to send a writeup within 24 hours.</li>
+</ul>
+
+<h3>Within 24 hours: post-incident</h3>
+<ul class="sop-checklist">
+  <li>Write the incident notes in CRM: timeline, what we changed, what fixed it, how long it took.</li>
+  <li>If it was caused by our deploy, write a "what we'll do differently" note. Add to the QA checklist if applicable.</li>
+  <li>Send the client a 1-paragraph postmortem. No corporate-speak. Honest.</li>
+</ul>
+
+<h2>Templates</h2>
+
+<div class="sop-template">
+  <div class="sop-template-label">Initial acknowledgment (within 5 min)</div>
+<pre>Hi {first_name},
+
+Got the alert. Looking at it now. I'll have an update for you within
+15 minutes.
+
+— Jonathan
+{phone}</pre>
+</div>
+
+<div class="sop-template">
+  <div class="sop-template-label">Status during incident</div>
+<pre>Update at {time}: {what's happening}. {What I'm trying or waiting on}.
+Next update at {time + 15-30 min}.</pre>
+</div>
+
+<div class="sop-template">
+  <div class="sop-template-label">All clear</div>
+<pre>Hi {first_name},
+
+Resolved as of {time}.
+
+WHAT HAPPENED: {one paragraph, plain language}
+HOW IT'S FIXED: {one paragraph}
+DURATION: site was {affected level} from {start} to {end} ({duration}).
+
+Full writeup tomorrow. If anything else looks off in the meantime,
+call/text and I'll jump on it.
+
+— Jonathan</pre>
+</div>
+
+<div class="sop-template">
+  <div class="sop-template-label">Post-incident writeup (24 hours later)</div>
+<pre>Hi {first_name},
+
+Quick post-mortem for yesterday's incident. Honest version, not
+corporate.
+
+WHAT HAPPENED:
+{plain narrative}
+
+ROOT CAUSE:
+{specific, technical or operational}
+
+WHAT WE FIXED IMMEDIATELY:
+{bullets}
+
+WHAT WE'LL DO DIFFERENTLY:
+{one or two concrete process changes, e.g. "Added X to the pre-launch
+checklist", "Started monitoring Y", "Will preview Z deploys to staging
+first")
+
+If you want to walk through any of this on a call, my time's free.
+
+— Jonathan</pre>
+</div>
+
+<h2>Common emergency patterns</h2>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Cloudflare regional incident</strong>
+  Affects subset of visitors. Check status.cloudflare.com. Almost always resolves within 30-60 min. Notify client; wait it out. Don't try to "fix" what isn't ours.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Recent deploy broke a page</strong>
+  Roll back first, diagnose second. Cloudflare Pages dashboard &rarr; previous deploy &rarr; "Rollback to this deployment". Live in 60 sec. THEN figure out what broke and ship a fix.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Client's domain expired</strong>
+  Site goes dark within 24-48 hr of expiration. Most TLDs have a 30-day redemption window where the registrar can reactivate (often with a fee, ~$80). Help the client renew + redeem. Add stronger reminder to WHOIS-watch list.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Wrong info live (e.g. wrong phone)</strong>
+  Fix immediately, even if it's small. The wrong-phone-number-live problem is one we should never have, but when it happens fix it in &lt; 5 minutes from notification.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Form submissions silently stopped</strong>
+  Check Web3Forms dashboard for the access key + recent submissions. Check the recipient's spam folder. Test from incognito. If silent for &gt; 24 hr, treat as P1 emergency: real customers may be filling forms that nobody sees.
+</div>
+
+<div class="sop-callout">
+  <strong>Client thinks something is broken but it's working</strong>
+  Sometimes "the site is broken" means "I don't like this thing" or "I forgot how to do X". Stay patient. Ask: "Walk me through what you're seeing." Often the fix is education, not code.
+</div>
+
+<h2>What NOT to do</h2>
+<ul>
+  <li>Don't deploy a fix without verifying it works locally first. Two outages in a row are worse than one.</li>
+  <li>Don't promise SLAs we can't meet. "Fixed in the next 5 minutes" sets up disappointment if it takes 20.</li>
+  <li>Don't go silent during the incident. Update every 15-30 min even if status hasn't changed.</li>
+  <li>Don't blame Cloudflare / the registrar / "something on Google's end" without verifying. Often the issue is closer to home.</li>
+  <li>Don't treat one client's outage as a chance to upsell or scope-shift. Solve, write up, move on.</li>
+</ul>
+
+<h2>Exit criteria</h2>
+<p>Issue resolved, client confirmed, post-incident writeup sent. Updates flow back to phase 09 maintenance steady-state.</p>

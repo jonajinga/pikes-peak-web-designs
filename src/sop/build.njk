@@ -1,0 +1,142 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/build/
+title: Build
+sopPhase: "06"
+sopPhaseTitle: "Build"
+sopGoal: "Code the approved design into a fast, accessible, SEO-ready site. Maintain Lighthouse 95+ on every page during the build, not as a post-launch fix."
+sopPrev:
+  url: /sop/design/
+  label: "Design"
+sopNext:
+  url: /sop/pre-launch-qa/
+  label: "Pre-launch QA"
+---
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> Design approved</div>
+  <div><strong>Owner</strong> Lead developer</div>
+  <div><strong>Time</strong> 7-10 business days for a typical 6-10 page site</div>
+  <div><strong>Output</strong> Functioning site at preview URL, ready for QA</div>
+</div>
+
+<h2>Stack reminder</h2>
+<p>Every site uses the same foundation. See <a href="/technical-approach/">/technical-approach/</a> for the full reasoning. Quick reference:</p>
+<ul>
+  <li><strong>Eleventy v3 ESM</strong> + Nunjucks + Markdown for blog</li>
+  <li><strong>Vanilla CSS</strong> with custom properties + <code>clamp()</code>, partials concatenated at build, no <code>@import</code> in production</li>
+  <li><strong>Vanilla JavaScript</strong>, defer-loaded, under 10 KB per page</li>
+  <li><strong>@11ty/eleventy-img</strong> for AVIF/WebP/JPEG responsive images</li>
+  <li><strong>Bunny Fonts</strong> with preconnect + preload of the woff2 files we actually use</li>
+  <li><strong>Pagefind</strong> via <code>eleventy.after</code> hook for site search</li>
+  <li><strong>Web3Forms</strong> for forms</li>
+  <li><strong>Cloudflare Pages</strong> hosting + <code>_headers</code> for cache + security</li>
+</ul>
+
+<h2>Build order</h2>
+<p>Don't code linearly through pages. Build the foundation, then fill in.</p>
+
+<ol>
+  <li><strong>Tokens + base.</strong> Color palette, type scale, container widths, focus rings, transitions. Set in <code>tokens.css</code>.</li>
+  <li><strong>Layout primitives.</strong> Header (sticky, scrolled state), footer, nav (desktop + mobile slide-in), back-to-top, skip-link.</li>
+  <li><strong>Theme toggle.</strong> Light / system / dark with no-flash inline script in <code>&lt;head&gt;</code>.</li>
+  <li><strong>Critical CSS partial.</strong> Inline tokens + base + nav off-screen state to prevent FOUC.</li>
+  <li><strong>Homepage.</strong> Hero, trust bar, services preview, testimonials block, CTA section.</li>
+  <li><strong>Interior pages</strong> in priority order: About, main Services, individual service pages, Service Areas, Contact.</li>
+  <li><strong>Operational pages.</strong> Privacy Policy, Terms of Use, Accessibility Statement, Sitemap (HTML), Style Guide, Thank-You.</li>
+  <li><strong>Forms.</strong> Wire to Web3Forms with the client's access key. Test honeypot. Test error state.</li>
+  <li><strong>Search.</strong> Verify Pagefind indexes correctly via the <code>eleventy.after</code> hook.</li>
+  <li><strong>SEO files.</strong> sitemap.njk, robots.txt, security.txt, branded 404, OG/Twitter images, favicons.</li>
+</ol>
+
+<h2>Coding standards</h2>
+
+<h3>HTML</h3>
+<ul>
+  <li>Semantic landmarks: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+  <li>One H1 per page. Headings descend without skipping.</li>
+  <li>Every interactive element is keyboard reachable + has visible focus.</li>
+  <li>Decorative SVGs: <code>aria-hidden="true"</code> + <code>focusable="false"</code>.</li>
+  <li>Meaningful images: real <code>alt</code>. Decorative images: <code>alt=""</code>.</li>
+  <li>Forms: <code>&lt;label for=...&gt;</code> bound to inputs. <code>autocomplete</code> attributes set. Errors via <code>role="alert"</code>.</li>
+</ul>
+
+<h3>CSS</h3>
+<ul>
+  <li>Mobile-first <code>min-width</code> queries on new components. Existing <code>max-width</code> queries are kept where flipping carries risk.</li>
+  <li>Canonical breakpoints only: 360, 480, 600, 768, 820, 1024, 1180, 1280 px. No ad-hoc values.</li>
+  <li>Touch targets: 44x44 px minimum. Check via universal rule + opt-outs.</li>
+  <li>WCAG AA contrast: 4.5:1 for normal text, 3:1 for large text + UI components. Verify in BOTH themes.</li>
+  <li>No <code>@import</code> in production CSS. Concatenate at build time.</li>
+  <li>Custom properties for color + spacing + radius. No hardcoded hex outside <code>tokens.css</code>.</li>
+</ul>
+
+<h3>JavaScript</h3>
+<ul>
+  <li>All scripts <code>defer</code> or <code>type="module"</code>.</li>
+  <li>Inline <code>onclick</code> fallback alongside event-listener binding for hamburger toggle, search open, and theme toggle. The HTML minifier can break deferred listener binding.</li>
+  <li>No analytics or tracking pixels by default.</li>
+  <li>Site works fully without JS. Test with JS disabled before launch.</li>
+</ul>
+
+<h3>Performance</h3>
+<ul>
+  <li>Run Lighthouse mobile after every significant change. Target 95+ on every page.</li>
+  <li>Hero image gets <code>fetchpriority="high"</code> and is preloaded.</li>
+  <li>Below-the-fold images get <code>loading="lazy"</code> + <code>decoding="async"</code>.</li>
+  <li>Every <code>&lt;img&gt;</code> has explicit <code>width</code> and <code>height</code> to prevent CLS.</li>
+  <li>Bundle budget: HTML &lt; 25 KB gzip, CSS &lt; 30 KB gzip, JS &lt; 10 KB gzip per page.</li>
+</ul>
+
+<h2>Internal review checkpoints</h2>
+<p>Don't show the client every interim build. Set 2-3 internal checkpoints.</p>
+
+<ul class="sop-checklist">
+  <li><strong>Checkpoint 1 (~day 3):</strong> homepage + base structure. Internal review for performance + accessibility before sending to client.</li>
+  <li><strong>Checkpoint 2 (~day 6):</strong> all content pages built. Internal review for cross-page consistency, navigation, mobile.</li>
+  <li><strong>Checkpoint 3 (~day 9):</strong> operational pages + forms + search + SEO files done. Ready for the pre-launch QA phase.</li>
+</ul>
+
+<h2>Mid-build communication</h2>
+<p>Don't go dark. Send a one-paragraph weekly update.</p>
+
+<div class="sop-template">
+  <div class="sop-template-label">Mid-build status update (weekly)</div>
+<pre>Hi {first_name},
+
+Quick status:
+
+PROGRESS: {what's done since last update}
+NEXT: {what's coming this week}
+ANY QUESTIONS FOR YOU: {none / 1-2 items}
+
+Preview URL is updated as I push: {url}
+On track for {launch_date}.
+
+— Jonathan</pre>
+</div>
+
+<h2>Common build issues</h2>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Client wants to add 3 new pages mid-build</strong>
+  If they're within the 10-page allocation: absorb. If over: quote per-page ($150 ea.) before adding. Document scope changes in CRM.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Lighthouse drops below 95 on a specific page</strong>
+  Don't ignore. Fix before moving on. Common culprits: unoptimized hero image, web font preload missing, render-blocking script, third-party embed (YouTube, Calendly).
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Form submissions not arriving</strong>
+  Check Web3Forms access key. Check that <code>action</code> URL is correct. Check honeypot field is hidden but present. Test from a fresh browser without ad blockers.
+</div>
+
+<div class="sop-callout">
+  <strong>Client wants a feature we haven't built before</strong>
+  Investigate cost: how long to build, what risks, what dependencies. Bring back a quote with options. Don't say yes on the spot to scope creep.
+</div>
+
+<h2>Exit criteria</h2>
+<p>All pages built and rendering at the preview URL. Forms working. Search indexed. Lighthouse 95+ on every page. Mobile + tablet + desktop verified. Ready for the pre-launch full QA. Move to <a href="/sop/pre-launch-qa/">phase 07</a>.</p>

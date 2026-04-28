@@ -1,0 +1,245 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/checklists/
+title: Checklists
+sopGoal: "Print-friendly consolidated checklists. One source of truth for the work that has to happen at each milestone, regardless of which phase page someone is reading."
+---
+
+<h2>Pre-build (kickoff &rarr; ready to design)</h2>
+
+<ul class="sop-checklist">
+  <li>Signed agreement on file in Drive</li>
+  <li>Kickoff call held + notes in CRM</li>
+  <li>Onboarding form complete OR walked through on call</li>
+  <li>Logo received (vector preferred)</li>
+  <li>Brand colors received or proposed</li>
+  <li>10-30 photos of work / team / location received</li>
+  <li>Existing copy + service descriptions received</li>
+  <li>Customer testimonials received (or noted as "none yet")</li>
+  <li>License + insurance + credentials documented</li>
+  <li>Service-area list confirmed</li>
+  <li>Current website URL noted (if any) for reference</li>
+  <li>Domain registrar identified; client knows their login</li>
+  <li>Google Business Profile URL captured</li>
+  <li>GitHub repo created (private)</li>
+  <li>Drive folder created with sub-folders</li>
+  <li>Cloudflare Pages project created + connected to repo</li>
+  <li>Web3Forms access keys provisioned + saved in <code>_data/site.js</code></li>
+  <li>Domain added to WHOIS-watch list</li>
+  <li>Client added to active-clients spreadsheet</li>
+  <li>Launch date agreed + on calendar</li>
+</ul>
+
+<h2>Pre-launch QA (build complete &rarr; ready to launch)</h2>
+
+<h3>Content</h3>
+<ul class="sop-checklist">
+  <li>Every page reads top-to-bottom without typos</li>
+  <li>Phone numbers correct everywhere</li>
+  <li>Email addresses correct + clickable</li>
+  <li>Address consistent (header, footer, contact, schema, GBP)</li>
+  <li>Hours match GBP and actual operations</li>
+  <li>License numbers + certifications + insurance verified</li>
+  <li>Testimonials attributed correctly</li>
+  <li>Photo alt text describes images in context</li>
+  <li>Internal links work (no 404s)</li>
+  <li>External links open in new tab + <code>rel="noopener"</code></li>
+  <li>Footer copyright year is dynamic</li>
+</ul>
+
+<h3>Performance</h3>
+<ul class="sop-checklist">
+  <li>Lighthouse mobile 95+ on every page</li>
+  <li>Lighthouse desktop 95+ on every page</li>
+  <li>LCP &lt; 2.5s mobile, &lt; 1.5s desktop</li>
+  <li>CLS &lt; 0.1</li>
+  <li>INP &lt; 200ms</li>
+  <li>Hero image preloaded + <code>fetchpriority="high"</code></li>
+  <li>No render-blocking resources</li>
+  <li>Critical CSS inlined</li>
+  <li>Fonts preloaded (woff2 files for weights actually used)</li>
+  <li>Bundle sizes within budget</li>
+</ul>
+
+<h3>Accessibility</h3>
+<ul class="sop-checklist">
+  <li>WAVE: zero errors, zero contrast errors</li>
+  <li>axe DevTools: zero criticals, zero serious</li>
+  <li>Lighthouse accessibility 100 on every page</li>
+  <li>Keyboard-only navigation works top-to-bottom</li>
+  <li>Visible focus rings everywhere</li>
+  <li>Touch targets 44x44 px minimum</li>
+  <li>Screen reader pass: VoiceOver or NVDA</li>
+  <li>Browser zoom to 200%: no horizontal scroll, no clipping</li>
+  <li>Reduced-motion: animations disabled when OS setting on</li>
+  <li>Color is never sole carrier of meaning</li>
+  <li>Form errors announce via <code>role="alert"</code></li>
+</ul>
+
+<h3>Responsive</h3>
+<ul class="sop-checklist">
+  <li>Test viewports: 360, 414, 568, 768, 820, 1024, 1180, 1280, 1440 px</li>
+  <li>No horizontal scroll at any viewport</li>
+  <li>Hero CTAs above fold at 360x800</li>
+  <li>Mobile nav opens, scrolls, closes cleanly without flash</li>
+  <li>Forms render with adequate spacing on iPad portrait</li>
+  <li>Footer collapses through intermediate breakpoints</li>
+  <li>No sticky-header double-stack on iOS Safari</li>
+  <li>Phone landscape: hero CTAs still above fold</li>
+  <li>Test on real device (iPhone + iPad if possible)</li>
+</ul>
+
+<h3>SEO + schema</h3>
+<ul class="sop-checklist">
+  <li>Unique <code>&lt;title&gt;</code> on every page</li>
+  <li>Unique meta description on every page</li>
+  <li>Canonical URL on every page</li>
+  <li>Open Graph + Twitter Card on every page</li>
+  <li>OG image renders on link preview</li>
+  <li>JSON-LD validates against Google Rich Results Test</li>
+  <li>sitemap.xml exists, includes every public page</li>
+  <li>robots.txt allows crawling, references sitemap, disallows /sop/</li>
+  <li>404 page renders with helpful navigation</li>
+  <li>Every page reachable in 2 clicks from home</li>
+</ul>
+
+<h3>Security</h3>
+<ul class="sop-checklist">
+  <li>HTTPS without browser warning</li>
+  <li>HSTS header present (verify securityheaders.com)</li>
+  <li>CSP tightly scoped</li>
+  <li>X-Frame-Options DENY</li>
+  <li>X-Content-Type-Options nosniff</li>
+  <li>Permissions-Policy denying camera/mic/geo</li>
+  <li>security.txt at /.well-known/security.txt</li>
+  <li>No mixed-content warnings</li>
+  <li>No exposed API keys in committed code</li>
+</ul>
+
+<h3>Forms</h3>
+<ul class="sop-checklist">
+  <li>Every form submits successfully end-to-end</li>
+  <li>Honeypot field hidden but present</li>
+  <li>Validation works (required fields, email format)</li>
+  <li>Error message announces via <code>role="alert"</code></li>
+  <li>Thank-you page renders after success</li>
+  <li>Auto-reply email goes to visitor</li>
+</ul>
+
+<h3>Cross-browser</h3>
+<ul class="sop-checklist">
+  <li>Chrome desktop (latest)</li>
+  <li>Safari desktop (latest macOS)</li>
+  <li>Safari iOS (real device or simulator)</li>
+  <li>Firefox desktop (latest)</li>
+  <li>Edge desktop (latest)</li>
+  <li>Forced-colors mode: site renders legibly</li>
+</ul>
+
+<h2>Launch (the day of)</h2>
+
+<ul class="sop-checklist">
+  <li>DNS TTL dropped to 5 min (24-48 hrs prior)</li>
+  <li>Pre-launch Lighthouse scores saved</li>
+  <li>Cloudflare Pages custom domain added</li>
+  <li>SSL cert provisioned</li>
+  <li>DNS records updated at registrar (A / CNAME)</li>
+  <li>MX, TXT (SPF/DKIM/DMARC) preserved</li>
+  <li><code>dig +short {domain}</code> returns Cloudflare IPs</li>
+  <li>HTTPS works on live URL</li>
+  <li>HTTP &rarr; HTTPS redirect works</li>
+  <li>www.domain and apex both resolve</li>
+  <li>Security headers verified via curl</li>
+  <li>Live nav click-through</li>
+  <li>Live form submission lands in client inbox</li>
+  <li>Live preview on real phone via cellular</li>
+  <li>Live test in 2-3 different browsers</li>
+  <li>Search modal works</li>
+  <li>Theme toggle works + persists</li>
+  <li>sitemap.xml submitted to Google Search Console</li>
+  <li>Submitted to Bing Webmaster Tools</li>
+  <li>Cloudflare Web Analytics on for new domain</li>
+  <li>UptimeRobot monitor added (1-min interval)</li>
+  <li>Launch confirmation email sent</li>
+  <li>Owner's guide handed over</li>
+</ul>
+
+<h2>Post-launch (24 hr / 1 week)</h2>
+
+<ul class="sop-checklist">
+  <li>24-hr: Cloudflare analytics checked 2-3 times</li>
+  <li>24-hr: UptimeRobot has zero flaps</li>
+  <li>24-hr: Lighthouse on live URL matches preview within 2-3 pts</li>
+  <li>24-hr: end-of-day check-in email sent to client</li>
+  <li>Day 3: Search Console crawl errors = zero</li>
+  <li>Day 5: high-value pages submitted individually for crawling</li>
+  <li>Day 7: 1-week check-in email sent</li>
+  <li>Day 7: form submissions arriving (verified with client)</li>
+</ul>
+
+<h2>Monthly hygiene (every 30 days, per client)</h2>
+
+<ul class="sop-checklist">
+  <li>Lighthouse mobile + desktop on home + 1-2 key pages</li>
+  <li>Search Console: crawl errors, CWV warnings, indexing</li>
+  <li>Form submissions: any dry spell &gt; 10 days?</li>
+  <li>Uptime: incidents in last 30 days?</li>
+  <li>Cloudflare analytics: traffic trend</li>
+  <li>Any regression noted &rarr; fix or note for monthly check-in</li>
+</ul>
+
+<h2>Quarterly check-in (every 90 days)</h2>
+
+<ul class="sop-checklist">
+  <li>Pull last 90 days analytics + form counts + uptime + Lighthouse</li>
+  <li>Note 1-3 observations</li>
+  <li>Recommend 1-2 actions (no pressure)</li>
+  <li>Send check-in email</li>
+</ul>
+
+<h2>Annual (every 365 days)</h2>
+
+<ul class="sop-checklist">
+  <li>Domain renewal reminder at -60, -30, -7 days</li>
+  <li>Update any expired credentials (analytics, registrar contacts)</li>
+  <li>Refresh any year-stamped copy ("...since 2024" &rarr; "...since 2024")</li>
+</ul>
+
+<h2>2-year refresh (24 months from launch)</h2>
+
+<ul class="sop-checklist">
+  <li>Send refresh-kickoff email at month 23</li>
+  <li>Schedule scoping call (20 min)</li>
+  <li>Wireframe / direction round (2 directions, client picks)</li>
+  <li>Build refresh on feature branch</li>
+  <li>Internal QA + Lighthouse + accessibility</li>
+  <li>Client preview round + iterate</li>
+  <li>Launch via PR merge to main</li>
+  <li>1-week post-launch monitoring</li>
+</ul>
+
+<h2>Offboarding (when client gives notice)</h2>
+
+<ul class="sop-checklist">
+  <li>Acknowledge within 1 business hour</li>
+  <li>Confirm 30-day end date in writing</li>
+  <li>Schedule exit call within 5 days</li>
+  <li>Listen to "why" on call; don't argue</li>
+  <li>Walk through handoff checklist together</li>
+  <li>Send handoff bundle email same day</li>
+  <li>Domain: confirm unlinked from hosting on end_date</li>
+  <li>Content: export as HTML/Markdown bundle to Drive</li>
+  <li>Code (lump-sum): GitHub repo transferred</li>
+  <li>Code (monthly): static export delivered</li>
+  <li>Web3Forms: account ownership transferred</li>
+  <li>Analytics: 90-day CSV export delivered</li>
+  <li>Search Console: user access removed on end_date</li>
+  <li>Day +7 of end_date: project archived in Drive</li>
+  <li>Day +7 of end_date: GitHub repo archived</li>
+  <li>Day +7 of end_date: Cloudflare Pages project deleted</li>
+  <li>Day +7 of end_date: removed from active-clients sheet</li>
+  <li>Day +7 of end_date: stop billing</li>
+  <li>Day +7 of end_date: stop uptime monitor</li>
+  <li>Day +7 of end_date: removed from WHOIS-watch list</li>
+  <li>Day +7 of end_date: CRM updated with end date + reason</li>
+</ul>

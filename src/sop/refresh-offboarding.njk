@@ -1,0 +1,241 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/refresh-offboarding/
+title: Refresh & offboarding
+sopPhase: "12"
+sopPhaseTitle: "Refresh & offboarding"
+sopGoal: "Two endgames: the 2-year design refresh that keeps a client's site current at no extra cost, and the clean-exit playbook when a client decides to leave. Both reflect the agency's posture: keep promises, no hostage-taking."
+sopPrev:
+  url: /sop/billing/
+  label: "Billing & invoicing"
+---
+
+<h2>Part A: the 2-year design refresh</h2>
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> Two-year anniversary of the launch date</div>
+  <div><strong>Owner</strong> Lead designer / lead dev</div>
+  <div><strong>Time</strong> ~30 hrs spread over 2-3 weeks</div>
+  <div><strong>Output</strong> Refreshed visual design live, same URLs, same SEO equity</div>
+</div>
+
+<h3>Why we do it</h3>
+<p>Design ages faster than code. A site that looked great in 2026 looks tired by 2028. A tired-looking site costs leads quietly; the visitor doesn't email to say "your site looks dated," they just leave. The 2-year refresh is included in every Monthly Care Plan and is the single most expensive thing we give away.</p>
+
+<h3>What we redo</h3>
+<ul>
+  <li>Typography (display + body face)</li>
+  <li>Color palette (primary, accent, neutrals)</li>
+  <li>Photography style + treatment</li>
+  <li>Hero treatment + layout rhythm</li>
+  <li>Button style + form style</li>
+  <li>Card style + shadow language</li>
+  <li>Footer layout</li>
+  <li>Iconography</li>
+</ul>
+
+<h3>What stays</h3>
+<ul>
+  <li>URLs (every existing URL still resolves)</li>
+  <li>Content (no copy rewrites unless they request)</li>
+  <li>Page structure + navigation</li>
+  <li>SEO meta (titles, descriptions, schema)</li>
+  <li>Tone of voice (unless they explicitly want a re-voicing)</li>
+  <li>Domain, email, hosting (no migration)</li>
+</ul>
+
+<h3>Refresh process (compressed version of the original build)</h3>
+
+<ul class="sop-checklist">
+  <li><strong>Day 0:</strong> send the refresh-kickoff email. Schedule a 20-minute call to confirm scope.</li>
+  <li><strong>Days 1-3:</strong> wireframe / direction round. Show 2 design directions, not 1. Let them pick.</li>
+  <li><strong>Days 4-10:</strong> build the refresh on a feature branch (Cloudflare Pages preview URL).</li>
+  <li><strong>Days 10-12:</strong> internal QA + Lighthouse + accessibility on the preview.</li>
+  <li><strong>Days 12-14:</strong> client preview round. Iterate.</li>
+  <li><strong>Day 15ish:</strong> launch to production with a single PR merge. No DNS work; everything stays at the same domain.</li>
+  <li><strong>Day 15+:</strong> 1-week monitoring, same as a fresh launch.</li>
+</ul>
+
+<h3>Refresh-kickoff email</h3>
+
+<div class="sop-template">
+  <div class="sop-template-label">2-year refresh kickoff</div>
+<pre>Hi {first_name},
+
+Two years since launch (April {year}). Per the monthly plan, your
+2-year design refresh is up.
+
+WHAT THIS IS: a visual redesign at no additional cost. Same content,
+same URLs, same SEO. New typography, color, photo treatment, layout
+rhythm. The wiring stays; the look changes.
+
+WHAT IT ISN'T: a content rewrite or restructure. If you also want
+content edits, that's separate (also usually free).
+
+I'll show you 2 design directions next week and you pick. Whole thing
+takes about 3 weeks end to end. No work on your end besides feedback.
+
+Want to grab 20 minutes next week to confirm scope?
+
+— Jonathan</pre>
+</div>
+
+<h3>Common refresh issues</h3>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Client wants to skip the refresh</strong>
+  Fine. Note in CRM. Re-offer in 6 months. Some clients love the original; respect that.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Client wants to "redo everything"</strong>
+  The refresh covers visual. Content rewrites or structural changes are separate. Quote those in addition to the free refresh.
+</div>
+
+<div class="sop-callout">
+  <strong>Client adds new requirements during the refresh</strong>
+  Absorb if they're small (a new section, an extra page). Quote separately if substantial (new feature, new integration). Same rules as a fresh build.
+</div>
+
+<hr style="border:0;border-top:1px solid var(--line);margin:3rem 0">
+
+<h2>Part B: offboarding</h2>
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> Client gives 30-day notice (per agreement) or moves to a different vendor</div>
+  <div><strong>Owner</strong> Primary owner</div>
+  <div><strong>Time</strong> 2-5 hours of work spread across the 30-day window</div>
+  <div><strong>Output</strong> Clean handoff. Client keeps domain, content, and (on lump-sum) code. We keep our reputation.</div>
+</div>
+
+<h3>Posture</h3>
+<p>We don't hold domains, content, or accounts hostage. Period. The day a client says "I want to leave," we move into helpful-handoff mode. The relationship and our reputation are worth more than the last invoice.</p>
+
+<h3>Steps</h3>
+
+<ul class="sop-checklist">
+  <li>Acknowledge the notice within 1 business hour. No guilt, no defensiveness, no last-ditch save attempt.</li>
+  <li>Confirm the official end date (30 days from notice for monthly clients).</li>
+  <li>Schedule a 20-minute exit call within 5 business days.</li>
+  <li>On the call: ask why (genuinely). Listen. Don't argue. Sometimes there's something we should fix; sometimes it's just a fit issue.</li>
+  <li>Walk through the handoff checklist together (below).</li>
+  <li>Send the handoff email same day with the bundle attached.</li>
+</ul>
+
+<h3>The handoff bundle</h3>
+<ul>
+  <li><strong>Domain:</strong> already at their registrar in their name. We just unlink from our hosting. Provide written confirmation: "DNS pointed away from us as of {date}."</li>
+  <li><strong>Content:</strong> exported as a clean HTML/Markdown bundle. Include all media files. Zip it; send via Drive or Dropbox.</li>
+  <li><strong>Code (Lump-Sum clients):</strong> already theirs. Transfer the GitHub repo to their account or a new account they create.</li>
+  <li><strong>Code (Monthly clients):</strong> we own the code per the agreement. Provide a static export of the live site (HTML/CSS/JS) that runs on any host with no dependencies. Can re-host the export anywhere. We don't transfer the repo.</li>
+  <li><strong>Forms:</strong> the Web3Forms account is in their name (or transferable in one email). Walk them through.</li>
+  <li><strong>Email:</strong> already theirs (we never had control). Confirm.</li>
+  <li><strong>Analytics:</strong> Cloudflare Web Analytics dashboard exports last 90 days as CSV. Umami dashboard credentials transferred or revoked per their preference.</li>
+  <li><strong>Search Console:</strong> they own the verified property; we just remove our user access.</li>
+  <li><strong>Brand assets / logos / photos:</strong> all theirs. Confirmation note.</li>
+</ul>
+
+<h3>Templates</h3>
+
+<div class="sop-template">
+  <div class="sop-template-label">Initial offboarding acknowledgment</div>
+<pre>Hi {first_name},
+
+Got your note. No pressure, no guilt; if it's time, it's time.
+
+Confirming the timeline: 30 days from today, so the official end date
+is {end_date}. Until then everything continues as normal — content
+updates, monitoring, the works.
+
+I'll set up a 20-minute call so we can walk through the handoff. Pick
+a time here: {calendar_link}
+
+— Jonathan</pre>
+</div>
+
+<div class="sop-template">
+  <div class="sop-template-label">Handoff bundle email</div>
+<pre>Hi {first_name},
+
+Per our exit call, here's the full handoff. Everything you need to
+keep your site running with someone else (or self-host).
+
+DOMAIN: still in your name at {registrar}. I'll unlink from our
+hosting on {end_date}. Until then DNS still points to us; switch it
+whenever your new vendor is ready.
+
+CONTENT EXPORT: {drive_link}. Includes all pages as HTML +
+Markdown source, plus all media files in original resolution.
+
+{if_lump_sum: "GITHUB REPO: I've transferred the repo to {github_user}.
+You should have an email invite from GitHub."}
+
+{if_monthly: "STATIC SITE EXPORT: {drive_link}. Runs on any host
+with no build step. Just upload to S3, Netlify, or any static host.
+The dynamic features (search, forms) need re-wiring on the new host."}
+
+WEB3FORMS: account email is {email}. I'll transfer ownership today;
+you'll get a confirmation email from Web3Forms. After that I have
+zero access.
+
+ANALYTICS: last 90 days as CSV: {drive_link}. If you want to keep
+Cloudflare Analytics on the new host, point me at the new vendor
+and I'll help with the cutover.
+
+SEARCH CONSOLE: you own the verified property. I'll remove my user
+access on {end_date}.
+
+GOOGLE BUSINESS PROFILE: yours; we never had access.
+
+That's it. Truly nothing else hostaged.
+
+If your new vendor has questions for me, give them my number. I'll
+help.
+
+Good luck. Honestly.
+
+— Jonathan</pre>
+</div>
+
+<h3>Internal cleanup (within 7 days of end_date)</h3>
+<ul class="sop-checklist">
+  <li>Remove client from active-clients spreadsheet; move to "former clients" sheet with end date + reason.</li>
+  <li>Cancel Cloudflare Pages project (after confirming DNS is pointed elsewhere).</li>
+  <li>Archive the GitHub repo (private; mark as archived but don't delete).</li>
+  <li>Archive the Drive folder (move to "archive/{client}").</li>
+  <li>Stop billing.</li>
+  <li>Stop uptime monitoring on their domain.</li>
+  <li>Remove from WHOIS-watch list.</li>
+  <li>Note in CRM: end date, reason, anything to learn from.</li>
+</ul>
+
+<h3>Common offboarding issues</h3>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Client says they want to leave but doesn't follow up</strong>
+  Don't push them out. Send a 1-week check-in: "Still planning to move? Either way is fine; just want to plan the handoff." Sometimes people change their mind.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Client wants to leave but doesn't have a new vendor lined up</strong>
+  Help them shop. Ask what they're looking for. Recommend specific people if you know any. Don't trash-talk our competitors.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Client wants to take the Monthly-plan code (not just a static export)</strong>
+  Per the agreement, we own the source on Monthly. Offer a code-buyout: typically a one-time fee equal to 6 months of plan + a clean transfer. Document if they accept.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Client wants to dispute the last month's bill on the way out</strong>
+  Refund or pro-rate per the agreement, no argument. The relationship is over either way; don't burn the last bridge over $175.
+</div>
+
+<div class="sop-callout">
+  <strong>Client wants to come back later</strong>
+  Welcome them back. Restart fees apply per the agreement (typically equivalent to the initial onboarding effort). Document the gap and reset the 12-month minimum.
+</div>
+
+<h2>Exit criteria</h2>
+<p>If refresh: relaunched site live, monitoring on, client signed off. Steady-state maintenance resumes.</p>
+<p>If offboarding: handoff bundle delivered, internal cleanup complete, client confirmed they have everything. Move them to the former-clients sheet. Stay polite if they reach out later for advice; we don't ghost.</p>

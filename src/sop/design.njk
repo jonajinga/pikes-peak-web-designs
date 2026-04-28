@@ -1,0 +1,169 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/design/
+title: Design
+sopPhase: "05"
+sopPhaseTitle: "Design"
+sopGoal: "Wireframe to high-fidelity design preview in 7-10 business days. Two design rounds typical. Sign-off on design before any production code is written."
+sopPrev:
+  url: /sop/onboarding/
+  label: "Onboarding"
+sopNext:
+  url: /sop/build/
+  label: "Build"
+---
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> Onboarding complete, assets in hand</div>
+  <div><strong>Owner</strong> Lead designer (often the same person as lead dev)</div>
+  <div><strong>Time</strong> 7-10 business days for round 1, 3-5 days per revision round</div>
+  <div><strong>Output</strong> Approved high-fidelity design preview, ready to code</div>
+</div>
+
+<h2>Design philosophy</h2>
+<p>We design <em>to the trade</em>, not <em>to the templates</em>. A roofer doesn't look like a landscape designer. Pull from the relevant sample on <a href="/samples/">/samples/</a> as a starting point; tune from there. The six demos cover most patterns; if a client's industry isn't represented, build their voice from scratch and add a new demo to the gallery.</p>
+
+<h2>Round 1: wireframe + voice</h2>
+<p>Don't go straight to Figma comps. The first round establishes the structural shape and copywriting voice, not the polish.</p>
+
+<h3>Wireframe deliverable</h3>
+<ul>
+  <li>Sketch the homepage layout: hero, trust bar, services preview, testimonials, CTA. Annotated.</li>
+  <li>Pick the primary typography pairing. Show 5 type samples in their actual hierarchy.</li>
+  <li>Pick the color palette: one primary, one accent, three to four neutrals. Show on a swatch sheet.</li>
+  <li>Draft the homepage hero copy in their voice. 50-80 words max.</li>
+  <li>Show one interior page (usually About) with full copy direction.</li>
+</ul>
+
+<p>Format: a single Notion / Google Doc with embedded screenshots and inline annotations. NOT a PDF. Comments must be possible.</p>
+
+<h3>Send it</h3>
+<div class="sop-template">
+  <div class="sop-template-label">Round 1 send</div>
+<pre>Hi {first_name},
+
+First-round design is ready. Link below.
+
+{notion_or_doc_link}
+
+What to look for:
+- Does the homepage layout fit how you'd want a customer to read it?
+- Do the type and color choices feel like you?
+- Is the copy in the right voice? (We'll keep tweaking; this is the
+  starting draft.)
+
+Highlight + comment anywhere in the doc. Don't hold back; honest notes
+get to the right design faster than polite ones.
+
+Aim to get notes back within 5 business days. Round 2 lands ~5 days
+after that.
+
+— Jonathan</pre>
+</div>
+
+<h2>Round 2: high-fidelity preview</h2>
+<p>After round 1 feedback, build a clickable preview at the Cloudflare Pages preview URL. Real fonts, real colors, real photos, working buttons (links may be placeholders). This is where the design becomes tangible.</p>
+
+<h3>Preview deliverable</h3>
+<ul>
+  <li>Homepage at the preview URL.</li>
+  <li>One interior content page (usually About or main Services).</li>
+  <li>Contact page with working form (test mode).</li>
+  <li>Mobile-tested (use the browser dev tools).</li>
+  <li>Light + dark mode both polished.</li>
+</ul>
+
+<h3>Send it</h3>
+<div class="sop-template">
+  <div class="sop-template-label">Round 2 send</div>
+<pre>Hi {first_name},
+
+Round 2 is up. This is a real working preview — you can click around,
+fill out the contact form (test mode, no real submission), see it on
+your phone.
+
+{preview_url}
+
+What I built since round 1:
+- {bullet_changes}
+
+Use the design feedback form when you're ready. Or reply with notes by
+section if that's easier.
+
+https://pikespeakwebdesigns.com/design-feedback/
+
+We typically wrap design in one more round after this. If we need a
+third, no problem; the agreement covers unlimited revisions.
+
+— Jonathan</pre>
+</div>
+
+<h2>Feedback loop</h2>
+
+<h3>How to receive notes</h3>
+<p>Three places, in order of preference:</p>
+<ol>
+  <li><strong>Design feedback form</strong> at <code>/design-feedback/</code> &middot; structured, easiest to act on.</li>
+  <li><strong>Email reply</strong> with notes by section.</li>
+  <li><strong>Quick call</strong> if they want to walk through it. Always follow up with email summary same day.</li>
+</ol>
+
+<h3>How to handle notes</h3>
+<ul>
+  <li>Read all notes before acting on any. Avoid back-and-forth ping-ponging single fixes.</li>
+  <li>Group notes into: <em>structural</em> (layout, IA), <em>visual</em> (color, type, spacing), <em>copy</em> (words). Address structural first.</li>
+  <li>For each note: agree, push back, or compromise. Document the why if pushing back. "I'd keep the current treatment because..."</li>
+  <li>Send the round-3 (or round-N) preview only when ALL notes are addressed.</li>
+</ul>
+
+<h2>Common design issues</h2>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>"Can you make it pop more?"</strong>
+  Vague feedback. Push for specifics: which element, what's the goal (more attention to a CTA? more visual interest? bolder colors?). Then propose 2-3 specific changes.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>They want a feature that wasn't in the agreement</strong>
+  Don't refuse outright; clarify whether it's in scope. If small (extra service section, FAQ block): absorb. If substantial (booking calendar, calculator): "Happy to add; here's what it'd be." Quote separately.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Design-by-committee</strong>
+  Multiple stakeholders sending conflicting notes. Refer back to the kickoff: agreement-signer has final say. Send a polite note: "I've consolidated all the input. Here's my recommended path forward; if you and {decision-maker} agree, we move on it."
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>They went silent for 2+ weeks</strong>
+  Send one polite check-in. If no response after 30 days, the project goes on hold. Restart fee may apply (per agreement).
+</div>
+
+<div class="sop-callout">
+  <strong>They want a 3rd, 4th, 5th revision round</strong>
+  The agreement covers unlimited rounds. But: at round 4, gently raise a flag. "We're past where I'd usually expect to land. What feels not-right yet?" Often surfaces a stakeholder who hasn't weighed in.
+</div>
+
+<h2>Sign-off</h2>
+<p>Get explicit written approval before moving to build. Email reply that says "go" is enough; don't require a formal sign-off doc.</p>
+
+<div class="sop-template">
+  <div class="sop-template-label">Pre-build confirmation</div>
+<pre>Hi {first_name},
+
+Great. Confirming: design is approved as of today. I'll start the build
+this week.
+
+What's next:
+- Build phase, ~10 business days.
+- Pre-launch QA right after.
+- Launch window: still {launch_date_range}.
+
+Any last design changes after this point are still doable; they just
+slot into the build phase rather than the design phase. Big restructures
+would push the timeline.
+
+— Jonathan</pre>
+</div>
+
+<h2>Exit criteria</h2>
+<p>Written approval received. Preview URL working at the agreed-upon design. Move to <a href="/sop/build/">phase 06</a>.</p>

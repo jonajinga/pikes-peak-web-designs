@@ -1,0 +1,179 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/maintenance/
+title: Maintenance
+sopPhase: "09"
+sopPhaseTitle: "Maintenance"
+sopGoal: "Same-business-day on routine content updates. Be the responsive, technical team they thought we'd be. Defend the perf + a11y posture so it doesn't decay over time."
+sopPrev:
+  url: /sop/launch/
+  label: "Launch"
+sopNext:
+  url: /sop/emergencies/
+  label: "Emergencies"
+---
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> Site is live, monthly plan active</div>
+  <div><strong>Owner</strong> Whoever is on rotation that day</div>
+  <div><strong>Time</strong> Highly variable; most updates &lt; 30 min</div>
+  <div><strong>SLA</strong> Same business day on routine; &lt; 1 hour on emergencies</div>
+</div>
+
+<h2>Channels</h2>
+<p>Three places client requests come in. All three reach the same email inbox.</p>
+<ul>
+  <li><strong>Content update form</strong> at <code>/content-update/</code> &middot; structured, easiest to act on. ~50% of requests.</li>
+  <li><strong>Direct email</strong> &middot; ~35%. Often just "hey can you change my hours."</li>
+  <li><strong>Phone or text</strong> &middot; ~15%. For things they want to talk through.</li>
+</ul>
+
+<h2>Triage</h2>
+<p>Within 30 minutes of receiving a request, classify it.</p>
+
+<h3>A. Routine content update (same business day)</h3>
+<p>Phone number change, hours update, photo swap, typo fix, price change, new staff bio, new testimonial, FAQ edit, banner add/remove, holiday closure note. Most requests.</p>
+
+<h3>B. New page or section (1-3 business days)</h3>
+<p>New service page, new blog post (if client drafted), new region/area page, new FAQ block, new gallery section. Quote-able if exotic.</p>
+
+<h3>C. New feature (quote first)</h3>
+<p>Calculator, booking integration, video page, custom form, third-party embed, anything that requires JS or a service integration. Reply with a scope + estimate within 1 business day.</p>
+
+<h3>D. Emergency (immediate)</h3>
+<p>See <a href="/sop/emergencies/">phase 10</a>. Different SLA, different process.</p>
+
+<h2>Routine update workflow</h2>
+
+<ul class="sop-checklist">
+  <li>Acknowledge receipt within 30 min during business hours. One-line "got it, on it today" is enough.</li>
+  <li>Open the client's repo in your editor.</li>
+  <li>Make the change. Follow existing patterns; don't refactor surrounding code.</li>
+  <li>Run <code>npm run build</code> locally. Verify the change renders correctly.</li>
+  <li>Spot-check Lighthouse if the change touches performance-sensitive surfaces (hero, fonts, JS).</li>
+  <li>Commit with a clear message: <code>"Update {X} per client request"</code>.</li>
+  <li>Push to main. Cloudflare deploys in 60 seconds.</li>
+  <li>Verify live. Check the actual URL the change should appear on.</li>
+  <li>Reply to the client confirming with a screenshot or URL.</li>
+</ul>
+
+<h2>Templates</h2>
+
+<div class="sop-template">
+  <div class="sop-template-label">Acknowledge receipt (immediate)</div>
+<pre>Got it, {first_name}. Working on this today; you'll have confirmation
+by EOD.
+
+— J</pre>
+</div>
+
+<div class="sop-template">
+  <div class="sop-template-label">Confirm complete</div>
+<pre>Done. Changes are live at {url}.
+
+If you see anything not quite right, reply and I'll adjust.
+
+— J</pre>
+</div>
+
+<div class="sop-template">
+  <div class="sop-template-label">Quote needed before starting</div>
+<pre>Hi {first_name},
+
+Want to scope this before I start, since it's a bit beyond the usual
+content update.
+
+WHAT YOU DESCRIBED: {their_request}
+WHAT IT'D INVOLVE: {bullets, plain language}
+ESTIMATE: {hours / fixed cost}
+TIMELINE: {when it'd be ready}
+
+If that works, reply "go" and I'll start tomorrow. If you want to scope
+something narrower, let me know and I'll re-quote.
+
+— J</pre>
+</div>
+
+<h2>Monthly hygiene</h2>
+<p>Once a month per client, run a 15-minute check.</p>
+
+<ul class="sop-checklist">
+  <li>Lighthouse mobile + desktop on the homepage + 1-2 key service pages. Flag any regression below 95.</li>
+  <li>Check Search Console for crawl errors, Core Web Vitals warnings, indexing issues.</li>
+  <li>Verify form submissions are flowing (look for any dry spell &gt; 10 days; check Web3Forms dashboard).</li>
+  <li>Check uptime monitor: any incidents in the last 30 days? Any flaps?</li>
+  <li>Review Cloudflare analytics: traffic trend, top pages, top referrers.</li>
+  <li>If anything regressed, either fix it or note it for the client's monthly check-in email.</li>
+</ul>
+
+<h2>Quarterly check-in</h2>
+<p>Every 90 days, send each active client a short check-in email.</p>
+
+<div class="sop-template">
+  <div class="sop-template-label">Quarterly check-in</div>
+<pre>Hi {first_name},
+
+Q-check-in. Site's been live {months} now.
+
+LAST 90 DAYS:
+- Page views: {n}
+- Top pages: {bullets}
+- Form submissions: {n}
+- Uptime: {pct}
+- Lighthouse: {scores stable / improving / regressed}
+
+ANYTHING I NOTICED:
+{1-3 observations: a slow page, a broken external link, a service
+section that's not getting traffic, a competitor doing something
+interesting, etc.}
+
+ANYTHING I'D RECOMMEND:
+{1-2 things, no pressure}
+
+If you want to talk through any of it, 20 min next week works.
+
+— J</pre>
+</div>
+
+<h2>Long-running clients: cadence</h2>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0">
+  <thead>
+    <tr style="border-bottom:1px solid var(--line)">
+      <th style="text-align:left;padding:0.5rem 0">Cadence</th>
+      <th style="text-align:left;padding:0.5rem 0">Activity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0">As-needed</td><td style="padding:0.5rem 0">Routine content updates (most clients: 1-3 per month)</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0">Monthly</td><td style="padding:0.5rem 0">15-min hygiene check (Lighthouse, Search Console, uptime, forms)</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0">Quarterly</td><td style="padding:0.5rem 0">Email check-in with stats + observations</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:0.5rem 0">Annually</td><td style="padding:0.5rem 0">Domain renewal reminder (60/30/7 days). Update any expired credentials.</td></tr>
+    <tr><td style="padding:0.5rem 0">Every 24 months</td><td style="padding:0.5rem 0">2-year design refresh (see phase 12)</td></tr>
+  </tbody>
+</table>
+
+<h2>Common maintenance issues</h2>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Client requests something that contradicts the agreement</strong>
+  Polite firm: "That's outside the monthly plan; here's what it'd be." Refer to <code>/agreement/</code>. Don't absorb scope creep silently.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Lighthouse regressed below 95 after a content update</strong>
+  Don't ignore. Diagnose: probably a heavy image they sent that wasn't optimized, or a third-party embed they asked us to add. Fix it before the next deploy.
+</div>
+
+<div class="sop-callout sop-callout--warn">
+  <strong>Form submissions stopped arriving</strong>
+  Check Web3Forms dashboard. Check that the access key is still valid. Check the recipient inbox isn't filtering them as spam (common after a long dry spell). Test with a fresh submission.
+</div>
+
+<div class="sop-callout">
+  <strong>Client asks for a feature we've built before for another client</strong>
+  Don't reuse code if there's any custom-to-the-client logic. Re-implement cleanly to fit their site's voice + structure.
+</div>
+
+<h2>Exit criteria</h2>
+<p>Maintenance is the steady-state, not a phase that exits. The "exit" is either: client moves to phase 12 (offboarding), or hits a 2-year refresh window (phase 12 again).</p>
