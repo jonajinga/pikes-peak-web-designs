@@ -21,6 +21,42 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
     <div class="changelog-entry">
       <header class="changelog-head">
         <time datetime="2026-04-27" class="changelog-date">April 27, 2026</time>
+        <span class="changelog-tag changelog-tag--major">Real screenshots</span>
+      </header>
+      <h2 class="changelog-title">Sample cards now show real demo screenshots, not gradient placeholders</h2>
+      <div class="changelog-body">
+        <ul>
+          <li><strong>New:</strong> the six cards on <a href="/samples/" class="inline-link">/samples/</a> now display actual 1280&times;800 screenshots of each demo's home page (Redcap Roofing, Alpine Inspectors, Meadow &amp; Stone, Summit HVAC, Lumen Electric, Clearwater Plumbing) instead of colored gradient mockups.</li>
+          <li><strong>Pipeline:</strong> screenshots captured via a one-off headless-chromium script (<code>scripts/capture-demo-screenshots.mjs</code>) against the local dev server. Source PNGs live in <code>src/assets/img/samples/</code>; <code>@11ty/eleventy-img</code> generates AVIF + WebP + JPEG variants at 480 / 760 / 1100 widths with proper <code>srcset</code> + <code>sizes</code>, native lazy loading, and explicit dimensions to prevent CLS.</li>
+          <li><strong>A11y:</strong> Lighthouse caught one contrast failure on the page; the inline-styled "Live demo" labels were using <code>--gold-600</code> (light-mode color, 3.16:1 on the dark sample-card surface in dark theme). Switched to <code>--gold-500</code> which auto-flips per theme.</li>
+          <li><strong>Hover:</strong> screenshots subtly scale (1.025) on card hover/focus and inherit a 3 px gold focus-visible ring.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-27" class="changelog-date">April 27, 2026</time>
+        <span class="changelog-tag">Lighthouse</span>
+      </header>
+      <h2 class="changelog-title">Lighthouse baseline (April 2026)</h2>
+      <div class="changelog-body">
+        <p>Lighthouse audited five representative pages on production. Mobile-simulated throttling. Recorded as a regression baseline for future work.</p>
+        <ul style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:0.88rem;line-height:1.7">
+          <li><strong>/</strong> (mobile): Perf 79 / A11y 100 / BP 100 / SEO 100. LCP 4.1 s, CLS 0, TBT 0 ms.</li>
+          <li><strong>/</strong> (desktop): Perf 91 / A11y 100 / BP 100 / SEO 100. LCP 1.4 s, CLS 0.004, FCP 1.3 s.</li>
+          <li><strong>/samples/</strong> (mobile): Perf 81 / A11y 100 / BP 100 / SEO 100. LCP 3.9 s.</li>
+          <li><strong>/pricing/</strong> (mobile): Perf 87 / A11y 100 / BP 100 / SEO 100. LCP 3.4 s.</li>
+          <li><strong>/demo/redcap-roofing/</strong> (mobile): Perf 96 / A11y 100 / BP 100 / SEO 100. LCP 2.3 s.</li>
+          <li><strong>/demo/lumen-electric/</strong> (mobile): Perf 95 / A11y 100 / BP 100 / SEO 100. LCP 2.6 s.</li>
+        </ul>
+        <p>Demo pages hit the 95+ Performance target as expected; they ship a small per-demo CSS bundle. Main-site pages drag down to 79&ndash;87 because the full <code>style.css</code> is render-blocking on every page. Improving the main-site mobile score is a separate piece of work (critical-CSS extraction, or a per-page CSS slice). All six pages hit 100 on Accessibility, Best Practices, and SEO.</p>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-27" class="changelog-date">April 27, 2026</time>
         <span class="changelog-tag changelog-tag--major">Responsive audit</span>
       </header>
       <h2 class="changelog-title">Site-wide mobile-first + tablet responsive audit</h2>

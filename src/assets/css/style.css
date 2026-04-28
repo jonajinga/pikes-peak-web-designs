@@ -2391,6 +2391,29 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   text-align: center;
   letter-spacing: -0.01em;
 }
+/* Real-screenshot sample-hero variant (replaces the colored gradient placeholders) */
+.sample-screenshot {
+  display: block;
+  margin: 1rem 1rem 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  aspect-ratio: 16 / 10;
+  background: var(--bg-alt);
+  position: relative;
+}
+.sample-screenshot picture,
+.sample-screenshot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+.sample-card:hover .sample-screenshot img,
+.sample-card:focus-within .sample-screenshot img { transform: scale(1.025); }
+.sample-screenshot:focus-visible { outline: 3px solid var(--gold-500); outline-offset: 3px; }
 .sample-body {
   padding: 1.25rem 1.5rem 1.5rem;
 }
