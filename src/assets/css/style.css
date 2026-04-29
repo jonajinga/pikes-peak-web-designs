@@ -4883,6 +4883,42 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   color: var(--gold-300);
 }
 
+/* ========== TOOLS PAGE ========== */
+.tool-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.tool-item {
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold-500);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.25rem 1.5rem;
+}
+.tool-item .tool-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.55rem;
+}
+.tool-item .tool-purpose,
+.tool-item .tool-why {
+  margin: 0 0 0.55rem;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+.tool-item .tool-why { margin-bottom: 0; color: var(--text-muted); }
+.tool-item .tool-purpose strong,
+.tool-item .tool-why strong { color: var(--navy-900); font-weight: 700; }
+:root[data-theme="dark"] .tool-item .tool-purpose strong,
+:root[data-theme="dark"] .tool-item .tool-why strong { color: var(--gold-400); }
+
 /* ========== CHANGELOG PAGE ========== */
 .changelog-entry {
   padding: 1.75rem 0;

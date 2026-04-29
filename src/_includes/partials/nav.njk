@@ -176,14 +176,14 @@
           </div>
 
           <div class="mega-foot">
-            <span>Looking for something specific? The site search covers every page.</span>
-            <a href="#" data-open-search>Open search &rarr;</a>
+            <span>Have a quick question that the site doesn't answer? Use the short ask form &mdash; three fields, one inbox.</span>
+            <a href="/ask/">Ask a question &rarr;</a>
           </div>
         </div>
       </div>
 
       <div class="nav-dropdown">
-        <a href="/about/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/about/') or page.url | startsWith('/style-guide/') or page.url | startsWith('/technical-approach/') or page.url | startsWith('/accessibility/') or page.url | startsWith('/sitemap/') or page.url | startsWith('/contact/') or page.url | startsWith('/client-portal/') %} class="active" aria-current="page"{% endif %}>Company <span class="nav-arrow">&#9660;</span></a>
+        <a href="/about/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/about/') or page.url | startsWith('/style-guide/') or page.url | startsWith('/technical-approach/') or page.url | startsWith('/accessibility/') or page.url | startsWith('/sitemap/') or page.url | startsWith('/contact/') or page.url | startsWith('/ask/') or page.url | startsWith('/client-portal/') %} class="active" aria-current="page"{% endif %}>Company <span class="nav-arrow">&#9660;</span></a>
         <div class="mega-menu" role="menu" aria-label="Company menu">
           <div class="mega-menu-inner">
             <div class="mega-col">
@@ -207,6 +207,10 @@
               <a href="/technical-approach/" class="mega-item" role="menuitem">
                 <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
                 <span><span class="mega-item-title">Technical approach</span><span class="mega-item-desc">The stack, the pipeline, and the reasoning behind every site we ship.</span></span>
+              </a>
+              <a href="/tools/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+                <span><span class="mega-item-title">The tools we use</span><span class="mega-item-desc">Every tool that builds your site, in plain language. Why it's there, what it does, what it saves you.</span></span>
               </a>
               <a href="/accessibility/" class="mega-item" role="menuitem">
                 <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="8" r="1"/><path d="M10 10h4v6"/><path d="M12 14v4"/></svg></span>
@@ -302,9 +306,11 @@
     <div class="mobile-dropdown-menu">
       <a href="/about/">About</a>
       <a href="/technical-approach/">Technical Approach</a>
+      <a href="/tools/">The Tools We Use</a>
       <a href="/style-guide/">Style Guide</a>
       <a href="/accessibility/">Accessibility</a>
       <a href="/sitemap/">Sitemap</a>
+      <a href="/ask/">Ask a Question</a>
     </div>
   </div>
   <div class="theme-switch" role="group" aria-label="Appearance">

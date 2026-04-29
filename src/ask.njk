@@ -1,0 +1,95 @@
+---
+layout: layouts/base.njk
+title: "Ask a Question | Pikes Peak Web Designs"
+description: "Have a quick question? Send a message and we'll get back to you within one business day. For booking a 20-minute discovery call, see /contact/ instead."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Ask a question</span>
+    </nav>
+    <span class="section-label">Quick message</span>
+    <h1>Have a question? <em>Send it over.</em></h1>
+    <p>For anything that isn't a sales inquiry: a missing glossary term, an accessibility report, a clarification on something you read here, a follow-up after launch. We read every message and reply within one business day.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="section-label">Form first</span>
+        <h2 class="section-title" style="max-width:24ch">A quick form is the fastest way to reach us.</h2>
+        <p>Forms route the message to the right place automatically. They include the context we need to give you a useful answer instead of a follow-up question.</p>
+
+        <ul class="contact-info-list" style="margin-top:1.5rem">
+          <li class="contact-info-item">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            <div>
+              <h3>Looking for something specific?</h3>
+              <p style="font-size:0.92rem;line-height:1.6">If you are a current client, the <a href="/client-portal/" class="inline-link">client portal</a> has dedicated forms for content updates, emergencies, design feedback, referrals, and testimonials &mdash; faster than this generic form for those needs.</p>
+              <p style="font-size:0.92rem;line-height:1.6;margin-top:0.85rem">If you are interested in a new website, please use the <a href="/contact/" class="inline-link">discovery-call form</a>; it is built for that conversation.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div style="margin-top:2.5rem;padding:1.5rem 1.75rem;background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--radius)">
+          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:600;margin-bottom:0.85rem">If the form does not suit your situation</h3>
+          <p style="font-size:0.92rem;color:var(--text);line-height:1.6;margin-bottom:1rem">Reach us directly. All three lines hit the same person.</p>
+          <ul style="display:flex;flex-direction:column;gap:0.65rem;font-size:0.92rem">
+            <li><strong>Call or text</strong> &middot; <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a> &middot; Mon&ndash;Fri 8am&ndash;6pm MT</li>
+            <li><strong>Email</strong> &middot; <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a> &middot; Reply within one business day</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <h2 class="form-heading">Send a quick message</h2>
+        <p class="form-intro">Three fields. We reply within one business day.</p>
+
+        <form id="askForm" data-web3forms data-redirect="/thank-you/?type=ask" action="https://api.web3forms.com/submit" method="POST" class="form">
+          <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+          <input type="hidden" name="subject" value="New question, Pikes Peak Web Designs">
+          <input type="hidden" name="from_name" value="Pikes Peak Web Designs">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-group">
+            <label for="askName">Your name <span class="req">*</span></label>
+            <input type="text" id="askName" name="name" placeholder="Jane Smith" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="askEmail">Email <span class="req">*</span></label>
+            <input type="email" id="askEmail" name="email" placeholder="jane@example.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="askTopic">What is this about?</label>
+            <select id="askTopic" name="topic">
+              <option value="">Choose one&hellip;</option>
+              <option value="general">A general question</option>
+              <option value="glossary">Missing or unclear glossary term</option>
+              <option value="accessibility">Accessibility issue or feedback</option>
+              <option value="content">A correction on something you wrote</option>
+              <option value="press">Press, partnership, or media</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="askMessage">Your message <span class="req">*</span></label>
+            <textarea id="askMessage" name="message" placeholder="Whatever's on your mind. A few sentences is plenty." required rows="5"></textarea>
+          </div>
+
+          <div id="form-error" role="alert" class="form-error">
+            Something went wrong. Please try again or email us directly at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full btn-lg">Send message</button>
+          <p class="form-hint">We respect your privacy. See our <a href="/privacy-policy/" class="inline-link">privacy policy</a>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
