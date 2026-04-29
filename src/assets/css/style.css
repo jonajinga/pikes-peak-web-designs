@@ -3258,13 +3258,13 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   font-size: 1rem;
 }
 .post-cta-box .btn-primary {
-  background: var(--gold-500);
+  background: var(--gold-400);
   color: var(--navy-900);
-  border-color: var(--gold-500);
+  border-color: var(--gold-400);
 }
 .post-cta-box .btn-primary:hover {
-  background: var(--gold-400);
-  border-color: var(--gold-400);
+  background: var(--gold-300);
+  border-color: var(--gold-300);
   color: var(--navy-900);
 }
 
@@ -9822,8 +9822,11 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
    ============================================================= */
 
 /* Prevent any accidental horizontal scroll site-wide */
+/* overflow-x: clip prevents horizontal scroll without breaking sticky
+   positioning (overflow-x: hidden silently disables sticky on all
+   descendants — a known CSS spec gotcha). */
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-overflow-scrolling: touch;
 }
 body { max-width: 100vw; }
