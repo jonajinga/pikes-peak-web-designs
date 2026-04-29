@@ -1967,7 +1967,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 :root[data-theme="dark"] .step-num { background: var(--gold-500); color: var(--navy-900); }
 .step-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; }
 .step-card p { font-size: 0.93rem; color: var(--text-muted); line-height: 1.6; }
-@media (max-width: 760px) { .steps-grid { grid-template-columns: 1fr; } }
+@media (max-width: 880px) { .steps-grid { grid-template-columns: 1fr; } }
 
 /* ========== PAIN ITEMS ========== */
 .problem-grid {
@@ -3461,7 +3461,7 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   max-width: 920px;
   margin: 2.5rem auto 0;
 }
-@media (max-width: 760px) { .plans-grid { grid-template-columns: 1fr; } }
+@media (max-width: 880px) { .plans-grid { grid-template-columns: 1fr; } }
 
 .plan-card {
   padding: 2.25rem 2rem;
