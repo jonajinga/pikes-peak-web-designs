@@ -10652,9 +10652,24 @@ a { touch-action: manipulation; }
 }
 .toc-list a.is-active::before { color: var(--gold-300); }
 .toc-content { min-width: 0; }
-.toc-content h2 { margin-top: 2.5rem; padding-top: 0; scroll-margin-top: 5rem; }
+.toc-content h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  padding-top: 0;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 5rem;
+}
 .toc-content h2:first-child { margin-top: 0; }
-.toc-content h3 { margin-top: 1.75rem; scroll-margin-top: 5rem; }
+.toc-content h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.85rem;
+  scroll-margin-top: 5rem;
+}
+.toc-content > p,
+.toc-content > ul,
+.toc-content > ol,
+.toc-content > blockquote { margin-bottom: 1.1rem; }
 .toc-content > p, .toc-content ul:not([class]), .toc-content ol:not([class]),
 .toc-content blockquote { max-width: 70ch; }
 .toc-content code {

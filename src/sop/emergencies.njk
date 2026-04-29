@@ -52,7 +52,7 @@ sopNext:
   <li>"My competitor copied our copy" &rarr; not an emergency from our side; route to maintenance + advice on attribution.</li>
   <li>"Google ranking dropped" &rarr; investigate within a day; not a same-hour emergency.</li>
   <li>"Form is slow" &rarr; depends. If slow = broken (timeout, error), emergency. If slow = annoying, maintenance.</li>
-  <li>"GBP got suspended" &rarr; not our infrastructure but we'll help; treat as a high-priority routine task.</li>
+  <li>"GBP got suspended" &rarr; not our infrastructure but I will help; treat as a high-priority routine task.</li>
 </ul>
 
 <h2>Response sequence</h2>
@@ -69,7 +69,7 @@ sopNext:
   <li>Open the site in a fresh browser. Reproduce the issue.</li>
   <li>Check Cloudflare dashboard: is the site up, is there a Cloudflare incident, is the DNS resolving correctly?</li>
   <li>Check UptimeRobot: was there a flap? When?</li>
-  <li>Check the most recent deploy: did we ship something that could have caused this?</li>
+  <li>Check the most recent deploy: did I ship something that could have caused this?</li>
   <li>Check the Cloudflare status feed for upstream incidents.</li>
   <li>If it's content (wrong info live): identify the file + the change needed.</li>
   <li>If it's infrastructure (down, errors): identify the layer (DNS, edge, origin, app).</li>
@@ -94,7 +94,7 @@ sopNext:
 <h3>Within 24 hours: post-incident</h3>
 <ul class="sop-checklist">
   <li>Write the incident notes in CRM: timeline, what we changed, what fixed it, how long it took.</li>
-  <li>If it was caused by our deploy, write a "what we'll do differently" note. Add to the QA checklist if applicable.</li>
+  <li>If it was caused by our deploy, write a "what I will do differently" note. Add to the QA checklist if applicable.</li>
   <li>Send the client a 1-paragraph postmortem. No corporate-speak. Honest.</li>
 </ul>
 
@@ -194,7 +194,7 @@ If you want to walk through any of this on a call, my time's free.
 <h2>What NOT to do</h2>
 <ul>
   <li>Don't deploy a fix without verifying it works locally first. Two outages in a row are worse than one.</li>
-  <li>Don't promise SLAs we can't meet. "Fixed in the next 5 minutes" sets up disappointment if it takes 20.</li>
+  <li>Don't promise SLAs I can't meet. "Fixed in the next 5 minutes" sets up disappointment if it takes 20.</li>
   <li>Don't go silent during the incident. Update every 15-30 min even if status hasn't changed.</li>
   <li>Don't blame Cloudflare / the registrar / "something on Google's end" without verifying. Often the issue is closer to home.</li>
   <li>Don't treat one client's outage as a chance to upsell or scope-shift. Solve, write up, move on.</li>

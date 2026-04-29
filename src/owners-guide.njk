@@ -11,7 +11,7 @@ description: "Plain-language reference for everything that happens after launch 
     </nav>
     <span class="section-label">Owner's Guide</span>
     <h1>The manual that comes <em>with your site.</em></h1>
-    <p>Every client gets a copy of this on launch day, tailored to their build. It explains who maintains what, how to ask for things, what counts as an emergency, what we'll never do without telling you, and how to read your invoice. Bookmark it; nothing in here is a secret.</p>
+    <p>Every client gets a copy of this on launch day, tailored to their build. It explains who maintains what, how to ask for things, what counts as an emergency, what I will never do without telling you, and how to read your invoice. Bookmark it; nothing in here is a secret.</p>
   </div>
 </section>
 
@@ -47,41 +47,40 @@ description: "Plain-language reference for everything that happens after launch 
       <header style="margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line)">
         <span class="section-label">Welcome</span>
         <h2 style="border-bottom:none;padding-bottom:0">A working site, a phone number, and this page.</h2>
-        <p style="color:var(--text-muted);font-size:0.95rem;margin-top:0.5rem">Every section below is short on purpose. A website shouldn't need a manual the size of a printer's. If something here is unclear, that's a defect; tell us and we fix the page.</p>
+        <p style="color:var(--text-muted);font-size:0.95rem;margin-top:0.5rem">Every section below is short on purpose. A website should not need a manual the size of a printer's. If something here is unclear, that is a defect in the doc; tell me and I fix the page.</p>
       </header>
 
       <h3 id="whats-live">1. What's live on your domain.</h3>
-      <p>Your site is now serving from <strong>yourbusiness.com</strong> on Cloudflare Pages, with HTTPS, HTTP/3, and a Brotli-compressed payload. Google has been told about the sitemap; Bing usually picks it up from Google within two weeks. Here's the inventory you got at launch:</p>
+      <p>Your site is now serving from <strong>yourbusiness.com</strong> on Cloudflare Pages, with HTTPS, HTTP/3, and a Brotli-compressed payload. Google has been told about the sitemap; Bing usually picks it up from Google within two weeks. Here is the inventory you got at launch:</p>
       <ul>
         <li><strong>Pages.</strong> Home, About, Services (with anchor sections per offering), Pricing or Quote, Service Area pages (one per region you cover), Contact, Booking (if applicable), and Blog (if you opted in).</li>
-        <li><strong>Operational pages.</strong> Privacy Policy, Terms of Use, Accessibility Statement, Sitemap (HTML for humans + XML for crawlers), Style Guide. Every site we ship has these. They're not optional even if no one ever clicks them.</li>
+        <li><strong>Operational pages.</strong> Privacy Policy, Terms of Use, Accessibility Statement, Sitemap (HTML for humans + XML for crawlers), Style Guide. Every site I ship has these. They are not optional even if no one ever clicks them.</li>
         <li><strong>SEO assets.</strong> robots.txt, sitemap.xml, RSS feed (feed.xml), JSON-LD structured data on every page, Open Graph + Twitter Card tags for link previews, canonical URLs.</li>
         <li><strong>Search.</strong> A working full-text search box (Pagefind) that runs entirely in the visitor's browser. No server, no cookies, no API.</li>
-        <li><strong>Forms.</strong> One or more contact/quote forms wired to Web3Forms. Submissions email you directly; we keep no copy.</li>
+        <li><strong>Forms.</strong> One or more contact/quote forms wired to Web3Forms. Submissions email you directly; I keep no copy.</li>
         <li><strong>Favicons.</strong> A full favicon set (every device, every browser, every dark/light variant) generated automatically.</li>
       </ul>
 
       <h3 id="who-handles-what">2. Who handles what.</h3>
-      <p>Most disputes between agencies and clients come from fuzzy boundaries. Here are ours, in writing.</p>
-      <h4 style="margin-top:1.25rem">We handle</h4>
+      <p>Most disputes between agencies and clients come from fuzzy boundaries. Here are mine, in writing.</p>
+      <h4 style="margin-top:1.25rem">I handle</h4>
       <ul>
         <li>Hosting infrastructure and the global edge CDN.</li>
         <li>SSL certificate provisioning and automatic renewal.</li>
         <li>Uptime monitoring (1-minute checks) and incident response.</li>
         <li>All code changes, deploys, and rollbacks.</li>
         <li>Performance monitoring (Core Web Vitals on every deploy).</li>
-        <li>Accessibility regressions (we re-audit on every deploy).</li>
+        <li>Accessibility regressions (I re-audit on every deploy).</li>
         <li>Security headers (CSP, HSTS, frame-ancestors, referrer policy).</li>
         <li>Sitemap and search-index updates with every deploy.</li>
-        <li>The 2-year visual refresh, included.</li>
       </ul>
       <h4 style="margin-top:1.25rem">You handle</h4>
       <ul>
-        <li>Telling us what content to add or change.</li>
+        <li>Telling me what content to add or change.</li>
         <li>Replying to messages from your contact form.</li>
-        <li>Maintaining your Google Business Profile (we'll teach you).</li>
-        <li>Renewing your domain (we'll remind you 60, 30, and 7 days out).</li>
-        <li>Letting us know if anything is inaccurate.</li>
+        <li>Maintaining your Google Business Profile (I will teach you).</li>
+        <li>Renewing your domain (I will remind you 60, 30, and 7 days out).</li>
+        <li>Letting me know if anything on the site is inaccurate.</li>
       </ul>
       <h4 style="margin-top:1.25rem">Nobody handles</h4>
       <ul>
@@ -99,8 +98,8 @@ description: "Plain-language reference for everything that happens after launch 
         <li>"Please swap out the team photo on the About page. New one attached."</li>
         <li>"Grand Opening special. Can we put a banner at the top for two weeks?"</li>
       </ul>
-      <p><strong>How to send it:</strong> email <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a>, text or call <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>, or use the <a href="/content-update/" class="inline-link">content update form</a>. They all reach the same inbox. Reply within one business hour during business hours; same business day in all other cases.</p>
-      <p><strong>Turnaround.</strong> A typo, a phone number, a price change, a new staff bio: same business day. A new service page or a new blog post: 1 to 3 business days. A new section with custom layout: we'll quote it before starting (almost always free; we tell you in advance if it isn't).</p>
+      <p><strong>How to send it:</strong> email <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a>, text or call <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>, or use the <a href="/content-update/" class="inline-link">content update form</a>. They all reach the same inbox: mine. Reply within one business hour during business hours; same business day in all other cases.</p>
+      <p><strong>Turnaround.</strong> A typo, a phone number, a price change, a new staff bio: same business day, included on the monthly plan. A new service page (or any other new page): $150 each, billed once; usually live in 1 to 3 business days. A new section with custom layout or new behavior: I quote it before starting.</p>
 
       <h3 id="emergencies">4. What counts as an emergency.</h3>
       <p>An emergency is anything visitors will see that's wrong, dangerous, or broken. Three examples we will drop everything for:</p>
@@ -109,58 +108,58 @@ description: "Plain-language reference for everything that happens after launch 
         <li><strong>Wrong information is live.</strong> Wrong phone number, wrong address, wrong price on an active promo, an out-of-date hours block during a holiday weekend.</li>
         <li><strong>A security or privacy concern.</strong> Defaced page, suspicious form submissions, anything that looks like an attack, or a customer reporting a data leak.</li>
       </ul>
-      <p><strong>What to do.</strong> Don't wait for a form. Call or text <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. We answer or call back within an hour during business hours, within four hours after-hours and on weekends. The <a href="/emergency/" class="inline-link">emergency form</a> is also fine; it pages us the same way.</p>
-      <p><strong>What's not an emergency.</strong> A new service page, a copy tweak, a photo swap, a missing comma. Use the regular content update channel; we'll get to it the same business day.</p>
+      <p><strong>What to do.</strong> Do not wait for a form. Call or text <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. I answer or call back within an hour during business hours, within four hours after-hours and on weekends. The <a href="/emergency/" class="inline-link">emergency form</a> is also fine; it pages me the same way.</p>
+      <p><strong>What's not an emergency.</strong> A new service page, a copy tweak, a photo swap, a missing comma. Use the regular content update channel; I will get to it the same business day.</p>
 
       <h3 id="form-submissions">5. Form submissions.</h3>
-      <p>Every contact, quote, or booking form on your site posts directly to Web3Forms, which then emails the submission to the address we set on launch (usually a single inbox you already monitor). There is no dashboard to log into and no copy stored on our side or yours.</p>
+      <p>Every contact, quote, or booking form on your site posts directly to Web3Forms, which then emails the submission to the address I set on launch (usually a single inbox you already monitor). There is no dashboard to log into and no copy stored on my side or yours.</p>
       <ul>
         <li><strong>Where they go.</strong> The address(es) on file. Usually owner@yourdomain or office@yourdomain.</li>
-        <li><strong>Spam protection.</strong> Honeypot field plus a per-form rate limit. No CAPTCHA. False-positive rate measured weekly; in twelve months across all client sites the false-block count is zero.</li>
-        <li><strong>Adding or changing recipients.</strong> One email to us. Same business day.</li>
+        <li><strong>Spam protection.</strong> Honeypot field plus a per-form rate limit. No CAPTCHA. False-positive rate measured weekly; across all client sites the false-block count has been zero.</li>
+        <li><strong>Adding or changing recipients.</strong> One email to me. Same business day.</li>
         <li><strong>Auto-reply.</strong> Visitors get an instant "We got it" email with your phone number. Edit the wording any time.</li>
         <li><strong>Reading the data.</strong> Submissions arrive as plain-text email with every field labeled. No login required.</li>
       </ul>
 
       <h3 id="your-domain">6. Your domain belongs to you.</h3>
-      <p>You bought it; you own it. We do not register domains on behalf of clients (it creates control problems on your worst day). What we do:</p>
+      <p>You bought it; you own it. I do not register domains on behalf of clients (it creates control problems on your worst day). What I do:</p>
       <ul>
-        <li><strong>Configure DNS.</strong> We point the records at our hosting. The records sit at your registrar. You can see them any time.</li>
-        <li><strong>Remind you to renew.</strong> 60, 30, and 7 days before expiration. We don't pay the renewal; you do. We monitor the WHOIS expiration date directly so the reminder doesn't depend on the registrar's email.</li>
-        <li><strong>Help you find it.</strong> If you've lost track of where the domain was registered, search your inbox for "domain renewal" or "ICANN whois". The registrar will be in the headers.</li>
+        <li><strong>Configure DNS.</strong> I point the records at the hosting. The records sit at your registrar. You can see them any time.</li>
+        <li><strong>Remind you to renew.</strong> 60, 30, and 7 days before expiration. I do not pay the renewal; you do. I monitor the WHOIS expiration date directly so the reminder does not depend on the registrar's email.</li>
+        <li><strong>Help you find it.</strong> If you have lost track of where the domain was registered, search your inbox for "domain renewal" or "ICANN whois". The registrar will be in the headers.</li>
       </ul>
       <p>If your domain ever lapses, the site goes dark within 24 to 48 hours. Recovering a lapsed domain is possible inside a 30-day grace window for most TLDs, but the registrar may charge a redemption fee. The 60-day reminder exists so this never happens.</p>
 
       <h3 id="email">7. Email on your domain.</h3>
-      <p>Email is separate from your website even though they share a domain. We don't host email; we set the DNS records that tell the world where your email lives. Most clients use one of:</p>
+      <p>Email is separate from your website even though they share a domain. I do not host email; I set the DNS records that tell the world where your email lives. Most clients use one of:</p>
       <ul>
-        <li><strong>Google Workspace.</strong> $7.20 per user per month. Best inbox, calendar, drive. We set the MX, SPF, DKIM, and DMARC records at no charge.</li>
+        <li><strong>Google Workspace.</strong> $7.20 per user per month. Best inbox, calendar, drive. I set the MX, SPF, DKIM, and DMARC records at no charge.</li>
         <li><strong>Microsoft 365.</strong> $7.20 per user per month. Same deal.</li>
-        <li><strong>Forwarding.</strong> Free. you@yourdomain.com forwards to your existing Gmail or whatever. Good if you only need to look professional and already have a working inbox.</li>
+        <li><strong>Forwarding.</strong> Free. <code>you@yourdomain.com</code> forwards to your existing Gmail or whatever. Good if you only need to look professional and already have a working inbox.</li>
       </ul>
-      <p>What we never do: lock email behind us, charge to "configure" DNS, or move your email when you switch hosts. The records are at your registrar. They're yours.</p>
+      <p>What I never do: lock email behind me, charge to "configure" DNS, or move your email when you switch hosts. The records are at your registrar. They are yours.</p>
 
       <h3 id="hosting-uptime">8. Hosting and uptime.</h3>
-      <p>Your site runs on Cloudflare Pages: static files served from 300+ edge locations worldwide. The closest one to most US visitors is within 50ms. Our uptime over the last twelve months: 99.99%. The one outage was Cloudflare's, lasted 27 minutes, and affected roughly 4% of global traffic.</p>
+      <p>Your site runs on Cloudflare Pages: static files served from 300+ edge locations worldwide. The closest one to most US visitors is within 50ms. Uptime target is 99.99%, and the architecture is designed to make sustained outages vanishingly rare.</p>
       <ul>
-        <li><strong>Monitoring.</strong> 1-minute uptime checks from three geographic regions plus Cloudflare's own status feed. We get paged before you notice.</li>
+        <li><strong>Monitoring.</strong> 1-minute uptime checks from three geographic regions plus Cloudflare's own status feed. I get paged before you notice.</li>
         <li><strong>What "down" looks like.</strong> Most outages affect a region, not the whole network. Even during an incident your site is usually up for most visitors.</li>
-        <li><strong>Bandwidth.</strong> Unlimited on the Cloudflare Free plan. We've never paid for overage, including during a client's TV ad spike.</li>
+        <li><strong>Bandwidth.</strong> Unlimited on the Cloudflare Free plan. No overage charges have ever been triggered, including during a client's TV ad spike.</li>
       </ul>
 
       <h3 id="security-backups">9. Security and backups.</h3>
-      <p>There's no admin panel, no database, no plugins, no PHP. The "attack surface" is essentially the static files on a CDN. Specifically:</p>
+      <p>There is no admin panel, no database, no plugins, no PHP. The "attack surface" is essentially the static files on a CDN. Specifically:</p>
       <ul>
         <li><strong>No login form anywhere on your site.</strong> Nothing to brute-force.</li>
-        <li><strong>No database to inject.</strong> Forms post to a third-party endpoint, not to a server we maintain.</li>
+        <li><strong>No database to inject.</strong> Forms post to a third-party endpoint, not to a server I maintain.</li>
         <li><strong>HTTPS-only.</strong> HSTS preload-eligible, with a 12-month max-age and includeSubDomains.</li>
         <li><strong>Security headers.</strong> Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy on every response.</li>
       </ul>
-      <p><strong>Backups.</strong> Every commit is its own backup. Source lives in a private GitHub repository. We can restore any prior version in under five minutes by reverting a commit and redeploying. If your home computer fails on the day you ask for a rollback, it doesn't matter. The history is in git.</p>
+      <p><strong>Backups.</strong> Every commit is its own backup. Source lives in a private GitHub repository. I can restore any prior version in under five minutes by reverting a commit and redeploying. If your home computer fails on the day you ask for a rollback, it does not matter. The history is in git.</p>
 
       <h3 id="seo-foundation">10. SEO foundation.</h3>
-      <p>SEO is two things stacked: technical foundation (which is binary; you have it or you don't) and ongoing content (which is gradual). We deliver the foundation; you control the content.</p>
-      <p><strong>What we built in:</strong></p>
+      <p>SEO is two things stacked: technical foundation (which is binary; you have it or you do not) and ongoing content (which is gradual). I deliver the foundation; you control the content.</p>
+      <p><strong>What I built in:</strong></p>
       <ul>
         <li>Clean semantic HTML, one H1 per page, descending heading hierarchy.</li>
         <li>Per-page title and description (50-160 characters, with your service + city).</li>
@@ -170,60 +169,61 @@ description: "Plain-language reference for everything that happens after launch 
         <li>Core Web Vitals well inside the green: LCP under 1.5s, CLS under 0.05, INP under 100ms on real-world data.</li>
         <li>Mobile-first responsive design (Google indexes mobile first).</li>
       </ul>
-      <p><strong>What we don't promise:</strong> a specific ranking position. Anyone who promises that is lying or about to. What we do promise: your technical foundation will not be the reason you don't rank.</p>
+      <p><strong>What I do not promise:</strong> a specific ranking position. Anyone who promises that is lying or about to. What I do promise: your technical foundation will not be the reason you do not rank.</p>
 
       <h3 id="analytics">11. Analytics and tracking.</h3>
       <p>Two analytics systems run on your site by default. Both are cookie-free and GDPR-compliant by design. Neither requires a cookie banner.</p>
       <ul>
-        <li><strong>Cloudflare Web Analytics.</strong> Server-side Real User Monitoring. Sees every request, no client-side script needed. Tells us your real-world Core Web Vitals across actual visitors.</li>
-        <li><strong>Umami (optional).</strong> Open-source, self-hostable analytics. We provision a dashboard at your request. Shows page views, referrers, devices, and bounce. No personal data, no cookies.</li>
+        <li><strong>Cloudflare Web Analytics.</strong> Server-side Real User Monitoring. Sees every request, no client-side script needed. Tells me your real-world Core Web Vitals across actual visitors.</li>
+        <li><strong>Umami (optional).</strong> Open-source analytics dashboard. I provision one at your request. Shows page views, referrers, devices, and bounce. No personal data, no cookies.</li>
       </ul>
-      <p><strong>What we don't add unless you specifically ask:</strong> Google Analytics, Facebook Pixel, LinkedIn Insight Tag, TikTok Pixel, or any third-party advertising script. They slow the site, require a cookie banner, and most of them get blocked anyway.</p>
+      <p><strong>What I do not add unless you specifically ask:</strong> Google Analytics, Facebook Pixel, LinkedIn Insight Tag, TikTok Pixel, or any third-party advertising script. They slow the site, require a cookie banner, and most of them get blocked anyway.</p>
 
       <h3 id="google-business">12. Google Business Profile.</h3>
-      <p>Your GBP is separate from your website but tightly connected. We don't manage it (Google won't transfer ownership to a third party for long without flagging it). What we do is wire your site to it: structured data on the site matches your GBP profile (name, address, phone, hours, services), so Google's matching engine treats them as the same entity.</p>
-      <p><strong>Quarterly checklist we send you:</strong></p>
+      <p>Your GBP is separate from your website but tightly connected. I do not manage it (Google won't transfer ownership to a third party for long without flagging it). What I do is wire your site to it: structured data on the site matches your GBP profile (name, address, phone, hours, services), so Google's matching engine treats them as the same entity.</p>
+      <p><strong>Quarterly checklist I send you:</strong></p>
       <ul>
         <li>Confirm hours are current (especially around holidays).</li>
         <li>Add 1-3 photos (Google ranks profiles with recent photos higher).</li>
-        <li>Reply to any review that's older than two weeks. Even short replies count.</li>
-        <li>Post one update or offer (it's free; most owners forget).</li>
+        <li>Reply to any review that is older than two weeks. Even short replies count.</li>
+        <li>Post one update or offer (it is free; most owners forget).</li>
       </ul>
 
       <h3 id="adding-content">13. Adding pages, posts, or a blog.</h3>
-      <p>New content is part of why you have us. Most additions are free; we'll always tell you in advance if something isn't.</p>
+      <p>New content is part of why you have me. Some additions are included; new pages are billed at $150 each, and I always tell you in advance.</p>
       <ul>
-        <li><strong>A new service page.</strong> Free. Send the rough copy, photos if you have them. Live in 1 to 3 business days.</li>
-        <li><strong>A new blog post.</strong> Free if you write the draft (we edit, lay out, and publish). Hourly if we write it from scratch (we'll quote first).</li>
-        <li><strong>A new region/area page.</strong> Free. Send city name + a paragraph of local color (it ranks better than generic copy).</li>
-        <li><strong>A new feature (calculator, gallery, video page).</strong> Quoted. Usually a few hours of work.</li>
+        <li><strong>Edit to an existing page.</strong> Included on the monthly plan. Live in 1 business day.</li>
+        <li><strong>A new service page (or any new content page).</strong> $150 each, billed once. Send rough copy and photos. Usually live in 1 to 3 business days.</li>
+        <li><strong>A new blog post.</strong> Included if you write the draft and a blog section already exists (I edit, lay out, and publish). Hourly if I write it from scratch (I will quote first).</li>
+        <li><strong>A new region/area page.</strong> $150 each (counts as a new page). Send city name + a paragraph of local color (it ranks better than generic copy).</li>
+        <li><strong>A new feature (calculator, gallery, video page).</strong> Quoted before starting. Usually a few hours of work.</li>
       </ul>
 
       <h3 id="seasonal">14. Seasonal and scheduled updates.</h3>
-      <p>You can schedule changes ahead of time. Three patterns we run constantly for clients:</p>
+      <p>You can schedule changes ahead of time. Three patterns I run constantly for clients:</p>
       <ul>
-        <li><strong>Promo banners with auto-expiry.</strong> Tell us "this banner runs from Dec 1 to Dec 24." We deploy the start and end at the right times. Set and forget.</li>
-        <li><strong>Holiday hours.</strong> Send us your annual closure list once. We deploy each closure 48 hours ahead and reverse it after.</li>
-        <li><strong>Seasonal services.</strong> Snow removal Nov-Mar, lawn care Apr-Oct: tell us your dates, we hide and unhide the page automatically.</li>
+        <li><strong>Promo banners with auto-expiry.</strong> Tell me "this banner runs from Dec 1 to Dec 24" and I deploy the start and end at the right times. Set and forget.</li>
+        <li><strong>Holiday hours.</strong> Send your annual closure list once. I deploy each closure 48 hours ahead and reverse it after.</li>
+        <li><strong>Seasonal services.</strong> Snow removal Nov-Mar, lawn care Apr-Oct: tell me your dates, I hide and unhide the page automatically.</li>
       </ul>
 
       <h3 id="invoice">15. Reading your monthly invoice.</h3>
-      <p>If you're on the monthly plan, your invoice is one line. Charges that look out of place? Email us; we explain or remove. We have never had a billing dispute go past one email.</p>
+      <p>If you are on the monthly plan, your invoice is one line. Charges that look out of place? Email me; I explain or remove. I have never had a billing dispute go past one email.</p>
       <ul>
-        <li><strong>Monthly Care Plan: $99 to $199 (your tier).</strong> Hosting, SSL, monitoring, unlimited content updates, emergency support. Same number every month.</li>
-        <li><strong>Add-ons (rare).</strong> Itemized below the base line. Usually new features you specifically asked for.</li>
-        <li><strong>Pass-through (rare).</strong> If we paid a third party on your behalf (a stock photo, a paid font), it shows here at our cost with no markup.</li>
+        <li><strong>Monthly Care Plan: $175.</strong> Hosting, SSL, monitoring, unlimited content updates, direct support. Same number every month.</li>
+        <li><strong>Add-ons (rare).</strong> Itemized below the base line. Usually new pages or features you specifically asked for.</li>
+        <li><strong>Pass-through (rare).</strong> If I paid a third party on your behalf (a stock photo, a paid font), it shows here at cost with no markup.</li>
       </ul>
-      <p>Lump-sum clients see only the original payment schedule (50% on signing, 50% on launch). No recurring charges from us.</p>
+      <p>Lump-sum clients see only the original payment schedule (50% on signing, 50% on launch). No recurring charges unless you opt into the optional $50/month hosting.</p>
 
       <h3 id="leaving">16. If you ever want to leave.</h3>
-      <p>We don't hold your domain, content, or audience hostage. The day you ask, here's what happens:</p>
+      <p>I do not hold your domain, content, or audience hostage. The day you ask, here is what happens:</p>
       <ul>
-        <li><strong>Your domain.</strong> Already at your registrar in your name. We hand off DNS configuration and unlink it from our hosting. Zero charge.</li>
+        <li><strong>Your domain.</strong> Already at your registrar in your name. I hand off DNS configuration and unlink it from the hosting. Zero charge.</li>
         <li><strong>Your content.</strong> Exported as a clean HTML/Markdown bundle plus original media. You can hand this to any developer.</li>
-        <li><strong>Your code.</strong> On the Lump-Sum plan it's already yours; we transfer the GitHub repo. On the Monthly plan we own the code, but we'll provide a static export of the live site (HTML/CSS/JS) that runs on any host with no dependencies.</li>
+        <li><strong>Your code.</strong> On the Lump-Sum plan it is already yours; I transfer the GitHub repo. On the Monthly plan I own the code, but I will provide a static export of the live site (HTML/CSS/JS) that runs on any host with no dependencies.</li>
         <li><strong>Your forms.</strong> The Web3Forms account is in your name (or transferable to your name in one email).</li>
-        <li><strong>Your inboxes.</strong> Already yours; we never had access.</li>
+        <li><strong>Your inboxes.</strong> Already yours; I never had access.</li>
       </ul>
       <p>Reasonable handover, no exit fee, no last-month-of-spite invoice. The site keeps working until you point DNS at the new host.</p>
 
@@ -232,11 +232,11 @@ description: "Plain-language reference for everything that happens after launch 
         <li><strong>Email:</strong> <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a>. Best for anything with attachments or that needs a paper trail. One business day reply, usually faster.</li>
         <li><strong>Phone or text:</strong> <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. Best for anything urgent or easier to talk through. Mon-Fri 8am to 6pm MT; voicemail rolls to mobile after-hours.</li>
         <li><strong>Forms on this site:</strong> <a href="/client-portal/" class="inline-link">/client-portal/</a> has structured forms for content updates, design feedback, emergencies, and referrals.</li>
-        <li><strong>Status page:</strong> if the site is down, check Cloudflare's status feed (<a href="https://www.cloudflarestatus.com" class="inline-link" rel="noopener">cloudflarestatus.com</a>) before calling. If their status is green and your site is down, that's on us; call.</li>
+        <li><strong>Status page:</strong> if the site is down, check Cloudflare's status feed (<a href="https://www.cloudflarestatus.com" class="inline-link" rel="noopener">cloudflarestatus.com</a>) before calling. If their status is green and your site is down, that is on me; call.</li>
       </ul>
 
       <footer style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:0.9rem;color:var(--text-muted)">
-        <p>That's the whole guide. Bookmark it; we update it as the product changes. The most recent updates are listed in the <a href="/changelog/" class="inline-link">site changelog</a>. If anything here isn't clear, that's a defect in the doc, not in you. Tell us and we fix the page.</p>
+        <p>That is the whole guide. Bookmark it; I update it as the product changes. The most recent updates are listed in the <a href="/changelog/" class="inline-link">site changelog</a>. If anything here is not clear, that is a defect in the doc, not in you. Tell me and I fix the page.</p>
       </footer>
 
       </article>
@@ -249,9 +249,9 @@ description: "Plain-language reference for everything that happens after launch 
   <div class="cta-inner">
     <span class="section-label">This is what launch day looks like</span>
     <h2>No manual to study. No panel to log into.</h2>
-    <p>You get a working site, a phone number, and this page. That's it. You go back to running your business.</p>
+    <p>You get a working site, a phone number that reaches me, and this page. That is it. You go back to running your business.</p>
     <div class="cta-buttons">
-      <a href="/contact/" class="btn btn-primary btn-lg">Start a Conversation</a>
+      <a href="/contact/" class="btn btn-primary btn-lg">Book the discovery call</a>
       <a href="/how-it-works/" class="btn btn-outline btn-lg">See the Process</a>
     </div>
   </div>
