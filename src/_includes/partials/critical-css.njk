@@ -18,6 +18,15 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.15;mar
 .topbar{background:var(--navy-950);color:#fff;font-size:0.85rem;padding:0.5rem 0}
 .header{position:sticky;top:0;z-index:100;background:var(--header-bg);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
 .header-inner{max-width:var(--max-width);margin:0 auto;padding:0.85rem clamp(1.25rem,3vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.logo{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--text);display:inline-flex;align-items:baseline;gap:0.35rem;line-height:1;white-space:nowrap;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:0.15rem}
+.nav-links>a:not(.btn),.nav-dropdown>a{padding:0.6rem 0.85rem;font-size:0.92rem;font-weight:500;color:var(--text);border-radius:var(--radius-sm);white-space:nowrap;position:relative}
+.nav-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:var(--radius-sm);color:var(--text)}
+.nav-dropdown{position:relative}
+.mega-menu{display:none;visibility:hidden;opacity:0;position:fixed;top:-9999px;left:-9999px}
+.hamburger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;width:44px;height:44px;padding:10px;gap:5px;border-radius:var(--radius-sm)}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px}
+@media (max-width:980px){.nav-links{display:none}}
 .hero,.page-hero{padding:clamp(2.5rem,6vw,5rem) 0 clamp(2.5rem,5vw,4rem);background:var(--bg)}
 .hero h1{font-size:clamp(2.25rem,1.65rem+3vw,3.5rem)}
 .page-hero h1{font-size:clamp(2rem,1.5rem+2.5vw,3rem)}
@@ -32,5 +41,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.15;mar
    affected because their per-demo CSS bundles load synchronously. */
 .mobile-nav{position:fixed;top:0;right:0;bottom:0;width:min(400px,92vw);transform:translateX(100%);z-index:105}
 .mobile-nav.open{transform:translateX(0)}
+.mobile-backdrop{position:fixed;inset:0;opacity:0;visibility:hidden;z-index:104}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 </style>

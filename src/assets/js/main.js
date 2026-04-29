@@ -346,4 +346,41 @@
     }
   }
 
+  /* -------- Sticky TOC active-section highlighting --------
+     Pages using .toc-layout (owners-guide, technical-approach,
+     what-we-build) get an active link highlight as the user
+     scrolls past each H2 anchor. Progressive enhancement only. */
+  const tocList = $('.toc-list');
+  if (tocList && 'IntersectionObserver' in window) {
+    const tocLinks = $$('a[href^="#"]', tocList);
+    const idMap = new Map();
+    tocLinks.forEach(link => {
+      const id = link.getAttribute('href').slice(1);
+      const target = id ? document.getElementById(id) : null;
+      if (target) idMap.set(target, link);
+    });
+    if (idMap.size) {
+      let activeLink = null;
+      const setActive = (link) => {
+        if (activeLink === link) return;
+        if (activeLink) activeLink.classList.remove('is-active');
+        if (link) link.classList.add('is-active');
+        activeLink = link;
+      };
+      const visible = new Set();
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) visible.add(entry.target);
+          else visible.delete(entry.target);
+        });
+        if (!visible.size) return;
+        const sorted = Array.from(visible).sort(
+          (a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top
+        );
+        setActive(idMap.get(sorted[0]));
+      }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+      idMap.forEach((_link, target) => observer.observe(target));
+    }
+  }
+
 }());

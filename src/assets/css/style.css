@@ -954,62 +954,90 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .nav-dropdown.open > a .nav-arrow,
 .nav-dropdown:hover > a .nav-arrow { transform: rotate(180deg); }
 
+/* ============================================================
+   World-class megamenu. Every dropdown uses this single pattern:
+   site-width, 3-section grid (two link groups + a feature panel),
+   consistent height, generous padding, soft shadow.
+   ============================================================ */
 .mega-menu {
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  left: 0;
-  min-width: 520px;
+  display: block;
+  position: fixed;
+  top: var(--header-h, 70px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  width: min(1280px, calc(100vw - 2rem));
+  max-width: calc(100vw - 2rem);
   background: var(--surface-raised);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: 1.5rem;
+  box-shadow: 0 20px 50px rgba(10, 31, 68, 0.18), 0 8px 18px rgba(10, 31, 68, 0.08);
+  padding: 0;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px);
   transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out), visibility var(--dur);
+  overflow: hidden;
+  z-index: 110;
+}
+:root[data-theme="dark"] .mega-menu {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 8px 18px rgba(0, 0, 0, 0.3);
 }
 .nav-dropdown:hover .mega-menu,
 .nav-dropdown:focus-within .mega-menu,
 .nav-dropdown.open .mega-menu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
-/* Wide mega menu for service areas — opens in the same direction as the
-   other mega menus (anchored to the left edge of the parent nav-dropdown).
-   Viewport overflow on narrow desktops is handled by max-width clamp. */
-.mega-menu--wide {
-  min-width: min(780px, 92vw);
-  max-width: 92vw;
-  padding: 2rem 2rem 1.25rem;
+/* Inner grid: two columns of links + feature panel on the right. */
+.mega-menu-inner {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem 1.75rem;
-  left: 0;
-  right: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+}
+@media (max-width: 1100px) {
+  .mega-menu-inner { grid-template-columns: 1fr 1fr; }
+  .mega-feature { display: none; }
 }
 
-.mega-menu--panel {
-  min-width: 420px;
-  display: grid;
-  gap: 0.15rem;
-  padding: 1.25rem;
+.mega-col {
+  padding: 1.75rem 1.75rem 1.5rem;
+  border-right: 1px solid var(--line);
+  min-width: 0;
 }
+.mega-col:last-child { border-right: 0; }
+.mega-col h5 {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--line);
+}
+:root[data-theme="dark"] .mega-col h5 { color: var(--gold-400); }
+
+/* Each link in a mega column: title + helpful one-line description. */
 .mega-item {
   display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: 0.85rem;
-  padding: 0.75rem;
+  grid-template-columns: 32px 1fr;
+  gap: 0.75rem;
+  padding: 0.6rem 0.65rem;
+  margin: 0 -0.65rem 0.15rem;
   border-radius: var(--radius-sm);
   transition: background var(--dur);
   color: var(--text);
+  text-decoration: none;
 }
-.mega-item:hover { background: var(--bg-alt-2); }
+.mega-item:hover, .mega-item:focus-visible {
+  background: var(--bg-alt);
+  outline: none;
+}
 .mega-item-icon {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-sm);
   background: var(--bg-alt-2);
   color: var(--navy-700);
@@ -1017,9 +1045,10 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: 0.1rem;
 }
-:root[data-theme="dark"] .mega-item-icon { color: var(--gold-400); }
-.mega-item-icon svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+:root[data-theme="dark"] .mega-item-icon { color: var(--gold-300); background: rgba(221, 177, 61, 0.1); }
+.mega-item-icon svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .mega-item-title {
   display: block;
   font-size: 0.92rem;
@@ -1028,73 +1057,169 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   margin-bottom: 0.15rem;
   line-height: 1.3;
 }
+.mega-item:hover .mega-item-title { color: var(--gold-600); }
+:root[data-theme="dark"] .mega-item:hover .mega-item-title { color: var(--gold-300); }
 .mega-item-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* Compact list (used by Service Areas, where text is just city names). */
+.mega-cities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.05rem;
+}
+.mega-cities a {
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0.65rem;
+  margin: 0 -0.65rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--dur), color var(--dur);
+}
+.mega-cities a:hover {
+  background: var(--bg-alt);
+  color: var(--gold-600);
+}
+:root[data-theme="dark"] .mega-cities a:hover { color: var(--gold-300); }
+
+/* Two-column city grid for the Service Areas megamenu. */
+.mega-city-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.5rem;
+  row-gap: 0.05rem;
+  margin: 0 -0.5rem 0.5rem;
+}
+.mega-city-grid a {
+  display: block;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--dur), color var(--dur);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mega-city-grid a:hover {
+  background: var(--bg-alt);
+  color: var(--gold-600);
+}
+:root[data-theme="dark"] .mega-city-grid a:hover { color: var(--gold-300); }
+
+/* Secondary heading inside a mega-col (e.g. note under the city grid). */
+.mega-col-h5--secondary { margin-top: 0.85rem; }
+.mega-col-note {
   font-size: 0.82rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: 1.5;
+  margin: 0;
 }
 
-.mega-col h5 {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--navy-700);
-  margin-bottom: 0.85rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--line);
+/* Feature panel: rightmost column with helpful callout content. */
+.mega-feature {
+  padding: 1.75rem;
+  background: linear-gradient(160deg, var(--bg-alt) 0%, var(--bg-alt-2) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-width: 0;
 }
-:root[data-theme="dark"] .mega-col h5 { color: var(--gold-400); }
-.mega-col a {
-  display: block;
-  padding: 0.3rem 0;
-  font-size: 0.92rem;
+:root[data-theme="dark"] .mega-feature {
+  background: linear-gradient(160deg, var(--bg-alt) 0%, rgba(13, 27, 53, 0.95) 100%);
+}
+.mega-feature-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+}
+:root[data-theme="dark"] .mega-feature-eyebrow { color: var(--gold-300); }
+.mega-feature-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--text);
-  transition: color var(--dur);
+  line-height: 1.25;
+  margin: 0;
 }
-.mega-col a:hover { color: var(--navy-900); }
-:root[data-theme="dark"] .mega-col a:hover { color: var(--gold-400); }
-
-.mega-canada {
-  grid-column: 1 / -1;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
+.mega-feature-body {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
 }
-.mega-canada h5 {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--navy-700);
-  margin-bottom: 0.85rem;
-}
-:root[data-theme="dark"] .mega-canada h5 { color: var(--gold-400); }
-.mega-canada-cities {
+.mega-feature-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.15rem 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 0.25rem 0;
 }
-.mega-canada-cities a {
+.mega-feature-stat strong {
   display: block;
-  padding: 0.25rem 0;
-  font-size: 0.9rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
   color: var(--text);
-  transition: color var(--dur);
+  line-height: 1.1;
 }
-.mega-canada-cities a:hover { color: var(--navy-900); }
-:root[data-theme="dark"] .mega-canada-cities a:hover { color: var(--gold-400); }
+.mega-feature-stat span {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+.mega-feature-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding: 0.65rem 1.1rem;
+  background: var(--navy-900);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background var(--dur);
+}
+.mega-feature-cta:hover { background: var(--navy-950); color: #fff; }
+:root[data-theme="dark"] .mega-feature-cta { background: var(--gold-500); color: var(--navy-950); }
+:root[data-theme="dark"] .mega-feature-cta:hover { background: var(--gold-400); }
+.mega-feature-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy-900);
+  text-decoration: none;
+}
+:root[data-theme="dark"] .mega-feature-link { color: var(--gold-300); }
+.mega-feature-link:hover { color: var(--gold-600); }
 
+/* Bottom strip: secondary actions + "view all" link. Spans full width. */
 .mega-foot {
-  grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1rem;
+  padding: 0.85rem 1.75rem;
+  background: var(--bg-alt);
   border-top: 1px solid var(--line);
   font-size: 0.85rem;
-  margin-top: 0.5rem;
 }
 .mega-foot span { color: var(--text-muted); }
 .mega-foot a {
@@ -1103,9 +1228,15 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
+  text-decoration: none;
 }
-:root[data-theme="dark"] .mega-foot a { color: var(--gold-400); }
+:root[data-theme="dark"] .mega-foot a { color: var(--gold-300); }
 .mega-foot a:hover { color: var(--gold-600); }
+
+/* Header height variable used by the megamenu fixed top.
+   Approximate the real header height; actual value is tracked by
+   :root via setting in critical-css if/when needed. */
+:root { --header-h: 72px; }
 
 /* Hamburger */
 .hamburger {
@@ -4300,6 +4431,20 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   height: 6px;
   background: var(--gold-500);
   border-radius: 50%;
+}
+
+/* Each stage section inside the client-portal toc-layout. Identical structure
+   for visual rhythm; separated by a soft top border instead of alternating
+   cream backgrounds (which no longer apply inside .toc-content). */
+.portal-stage {
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+.portal-stage:first-child {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: 0;
 }
 
 /* Stage section header (above each portal grid) */

@@ -5,123 +5,237 @@
     <nav class="nav-links" aria-label="Main navigation">
       <div class="nav-dropdown">
         <a href="/how-it-works/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/how-it-works/') or page.url | startsWith('/whats-included/') or page.url | startsWith('/what-we-build/') or page.url | startsWith('/samples/') or page.url | startsWith('/sample-forms/') or page.url | startsWith('/pricing/') %} class="active" aria-current="page"{% endif %}>Services <span class="nav-arrow">&#9660;</span></a>
-        <div class="mega-menu mega-menu--panel" role="menu" aria-label="Services menu">
-          <a href="/how-it-works/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
-            <span><span class="mega-item-title">How It Works</span><span class="mega-item-desc">Discovery call, design, build, launch, and we handle everything after.</span></span>
-          </a>
-          <a href="/whats-included/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span><span class="mega-item-title">What's Included</span><span class="mega-item-desc">Custom design, hosting, updates, SEO. Every inclusion in your monthly plan.</span></span>
-          </a>
-          <a href="/what-we-build/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span>
-            <span><span class="mega-item-title">What We Build For You</span><span class="mega-item-desc">Plain-language deep dive on the deliverable, every page, feature, and inclusion.</span></span>
-          </a>
-          <a href="/samples/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg></span>
-            <span><span class="mega-item-title">Sample Websites</span><span class="mega-item-desc">Design concepts for contractors, HVAC, plumbers, electricians, and more.</span></span>
-          </a>
-          <a href="/sample-forms/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></span>
-            <span><span class="mega-item-title">Sample Forms</span><span class="mega-item-desc">Industry-specific form examples for HVAC, plumbing, roofing, and more.</span></span>
-          </a>
-          <a href="/pricing/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-            <span><span class="mega-item-title">Pricing</span><span class="mega-item-desc">$175/month flat or $4,000 lump-sum. $0 down either way.</span></span>
-          </a>
+        <div class="mega-menu" role="menu" aria-label="Services menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h5>How we work</h5>
+              <a href="/how-it-works/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+                <span><span class="mega-item-title">How it works</span><span class="mega-item-desc">From discovery call to live site to ongoing support. The whole arc.</span></span>
+              </a>
+              <a href="/whats-included/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span><span class="mega-item-title">What's included</span><span class="mega-item-desc">Every inclusion in the monthly plan, in a single short list.</span></span>
+              </a>
+              <a href="/what-we-build/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span>
+                <span><span class="mega-item-title">What we build for you</span><span class="mega-item-desc">The deliverable in plain language plus the technical detail behind it.</span></span>
+              </a>
+              <a href="/pricing/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                <span><span class="mega-item-title">Pricing</span><span class="mega-item-desc">Two plans, no design deposit. Monthly $175 or $4,000 lump-sum.</span></span>
+              </a>
+            </div>
+
+            <div class="mega-col">
+              <h5>See the work</h5>
+              <a href="/samples/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg></span>
+                <span><span class="mega-item-title">Sample websites</span><span class="mega-item-desc">Six live demo sites across roofing, inspection, HVAC, electrical, plumbing, landscaping.</span></span>
+              </a>
+              <a href="/sample-forms/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></span>
+                <span><span class="mega-item-title">Sample forms</span><span class="mega-item-desc">Eight working intake forms tuned per trade. Fields a real dispatcher would want.</span></span>
+              </a>
+              <a href="/technical-approach/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                <span><span class="mega-item-title">Technical approach</span><span class="mega-item-desc">Stack, pipeline, performance + accessibility targets, security posture.</span></span>
+              </a>
+              <a href="/agreement/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+                <span><span class="mega-item-title">Service agreement</span><span class="mega-item-desc">The contract terms in plain English. Always public, always current.</span></span>
+              </a>
+            </div>
+
+            <div class="mega-feature">
+              <span class="mega-feature-eyebrow">Why this works</span>
+              <h3 class="mega-feature-title">A custom-coded site, no large up-front check.</h3>
+              <p class="mega-feature-body">Most agencies want a few thousand dollars before they start. We don't. The first $175 kicks off the build and you keep the lights on month to month.</p>
+              <div class="mega-feature-stats">
+                <div class="mega-feature-stat"><strong>$0</strong><span>design deposit</span></div>
+                <div class="mega-feature-stat"><strong>2&ndash;3 wks</strong><span>typical build</span></div>
+                <div class="mega-feature-stat"><strong>95&ndash;100</strong><span>PageSpeed score</span></div>
+                <div class="mega-feature-stat"><strong>WCAG AA</strong><span>accessibility floor</span></div>
+              </div>
+              <a href="/contact/" class="mega-feature-cta">Start a 20-min call &rarr;</a>
+            </div>
+          </div>
+
+          <div class="mega-foot">
+            <span>Six demo sites, six visual voices. Real builds, not mockups.</span>
+            <a href="/samples/">Browse the demos &rarr;</a>
+          </div>
         </div>
       </div>
 
       <div class="nav-dropdown">
         <a href="/service-areas/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/service-areas/') or page.url | startsWith('/areas/') %} class="active" aria-current="page"{% endif %}>Service Areas <span class="nav-arrow">&#9660;</span></a>
-        <div class="mega-menu mega-menu--wide" role="navigation" aria-label="Service areas by region">
-          <div class="mega-col">
-            <h5>{{ nav.megaMenu.southwest.label }}</h5>
-            {% for city in nav.megaMenu.southwest.cities %}
-              <a href="/areas/{{ city.slug }}/">{{ city.label }}</a>
-            {% endfor %}
-          </div>
-          <div class="mega-col">
-            <h5>{{ nav.megaMenu.south.label }}</h5>
-            {% for city in nav.megaMenu.south.cities %}
-              <a href="/areas/{{ city.slug }}/">{{ city.label }}</a>
-            {% endfor %}
-          </div>
-          <div class="mega-col">
-            <h5>{{ nav.megaMenu.east.label }}</h5>
-            {% for city in nav.megaMenu.east.cities %}
-              <a href="/areas/{{ city.slug }}/">{{ city.label }}</a>
-            {% endfor %}
-          </div>
-          <div class="mega-canada">
-            <h5>{{ nav.megaMenu.canada.label }}</h5>
-            <div class="mega-canada-cities">
-              {% for city in nav.megaMenu.canada.cities %}
-                <a href="/areas/{{ city.slug }}/">{{ city.label }}</a>
-              {% endfor %}
+        <div class="mega-menu" role="menu" aria-label="Service areas menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h5>U.S. metros, sample</h5>
+              <div class="mega-city-grid">
+                <a href="/areas/phoenix-az/">Phoenix, AZ</a>
+                <a href="/areas/los-angeles-ca/">Los Angeles, CA</a>
+                <a href="/areas/denver-co/">Denver, CO</a>
+                <a href="/areas/miami-fl/">Miami, FL</a>
+                <a href="/areas/atlanta-ga/">Atlanta, GA</a>
+                <a href="/areas/chicago-il/">Chicago, IL</a>
+                <a href="/areas/charlotte-nc/">Charlotte, NC</a>
+                <a href="/areas/las-vegas-nv/">Las Vegas, NV</a>
+                <a href="/areas/philadelphia-pa/">Philadelphia, PA</a>
+                <a href="/areas/nashville-tn/">Nashville, TN</a>
+                <a href="/areas/dallas-tx/">Dallas, TX</a>
+                <a href="/areas/seattle-wa/">Seattle, WA</a>
+              </div>
+            </div>
+
+            <div class="mega-col">
+              <h5>Canadian metros, sample</h5>
+              <div class="mega-city-grid">
+                <a href="/areas/calgary-ab/">Calgary, AB</a>
+                <a href="/areas/edmonton-ab/">Edmonton, AB</a>
+                <a href="/areas/vancouver-bc/">Vancouver, BC</a>
+                <a href="/areas/toronto-on/">Toronto, ON</a>
+                <a href="/areas/ottawa-on/">Ottawa, ON</a>
+                <a href="/areas/montreal-qc/">Montreal, QC</a>
+              </div>
+              <h5 class="mega-col-h5--secondary">Local-SEO done right</h5>
+              <p class="mega-col-note">Each area page is a real, indexable page with local content, not a thin doorway. Built to compete in your specific metro.</p>
+            </div>
+
+            <div class="mega-feature">
+              <span class="mega-feature-eyebrow">Anywhere in U.S. or Canada</span>
+              <h3 class="mega-feature-title">Don't see your city? We still serve it.</h3>
+              <p class="mega-feature-body">The cities listed are a sample. We build for service businesses across all 50 U.S. states and every Canadian province. Your area page gets the same treatment as a major metro.</p>
+              <div class="mega-feature-stats">
+                <div class="mega-feature-stat"><strong>50</strong><span>U.S. states</span></div>
+                <div class="mega-feature-stat"><strong>10</strong><span>Canadian provinces</span></div>
+                <div class="mega-feature-stat"><strong>1</strong><span>local map per site</span></div>
+                <div class="mega-feature-stat"><strong>100%</strong><span>remote, low-friction</span></div>
+              </div>
+              <a href="/contact/" class="mega-feature-cta">Ask about your area &rarr;</a>
             </div>
           </div>
+
           <div class="mega-foot">
-            <span>All 50 U.S. states &amp; Canada</span>
-            <a href="/service-areas/">View all service areas &rarr;</a>
+            <span>Sampling 30 metros across the U.S. and Canada. Many more covered.</span>
+            <a href="/service-areas/">View the full service-area map &rarr;</a>
           </div>
         </div>
       </div>
 
       <div class="nav-dropdown">
-        <a href="/blog/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/blog/') or page.url | startsWith('/glossary/') or page.url | startsWith('/faq/') or page.url | startsWith('/owners-guide/') %} class="active" aria-current="page"{% endif %}>Resources <span class="nav-arrow">&#9660;</span></a>
-        <div class="mega-menu mega-menu--panel" role="menu" aria-label="Resources menu">
-          <a href="/blog/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-            <span><span class="mega-item-title">Blog</span><span class="mega-item-desc">Practical guides on local SEO, page speed, and service-business websites.</span></span>
-          </a>
-          <a href="/faq/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-            <span><span class="mega-item-title">FAQ</span><span class="mega-item-desc">Straight answers on pricing, process, ownership, and support.</span></span>
-          </a>
-          <a href="/glossary/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
-            <span><span class="mega-item-title">Glossary</span><span class="mega-item-desc">Plain-language definitions for web design, hosting, and SEO terminology.</span></span>
-          </a>
-          <a href="/owners-guide/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
-            <span><span class="mega-item-title">Owner's Guide</span><span class="mega-item-desc">Sample of what we hand you on launch day. A short plain-language guide.</span></span>
-          </a>
-          <a href="/testimonials/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-            <span><span class="mega-item-title">Testimonials</span><span class="mega-item-desc">What small business owners say about working with us.</span></span>
-          </a>
-          <a href="/changelog/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-            <span><span class="mega-item-title">Changelog</span><span class="mega-item-desc">What we've shipped, in public. Updated every release.</span></span>
-          </a>
+        <a href="/blog/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/blog/') or page.url | startsWith('/glossary/') or page.url | startsWith('/faq/') or page.url | startsWith('/owners-guide/') or page.url | startsWith('/testimonials/') or page.url | startsWith('/changelog/') %} class="active" aria-current="page"{% endif %}>Resources <span class="nav-arrow">&#9660;</span></a>
+        <div class="mega-menu" role="menu" aria-label="Resources menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h5>Read</h5>
+              <a href="/blog/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></span>
+                <span><span class="mega-item-title">Blog</span><span class="mega-item-desc">Practical guides on local SEO, page speed, and service-business websites.</span></span>
+              </a>
+              <a href="/faq/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                <span><span class="mega-item-title">FAQ</span><span class="mega-item-desc">Straight answers on pricing, process, ownership, and support.</span></span>
+              </a>
+              <a href="/glossary/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+                <span><span class="mega-item-title">Glossary</span><span class="mega-item-desc">Plain-language definitions for web design, hosting, and SEO terminology.</span></span>
+              </a>
+            </div>
+
+            <div class="mega-col">
+              <h5>Reference</h5>
+              <a href="/owners-guide/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                <span><span class="mega-item-title">Owner's Guide</span><span class="mega-item-desc">A sample of what we hand you on launch day. Plain-language, short, useful.</span></span>
+              </a>
+              <a href="/testimonials/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span><span class="mega-item-title">Testimonials</span><span class="mega-item-desc">What small-business owners say about working with us, in their own words.</span></span>
+              </a>
+              <a href="/changelog/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                <span><span class="mega-item-title">Changelog</span><span class="mega-item-desc">What we've shipped, in public. Updated every release.</span></span>
+              </a>
+            </div>
+
+            <div class="mega-feature">
+              <span class="mega-feature-eyebrow">For owners, not for marketing</span>
+              <h3 class="mega-feature-title">Free, plain-English answers to the questions agencies dodge.</h3>
+              <p class="mega-feature-body">Hosting, SEO, accessibility, ownership, contracts &mdash; the topics that decide whether your site actually serves you long-term. We answer them in writing, before you sign anything.</p>
+              <div class="mega-feature-stats">
+                <div class="mega-feature-stat"><strong>0</strong><span>email gates</span></div>
+                <div class="mega-feature-stat"><strong>0</strong><span>upsells</span></div>
+                <div class="mega-feature-stat"><strong>100%</strong><span>plain language</span></div>
+                <div class="mega-feature-stat"><strong>Always</strong><span>publicly indexed</span></div>
+              </div>
+              <a href="/owners-guide/" class="mega-feature-cta">Read the Owner's Guide &rarr;</a>
+            </div>
+          </div>
+
+          <div class="mega-foot">
+            <span>Looking for something specific? The site search covers every page.</span>
+            <a href="#" data-open-search>Open search &rarr;</a>
+          </div>
         </div>
       </div>
 
       <div class="nav-dropdown">
-        <a href="/about/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/about/') or page.url | startsWith('/style-guide/') or page.url | startsWith('/technical-approach/') or page.url | startsWith('/accessibility/') or page.url | startsWith('/sitemap/') %} class="active" aria-current="page"{% endif %}>Company <span class="nav-arrow">&#9660;</span></a>
-        <div class="mega-menu mega-menu--panel" role="menu" aria-label="Company menu">
-          <a href="/about/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
-            <span><span class="mega-item-title">About</span><span class="mega-item-desc">A small, U.S.-based team. Meet the person who'll actually build your site.</span></span>
-          </a>
-          <a href="/technical-approach/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
-            <span><span class="mega-item-title">Technical Approach</span><span class="mega-item-desc">The stack, the pipeline, and the reasoning behind every site we ship.</span></span>
-          </a>
-          <a href="/style-guide/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 0 0 0 20 3 3 0 0 0 3-3 2.5 2.5 0 0 1 2.5-2.5H19a3 3 0 0 0 3-3A10 10 0 0 0 12 2z"/></svg></span>
-            <span><span class="mega-item-title">Style Guide</span><span class="mega-item-desc">Our design system: colors, type, spacing, and the patterns we use.</span></span>
-          </a>
-          <a href="/accessibility/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="8" r="1"/><path d="M10 10h4v6"/><path d="M12 14v4"/></svg></span>
-            <span><span class="mega-item-title">Accessibility</span><span class="mega-item-desc">Our WCAG 2.2 AA commitment and how to reach us about access issues.</span></span>
-          </a>
-          <a href="/sitemap/" class="mega-item" role="menuitem">
-            <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
-            <span><span class="mega-item-title">Sitemap</span><span class="mega-item-desc">A plain-language map of every page on this site.</span></span>
-          </a>
+        <a href="/about/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/about/') or page.url | startsWith('/style-guide/') or page.url | startsWith('/technical-approach/') or page.url | startsWith('/accessibility/') or page.url | startsWith('/sitemap/') or page.url | startsWith('/contact/') or page.url | startsWith('/client-portal/') %} class="active" aria-current="page"{% endif %}>Company <span class="nav-arrow">&#9660;</span></a>
+        <div class="mega-menu" role="menu" aria-label="Company menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h5>Who we are</h5>
+              <a href="/about/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
+                <span><span class="mega-item-title">About</span><span class="mega-item-desc">A small, U.S.-based team. Meet the person who will actually build your site.</span></span>
+              </a>
+              <a href="/style-guide/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 0 0 0 20 3 3 0 0 0 3-3 2.5 2.5 0 0 1 2.5-2.5H19a3 3 0 0 0 3-3A10 10 0 0 0 12 2z"/></svg></span>
+                <span><span class="mega-item-title">Style Guide</span><span class="mega-item-desc">Our design system in public: colors, type, spacing, and component patterns.</span></span>
+              </a>
+              <a href="/client-portal/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                <span><span class="mega-item-title">Client portal</span><span class="mega-item-desc">For existing clients: content updates, design feedback, emergency support.</span></span>
+              </a>
+            </div>
+
+            <div class="mega-col">
+              <h5>How we build</h5>
+              <a href="/technical-approach/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                <span><span class="mega-item-title">Technical approach</span><span class="mega-item-desc">The stack, the pipeline, and the reasoning behind every site we ship.</span></span>
+              </a>
+              <a href="/accessibility/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="8" r="1"/><path d="M10 10h4v6"/><path d="M12 14v4"/></svg></span>
+                <span><span class="mega-item-title">Accessibility</span><span class="mega-item-desc">Our WCAG 2.2 AA commitment and how to reach us about access issues.</span></span>
+              </a>
+              <a href="/sitemap/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
+                <span><span class="mega-item-title">Sitemap</span><span class="mega-item-desc">A plain-language map of every page on this site.</span></span>
+              </a>
+            </div>
+
+            <div class="mega-feature">
+              <span class="mega-feature-eyebrow">Talk to a real person</span>
+              <h3 class="mega-feature-title">A short call beats a long form.</h3>
+              <p class="mega-feature-body">Twenty minutes is enough to know whether we're the right fit. No pitch deck, no junior salesperson &mdash; just the person who would actually build your site, answering your questions.</p>
+              <div class="mega-feature-stats">
+                <div class="mega-feature-stat"><strong>20 min</strong><span>discovery call</span></div>
+                <div class="mega-feature-stat"><strong>1</strong><span>point of contact</span></div>
+                <div class="mega-feature-stat"><strong>U.S.</strong><span>based, no offshore</span></div>
+                <div class="mega-feature-stat"><strong>$0</strong><span>obligation</span></div>
+              </div>
+              <a href="/contact/" class="mega-feature-cta">Book the call &rarr;</a>
+            </div>
+          </div>
+
+          <div class="mega-foot">
+            <span>Already a client? Skip the public site and head straight in.</span>
+            <a href="/client-portal/">Open the client portal &rarr;</a>
+          </div>
         </div>
       </div>
 
