@@ -4917,7 +4917,8 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   border-radius: var(--radius-round);
 }
 :root[data-theme="dark"] .changelog-tag { color: var(--gold-400); }
-.changelog-tag--major {
+.changelog-tag--major,
+:root[data-theme="dark"] .changelog-tag--major {
   background: var(--gold-400);
   color: var(--navy-900);
   border-color: var(--gold-400);
