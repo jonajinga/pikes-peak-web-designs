@@ -235,7 +235,11 @@
     });
   });
 
-  /* -------- Tippy.js glossary tooltips -------- */
+  /* -------- Tippy.js glossary tooltips --------
+     trigger covers hover (desktop), keyboard focus, and click (mobile
+     tap + a11y). touch: true means a single tap on a term shows the
+     tooltip; tapping outside hides it. The previous touch: ['hold',
+     250] required a long-press, which felt broken on phones. */
   const initTippy = () => {
     if (typeof tippy === 'undefined') return;
     tippy('[data-term]', {
@@ -245,7 +249,10 @@
       allowHTML: false,
       maxWidth: 280,
       delay: [120, 80],
-      touch: ['hold', 250],
+      touch: true,
+      trigger: 'mouseenter focus click',
+      hideOnClick: true,
+      interactive: false,
     });
   };
   // Tippy loads with defer, so wait a tick
