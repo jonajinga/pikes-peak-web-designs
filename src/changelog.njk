@@ -11,12 +11,66 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
     </nav>
     <span class="section-label">Changelog</span>
     <h1>What we've shipped, <em>in public.</em></h1>
-    <p>A running record of the changes we make to pikespeakwebdesigns.com. Published because we think the cadence and quality of an agency's own site tells you more than any pitch deck.</p>
+    <p>A running record of every substantive change to pikespeakwebdesigns.com. We publish this for two reasons. <strong>For potential clients:</strong> the cadence and quality of our own site tells you more about how we work than any pitch deck. <strong>For existing clients:</strong> when we ship something new on your site, you'll see the same level of detail here.</p>
   </div>
 </section>
 
-<section class="section">
+<section class="section section--cream" style="padding-top:2rem;padding-bottom:2rem">
+  <div class="container" style="max-width:980px">
+    <div class="changelog-stats">
+      <div class="changelog-stat">
+        <strong>23</strong>
+        <span>ship events since April 16, 2026</span>
+      </div>
+      <div class="changelog-stat">
+        <strong>12 days</strong>
+        <span>since the site went live</span>
+      </div>
+      <div class="changelog-stat">
+        <strong>0</strong>
+        <span>quiet weeks; we ship continuously</span>
+      </div>
+      <div class="changelog-stat">
+        <strong>100%</strong>
+        <span>of changes mirrored on GitHub, public-style</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2.5rem">
   <div class="container" style="max-width:820px">
+
+    <aside class="changelog-legend" aria-label="How to read this page">
+      <h2>How to read this page</h2>
+      <p>Each entry below is a single shipment: a date, a category tag, a short headline, and the specifics underneath. We write it the same way we'd write a release note for an internal team. If a term is unfamiliar, the <a href="/glossary/" class="inline-link">glossary</a> defines every technical word used here.</p>
+      <ul class="changelog-legend-tags">
+        <li><span class="changelog-tag changelog-tag--major">Major</span> A new page, feature, or significant rebuild.</li>
+        <li><span class="changelog-tag">Performance</span> Speed and Core Web Vitals improvements.</li>
+        <li><span class="changelog-tag">A11y</span> Accessibility fixes for screen readers, keyboard, contrast.</li>
+        <li><span class="changelog-tag">Mobile</span> Phone- and tablet-specific layout work.</li>
+        <li><span class="changelog-tag">Voice</span> Copy, tone, and editorial cleanups.</li>
+        <li><span class="changelog-tag">Infrastructure</span> Build, hosting, search, analytics, security headers.</li>
+      </ul>
+    </aside>
+
+    <div class="changelog-entry">
+      <header class="changelog-head">
+        <time datetime="2026-04-28" class="changelog-date">April 28, 2026</time>
+        <span class="changelog-tag changelog-tag--major">UX overhaul</span>
+      </header>
+      <h2 class="changelog-title">Megamenus, sticky TOCs, glossary expansion, client portal redesign, FOUC fix</h2>
+      <div class="changelog-body">
+        <p><strong>What changed, in plain English:</strong> the four dropdown menus in the header now share a single, wider design with helpful descriptions and a feature panel. Long pages with a table of contents now keep that TOC visible as you scroll. The glossary doubled in size. The client portal got a single, consistent layout across all four stages. And the brief flicker some visitors saw when navigating between pages is gone.</p>
+        <ul>
+          <li><strong>Megamenus:</strong> all four header dropdowns (Services, Service Areas, Resources, Company) now use a unified site-width layout: two columns of links plus a feature panel with stats and a CTA, plus a bottom strip with a secondary action. Same width, same rhythm, helpful copy in every panel.</li>
+          <li><strong>Sticky TOCs:</strong> on long-form pages (<a href="/owners-guide/" class="inline-link">Owner's Guide</a>, <a href="/technical-approach/" class="inline-link">Technical Approach</a>, <a href="/what-we-build/" class="inline-link">What We Build</a>) the table-of-contents sidebar now stays pinned to the viewport as you scroll, with the active section highlighting via <code>IntersectionObserver</code>.</li>
+          <li><strong>Glossary expansion:</strong> <a href="/glossary/" class="inline-link">/glossary/</a> grew from ~85 terms to ~165 across A&ndash;Y; new K, Q, X, Y sections; expanded coverage of local SEO, performance, and security topics owners actually ask about.</li>
+          <li><strong>Client portal redesign:</strong> all four stages (new, in-build, live, anytime) now share the identical layout, plus a sticky-sidebar TOC matching the long-form pages. Direct contact and self-serve resources gained the same treatment.</li>
+          <li><strong>FOUC (flash) fix:</strong> the brief flash of unstyled megamenus and nav some visitors saw between pages is eliminated. Critical CSS now locks the position of the megamenu, hamburger, nav-icon buttons, and mobile backdrop from first paint, so the deferred stylesheet swap is invisible.</li>
+        </ul>
+      </div>
+    </div>
 
     <div class="changelog-entry">
       <header class="changelog-head">
@@ -464,9 +518,10 @@ description: "What we've shipped, added, fixed, and improved on pikespeakwebdesi
   <div class="cta-inner">
     <span class="section-label">Active development</span>
     <h2>The website we sell is the website we ship.</h2>
-    <p>If this site is improving weekly, your site will improve weekly. That's the pitch.</p>
+    <p>If this site is improving weekly, your site will improve weekly. That's the pitch &mdash; and this page is the receipt. <strong>Existing client?</strong> When we ship on your site, the same level of detail goes in your monthly summary.</p>
     <div class="cta-buttons">
       <a href="/contact/" class="btn btn-primary btn-lg">Start a Conversation</a>
+      <a href="/client-portal/" class="btn btn-outline btn-lg">Client Portal</a>
       <a href="/technical-approach/" class="btn btn-outline btn-lg">Technical Approach</a>
     </div>
   </div>
