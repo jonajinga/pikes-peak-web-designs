@@ -10910,9 +10910,14 @@ a { touch-action: manipulation; }
    Leaflet + OpenStreetMap, with Pikes Peak palette.
    ============================================================ */
 .area-map-section { padding-top: clamp(2.5rem, 5vw, 3.5rem); padding-bottom: clamp(2.5rem, 5vw, 3.5rem); }
-.area-map-header { max-width: 760px; margin: 0 auto 1.5rem; text-align: center; }
-.area-map-header .section-title { margin-bottom: 0.5rem; }
-.area-map-sub { color: var(--text-muted); font-size: 0.97rem; line-height: 1.65; max-width: 60ch; margin: 0.5rem auto 0; }
+.area-map-header { max-width: 720px; margin: 0 0 1.75rem; text-align: left; }
+.area-map-header .section-label { display: block; }
+.area-map-header .section-title {
+  margin: 0.4rem 0 0.85rem;
+  font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.2rem);
+  line-height: 1.18;
+}
+.area-map-sub { color: var(--text-muted); font-size: 0.97rem; line-height: 1.65; max-width: 65ch; margin: 0; }
 .area-map {
   height: clamp(360px, 50vh, 540px);
   border: 1px solid var(--line);

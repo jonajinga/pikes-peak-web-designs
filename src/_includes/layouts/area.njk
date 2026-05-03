@@ -49,10 +49,19 @@ extraHead: '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/le
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
   (function () {
+    var initAttempts = 0;
     function init() {
       if (typeof L === 'undefined') return;
       var el = document.getElementById('area-map');
       if (!el || el.dataset.inited) return;
+      // Don't initialize until the container has its real height. On slow
+      // connections the deferred stylesheet may not have applied yet.
+      // Retry every 80ms up to ~2s before giving up.
+      if (el.offsetHeight < 200 && initAttempts < 25) {
+        initAttempts++;
+        setTimeout(init, 80);
+        return;
+      }
       el.dataset.inited = '1';
       var lat = parseFloat(el.dataset.lat);
       var lng = parseFloat(el.dataset.lng);
