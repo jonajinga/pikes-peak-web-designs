@@ -77,7 +77,7 @@ extraHead: '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/le
         html: '<span class="area-primary-marker-dot"></span><span class="area-primary-marker-pulse"></span>',
         iconSize: [28, 28], iconAnchor: [14, 14]
       });
-      var primary = L.marker([lat, lng], { icon: primaryIcon, zIndexOffset: 1000 }).addTo(map)
+      L.marker([lat, lng], { icon: primaryIcon, zIndexOffset: 1000 }).addTo(map)
         .bindPopup('<strong>' + city + '</strong><br>' + metro + ' &middot; primary metro');
 
       var nearbyIcon = L.divIcon({
@@ -99,9 +99,26 @@ extraHead: '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/le
         dashArray: '6,8'
       }).addTo(map).bindTooltip('Standard service radius (~37 mi)');
 
-      if (bounds.length > 1) {
-        map.fitBounds(bounds, { padding: [40, 40] });
+      function fit() {
+        map.invalidateSize();
+        if (bounds.length > 1) {
+          map.fitBounds(bounds, { padding: [40, 40] });
+        }
       }
+      // Recompute on the next paint, again after the deferred stylesheet
+      // is likely to have applied, and once more on full window load. The
+      // first call covers the most common case; the rest are belt-and-
+      // suspenders for slow connections.
+      requestAnimationFrame(fit);
+      setTimeout(fit, 250);
+      window.addEventListener('load', fit);
+
+      // Watch for any subsequent container size change (responsive
+      // transitions, fonts loading, etc.) and re-flow the tiles.
+      if (typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(function () { map.invalidateSize(); }).observe(el);
+      }
+
       // Tap-to-enable wheel zoom; prevents accidental scroll-trap.
       map.on('click', function () { map.scrollWheelZoom.enable(); });
       map.on('mouseout', function () { map.scrollWheelZoom.disable(); });

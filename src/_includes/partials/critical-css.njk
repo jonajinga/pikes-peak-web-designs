@@ -42,5 +42,10 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.15;mar
 .mobile-nav{position:fixed;top:0;right:0;bottom:0;width:min(400px,92vw);transform:translateX(100%);z-index:105}
 .mobile-nav.open{transform:translateX(0)}
 .mobile-backdrop{position:fixed;inset:0;opacity:0;visibility:hidden;z-index:104}
+/* Service-area Leaflet map container needs a deterministic height before
+   Leaflet initializes; otherwise it computes tiles against a 0-px
+   container and the rendered map ends up as a few stray tiles in a tall
+   empty box once the deferred stylesheet swaps in. */
+.area-map{height:clamp(360px,50vh,540px);border-radius:14px;overflow:hidden;position:relative;z-index:0;background:#F1F4FA}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 </style>
