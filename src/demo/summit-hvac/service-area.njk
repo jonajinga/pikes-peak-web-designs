@@ -1,0 +1,115 @@
+---
+layout: layouts/demo-summit.njk
+title: "Service Area | Summit HVAC | Denver Metro"
+description: "Summit HVAC services Denver, Aurora, Lakewood, Centennial, Highlands Ranch, Parker, Castle Rock, and the rest of the Denver metro. Map and climate-zone notes."
+extraHead: '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">'
+---
+
+<section class="summit-section">
+  <div class="summit-container">
+    <nav style="font-size:0.85rem;color:var(--su-text-muted);margin-bottom:1rem;letter-spacing:0.06em;text-transform:uppercase">
+      <a href="/demo/summit-hvac/" style="color:var(--su-cyan)">Home</a> &nbsp;/&nbsp; <span>Service Area</span>
+    </nav>
+    <span class="summit-eyebrow">Coverage</span>
+    <h1 style="font-family:var(--su-font-display);font-size:clamp(2rem,1.5rem+2vw,3rem);color:var(--su-ink);line-height:1.1;margin:0.5rem 0 1.25rem">Heating &amp; cooling <em style="color:var(--su-cyan);font-style:normal">across the Denver metro.</em></h1>
+    <p style="font-size:1.05rem;line-height:1.65;color:var(--su-text);max-width:62ch">Same-day service inside the I-25 / I-225 / C-470 loop. Heat-pump installs and mini-splits also available out to Castle Rock, Parker, and Longmont. Click any pin for that area's typical heating-degree days, climate zone, and what we install most.</p>
+  </div>
+</section>
+
+<section class="summit-section" style="background:var(--su-cream)">
+  <div class="summit-container">
+    <div id="summit-coverage-map" style="height:480px;border:1px solid var(--su-line);border-radius:var(--su-radius);box-shadow:0 8px 28px rgba(15,32,52,0.10)" role="region" aria-label="Map of Summit HVAC's Denver-metro service area"></div>
+    <p style="margin-top:1rem;font-size:0.82rem;color:var(--su-text-muted);text-align:center">Map tiles &amp; data &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener" style="color:var(--su-cyan)">OpenStreetMap</a> contributors.</p>
+  </div>
+</section>
+
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  (function () {
+    var shop = { name: 'Summit HVAC shop', lat: 39.7392, lng: -104.9903 };
+    var areas = [
+      { name: 'Denver',           zips: '80201–80299', lat: 39.7392, lng: -104.9903, hdd: '6,000 HDD' },
+      { name: 'Aurora',           zips: '80010–80019', lat: 39.7294, lng: -104.8319, hdd: '6,100 HDD' },
+      { name: 'Lakewood',         zips: '80214–80235', lat: 39.7047, lng: -105.0814, hdd: '6,200 HDD' },
+      { name: 'Centennial',       zips: '80111, 80112', lat: 39.5807, lng: -104.8772, hdd: '6,200 HDD' },
+      { name: 'Highlands Ranch',  zips: '80126, 80129', lat: 39.5538, lng: -104.9692, hdd: '6,300 HDD' },
+      { name: 'Parker',           zips: '80134, 80138', lat: 39.5186, lng: -104.7614, hdd: '6,400 HDD' },
+      { name: 'Castle Rock',      zips: '80104, 80108', lat: 39.3722, lng: -104.8561, hdd: '6,800 HDD' },
+      { name: 'Arvada',           zips: '80002, 80003', lat: 39.8028, lng: -105.0875, hdd: '6,200 HDD' },
+      { name: 'Westminster',      zips: '80030–80031', lat: 39.8367, lng: -105.0372, hdd: '6,200 HDD' },
+      { name: 'Thornton',         zips: '80229, 80233', lat: 39.8681, lng: -104.9719, hdd: '6,100 HDD' },
+      { name: 'Englewood',        zips: '80110, 80113', lat: 39.6478, lng: -104.9878, hdd: '6,100 HDD' },
+      { name: 'Littleton',        zips: '80120–80129', lat: 39.6133, lng: -105.0167, hdd: '6,200 HDD' }
+    ];
+
+    function init() {
+      if (typeof L === 'undefined') return;
+      var el = document.getElementById('summit-coverage-map');
+      if (!el) return;
+      var map = L.map(el, { center: [shop.lat, shop.lng], zoom: 10, scrollWheelZoom: false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+        maxZoom: 18
+      }).addTo(map);
+
+      var shopIcon = L.divIcon({
+        className: 'su-shop-marker',
+        html: '<span style="display:block;width:22px;height:22px;background:#0F4C81;border:3px solid #FFFFFF;box-shadow:0 0 0 2px #0F4C81;transform:rotate(45deg)"></span>',
+        iconSize: [22, 22], iconAnchor: [11, 11]
+      });
+      L.marker([shop.lat, shop.lng], { icon: shopIcon }).addTo(map)
+        .bindPopup('<strong>Summit HVAC</strong><br>Central Denver shop');
+
+      var markers = [];
+      areas.forEach(function (a) {
+        var m = L.marker([a.lat, a.lng]).addTo(map);
+        m.bindPopup('<strong>' + a.name + '</strong><br>Zip: ' + a.zips + '<br><em>' + a.hdd + '</em>');
+        markers.push(m);
+      });
+
+      L.circle([shop.lat, shop.lng], { radius: 48000, color: '#0F4C81', weight: 1.2, fillOpacity: 0.05, dashArray: '5,7' })
+        .addTo(map).bindTooltip('Same-day service radius (~30 mi)');
+
+      var group = L.featureGroup(markers.concat([L.marker([shop.lat, shop.lng])]));
+      map.fitBounds(group.getBounds().pad(0.18));
+      map.on('click', function () { map.scrollWheelZoom.enable(); });
+    }
+    if (document.readyState !== 'loading') init();
+    else document.addEventListener('DOMContentLoaded', init);
+    window.addEventListener('load', init);
+  })();
+</script>
+
+<section class="summit-section">
+  <div class="summit-container">
+    <span class="summit-eyebrow">Climate-shaped service</span>
+    <h2 style="font-family:var(--su-font-display);font-size:clamp(1.6rem,1.2rem+1.4vw,2.3rem);color:var(--su-ink);margin:0.5rem 0 1rem">Cold winters, hot afternoons, dry every season.</h2>
+    <p style="font-size:1rem;line-height:1.65;color:var(--su-text);max-width:65ch;margin-bottom:2rem">The Denver metro is climate zone 5B. Mild compared to the upper Midwest, brutal compared to the West Coast. The right system here is sized for ~6,000 heating-degree-days and ~700 cooling-degree-days &mdash; very different from coastal markets.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem">
+      <div style="padding:1.5rem;background:var(--su-cream);border:1px solid var(--su-line);border-radius:var(--su-radius)">
+        <h3 style="font-family:var(--su-font-display);font-size:1.1rem;color:var(--su-ink);margin-bottom:0.65rem">Heat pumps work here</h3>
+        <p style="font-size:0.92rem;color:var(--su-text-muted);line-height:1.6;margin:0">Cold-climate inverter heat pumps (Mitsubishi Hyper-Heat, Daikin Aurora) maintain capacity to ~5&deg;F. We install them with a backup strip-heat coil for the rare deep-cold snap. Xcel rebates apply.</p>
+      </div>
+      <div style="padding:1.5rem;background:var(--su-cream);border:1px solid var(--su-line);border-radius:var(--su-radius)">
+        <h3 style="font-family:var(--su-font-display);font-size:1.1rem;color:var(--su-ink);margin-bottom:0.65rem">Dry air = humidification</h3>
+        <p style="font-size:0.92rem;color:var(--su-text-muted);line-height:1.6;margin:0">Indoor humidity hits 10&ndash;20% in winter without a humidifier. Whole-house steam humidifiers (Aprilaire 800) are a routine add-on we recommend on any new installation.</p>
+      </div>
+      <div style="padding:1.5rem;background:var(--su-cream);border:1px solid var(--su-line);border-radius:var(--su-radius)">
+        <h3 style="font-family:var(--su-font-display);font-size:1.1rem;color:var(--su-ink);margin-bottom:0.65rem">Wildfire-grade filtration</h3>
+        <p style="font-size:0.92rem;color:var(--su-text-muted);line-height:1.6;margin:0">Front Range smoke season runs August through October most years. MERV 13 minimum on every install; MERV 16 or HEPA on request for asthma and allergy clients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="summit-cta">
+  <div class="summit-container" style="text-align:center;padding-block:clamp(3rem,6vw,5rem)">
+    <h2 style="font-family:var(--su-font-display);font-size:clamp(1.5rem,1.2rem+1.2vw,2.2rem);color:#FFFFFF;margin-bottom:0.85rem">Same-day service across the metro.</h2>
+    <p style="color:rgba(255,255,255,0.85);font-size:1rem;margin-bottom:1.75rem">Routine maintenance? Book online. Heat out? Call. Either way, we run trucks across the metro every day.</p>
+    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:0.75rem">
+      <a href="tel:9283159094" class="summit-btn">Call (928) 315-9094</a>
+      <a href="/demo/summit-hvac/contact/" class="summit-btn summit-btn-outline">Book service</a>
+    </div>
+  </div>
+</section>

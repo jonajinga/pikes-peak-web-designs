@@ -1,0 +1,74 @@
+---
+layout: layouts/base.njk
+title: "Promotions &amp; Campaigns | Pikes Peak Web Designs"
+description: "Active and upcoming promotional campaigns for service-business websites: seasonal launch sprints, storm-season readiness, emergency-call setup, and partner-referral kits."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Promotions</span>
+    </nav>
+    <span class="section-label">Active &amp; upcoming</span>
+    <h1>Time-boxed campaigns &amp; <em>seasonal kits.</em></h1>
+    <p>Most of the work I do is the standard plan: $175/mo or $4,000 lump-sum, year-round, no urgency manufactured. Occasionally I run a focused campaign for a specific season or audience. Active campaigns live below; everything else is the standard plan.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:980px">
+
+    {% set anyActive = false %}
+    {% for c in events.campaigns %}{% if c.active %}{% set anyActive = true %}{% endif %}{% endfor %}
+
+    {% if anyActive %}
+    <h2 style="margin-top:0">Currently running</h2>
+    <div class="proof-grid" style="margin-bottom:3rem">
+      {% for c in events.campaigns %}
+        {% if c.active %}
+        <a href="/events/{{ c.slug }}/" class="proof-card">
+          <span style="font-family:var(--font-body);font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-600);display:block;margin-bottom:0.4rem">{{ c.eyebrow }}</span>
+          <strong>{{ c.title }}</strong>
+          <span>{{ c.summary }}</span>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <div style="padding:1.5rem 1.75rem;background:var(--bg-alt);border-left:3px solid var(--gold-500);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:3rem">
+      <h2 style="margin:0 0 0.65rem;font-size:1.2rem">No active campaigns right now.</h2>
+      <p style="margin:0;font-size:0.95rem;line-height:1.65">The standard plan is always available: $175/mo or $4,000 lump-sum, $0 down, 2&ndash;3 weeks to launch. <a href="/contact/" class="inline-link">Book a discovery call</a> any time. The campaigns below run on a seasonal calendar &mdash; bookmark this page if one fits your business and check back when the window opens.</p>
+    </div>
+    {% endif %}
+
+    <h2>Seasonal calendar</h2>
+    <p>Six campaigns rotate on a yearly schedule. Each one has a fixed window and a specific target. When a campaign is live, the card above shows it; when the window closes, the kit drops off this index but stays available for clients to reference.</p>
+
+    <ul style="display:flex;flex-direction:column;gap:1.25rem;list-style:none;padding:0;margin-top:1.5rem">
+      {% for c in events.campaigns %}
+      <li style="padding:1.25rem 1.5rem;background:var(--surface-raised);border:1px solid var(--line);border-radius:var(--radius)">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0.85rem;margin-bottom:0.65rem">
+          <span style="font-family:var(--font-body);font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-600)">{{ c.eyebrow }}</span>
+          <strong style="font-family:var(--font-display);font-size:1.05rem;color:var(--text)">{{ c.title }}</strong>
+          {% if c.active %}<span style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-600);background:var(--bg-alt);padding:0.15rem 0.55rem;border-radius:999px">Live now</span>{% endif %}
+        </div>
+        <p style="margin:0 0 0.5rem;font-size:0.94rem;line-height:1.6;color:var(--text)">{{ c.summary }}</p>
+        <p style="margin:0;font-size:0.86rem;color:var(--text-muted)"><strong>Target:</strong> {{ c.target }} &middot; <strong>Window:</strong> {{ c.window }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Not sure which fits?</span>
+    <h2>Most clients sign on the standard plan, not a campaign.</h2>
+    <p>The campaigns are useful when the timing matters &mdash; storm season, fall tune-ups, year-end. Most of the year the standard plan is the answer. Twenty-minute call to figure out which side of that you are on.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
+      <a href="/pricing/" class="btn btn-outline btn-lg">See standard pricing</a>
+    </div>
+  </div>
+</section>

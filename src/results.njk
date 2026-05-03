@@ -1,0 +1,118 @@
+---
+layout: layouts/base.njk
+title: "Results | Verifiable Performance Numbers | Pikes Peak Web Designs"
+description: "The performance, accessibility, and content numbers behind every site I ship. Auto-derived where possible. Verifiable by running the same tools yourself."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Results</span>
+    </nav>
+    <span class="section-label">Results, in numbers</span>
+    <h1>What the work actually <em>measures up to.</em></h1>
+    <p>Marketing pages are easy to write. Numbers are harder to fake. Below are the metrics behind every site I ship, plus the operational stats for this very site &mdash; the agency's own. Most of these are auto-derived from the codebase at build time, so they refresh every deploy.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:980px">
+
+    <h2 style="margin-top:0">Performance &amp; quality targets</h2>
+    <p>These are not aspirations. They are the bar I hold every site to before launch, and the same numbers you can verify yourself by pasting any demo URL into the public auditors.</p>
+
+    <div class="proof-grid">
+      <a href="https://pagespeed.web.dev/" rel="noopener" class="proof-card">
+        <span class="proof-num">{{ results.pageSpeedRange }}</span>
+        <strong>Google PageSpeed score</strong>
+        <span>Mobile + desktop, every page, every site. Run any demo URL through pagespeed.web.dev to verify.</span>
+      </a>
+      <div class="proof-card" style="cursor:default">
+        <span class="proof-num">{{ results.loadTimeTarget }}</span>
+        <strong>Page load time</strong>
+        <span>Largest Contentful Paint target on every page, served from 300+ Cloudflare edge locations.</span>
+      </div>
+      <a href="/accessibility/" class="proof-card">
+        <span class="proof-num">{{ results.wcagLevel }}</span>
+        <strong>Accessibility floor</strong>
+        <span>Every site tested with WAVE, Lighthouse, axe DevTools, and a real screen reader before launch.</span>
+      </a>
+      <div class="proof-card" style="cursor:default">
+        <span class="proof-num">{{ results.uptimeTarget }}</span>
+        <strong>Uptime target</strong>
+        <span>Cloudflare edge + UptimeRobot 1-minute external checks from three regions. SMS alerts before you notice.</span>
+      </div>
+    </div>
+
+    <h2 style="margin-top:3rem">This site, by the numbers</h2>
+    <p>The numbers below describe the very site you are reading. They auto-update on every build, so the page never goes stale.</p>
+
+    <div class="proof-grid">
+      <a href="/changelog/" class="proof-card">
+        <span class="proof-num">{{ results.daysLive }}</span>
+        <strong>Days live</strong>
+        <span>Since {{ results.launchDate }}, when this site shipped. Public ship cadence on the changelog.</span>
+      </a>
+      <a href="/samples/" class="proof-card">
+        <span class="proof-num">{{ results.demoCount }}</span>
+        <strong>Live demo sites</strong>
+        <span>One per trade. Six visual languages. Every page custom-coded. Real builds, not mockups.</span>
+      </a>
+      <a href="/blog/" class="proof-card">
+        <span class="proof-num">{{ results.blogPostCount }}</span>
+        <strong>Blog posts published</strong>
+        <span>Practical guides on local SEO, page speed, and service-business websites. New posts continuously.</span>
+      </a>
+      <a href="/service-areas/" class="proof-card">
+        <span class="proof-num">{{ results.areaCount }}</span>
+        <strong>Service-area pages</strong>
+        <span>Real local content per metro, not doorway pages. Sample of metros covered; clients anywhere in U.S. and Canada.</span>
+      </a>
+      <a href="/glossary/" class="proof-card">
+        <span class="proof-num">{{ results.glossaryEntryCount }}</span>
+        <strong>Glossary entries</strong>
+        <span>Plain-language definitions for every technical term used anywhere on the site.</span>
+      </a>
+      <a href="/sop/" class="proof-card">
+        <span class="proof-num">100%</span>
+        <strong>Open process</strong>
+        <span>The full SOP portal, the agreement, the owner's guide, the toolkit, the changelog &mdash; all public.</span>
+      </a>
+    </div>
+
+    {% if results.clientCallouts and results.clientCallouts.length %}
+    <h2 style="margin-top:3rem">Client outcomes</h2>
+    <p>Specific results from client work. Each one links to the case study where the numbers come from.</p>
+    <div class="proof-grid">
+      {% for callout in results.clientCallouts %}
+      <a href="{{ callout.url }}" class="proof-card">
+        <span class="proof-num">{{ callout.metric }}</span>
+        <strong>{{ callout.label }}</strong>
+        <span>{{ callout.context }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <h2 style="margin-top:3rem">Client outcomes</h2>
+    <p>This section will populate as clients give permission to publish their numbers. Until then, the verifiable architectural metrics above are the proof.</p>
+    {% endif %}
+
+    <div style="margin-top:3rem;padding:1.5rem 1.75rem;background:var(--bg-alt);border-left:3px solid var(--gold-500);border-radius:0 var(--radius-sm) var(--radius-sm) 0">
+      <h3 style="font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin:0 0 0.65rem">Verify any number on this page yourself.</h3>
+      <p style="margin:0;font-size:0.95rem;line-height:1.65">PageSpeed scores: <a href="https://pagespeed.web.dev/" rel="noopener" class="inline-link">pagespeed.web.dev</a>. Accessibility audits: <a href="https://wave.webaim.org/" rel="noopener" class="inline-link">wave.webaim.org</a>. Demo count: count the cards on <a href="/samples/" class="inline-link">/samples/</a>. Days live: subtract April 16, 2026 from today. Every claim links back to its evidence.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Ready for these numbers on your site?</span>
+    <h2>Twenty minutes is plenty.</h2>
+    <p>If you want a custom-coded site that lives at the top of those metrics, the discovery call is the start. If you want the same audit run on your current site first, the free 5-point audit is the start.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
+      <a href="/audit/" class="btn btn-outline btn-lg">Get a free audit</a>
+    </div>
+  </div>
+</section>

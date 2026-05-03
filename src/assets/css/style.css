@@ -607,6 +607,64 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 
 /* ========== TOPBAR ========== */
+/* ========== PROMO BANNER (site-wide, above topbar) ========== */
+.promo-banner {
+  font-size: 0.86rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.promo-banner--gold {
+  background: var(--gold-400);
+  color: var(--navy-900);
+}
+.promo-banner--navy {
+  background: var(--navy-950);
+  color: var(--gold-300);
+}
+.promo-banner--cream {
+  background: var(--bg-alt);
+  color: var(--text);
+  border-bottom-color: var(--line);
+}
+.promo-banner-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.6rem clamp(1rem, 3vw, 2rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+}
+.promo-banner-text { line-height: 1.45; }
+.promo-banner-cta {
+  font-weight: 700;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+.promo-banner-cta:hover { text-decoration: none; }
+.promo-banner-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  color: inherit;
+  opacity: 0.65;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: opacity var(--dur), background var(--dur);
+}
+.promo-banner-close:hover { opacity: 1; background: rgba(0, 0, 0, 0.06); }
+.promo-banner-close svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 720px) {
+  .promo-banner { font-size: 0.78rem; }
+  .promo-banner-inner { padding: 0.5rem 1rem; gap: 0.4rem 0.85rem; }
+}
+
 .topbar {
   background: var(--navy-950);
   color: rgba(255, 255, 255, 0.85);

@@ -1,0 +1,115 @@
+---
+layout: layouts/demo-clearwater.njk
+title: "Service Area | Clearwater Plumbing | Salt Lake Valley"
+description: "Clearwater Plumbing serves Salt Lake City, Sandy, Murray, Holladay, West Valley, Bountiful, and the rest of the Salt Lake metro. Map, coverage list, and freeze-risk notes."
+extraHead: '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">'
+---
+
+<section class="clearwater-section clearwater-section--cream">
+  <div class="clearwater-container">
+    <nav style="font-size:0.85rem;color:var(--cw-text-muted);margin-bottom:1rem">
+      <a href="/demo/clearwater-plumbing/" style="color:var(--cw-aqua-deep)">Home</a> &nbsp;/&nbsp; <span>Service Area</span>
+    </nav>
+    <span class="clearwater-eyebrow">Coverage</span>
+    <h1 style="font-family:var(--cw-font-display);font-size:clamp(2rem,1.5rem+2vw,3rem);color:var(--cw-navy-deep);line-height:1.1;margin:0.5rem 0 1rem">Plumbers across <em style="color:var(--cw-peach-deep);font-style:italic">the Salt Lake Valley.</em></h1>
+    <p style="font-size:1.05rem;line-height:1.65;color:var(--cw-text);max-width:60ch">Same-day service inside the I-15 corridor between Bountiful and Lehi. Click any pin for the area's water hardness, typical pipe age, and freeze-risk notes &mdash; the things that determine what kind of call you are about to make.</p>
+  </div>
+</section>
+
+<section class="clearwater-section">
+  <div class="clearwater-container">
+    <div id="clearwater-coverage-map" style="height:480px;border:1px solid var(--cw-line);border-radius:var(--cw-radius);box-shadow:0 8px 24px rgba(20,40,60,0.10)" role="region" aria-label="Map of Clearwater Plumbing's Salt Lake Valley service area"></div>
+    <p style="margin-top:1rem;font-size:0.82rem;color:var(--cw-text-muted);text-align:center">Map tiles &amp; data &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener" style="color:var(--cw-aqua-deep)">OpenStreetMap</a> contributors.</p>
+  </div>
+</section>
+
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  (function () {
+    var shop = { name: 'Clearwater shop', lat: 40.7608, lng: -111.8910 };
+    var areas = [
+      { name: 'Salt Lake City',   zips: '84101–84128', lat: 40.7608, lng: -111.8910 },
+      { name: 'Sandy',            zips: '84070, 84092', lat: 40.5649, lng: -111.8389 },
+      { name: 'Murray',           zips: '84107, 84123', lat: 40.6669, lng: -111.8881 },
+      { name: 'Holladay',         zips: '84117, 84124', lat: 40.6688, lng: -111.8244 },
+      { name: 'West Valley City', zips: '84119, 84128', lat: 40.6916, lng: -112.0011 },
+      { name: 'West Jordan',      zips: '84084, 84088', lat: 40.6097, lng: -111.9391 },
+      { name: 'Taylorsville',     zips: '84129',        lat: 40.6677, lng: -111.9388 },
+      { name: 'Cottonwood Hghts', zips: '84121',        lat: 40.6197, lng: -111.8108 },
+      { name: 'Draper',           zips: '84020',        lat: 40.5247, lng: -111.8638 },
+      { name: 'Bountiful',        zips: '84010',        lat: 40.8894, lng: -111.8808 },
+      { name: 'Lehi',             zips: '84043',        lat: 40.3916, lng: -111.8508 },
+      { name: 'Park City',        zips: '84060, 84098', lat: 40.6461, lng: -111.4980 }
+    ];
+
+    function init() {
+      if (typeof L === 'undefined') return;
+      var el = document.getElementById('clearwater-coverage-map');
+      if (!el) return;
+      var map = L.map(el, { center: [shop.lat, shop.lng], zoom: 10, scrollWheelZoom: false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+        maxZoom: 18
+      }).addTo(map);
+
+      var shopIcon = L.divIcon({
+        className: 'cw-shop-marker',
+        html: '<span style="display:block;width:22px;height:22px;border-radius:50%;background:#0E7C9A;border:3px solid #FFFFFF;box-shadow:0 0 0 2px #0E7C9A"></span>',
+        iconSize: [22, 22], iconAnchor: [11, 11]
+      });
+      L.marker([shop.lat, shop.lng], { icon: shopIcon }).addTo(map)
+        .bindPopup('<strong>Clearwater Plumbing</strong><br>948 South St, Salt Lake City UT 84111');
+
+      var markers = [];
+      areas.forEach(function (a) {
+        var m = L.marker([a.lat, a.lng]).addTo(map);
+        m.bindPopup('<strong>' + a.name + '</strong><br>Zip: ' + a.zips);
+        markers.push(m);
+      });
+
+      L.circle([shop.lat, shop.lng], { radius: 40000, color: '#0E7C9A', weight: 1.2, fillOpacity: 0.05, dashArray: '5,7' })
+        .addTo(map).bindTooltip('Same-day service radius (~25 mi)');
+
+      var group = L.featureGroup(markers.concat([L.marker([shop.lat, shop.lng])]));
+      map.fitBounds(group.getBounds().pad(0.18));
+      map.on('click', function () { map.scrollWheelZoom.enable(); });
+    }
+    if (document.readyState !== 'loading') init();
+    else document.addEventListener('DOMContentLoaded', init);
+    window.addEventListener('load', init);
+  })();
+</script>
+
+<section class="clearwater-section clearwater-section--cream">
+  <div class="clearwater-container">
+    <span class="clearwater-eyebrow">Local plumbing knowledge</span>
+    <h2 style="font-family:var(--cw-font-display);font-size:clamp(1.5rem,1.2rem+1.2vw,2.1rem);color:var(--cw-navy-deep);margin:0.5rem 0 1rem">Salt Lake water is hard. Old houses freeze. Both shape every service call.</h2>
+    <p style="font-size:1rem;line-height:1.65;color:var(--cw-text);max-width:65ch;margin-bottom:2rem">Most of our work in the Valley falls into three buckets, and each one has a geographic pattern.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem">
+      <div style="padding:1.5rem;background:#FFFFFF;border:1px solid var(--cw-line);border-radius:var(--cw-radius)">
+        <h3 style="font-family:var(--cw-font-display);font-size:1.1rem;color:var(--cw-navy-deep);margin-bottom:0.65rem">Hard-water mineral buildup</h3>
+        <p style="font-size:0.92rem;color:var(--cw-text-muted);line-height:1.6;margin:0">SLC averages 18&ndash;22 grains per gallon. Water heaters fail at 8&ndash;10 years instead of the rated 12&ndash;15. Softener installation is one of our most common upgrades.</p>
+      </div>
+      <div style="padding:1.5rem;background:#FFFFFF;border:1px solid var(--cw-line);border-radius:var(--cw-radius)">
+        <h3 style="font-family:var(--cw-font-display);font-size:1.1rem;color:var(--cw-navy-deep);margin-bottom:0.65rem">Pre-1980 freeze-prone homes</h3>
+        <p style="font-size:0.92rem;color:var(--cw-text-muted);line-height:1.6;margin:0">Older Avenues, Sugar House, Rose Park, Bountiful homes often have supply lines on exterior walls. Every January and February we run emergency thaws &mdash; and re-routes after the second time it happens.</p>
+      </div>
+      <div style="padding:1.5rem;background:#FFFFFF;border:1px solid var(--cw-line);border-radius:var(--cw-radius)">
+        <h3 style="font-family:var(--cw-font-display);font-size:1.1rem;color:var(--cw-navy-deep);margin-bottom:0.65rem">2000s suburb tract homes</h3>
+        <p style="font-size:0.92rem;color:var(--cw-text-muted);line-height:1.6;margin:0">Sandy, Draper, Lehi, West Jordan. PEX is fine; failure points are usually water heaters and disposals at the same age. We track failure cohorts by neighborhood.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="clearwater-cta">
+  <div class="clearwater-container" style="text-align:center;padding-block:clamp(3rem,6vw,5rem)">
+    <h2 style="font-family:var(--cw-font-display);font-size:clamp(1.5rem,1.2rem+1.2vw,2.2rem);color:#FFFFFF;margin-bottom:0.85rem">Same-day service across the Valley.</h2>
+    <p style="color:rgba(255,255,255,0.85);font-size:1rem;margin-bottom:1.75rem">Emergency? Call. Routine? Book online. Either way, we are usually 30 minutes from your house.</p>
+    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:0.75rem">
+      <a href="tel:9283159094" class="clearwater-btn clearwater-btn-peach">Call (928) 315-9094</a>
+      <a href="/demo/clearwater-plumbing/contact/" class="clearwater-btn clearwater-btn-outline">Book service</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,115 @@
+---
+layout: layouts/demo-lumen.njk
+title: "Service Area | Lumen Electric | Northern Front Range"
+description: "Lumen Electric serves Fort Collins, Loveland, Greeley, Longmont, Boulder, Estes Park, and the rest of the Northern Front Range. Solar + EV charging coverage."
+extraHead: '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">'
+---
+
+<section class="lumen-section">
+  <div class="lumen-container">
+    <nav style="font-size:0.85rem;color:var(--lu-text-muted);margin-bottom:1rem">
+      <a href="/demo/lumen-electric/" style="color:var(--lu-yellow)">HOME</a> &nbsp;/&nbsp; <span>SERVICE AREA</span>
+    </nav>
+    <span class="lumen-eyebrow">Coverage</span>
+    <h1 style="font-family:var(--lu-font-display);font-size:clamp(2.25rem,1.6rem+2.5vw,3.5rem);color:var(--lu-black);line-height:1.05;margin:0.5rem 0 1.25rem;letter-spacing:-0.02em">Wired up across <em style="color:var(--lu-yellow);font-style:normal">Northern Colorado.</em></h1>
+    <p style="font-size:1.05rem;line-height:1.6;color:var(--lu-text);max-width:60ch">Service work, panel upgrades, EV charger installs, and solar tie-ins from Fort Collins down to Boulder, west to Estes Park, east to Greeley. Click any pin for what we are doing most in that area.</p>
+  </div>
+</section>
+
+<section class="lumen-section" style="background:var(--lu-bone)">
+  <div class="lumen-container">
+    <div id="lumen-coverage-map" style="height:480px;border:3px solid var(--lu-black);border-radius:0;box-shadow:8px 8px 0 var(--lu-yellow)" role="region" aria-label="Map of Lumen Electric's Northern Colorado service area"></div>
+    <p style="margin-top:1rem;font-size:0.82rem;color:var(--lu-text-muted);text-align:center">Map tiles &amp; data &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener" style="color:var(--lu-black);text-decoration:underline">OpenStreetMap</a> contributors.</p>
+  </div>
+</section>
+
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  (function () {
+    var shop = { name: 'Lumen Electric shop', lat: 40.5853, lng: -105.0844 };
+    var areas = [
+      { name: 'Fort Collins', zips: '80521–80528', lat: 40.5853, lng: -105.0844, focus: 'Solar + service' },
+      { name: 'Loveland',     zips: '80537, 80538', lat: 40.3978, lng: -105.0747, focus: 'Service + EV chargers' },
+      { name: 'Greeley',      zips: '80631–80634', lat: 40.4233, lng: -104.7091, focus: 'Service + commercial' },
+      { name: 'Longmont',     zips: '80501–80504', lat: 40.1672, lng: -105.1019, focus: 'Service + solar' },
+      { name: 'Boulder',      zips: '80301–80305', lat: 40.0150, lng: -105.2705, focus: 'Solar + EV chargers' },
+      { name: 'Erie',         zips: '80516',        lat: 40.0503, lng: -105.0494, focus: 'Service' },
+      { name: 'Niwot',        zips: '80544',        lat: 40.0989, lng: -105.1714, focus: 'Service' },
+      { name: 'Berthoud',     zips: '80513',        lat: 40.3083, lng: -105.0808, focus: 'Service' },
+      { name: 'Wellington',   zips: '80549',        lat: 40.7019, lng: -105.0083, focus: 'Service' },
+      { name: 'Estes Park',   zips: '80517',        lat: 40.3772, lng: -105.5217, focus: 'Service + commercial' },
+      { name: 'Windsor',      zips: '80550, 80551', lat: 40.4775, lng: -104.9014, focus: 'Service' },
+      { name: 'Cheyenne, WY', zips: '82001–82009', lat: 41.1400, lng: -104.8202, focus: 'Commercial only' }
+    ];
+
+    function init() {
+      if (typeof L === 'undefined') return;
+      var el = document.getElementById('lumen-coverage-map');
+      if (!el) return;
+      var map = L.map(el, { center: [shop.lat, shop.lng], zoom: 9, scrollWheelZoom: false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+        maxZoom: 18
+      }).addTo(map);
+
+      var shopIcon = L.divIcon({
+        className: 'lu-shop-marker',
+        html: '<span style="display:block;width:22px;height:22px;background:#F4C81F;border:3px solid #0A0A0A;box-shadow:0 0 0 2px #F4C81F"></span>',
+        iconSize: [22, 22], iconAnchor: [11, 11]
+      });
+      L.marker([shop.lat, shop.lng], { icon: shopIcon }).addTo(map)
+        .bindPopup('<strong>Lumen Electric</strong><br>Fort Collins shop');
+
+      var markers = [];
+      areas.forEach(function (a) {
+        var m = L.marker([a.lat, a.lng]).addTo(map);
+        m.bindPopup('<strong>' + a.name + '</strong><br>Zip: ' + a.zips + '<br><em>' + a.focus + '</em>');
+        markers.push(m);
+      });
+
+      L.circle([shop.lat, shop.lng], { radius: 60000, color: '#F4C81F', weight: 1.5, fillOpacity: 0.05, dashArray: '5,7' })
+        .addTo(map).bindTooltip('Service radius (~37 mi)');
+
+      var group = L.featureGroup(markers.concat([L.marker([shop.lat, shop.lng])]));
+      map.fitBounds(group.getBounds().pad(0.18));
+      map.on('click', function () { map.scrollWheelZoom.enable(); });
+    }
+    if (document.readyState !== 'loading') init();
+    else document.addEventListener('DOMContentLoaded', init);
+    window.addEventListener('load', init);
+  })();
+</script>
+
+<section class="lumen-section">
+  <div class="lumen-container">
+    <span class="lumen-eyebrow">Specialties by area</span>
+    <h2 style="font-family:var(--lu-font-display);font-size:clamp(1.6rem,1.2rem+1.4vw,2.4rem);color:var(--lu-black);margin:0.5rem 0 1rem;letter-spacing:-0.02em">Different towns, different work.</h2>
+    <p style="font-size:1rem;line-height:1.65;color:var(--lu-text);max-width:65ch;margin-bottom:2rem">The Northern Front Range has three distinct electrical-work patterns. Knowing what each town is asking for keeps the trucks loaded with the right inventory.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem">
+      <div style="padding:1.75rem;background:var(--lu-bone);border-left:4px solid var(--lu-yellow)">
+        <h3 style="font-family:var(--lu-font-display);font-size:1.15rem;color:var(--lu-black);margin-bottom:0.65rem;letter-spacing:-0.01em">Solar + storage</h3>
+        <p style="font-size:0.92rem;color:var(--lu-text);line-height:1.6;margin:0">Fort Collins and Boulder lead the region in residential solar permits. Tier-1 NABCEP-certified install + Tesla Powerwall and Enphase battery work concentrated here.</p>
+      </div>
+      <div style="padding:1.75rem;background:var(--lu-bone);border-left:4px solid var(--lu-yellow)">
+        <h3 style="font-family:var(--lu-font-display);font-size:1.15rem;color:var(--lu-black);margin-bottom:0.65rem;letter-spacing:-0.01em">EV chargers</h3>
+        <p style="font-size:0.92rem;color:var(--lu-text);line-height:1.6;margin:0">Loveland and Boulder run hottest. Most calls are Level 2 (240V) installs in attached garages. Subpanel upgrades come up about a third of the time.</p>
+      </div>
+      <div style="padding:1.75rem;background:var(--lu-bone);border-left:4px solid var(--lu-yellow)">
+        <h3 style="font-family:var(--lu-font-display);font-size:1.15rem;color:var(--lu-black);margin-bottom:0.65rem;letter-spacing:-0.01em">Service + panels</h3>
+        <p style="font-size:0.92rem;color:var(--lu-text);line-height:1.6;margin:0">Greeley and Windsor see the most older-panel upgrades (FPE Stab-Lok, Zinsco). Routine service work spans the whole region.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lumen-cta">
+  <div class="lumen-container" style="text-align:center;padding-block:clamp(3rem,6vw,5rem)">
+    <h2 style="font-family:var(--lu-font-display);font-size:clamp(1.5rem,1.2rem+1.2vw,2.2rem);color:var(--lu-bone);margin-bottom:0.85rem;letter-spacing:-0.02em">Job in the region tomorrow.</h2>
+    <p style="color:rgba(250,247,238,0.82);font-size:1rem;margin-bottom:1.75rem">Free estimates within 24 hours. Emergency electrical service is also available 24/7 for downed lines, panel failures, and arc faults.</p>
+    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:0.75rem">
+      <a href="/demo/lumen-electric/contact/" class="lumen-btn">Request estimate</a>
+      <a href="tel:9283159094" class="lumen-btn lumen-btn-outline">Call (928) 315-9094</a>
+    </div>
+  </div>
+</section>

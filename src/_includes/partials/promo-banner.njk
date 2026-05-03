@@ -1,0 +1,29 @@
+{# Site-wide promotional banner. Driven by src/_data/banners.js.
+   Renders only when an active banner exists. Sits above the topbar so
+   it is the first thing visitors see, dismissable via the close button
+   (state stored in localStorage so the same visitor does not re-see
+   it on every page load). #}
+{% if banners.active %}
+<div class="promo-banner promo-banner--{{ banners.active.tone | default('gold') }}" data-banner-id="{{ banners.active.id }}" id="promoBanner">
+  <div class="promo-banner-inner">
+    <span class="promo-banner-text">{{ banners.active.text }}</span>
+    {% if banners.active.cta and banners.active.href %}
+      <a href="{{ banners.active.href }}" class="promo-banner-cta">{{ banners.active.cta }} &rarr;</a>
+    {% endif %}
+    <button class="promo-banner-close" type="button" aria-label="Dismiss promotional banner" onclick="(function(b){if(b){b.style.display='none';try{localStorage.setItem('promo-dismissed-{{ banners.active.id }}','1');}catch(e){}}})(document.getElementById('promoBanner'))">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    var id = '{{ banners.active.id }}';
+    if (localStorage.getItem('promo-dismissed-' + id) === '1') {
+      var b = document.getElementById('promoBanner');
+      if (b) b.style.display = 'none';
+    }
+  } catch (e) {}
+})();
+</script>
+{% endif %}
