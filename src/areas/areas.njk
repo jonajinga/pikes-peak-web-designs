@@ -9,5 +9,5 @@ eleventyComputed:
   title: "{{ area.title }}"
   description: "{{ area.description }}"
   extraHead: >-
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"{{ site.name }}","url":"{{ site.url }}/areas/{{ area.slug }}/","email":"{{ site.email }}","telephone":"+1-{{ site.phone }}","areaServed":"{{ area.city }}, {{ area.stateCode }}","address":{"@type":"PostalAddress","addressLocality":"{{ site.address.city }}","addressRegion":"{{ site.address.state }}","addressCountry":"{{ site.address.country }}"}}</script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""><script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"{{ site.name }}","url":"{{ site.url }}/areas/{{ area.slug }}/","email":"{{ site.email }}","telephone":"+1-{{ site.phone }}","areaServed":"{{ area.city }}, {{ area.stateCode }}","address":{"@type":"PostalAddress","addressLocality":"{{ site.address.city }}","addressRegion":"{{ site.address.state }}","addressCountry":"{{ site.address.country }}"}}</script>
 ---
