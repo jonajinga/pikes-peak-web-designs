@@ -7,7 +7,7 @@ ctaLabel: "Built for HVAC Companies"
 ctaHeading: "An HVAC website that converts."
 ctaText: "Emergency call buttons, service pages, seasonal SEO; everything structured to bring in calls. $175/month."
 layout: layouts/post.njk
-tags: [post]
+tags: [post, hvac]
 ---
 
 <p>HVAC is one of the most valuable service categories for a local business website. A single AC installation or furnace replacement job can be worth $5,000–$15,000. A website that generates even two or three of those per month pays for itself many times over, and a website that fails to convert costs you real money.</p>

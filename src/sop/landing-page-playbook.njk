@@ -1,0 +1,98 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/landing-page-playbook/
+title: Landing-page playbook
+sopPhase: "M11"
+sopPhaseTitle: "Landing-page playbook"
+sopGoal: "Ship a focused, conversion-tuned landing page in under 4 hours when a campaign needs one. Standard structure; standard tracking; standard expiry."
+---
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> New campaign (event, paid ad, partner co-marketing, lead-magnet drop)</div>
+  <div><strong>Owner</strong> Jon</div>
+  <div><strong>Time</strong> 3-4 hours per landing page (template-driven)</div>
+  <div><strong>Output</strong> Live landing page with form + tracking + expiry handling</div>
+</div>
+
+<h2>When a landing page is the right tool</h2>
+<ul>
+  <li>Paid traffic from Google Ads / Meta Ads. The home page is wrong; the audience is too narrow.</li>
+  <li>A time-boxed campaign (seasonal event, BFCM, Q4 lump-sum push).</li>
+  <li>A partner co-marketing arrangement that needs a unique URL for attribution.</li>
+  <li>A lead magnet (PDF download, free audit, calculator).</li>
+</ul>
+<p>Do NOT build a landing page if the home page or an existing service page would convert just as well. Maintenance overhead compounds.</p>
+
+<h2>Standard structure (top to bottom)</h2>
+<ol>
+  <li><strong>Header.</strong> Logo + phone, NO main nav. The whole point is to remove escape hatches.</li>
+  <li><strong>Hero.</strong> One headline matching the ad/email/partner pitch nearly word-for-word. One subhead, one paragraph max. One primary CTA button (book / request / download).</li>
+  <li><strong>Trust strip.</strong> 4-5 verifiable proof chips: 95-100 PageSpeed, WCAG AA, "I am Jon", $0 down, 30-second audit.</li>
+  <li><strong>What you get.</strong> 3-5 bullets, written in the voice of the visitor's outcome ("a written audit you can act on" not "a 5-section audit deliverable").</li>
+  <li><strong>The form OR the offer.</strong> If lead magnet: the form, prominent. If campaign: the form OR a calendar embed.</li>
+  <li><strong>Social proof or sample work.</strong> One link to <code>/samples/</code> or one inline screenshot of a relevant demo.</li>
+  <li><strong>FAQ.</strong> 4-6 short answers to the predictable questions for this campaign.</li>
+  <li><strong>Footer.</strong> Minimal. Privacy, accessibility, copyright, one return-to-home link only.</li>
+</ol>
+
+<h2>Form design</h2>
+<ul>
+  <li><strong>4 fields max.</strong> Name, email, business, "what's the one thing about your site you want to fix?" Anything more kills conversion.</li>
+  <li><strong>UTM passthrough.</strong> Hidden fields capture campaign source, medium, content. Carries through to the inbox.</li>
+  <li><strong>Web3Forms backend.</strong> Standard pattern. Unique subject line per campaign so the inbox is routable.</li>
+  <li><strong>Redirect to a campaign-specific thank-you page.</strong> Not the generic /thank-you/. The campaign thank-you sets expectations specific to this offer.</li>
+</ul>
+
+<h2>Tracking setup</h2>
+<ul>
+  <li>UTM convention: <code>utm_source=[channel]&amp;utm_medium=[type]&amp;utm_campaign=[slug]&amp;utm_content=[creative]</code>.</li>
+  <li>Cloudflare + Umami event tracking on the form-submit (page-load on the thank-you page is the conversion event).</li>
+  <li>If paid ads: configure the conversion event in Google Ads / Meta tied to the thank-you-page load.</li>
+  <li>Log the campaign in <code>_data/events.js</code> with start + end dates.</li>
+</ul>
+
+<h2>Expiry handling</h2>
+<p>Time-boxed campaigns must die cleanly:</p>
+<ul>
+  <li><strong>Active period:</strong> page is live, in <code>/events/</code> if applicable, surfaced via the banner system per <code>_data/banners.js</code>.</li>
+  <li><strong>Expiry:</strong> page stays live but the banner drops off automatically (date-driven). Form may be replaced with "this campaign has ended" + a link to the equivalent year-round offer.</li>
+  <li><strong>30 days post-expiry:</strong> 301 redirect to the most-similar evergreen page (<code>/contact/</code>, <code>/audit/</code>, <code>/pricing/</code>).</li>
+  <li><strong>Never delete the URL outright.</strong> Inbound links (especially partner / paid-media inbound) should always resolve to something useful.</li>
+</ul>
+
+<h2>SEO posture</h2>
+<ul>
+  <li>Year-round landing pages: indexed, sitemapped, with a clean H1 and meta description.</li>
+  <li>Time-boxed campaign landing pages: typically <code>noindex</code> (the campaign isn't a permanent site surface). Exception: seasonal pages with strong organic intent (e.g., "spring HVAC tune-up" can stay indexed across years).</li>
+</ul>
+
+<h2>Accessibility floor</h2>
+<p>Same as the rest of the site:</p>
+<ul>
+  <li>WCAG 2.2 AA contrast. 4.5:1 normal text, 3:1 large text.</li>
+  <li>44&times;44px touch targets on every interactive element.</li>
+  <li>Form labels, error states, and required-field indicators.</li>
+  <li>Skip link, semantic heading order.</li>
+</ul>
+
+<h2>Steps to ship a new landing page</h2>
+<ul class="sop-checklist">
+  <li>Confirm the campaign brief: audience, headline, offer, CTA, expiry date.</li>
+  <li>Create the page in <code>src/events/&lt;slug&gt;.njk</code> (for events) or <code>src/lp/&lt;slug&gt;.njk</code> (for paid-ads/partner).</li>
+  <li>Compose body using the standard structure. Reuse the existing components (hero, trust strip, FAQ accordion).</li>
+  <li>Wire the form: fields, hidden UTMs, Web3Forms key, unique subject line, redirect to thank-you page.</li>
+  <li>Build a campaign-specific thank-you page if the messaging differs from the standard one.</li>
+  <li>Add the campaign to <code>_data/events.js</code> if applicable, including <code>active: true</code> and start / end dates.</li>
+  <li>Add to <code>_data/banners.js</code> if a homepage banner is part of the campaign.</li>
+  <li>QA: Lighthouse 95+, schema valid, form submits and email lands.</li>
+  <li>Deploy. Confirm the live URL renders and the form actually delivers to the inbox with the right subject line.</li>
+  <li>Set the expiry reminder on the calendar 7 days before campaign end.</li>
+</ul>
+
+<h2>Common issues</h2>
+<ul>
+  <li><strong>Conversion is low.</strong> Headline does not match the ad. Rewrite for word-for-word alignment with the inbound creative.</li>
+  <li><strong>Form abandoned.</strong> Too many fields. Cut to 4.</li>
+  <li><strong>Wrong-fit leads.</strong> The qualification question is missing. Add it.</li>
+  <li><strong>Expired page still indexed.</strong> The expiry redirect was not set. Add it; resubmit sitemap.</li>
+</ul>

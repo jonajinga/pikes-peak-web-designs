@@ -7,7 +7,7 @@ ctaLabel: "No Templates. No Builders."
 ctaHeading: "Custom code. Real results."
 ctaText: "custom-coded from scratch. No Wix, no Squarespace, no WordPress. $175/month flat rate."
 layout: layouts/post.njk
-tags: [post]
+tags: [post, comparison]
 ---
 
 <p>Website builders like Wix, Squarespace, GoDaddy, and Weebly are heavily advertised to small businesses. Their pitch is simple: build your own website in minutes for a low monthly fee. No technical skills required.</p>

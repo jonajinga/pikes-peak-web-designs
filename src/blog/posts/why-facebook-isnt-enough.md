@@ -7,7 +7,7 @@ ctaLabel: "Get Found on Google"
 ctaHeading: "A website that ranks where Facebook can't."
 ctaText: "Own your online presence. custom-coded, SEO-optimized, $175/month flat rate."
 layout: layouts/post.njk
-tags: [post]
+tags: [post, local-seo]
 ---
 
 <p>It's a common pattern among small service businesses: a Facebook business page, maybe some Instagram posts, a Google Business Profile, but no actual website. The logic seems sound. Facebook is free. It's where people are. It shows photos, contact info, and reviews. Why pay for a website?</p>

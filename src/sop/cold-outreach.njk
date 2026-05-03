@@ -1,0 +1,79 @@
+---
+layout: layouts/sop.njk
+permalink: /sop/cold-outreach/
+title: Cold outreach
+sopPhase: "M1"
+sopPhaseTitle: "Cold outreach"
+sopGoal: "Generate qualified inbound leads from a curated weekly outreach batch. Target 4-touch sequence to ~25 prospects/week, expect 2-4 replies and 1-2 calls booked."
+---
+
+<div class="sop-meta">
+  <div><strong>Trigger</strong> Weekly batch on Monday morning, regardless of pipeline state</div>
+  <div><strong>Owner</strong> Jon</div>
+  <div><strong>Time</strong> 90 minutes/week building list, 45 minutes/week sending touches</div>
+  <div><strong>Output</strong> 25 prospects in 4-touch sequence; replies routed to <code>/sop/first-contact/</code></div>
+</div>
+
+<h2>List-building sources</h2>
+<p>Rotate through these so the list does not stale out. Pick ONE source per week.</p>
+<ul>
+  <li><strong>Local trade-association directories.</strong> NRCA (roofers), NAR + ASHI / InterNACHI (inspectors), ACCA (HVAC), PHCC (plumbers), NECA / IBEW (electricians), NALP (landscapers). Most have member directories searchable by metro.</li>
+  <li><strong>Chamber of Commerce rosters.</strong> Public, downloadable for any U.S. city. Filter to service-business categories.</li>
+  <li><strong>Google Business Profile mining.</strong> Search "[trade] [metro]" on Google Maps, sort by rating + reviews. Skip the multi-location franchises; focus on owner-operated, 4.5+ stars, 50+ reviews. The owner with great reviews and a slow Wix site is the perfect prospect.</li>
+  <li><strong>Storm-damage permit data.</strong> County permit records list contractors actively pulling permits. Public-records request gets you the list.</li>
+  <li><strong>LinkedIn Sales Navigator.</strong> Filter by job title (owner, president), industry, company size 1-10, location. Higher cost, higher signal. Optional &mdash; use only if other sources stale.</li>
+</ul>
+
+<h2>Qualification filter (apply to every prospect before adding to the batch)</h2>
+<ul>
+  <li>Service business in U.S. or Canada (no e-commerce, no SaaS, no agencies).</li>
+  <li>Owner-operated or small (1-15 employees). Skip franchises and multi-location.</li>
+  <li>Existing website is on Wix / Squarespace / WordPress / Webflow / GoDaddy &mdash; or no website at all.</li>
+  <li>Real Google Business Profile with reviews and a phone number that rings to a human.</li>
+  <li>Visible signs of "I am running a business, not a hobby": consistent posting, recent photos on GBP, professional logo, recent reviews.</li>
+</ul>
+
+<h2>4-touch sequence (over 18 days)</h2>
+<p>All touches go to the owner directly. If only a generic <code>info@</code> email is available, find the owner via LinkedIn first.</p>
+
+<h3>Day 0 &middot; Touch 1: useful audit observation</h3>
+<p>Run their site through PageSpeed Insights, check schema, take one screenshot. The email opens with one specific, useful observation about their site (not "your site is slow", but "your hero image is 2.4MB on mobile, which costs you about 35% of mobile bounces"). End with one CTA: free 5-point audit.</p>
+
+<h3>Day 5 &middot; Touch 2: relevant resource</h3>
+<p>Send the most-relevant blog post for their trade with a one-line note. No second pitch.</p>
+
+<h3>Day 12 &middot; Touch 3: case-study-shaped proof</h3>
+<p>Link to <code>/samples/</code> and call out the demo most relevant to their trade. One sentence about why a custom-coded site converts more leads. CTA: book a 20-min discovery call.</p>
+
+<h3>Day 18 &middot; Touch 4: short polite breakup</h3>
+<p>"Closing the file on this. If timing is wrong, it is wrong. Email me when it changes." Done. Do not send a fifth touch.</p>
+
+<h2>Subject-line A/B framework</h2>
+<p>Every batch has two subject lines, randomized 50/50 across the prospects. Track open rate. Winner becomes the control next week; loser is replaced.</p>
+<ul>
+  <li>Current control: <em>Quick note about [their business name]'s site</em></li>
+  <li>Current variant: <em>One thing on [their business name]'s site, free</em></li>
+</ul>
+
+<h2>Tools</h2>
+<ul>
+  <li>Email send: standard email client (Gmail / Outlook). No mass-send tools &mdash; outreach must look 1:1 because it is.</li>
+  <li>Tracking: Toggl Track or a simple spreadsheet. Columns: name, business, URL, GBP, email, touch 1 sent, touch 2 sent, touch 3 sent, touch 4 sent, replied (Y/N), call booked (Y/N), result.</li>
+  <li>Audit screenshot: PageSpeed Insights, Lighthouse in Chrome, Schema.org Validator.</li>
+</ul>
+
+<h2>Common issues</h2>
+<ul>
+  <li><strong>Reply-to-spam ratio drops.</strong> Lower batch size, raise per-prospect quality. Cold outreach quality is more important than volume for a sole-proprietor agency.</li>
+  <li><strong>Open rate below 25%.</strong> Subject lines need work. Test variants weekly.</li>
+  <li><strong>Replies are "no thanks".</strong> Specific feedback is gold; ask one polite question ("any specific reason it is not the right fit?") and log the answer for the next list.</li>
+  <li><strong>Can't find owner email.</strong> LinkedIn → Hunter.io → guess the format (firstname@domain.com is the most common). Skip if all three fail; do not send to <code>info@</code>.</li>
+</ul>
+
+<h2>Exit criteria for each prospect</h2>
+<ul>
+  <li>Discovery call booked &rarr; route to <code>/sop/first-contact/</code> path B.</li>
+  <li>Reply asking to follow up later &rarr; log in CRM, set 90-day reminder.</li>
+  <li>"No thanks" &rarr; remove from list, log reason.</li>
+  <li>No reply after touch 4 &rarr; remove from list. Do not re-add for 6 months minimum.</li>
+</ul>

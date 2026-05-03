@@ -7,7 +7,7 @@ ctaLabel: "Built for Electricians"
 ctaHeading: "An electrician website that brings in jobs."
 ctaText: "custom-coded, fast-loading, SEO-optimized for electrical service searches. $175/month, everything included."
 layout: layouts/post.njk
-tags: [post]
+tags: [post, electrical]
 ---
 
 <p>Electrical contracting is a high-trust business. When a homeowner calls an electrician, they're inviting a stranger into their home to work on systems that can burn the house down if done wrong. That's a lot of trust. Your website is often the thing that decides whether that trust gets extended to you, or to a competitor.</p>

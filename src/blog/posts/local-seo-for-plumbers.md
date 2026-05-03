@@ -7,7 +7,7 @@ ctaLabel: "Built for Service Businesses"
 ctaHeading: "A plumbing website that brings in calls; not just traffic."
 ctaText: "We specialize in custom-coded sites for service businesses. Service pages, city pages, emergency call-outs; all included. $175/month."
 layout: layouts/post.njk
-tags: [post]
+tags: [post, plumbing, local-seo]
 ---
 
 <p>Plumbing is one of the highest-urgency service categories that exists. When a pipe bursts at 11 PM or a water heater stops working the morning of Thanksgiving, homeowners don't browse; they search, they look at the first few results, and they call. The entire decision cycle can happen in under two minutes.</p>

@@ -7,7 +7,7 @@ ctaLabel: "Get Found Online"
 ctaHeading: "A website that works with your Google Business Profile."
 ctaText: "We build sites that are structured to support strong local rankings. $175/month flat rate."
 layout: layouts/post.njk
-tags: [post]
+tags: [post, local-seo]
 ---
 
 <p>When a homeowner needs a plumber, an electrician, or an HVAC tech, most of them don't start with a Google search and scroll through ten blue links. They look at the map. The "Local Pack"; the three businesses that appear below the map at the top of local search results; captures more clicks than almost everything else on the page combined.</p>

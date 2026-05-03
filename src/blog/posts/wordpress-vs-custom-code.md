@@ -7,7 +7,7 @@ ctaLabel: "No WordPress. Ever."
 ctaHeading: "Custom code beats WordPress every time."
 ctaText: "Faster, more secure, uniquely yours. $175/month flat rate. No WordPress, no page builders."
 layout: layouts/post.njk
-tags: [post]
+tags: [post, comparison]
 ---
 
 <p>We'll be upfront: we have a strong opinion on this topic, and that opinion is reflected in every website we build. But we also believe in giving you the full picture, so you can make an informed decision; even if that decision isn't to work with us.</p>

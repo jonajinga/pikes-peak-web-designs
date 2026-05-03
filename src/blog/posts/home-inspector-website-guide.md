@@ -7,7 +7,7 @@ ctaLabel: "Built for Home Inspectors"
 ctaHeading: "A website that books more home inspections."
 ctaText: "Custom-coded, fast-loading, and built to rank locally, so buyers find you first."
 layout: layouts/post.njk
-tags: [post]
+tags: [post, inspector]
 ---
 
 <p>When a home buyer needs an inspection, they're usually under a tight deadline. Their purchase agreement has a date on it, and they're searching for an inspector right now. often on their phone, often the same day they make an offer. If your website doesn't appear, load fast, and make it immediately clear how to book, they'll call someone else.</p>

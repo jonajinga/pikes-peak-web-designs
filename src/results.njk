@@ -48,11 +48,6 @@ description: "The performance, accessibility, and content numbers behind every s
     <p>The numbers below describe the very site you are reading. They auto-update on every build, so the page never goes stale.</p>
 
     <div class="proof-grid">
-      <a href="/changelog/" class="proof-card">
-        <span class="proof-num">{{ results.daysLive }}</span>
-        <strong>Days live</strong>
-        <span>Since {{ results.launchDate }}, when this site shipped. Public ship cadence on the changelog.</span>
-      </a>
       <a href="/samples/" class="proof-card">
         <span class="proof-num">{{ results.demoCount }}</span>
         <strong>Live demo sites</strong>
@@ -72,6 +67,11 @@ description: "The performance, accessibility, and content numbers behind every s
         <span class="proof-num">{{ results.glossaryEntryCount }}</span>
         <strong>Glossary entries</strong>
         <span>Plain-language definitions for every technical term used anywhere on the site.</span>
+      </a>
+      <a href="/" class="proof-card">
+        <span class="proof-num">{{ results.comparisonCount }}</span>
+        <strong>Platform comparisons</strong>
+        <span>Side-by-side comparisons of a custom-coded site vs. Wix, Squarespace, WordPress, and AI builders.</span>
       </a>
       <a href="/sop/" class="proof-card">
         <span class="proof-num">100%</span>
@@ -99,7 +99,7 @@ description: "The performance, accessibility, and content numbers behind every s
 
     <div style="margin-top:3rem;padding:1.5rem 1.75rem;background:var(--bg-alt);border-left:3px solid var(--gold-500);border-radius:0 var(--radius-sm) var(--radius-sm) 0">
       <h3 style="font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin:0 0 0.65rem">Verify any number on this page yourself.</h3>
-      <p style="margin:0;font-size:0.95rem;line-height:1.65">PageSpeed scores: <a href="https://pagespeed.web.dev/" rel="noopener" class="inline-link">pagespeed.web.dev</a>. Accessibility audits: <a href="https://wave.webaim.org/" rel="noopener" class="inline-link">wave.webaim.org</a>. Demo count: count the cards on <a href="/samples/" class="inline-link">/samples/</a>. Days live: subtract April 16, 2026 from today. Every claim links back to its evidence.</p>
+      <p style="margin:0;font-size:0.95rem;line-height:1.65">PageSpeed scores: <a href="https://pagespeed.web.dev/" rel="noopener" class="inline-link">pagespeed.web.dev</a>. Accessibility audits: <a href="https://wave.webaim.org/" rel="noopener" class="inline-link">wave.webaim.org</a>. Demo count: count the cards on <a href="/samples/" class="inline-link">/samples/</a>. Blog post count: count the entries on <a href="/blog/" class="inline-link">/blog/</a>. Every claim links back to its evidence.</p>
     </div>
 
   </div>

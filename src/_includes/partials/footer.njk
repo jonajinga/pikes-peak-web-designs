@@ -3,7 +3,7 @@
     <div class="footer-trust-inner">
       <div class="footer-trust-item">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
-        One person, your whole website. No WordPress
+        Custom-coded &middot; no WordPress, no templates
       </div>
       <div class="footer-trust-item">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
@@ -24,11 +24,15 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="/" class="logo">Pikes Peak <span class="logo-accent">Web Designs</span></a>
-        <p>I am Jon. I design, build, host, and maintain custom-coded websites for small service businesses across the U.S. and Canada. You hire me, you get me, and you stop worrying about your website.</p>
+        <p>Custom-coded websites for small service businesses across the U.S. and Canada. Designed, built, hosted, and maintained on a flat monthly plan or a one-time lump-sum.</p>
         <div class="footer-brand-badges">
           <span class="footer-badge">No WordPress &middot; No page builders</span>
           <span class="footer-badge">12-month minimum &middot; cancel anytime after</span>
           <span class="footer-badge">Colorado Springs, CO &middot; fully remote</span>
+        </div>
+        <div class="footer-contact-info" style="margin-top:1.1rem">
+          <a href="tel:{{ site.phone }}">{{ site.phoneDisplay }}</a>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
         </div>
       </div>
 
@@ -40,12 +44,23 @@
         <a href="/sample-forms/">Sample Forms</a>
         <a href="/pricing/">Pricing</a>
         <a href="/audit/">Free 5-Point Audit</a>
-        <a href="/events/">Promotions</a>
         <a href="/service-areas/">Service Areas</a>
+        <a href="/results/">Results</a>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col-title">Compare</h2>
         <a href="/vs-wix/">vs Wix</a>
         <a href="/vs-squarespace/">vs Squarespace</a>
         <a href="/vs-wordpress/">vs WordPress</a>
         <a href="/vs-ai-builders/">vs AI Builders</a>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col-title">Discounts</h2>
+        <a href="/veterans/">Veterans</a>
+        <a href="/first-responders/">First Responders</a>
+        <a href="/medical/">Medical Personnel</a>
       </div>
 
       <div class="footer-col">
@@ -62,30 +77,13 @@
       <div class="footer-col">
         <h2 class="footer-col-title">Company</h2>
         <a href="/about/">About</a>
-        <a href="/results/">Results</a>
         <a href="/partners/">Partner Program</a>
         <a href="/technical-approach/">Technical Approach</a>
         <a href="/tools/">The Tools I Use</a>
         <a href="/style-guide/">Style Guide</a>
         <a href="/accessibility/">Accessibility</a>
-        <a href="/sitemap/">Sitemap</a>
         <a href="/agreement/">Service Agreement</a>
-      </div>
-
-      <div class="footer-col">
-        <h2 class="footer-col-title">Contact</h2>
-        <a href="/contact/">Book a discovery call</a>
-        <a href="/ask/">Quick question? Ask</a>
-        <div class="footer-contact-info" style="margin-top:0.85rem">
-          <strong>{{ site.name }}</strong>
-          <a href="tel:{{ site.phone }}">{{ site.phoneDisplay }}</a>
-          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-        </div>
-        <div class="footer-contact-address">
-          <strong>{{ site.address.city }}, {{ site.address.state }}</strong>
-          Serving the U.S. &amp; Canada
-          <em>Forms first; call or text if those don't fit</em>
-        </div>
+        <a href="/contact/">Contact</a>
       </div>
     </div>
 

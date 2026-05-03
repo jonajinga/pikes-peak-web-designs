@@ -1,5 +1,6 @@
 ---
 layout: layouts/base.njk
+extraHead: '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">'
 ---
 
 <section class="page-hero">
@@ -22,6 +23,95 @@ layout: layouts/base.njk
     </div>
   </div>
 </section>
+
+{% if area.lat and area.lng %}
+<section class="section section--mist area-map-section">
+  <div class="container" style="max-width:1180px">
+    <div class="area-map-header">
+      <span class="section-label">Coverage map</span>
+      <h2 class="section-title">Service area for {{ area.metro }}.</h2>
+      <p class="area-map-sub">Pinned: {{ area.city }} and the surrounding communities I work with most. The dashed ring is the standard remote-build coverage radius &mdash; in practice, the same site I would build for a {{ area.city }} business is the same site I build for clients across the U.S. and Canada.</p>
+    </div>
+    <div id="area-map" class="area-map" data-lat="{{ area.lat }}" data-lng="{{ area.lng }}" data-city="{{ area.city }}" data-metro="{{ area.metro }}" role="region" aria-label="Service-area map for {{ area.city }}, {{ area.stateCode }}"></div>
+    <div class="area-map-foot">
+      <span>Map &amp; tile data &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> contributors. Privacy-respecting, no Google Maps tracker.</span>
+    </div>
+    {% for community in area.nearby %}
+      {% set rawKey = community | replace(" (SC)", "") | replace(" (NC)", "") | lower %}
+      {% set scopedKey = rawKey + "-" + (area.stateCode | lower) %}
+      {% set coord = cityCoords[scopedKey] or cityCoords[rawKey] %}
+      {% if coord %}
+        <span class="area-map-nearby-data" data-name="{{ community }}" data-lat="{{ coord[0] }}" data-lng="{{ coord[1] }}" hidden></span>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  (function () {
+    function init() {
+      if (typeof L === 'undefined') return;
+      var el = document.getElementById('area-map');
+      if (!el || el.dataset.inited) return;
+      el.dataset.inited = '1';
+      var lat = parseFloat(el.dataset.lat);
+      var lng = parseFloat(el.dataset.lng);
+      var city = el.dataset.city;
+      var metro = el.dataset.metro;
+      if (!isFinite(lat) || !isFinite(lng)) return;
+      var nearby = Array.prototype.map.call(
+        document.querySelectorAll('.area-map-nearby-data'),
+        function (n) {
+          return { name: n.dataset.name, lat: parseFloat(n.dataset.lat), lng: parseFloat(n.dataset.lng) };
+        }
+      ).filter(function (n) { return isFinite(n.lat) && isFinite(n.lng); });
+
+      var map = L.map(el, { center: [lat, lng], zoom: 9, scrollWheelZoom: false, zoomControl: true });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+        maxZoom: 18
+      }).addTo(map);
+
+      var primaryIcon = L.divIcon({
+        className: 'area-primary-marker',
+        html: '<span class="area-primary-marker-dot"></span><span class="area-primary-marker-pulse"></span>',
+        iconSize: [28, 28], iconAnchor: [14, 14]
+      });
+      var primary = L.marker([lat, lng], { icon: primaryIcon, zIndexOffset: 1000 }).addTo(map)
+        .bindPopup('<strong>' + city + '</strong><br>' + metro + ' &middot; primary metro');
+
+      var nearbyIcon = L.divIcon({
+        className: 'area-nearby-marker',
+        html: '<span class="area-nearby-marker-dot"></span>',
+        iconSize: [16, 16], iconAnchor: [8, 8]
+      });
+      var bounds = [[lat, lng]];
+      nearby.forEach(function (n) {
+        L.marker([n.lat, n.lng], { icon: nearbyIcon }).addTo(map)
+          .bindPopup('<strong>' + n.name + '</strong><br>Within standard ' + city + ' coverage');
+        bounds.push([n.lat, n.lng]);
+      });
+
+      L.circle([lat, lng], {
+        radius: 60000,
+        color: '#0A1F44', weight: 1.5, opacity: 0.55,
+        fillColor: '#BE9018', fillOpacity: 0.05,
+        dashArray: '6,8'
+      }).addTo(map).bindTooltip('Standard service radius (~37 mi)');
+
+      if (bounds.length > 1) {
+        map.fitBounds(bounds, { padding: [40, 40] });
+      }
+      // Tap-to-enable wheel zoom; prevents accidental scroll-trap.
+      map.on('click', function () { map.scrollWheelZoom.enable(); });
+      map.on('mouseout', function () { map.scrollWheelZoom.disable(); });
+    }
+    if (document.readyState !== 'loading') init();
+    else document.addEventListener('DOMContentLoaded', init);
+    window.addEventListener('load', init);
+  })();
+</script>
+{% endif %}
 
 <section class="section">
   <div class="container">

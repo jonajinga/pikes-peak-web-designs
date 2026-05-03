@@ -4,7 +4,7 @@ title: "WordPress Alternatives for Small Business Websites in 2026"
 description: "A plain-language comparison of WordPress, Wix, Squarespace, Webflow, Framer, and custom-coded sites for small service businesses. Real tradeoffs, real costs, no hype."
 label: "Custom vs. Builders"
 date: 2026-04-22
-tags: posts
+tags: [post, comparison]
 permalink: /blog/wordpress-alternatives-small-business/
 ---
 

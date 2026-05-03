@@ -10,5 +10,6 @@ Disallow: /refer/
 Disallow: /testimonial/
 Disallow: /testimonials/
 Disallow: /case-studies/
+Disallow: /events/
 
 Sitemap: https://pikespeakwebdesigns.com/sitemap.xml

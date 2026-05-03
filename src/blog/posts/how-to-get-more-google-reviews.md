@@ -7,7 +7,7 @@ ctaLabel: "Build Your Reputation"
 ctaHeading: "A website that showcases your best reviews."
 ctaText: "We build the site. You focus on getting five-star reviews. $175/month flat rate."
 layout: layouts/post.njk
-tags: [post]
+tags: [post, local-seo]
 ---
 
 <p>Google reviews are the closest thing to free advertising that exists for a service business. A steady stream of genuine 5-star reviews will do more for your phone volume than most paid marketing campaigns, and unlike ads, the value compounds over time.</p>

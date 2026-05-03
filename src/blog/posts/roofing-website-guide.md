@@ -7,7 +7,7 @@ ctaLabel: "Built for Roofing Companies"
 ctaHeading: "A roofing website that wins more jobs."
 ctaText: "custom-coded, fast-loading, structured for storm season surges. $175/month flat rate."
 layout: layouts/post.njk
-tags: [post]
+tags: [post, roofing]
 ---
 
 <p>Roofing is one of the most competitive home service categories in the country. In hail-prone markets across the Midwest, South, and Mountain West, a single severe storm can trigger a surge of thousands of homeowner searches in a matter of days. Roofing companies that are set up to capture that traffic can book out weeks in advance. Companies that aren't set up lose those leads to better-prepared competitors.</p>

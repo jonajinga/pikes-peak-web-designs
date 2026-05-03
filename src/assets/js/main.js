@@ -235,15 +235,19 @@
     });
   });
 
-  /* -------- Tippy.js glossary tooltips --------
+  /* -------- Tippy.js glossary + helper tooltips --------
+     Three opt-ins, all using the same theme/behavior:
+       [data-term="..."]    - inline term with definition (canonical pattern)
+       [data-tooltip="..."] - any element that wants a small explainer
+       a[href*="/glossary/#"] - any glossary anchor link auto-gets a "View
+                                full definition" hint, so authors can write
+                                a normal anchor link and still get a tooltip.
      trigger covers hover (desktop), keyboard focus, and click (mobile
      tap + a11y). touch: true means a single tap on a term shows the
-     tooltip; tapping outside hides it. The previous touch: ['hold',
-     250] required a long-press, which felt broken on phones. */
+     tooltip; tapping outside hides it. */
   const initTippy = () => {
     if (typeof tippy === 'undefined') return;
-    tippy('[data-term]', {
-      content(ref) { return ref.getAttribute('data-term'); },
+    const baseConfig = {
       theme: 'pikes',
       placement: 'top',
       allowHTML: false,
@@ -253,7 +257,28 @@
       trigger: 'mouseenter focus click',
       hideOnClick: true,
       interactive: false,
+    };
+    tippy('[data-term]', Object.assign({}, baseConfig, {
+      content(ref) { return ref.getAttribute('data-term'); },
+    }));
+    tippy('[data-tooltip]', Object.assign({}, baseConfig, {
+      content(ref) { return ref.getAttribute('data-tooltip'); },
+    }));
+    // Glossary anchor links: skip if already given a data-term (avoids
+    // double-tooltipping) and skip the in-glossary index links.
+    const glossaryLinks = document.querySelectorAll('a[href*="/glossary/#"]');
+    const candidates = [];
+    glossaryLinks.forEach((el) => {
+      if (el.hasAttribute('data-term') || el.hasAttribute('data-tooltip')) return;
+      if (el.classList.contains('glossary-letter')) return;
+      candidates.push(el);
     });
+    if (candidates.length) {
+      tippy(candidates, Object.assign({}, baseConfig, {
+        content: 'View the full definition in the glossary.',
+        placement: 'top',
+      }));
+    }
   };
   // Tippy loads with defer, so wait a tick
   if (document.readyState === 'complete') initTippy();

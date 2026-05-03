@@ -7,7 +7,7 @@ ctaLabel: "Built for Commercial Inspectors"
 ctaHeading: "A website that wins commercial inspection contracts."
 ctaText: "Custom-coded, professional, and built to reach the buyers, lenders, and investors who hire you."
 layout: layouts/post.njk
-tags: [post]
+tags: [post, inspector]
 ---
 
 <p>Commercial property inspection is a different business from residential. Your clients aren't anxious first-time buyers working with a tight deadline; they're investors, lenders, property managers, attorneys, and corporate real estate teams making decisions that involve significant capital. They're experienced buyers who know what to look for, and they'll evaluate your website the same way they evaluate everything else: systematically and skeptically.</p>
