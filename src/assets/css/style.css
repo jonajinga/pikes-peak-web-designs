@@ -1865,6 +1865,61 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   .trust-bar-item { font-size: 0.82rem; }
 }
 
+/* ========== PROOF STRIP (homepage) ========== */
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 880px) {
+  .proof-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .proof-grid { grid-template-columns: 1fr; }
+}
+.proof-card {
+  display: block;
+  padding: 1.25rem 1.4rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold-500);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color var(--dur), box-shadow var(--dur), transform var(--dur);
+}
+.proof-card:hover, .proof-card:focus-visible {
+  border-color: var(--line-strong);
+  border-left-color: var(--gold-400);
+  box-shadow: 0 6px 18px rgba(10, 31, 68, 0.08);
+  transform: translateY(-1px);
+  outline: none;
+}
+.proof-card .proof-num {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+:root[data-theme="dark"] .proof-card .proof-num { color: var(--gold-400); }
+.proof-card strong {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+.proof-card span:not(.proof-num) {
+  display: block;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 /* ========== CARDS ========== */
 .card {
   background: var(--surface-raised);

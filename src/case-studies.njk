@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+title: "Case Studies | Pikes Peak Web Designs"
+description: "Real builds, real outcomes. Case studies for client websites I have designed and shipped."
+noindex: true
+eleventyExcludeFromCollections: true
+permalink: /case-studies/
+---
+
+{# Hidden until at least one real case study exists. To un-hide:
+   1. Drop the noindex + eleventyExcludeFromCollections fields above.
+   2. Remove /case-studies/ from src/robots.txt's Disallow list.
+   3. Add to footer Resources column (src/_includes/partials/footer.njk).
+   4. Once 3+ studies exist, surface in nav.njk Services > See the work megamenu.
+   5. Replace the placeholder body below with a card grid pulled from
+      src/_data/caseStudies.js (create that data file when the first
+      study lands).
+   The page renders for direct visits but is not indexed, not linked, and not in any collection. #}
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Case Studies</span>
+    </nav>
+    <span class="section-label">Case studies</span>
+    <h1>Coming soon.</h1>
+    <p>Detailed before/after writeups for the sites I have shipped &mdash; what was broken, what I built, the measurable outcomes (PageSpeed, calls, form submissions, time-to-rank) &mdash; will live here once a few clients say yes to publishing.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <p>While the case studies page is empty, here is the proof you can verify yourself today:</p>
+    <ul style="margin:1.25rem 0 0;line-height:1.9">
+      <li><a href="/samples/" class="inline-link">Six demo sites</a> &mdash; six trades, six visual languages, every page custom-coded. Test any one's <a href="https://pagespeed.web.dev" rel="noopener" class="inline-link">PageSpeed score</a> in the public auditor.</li>
+      <li><a href="/technical-approach/" class="inline-link">Technical approach</a> &mdash; the stack, the targets, and the measurements I hold every site to.</li>
+      <li><a href="/changelog/" class="inline-link">Changelog</a> &mdash; the public ship cadence on this site itself, in the shape a real client release log takes.</li>
+      <li><a href="/owners-guide/" class="inline-link">Owner's Guide</a> &mdash; what every client receives on launch day, in plain language.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Want to be the first case study?</span>
+    <h2>Book a discovery call.</h2>
+    <p>Twenty minutes on Google Meet. If we are a fit, your site is the next one I write up here.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
+      <a href="/samples/" class="btn btn-outline btn-lg">See Sample Websites</a>
+    </div>
+  </div>
+</section>
