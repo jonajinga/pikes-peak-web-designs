@@ -12,11 +12,11 @@ tags: [post, local-seo]
 
 <p>Every service-business owner I have ever audited has one number they cannot put a value on: the customers who almost called and then closed the tab. They never appear on the books. They do not bounce out of a CRM. The phone simply does not ring as much as it could, and the silence is invisible.</p>
 
-<p>That silence has a price. It is not as fuzzy as people assume. The math is rough, but the order of magnitude is honest. This post walks through how to actually quantify what your current website is costing you in unbooked work &mdash; and why the answer almost always justifies a custom build several times over.</p>
+<p>That silence has a price. It is not as fuzzy as people assume. The math is rough, but the order of magnitude is honest. This post walks through how to actually quantify what your current website is costing you in unbooked work, and why the answer almost always justifies a custom build several times over.</p>
 
 <h2>Step 1: how many people leave because of speed?</h2>
 
-<p>Google has been publishing data on this for over a decade. The number is consistent across studies: <strong>every additional second of mobile load time loses roughly 7&ndash;10% of mobile visitors before they read a word</strong>. Not "they bounce eventually" &mdash; they leave during the load.</p>
+<p>Google has been publishing data on this for over a decade. The number is consistent across studies: <strong>every additional second of mobile load time loses roughly 7&ndash;10% of mobile visitors before they read a word</strong>. Not "they bounce eventually", they leave during the load.</p>
 
 <p>The way to measure where you sit:</p>
 
@@ -27,7 +27,7 @@ tags: [post, local-seo]
   <li>If the score is below 30, you are at 6+ seconds, which means a measurable share of mobile visitors give up before the hero image even appears.</li>
 </ol>
 
-<p>The bounce-rate cost: roughly <strong>1.5% additional mobile bounce per PageSpeed point below 95</strong>. That is conservative; real-world studies on flaky cellular connections suggest higher. A site at PageSpeed 55 (the typical Wix score) is losing approximately <code>(95 - 55) &times; 1.5% = 60% of mobile bounces</code> over the floor &mdash; capped at the actual mobile-bounce ceiling, which is usually around 60%.</p>
+<p>The bounce-rate cost: roughly <strong>1.5% additional mobile bounce per PageSpeed point below 95</strong>. That is conservative; real-world studies on flaky cellular connections suggest higher. A site at PageSpeed 55 (the typical Wix score) is losing approximately <code>(95 - 55) &times; 1.5% = 60% of mobile bounces</code> over the floor, capped at the actual mobile-bounce ceiling, which is usually around 60%.</p>
 
 <p>Translation: if you have 1,000 monthly visitors and 70% are on mobile, you have 700 mobile visits. A site at 55 is losing roughly 35&ndash;50% of those before they engage. <strong>Three hundred mobile visitors per month who never had a chance to become customers.</strong></p>
 
@@ -37,7 +37,7 @@ tags: [post, local-seo]
 
 <p><strong>Conversion rate = (form submissions + tracked calls) / total monthly visitors</strong></p>
 
-<p>For service-business websites, the typical range is 1.5&ndash;3.5%. If your form has good intake fields and a clear CTA, expect the high end. If your form is "Name / Email / Message" the conversion rate is closer to the low end &mdash; the visitor stares at the empty Message field and gives up.</p>
+<p>For service-business websites, the typical range is 1.5&ndash;3.5%. If your form has good intake fields and a clear CTA, expect the high end. If your form is "Name / Email / Message" the conversion rate is closer to the low end, the visitor stares at the empty Message field and gives up.</p>
 
 <p>Apply that conversion rate to the visitors you LOST: 300 lost mobile visitors × 2% conversion = <strong>6 missed leads per month, or 72 per year</strong>.</p>
 
@@ -71,7 +71,7 @@ tags: [post, local-seo]
   <li><strong>Retention impact of a maintained site.</strong> A custom site does not break, does not get hacked, does not regress when WordPress pushes an update. Stability is a real revenue protector. Not in the calculator.</li>
 </ul>
 
-<p>So the number you arrive at is the floor &mdash; the page-speed line alone, not counting any of the other levers a custom-coded site moves at the same time.</p>
+<p>So the number you arrive at is the floor, the page-speed line alone, not counting any of the other levers a custom-coded site moves at the same time.</p>
 
 <h2>Pull the actual lever</h2>
 
@@ -87,4 +87,4 @@ tags: [post, local-seo]
 
 <p>Most agencies will not write this post. The reason is simple: if a $1,800 Wix subscription is leaking $14,500 a year, the agency that recommended Wix has some explaining to do. The number does not flatter anyone except the alternative.</p>
 
-<p>The math is the math. The hardest line on a service-business P&amp;L to see is the one that does not appear &mdash; revenue that never happened because the website never gave a fair-shot mobile visitor a chance to become a customer. <strong>Quantifying that line is the work this post and the calculator are trying to make easier.</strong> Once you can see it, the budget conversation gets a lot simpler.</p>
+<p>The math is the math. The hardest line on a service-business P&amp;L to see is the one that does not appear, revenue that never happened because the website never gave a fair-shot mobile visitor a chance to become a customer. <strong>Quantifying that line is the work this post and the calculator are trying to make easier.</strong> Once you can see it, the budget conversation gets a lot simpler.</p>

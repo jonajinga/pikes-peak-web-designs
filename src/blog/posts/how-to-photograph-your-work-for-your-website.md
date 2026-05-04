@@ -16,7 +16,7 @@ tags: [post]
 
 <h2>Why this matters more than any other content</h2>
 
-<p>For service businesses, the website is a portfolio. The customer wants to know: what does YOUR work look like, in MY kind of property, in MY climate? Stock photos answer the wrong question. Real job photos answer the right one. Conversion-rate impact is real and measurable &mdash; the agencies that A/B test it consistently see 1.5&ndash;2&times; lifts when generic stock is replaced with real work.</p>
+<p>For service businesses, the website is a portfolio. The customer wants to know: what does YOUR work look like, in MY kind of property, in MY climate? Stock photos answer the wrong question. Real job photos answer the right one. Conversion-rate impact is real and measurable, the agencies that A/B test it consistently see 1.5&ndash;2&times; lifts when generic stock is replaced with real work.</p>
 
 <p>And the cost is essentially zero. Ten phone photos per finished job. Ten minutes. The skill is taking the photos, not editing them.</p>
 
@@ -29,7 +29,7 @@ tags: [post]
   <li><strong>Wide after.</strong> Same angle, same distance, same lens. Shows the finished work in context.</li>
   <li><strong>Detail shot.</strong> One close-up of the specific thing you fixed or installed. The valve replacement, the ridge cap, the panel upgrade, the irrigation head.</li>
   <li><strong>You / your crew on site.</strong> One photo with a person in it. Customers buy from people. The brand becomes human.</li>
-  <li><strong>Truck or branded equipment.</strong> One photo with your business name visible &mdash; truck wrap, sign, branded bin. Reinforces that this is your real work.</li>
+  <li><strong>Truck or branded equipment.</strong> One photo with your business name visible, truck wrap, sign, branded bin. Reinforces that this is your real work.</li>
 </ol>
 
 <p>Five photos. Every job. Within a year you have a hundred sets. The portfolio grows automatically.</p>
@@ -40,7 +40,7 @@ tags: [post]
 
 <h3>Shoot in natural light when possible</h3>
 
-<p>Outdoor work in the morning or late afternoon (the "golden hour" 1&ndash;2 hours after sunrise or before sunset) gets you flattering, directional light without harsh shadows. Midday direct sun creates squinting faces and blown-out roofs. Cloudy days are actually great &mdash; the cloud cover is a giant softbox. Drizzle is not a deal-breaker; just protect the phone.</p>
+<p>Outdoor work in the morning or late afternoon (the "golden hour" 1&ndash;2 hours after sunrise or before sunset) gets you flattering, directional light without harsh shadows. Midday direct sun creates squinting faces and blown-out roofs. Cloudy days are actually great, the cloud cover is a giant softbox. Drizzle is not a deal-breaker; just protect the phone.</p>
 
 <h3>For interior work, open every blind and turn on every light</h3>
 
@@ -55,7 +55,7 @@ tags: [post]
 
 <h3>Watch where the light is coming from</h3>
 
-<p>The light should be on YOUR side or to your side, NEVER directly behind the subject. A common mistake: photographing a roof with the sun behind it &mdash; the roof is a silhouette and the photo is unusable. Shoot with the sun behind you and you keep the surface detail.</p>
+<p>The light should be on YOUR side or to your side, NEVER directly behind the subject. A common mistake: photographing a roof with the sun behind it, the roof is a silhouette and the photo is unusable. Shoot with the sun behind you and you keep the surface detail.</p>
 
 <h2>Framing rules that take 30 seconds to learn</h2>
 
@@ -63,7 +63,7 @@ tags: [post]
 
 <p>Customers want to see the work IN the property. A close-up of a single shingle tells them nothing; a roof shot showing the chimney, gable, and trim shows them the work in real conditions.</p>
 
-<h3>Square it up &mdash; no Dutch angles</h3>
+<h3>Square it up, no Dutch angles</h3>
 
 <p>Hold the phone level. Use the built-in grid (Settings → Camera → Grid on iPhone; Settings → Camera → Grid lines on Android). Align verticals (door frames, downspouts, walls) with the grid lines. A crooked photo signals amateur work even when the work itself is excellent.</p>
 
@@ -87,15 +87,15 @@ tags: [post]
 
 <h3>Plumbers</h3>
 
-<p>The hardest trade for photos &mdash; most work is hidden after install. Solutions: photograph during the repair (parts laid out neatly on a drop cloth before reinstall), photograph the access (clean cuts in drywall, with a small ruler showing how minimal the damage was), photograph the finished cabinet with the new fixture in pride of place.</p>
+<p>The hardest trade for photos, most work is hidden after install. Solutions: photograph during the repair (parts laid out neatly on a drop cloth before reinstall), photograph the access (clean cuts in drywall, with a small ruler showing how minimal the damage was), photograph the finished cabinet with the new fixture in pride of place.</p>
 
 <h3>Electricians</h3>
 
-<p>Panel upgrades photograph beautifully &mdash; the old crowded panel and the new clean-laid-out panel side-by-side is selling material on its own. EV charger installs: the charger mounted, the breaker, and the run from panel to garage. Whole-home rewires: drone photos of the property are a good cover; detail shots of switch boxes and outlets show craft.</p>
+<p>Panel upgrades photograph beautifully, the old crowded panel and the new clean-laid-out panel side-by-side is selling material on its own. EV charger installs: the charger mounted, the breaker, and the run from panel to garage. Whole-home rewires: drone photos of the property are a good cover; detail shots of switch boxes and outlets show craft.</p>
 
 <h3>Roofing inspectors / home inspectors</h3>
 
-<p>Photograph everything you find. Annotated photos in the report ARE the deliverable for inspectors &mdash; phone-camera quality is fine, but consistent angles and good light separate "thorough inspector" from "I'm not sure what I'm looking at."</p>
+<p>Photograph everything you find. Annotated photos in the report ARE the deliverable for inspectors, phone-camera quality is fine, but consistent angles and good light separate "thorough inspector" from "I'm not sure what I'm looking at."</p>
 
 <h3>Landscapers</h3>
 
@@ -121,11 +121,11 @@ tags: [post]
   <li>One wide before-and-after pair, same angle.</li>
   <li>One detail shot of your most common service.</li>
   <li>One photo of a real client receiving the finished work (with permission).</li>
-  <li>One workshop / equipment photo &mdash; tools laid out, vehicle outfitted, license / insurance certificate framed.</li>
+  <li>One workshop / equipment photo, tools laid out, vehicle outfitted, license / insurance certificate framed.</li>
   <li>One photo of a less-common service you offer (so the website does not feel one-note).</li>
   <li>One seasonal photo (snow, fall colors, summer storm aftermath, spring install) to ground the brand in your local climate.</li>
   <li>One photo of you with a long-time client (with permission). Trust signal.</li>
-  <li>One vertical-format hero candidate for mobile views &mdash; tall, with negative space at the top for headline overlay.</li>
+  <li>One vertical-format hero candidate for mobile views, tall, with negative space at the top for headline overlay.</li>
 </ol>
 
 <p>Once those ten exist, the site can be designed around real work. Add new photos at a rate of five per finished job, and the portfolio compounds quickly.</p>
@@ -139,7 +139,7 @@ tags: [post]
   <li><strong>Multiple sizes.</strong> Every photo gets generated at 4&ndash;6 widths (e.g., 480px, 800px, 1200px, 1600px, 2000px). The browser downloads only the size that fits the visitor's screen.</li>
   <li><strong>Lazy loading.</strong> Photos below the fold do not download until the visitor scrolls near them. Massive bandwidth savings on long pages.</li>
   <li><strong>EXIF stripping.</strong> Phone photos contain GPS coordinates and personal metadata; I strip them on import.</li>
-  <li><strong>Alt text.</strong> Every photo gets a written alt text describing what is in it &mdash; for screen readers, for SEO, and as a fallback if the image fails to load.</li>
+  <li><strong>Alt text.</strong> Every photo gets a written alt text describing what is in it, for screen readers, for SEO, and as a fallback if the image fails to load.</li>
 </ul>
 
 <p>You take the photos. I do everything after that.</p>

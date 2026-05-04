@@ -12,7 +12,7 @@ tags: [post, landscaping]
 
 <p>Landscaping is one of the trades where the website does some of the hardest work in the sales process. A homeowner is making a multi-thousand-dollar decision about a part of their property they live with every day. They want to see what you have built, in their kind of yard, in their climate, before they ever pick up a phone. The website is where that conviction gets built.</p>
 
-<p>It is also a brutally competitive local search market. Every metro has dozens of landscapers. Most of their websites look the same: stock photos, "transforming outdoor spaces since [year]" headlines, a contact form, a Facebook icon. The websites that actually win &mdash; the ones that book consultations with serious design clients month after month &mdash; do specific things the average site does not.</p>
+<p>It is also a brutally competitive local search market. Every metro has dozens of landscapers. Most of their websites look the same: stock photos, "transforming outdoor spaces since [year]" headlines, a contact form, a Facebook icon. The websites that actually win, the ones that book consultations with serious design clients month after month, do specific things the average site does not.</p>
 
 <p>This is what those things are.</p>
 
@@ -23,7 +23,7 @@ tags: [post, landscaping]
 <ul>
   <li><strong>Real, recent project photography.</strong> Stock photos read as inauthentic in this trade more than any other. A homeowner browsing for a designer can tell the difference between a stock photo and a photo of an actual finished install in twenty seconds. Stock photos signal "this person has not built enough work to fill a portfolio yet."</li>
   <li><strong>Before / after pairs.</strong> The single most powerful piece of content a landscaping site can publish. Show the bare yard, the half-finished install, and the finished space. Pair them with one or two sentences about the constraint that drove the design (south-facing slope, drainage problem, kids and a dog, shade-tolerant only). The pairs do more selling than any copy.</li>
-  <li><strong>Seasonal coverage.</strong> A garden in May does not look like a garden in November. If every photo on your site is shot in peak summer, your work looks one-dimensional. Photograph a few signature projects in spring, summer, and fall &mdash; the maturity arc tells the customer what their yard will actually look like over time.</li>
+  <li><strong>Seasonal coverage.</strong> A garden in May does not look like a garden in November. If every photo on your site is shot in peak summer, your work looks one-dimensional. Photograph a few signature projects in spring, summer, and fall, the maturity arc tells the customer what their yard will actually look like over time.</li>
   <li><strong>Real photo optimization.</strong> A 4MB phone photo on every page is what kills landscaping site speed. Modern image formats (AVIF and WebP) compress those photos to 200&ndash;400KB at the same visual quality. A custom-coded site does this automatically; most builder platforms will only do part of it.</li>
 </ul>
 
@@ -48,9 +48,9 @@ tags: [post, landscaping]
 <p>The on-page work that moves the needle:</p>
 
 <ul>
-  <li><strong>Real city pages, not doorway pages.</strong> If you serve five towns, build five real pages &mdash; each one with photos of work in <em>that</em> town, references to local conditions (clay soil in this neighborhood, drought-zone restrictions in that one, HOA aesthetics in another), and at least one local landmark in the copy. Doorway pages where every paragraph is the same with the city name swapped in are the doorway pattern Google's local algorithm specifically penalizes.</li>
+  <li><strong>Real city pages, not doorway pages.</strong> If you serve five towns, build five real pages, each one with photos of work in <em>that</em> town, references to local conditions (clay soil in this neighborhood, drought-zone restrictions in that one, HOA aesthetics in another), and at least one local landmark in the copy. Doorway pages where every paragraph is the same with the city name swapped in are the doorway pattern Google's local algorithm specifically penalizes.</li>
   <li><strong>Service-specific pages with custom-coded schema.</strong> Page for "drystone walls", "native plant design", "irrigation install", "outdoor lighting", "patio build", each with its own page, its own photos, its own LocalBusiness + Service schema. A custom-coded site does this; most templates will not.</li>
-  <li><strong>Connection to your Google Business Profile.</strong> NAP (name, address, phone) on every page must match the GBP exactly. Phone numbers in a different format break this. Address truncated differently breaks this. The whole local-pack ranking signal pivots on consistency &mdash; sloppy NAP costs visibility.</li>
+  <li><strong>Connection to your Google Business Profile.</strong> NAP (name, address, phone) on every page must match the GBP exactly. Phone numbers in a different format break this. Address truncated differently breaks this. The whole local-pack ranking signal pivots on consistency, sloppy NAP costs visibility.</li>
   <li><strong>Reviews surface on the site.</strong> The Google Business Profile collects reviews. The website needs to surface the strongest of them on the relevant service pages and on the homepage. New visitors do not click out to Google Maps to find reviews; they leave.</li>
 </ul>
 
@@ -62,7 +62,7 @@ tags: [post, landscaping]
 
 <ul>
   <li><strong>Spring landing page</strong> for the design-consult booking surge. "Get on the spring install list" with a real, simple intake form. Time-boxed urgency that is true (capacity actually does fill up).</li>
-  <li><strong>Fall landing page</strong> for fall renovation, bulb planting, irrigation winterization. Different audience &mdash; the customer who missed spring and is salvaging the season.</li>
+  <li><strong>Fall landing page</strong> for fall renovation, bulb planting, irrigation winterization. Different audience, the customer who missed spring and is salvaging the season.</li>
   <li><strong>Off-season offer.</strong> Winter is when serious design clients have time to plan. Many landscapers under-use the off-season. A "design contracts signed in winter, installed in spring" page captures that audience.</li>
 </ul>
 
@@ -80,7 +80,7 @@ tags: [post, landscaping]
   <li><strong>How they found you.</strong> One question, one click. Tells you which marketing channel is actually working.</li>
 </ul>
 
-<p>The form should also offer the option of attaching photos of the existing space &mdash; a custom-coded site can do this cleanly with a third-party intake provider that handles file uploads.</p>
+<p>The form should also offer the option of attaching photos of the existing space, a custom-coded site can do this cleanly with a third-party intake provider that handles file uploads.</p>
 
 <h2>Speed matters more in this trade than most</h2>
 
@@ -88,7 +88,7 @@ tags: [post, landscaping]
 
 <p>This is not a small-margin effect. Google's own data shows roughly 7&ndash;10% of mobile visitors bounce per additional second of load time. A landscaper site at 60 PageSpeed mobile is losing roughly half of its mobile traffic before the visitor reads a word. A landscaper site at 95+ keeps that traffic and gives the visitor a chance to actually see the portfolio.</p>
 
-<p>Page speed is structural. It cannot be fixed with a plugin. It comes from the way the site is built &mdash; AVIF / WebP images served at the right size, minimal JavaScript, no heavy template runtime, custom CSS. <a href="/vs-wix/" class="inline-link">A custom-coded site achieves it natively</a>; most templated platforms do not.</p>
+<p>Page speed is structural. It cannot be fixed with a plugin. It comes from the way the site is built, AVIF / WebP images served at the right size, minimal JavaScript, no heavy template runtime, custom CSS. <a href="/vs-wix/" class="inline-link">A custom-coded site achieves it natively</a>; most templated platforms do not.</p>
 
 <h2>Trust signals that mean something to landscape buyers</h2>
 
@@ -119,4 +119,4 @@ tags: [post, landscaping]
 
 <p>Landscaping is a trade where the website earns its keep. Done well, it is the first qualifier, the portfolio, the seasonal demand-shaper, and the local-pack engine all at once. Done poorly, it is a Facebook-tier brochure that loses every search to the competitor who took the website seriously.</p>
 
-<p>If you want to see what a real landscaping site looks like end-to-end, <a href="/demo/meadow-stone/" class="inline-link">Meadow &amp; Stone is a working sample</a> &mdash; full-portfolio gallery, real schema, seasonal landing pattern, real intake form. It is built on the same stack and pricing as the rest of the trades I serve.</p>
+<p>If you want to see what a real landscaping site looks like end-to-end, <a href="/demo/meadow-stone/" class="inline-link">Meadow &amp; Stone is a working sample</a>, full-portfolio gallery, real schema, seasonal landing pattern, real intake form. It is built on the same stack and pricing as the rest of the trades I serve.</p>

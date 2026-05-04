@@ -29,7 +29,7 @@ layout: layouts/base.njk
     <div class="area-map-header">
       <span class="section-label">Coverage map</span>
       <h2 class="section-title">Service area for {{ area.metro }}.</h2>
-      <p class="area-map-sub">Pinned: {{ area.city }} and the surrounding communities I work with most. The dashed ring is the standard remote-build coverage radius &mdash; in practice, the same site I would build for a {{ area.city }} business is the same site I build for clients across the U.S. and Canada.</p>
+      <p class="area-map-sub">Pinned: {{ area.city }} and the surrounding communities I work with most. The dashed ring is the standard remote-build coverage radius, in practice, the same site I would build for a {{ area.city }} business is the same site I build for clients across the U.S. and Canada.</p>
     </div>
     <div id="area-map" class="area-map" data-lat="{{ area.lat }}" data-lng="{{ area.lng }}" data-city="{{ area.city }}" data-metro="{{ area.metro }}" role="region" aria-label="Service-area map for {{ area.city }}, {{ area.stateCode }}"></div>
     <div class="area-map-foot">

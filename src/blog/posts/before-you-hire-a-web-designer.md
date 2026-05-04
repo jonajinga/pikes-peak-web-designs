@@ -10,9 +10,9 @@ layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>You are about to spend somewhere between $1,500 and $15,000 on a website. Maybe ongoing too. The people pitching you all sound competent on the phone &mdash; that is the easy part of the job for a salesperson. The hard part for you is figuring out which of them will deliver something that actually brings in calls a year from now, and which will hand you a pretty file and disappear.</p>
+<p>You are about to spend somewhere between $1,500 and $15,000 on a website. Maybe ongoing too. The people pitching you all sound competent on the phone, that is the easy part of the job for a salesperson. The hard part for you is figuring out which of them will deliver something that actually brings in calls a year from now, and which will hand you a pretty file and disappear.</p>
 
-<p>This is the due-diligence checklist nobody hands service-business owners before they sign. Run any vendor through it &mdash; including me &mdash; and the answers will tell you most of what you need to know.</p>
+<p>This is the due-diligence checklist nobody hands service-business owners before they sign. Run any vendor through it, including me, and the answers will tell you most of what you need to know.</p>
 
 <h2>1. Who, specifically, is doing the work?</h2>
 
@@ -26,7 +26,7 @@ tags: [post]
   <li><strong>"Our team."</strong> Vague. Means a junior or an offshore subcontractor will write the code while the salesperson moves on. Probe further.</li>
 </ul>
 
-<p><strong>Red flag:</strong> they avoid the question, or they say "we use a proven team-based approach" without naming a single human. The person who closes you should be available to answer for the work after launch &mdash; that is what "accountability" actually means.</p>
+<p><strong>Red flag:</strong> they avoid the question, or they say "we use a proven team-based approach" without naming a single human. The person who closes you should be available to answer for the work after launch, that is what "accountability" actually means.</p>
 
 <h2>2. What stack are they using and why?</h2>
 
@@ -70,7 +70,7 @@ tags: [post]
 <ul>
   <li><strong>"You own the source code, on your GitHub."</strong> Best answer. You can take the site to any host, any developer.</li>
   <li><strong>"You get a static export / final files."</strong> Acceptable. The site can run anywhere, even if the source-code isn't transferred.</li>
-  <li><strong>"Nothing &mdash; the site is on our platform."</strong> Wix / Squarespace / proprietary builder. You are renting forever.</li>
+  <li><strong>"Nothing, the site is on our platform."</strong> Wix / Squarespace / proprietary builder. You are renting forever.</li>
   <li><strong>"You own everything but you have to pay an offboarding fee."</strong> Hostage situation. Run.</li>
 </ul>
 
@@ -125,7 +125,7 @@ tags: [post]
 <ul>
   <li><strong>Hand-written schema markup</strong> (LocalBusiness, Service, FAQPage). Bonus for "matched to your Google Business Profile so the entities reconcile."</li>
   <li><strong>Real city pages, not doorway pages.</strong> Each service-area page should have unique local content, not the same paragraph with city name swapped.</li>
-  <li><strong>NAP consistency check</strong> &mdash; name/address/phone identical between site and GBP, in the same format, on every page.</li>
+  <li><strong>NAP consistency check</strong>, name/address/phone identical between site and GBP, in the same format, on every page.</li>
 </ul>
 
 <p><strong>Red flag:</strong> "We use a plugin for SEO" and that is the whole answer. Plugins generate template-grade schema; Google's local algorithm increasingly weights uniqueness.</p>
@@ -144,7 +144,7 @@ tags: [post]
 
 <p>This is the highest-signal reference check available. Vendors with happy clients introduce them readily; vendors without struggle to come up with a name. The conversation with the previous client is worth more than any pitch deck.</p>
 
-<p><strong>Note:</strong> a sole-prop or new agency might not have a long client list yet (transparently mine doesn't). In that case, the substitute is the agency's OWN site &mdash; the changelog, the open Owner's Guide, the public service agreement. If the agency's own site is fast, accessible, well-maintained, and transparent, that is a self-evident reference.</p>
+<p><strong>Note:</strong> a sole-prop or new agency might not have a long client list yet (transparently mine doesn't). In that case, the substitute is the agency's OWN site, the changelog, the open Owner's Guide, the public service agreement. If the agency's own site is fast, accessible, well-maintained, and transparent, that is a self-evident reference.</p>
 
 <h2>The two questions that matter most</h2>
 
@@ -159,7 +159,7 @@ tags: [post]
 
 <h2>One more thing the checklist does not cover</h2>
 
-<p>Read the agency's own website carefully. If it loads slow, has obvious accessibility failures, has a vague pricing page, or has a copy that reads like every other agency's copy &mdash; that is what you are about to buy. The agency's own site is the most reliable preview of the work you will get.</p>
+<p>Read the agency's own website carefully. If it loads slow, has obvious accessibility failures, has a vague pricing page, or has a copy that reads like every other agency's copy, that is what you are about to buy. The agency's own site is the most reliable preview of the work you will get.</p>
 
 <p>Mine is open by design: <a href="/pricing/" class="inline-link">posted pricing</a>, <a href="/agreement/" class="inline-link">public service agreement</a>, <a href="/owners-guide/" class="inline-link">open Owner's Guide</a>, <a href="/changelog/" class="inline-link">live changelog</a>, <a href="/technical-approach/" class="inline-link">technical approach</a> documented in detail, and <a href="/samples/" class="inline-link">six demo sites</a> at full quality. Run any of them through PageSpeed, then run an agency you are evaluating through the same. The comparison will say more than any sales call.</p>
 

@@ -10,7 +10,7 @@ layout: layouts/post.njk
 tags: [post, local-seo]
 ---
 
-<p>Your Google Business Profile is the single biggest organic traffic source most service businesses have. It is also the most neglected. Owners set it up once at the start of the business and then never touch it &mdash; and Google's local algorithm <em>specifically</em> rewards profiles that show recent activity over profiles that look abandoned.</p>
+<p>Your Google Business Profile is the single biggest organic traffic source most service businesses have. It is also the most neglected. Owners set it up once at the start of the business and then never touch it, and Google's local algorithm <em>specifically</em> rewards profiles that show recent activity over profiles that look abandoned.</p>
 
 <p>Fifteen minutes a quarter. Four tasks. Done before lunch on the first day of every quarter, the way you would handle any other recurring business obligation. The list below is what I tell every client to do, every quarter, regardless of trade or metro.</p>
 
@@ -20,7 +20,7 @@ tags: [post, local-seo]
 
 <ul>
   <li>Verify regular weekly hours are still accurate.</li>
-  <li>Add holiday hours for the next 90 days. Christmas, New Year's, July 4th, Thanksgiving, Memorial Day, Labor Day at minimum. Enter "closed" or modified hours explicitly &mdash; do not leave Google to guess.</li>
+  <li>Add holiday hours for the next 90 days. Christmas, New Year's, July 4th, Thanksgiving, Memorial Day, Labor Day at minimum. Enter "closed" or modified hours explicitly, do not leave Google to guess.</li>
   <li>If you operate emergency / 24-7 service, confirm that is reflected with the "open 24 hours" or after-hours phone field.</li>
   <li>Snowbird / seasonal businesses: set the seasonal closure dates in advance.</li>
 </ul>
@@ -43,8 +43,8 @@ tags: [post, local-seo]
 
 <ul>
   <li><strong>5-star reviews.</strong> A short genuine thank-you. Mention something specific from the review if possible. Two sentences max.</li>
-  <li><strong>4-star reviews.</strong> Thank them and address the half-star concern publicly. "Thanks for the feedback &mdash; we have updated our scheduling system since your visit so the wait should be shorter next time." Future readers see that you take feedback seriously.</li>
-  <li><strong>3-star or lower.</strong> Acknowledge professionally, offer to take it offline ("would love to make this right &mdash; can you reach me at [phone/email]"), and never argue. Future customers are reading your response, not the reviewer's complaint.</li>
+  <li><strong>4-star reviews.</strong> Thank them and address the half-star concern publicly. "Thanks for the feedback, we have updated our scheduling system since your visit so the wait should be shorter next time." Future readers see that you take feedback seriously.</li>
+  <li><strong>3-star or lower.</strong> Acknowledge professionally, offer to take it offline ("would love to make this right, can you reach me at [phone/email]"), and never argue. Future customers are reading your response, not the reviewer's complaint.</li>
   <li><strong>Untruthful reviews.</strong> Flag for removal. If Google does not remove, respond once, calmly, and move on.</li>
 </ul>
 
@@ -67,6 +67,6 @@ tags: [post, local-seo]
   <li>Post one update or offer.</li>
 </ol>
 
-<p>Set a recurring reminder for the first Monday of each quarter (January, April, July, October). Compound that over a year and your GBP is one of the most-active in your trade in your metro &mdash; which is exactly the signal Google's local algorithm looks for.</p>
+<p>Set a recurring reminder for the first Monday of each quarter (January, April, July, October). Compound that over a year and your GBP is one of the most-active in your trade in your metro, which is exactly the signal Google's local algorithm looks for.</p>
 
-<p>If your website is wired up to your GBP correctly &mdash; matching name, address, phone, hours, and structured data &mdash; the impact compounds further. <a href="/audit/" class="inline-link">A free 5-point website audit</a> includes a check on whether your site and your GBP are saying the same thing about your business. Most are not, and the fix is usually simple.</p>
+<p>If your website is wired up to your GBP correctly, matching name, address, phone, hours, and structured data, the impact compounds further. <a href="/audit/" class="inline-link">A free 5-point website audit</a> includes a check on whether your site and your GBP are saying the same thing about your business. Most are not, and the fix is usually simple.</p>

@@ -22,7 +22,7 @@ eleventyExcludeFromCollections: true
 
 ## Why this is the first case study
 
-A rule the agency tries to live by: do not publish a case study you cannot also pass yourself. The first case study on this page is the agency's own site &mdash; built end-to-end on the Service Site Standard, with real PageSpeed numbers, real architecture decisions, and a real preview of what every client gets.
+A rule the agency tries to live by: do not publish a case study you cannot also pass yourself. The first case study on this page is the agency's own site, built end-to-end on the Service Site Standard, with real PageSpeed numbers, real architecture decisions, and a real preview of what every client gets.
 
 This is dogfood. Same code patterns, same hosting, same accessibility floor as a client engagement. The only difference is the brand.
 
@@ -38,7 +38,7 @@ The build is the seven principles, applied in order:
 
 ### Principle 1: One owner, end to end.
 
-Every line of code on this site is mine. Every page, every CSS rule, every interactive element. No subcontractor, no agency partner, no design-handoff. The continuity of authorship matters because the site is the proof &mdash; if the agency's own site is built by a relay chain, the principle is rhetoric.
+Every line of code on this site is mine. Every page, every CSS rule, every interactive element. No subcontractor, no agency partner, no design-handoff. The continuity of authorship matters because the site is the proof, if the agency's own site is built by a relay chain, the principle is rhetoric.
 
 ### Principle 2: Custom code over CMSes.
 
@@ -50,7 +50,7 @@ Every operational detail is on a public page: [pricing](/pricing/), the [service
 
 ### Principle 4: Fast by construction.
 
-Mobile PageSpeed: 98–100 on every page. Time-to-first-byte: under 100ms via Cloudflare's global edge. Time-to-interactive on a phone: under 1.5 seconds. Image pipeline emits AVIF + WebP + JPEG at multiple widths automatically. CSS concatenated at build, not @imported at runtime. JavaScript kept under 10KB on a typical page. None of this is added later — it is the way the site is assembled.
+Mobile PageSpeed: 98–100 on every page. Time-to-first-byte: under 100ms via Cloudflare's global edge. Time-to-interactive on a phone: under 1.5 seconds. Image pipeline emits AVIF + WebP + JPEG at multiple widths automatically. CSS concatenated at build, not @imported at runtime. JavaScript kept under 10KB on a typical page. None of this is added later, it is the way the site is assembled.
 
 ### Principle 5: Accessible by default.
 
@@ -58,7 +58,7 @@ WCAG 2.2 AA across every page. Real contrast ratios verified. 44×44px minimum t
 
 ### Principle 6: Local before global.
 
-This site is the agency's own — the local-pack work matters less than for a typical service business. But the architecture is the same: LocalBusiness schema present, NAP (Colorado Springs) consistent across every page, real city-level service-area pages for the metros where service-business clients operate, service-area maps via Leaflet + OpenStreetMap on every metro page, no Google Maps tracker.
+This site is the agency's own, the local-pack work matters less than for a typical service business. But the architecture is the same: LocalBusiness schema present, NAP (Colorado Springs) consistent across every page, real city-level service-area pages for the metros where service-business clients operate, service-area maps via Leaflet + OpenStreetMap on every metro page, no Google Maps tracker.
 
 ### Principle 7: Boring infrastructure.
 
@@ -68,7 +68,7 @@ Eleventy, Nunjucks, vanilla CSS, vanilla JS, Cloudflare Pages, Web3Forms, Pagefi
 
 100+ pages on launch (services, pricing, comparisons, blog, glossary, technical approach, owner's guide, changelog, results, calculator, walk-through, press kit, partners, three discount pages, six demo sites, service-area pages for thirty metros, methodology page, case studies infrastructure, podcast and newsletter scaffolds, legal pages, accessibility statement). Every page is auditable in PageSpeed Insights. The full agency operating posture is on public pages anyone can read before signing anything.
 
-The site itself is the case study for the methodology. If the agency's own site cannot demonstrate the Service Site Standard, the methodology is rhetoric. If it can — and it does — the methodology is the deliverable.
+The site itself is the case study for the methodology. If the agency's own site cannot demonstrate the Service Site Standard, the methodology is rhetoric. If it can, and it does, the methodology is the deliverable.
 
 ## What the next case study will look like
 
