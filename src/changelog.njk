@@ -73,16 +73,15 @@ description: "What I have shipped, added, fixed, and improved on pikespeakwebdes
 
     <div class="changelog-entry">
       <header class="changelog-head">
-        <span class="changelog-tag changelog-tag--major">SOP portal + new pages</span>
+        <span class="changelog-tag changelog-tag--major">New pages + widened layouts</span>
       </header>
-      <h2 class="changelog-title">Internal SOP portal, client-facing /what-we-build/ scope page, technical-approach widened</h2>
+      <h2 class="changelog-title">Client-facing /what-we-build/ scope page, technical-approach widened</h2>
       <div class="changelog-body">
         <ul>
-          <li><strong>New (internal):</strong> the full SOP portal at <code>/sop/</code> &mdash; 12 phase pages walking the project lifecycle from first contact to refresh / offboarding, plus three reference pages (every email template in one place, the consolidated checklists, and the tools-and-access map). The portal is <code>noindex</code>, excluded from <code>sitemap.xml</code>, disallowed in <code>robots.txt</code>, and the entire content tree is wrapped in <code>data-pagefind-ignore</code> so it doesn't show in site search either.</li>
-          <li><strong>New (client-facing):</strong> <a href="/what-we-build/" class="inline-link">/what-we-build/</a>: 20-section deep dive on the deliverable, plain language first with the technical detail right after. Pairs with <a href="/technical-approach/" class="inline-link">/technical-approach/</a> (which talks to engineers + agency evaluators); this one talks to the actual buyer.</li>
+          <li><strong>New:</strong> <a href="/what-we-build/" class="inline-link">/what-we-build/</a>: 20-section deep dive on the deliverable, plain language first with the technical detail right after. Pairs with <a href="/technical-approach/" class="inline-link">/technical-approach/</a> (which talks to engineers + agency evaluators); this one talks to the actual buyer.</li>
           <li><strong>Improved:</strong> /technical-approach/ container widened from <code>--max-prose</code> (~72ch) to 1100 px so headings, code, lists, and the table of contents breathe; running paragraphs constrained to 70 ch via a new <code>.prose--wide</code> modifier so long-form text stays readable.</li>
           <li><strong>Glossary:</strong> added <code>robots.txt</code> and <code>security.txt</code> entries.</li>
-          <li><strong>robots.txt:</strong> now disallows the seven internal/portal-form URLs that should never have been crawled (<code>/sop/</code>, <code>/client-portal/</code>, <code>/onboarding/</code>, <code>/content-update/</code>, <code>/emergency/</code>, <code>/design-feedback/</code>, <code>/refer/</code>, <code>/testimonial/</code>).</li>
+          <li><strong>robots.txt:</strong> now disallows the internal/portal-form URLs that should never have been crawled (<code>/client-portal/</code>, <code>/onboarding/</code>, <code>/content-update/</code>, <code>/emergency/</code>, <code>/design-feedback/</code>, <code>/refer/</code>, <code>/testimonial/</code>).</li>
         </ul>
       </div>
     </div>
