@@ -11,7 +11,7 @@ description: "Live performance numbers for the agency's site and every demo site
     </nav>
     <span class="section-label">Live numbers, not claims</span>
     <h1>Site status. <em>Verifiable, refreshed every six hours.</em></h1>
-    <p>The agency's site claims 95&ndash;100 mobile PageSpeed on every page. This page is where I prove it. Real Google PageSpeed Insights numbers, refreshed automatically every 6 hours from the public PSI API. If a score drops below 90, the badge below goes red. <strong>{{ site.voice.signoff }}</strong></p>
+    <p>The agency's site claims 95 to 100 mobile PageSpeed on every page, and this page is where I prove it. The numbers below are real Google PageSpeed Insights scores, refreshed automatically every six hours from the public PSI API. If any score drops below 90, the corresponding badge below goes red. <strong>{{ site.voice.signoff }}</strong></p>
   </div>
 </section>
 
@@ -31,8 +31,8 @@ description: "Live performance numbers for the agency's site and every demo site
 
     <div class="prose" style="margin-top:3rem">
       <h2>How this works</h2>
-      <p>A small Cloudflare Pages Function at <code>/api/pagespeed.json</code> calls the PageSpeed Insights API for the agency's site and every demo site. Results are cached at the Cloudflare edge for 6 hours, so the badges refresh automatically without blowing through the API's free quota. The frontend reads that JSON and renders the badge grid above.</p>
-      <p>If something is off &mdash; a score dropped, a site moved &mdash; you will see it here within 6 hours of the change. The full source is on <a href="https://github.com/jonajinga/pikes-peak-web-designs" rel="noopener" class="inline-link">GitHub</a>.</p>
+      <p>A small Cloudflare Pages Function at <code>/api/pagespeed.json</code> calls the PageSpeed Insights API for the agency's site and every demo site on a schedule. Results are cached at the Cloudflare edge for six hours, which means the badges refresh automatically without blowing through the API's free quota. The frontend reads that JSON and renders the badge grid above.</p>
+      <p>If something is off, whether a score dropped or a site moved, you will see it on this page within six hours of the change. The full source is on <a href="https://github.com/jonajinga/pikes-peak-web-designs" rel="noopener" class="inline-link">GitHub</a>.</p>
 
       <h2>Recent ship cadence</h2>
       <p>The <a href="/changelog/" class="inline-link">public changelog</a> tracks every substantive change shipped. The number below is auto-derived from the changelog template at every build: <strong>{{ changelogStats.shippedRecent }}</strong> entries shipped in the last 30 days. The full history covers <strong>{{ changelogStats.shipEvents }}</strong> ship events across <strong>{{ changelogStats.categoryCount }}</strong> categories.</p>
@@ -45,7 +45,7 @@ description: "Live performance numbers for the agency's site and every demo site
       </ul>
 
       <h2>What changes when the badge goes red</h2>
-      <p>If any score above drops below 90, I get an email alert from the cron that runs the same query daily, and a fix lands the same business day. The score going red is not a marketing problem &mdash; it is a regression I have to fix to honor the <a href="/method/" class="inline-link">Service Site Standard</a>.</p>
+      <p>If any score above drops below 90, I get an email alert from the cron job that runs the same query daily, and a fix lands the same business day. A red score is not a marketing problem for me, it is a regression I have to fix in order to honor the <a href="/method/" class="inline-link">Service Site Standard</a>.</p>
     </div>
 
   </div>
@@ -79,7 +79,7 @@ description: "Live performance numbers for the agency's site and every demo site
         grid.innerHTML = html || '<p>No data yet.</p>';
       })
       .catch(function () {
-        grid.innerHTML = '<p>Could not load /api/pagespeed.json &mdash; the endpoint may be configuring. Refresh in a moment.</p>';
+        grid.innerHTML = '<p>Could not load /api/pagespeed.json, the endpoint may be configuring. Refresh in a moment.</p>';
       });
   })();
 </script>
