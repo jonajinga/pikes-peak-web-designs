@@ -1,0 +1,18 @@
+{# 'As featured in' strip. Renders only when pressMentions has entries
+   so an empty array silently hides the strip until the first placement
+   lands. Drop into any page; designed for the homepage hero footer. #}
+{% if pressMentions and pressMentions.length %}
+<aside class="press-strip" aria-label="Press &amp; media placements">
+  <span class="press-strip-eyebrow">As featured in</span>
+  <ul class="press-strip-list">
+    {% for p in pressMentions %}
+      <li>
+        <a href="{{ p.url }}" rel="noopener" class="press-strip-item" title="{{ p.topic }}">
+          {% if p.logoFile %}<img src="{{ p.logoFile }}" alt="{{ p.outlet }}" loading="lazy" decoding="async">
+          {% else %}<span>{{ p.outlet }}</span>{% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</aside>
+{% endif %}

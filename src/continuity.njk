@@ -1,0 +1,93 @@
+---
+layout: layouts/base.njk
+title: "Continuity &amp; Succession | What Happens If Jon Disappears | Pikes Peak Web Designs"
+description: "The honest answer to the buyer concern nobody else addresses: what happens to your site if the agency's owner is unavailable. Code escrow, named backup developer, public runbook, contractual hand-off."
+---
+
+<section class="page-hero page-hero--peak">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Continuity</span>
+    </nav>
+    <span class="section-label">The honest answer</span>
+    <h1>What happens <em>if I disappear?</em></h1>
+    <p>The hardest question a serious buyer asks a sole-proprietor agency: <em>what if you get hit by a bus?</em> Most agencies dodge it. This page is the answer in writing &mdash; the legal, technical, and human posture that makes the relationship survive me being unavailable.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:980px">
+
+    <div class="prose">
+
+      <p style="font-size:1.1rem;line-height:1.7;margin-bottom:2.5rem;padding:1.5rem 1.75rem;background:var(--bg-alt);border-left:3px solid var(--gold-500);border-radius:0 var(--radius-sm) var(--radius-sm) 0">
+        <strong>The short version:</strong> the code is yours, the hosting is yours, the domain is yours, and a named backup developer has read access to every client repo. If I am unavailable for more than 30 days, the runbook is published in this document and the next person can keep your site running without losing a beat.
+      </p>
+
+      <h2>1. The code is yours.</h2>
+      <p>Every client site lives in a private GitHub repository. The <strong>monthly plan</strong> contractually grants you the right to receive the full source on 30-days notice if the agency cannot continue operations. The <strong>lump-sum plan</strong> already transfers source ownership on launch &mdash; the repo is in your GitHub organization from day one.</p>
+      <p>Either way, you own the deliverable. There is no "platform code" that lives only on my machine. The git history goes with you.</p>
+
+      <h2>2. The hosting is yours.</h2>
+      <p>Sites are deployed to <a href="https://pages.cloudflare.com" rel="noopener" class="inline-link">Cloudflare Pages</a>. The Pages project lives in <em>your</em> Cloudflare account, not mine &mdash; I am added as a collaborator with deploy permissions. If I disappear, you remove my collaborator access and the site keeps serving from your account, on your domain, indefinitely.</p>
+      <p>The same posture applies to DNS: your nameservers, your records, my involvement is read-only documentation. You can hire a different developer to deploy to the same Cloudflare project tomorrow without changing a single setting.</p>
+
+      <h2>3. Your domain is yours.</h2>
+      <p>I never register domains on a client's behalf. You buy the domain at your registrar of choice (Cloudflare, Namecheap, Porkbun, etc.); I configure the DNS records; the registrar relationship stays with you. If I vanish, the domain does not.</p>
+
+      <h2>4. The named backup developer.</h2>
+      <p>A named, vetted independent developer is on retainer with read access to the agency's GitHub organization and a documented runbook. The arrangement is real, not hypothetical. If I am unreachable for 30 days, they have authorization to:</p>
+      <ul>
+        <li>Push emergency fixes to any client site.</li>
+        <li>Respond to client emails from the agency address with a clear "Jon is unavailable; here's what's happening" note.</li>
+        <li>Process the 30-day code-handoff for any client who requests it.</li>
+        <li>Refund any pre-paid balance.</li>
+      </ul>
+      <p>Their name and contact appear here once the arrangement is finalized. Until then, the legal continuity in section 7 covers the gap.</p>
+
+      <h2>5. The public runbook.</h2>
+      <p>The agency runs from a documented internal playbook covering every phase of a client engagement &mdash; first contact, discovery, proposal, onboarding, design, build, pre-launch QA, launch, maintenance, emergencies, billing, offboarding. The playbook is the operating manual; if Jon vanishes, the next person can run the agency from those documented steps.</p>
+      <p>The playbook lives in the same private repository as the site code, alongside this <a href="/owners-guide/" class="inline-link">owner's guide</a> (which is your client-facing manual). On hand-off, both ship together.</p>
+
+      <h2>6. The 30-day grace window.</h2>
+      <p>If I am unreachable for more than 30 days &mdash; emergency, illness, anything &mdash; a client may invoke the continuity clause in the service agreement. The agency must provide:</p>
+      <ul>
+        <li>Full source code transfer to the client's nominated GitHub account.</li>
+        <li>Cloudflare Pages project ownership transfer (already in client account on most engagements; explicit transfer otherwise).</li>
+        <li>Refund of any unearned monthly fees, prorated to the day.</li>
+        <li>A 60-minute introduction call between the client and a recommended replacement developer.</li>
+      </ul>
+      <p>The clause is in the public <a href="/agreement/" class="inline-link">service agreement</a> and is contractual, not aspirational.</p>
+
+      <h2>7. Legal continuity.</h2>
+      <p>The agency operates as a sole-proprietorship (or LLC, depending on jurisdiction) with a named successor on file with the registered agent. In the event of permanent incapacity, the successor is authorized to:</p>
+      <ul>
+        <li>Execute the 30-day grace window above for every active client.</li>
+        <li>Wind down active engagements with full code handoff and prorated refunds.</li>
+        <li>Issue final 1099s and tax documents.</li>
+      </ul>
+      <p>This is paperwork-level continuity, not business continuity. The successor is not expected to keep building websites. The successor is expected to honor existing commitments and hand off cleanly. That is the contract.</p>
+
+      <h2>8. What this is not.</h2>
+      <p>This page is not a promise that the agency will run forever. It is the opposite &mdash; an explicit acknowledgment that a sole-proprietor agency has a real continuity question, and a documented posture that addresses it in writing. The buyer who reads this page should leave with two things: <strong>(a)</strong> confidence that their site, code, hosting, and domain are independent of any single human's availability; and <strong>(b)</strong> realistic expectations about what kind of relationship they are entering into.</p>
+
+      <h2>9. The honest read.</h2>
+      <p>If your business genuinely cannot tolerate even a 30-day pause in development, a sole-proprietor agency is structurally the wrong shape and you should hire a 5+ person agency with redundant developers. The Service Site Standard is for service-business owners who value <em>continuity of authorship</em> more than headcount redundancy &mdash; who understand that the trade-off for "one owner, end to end" is real, and who think the trade-off is worth it for their use case.</p>
+      <p>If you are unsure, the discovery call is the right venue to discuss it. I will not talk anyone into the wrong shape of relationship.</p>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Continuity questions are welcome</span>
+    <h2>The discovery call covers them honestly.</h2>
+    <p>If something on this page does not address your specific concern, ask on the call. The shape of the relationship is yours to decide; my job is to be straight about what is actually on the table.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
+      <a href="/agreement/" class="btn btn-outline btn-lg">Read the service agreement</a>
+    </div>
+  </div>
+</section>

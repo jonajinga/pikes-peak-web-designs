@@ -1,0 +1,80 @@
+---
+layout: layouts/base.njk
+title: "Service-Business Site Grader | Free Tool | Pikes Peak Web Designs"
+description: "Paste your URL. Get a 0-100 grade across page speed, schema, local SEO, HTTPS, and privacy. Five checks, one click, no email gate. Free."
+extraJsModule: /assets/js/grader.js
+---
+
+<section class="page-hero page-hero--peak">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Site Grader</span>
+    </nav>
+    <span class="section-label">Free tool</span>
+    <h1>The Service-Business Site Grader. <em>Paste a URL.</em></h1>
+    <p>Five checks against your service-business website: mobile page speed, schema presence, NAP exposure, HTTPS, and tracker footprint. One click. No email gate. The grade is the whole product. <strong>{{ site.voice.signoff }}</strong></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:880px">
+
+    <form id="grader-form" class="grader-form" novalidate>
+      <label for="grader-url" class="visually-hidden">Website URL</label>
+      <input type="url" id="grader-url" name="url" placeholder="https://yourbusiness.com" required autocomplete="url">
+      <button type="submit" class="btn btn-primary btn-lg">Grade my site</button>
+    </form>
+
+    <div id="grader-result" class="grader-result" aria-live="polite" hidden></div>
+
+    <div class="prose" style="margin-top:3rem">
+      <h2>What the grade measures</h2>
+
+      <h3>Page speed (40 points)</h3>
+      <p>Real Lighthouse mobile performance score from Google's PageSpeed Insights API. The single biggest predictor of mobile-visitor bounce on a service-business site. A site at 95+ keeps the visitor engaged; a site at 50 loses roughly 30&ndash;40% of mobile traffic before the headline renders.</p>
+
+      <h3>Schema presence (15 points)</h3>
+      <p>Whether the page ships any JSON-LD structured data. For a service business, missing schema means Google has to guess what you do, where, and what your business name is. The local-pack ranking signal depends on getting this right.</p>
+
+      <h3>NAP exposure (15 points)</h3>
+      <p>Whether name, address, and phone are visible on the page in a format Google can parse. NAP consistency between site and Google Business Profile is one of the strongest local-pack ranking factors. Checks for both a phone-number pattern and a street-address pattern.</p>
+
+      <h3>HTTPS (10 points)</h3>
+      <p>Whether the site uses HTTPS. In 2026 this is table-stakes &mdash; modern browsers warn users about HTTP-only sites, search engines deprioritize them, and modern hosting (Cloudflare Pages, Netlify) gives you free SSL automatically. If your site is HTTP, fix this first.</p>
+
+      <h3>Tracker footprint (20 points)</h3>
+      <p>Whether the page loads common third-party tracker scripts (Google Tag Manager, Facebook Pixel, Hotjar, Segment, HubSpot, etc.). Each tracker is a cookie-banner liability and a page-speed cost. A privacy-first stack (Cloudflare Web Analytics + Umami) gets you the same data without the trackers.</p>
+
+      <h2>What this tool does NOT measure</h2>
+      <ul>
+        <li><strong>Visual design quality.</strong> A subjective evaluation that does not fit a 0-100 grade.</li>
+        <li><strong>Conversion-flow friction.</strong> The free <a href="/audit/" class="inline-link">5-point audit</a> covers this, with a written report.</li>
+        <li><strong>Backlink profile.</strong> Useful but not on-page.</li>
+        <li><strong>GBP optimization.</strong> Off-page signal handled separately.</li>
+        <li><strong>Real customer outcomes.</strong> No tool can measure this; only your own analytics can.</li>
+      </ul>
+
+      <h2>Want depth instead of speed?</h2>
+      <p>The grader is intentionally fast and thin &mdash; it answers "is the basic foundation in place?" The <a href="/audit/" class="inline-link">free 5-point audit</a> goes deeper with a written report. The <a href="/service-site-audit/" class="inline-link">paid Service Site Audit ($499)</a> is a 25-page diagnostic with a recorded walk-through.</p>
+
+      <h2>Privacy</h2>
+      <p>The URL you paste is sent to a Cloudflare Function which calls Google's PageSpeed Insights API and fetches your homepage HTML. Nothing is logged, nothing is stored, nothing leaves the request. Refresh the page and the grade is gone. The full source is on <a href="https://github.com/jonajinga/pikes-peak-web-designs" rel="noopener" class="inline-link">GitHub</a>.</p>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">If the grade is below 70</span>
+    <h2>The fix is closer than you think.</h2>
+    <p>A grade in the 50s usually means the site is on a builder that caps you structurally. Twenty minutes on a discovery call and we can talk through whether the gap is worth closing.</p>
+    <div class="cta-buttons">
+      <a href="/audit/" class="btn btn-primary btn-lg">Get the free 5-point audit</a>
+      <a href="/contact/" class="btn btn-outline btn-lg">Book a discovery call</a>
+    </div>
+  </div>
+</section>
+
+<script type="module" src="/assets/js/grader.js"></script>

@@ -1,0 +1,7 @@
+{
+  "permalink": "/podcast/{{ page.fileSlug }}/",
+  "layout": "layouts/episode.njk",
+  "noindex": true,
+  "eleventyExcludeFromCollections": false,
+  "tags": ["podcastEpisodes"]
+}

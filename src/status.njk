@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+title: "Site Status &amp; Live Performance | Pikes Peak Web Designs"
+description: "Live performance numbers for the agency's site and every demo site, refreshed every 6 hours from Google's PageSpeed Insights API. Plus the recent ship cadence on the public changelog."
+---
+
+<section class="page-hero page-hero--peak">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Status &amp; performance</span>
+    </nav>
+    <span class="section-label">Live numbers, not claims</span>
+    <h1>Site status. <em>Verifiable, refreshed every six hours.</em></h1>
+    <p>The agency's site claims 95&ndash;100 mobile PageSpeed on every page. This page is where I prove it. Real Google PageSpeed Insights numbers, refreshed automatically every 6 hours from the public PSI API. If a score drops below 90, the badge below goes red. <strong>{{ site.voice.signoff }}</strong></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:980px">
+
+    <div class="status-block">
+      <div class="status-block-head">
+        <h2 style="margin:0">Live PageSpeed scores</h2>
+        <span class="status-block-meta" id="status-checked">Loading latest run…</span>
+      </div>
+      <div class="status-grid" id="status-grid" aria-live="polite">
+        <p class="status-loading">Fetching latest scores from <code>/api/pagespeed.json</code>…</p>
+      </div>
+      <p class="status-foot">Source: <a href="https://pagespeed.web.dev/" rel="noopener" class="inline-link">pagespeed.web.dev</a> via the Google PageSpeed Insights v5 API. You can run the same audit yourself by pasting any URL into the link above.</p>
+    </div>
+
+    <div class="prose" style="margin-top:3rem">
+      <h2>How this works</h2>
+      <p>A small Cloudflare Pages Function at <code>/api/pagespeed.json</code> calls the PageSpeed Insights API for the agency's site and every demo site. Results are cached at the Cloudflare edge for 6 hours, so the badges refresh automatically without blowing through the API's free quota. The frontend reads that JSON and renders the badge grid above.</p>
+      <p>If something is off &mdash; a score dropped, a site moved &mdash; you will see it here within 6 hours of the change. The full source is on <a href="https://github.com/jonajinga/pikes-peak-web-designs" rel="noopener" class="inline-link">GitHub</a>.</p>
+
+      <h2>Recent ship cadence</h2>
+      <p>The <a href="/changelog/" class="inline-link">public changelog</a> tracks every substantive change shipped. The number below is auto-derived from the changelog template at every build: <strong>{{ changelogStats.shippedRecent }}</strong> entries shipped in the last 30 days. The full history covers <strong>{{ changelogStats.shipEvents }}</strong> ship events across <strong>{{ changelogStats.categoryCount }}</strong> categories.</p>
+
+      <h2>What this page does NOT track</h2>
+      <ul>
+        <li><strong>Uptime.</strong> Cloudflare Pages reports near-perfect uptime by design (static files behind a global edge), but I do not run a paid synthetic-monitoring service yet. When that ships, the dot grid for the last 90 days will live here.</li>
+        <li><strong>Real-user Core Web Vitals.</strong> Cloudflare Web Analytics RUM data is collected but not yet exposed publicly. Adding a client-side dashboard that summarizes 30-day RUM is on the roadmap.</li>
+        <li><strong>Form-submission delivery.</strong> Web3Forms is reliable enough that a public uptime page on form delivery would be theatrics. If forms ever fail, the changelog will document it.</li>
+      </ul>
+
+      <h2>What changes when the badge goes red</h2>
+      <p>If any score above drops below 90, I get an email alert from the cron that runs the same query daily, and a fix lands the same business day. The score going red is not a marketing problem &mdash; it is a regression I have to fix to honor the <a href="/method/" class="inline-link">Service Site Standard</a>.</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  (function () {
+    var grid = document.getElementById('status-grid');
+    var checked = document.getElementById('status-checked');
+    if (!grid) return;
+    fetch('/api/pagespeed.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.checked) {
+          var d = new Date(data.checked);
+          checked.textContent = 'Last checked: ' + d.toLocaleString();
+        } else {
+          checked.textContent = 'Last checked: pending';
+        }
+        var html = '';
+        (data.sites || []).forEach(function (site) {
+          var score = site.score;
+          var cls = score === null ? 'pending' : (score >= 90 ? 'green' : (score >= 50 ? 'amber' : 'red'));
+          var display = score === null ? '&mdash;' : score;
+          html += '<a class="status-card status-card--' + cls + '" href="' + site.url + '" target="_blank" rel="noopener">' +
+                  '  <span class="status-card-num">' + display + '</span>' +
+                  '  <span class="status-card-label">' + site.id.replace(/-/g, ' ') + '</span>' +
+                  '  <span class="status-card-meta">mobile PageSpeed</span>' +
+                  '</a>';
+        });
+        grid.innerHTML = html || '<p>No data yet.</p>';
+      })
+      .catch(function () {
+        grid.innerHTML = '<p>Could not load /api/pagespeed.json &mdash; the endpoint may be configuring. Refresh in a moment.</p>';
+      });
+  })();
+</script>

@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+title: "The Service Site Letter | Pikes Peak Web Designs Newsletter"
+description: "Bi-weekly newsletter for service-business owners. One practical observation, one thing shipped, one ask. Under 250 words, every other Tuesday."
+noindex: true
+eleventyExcludeFromCollections: true
+---
+
+<section class="page-hero page-hero--peak">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>The Service Site Letter</span>
+    </nav>
+    <span class="section-label">The newsletter</span>
+    <h1>The Service Site Letter. <em>One short note, every other Tuesday.</em></h1>
+    <p>A bi-weekly note for service-business owners on local SEO, page speed, conversion patterns, and the occasional opinion about web design tools. Under 250 words. Three sections every time: <strong>one tip, one ship, one ask.</strong> Sign-off line is always the same: <em>{{ site.voice.signoff }}</em></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+
+    {% include "partials/newsletter-signup.njk" %}
+
+    <div class="prose" style="margin-top:2.5rem">
+      <h2>What goes in each issue</h2>
+
+      <h3>1. Tip</h3>
+      <p>One specific, useful observation drawn from a recent audit, build, or post. Two to four sentences. Plain language. Always teach something concrete the reader can use without me &mdash; whether or not they ever hire me.</p>
+
+      <h3>2. Ship</h3>
+      <p>One thing I shipped recently &mdash; a new blog post, a new sample site, an updated service page, a public changelog entry. One or two sentences plus a link. Demonstrates the agency is active and improving.</p>
+
+      <h3>3. Ask</h3>
+      <p>One soft CTA. Not the same one every time. Sometimes "got a friend in [trade] still on Wix? Forward this." Sometimes "if your own site is on the list of things-to-fix, the free audit is open." Never a hard pitch.</p>
+
+      <h2>Why bi-weekly</h2>
+      <p>Weekly is too much for me to write at the standard I want; monthly is too thin to stay top-of-mind. Bi-weekly is the cadence that produces real signal without filler. If I do not have something genuinely useful that week, I skip it.</p>
+
+      <h2>Privacy</h2>
+      <p>The list runs on <a href="https://buttondown.com" rel="noopener" class="inline-link">Buttondown</a> &mdash; an indie, privacy-first email platform. Your email is used to send the newsletter, nothing else. No tracking pixels, no third-party retargeting. Unsubscribe in one click; the link is in every issue. The full <a href="/privacy-policy/" class="inline-link">privacy policy</a> covers the rest.</p>
+
+      <h2>Archive</h2>
+      <p>Past issues will appear here once issue 3 is live. Until then, the recent <a href="/blog/" class="inline-link">blog posts</a> cover the same territory in long form.</p>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+---
+
+<section class="page-hero page-hero--peak">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/podcast/">{{ podcast.title }}</a><span class="sep">/</span><span>Episode {{ episodeNum }}</span>
+    </nav>
+    <span class="section-label">Episode {{ episodeNum }}{% if guest %} &middot; with {{ guest }}{% endif %}</span>
+    <h1>{{ title }}</h1>
+    {% if description %}<p>{{ description }}</p>{% endif %}
+    {% if duration %}<p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.75rem">{{ duration }}{% if recordedDate %} &middot; recorded {{ recordedDate }}{% endif %}</p>{% endif %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+
+    {% if audioUrl %}
+    <div class="episode-player">
+      <audio controls preload="none" src="{{ audioUrl }}" style="width:100%">
+        Your browser does not support the audio element. <a href="{{ audioUrl }}" class="inline-link">Download the episode audio</a>.
+      </audio>
+    </div>
+    {% endif %}
+
+    <div class="prose" style="margin-top:2rem">
+      {{ content | safe }}
+    </div>
+
+    {% if links and links.length %}
+    <div class="prose" style="margin-top:2rem">
+      <h2>Links from this episode</h2>
+      <ul>
+        {% for link in links %}
+          <li><a href="{{ link.url }}" rel="noopener" class="inline-link">{{ link.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <nav aria-label="Back to podcast" style="margin-top:3rem;display:flex;justify-content:center">
+      <a href="/podcast/" class="btn btn-outline-dark">&larr; All episodes</a>
+    </nav>
+
+  </div>
+</section>

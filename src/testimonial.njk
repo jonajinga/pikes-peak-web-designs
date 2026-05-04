@@ -19,7 +19,7 @@ description: "Leave a testimonial for Pikes Peak Web Designs. I read every one, 
   <div class="container" style="max-width:720px">
     <div class="contact-form-card">
       <h2 class="form-heading">Share your experience</h2>
-      <p class="form-intro">A few sentences is plenty. You control what's public: I never post anything without your explicit yes.</p>
+      <p class="form-intro">Four short prompts &mdash; one or two sentences each is plenty. You control what is public; I never publish anything without your explicit yes.</p>
 
       <form data-web3forms data-redirect="/thank-you/?type=testimonial" action="https://api.web3forms.com/submit" method="POST" class="form">
         <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
@@ -62,13 +62,28 @@ description: "Leave a testimonial for Pikes Peak Web Designs. I read every one, 
         </div>
 
         <div class="form-group">
-          <label for="quote">In your own words <span class="req">*</span></label>
-          <textarea id="quote" name="quote" rows="6" placeholder="Anything you'd want another small business owner to know. What was it like working with me? What changed after the site went live? What surprised you? No pressure to be eloquent; honest beats polished." required></textarea>
+          <label for="qBefore">What was broken before? <span class="req">*</span></label>
+          <textarea id="qBefore" name="qBefore" rows="3" placeholder="What was the website situation before we worked together? Slow site? No site? Stuck on Wix? Just one or two sentences." required></textarea>
         </div>
 
         <div class="form-group">
-          <label for="outcome">Any measurable outcome since launch? (optional)</label>
-          <textarea id="outcome" name="outcome" rows="3" placeholder="e.g. 'We went from 3 calls a week to 10.' Or 'We finally stopped paying for Wix.' Real numbers help, but a feeling is fine too."></textarea>
+          <label for="qWhy">Why did you pick Pikes Peak? <span class="req">*</span></label>
+          <textarea id="qWhy" name="qWhy" rows="3" placeholder="What made you choose me over the alternatives? What specifically clicked? Honest beats polished." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="qAfter">What changed after launch? <span class="req">*</span></label>
+          <textarea id="qAfter" name="qAfter" rows="3" placeholder="Numbers if you have them (calls, leads, ranking moves). A feeling is fine too: 'I stopped worrying about my website.'" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="qAdvice">What would you tell another business owner? <span class="req">*</span></label>
+          <textarea id="qAdvice" name="qAdvice" rows="3" placeholder="Imagine someone running a business like yours, looking at this. What would you tell them?" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="quote">Anything else? (optional)</label>
+          <textarea id="quote" name="quote" rows="3" placeholder="Free space. A specific moment, a number, a story, a thank-you, anything that does not fit above."></textarea>
         </div>
 
         <div class="form-group">

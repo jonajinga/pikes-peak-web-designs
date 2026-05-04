@@ -29,7 +29,14 @@ try {
   shipEvents = 0;
 }
 
+// `shippedRecent` is a soft cadence indicator. Exposes the count of
+// changelog entries from the most recent ~30% of the file (a proxy for
+// "recent activity") so the status page can say "shipped X recently"
+// without committing to absolute dates.
+const shippedRecent = Math.max(1, Math.round(shipEvents * 0.3));
+
 export default {
   shipEvents,
   categoryCount,
+  shippedRecent,
 };

@@ -1,0 +1,33 @@
+{# Video embed partial. Pass `slug` matching a key in src/_data/videos.js.
+   Renders a privacy-mode YouTube embed when the video is recorded; a
+   placeholder block in the same dimensions otherwise. Both states are
+   accessible. #}
+{% set v = videos[slug] %}
+{% if v %}
+<div class="video-embed" role="region" aria-label="{{ v.title }}">
+  {% if v.youtubeId %}
+    <div class="video-embed-frame">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/{{ v.youtubeId }}?rel=0&modestbranding=1"
+        title="{{ v.title }}"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    {% if v.duration or v.transcript %}
+    <div class="video-embed-meta">
+      {% if v.duration %}<span>{{ v.duration }}</span>{% endif %}
+      {% if v.transcript %}<a href="{{ v.transcript }}" class="inline-link">Read transcript</a>{% endif %}
+    </div>
+    {% endif %}
+  {% else %}
+    <div class="video-embed-placeholder">
+      {% if v.placeholderEyebrow %}<span class="video-embed-eyebrow">{{ v.placeholderEyebrow }}</span>{% endif %}
+      <h3 class="video-embed-title">{{ v.placeholderTitle or "Coming soon." }}</h3>
+      {% if v.description %}<p class="video-embed-desc">{{ v.description }}</p>{% endif %}
+      {% if v.duration %}<span class="video-embed-duration">{{ v.duration }}</span>{% endif %}
+    </div>
+  {% endif %}
+</div>
+{% endif %}

@@ -1,0 +1,66 @@
+---
+layout: layouts/base.njk
+title: "The Service Site Show | Pikes Peak Web Designs Podcast"
+description: "Fortnightly conversations with service-business owners about the web, work, and what actually moves the phone. Hosted by Jon Ajinga."
+noindex: true
+eleventyExcludeFromCollections: true
+---
+
+<section class="page-hero page-hero--peak">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>{{ podcast.title }}</span>
+    </nav>
+    <span class="section-label">The podcast</span>
+    <h1>{{ podcast.title }}. <em>Fortnightly, twenty minutes.</em></h1>
+    <p>{{ podcast.tagline }} Hosted by {{ podcast.host }}.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+
+    <div class="prose">
+      <h2>What the show is</h2>
+      <p>{{ podcast.cadence }} Two formats:</p>
+      <ul>
+        {% for format in podcast.formats %}
+          <li>{{ format | safe }}</li>
+        {% endfor %}
+      </ul>
+
+      <h2>Where to listen</h2>
+      {% if podcast.appearsOn and podcast.appearsOn.length %}
+        <ul>
+          {% for platform in podcast.appearsOn %}
+            <li><a href="{{ platform.url }}" rel="noopener" class="inline-link">{{ platform.name }}</a></li>
+          {% endfor %}
+        </ul>
+        <p>Or subscribe directly: <a href="{{ podcast.feedUrl }}" class="inline-link">RSS feed</a>.</p>
+      {% else %}
+        <p>The show is being recorded. Once the first three episodes are live, this page will list every podcast platform the feed is submitted to.</p>
+      {% endif %}
+
+      <h2>Episodes</h2>
+      {% set episodes = collections.podcastEpisodes %}
+      {% if episodes and episodes.length %}
+        <ol>
+          {% for ep in episodes | reverse %}
+            <li>
+              <a href="{{ ep.url }}" class="inline-link"><strong>{{ ep.data.title }}</strong></a>
+              {% if ep.data.guest %} &middot; with {{ ep.data.guest }}{% endif %}
+              {% if ep.data.duration %} &middot; {{ ep.data.duration }}{% endif %}
+              {% if ep.data.description %}<br><span style="color:var(--text-muted);font-size:0.95rem">{{ ep.data.description }}</span>{% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+      {% else %}
+        <p style="padding:1.5rem 1.75rem;background:var(--bg-alt);border-left:3px solid var(--gold-500);border-radius:0 var(--radius-sm) var(--radius-sm) 0">No episodes published yet. The first will land once the format is locked in. Bookmark the page or subscribe to the <a href="/feed.xml" class="inline-link">site RSS</a> &mdash; episode-1 will be announced there too.</p>
+      {% endif %}
+
+      <h2>Want to be a guest?</h2>
+      <p>If you run a service business and have a website that actually moves the phone &mdash; or one that does not, and you want to talk about why &mdash; <a href="/contact/" class="inline-link">email me</a>. The format is conversational; no pitch, no script, just a real conversation about your work.</p>
+    </div>
+
+  </div>
+</section>
