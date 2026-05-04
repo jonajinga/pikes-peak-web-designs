@@ -11,7 +11,7 @@ description: "A rough but honest interactive calculator. Plug in your traffic, a
     </nav>
     <span class="section-label">Calculator</span>
     <h1>How much is your slow website <em>actually costing you?</em></h1>
-    <p>Five inputs, deliberately rough math, an honest annual number. Built so you can stop guessing whether the website is the bottleneck and start pricing it. Numbers run entirely in your browser; nothing leaves your device.</p>
+    <p>This calculator takes five inputs, runs deliberately rough math, and gives you back an honest annual number. It is built so you can stop guessing whether the website is the bottleneck and start putting a price on it instead. The numbers run entirely inside your browser, and nothing leaves your device.</p>
   </div>
 </section>
 
@@ -50,7 +50,7 @@ description: "A rough but honest interactive calculator. Plug in your traffic, a
         <div class="calc-field">
           <label for="calc-job">Average job value ($)</label>
           <input type="number" id="calc-job" min="0" step="50" value="500" inputmode="numeric">
-          <span class="calc-hint">A single roof, an HVAC install, an inspection report &mdash; whatever the typical close is.</span>
+          <span class="calc-hint">A single roof, an HVAC install, an inspection report, whatever the typical close is.</span>
         </div>
 
         <div class="calc-field">
@@ -91,20 +91,20 @@ description: "A rough but honest interactive calculator. Plug in your traffic, a
     </div>
 
     <div class="calc-notes">
-      <h2>How the math works (and where it is rough)</h2>
-      <p>The model is deliberately simple so you can interrogate it and adjust. The core relationship: every additional second of mobile load time loses roughly 7&ndash;10% of mobile visitors before they ever read your headline. Google's research, repeatedly confirmed by independent studies, puts the bounce-rate impact in that range.</p>
+      <h2>How the math works, and where it is rough</h2>
+      <p>The model is deliberately simple, so you can interrogate it and adjust the inputs as you see fit. The core relationship behind the math is that every additional second of mobile load time loses roughly seven to ten percent of mobile visitors before they have even read your headline. Google's research, repeatedly confirmed by independent studies, places the bounce-rate impact in that range.</p>
       <ul>
-        <li><strong>The PageSpeed delta.</strong> A site at PageSpeed 95+ loads in roughly 1 second on mobile. A site at PageSpeed 50 loads in 4&ndash;5 seconds. The calculator estimates 1.5% additional bounce per PageSpeed point below 95, applied only to the mobile share of visits. That is conservative; the real number can be higher on flaky cellular connections.</li>
-        <li><strong>Conversion rate.</strong> Treated as a property of the site, not the platform. The calculator does NOT assume a custom-coded site has a higher conversion rate than your current site &mdash; the only lift is from <em>retaining</em> the visitors who currently bounce off slow load. Real custom sites typically convert higher because of better forms and clearer CTAs, but that lift is not in the calculator. The number you see is the floor.</li>
-        <li><strong>Lead-to-close rate.</strong> Held constant. The site does not change the close rate, only the lead volume.</li>
-        <li><strong>What is NOT in the model.</strong> Higher local-pack ranking from better schema, organic search visibility from real area pages, retention impact of a maintained site, SEO compounding over time. All of those are real and meaningful; the calculator just does not estimate them.</li>
+        <li><strong>The PageSpeed delta.</strong> A site at PageSpeed 95 or above loads in roughly one second on mobile, while a site at PageSpeed 50 loads in four or five seconds. The calculator estimates one and a half percent of additional bounce per PageSpeed point below 95, applied only to the mobile share of your visits. The estimate is conservative, and the real number can be considerably higher on a flaky cellular connection.</li>
+        <li><strong>Conversion rate.</strong> The conversion rate is treated as a property of the site rather than the platform underneath it. The calculator does not assume a custom-coded site has a higher conversion rate than your current one, and the only lift it models comes from retaining the visitors who currently bounce off slow load. In practice, real custom sites tend to convert higher because of better forms and clearer calls to action, but that lift is not in the calculator. The number you see is the floor.</li>
+        <li><strong>Lead-to-close rate.</strong> The lead-to-close rate is held constant in the model, since the site does not change the close rate itself, only the lead volume that feeds into it.</li>
+        <li><strong>What is not in the model.</strong> Higher local-pack ranking from better schema, organic search visibility from real area pages, the retention impact of a maintained site, and the way SEO compounds over time are all real and meaningful effects. The calculator simply does not attempt to estimate them.</li>
       </ul>
-      <p><strong>Plain English:</strong> if the number above is bigger than $5K&ndash;$10K, a custom-coded site pays for itself on the leakage line alone. The other factors are upside.</p>
+      <p><strong>Plain English:</strong> if the number above comes out to more than five or ten thousand dollars, a custom-coded site pays for itself on the leakage line alone, and the other factors are upside on top of that.</p>
     </div>
 
     <div class="calc-callout">
       <h3>Want a real audit, not a calculator?</h3>
-      <p>The calculator estimates. The <a href="/audit/" class="inline-link">free 5-point audit</a> measures &mdash; with real Lighthouse numbers, real schema checks, and a real conversion-flow review on your URL. Five business days. No obligation. The deliverable is a written report you can act on whether or not you hire me.</p>
+      <p>The calculator estimates the leakage. The <a href="/audit/" class="inline-link">free five-point audit</a>, by contrast, measures it directly, using real Lighthouse numbers, real schema checks, and a real conversion-flow review on your actual URL. Turnaround is five business days, there is no obligation attached, and the deliverable is a written report you can act on whether or not you decide to hire me.</p>
     </div>
 
   </div>
@@ -114,7 +114,7 @@ description: "A rough but honest interactive calculator. Plug in your traffic, a
   <div class="cta-inner">
     <span class="section-label">If the math works, let's talk</span>
     <h2>Twenty minutes is plenty.</h2>
-    <p>Bring the numbers above to the discovery call. We will walk through where they come from and what a custom build would actually change. No pitch deck, no pressure.</p>
+    <p>Bring the numbers above to the discovery call. We will walk through where they come from and what a custom build would actually change in your particular situation. There is no pitch deck involved and no pressure attached.</p>
     <div class="cta-buttons">
       <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
       <a href="/audit/" class="btn btn-outline btn-lg">Get a free audit instead</a>
@@ -143,11 +143,11 @@ description: "A rough but honest interactive calculator. Plug in your traffic, a
     if (!els.visits) return;
 
     function fmt(n) {
-      if (!isFinite(n)) return '$—';
+      if (!isFinite(n)) return '$, ';
       return '$' + Math.round(n).toLocaleString('en-US');
     }
     function fmtNum(n) {
-      if (!isFinite(n)) return '—';
+      if (!isFinite(n)) return ', ';
       return Math.round(n).toLocaleString('en-US');
     }
 
