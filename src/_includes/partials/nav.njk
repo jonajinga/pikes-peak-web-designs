@@ -4,7 +4,7 @@
 
     <nav class="nav-links" aria-label="Main navigation">
       <div class="nav-dropdown">
-        <a href="/how-it-works/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/how-it-works/') or page.url | startsWith('/whats-included/') or page.url | startsWith('/what-we-build/') or page.url | startsWith('/samples/') or page.url | startsWith('/sample-forms/') or page.url | startsWith('/pricing/') %} class="active" aria-current="page"{% endif %}>Services <span class="nav-arrow">&#9660;</span></a>
+        <a href="/how-it-works/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/how-it-works/') or page.url | startsWith('/whats-included/') or page.url | startsWith('/what-we-build/') or page.url | startsWith('/method/') or page.url | startsWith('/samples/') or page.url | startsWith('/sample-forms/') or page.url | startsWith('/pricing/') or page.url | startsWith('/technical-approach/') or page.url | startsWith('/agreement/') %} class="active" aria-current="page"{% endif %}>Services <span class="nav-arrow">&#9660;</span></a>
         <div class="mega-menu" role="menu" aria-label="Services menu">
           <div class="mega-menu-inner">
             <div class="mega-col">
@@ -28,26 +28,6 @@
               <a href="/pricing/" class="mega-item" role="menuitem">
                 <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
                 <span><span class="mega-item-title">Pricing</span><span class="mega-item-desc">Two plans, no design deposit. Monthly $175 or $4,000 lump-sum.</span></span>
-              </a>
-              <a href="/audit/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v3M11 14h.01"/></svg></span>
-                <span><span class="mega-item-title">Free 5-point audit</span><span class="mega-item-desc">Send your URL, get a written report on speed, SEO, mobile, accessibility, conversion. No obligation.</span></span>
-              </a>
-              <a href="/calculator/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="9" y2="11"/><line x1="12" y1="11" x2="13" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="9" y2="15"/><line x1="12" y1="15" x2="13" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/></svg></span>
-                <span><span class="mega-item-title">Lead-leakage calculator</span><span class="mega-item-desc">See the annual revenue your slow site is leaking. Five inputs, runs in your browser.</span></span>
-              </a>
-              <a href="/grader/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg></span>
-                <span><span class="mega-item-title">Site grader</span><span class="mega-item-desc">Paste a URL, get a 0&ndash;100 grade across speed, schema, local SEO, HTTPS, privacy.</span></span>
-              </a>
-              <a href="/service-site-audit/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/></svg></span>
-                <span><span class="mega-item-title">Paid Service Site Audit</span><span class="mega-item-desc">25-page deep audit + 60-min walk-through. $499. Refundable against any signup.</span></span>
-              </a>
-              <a href="/rebuild/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><polyline points="21 3 21 8 16 8"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><polyline points="8 16 3 16 3 21"/></svg></span>
-                <span><span class="mega-item-title">Rebuild Sprint &mdash; $4,500</span><span class="mega-item-desc">Two-week one-shot rebuild for buyers who want custom code without a recurring plan.</span></span>
               </a>
             </div>
 
@@ -90,8 +70,70 @@
           </div>
 
           <div class="mega-foot">
-            <span>Compare a custom-coded site to the off-the-shelf platforms.</span>
-            <a href="/vs-wix/">See the comparison &rarr;</a>
+            <span>Want to test your current site? Use the free tools.</span>
+            <a href="/grader/">Run the site grader &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <a href="/audit/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/audit/') or page.url | startsWith('/service-site-audit/') or page.url | startsWith('/calculator/') or page.url | startsWith('/grader/') or page.url | startsWith('/rebuild/') or page.url | startsWith('/walk-through/') or page.url | startsWith('/status/') %} class="active" aria-current="page"{% endif %}>Tools &amp; Audits <span class="nav-arrow">&#9660;</span></a>
+        <div class="mega-menu" role="menu" aria-label="Tools and audits menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h5>Free, no email gate</h5>
+              <a href="/grader/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg></span>
+                <span><span class="mega-item-title">Site grader</span><span class="mega-item-desc">Paste a URL, get a 0&ndash;100 grade across speed, schema, local SEO, HTTPS, privacy. Five seconds, no signup.</span></span>
+              </a>
+              <a href="/calculator/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="9" y2="11"/><line x1="12" y1="11" x2="13" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="9" y2="15"/><line x1="12" y1="15" x2="13" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/></svg></span>
+                <span><span class="mega-item-title">Lead-leakage calculator</span><span class="mega-item-desc">See the annual revenue your slow site is leaking. Six inputs, runs in your browser.</span></span>
+              </a>
+              <a href="/audit/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v3M11 14h.01"/></svg></span>
+                <span><span class="mega-item-title">Free 5-point audit</span><span class="mega-item-desc">Send your URL. Get a written report on speed, SEO, mobile, accessibility, conversion. 5 business days.</span></span>
+              </a>
+              <a href="/walk-through/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+                <span><span class="mega-item-title">Walk-through</span><span class="mega-item-desc">A guided tour of a finished site, page by page. Sales-call-free evaluation.</span></span>
+              </a>
+            </div>
+
+            <div class="mega-col">
+              <h5>Paid products</h5>
+              <a href="/service-site-audit/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/></svg></span>
+                <span><span class="mega-item-title">Service Site Audit &mdash; $499</span><span class="mega-item-desc">25-page deep audit + 60-min Loom walk-through. 10 business days. Refundable against any signup.</span></span>
+              </a>
+              <a href="/rebuild/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><polyline points="21 3 21 8 16 8"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><polyline points="8 16 3 16 3 21"/></svg></span>
+                <span><span class="mega-item-title">Rebuild Sprint &mdash; $4,500</span><span class="mega-item-desc">Two-week one-shot custom rebuild. No recurring plan. You own the code on launch.</span></span>
+              </a>
+              <h5 class="mega-col-h5--secondary">Live proof</h5>
+              <a href="/status/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                <span><span class="mega-item-title">Status &amp; performance</span><span class="mega-item-desc">Live PageSpeed scores for every demo site, refreshed every 6 hours.</span></span>
+              </a>
+            </div>
+
+            <div class="mega-feature">
+              <span class="mega-feature-eyebrow">The funnel, in one menu</span>
+              <h3 class="mega-feature-title">Free tool &rarr; free audit &rarr; paid audit &rarr; rebuild.</h3>
+              <p class="mega-feature-body">Each tool is useful on its own. Together they form a path from "I want a quick grade" to "I want a written diagnostic" to "rebuild my site." Use whichever fits where you are.</p>
+              <div class="mega-feature-stats">
+                <div class="mega-feature-stat"><strong>5 sec</strong><span>site grader</span></div>
+                <div class="mega-feature-stat"><strong>$0</strong><span>5-point audit</span></div>
+                <div class="mega-feature-stat"><strong>$499</strong><span>deep audit</span></div>
+                <div class="mega-feature-stat"><strong>$4,500</strong><span>rebuild sprint</span></div>
+              </div>
+              <a href="/grader/" class="mega-feature-cta">Start with the grader &rarr;</a>
+            </div>
+          </div>
+
+          <div class="mega-foot">
+            <span>Want me to run the audit on your URL personally? The free 5-point version is the start.</span>
+            <a href="/audit/">Request the audit &rarr;</a>
           </div>
         </div>
       </div>
@@ -374,16 +416,22 @@
       <a href="/whats-included/">What's Included</a>
       <a href="/method/">The Service Site Standard</a>
       <a href="/what-we-build/">What We Build For You</a>
+      <a href="/pricing/">Pricing</a>
       <a href="/samples/">Sample Websites</a>
       <a href="/sample-forms/">Sample Forms</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/audit/">Free 5-Point Audit</a>
-      <a href="/service-site-audit/">Service Site Audit ($499)</a>
-      <a href="/calculator/">Lead-Leakage Calculator</a>
+      <a href="/technical-approach/">Technical Approach</a>
+      <a href="/agreement/">Service Agreement</a>
+    </div>
+  </div>
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Tools &amp; Audits <span class="mobile-arrow" aria-hidden="true"></span></button>
+    <div class="mobile-dropdown-menu">
       <a href="/grader/">Site Grader</a>
+      <a href="/calculator/">Lead-Leakage Calculator</a>
+      <a href="/audit/">Free 5-Point Audit</a>
       <a href="/walk-through/">Walk-through</a>
+      <a href="/service-site-audit/">Service Site Audit ($499)</a>
       <a href="/rebuild/">Rebuild Sprint ($4,500)</a>
-      <a href="/results/">Results</a>
       <a href="/status/">Status &amp; performance</a>
     </div>
   </div>
@@ -403,10 +451,10 @@
   <div class="mobile-dropdown">
     <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Service Areas <span class="mobile-arrow" aria-hidden="true"></span></button>
     <div class="mobile-dropdown-menu">
+      <a href="/service-areas/" class="mobile-view-all">View all service areas &rarr;</a>
       {% for city in nav.mobileHighlights %}
         <a href="/areas/{{ city.slug }}/">{{ city.label }}</a>
       {% endfor %}
-      <a href="/service-areas/" class="mobile-view-all">View all service areas &rarr;</a>
     </div>
   </div>
   <div class="mobile-dropdown">
