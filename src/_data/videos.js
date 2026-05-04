@@ -101,14 +101,4 @@ export default {
     placeholderEyebrow: "Founder commentary",
     placeholderTitle: "Coming soon.",
   },
-  continuity: {
-    slug: "continuity",
-    title: "What if I disappear?",
-    description: "Four-minute talking-head on succession, code escrow, the named backup developer, and the public runbook. The honest answer to the buyer concern nobody else addresses.",
-    duration: "4 min",
-    youtubeId: "",
-    transcript: "/transcripts/continuity/",
-    placeholderEyebrow: "Continuity",
-    placeholderTitle: "Coming soon — read the continuity story below.",
-  },
 };
