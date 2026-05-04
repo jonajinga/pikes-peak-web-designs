@@ -1,0 +1,193 @@
+---
+layout: layouts/base.njk
+title: "Lead-Leakage Calculator | What is Your Slow Website Actually Costing You? | Pikes Peak Web Designs"
+description: "A rough but honest interactive calculator. Plug in your traffic, average job value, and current site speed. See the annual revenue your current site is leaking before you call."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Lead-Leakage Calculator</span>
+    </nav>
+    <span class="section-label">Calculator</span>
+    <h1>How much is your slow website <em>actually costing you?</em></h1>
+    <p>Five inputs, deliberately rough math, an honest annual number. Built so you can stop guessing whether the website is the bottleneck and start pricing it. Numbers run entirely in your browser; nothing leaves your device.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:980px">
+
+    <div class="calc-grid">
+      <div class="calc-inputs" aria-label="Calculator inputs">
+        <div class="calc-field">
+          <label for="calc-visits">Monthly website visitors</label>
+          <input type="number" id="calc-visits" min="0" step="50" value="1000" inputmode="numeric">
+          <span class="calc-hint">Pull from Cloudflare or Google Analytics. Rough is fine.</span>
+        </div>
+
+        <div class="calc-field">
+          <label for="calc-mobileShare">Share of visits on mobile (%)</label>
+          <input type="range" id="calc-mobileShare" min="0" max="100" step="5" value="70" aria-describedby="calc-mobileShare-out">
+          <output id="calc-mobileShare-out" for="calc-mobileShare">70%</output>
+          <span class="calc-hint">Most service-business sites land between 65&ndash;80% mobile.</span>
+        </div>
+
+        <div class="calc-field">
+          <label for="calc-pagespeed">Current mobile PageSpeed score</label>
+          <input type="range" id="calc-pagespeed" min="20" max="100" step="5" value="55" aria-describedby="calc-pagespeed-out">
+          <output id="calc-pagespeed-out" for="calc-pagespeed">55</output>
+          <span class="calc-hint">Test free at <a href="https://pagespeed.web.dev/" rel="noopener" class="inline-link">pagespeed.web.dev</a>. Wix is typically 50&ndash;70, Squarespace 60&ndash;75, WordPress 30&ndash;65.</span>
+        </div>
+
+        <div class="calc-field">
+          <label for="calc-conv">Form / call conversion rate (%)</label>
+          <input type="range" id="calc-conv" min="0.5" max="10" step="0.5" value="2" aria-describedby="calc-conv-out">
+          <output id="calc-conv-out" for="calc-conv">2%</output>
+          <span class="calc-hint">Industry average for service-business sites: 1.5&ndash;3.5%.</span>
+        </div>
+
+        <div class="calc-field">
+          <label for="calc-job">Average job value ($)</label>
+          <input type="number" id="calc-job" min="0" step="50" value="500" inputmode="numeric">
+          <span class="calc-hint">A single roof, an HVAC install, an inspection report &mdash; whatever the typical close is.</span>
+        </div>
+
+        <div class="calc-field">
+          <label for="calc-close">Lead-to-close rate (%)</label>
+          <input type="range" id="calc-close" min="10" max="100" step="5" value="40" aria-describedby="calc-close-out">
+          <output id="calc-close-out" for="calc-close">40%</output>
+          <span class="calc-hint">Of qualified leads who reach you, what share become paying customers?</span>
+        </div>
+      </div>
+
+      <aside class="calc-results" aria-live="polite" aria-atomic="true">
+        <div class="calc-result-card">
+          <span class="calc-result-eyebrow">Annual revenue at risk</span>
+          <div class="calc-result-num" id="calc-out-revenue">$&mdash;</div>
+          <span class="calc-result-foot">If a custom-coded site at 95+ PageSpeed retained the visitors your current site loses to slow load.</span>
+        </div>
+
+        <div class="calc-secondary-grid">
+          <div class="calc-secondary">
+            <span class="calc-secondary-label">Mobile visits lost / month</span>
+            <strong id="calc-out-lost">&mdash;</strong>
+          </div>
+          <div class="calc-secondary">
+            <span class="calc-secondary-label">Additional leads / year</span>
+            <strong id="calc-out-leads">&mdash;</strong>
+          </div>
+          <div class="calc-secondary">
+            <span class="calc-secondary-label">Additional jobs closed</span>
+            <strong id="calc-out-jobs">&mdash;</strong>
+          </div>
+        </div>
+
+        <div class="calc-cta">
+          <a href="/audit/" class="btn btn-primary btn-full">Get the free 5-point audit on YOUR site</a>
+          <a href="/contact/" class="btn btn-outline btn-full" style="margin-top:0.65rem">Or book the discovery call</a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="calc-notes">
+      <h2>How the math works (and where it is rough)</h2>
+      <p>The model is deliberately simple so you can interrogate it and adjust. The core relationship: every additional second of mobile load time loses roughly 7&ndash;10% of mobile visitors before they ever read your headline. Google's research, repeatedly confirmed by independent studies, puts the bounce-rate impact in that range.</p>
+      <ul>
+        <li><strong>The PageSpeed delta.</strong> A site at PageSpeed 95+ loads in roughly 1 second on mobile. A site at PageSpeed 50 loads in 4&ndash;5 seconds. The calculator estimates 1.5% additional bounce per PageSpeed point below 95, applied only to the mobile share of visits. That is conservative; the real number can be higher on flaky cellular connections.</li>
+        <li><strong>Conversion rate.</strong> Treated as a property of the site, not the platform. The calculator does NOT assume a custom-coded site has a higher conversion rate than your current site &mdash; the only lift is from <em>retaining</em> the visitors who currently bounce off slow load. Real custom sites typically convert higher because of better forms and clearer CTAs, but that lift is not in the calculator. The number you see is the floor.</li>
+        <li><strong>Lead-to-close rate.</strong> Held constant. The site does not change the close rate, only the lead volume.</li>
+        <li><strong>What is NOT in the model.</strong> Higher local-pack ranking from better schema, organic search visibility from real area pages, retention impact of a maintained site, SEO compounding over time. All of those are real and meaningful; the calculator just does not estimate them.</li>
+      </ul>
+      <p><strong>Plain English:</strong> if the number above is bigger than $5K&ndash;$10K, a custom-coded site pays for itself on the leakage line alone. The other factors are upside.</p>
+    </div>
+
+    <div class="calc-callout">
+      <h3>Want a real audit, not a calculator?</h3>
+      <p>The calculator estimates. The <a href="/audit/" class="inline-link">free 5-point audit</a> measures &mdash; with real Lighthouse numbers, real schema checks, and a real conversion-flow review on your URL. Five business days. No obligation. The deliverable is a written report you can act on whether or not you hire me.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">If the math works, let's talk</span>
+    <h2>Twenty minutes is plenty.</h2>
+    <p>Bring the numbers above to the discovery call. We will walk through where they come from and what a custom build would actually change. No pitch deck, no pressure.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
+      <a href="/audit/" class="btn btn-outline btn-lg">Get a free audit instead</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var els = {
+      visits:   document.getElementById('calc-visits'),
+      mobile:   document.getElementById('calc-mobileShare'),
+      mobileO:  document.getElementById('calc-mobileShare-out'),
+      ps:       document.getElementById('calc-pagespeed'),
+      psO:      document.getElementById('calc-pagespeed-out'),
+      conv:     document.getElementById('calc-conv'),
+      convO:    document.getElementById('calc-conv-out'),
+      job:      document.getElementById('calc-job'),
+      close:    document.getElementById('calc-close'),
+      closeO:   document.getElementById('calc-close-out'),
+      outRev:   document.getElementById('calc-out-revenue'),
+      outLost:  document.getElementById('calc-out-lost'),
+      outLeads: document.getElementById('calc-out-leads'),
+      outJobs:  document.getElementById('calc-out-jobs'),
+    };
+    if (!els.visits) return;
+
+    function fmt(n) {
+      if (!isFinite(n)) return '$—';
+      return '$' + Math.round(n).toLocaleString('en-US');
+    }
+    function fmtNum(n) {
+      if (!isFinite(n)) return '—';
+      return Math.round(n).toLocaleString('en-US');
+    }
+
+    function update() {
+      var visits = parseFloat(els.visits.value) || 0;
+      var mobileShare = parseFloat(els.mobile.value) / 100;
+      var pagespeed = parseFloat(els.ps.value);
+      var convRate = parseFloat(els.conv.value) / 100;
+      var job = parseFloat(els.job.value) || 0;
+      var closeRate = parseFloat(els.close.value) / 100;
+
+      els.mobileO.textContent = (mobileShare * 100).toFixed(0) + '%';
+      els.psO.textContent = pagespeed.toFixed(0);
+      els.convO.textContent = convRate.toFixed(1).replace(/\.0$/, '') + (convRate < 1 ? '%' : '%');
+      els.convO.textContent = (convRate * 100).toFixed(1).replace(/\.0$/, '') + '%';
+      els.closeO.textContent = (closeRate * 100).toFixed(0) + '%';
+
+      // Each PageSpeed point below 95 = ~1.5% additional mobile bounce.
+      // Cap the loss multiplier at 60% so the math doesn't run away.
+      var psGap = Math.max(0, 95 - pagespeed);
+      var bounceUplift = Math.min(0.6, psGap * 0.015);
+      var mobileVisits = visits * mobileShare;
+      var lostMonthly = mobileVisits * bounceUplift;
+      var leadsAnnually = lostMonthly * 12 * convRate;
+      var jobsAnnually = leadsAnnually * closeRate;
+      var revenueAnnually = jobsAnnually * job;
+
+      els.outRev.textContent = fmt(revenueAnnually);
+      els.outLost.textContent = fmtNum(lostMonthly);
+      els.outLeads.textContent = fmtNum(leadsAnnually);
+      els.outJobs.textContent = fmtNum(jobsAnnually);
+    }
+
+    ['input', 'change'].forEach(function (evt) {
+      Object.values(els).forEach(function (el) {
+        if (el && el.addEventListener && (el.tagName === 'INPUT' || el.tagName === 'OUTPUT' || el.type)) {
+          el.addEventListener(evt, update);
+        }
+      });
+    });
+    update();
+  })();
+</script>
