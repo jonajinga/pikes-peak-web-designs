@@ -74,7 +74,8 @@ description: "The stack, the pipeline, and the reasoning behind every site I bui
       <ul>
         <li><strong><a href="https://pagefind.app" class="inline-link" rel="noopener">Pagefind</a></strong>: static, client-side full-text search. Indexed at build time, served as static JSON chunks, no server required. Runs in an <code>eleventy.after</code> hook so the Cloudflare Pages preset works out of the box.</li>
         <li><strong><a href="https://web3forms.com" class="inline-link" rel="noopener">Web3Forms</a></strong>: static-site-friendly form backend. Submissions POST directly to their API; I never touch a server-side form handler. Honeypot + rate-limiting; no CAPTCHA.</li>
-        <li><strong><a href="https://atomiks.github.io/tippyjs/" class="inline-link" rel="noopener">Tippy.js</a></strong> + <strong><a href="https://popper.js.org" class="inline-link" rel="noopener">Popper</a></strong>: accessible tooltip library for glossary terms. Lazy-initialized on first hover; not loaded if no <code>.term</code> elements exist.</li>
+        <li><strong><a href="https://atomiks.github.io/tippyjs/" class="inline-link" rel="noopener">Tippy.js</a></strong> + <strong><a href="https://popper.js.org" class="inline-link" rel="noopener">Popper</a></strong>: accessible tooltip library for glossary terms. Initialized site-wide; auto-attaches to <code>[data-term]</code>, <code>[data-tooltip]</code>, and any link to the glossary so authors can write a normal anchor and get a definition tooltip free.</li>
+        <li><strong><a href="https://leafletjs.com" class="inline-link" rel="noopener">Leaflet</a></strong> + <strong><a href="https://www.openstreetmap.org" class="inline-link" rel="noopener">OpenStreetMap</a></strong>: service-area maps on <code>/areas/&lt;slug&gt;/</code> pages and demo sites. No Google Maps tracker, no API key, no cookies. Tiles served directly from OSM. <code>~200</code> city coordinates curated in <code>_data/cityCoords.js</code> for nearby-community pin plotting; ambiguous names (Aurora CO/IL, Smyrna GA/TN) are state-scoped.</li>
         <li><strong><a href="https://instant.page" class="inline-link" rel="noopener">instant.page</a></strong>: prefetches links on hover so navigation feels instantaneous. 1.5 KB, no API.</li>
       </ul>
 
@@ -97,6 +98,16 @@ description: "The stack, the pipeline, and the reasoning behind every site I bui
         <li><strong><a href="https://github.com" class="inline-link" rel="noopener">GitHub</a></strong>: every client site lives in a private repo. Commit history available to the client on request. I sign commits with verified GPG keys.</li>
         <li><strong>CI/CD</strong>: Cloudflare Pages' built-in build preset runs <code>npx @11ty/eleventy</code> on every push to <code>main</code>. Preview deploys for every non-<code>main</code> branch. Roll-backs in one click. I do not maintain a separate CI server.</li>
         <li><strong>Branch protection</strong>: <code>main</code> is protected; merges require status checks (build + Lighthouse CI on critical templates).</li>
+      </ul>
+
+      <h2 id="interactive-tooling">Interactive tooling I have shipped on this site</h2>
+      <p>The agency's own site doubles as a portfolio of small interactive surfaces. Each is fully client-side: nothing leaves the browser, nothing depends on a backend, all of it works on a static-site host.</p>
+      <ul>
+        <li><strong>The <a href="/calculator/" class="inline-link">lead-leakage calculator</a></strong>. Six inputs (visits, mobile share, current PageSpeed, conversion rate, average job value, close rate), four outputs (annual revenue at risk, lost mobile visits/month, additional leads/year, additional jobs). Pure vanilla JS, runs entirely in the browser, no submission anywhere. Pairs with the <a href="/blog/how-much-is-your-slow-website-costing-you/" class="inline-link">long-form math blog post</a>.</li>
+        <li><strong>The <a href="/audit/" class="inline-link">free 5-point audit form</a></strong>. Real Lighthouse + schema + conversion-flow review delivered on a 5-business-day SLA. Web3Forms backend, unique subject line for routing.</li>
+        <li><strong>The 8-page <a href="/vs-wix/" class="inline-link">comparison surface</a></strong>. Honest head-to-head vs Wix, Squarespace, GoDaddy, Webflow, WordPress, AI builders, traditional agencies, and freelance developers. Each page leads with the lead-generation gap (page speed, schema, form intelligence) instead of the price line, since the agency is not the cheapest option but is the highest-leverage option for service businesses.</li>
+        <li><strong>The <a href="/walk-through/" class="inline-link">walk-through page</a></strong>. Sales-call-free evaluation surface for visitors who want to see the work before booking a call.</li>
+        <li><strong>The redesigned <a href="/client-portal/" class="inline-link">client portal</a></strong>. Single-page dashboard for active clients with quick-action shortcuts, stage-aware feature cards, integrated direct-contact panel, and clean self-serve resource list.</li>
       </ul>
 
       <h2 id="why-static">Why static over dynamic</h2>

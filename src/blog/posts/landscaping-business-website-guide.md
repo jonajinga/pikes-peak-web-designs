@@ -49,7 +49,7 @@ tags: [post, landscaping]
 
 <ul>
   <li><strong>Real city pages, not doorway pages.</strong> If you serve five towns, build five real pages &mdash; each one with photos of work in <em>that</em> town, references to local conditions (clay soil in this neighborhood, drought-zone restrictions in that one, HOA aesthetics in another), and at least one local landmark in the copy. Doorway pages where every paragraph is the same with the city name swapped in are the doorway pattern Google's local algorithm specifically penalizes.</li>
-  <li><strong>Service-specific pages with hand-written schema.</strong> Page for "drystone walls", "native plant design", "irrigation install", "outdoor lighting", "patio build", each with its own page, its own photos, its own LocalBusiness + Service schema. A custom-coded site does this; most templates will not.</li>
+  <li><strong>Service-specific pages with custom-coded schema.</strong> Page for "drystone walls", "native plant design", "irrigation install", "outdoor lighting", "patio build", each with its own page, its own photos, its own LocalBusiness + Service schema. A custom-coded site does this; most templates will not.</li>
   <li><strong>Connection to your Google Business Profile.</strong> NAP (name, address, phone) on every page must match the GBP exactly. Phone numbers in a different format break this. Address truncated differently breaks this. The whole local-pack ranking signal pivots on consistency &mdash; sloppy NAP costs visibility.</li>
   <li><strong>Reviews surface on the site.</strong> The Google Business Profile collects reviews. The website needs to surface the strongest of them on the relevant service pages and on the homepage. New visitors do not click out to Google Maps to find reviews; they leave.</li>
 </ul>
@@ -88,7 +88,7 @@ tags: [post, landscaping]
 
 <p>This is not a small-margin effect. Google's own data shows roughly 7&ndash;10% of mobile visitors bounce per additional second of load time. A landscaper site at 60 PageSpeed mobile is losing roughly half of its mobile traffic before the visitor reads a word. A landscaper site at 95+ keeps that traffic and gives the visitor a chance to actually see the portfolio.</p>
 
-<p>Page speed is structural. It cannot be fixed with a plugin. It comes from the way the site is built &mdash; AVIF / WebP images served at the right size, minimal JavaScript, no heavy template runtime, hand-written CSS. <a href="/vs-wix/" class="inline-link">A custom-coded site achieves it natively</a>; most templated platforms do not.</p>
+<p>Page speed is structural. It cannot be fixed with a plugin. It comes from the way the site is built &mdash; AVIF / WebP images served at the right size, minimal JavaScript, no heavy template runtime, custom CSS. <a href="/vs-wix/" class="inline-link">A custom-coded site achieves it natively</a>; most templated platforms do not.</p>
 
 <h2>Trust signals that mean something to landscape buyers</h2>
 

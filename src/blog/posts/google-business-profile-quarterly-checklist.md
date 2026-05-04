@@ -5,7 +5,7 @@ label: "Local SEO"
 description: "Four maintenance tasks that take 15 minutes a quarter and meaningfully improve where your service business shows up in the Google Maps local pack."
 ctaLabel: "Local SEO done right"
 ctaHeading: "Want a website wired to your GBP from day one?"
-ctaText: "Custom-coded sites with hand-written schema that matches your Google Business Profile exactly. Better local-pack ranking, no plugin guesswork. $175/month flat rate, $0 down."
+ctaText: "Custom-coded sites with schema written specifically for your Google Business Profile. Better local-pack ranking, no plugin guesswork. $175/month flat rate, $0 down."
 layout: layouts/post.njk
 tags: [post, local-seo]
 ---

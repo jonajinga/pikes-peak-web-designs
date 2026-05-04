@@ -31,7 +31,7 @@ description: "Press resources for Pikes Peak Web Designs: founder bio, headshots
 
     <h2>One-paragraph bio (for direct quotation)</h2>
     <p style="background:var(--bg-alt);padding:1.5rem 1.75rem;border-left:3px solid var(--gold-500);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:1rem 0 2rem;font-size:0.98rem;line-height:1.7">
-      Pikes Peak Web Designs is a Colorado-based agency building custom-coded websites for small service businesses across the U.S. and Canada. Founded by Jon Ajinga in Colorado Springs, the agency rejects the WordPress / page-builder / template-mill model in favor of hand-written code on the modern edge: 95&ndash;100 PageSpeed scores, WCAG 2.2 AA accessibility, hand-written schema for the local-pack, and a flat $175/month plan with $0 down (or a $4,000 lump-sum) instead of a five-thousand-dollar design deposit. The whole agency operates in public &mdash; live changelog, open service agreement, public Owner's Guide &mdash; so prospective clients can evaluate the work before any sales conversation.
+      Pikes Peak Web Designs is a Colorado-based agency building custom-coded websites for small service businesses across the U.S. and Canada. Founded by Jon Ajinga in Colorado Springs, the agency rejects the WordPress / page-builder / template-mill model in favor of custom-coded code on the modern edge: 95&ndash;100 PageSpeed scores, WCAG 2.2 AA accessibility, custom-coded schema for the local-pack, and a flat $175/month plan with $0 down (or a $4,000 lump-sum) instead of a five-thousand-dollar design deposit. The whole agency operates in public &mdash; live changelog, open service agreement, public Owner's Guide &mdash; so prospective clients can evaluate the work before any sales conversation.
     </p>
 
     <h2>Two-line bio (for short-form attribution)</h2>
@@ -46,7 +46,6 @@ description: "Press resources for Pikes Peak Web Designs: founder bio, headshots
       <li><strong>Page speed economics.</strong> What a slow site actually costs in lost mobile visitors, the conversion-rate impact of every additional second, why the calculator industry has been quiet about this.</li>
       <li><strong>The "good enough" trap with AI website builders.</strong> Why generic copy ranks worse over time, why an AI-generated page looks done but does not perform, the real ceiling on Wix AI / Squarespace AI / Durable / GoDaddy AIO output.</li>
       <li><strong>WordPress security for non-technical owners.</strong> Why service-business sites do not need a CMS, the maintenance retainer industrial complex, the static-site alternative.</li>
-      <li><strong>Accessibility for small business websites.</strong> WCAG 2.2 AA in plain language, the rising rate of ADA lawsuits against small business sites, what a real audit costs to do internally.</li>
       <li><strong>Pricing transparency.</strong> Why posted prices increase qualified inquiries, why "request a quote" buttons cost more revenue than they protect, what a real flat-rate plan does to the agency-client relationship.</li>
       <li><strong>The trades-specific take.</strong> Roofing storm season, HVAC seasonal demand cycles, plumbing emergency-call landing pages, what each trade specifically needs from its website.</li>
     </ul>
@@ -74,7 +73,7 @@ description: "Press resources for Pikes Peak Web Designs: founder bio, headshots
     <h2>Available for</h2>
     <ul>
       <li><strong>Podcast appearances.</strong> Trades-business podcasts (HVAC, roofing, plumbing, contractor), small-business marketing podcasts, web-design / dev podcasts. Will do a 30&ndash;60 minute episode anywhere there is a real audience of service-business owners.</li>
-      <li><strong>Trade publication contributed articles.</strong> Roofers Coffee Shop, Home Inspector Magazine, ACHR News, Plumbing &amp; Mechanical, EC&amp;M, Landscape Management, your local business journal, etc. Pitch a topic and I will write it on a fixed deadline.</li>
+      <li><strong>Trade publication contributed articles.</strong> Trade publications, local business journals, niche industry newsletters &mdash; if your audience is small-business owners or service-business operators, pitch a topic and I will write it on a fixed deadline.</li>
       <li><strong>Quote requests.</strong> Same-day reply on email. Specific, on-the-record, attributable.</li>
       <li><strong>Live audits as content.</strong> Happy to audit a real site live on a podcast or webinar &mdash; speed, schema, conversion path. Useful for the audience, useful for me.</li>
     </ul>
@@ -82,14 +81,103 @@ description: "Press resources for Pikes Peak Web Designs: founder bio, headshots
   </div>
 </section>
 
+<section class="section section--cream">
+  <div class="container" style="max-width:980px">
+    <div class="press-contact-grid">
+      <div>
+        <span class="section-label">Press inquiry form</span>
+        <h2 class="section-title" style="margin-top:0.4rem">Reach out directly.</h2>
+        <p>Same-business-day reply on press requests. Use the form for a written record; phone or email if you are working against a same-day deadline. If something is not in the kit above, tell me what you need.</p>
+
+        <div class="press-contact-meta">
+          <div>
+            <strong>Direct email</strong>
+            <a href="mailto:{{ site.email }}?subject=Press%20inquiry">{{ site.email }}</a>
+          </div>
+          <div>
+            <strong>Phone / text</strong>
+            <a href="tel:{{ site.phone }}">{{ site.phoneDisplay }}</a>
+          </div>
+          <div>
+            <strong>Reply window</strong>
+            Same business day on press requests, faster on urgent deadlines.
+          </div>
+          <div>
+            <strong>What I will provide</strong>
+            Quote, headshot, logo, fact sheet, screenshots, or live audit on a podcast.
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <h2 class="form-heading">Press inquiry</h2>
+        <p class="form-intro">Five fields. The more specific, the faster I can deliver.</p>
+
+        <form id="pressForm" data-web3forms data-redirect="/thank-you/?type=press" action="https://api.web3forms.com/submit" method="POST" class="form">
+          <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+          <input type="hidden" name="subject" value="Press inquiry, Pikes Peak Web Designs">
+          <input type="hidden" name="from_name" value="Pikes Peak Web Designs &mdash; press">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-group">
+            <label for="pressName">Your name <span class="req">*</span></label>
+            <input type="text" id="pressName" name="name" placeholder="Reporter / host name" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="pressOutlet">Outlet / publication / podcast <span class="req">*</span></label>
+            <input type="text" id="pressOutlet" name="outlet" placeholder="Name of publication, podcast, or organization" required autocomplete="organization">
+          </div>
+
+          <div class="form-group">
+            <label for="pressEmail">Email <span class="req">*</span></label>
+            <input type="email" id="pressEmail" name="email" placeholder="reporter@outlet.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="pressType">What do you need? <span class="req">*</span></label>
+            <select id="pressType" name="inquiryType" required>
+              <option value="">Pick one</option>
+              <option value="Quote">A quote on a topic</option>
+              <option value="Interview">An interview (written or call)</option>
+              <option value="Podcast">Podcast guest appearance</option>
+              <option value="Contributed article">A contributed article / op-ed</option>
+              <option value="Media assets">Media assets (headshot, logo, screenshots)</option>
+              <option value="Live audit">Live website audit on your show</option>
+              <option value="Other">Something else (describe below)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="pressDeadline">Deadline (if any)</label>
+            <input type="text" id="pressDeadline" name="deadline" placeholder="e.g. EOD Thursday, May 15">
+          </div>
+
+          <div class="form-group">
+            <label for="pressContext">Topic / context</label>
+            <textarea id="pressContext" name="context" placeholder="Topic, angle, scope, length, expected publish date — whatever helps me deliver the right thing the first time." rows="4"></textarea>
+          </div>
+
+          <div id="form-error" role="alert" class="form-error">
+            Something went wrong. Please email me directly at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full btn-lg">Send press inquiry</button>
+          <p class="form-hint">Reply same business day. <a href="/privacy-policy/" class="inline-link">Privacy policy</a>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="cta-inner">
-    <span class="section-label">Press contact</span>
-    <h2>Need something for a story today?</h2>
-    <p>Email or text. Same-business-day reply on press requests. If something here is not what you need, ask &mdash; the kit grows as the requests come in.</p>
+    <span class="section-label">Or skip the form</span>
+    <h2>If your deadline is today, just email or call.</h2>
+    <p>Press inquiries are answered the same business day. If you have a today-deadline, the phone is faster than the form.</p>
     <div class="cta-buttons">
-      <a href="mailto:{{ site.email }}?subject=Press%20inquiry" class="btn btn-primary btn-lg">Email press contact</a>
-      <a href="/contact/" class="btn btn-outline btn-lg">Use the contact form instead</a>
+      <a href="mailto:{{ site.email }}?subject=Press%20inquiry%20%28urgent%29" class="btn btn-primary btn-lg">Email press contact</a>
+      <a href="tel:{{ site.phone }}" class="btn btn-outline btn-lg">Call {{ site.phoneDisplay }}</a>
     </div>
   </div>
 </section>

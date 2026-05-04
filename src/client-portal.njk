@@ -5,28 +5,62 @@ description: "Self-serve portal for Pikes Peak Web Designs clients. Onboarding f
 noindex: true
 ---
 
-<section class="page-hero">
+<section class="portal-hero">
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="sep">/</span><span>Client Portal</span>
     </nav>
     <span class="section-label">For existing clients</span>
-    <h1>Welcome. <em>Everything you need is here.</em></h1>
-    <p>Bookmark this page. Whatever stage you're in (brand-new client, mid-build, or live and humming), the right form is below. Pick the section that fits where you are.</p>
+    <h1>Welcome back. <em>What do you need?</em></h1>
+    <p>Bookmark this page. Whatever stage you're in &mdash; brand-new client, mid-build, or live and humming &mdash; the right form is below. Or skip to the quick action you need.</p>
+
+    <div class="portal-quick-actions" aria-label="Quick actions">
+      <a href="/content-update/" class="portal-quick">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <span>
+          <strong>Submit a content update</strong>
+          <span class="portal-quick-sub">Live the same business day</span>
+        </span>
+      </a>
+      <a href="/emergency/" class="portal-quick portal-quick--urgent">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>
+          <strong>Report an emergency</strong>
+          <span class="portal-quick-sub">Triaged within the hour</span>
+        </span>
+      </a>
+      <a href="/refer/" class="portal-quick">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
+        <span>
+          <strong>Refer a business</strong>
+          <span class="portal-quick-sub">One month credit if they sign</span>
+        </span>
+      </a>
+      <a href="tel:{{ site.phone }}" class="portal-quick">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>
+          <strong>Call or text me</strong>
+          <span class="portal-quick-sub">{{ site.phoneDisplay }}</span>
+        </span>
+      </a>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
+  <div class="container" style="max-width:1180px">
     <div class="toc-layout">
 
       <aside class="toc-side" aria-label="Client portal sections">
-        <div class="toc-side-title">Jump to</div>
+        <div class="toc-side-title">By stage</div>
         <ol class="toc-list">
-          <li><a href="#onboarding">Stage 1 &middot; Onboarding</a></li>
-          <li><a href="#in-build">Stage 2 &middot; In active build</a></li>
-          <li><a href="#live">Stage 3 &middot; Site is live</a></li>
-          <li><a href="#anytime">Anytime requests</a></li>
+          <li><a href="#onboarding"><span class="toc-stage-num">1</span> Onboarding</a></li>
+          <li><a href="#in-build"><span class="toc-stage-num">2</span> In active build</a></li>
+          <li><a href="#live"><span class="toc-stage-num">3</span> Site is live</a></li>
+          <li><a href="#anytime"><span class="toc-stage-num">&infin;</span> Anytime requests</a></li>
+        </ol>
+        <div class="toc-side-title" style="margin-top:1.5rem">Other</div>
+        <ol class="toc-list">
           <li><a href="#contact-reference">Direct contact</a></li>
           <li><a href="#resources">Self-serve resources</a></li>
         </ol>
@@ -36,293 +70,240 @@ noindex: true
 
         <!-- ===================== STAGE 1: ONBOARDING ===================== -->
         <article class="portal-stage" id="onboarding">
-          <div class="portal-stage-header">
-            <span class="portal-stage-tag">Stage 1 &middot; New clients</span>
+          <header class="portal-stage-head">
+            <span class="portal-stage-num">Stage 1</span>
             <h2>Onboarding intake.</h2>
-            <p>This is the form I send after the discovery call. The more detail you give me up front, the faster we launch. Usually 3 to 4 weeks of build time once it comes back. You can save what you have and return later; nothing has to be filled out in one sitting.</p>
+            <p class="portal-stage-lead">This is the form I send after the discovery call. The more detail you give me up front, the faster we launch &mdash; usually 3 to 4 weeks of build time once it comes back. Save and return; nothing has to be filled in one sitting.</p>
+          </header>
 
-            <div class="portal-stage-meta">
-              <div>
-                <strong>Typical time</strong>
-                15&ndash;25 minutes to fill out
-              </div>
-              <div>
-                <strong>What happens next</strong>
-                30-minute follow-up call to fill any gaps and align on timeline.
-              </div>
-              <div>
-                <strong>Privacy</strong>
-                Confidential, never shared. <a href="/privacy-policy/" class="inline-link">Privacy policy</a>.
-              </div>
-            </div>
-          </div>
-
-          <a href="/onboarding/" class="portal-card portal-card--feature portal-card--full">
-            <span class="portal-icon">
+          <a href="/onboarding/" class="portal-feature">
+            <div class="portal-feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
-            </span>
-            <h3>Open the onboarding form</h3>
-            <p>Nine sections covering your business, services, customers, brand, and assets. Submit whatever you have ready; come back later for the rest.</p>
-            <span class="portal-arrow">Start the intake &rarr;</span>
+            </div>
+            <div class="portal-feature-body">
+              <span class="portal-feature-eyebrow">Primary action for this stage</span>
+              <h3>Open the onboarding form</h3>
+              <p>Nine sections covering your business, services, customers, brand, and assets. Submit whatever you have ready; come back later for the rest.</p>
+            </div>
+            <div class="portal-feature-arrow" aria-hidden="true">&rarr;</div>
           </a>
+
+          <aside class="portal-info-strip">
+            <div class="portal-info-strip-item">
+              <strong>Typical time</strong>
+              <span>15&ndash;25 minutes to fill out</span>
+            </div>
+            <div class="portal-info-strip-item">
+              <strong>What's next</strong>
+              <span>30-min call to fill any gaps and align on timeline</span>
+            </div>
+            <div class="portal-info-strip-item">
+              <strong>Privacy</strong>
+              <span>Confidential, never shared. <a href="/privacy-policy/" class="inline-link">Privacy policy</a></span>
+            </div>
+          </aside>
         </article>
 
         <!-- ===================== STAGE 2: IN BUILD ===================== -->
         <article class="portal-stage" id="in-build">
-          <div class="portal-stage-header">
-            <span class="portal-stage-tag">Stage 2 &middot; In active build</span>
+          <header class="portal-stage-head">
+            <span class="portal-stage-num">Stage 2</span>
             <h2>Reviewing your preview link.</h2>
-            <p>Once design starts, I send you a private preview URL. The form below is how you give me structured feedback: what is working, what to change, what to question. Unlimited revision rounds; honest notes always beat polite ones.</p>
+            <p class="portal-stage-lead">Once design starts, I send you a private preview URL. The form below is how you give me structured feedback. Unlimited revision rounds; honest notes always beat polite ones.</p>
+          </header>
 
-            <div class="portal-stage-meta">
-              <div>
-                <strong>Round turnaround</strong>
-                2&ndash;3 business days for revisions.
-              </div>
-              <div>
-                <strong>Typical rounds</strong>
-                Most builds settle in two passes with good notes.
-              </div>
-              <div>
-                <strong>Final approval</strong>
-                You sign off; I ship to staging for content load.
-              </div>
+          <a href="/design-feedback/" class="portal-feature">
+            <div class="portal-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 0 0 0 20 3 3 0 0 0 3-3 2.5 2.5 0 0 1 2.5-2.5H19a3 3 0 0 0 3-3A10 10 0 0 0 12 2z"/></svg>
             </div>
-          </div>
-
-          <div class="portal-grid">
-            <a href="/design-feedback/" class="portal-card portal-card--feature">
-              <span class="portal-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 0 0 0 20 3 3 0 0 0 3-3 2.5 2.5 0 0 1 2.5-2.5H19a3 3 0 0 0 3-3A10 10 0 0 0 12 2z"/></svg>
-              </span>
-              <h3>Design feedback</h3>
-              <p>Structured notes get us to the right revisions faster. Drop the preview URL, tell me what is working and what is not, and how urgent the changes are.</p>
-              <span class="portal-arrow">Give feedback &rarr;</span>
-            </a>
-
-            <div class="portal-card portal-card--info">
-              <span class="portal-icon portal-icon--info">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-              </span>
-              <h3>How feedback rounds work</h3>
-              <ul class="portal-bullets">
-                <li>Round 1: design preview &rarr; your feedback &rarr; revisions in 2&ndash;3 business days</li>
-                <li>Round 2: refined preview &rarr; targeted notes &rarr; usually one more pass</li>
-                <li>Round 3+: rare; I usually land it in round 2 with good notes</li>
-                <li>Final approval: sign-off, then ship to staging for content load</li>
-              </ul>
+            <div class="portal-feature-body">
+              <span class="portal-feature-eyebrow">Primary action for this stage</span>
+              <h3>Submit design feedback</h3>
+              <p>Drop the preview URL, tell me what is working and what is not, and how urgent the changes are. Structured notes get us to the right revisions faster.</p>
             </div>
-          </div>
+            <div class="portal-feature-arrow" aria-hidden="true">&rarr;</div>
+          </a>
+
+          <aside class="portal-info-strip">
+            <div class="portal-info-strip-item">
+              <strong>Round 1</strong>
+              <span>Initial preview &rarr; your feedback &rarr; revisions in 2&ndash;3 business days</span>
+            </div>
+            <div class="portal-info-strip-item">
+              <strong>Round 2</strong>
+              <span>Refined preview &rarr; targeted notes &rarr; usually one more pass and we land it</span>
+            </div>
+            <div class="portal-info-strip-item">
+              <strong>Sign-off</strong>
+              <span>You approve, I ship to staging for content load</span>
+            </div>
+          </aside>
         </article>
 
         <!-- ===================== STAGE 3: LIVE ===================== -->
         <article class="portal-stage" id="live">
-          <div class="portal-stage-header">
-            <span class="portal-stage-tag">Stage 3 &middot; Site is live</span>
+          <header class="portal-stage-head">
+            <span class="portal-stage-num">Stage 3</span>
             <h2>Day-to-day requests.</h2>
-            <p>Once your site is live, three forms cover most of what you'll need. Use the urgency cue at the top of each; emergency goes through a different channel than a routine update.</p>
+            <p class="portal-stage-lead">Once your site is live, two channels cover most of what you'll need. Use the urgency cue at the top of each. Time-critical? Skip the form and call <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>.</p>
+          </header>
 
-            <div class="portal-stage-meta">
-              <div>
-                <strong>Routine update</strong>
-                Live the same business day, usually within hours.
-              </div>
-              <div>
-                <strong>Emergency</strong>
-                Triaged immediately, typically within the hour during business hours.
-              </div>
-              <div>
-                <strong>Time-critical?</strong>
-                Skip the form. Call or text <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>.
-              </div>
-            </div>
-          </div>
-
-          <div class="portal-grid">
-            <a href="/content-update/" class="portal-card">
-              <span class="portal-icon">
+          <div class="portal-feature-pair">
+            <a href="/content-update/" class="portal-feature">
+              <div class="portal-feature-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-              </span>
-              <h3>Content update</h3>
-              <p>New hours, new service, photo swap, typo fix, price change, seasonal callout. Usually live the same business day.</p>
-              <span class="portal-arrow">Submit a change &rarr;</span>
+              </div>
+              <div class="portal-feature-body">
+                <span class="portal-feature-eyebrow">Routine</span>
+                <h3>Content update</h3>
+                <p>New hours, new service, photo swap, typo fix, price change, seasonal callout. Usually live the same business day.</p>
+              </div>
+              <div class="portal-feature-arrow" aria-hidden="true">&rarr;</div>
             </a>
 
-            <a href="/emergency/" class="portal-card portal-card--urgent">
-              <span class="portal-icon">
+            <a href="/emergency/" class="portal-feature portal-feature--urgent">
+              <div class="portal-feature-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              </span>
-              <h3>Emergency support</h3>
-              <p>Site down, wrong info live, security concern, billing issue showing. Triaged immediately, usually within the hour during business hours.</p>
-              <span class="portal-arrow">Report an emergency &rarr;</span>
+              </div>
+              <div class="portal-feature-body">
+                <span class="portal-feature-eyebrow portal-feature-eyebrow--urgent">Urgent</span>
+                <h3>Emergency support</h3>
+                <p>Site down, wrong info live, security concern. Triaged immediately, usually within the hour during business hours.</p>
+              </div>
+              <div class="portal-feature-arrow" aria-hidden="true">&rarr;</div>
             </a>
-
-            <div class="portal-card portal-card--info">
-              <span class="portal-icon portal-icon--info">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </span>
-              <h3>What "emergency" means</h3>
-              <ul class="portal-bullets">
-                <li>Your site is fully down or returning errors to visitors</li>
-                <li>Wrong contact info live and customers are calling the wrong number</li>
-                <li>Defaced page, suspicious form submissions, or any security concern</li>
-                <li>A new product or promo is live with the wrong price</li>
-              </ul>
-            </div>
           </div>
+
+          <aside class="portal-info-strip">
+            <div class="portal-info-strip-item">
+              <strong>What counts as emergency</strong>
+              <span>Site fully down, wrong contact info live, security concern, defacement, wrong price published</span>
+            </div>
+            <div class="portal-info-strip-item">
+              <strong>Routine cadence</strong>
+              <span>Most edits go live within 4 business hours of arrival in the inbox</span>
+            </div>
+            <div class="portal-info-strip-item">
+              <strong>Time-critical?</strong>
+              <span>Skip the form &mdash; <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a></span>
+            </div>
+          </aside>
         </article>
 
         <!-- ===================== ANYTIME ===================== -->
         <article class="portal-stage" id="anytime">
-          <div class="portal-stage-header">
-            <span class="portal-stage-tag">Anytime</span>
-            <h2>Refer, review, or just say hi.</h2>
-            <p>Three forms that aren't tied to a build phase. Use them whenever they fit. None of them are time-sensitive; none of them are required.</p>
+          <header class="portal-stage-head">
+            <span class="portal-stage-num">Anytime</span>
+            <h2>Refer, review, or ask.</h2>
+            <p class="portal-stage-lead">Three forms that aren't tied to a build phase. Use them whenever they fit; none are time-sensitive, none are required.</p>
+          </header>
 
-            <div class="portal-stage-meta">
-              <div>
-                <strong>Referrals</strong>
-                One month of hosting credited if they sign on, or a cash thank-you.
-              </div>
-              <div>
-                <strong>Testimonials</strong>
-                You control what (if anything) gets published. Always optional.
-              </div>
-              <div>
-                <strong>General questions</strong>
-                Anything that does not fit the other forms. I read every message.
-              </div>
-            </div>
-          </div>
-
-          <div class="portal-grid">
-            <a href="/refer/" class="portal-card">
-              <span class="portal-icon">
+          <div class="portal-action-list">
+            <a href="/refer/" class="portal-action">
+              <span class="portal-action-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
               </span>
-              <h3>Refer a business</h3>
-              <p>Know someone who needs a real website? Send them my way. One month of hosting credited to your account if they sign on, or a cash thank-you if you would prefer.</p>
-              <span class="portal-arrow">Make an intro &rarr;</span>
+              <span class="portal-action-body">
+                <strong>Refer a business</strong>
+                <span>Know someone who needs a real website? One month of hosting credited if they sign on, or a cash thank-you.</span>
+              </span>
+              <span class="portal-action-arrow" aria-hidden="true">&rarr;</span>
             </a>
 
-            <a href="/testimonial/" class="portal-card">
-              <span class="portal-icon">
+            <a href="/testimonial/" class="portal-action">
+              <span class="portal-action-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               </span>
-              <h3>Leave a testimonial</h3>
-              <p>A few sentences about working with me. You control what (if anything) gets published: full name, first name only, anonymous, or just between us.</p>
-              <span class="portal-arrow">Share a review &rarr;</span>
+              <span class="portal-action-body">
+                <strong>Leave a testimonial</strong>
+                <span>A few sentences about working with me. You control what (if anything) gets published.</span>
+              </span>
+              <span class="portal-action-arrow" aria-hidden="true">&rarr;</span>
             </a>
 
-            <a href="/ask/" class="portal-card">
-              <span class="portal-icon">
+            <a href="/ask/" class="portal-action">
+              <span class="portal-action-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               </span>
-              <h3>General contact</h3>
-              <p>Question that doesn't fit the other forms? Billing, account, vendor referral, anything else. Three fields, one inbox.</p>
-              <span class="portal-arrow">Send a message &rarr;</span>
+              <span class="portal-action-body">
+                <strong>General contact</strong>
+                <span>Question that doesn't fit the other forms? Billing, account, vendor referral, anything else.</span>
+              </span>
+              <span class="portal-action-arrow" aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </article>
 
         <!-- ===================== DIRECT CONTACT ===================== -->
         <article class="portal-stage" id="contact-reference">
-          <div class="portal-stage-header">
-            <span class="portal-stage-tag">If forms aren't your thing</span>
-            <h2>Direct contact, three ways.</h2>
-            <p>All three reach the same person. Pick whichever's easiest.</p>
+          <header class="portal-stage-head">
+            <span class="portal-stage-num">Direct</span>
+            <h2>If forms aren't your thing.</h2>
+            <p class="portal-stage-lead">All three reach the same person. Pick whichever's easiest for you.</p>
+          </header>
 
-            <div class="portal-stage-meta">
-              <div>
-                <strong>Hours</strong>
-                Mon&ndash;Fri 8am&ndash;6pm Mountain Time.
-              </div>
-              <div>
-                <strong>After-hours</strong>
-                Voicemail rolls to mobile. Text replies usually fastest.
-              </div>
-              <div>
-                <strong>Paper trail</strong>
-                Use email for anything you want a written record of.
-              </div>
-            </div>
-          </div>
-
-          <div class="portal-grid">
-            <a href="tel:{{ site.phone }}" class="portal-card">
-              <span class="portal-icon">
+          <div class="portal-contact-panel">
+            <a href="tel:{{ site.phone }}" class="portal-contact-option">
+              <span class="portal-contact-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </span>
-              <h3>Phone or text</h3>
-              <p><strong>{{ site.phoneDisplay }}</strong></p>
-              <span class="portal-arrow">Mon&ndash;Fri 8am&ndash;6pm MT &rarr;</span>
+              <span class="portal-contact-label">Phone or text</span>
+              <strong class="portal-contact-value">{{ site.phoneDisplay }}</strong>
+              <span class="portal-contact-note">Mon&ndash;Fri 8am&ndash;6pm MT</span>
             </a>
 
-            <a href="mailto:{{ site.email }}" class="portal-card">
-              <span class="portal-icon">
+            <a href="mailto:{{ site.email }}" class="portal-contact-option">
+              <span class="portal-contact-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
               </span>
-              <h3>Email</h3>
-              <p><strong>{{ site.email }}</strong></p>
-              <span class="portal-arrow">Reply within one business day &rarr;</span>
+              <span class="portal-contact-label">Email</span>
+              <strong class="portal-contact-value">{{ site.email }}</strong>
+              <span class="portal-contact-note">Reply within one business day</span>
             </a>
 
-            <a href="/contact/" class="portal-card">
-              <span class="portal-icon">
+            <a href="/contact/" class="portal-contact-option">
+              <span class="portal-contact-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="m6 12 4 2 4-2"/></svg>
               </span>
-              <h3>Google Meet</h3>
-              <p><strong>20-minute video call</strong></p>
-              <span class="portal-arrow">Book a call, no app needed &rarr;</span>
+              <span class="portal-contact-label">Google Meet</span>
+              <strong class="portal-contact-value">20-minute call</strong>
+              <span class="portal-contact-note">Book a slot, no app needed</span>
             </a>
           </div>
+
+          <p class="portal-contact-foot">Use email for anything you want a written record of. After-hours voicemail rolls to mobile; text replies are usually fastest.</p>
         </article>
 
         <!-- ===================== RESOURCES ===================== -->
         <article class="portal-stage" id="resources">
-          <div class="portal-stage-header">
-            <span class="portal-stage-tag">Self-serve resources</span>
+          <header class="portal-stage-head">
+            <span class="portal-stage-num">Resources</span>
             <h2>Bookmarks worth keeping.</h2>
-            <p>Things you might want to pull up without contacting me. All public, all current, all written for owners rather than developers.</p>
+            <p class="portal-stage-lead">Things you might want to pull up without contacting me. All public, all current, all written for owners rather than developers.</p>
+          </header>
 
-            <div class="portal-stage-meta">
-              <div>
-                <strong>For day-to-day</strong>
-                Owner's Guide, FAQ, and the changelog cover most operational questions.
-              </div>
-              <div>
-                <strong>For paperwork</strong>
-                Service Agreement and Privacy Policy stay public so you don't dig through email.
-              </div>
-              <div>
-                <strong>For terminology</strong>
-                Anything technical I mention has a plain-English entry in the glossary.
-              </div>
-            </div>
-          </div>
-
-          <div class="portal-resources">
-            <a href="/owners-guide/" class="portal-resource">
+          <div class="portal-resource-grid">
+            <a href="/owners-guide/" class="portal-resource-row">
               <strong>Owner's Guide</strong>
               <span>How your site works, what I maintain, how to read your monthly invoice.</span>
             </a>
-            <a href="/faq/" class="portal-resource">
+            <a href="/faq/" class="portal-resource-row">
               <strong>FAQ</strong>
               <span>The questions clients ask most often, with honest answers.</span>
             </a>
-            <a href="/agreement/" class="portal-resource">
+            <a href="/agreement/" class="portal-resource-row">
               <strong>Service Agreement</strong>
               <span>Your contract terms in plain English. Always available, always current.</span>
             </a>
-            <a href="/privacy-policy/" class="portal-resource">
+            <a href="/privacy-policy/" class="portal-resource-row">
               <strong>Privacy Policy</strong>
               <span>How I handle your data and what I never do with it.</span>
             </a>
-            <a href="/changelog/" class="portal-resource">
+            <a href="/changelog/" class="portal-resource-row">
               <strong>Site Changelog</strong>
               <span>What I have shipped recently: new features, improvements, fixes.</span>
             </a>
-            <a href="/glossary/" class="portal-resource">
+            <a href="/glossary/" class="portal-resource-row">
               <strong>Web Glossary</strong>
               <span>Plain-language definitions for the technical terms that come up in conversation.</span>
             </a>
