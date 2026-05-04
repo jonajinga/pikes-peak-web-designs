@@ -16,16 +16,35 @@ description: "My commitment to WCAG 2.2 AA accessibility on this website, on eve
 </section>
 
 <section class="section">
-  <div class="container prose" style="max-width:var(--max-prose)">
+  <div class="container" style="max-width:1180px">
+    <div class="toc-layout">
+
+      <aside class="toc-side" aria-label="Accessibility statement contents">
+        <div class="toc-side-title">Contents</div>
+        <ol class="toc-list">
+          <li><a href="#my-commitment">My commitment</a></li>
+          <li><a href="#what-i-do-on-every-site">What I do on every site</a></li>
+          <li><a href="#wcag-2-2-highlights-we-specifically-test">WCAG 2.2 highlights</a></li>
+          <li><a href="#how-i-test">How I test</a></li>
+          <li><a href="#known-limitations">Known limitations</a></li>
+          <li><a href="#standards-we-conform-to">Standards I conform to</a></li>
+          <li><a href="#assistive-technologies-i-test-against">Assistive tech tested</a></li>
+          <li><a href="#how-to-reach-me">How to reach me</a></li>
+          <li><a href="#my-commitment-on-client-sites">Commitment on client sites</a></li>
+          <li><a href="#if-something-doesn-t-work-tell-me">Feedback &amp; questions</a></li>
+        </ol>
+      </aside>
+
+      <article class="toc-content prose">
     <p><strong>Last updated:</strong> April 25, 2026</p>
     <p><strong>Conformance target:</strong> Web Content Accessibility Guidelines (WCAG) 2.2, Level AA, plus Section 508.</p>
     <p><strong>Conformance status:</strong> partially conformant. Most of the site fully meets the standard; specific known limitations are listed below.</p>
 
-    <h2>My commitment</h2>
+    <h2 id="my-commitment">My commitment</h2>
     <p>Accessibility is a baseline on every site I design and build, including this one. My working standard is <strong>WCAG 2.2 Level AA</strong>, the Web Content Accessibility Guidelines from the W3C. This covers color contrast, keyboard navigation, screen-reader support, focus visibility, motion, language, and clear labeling. It's the same standard I write into my client agreements; not aspirational, contractual.</p>
     <p>Beyond the legal floor, I treat accessibility as a quality marker. A site that fails screen-reader users tends to fail search-engine crawlers, color-blind visitors, mobile keyboards, and aging eyes too. Building accessibly means building well.</p>
 
-    <h2>What I do on every site</h2>
+    <h2 id="what-i-do-on-every-site">What I do on every site</h2>
     <ul>
       <li><strong>Real contrast ratios.</strong> I verify every text/background combination against WCAG AA (4.5:1 for normal text, 3:1 for large text and UI components) using the TPGi Colour Contrast Analyser. Every combination, every theme.</li>
       <li><strong>Full keyboard navigation.</strong> Every interactive control is reachable by <kbd>Tab</kbd> and operable by keyboard alone. Focus rings are visible (3 px gold ring at 3 px offset) and predictable. Tab order matches visual order.</li>
@@ -44,7 +63,7 @@ description: "My commitment to WCAG 2.2 AA accessibility on this website, on eve
       <li><strong>aria-current="page"</strong> on the active nav link so screen-reader users know where they are.</li>
     </ul>
 
-    <h2>WCAG 2.2 highlights we specifically test</h2>
+    <h2 id="wcag-2-2-highlights-we-specifically-test">WCAG 2.2 highlights we specifically test</h2>
     <p>WCAG 2.2 added nine new criteria over 2.1. I test the ones most relevant to a marketing site:</p>
     <ul>
       <li><strong>2.4.11 Focus Not Obscured (AA).</strong> The focused element is never fully hidden under a sticky header, modal, or cookie banner.</li>
@@ -55,7 +74,7 @@ description: "My commitment to WCAG 2.2 AA accessibility on this website, on eve
       <li><strong>3.3.8 Accessible Authentication (AA).</strong> N/A; I do not have user authentication on the site.</li>
     </ul>
 
-    <h2>How I test</h2>
+    <h2 id="how-i-test">How I test</h2>
     <p>Every site, before launch and on every significant change, we run through:</p>
     <ul>
       <li><strong>Automated audits</strong>: Lighthouse (Chrome DevTools), axe DevTools, and WAVE. Zero criticals and zero serious issues required to ship.</li>
@@ -68,7 +87,7 @@ description: "My commitment to WCAG 2.2 AA accessibility on this website, on eve
       <li><strong>Manual review</strong> of any new component for: heading order, label binding, focus order, ARIA usage, and color independence.</li>
     </ul>
 
-    <h2>Known limitations</h2>
+    <h2 id="known-limitations">Known limitations</h2>
     <p>I am not perfect and I do not pretend to be. Current known limitations on this site:</p>
     <ul>
       <li><strong>Demo sites under <code>/demo/</code></strong> share most of my accessibility posture but are designed to showcase distinct typographic and visual systems for different industries. Each demo's own accessibility statement documents any deviations specific to its design system.</li>
@@ -77,7 +96,7 @@ description: "My commitment to WCAG 2.2 AA accessibility on this website, on eve
     </ul>
     <p>If you find something else that doesn't work, please tell me. I fix accessibility issues on the same day we hear about them whenever possible, usually within one business day, always within five.</p>
 
-    <h2>Standards we conform to</h2>
+    <h2 id="standards-we-conform-to">Standards we conform to</h2>
     <ul>
       <li><strong>WCAG 2.2 Level AA</strong>: the W3C's accessibility standard.</li>
       <li><strong>Section 508</strong> of the US Rehabilitation Act, as updated in 2018 to align with WCAG 2.0 AA.</li>
@@ -85,7 +104,7 @@ description: "My commitment to WCAG 2.2 AA accessibility on this website, on eve
       <li><strong>ADA Title III</strong>: while the ADA does not formally specify WCAG, US courts have routinely treated WCAG AA as the de facto standard. My work is built to that bar.</li>
     </ul>
 
-    <h2>Assistive technologies I test against</h2>
+    <h2 id="assistive-technologies-i-test-against">Assistive technologies I test against</h2>
     <ul>
       <li><strong>Screen readers</strong>: VoiceOver (macOS, iOS), NVDA (Windows), TalkBack (Android, when relevant to a build).</li>
       <li><strong>Magnification</strong>: macOS Zoom, Windows Magnifier, browser zoom up to 400%.</li>
@@ -93,7 +112,7 @@ description: "My commitment to WCAG 2.2 AA accessibility on this website, on eve
       <li><strong>Keyboard-only</strong>: every interaction tested without a pointing device.</li>
     </ul>
 
-    <h2>How to reach me</h2>
+    <h2 id="how-to-reach-me">How to reach me</h2>
     <p>If any part of this website isn't working for you, or if you need information in a different format (large text, audio, printed, plain text email instead of an HTML form), contact me any way you like. I will respond quickly and work with you to fix it.</p>
     <ul>
       <li><strong>Email:</strong> <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a> with subject "Accessibility". Response within one business day.</li>
@@ -106,15 +125,18 @@ description: "My commitment to WCAG 2.2 AA accessibility on this website, on eve
       <li>Your state's protection and advocacy organization.</li>
     </ul>
 
-    <h2>My commitment on client sites</h2>
+    <h2 id="my-commitment-on-client-sites">My commitment on client sites</h2>
     <p>Every site I build for a client ships with an accessibility statement like this one, tuned to that business. It's one of the operational pages I include on every project, at no extra cost and without counting against your page total. Accessibility is part of the deliverable, not an upsell.</p>
+      </article>
+
+    </div>
   </div>
 </section>
 
 <section class="cta-section">
   <div class="cta-inner">
     <span class="section-label">A real person, always</span>
-    <h2>If something doesn't work, tell me.</h2>
+    <h2 id="if-something-doesn-t-work-tell-me">If something doesn't work, tell me.</h2>
     <p>I can't fix what I do not know about. Reach out any way you want; I will hear from you and get on it.</p>
     <div class="cta-buttons">
       <a href="/ask/" class="btn btn-primary btn-lg">Send a quick message</a>

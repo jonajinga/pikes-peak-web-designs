@@ -3428,8 +3428,17 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .post-content li, .prose li, .prose-policy li {
   font-size: 1.05rem;
   line-height: 1.75;
-  margin-bottom: 0.4em;
+  margin-bottom: 0.85em;
 }
+.post-content li:last-child,
+.prose li:last-child,
+.prose-policy li:last-child { margin-bottom: 0; }
+/* Bolded list-item lead phrase ("<strong>X.</strong> body") gets a bit
+   more breathing room below the strong tag so the body text doesn't
+   crash into the next item visually. */
+.post-content li strong,
+.prose li strong,
+.prose-policy li strong { color: var(--text); }
 .post-content blockquote, .prose blockquote {
   margin: 2rem 0;
   padding: 1.25rem 1.5rem;
@@ -4220,36 +4229,164 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   border-radius: var(--radius);
 }
 
-/* ========== OWNERS-GUIDE SAMPLE ========== */
+/* ========================================================================
+   OWNERS-GUIDE — long-form post-launch reference. Reads like a manual but
+   needs to feel like prose, not a wiki. Generous spacing, larger body,
+   strong h3 hierarchy, intentional rhythm between sections.
+   ======================================================================== */
 .owners-guide {
-  max-width: 820px;
-  margin: 0 auto;
-  background: var(--surface-raised);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: clamp(2rem, 4vw, 3rem);
-  box-shadow: var(--shadow-sm);
+  max-width: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+  font-size: 1.04rem;
+  line-height: 1.75;
+  color: var(--text);
 }
 .owners-guide h2 {
   font-family: var(--font-display);
-  font-size: 1.85rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.75rem;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 1.85rem);
+  font-weight: 600;
+  margin: 0 0 1rem;
+  padding-bottom: 0.65rem;
   border-bottom: 2px solid var(--gold-500);
+  letter-spacing: -0.01em;
 }
 .owners-guide h3 {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
   font-weight: 600;
-  color: var(--navy-900);
-  margin: 1.75rem 0 0.5rem;
+  color: var(--text);
+  margin: 3.25rem 0 0.85rem;
+  padding-top: 0.5rem;
+  letter-spacing: -0.01em;
+  scroll-margin-top: 6rem;
 }
-:root[data-theme="dark"] .owners-guide h3 { color: var(--gold-400); }
-.owners-guide p, .owners-guide li { font-size: 0.98rem; line-height: 1.7; }
-.owners-guide ul, .owners-guide ol { margin: 0.5rem 0 1rem 1.5rem; }
+.owners-guide h3:first-child { margin-top: 0; padding-top: 0; }
+.owners-guide h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 1.85rem 0 0.6rem;
+  letter-spacing: -0.005em;
+}
+.owners-guide p {
+  font-size: 1.04rem;
+  line-height: 1.78;
+  margin: 0 0 1.25rem;
+  color: var(--text);
+  max-width: 68ch;
+}
+.owners-guide p strong { color: var(--text); }
+.owners-guide ul, .owners-guide ol {
+  margin: 0.5rem 0 1.85rem 1.5rem;
+  max-width: 68ch;
+}
 .owners-guide ul { list-style: disc; }
 .owners-guide ol { list-style: decimal; }
+.owners-guide li {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-bottom: 0.85rem;
+  padding-left: 0.35rem;
+}
+.owners-guide li:last-child { margin-bottom: 0; }
+.owners-guide li strong { color: var(--text); }
+.owners-guide a:not(.btn):not(.inline-link) {
+  color: var(--gold-600);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+:root[data-theme="dark"] .owners-guide a:not(.btn):not(.inline-link) { color: var(--gold-300); }
+
+/* "I handle / You handle / Nobody handles" — three colored callout cards
+   showing the responsibility boundary at a glance. */
+.og-handles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+  margin: 1.5rem 0 2.5rem;
+  max-width: none;
+}
+@media (max-width: 1024px) { .og-handles { grid-template-columns: 1fr; } }
+.og-handle {
+  padding: 1.5rem 1.65rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  border-top: 4px solid var(--gold-500);
+}
+.og-handle--mine { border-top-color: var(--gold-500); }
+.og-handle--yours { border-top-color: var(--navy-700); }
+.og-handle--nobody { border-top-color: var(--text-soft); background: var(--bg-alt); }
+.og-handle-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--line);
+}
+.og-handle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-alt-2);
+  color: var(--gold-600);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+.og-handle-icon svg { width: 18px; height: 18px; }
+.og-handle--yours .og-handle-icon { color: var(--navy-700); }
+:root[data-theme="dark"] .og-handle-icon { color: var(--gold-400); }
+:root[data-theme="dark"] .og-handle--yours .og-handle-icon { color: var(--gold-300); }
+.og-handle-head h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.og-handle ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+.og-handle li {
+  position: relative;
+  padding-left: 1.15rem;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  margin-bottom: 0.6rem;
+  color: var(--text-muted);
+}
+.og-handle li:last-child { margin-bottom: 0; }
+.og-handle li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold-500);
+}
+.og-handle--yours li::before { background: var(--navy-700); }
+.og-handle--nobody li::before { background: var(--text-soft); }
+
+/* First paragraph after each h3 gets a slight lead-paragraph treatment
+   (very subtle, just slightly more weight) */
+.owners-guide h3 + p {
+  font-size: 1.07rem;
+  color: var(--text);
+  margin-bottom: 1.4rem;
+}
 
 /* ========== INCLUDED-ON-EVERY-PROJECT SCORECARD ========== */
 .included-grid {
@@ -10867,11 +11004,19 @@ a { touch-action: manipulation; }
 .prose--wide p { margin-bottom: 1.5em; }
 .prose--wide p + p { margin-top: 0; }
 .prose--wide ul,
-.prose--wide ol { margin-bottom: 1.75em; }
-.prose--wide h2 { margin-top: 3.25rem; margin-bottom: 1.15rem; }
-.prose--wide h3 { margin-top: 2.5rem; margin-bottom: 0.85rem; }
+.prose--wide ol { margin: 0.5em 0 2em 1.5em; }
+.prose--wide li { margin-bottom: 1em; }
+.prose--wide li:last-child { margin-bottom: 0; }
+.prose--wide li > p { margin-bottom: 0.5em; }
+.prose--wide h2 { margin-top: 3.5rem; margin-bottom: 1.15rem; padding-top: 0.5rem; }
+.prose--wide h3 { margin-top: 2.75rem; margin-bottom: 0.85rem; }
+.prose--wide h2:first-child { margin-top: 0; padding-top: 0; }
 .prose--wide h2 + p,
 .prose--wide h3 + p { margin-top: 0; }
+.prose--wide h2 + ul,
+.prose--wide h2 + ol,
+.prose--wide h3 + ul,
+.prose--wide h3 + ol { margin-top: 0.75em; }
 @media (max-width: 720px) {
   .prose--wide p,
   .prose--wide ul,
@@ -11321,9 +11466,15 @@ a { touch-action: manipulation; }
   background: linear-gradient(180deg, var(--bg-alt-2) 0%, var(--bg) 100%);
   padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(2rem, 4vw, 3rem);
   border-bottom: 1px solid var(--line);
+  text-align: center;
 }
-.portal-hero h1 { margin-bottom: 0.85rem; }
-.portal-hero p { max-width: 60ch; font-size: 1.05rem; }
+.portal-hero .breadcrumb { justify-content: center; }
+.portal-hero h1 { margin: 0.4rem auto 0.85rem; max-width: 22ch; }
+.portal-hero p {
+  max-width: 60ch;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
 
 .portal-quick-actions {
   display: grid;
@@ -11887,20 +12038,20 @@ a { touch-action: manipulation; }
   counter-reset: walkthrough-num;
 }
 .walkthrough-list li {
-  display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: 0.75rem;
-  align-items: flex-start;
-  padding: 1rem 1.25rem;
+  position: relative;
+  padding: 1.15rem 1.4rem 1.15rem 4rem;
   background: var(--bg-alt);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  font-size: 0.95rem;
+  font-size: 0.97rem;
   line-height: 1.65;
   counter-increment: walkthrough-num;
 }
 .walkthrough-list li::before {
   content: counter(walkthrough-num);
+  position: absolute;
+  left: 1.15rem;
+  top: 1rem;
   width: 32px;
   height: 32px;
   background: var(--navy-900);
@@ -11912,7 +12063,11 @@ a { touch-action: manipulation; }
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.95rem;
-  flex-shrink: 0;
+}
+.walkthrough-list li strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--text);
 }
 
 /* (Demo button hardening lives inside each demo block so it's
