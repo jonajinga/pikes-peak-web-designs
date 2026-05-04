@@ -51,6 +51,12 @@
   --link-hover: var(--navy-950);
   --focus-ring: var(--gold-400);
 
+  /* Brand visual signature: the "peak gradient." Used in exactly three
+     places site-wide (page-hero--peak top border, em underline-on-hover,
+     and the divider above the footer trust strip). Anything more dilutes
+     the signature. */
+  --peak-gradient: linear-gradient(95deg, var(--gold-100) 0%, var(--gold-400) 40%, var(--navy-800) 100%);
+
   /* Header + overlays */
   --header-bg: rgba(255, 255, 255, 0.92);
   --header-border: var(--line);
@@ -12068,6 +12074,145 @@ a { touch-action: manipulation; }
   display: block;
   margin-bottom: 0.2rem;
   color: var(--text);
+}
+
+/* ============================================================
+   Peak gradient signature (Phase 10) — three applications only.
+   ============================================================ */
+
+/* 1. 4px gradient top border on conversion-page heroes. Apply via
+   `<section class="page-hero page-hero--peak">` */
+.page-hero--peak { position: relative; }
+.page-hero--peak::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--peak-gradient);
+  pointer-events: none;
+}
+
+/* 2. Underline-on-hover for <em> in h1 tags. The pattern <h1>... <em>
+   thing</em></h1> is widespread across hero copy. Underline appears on
+   hover/focus as a quiet flourish; respects reduced-motion. */
+h1 em {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+}
+h1 em::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.05em;
+  height: 3px;
+  background: var(--peak-gradient);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+h1:hover em::after,
+h1:focus-within em::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  h1 em::after { transition: none; }
+}
+
+/* 3. Gradient divider above the footer trust strip. */
+.footer-trust { position: relative; }
+.footer-trust::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--peak-gradient);
+  pointer-events: none;
+}
+
+/* ============================================================
+   Footer markline — small caps line under the wordmark.
+   ============================================================ */
+.footer-markline {
+  display: block;
+  margin: 0.4rem 0 1rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+}
+:root[data-theme="dark"] .footer-markline { color: var(--gold-300); }
+
+/* ============================================================
+   Service Site Standard callout — appears at the bottom of each
+   vs-platform comparison page right before the CTA section.
+   ============================================================ */
+.standard-callout {
+  margin: 2.5rem 0 0.5rem;
+  padding: 1.5rem 1.85rem;
+  background: linear-gradient(135deg, var(--bg-alt) 0%, var(--surface-raised) 100%);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold-500);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+.standard-callout-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 0.65rem;
+}
+:root[data-theme="dark"] .standard-callout-eyebrow { color: var(--gold-300); }
+.standard-callout p {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 0.85rem;
+  color: var(--text);
+}
+.standard-callout-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--navy-800);
+  text-decoration: none;
+  transition: color var(--dur), transform var(--dur);
+}
+:root[data-theme="dark"] .standard-callout-link { color: var(--gold-300); }
+.standard-callout-link:hover { color: var(--gold-600); transform: translateX(3px); }
+
+/* ============================================================
+   Hero-card numerals: subtle once-per-pageload rise-and-settle on
+   the $ and 175 in the homepage price block. Quiet, professional,
+   signature. Respects reduced-motion. (Phase 10)
+   ============================================================ */
+@keyframes peakRiseSettle {
+  0%   { transform: translateY(0.4em); opacity: 0; }
+  60%  { transform: translateY(-0.05em); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.hero-card .price-dollar,
+.hero-card .price-amount {
+  display: inline-block;
+  animation: peakRiseSettle 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 100ms;
+}
+.hero-card .price-amount { animation-delay: 220ms; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-card .price-dollar,
+  .hero-card .price-amount { animation: none; }
 }
 
 /* (Demo button hardening lives inside each demo block so it's

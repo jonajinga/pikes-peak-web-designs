@@ -2,6 +2,26 @@ export default {
   name: "Pikes Peak Web Designs",
   shortName: "Pikes Peak",
   tagline: "A website you never have to worry about.",
+  // Brand voice constants. Used across templates so the signature line,
+  // sign-off, and forbidden-word list are pulled programmatically rather
+  // than copy-pasted (and drifting) page-to-page.
+  voice: {
+    signature: "A website you never have to worry about.",
+    markline: "Custom-coded. Custom-cared-for.",
+    signoff: "Boring is the feature.",
+    methodology: "The Service Site Standard",
+    forbiddenWords: [
+      "synergy",
+      "leverage",
+      "solutions",
+      "robust",
+      "passionate",
+      "world-class",
+      "best-in-class",
+      "cutting-edge",
+      "next-generation",
+    ],
+  },
   url: "https://pikespeakwebdesigns.com",
   description: "Custom-coded websites for small service businesses across the U.S. and Canada. We handle the design, the hosting, the updates, and everything else. $0 down, $175/month flat.",
   phone: "9283159094",
