@@ -2,6 +2,13 @@
 layout: layouts/demo-meadow.njk
 ---
 
+{% set postUrl = 'https://pikespeakwebdesigns.com' + page.url %}
+{% set postTitle = title %}
+
+<div style="position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:90;pointer-events:none">
+  <span id="demoPostProgressBar" style="display:block;height:100%;width:0;background:var(--me-terracotta);transition:width 0.1s linear"></span>
+</div>
+
 <article>
   <section style="padding:5rem 0 3rem;background:var(--me-cream)">
     <div style="max-width:720px;margin:0 auto;padding:0 1.5rem">
@@ -17,19 +24,100 @@ layout: layouts/demo-meadow.njk
   </section>
 
   <section style="padding:3rem 0 5rem;background:#FFFFFF">
-    <div style="max-width:720px;margin:0 auto;padding:0 1.5rem;font-family:'Inter',sans-serif;font-size:1.05rem;line-height:1.8;color:var(--me-deep)">
-      {{ content | safe }}
+    <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem">
+      <div style="display:grid;grid-template-columns:240px 1fr;gap:3rem;align-items:start">
 
-      <hr style="border:0;border-top:1px solid var(--me-sage);opacity:0.3;margin:3rem 0 2rem">
+        <aside class="demo-post-toc" aria-label="In this article" style="position:sticky;top:5rem;align-self:start;font-family:'Inter',sans-serif">
+          <span style="display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;font-weight:500;font-style:italic;color:var(--me-sage-deep);margin-bottom:1rem">In this article</span>
+          <ol id="demoPostTocList" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem;font-size:0.92rem"></ol>
+        </aside>
 
-      <div style="background:var(--me-cream);border-left:3px solid var(--me-terracotta);padding:1.75rem 2rem;border-radius:0 14px 14px 0">
-        <span style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--me-terracotta);display:block;margin-bottom:0.5rem">Start a project</span>
-        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;color:var(--me-deep);margin:0 0 0.75rem;font-weight:500">A garden, a courtyard, a backyard rebuild.</h3>
-        <p style="margin:0 0 1.25rem;color:var(--me-deep);line-height:1.7">Whatever the project, the conversation starts with a site walk. We come out, look at what is there, listen to what you want, and sketch.</p>
-        <a href="/demo/meadow-stone/contact/" class="meadow-btn meadow-btn-primary">Schedule a site walk</a>
+        <div id="demoPostContent" style="font-family:'Inter',sans-serif;font-size:1.05rem;line-height:1.8;color:var(--me-deep);min-width:0">
+          {{ content | safe }}
+
+          {% include "partials/demo-post-share.njk" %}
+
+          <hr style="border:0;border-top:1px solid var(--me-sage);opacity:0.3;margin:2.5rem 0 2rem">
+
+          <div style="background:var(--me-cream);border-left:3px solid var(--me-terracotta);padding:1.75rem 2rem;border-radius:0 14px 14px 0">
+            <span style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--me-terracotta);display:block;margin-bottom:0.5rem">Start a project</span>
+            <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;color:var(--me-deep);margin:0 0 0.75rem;font-weight:500">A garden, a courtyard, a backyard rebuild.</h3>
+            <p style="margin:0 0 1.25rem;color:var(--me-deep);line-height:1.7">Whatever the project, the conversation starts with a site walk. We come out, look at what is there, listen to what you want, and sketch.</p>
+            <a href="/demo/meadow-stone/contact/" class="meadow-btn meadow-btn-primary">Schedule a site walk</a>
+          </div>
+
+          {% set posts = collections.meadowPost %}
+          {% set currentIndex = -1 %}
+          {% for p in posts %}{% if p.url === page.url %}{% set currentIndex = loop.index0 %}{% endif %}{% endfor %}
+          {% if posts.length > 1 %}
+          <nav aria-label="More articles" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.5rem 0 2rem">
+            {% set prevIndex = currentIndex - 1 %}
+            {% set nextIndex = currentIndex + 1 %}
+            {% if prevIndex >= 0 %}
+              {% set prev = posts[prevIndex] %}
+              <a href="{{ prev.url }}" style="padding:1rem 1.15rem;background:var(--me-cream);border:1px solid rgba(139,157,131,0.3);border-radius:14px;color:var(--me-deep);text-decoration:none;display:flex;flex-direction:column;gap:0.3rem">
+                <span style="font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--me-sage-deep)">&larr; Previous</span>
+                <strong style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.05rem">{{ prev.data.title }}</strong>
+              </a>
+            {% else %}<span></span>{% endif %}
+            {% if nextIndex < posts.length %}
+              {% set nxt = posts[nextIndex] %}
+              <a href="{{ nxt.url }}" style="padding:1rem 1.15rem;background:var(--me-cream);border:1px solid rgba(139,157,131,0.3);border-radius:14px;color:var(--me-deep);text-decoration:none;display:flex;flex-direction:column;gap:0.3rem;text-align:right">
+                <span style="font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--me-sage-deep)">Next &rarr;</span>
+                <strong style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.05rem">{{ nxt.data.title }}</strong>
+              </a>
+            {% else %}<span></span>{% endif %}
+          </nav>
+          {% endif %}
+
+          <p style="margin-top:1.5rem;font-family:'Inter',sans-serif"><a href="/demo/meadow-stone/blog/" style="color:var(--me-terracotta);font-weight:600">&larr; Back to the journal</a></p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <p style="margin-top:2.5rem;font-family:'Inter',sans-serif"><a href="/demo/meadow-stone/blog/" style="color:var(--me-terracotta);font-weight:600">&larr; Back to the journal</a></p>
+  <section style="padding:4rem 0;background:var(--me-cream)">
+    <div style="max-width:760px;margin:0 auto;padding:0 1.5rem">
+      <span style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--me-terracotta)">Keep reading</span>
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;color:var(--me-deep);font-size:2rem;margin:0.5rem 0 1.5rem">Related entries</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem">
+        {% set otherPosts = collections.meadowPost | reverse %}
+        {% set shown = 0 %}
+        {% for p in otherPosts %}
+          {% if p.url !== page.url and shown < 3 %}
+          <article style="padding:1.5rem 1.6rem;background:#FFFFFF;border:1px solid rgba(139,157,131,0.3);border-radius:14px">
+            <span style="font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--me-terracotta)">{{ p.data.eyebrow or "Note" }}</span>
+            <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:500;color:var(--me-deep);margin:0.4rem 0 0.5rem;line-height:1.25"><a href="{{ p.url }}" style="color:inherit;text-decoration:none">{{ p.data.title }}</a></h3>
+            <p style="font-family:'Inter',sans-serif;font-size:0.92rem;color:var(--me-deep);opacity:0.8;line-height:1.6;margin:0">{{ p.data.description | truncate(120) }}</p>
+          </article>
+          {% set shown = shown + 1 %}
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </section>
 </article>
+
+<style>
+.demo-post-toc ol li a { display:block; padding:0.4rem 0.6rem; color:var(--me-sage-deep); text-decoration:none; border-left:2px solid transparent; transition:color 0.15s, border-color 0.15s; line-height:1.4; }
+.demo-post-toc ol li a:hover { color:var(--me-terracotta); }
+.demo-post-toc ol li a.is-active { color:var(--me-terracotta); border-left-color:var(--me-terracotta); font-weight:600; }
+.demo-post-toc ol li.demo-post-toc-sub a { padding-left:1.4rem; font-size:0.86rem; }
+.demo-post-share { display:flex; flex-wrap:wrap; align-items:center; gap:0.85rem 1.25rem; margin:2.5rem 0 1.5rem; padding:1.25rem 0; border-top:1px solid rgba(139,157,131,0.3); border-bottom:1px solid rgba(139,157,131,0.3); }
+.demo-post-share-label { font-family:'Inter',sans-serif; font-size:0.74rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--me-sage-deep); }
+.demo-post-share-buttons { display:flex; flex-wrap:wrap; gap:0.5rem; }
+.demo-post-share-btn { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; padding:0; background:transparent; border:1px solid rgba(139,157,131,0.4); border-radius:999px; color:var(--me-sage-deep); text-decoration:none; cursor:pointer; transition:background 0.15s, border-color 0.15s, color 0.15s, transform 0.15s; }
+.demo-post-share-btn:hover { background:var(--me-terracotta); border-color:var(--me-terracotta); color:var(--me-cream); transform:translateY(-1px); }
+.demo-post-share-btn svg { width:16px; height:16px; fill:currentColor; }
+.demo-post-share-btn .demo-post-share-icon-link, .demo-post-share-btn .demo-post-share-icon-check { fill:none; stroke:currentColor; }
+.demo-post-share-btn .demo-post-share-icon-check { display:none; }
+.demo-post-share-btn.is-copied .demo-post-share-icon-link { display:none; }
+.demo-post-share-btn.is-copied .demo-post-share-icon-check { display:inline-block; }
+.visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+@media (max-width: 900px) {
+  article > section > div > div[style*="grid-template-columns:240px"] { grid-template-columns: 1fr !important; gap: 1rem !important; }
+  .demo-post-toc { display: none; }
+}
+</style>
+
+{% include "partials/demo-post-script.njk" %}

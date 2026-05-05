@@ -12105,6 +12105,44 @@ a { touch-action: manipulation; }
   border-bottom: 0;
   transition: padding-left 0.15s, color 0.15s;
 }
+
+/* Sticky-TOC layout for /sitemap/. Each section stands as its own block,
+   navigated via the sticky toc-side aside. The article body is wider than
+   the per-section column it replaces, so long sublists can breathe. */
+.sitemap-toc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.sitemap-toc-section {
+  scroll-margin-top: 6rem;
+}
+.sitemap-toc-section + .sitemap-toc-section {
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+.sitemap-toc-section h2 {
+  margin: 0.4rem 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+}
+.sitemap-toc-section .sitemap-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+@media (min-width: 720px) {
+  /* Two-column listings on wider screens for sections with many entries.
+     Each li is its own grid item so the dashed border still works. */
+  .sitemap-toc-section .sitemap-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+  .sitemap-toc-section .sitemap-list--compact {
+    grid-template-columns: 1fr;
+  }
+}
+.sitemap-list--compact a span { display: block; font-size: 0.86rem; color: var(--text-muted); margin-top: 0.15rem; }
 .sitemap-list a:hover,
 .sitemap-list a:focus-visible {
   color: var(--gold-600);

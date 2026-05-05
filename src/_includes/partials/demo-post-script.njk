@@ -1,0 +1,76 @@
+{# Shared JS for every demo blog post:
+   1. Reading progress bar (#demoPostProgressBar driven by .demo-post-content scroll)
+   2. Auto-built sticky TOC from h2/h3 in #demoPostContent (populates #demoPostTocList)
+   3. Active-section highlight via IntersectionObserver
+   4. Copy-link button (#demoPostShareCopy with data-url)
+   Hooks by ID so the script is identical across every demo. #}
+<script>
+(function () {
+  var bar = document.getElementById('demoPostProgressBar');
+  var content = document.getElementById('demoPostContent');
+  function updateProgress() {
+    if (!bar || !content) return;
+    var rect = content.getBoundingClientRect();
+    var top = window.scrollY + rect.top;
+    var height = content.offsetHeight - window.innerHeight;
+    if (height <= 0) { bar.style.width = '100%'; return; }
+    var scrolled = Math.max(0, Math.min(1, (window.scrollY - top + window.innerHeight * 0.3) / height));
+    bar.style.width = (scrolled * 100) + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+
+  var tocList = document.getElementById('demoPostTocList');
+  if (content && tocList) {
+    var headings = content.querySelectorAll('h2, h3');
+    var html = '';
+    var hasItems = false;
+    headings.forEach(function (h) {
+      if (!h.id) {
+        h.id = h.textContent.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
+      }
+      var lvl = h.tagName === 'H3' ? ' demo-post-toc-sub' : '';
+      html += '<li class="demo-post-toc-item' + lvl + '"><a href="#' + h.id + '">' + h.textContent + '</a></li>';
+      hasItems = true;
+    });
+    if (hasItems) {
+      tocList.innerHTML = html;
+    } else {
+      var aside = document.querySelector('.demo-post-toc');
+      if (aside) aside.style.display = 'none';
+    }
+    if ('IntersectionObserver' in window && hasItems) {
+      var tocLinks = tocList.querySelectorAll('a');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(function (a) { a.classList.remove('is-active'); });
+            var match = tocList.querySelector('a[href="#' + entry.target.id + '"]');
+            if (match) match.classList.add('is-active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -70% 0px' });
+      headings.forEach(function (h) { if (h.id) observer.observe(h); });
+    }
+  }
+
+  var copyBtn = document.getElementById('demoPostShareCopy');
+  var copyLabel = document.getElementById('demoPostShareCopyLabel');
+  if (copyBtn && navigator.clipboard) {
+    copyBtn.addEventListener('click', function () {
+      navigator.clipboard.writeText(copyBtn.dataset.url).then(function () {
+        copyBtn.classList.add('is-copied');
+        if (copyLabel) {
+          var original = copyLabel.textContent;
+          copyLabel.textContent = 'Copied';
+          setTimeout(function () { copyLabel.textContent = original; copyBtn.classList.remove('is-copied'); }, 1800);
+        }
+      }).catch(function () {});
+    });
+  }
+
+  var printBtn = document.getElementById('demoPostSharePrint');
+  if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+})();
+</script>

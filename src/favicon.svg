@@ -1,38 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Pikes Peak Web Designs">
-  <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0A1F44"/>
-      <stop offset="1" stop-color="#162C5A"/>
-    </linearGradient>
-    <linearGradient id="peak" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#F4E4A8"/>
-      <stop offset="0.45" stop-color="#DDB13D"/>
-      <stop offset="1" stop-color="#A77E1F"/>
-    </linearGradient>
-    <linearGradient id="back" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#27406E"/>
-      <stop offset="1" stop-color="#1A2E54"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Rounded square background tile -->
-  <rect width="512" height="512" rx="96" ry="96" fill="url(#sky)"/>
-
-  <!-- Distant range silhouette (subtle) -->
-  <path d="M0 360 L70 290 L140 320 L210 240 L280 300 L360 220 L430 280 L512 240 L512 512 L0 512 Z"
-        fill="url(#back)" opacity="0.55"/>
-
-  <!-- Foreground signature peak: a confident triangle anchored low-left,
-       with a subordinate ridge to the right. Echoes the wordmark's gold
-       accent and the "Pikes Peak" silhouette idea without imitating any
-       photograph. -->
-  <path d="M40 472 L196 188 L268 304 L340 200 L472 472 Z" fill="url(#peak)"/>
-
-  <!-- Snow cap on the main peak (a small white wedge near the apex) -->
-  <path d="M170 232 L196 188 L222 232 L210 232 L196 215 L182 232 Z"
-        fill="#FFFFFF" opacity="0.95"/>
-
-  <!-- A thin baseline ridge accent in pale gold to suggest wordmark
-       relationship, sitting just above the bottom edge. -->
-  <rect x="40" y="478" width="432" height="4" rx="2" fill="#F4E4A8" opacity="0.7"/>
+  <!-- Rounded square navy tile, brand-consistent -->
+  <rect width="512" height="512" rx="96" ry="96" fill="#0A1F44"/>
+  <!-- Clean gold "P" wordmark, hand-tuned for 16px legibility.
+       Outer path is the P silhouette; inner counter is the bowl cutout. -->
+  <path fill="#DDB13D" fill-rule="evenodd" d="
+    M 144 88
+    L 144 424
+    L 220 424
+    L 220 280
+    L 296 280
+    Q 396 280 396 184
+    Q 396 88 296 88
+    Z
+    M 220 152
+    L 220 216
+    L 288 216
+    Q 320 216 320 184
+    Q 320 152 288 152
+    Z
+  "/>
 </svg>

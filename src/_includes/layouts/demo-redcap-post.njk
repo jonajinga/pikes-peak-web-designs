@@ -2,6 +2,14 @@
 layout: layouts/demo-redcap.njk
 ---
 
+{% set postUrl = 'https://pikespeakwebdesigns.com' + page.url %}
+{% set postTitle = title %}
+
+{# Reading progress bar #}
+<div style="position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:90;pointer-events:none">
+  <span id="demoPostProgressBar" style="display:block;height:100%;width:0;background:var(--rc-safety);transition:width 0.1s linear"></span>
+</div>
+
 <article class="demo-blog-article">
   <section class="demo-page-hero">
     <div class="demo-container demo-container--narrow">
@@ -17,21 +25,103 @@ layout: layouts/demo-redcap.njk
   </section>
 
   <section class="demo-section demo-section--white">
+    <div class="demo-container" style="max-width:1100px">
+      <div style="display:grid;grid-template-columns:240px 1fr;gap:3rem;align-items:start">
+
+        <aside class="demo-post-toc" aria-label="In this article" style="position:sticky;top:5rem;align-self:start;font-family:'IBM Plex Sans',sans-serif">
+          <span style="display:block;font-family:'Oswald',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--rc-text-muted);margin-bottom:1rem">In this article</span>
+          <ol id="demoPostTocList" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem;font-size:0.92rem"></ol>
+        </aside>
+
+        <div id="demoPostContent" class="demo-blog-body" style="line-height:1.75;color:var(--rc-text);font-size:1.05rem;min-width:0">
+          {{ content | safe }}
+
+          {% include "partials/demo-post-share.njk" %}
+
+          <hr style="border:0;border-top:1px solid var(--rc-line);margin:2.5rem 0 2rem">
+
+          <div style="background:var(--rc-cream-warm);border-left:4px solid var(--rc-red);padding:1.5rem 1.75rem;border-radius:0 4px 4px 0">
+            <span class="demo-eyebrow" style="margin-bottom:0.5rem">Need a roof inspection?</span>
+            <h3 style="font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--rc-black);margin:0 0 0.5rem">Free, written, same week.</h3>
+            <p style="margin:0 0 1.25rem;color:var(--rc-text);line-height:1.6">Hail damage suspected, leak in the ceiling, or just a roof you have not had checked in a while. Either way, no pressure on the inspection itself.</p>
+            <a href="/demo/redcap-roofing/contact/" class="demo-btn demo-btn-primary">Get your free inspection</a>
+          </div>
+
+          {# Prev/next pager #}
+          {% set posts = collections.redcapPost %}
+          {% set currentIndex = -1 %}
+          {% for p in posts %}{% if p.url === page.url %}{% set currentIndex = loop.index0 %}{% endif %}{% endfor %}
+          {% if posts.length > 1 %}
+          <nav aria-label="More articles" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.5rem 0 2rem">
+            {% set prevIndex = currentIndex - 1 %}
+            {% set nextIndex = currentIndex + 1 %}
+            {% if prevIndex >= 0 %}
+              {% set prev = posts[prevIndex] %}
+              <a href="{{ prev.url }}" style="padding:1rem 1.15rem;background:var(--rc-cream);border:1px solid var(--rc-line);border-radius:4px;color:var(--rc-text);text-decoration:none;display:flex;flex-direction:column;gap:0.3rem">
+                <span style="font-family:'Oswald',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--rc-text-muted)">&larr; Previous</span>
+                <strong style="font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.02em;color:var(--rc-black)">{{ prev.data.title }}</strong>
+              </a>
+            {% else %}<span></span>{% endif %}
+            {% if nextIndex < posts.length %}
+              {% set nxt = posts[nextIndex] %}
+              <a href="{{ nxt.url }}" style="padding:1rem 1.15rem;background:var(--rc-cream);border:1px solid var(--rc-line);border-radius:4px;color:var(--rc-text);text-decoration:none;display:flex;flex-direction:column;gap:0.3rem;text-align:right">
+                <span style="font-family:'Oswald',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--rc-text-muted)">Next &rarr;</span>
+                <strong style="font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.02em;color:var(--rc-black)">{{ nxt.data.title }}</strong>
+              </a>
+            {% else %}<span></span>{% endif %}
+          </nav>
+          {% endif %}
+
+          <p style="margin-top:1.5rem"><a href="/demo/redcap-roofing/blog/" style="color:var(--rc-red);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:0.88rem;font-family:'Oswald',sans-serif">&larr; Back to all articles</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Related posts #}
+  <section class="demo-section demo-section--cream">
     <div class="demo-container demo-container--narrow">
-      <div class="demo-blog-body">
-        {{ content | safe }}
+      <span class="demo-eyebrow">Keep reading</span>
+      <h2 style="font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--rc-black);margin:0.5rem 0 1.5rem">Related articles</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem">
+        {% set otherPosts = collections.redcapPost | reverse %}
+        {% set shown = 0 %}
+        {% for p in otherPosts %}
+          {% if p.url !== page.url and shown < 3 %}
+          <article style="padding:1.25rem 1.4rem;background:#FFFFFF;border:1px solid var(--rc-line);border-radius:4px">
+            <span class="demo-eyebrow" style="color:var(--rc-red)">{{ p.data.eyebrow or "Article" }}</span>
+            <h3 style="font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:600;letter-spacing:0.02em;color:var(--rc-black);margin:0.4rem 0 0.5rem;line-height:1.3"><a href="{{ p.url }}" style="color:inherit;text-decoration:none">{{ p.data.title }}</a></h3>
+            <p style="font-size:0.92rem;color:var(--rc-text-muted);line-height:1.55;margin:0">{{ p.data.description | truncate(120) }}</p>
+          </article>
+          {% set shown = shown + 1 %}
+          {% endif %}
+        {% endfor %}
       </div>
-
-      <hr style="border:0;border-top:1px solid var(--rc-line);margin:3rem 0 2rem">
-
-      <div style="background:var(--rc-cream-warm);border-left:4px solid var(--rc-red);padding:1.5rem 1.75rem;border-radius:0 4px 4px 0">
-        <span class="demo-eyebrow" style="margin-bottom:0.5rem">Need a roof inspection?</span>
-        <h3 style="font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--rc-black);margin:0 0 0.5rem">Free, written, same week.</h3>
-        <p style="margin:0 0 1.25rem;color:var(--rc-text);line-height:1.6">Hail damage suspected, leak in the ceiling, or just a roof you have not had checked in a while. Either way, no pressure on the inspection itself.</p>
-        <a href="/demo/redcap-roofing/contact/" class="demo-btn demo-btn-primary">Get your free inspection</a>
-      </div>
-
-      <p style="margin-top:2.5rem"><a href="/demo/redcap-roofing/blog/" style="color:var(--rc-red);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:0.88rem;font-family:'Oswald',sans-serif">&larr; Back to all articles</a></p>
     </div>
   </section>
 </article>
+
+{# Shared share-button + TOC + progress-bar styles using each demo's body class scope. #}
+<style>
+.demo-post-toc ol li a { display:block; padding:0.4rem 0.6rem; color:var(--rc-text-muted); text-decoration:none; border-left:2px solid transparent; transition:color 0.15s, border-color 0.15s; line-height:1.4; }
+.demo-post-toc ol li a:hover { color:var(--rc-red); }
+.demo-post-toc ol li a.is-active { color:var(--rc-red); border-left-color:var(--rc-red); font-weight:600; }
+.demo-post-toc ol li.demo-post-toc-sub a { padding-left:1.4rem; font-size:0.86rem; }
+.demo-post-share { display:flex; flex-wrap:wrap; align-items:center; gap:0.85rem 1.25rem; margin:2.5rem 0 1.5rem; padding:1.25rem 0; border-top:1px solid var(--rc-line); border-bottom:1px solid var(--rc-line); }
+.demo-post-share-label { font-family:'Oswald',sans-serif; font-size:0.74rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--rc-text-muted); }
+.demo-post-share-buttons { display:flex; flex-wrap:wrap; gap:0.5rem; }
+.demo-post-share-btn { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; padding:0; background:transparent; border:1px solid var(--rc-line); border-radius:999px; color:var(--rc-text-muted); text-decoration:none; cursor:pointer; transition:background 0.15s, border-color 0.15s, color 0.15s, transform 0.15s; }
+.demo-post-share-btn:hover { background:var(--rc-red); border-color:var(--rc-red); color:#FFFFFF; transform:translateY(-1px); }
+.demo-post-share-btn svg { width:16px; height:16px; fill:currentColor; }
+.demo-post-share-btn .demo-post-share-icon-link, .demo-post-share-btn .demo-post-share-icon-check { fill:none; stroke:currentColor; }
+.demo-post-share-btn .demo-post-share-icon-check { display:none; }
+.demo-post-share-btn.is-copied .demo-post-share-icon-link { display:none; }
+.demo-post-share-btn.is-copied .demo-post-share-icon-check { display:inline-block; }
+.visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+@media (max-width: 900px) {
+  .demo-blog-article > section.demo-section > .demo-container > div[style*="grid-template-columns:240px"] { grid-template-columns: 1fr !important; gap: 1rem !important; }
+  .demo-post-toc { display: none; }
+}
+</style>
+
+{% include "partials/demo-post-script.njk" %}
