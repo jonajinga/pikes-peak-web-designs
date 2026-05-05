@@ -87,27 +87,15 @@ description: "Full-text search across every page, blog post, FAQ, glossary entry
 
 <script>
 (function () {
-  // Prefill chips: pre-fill the Pagefind input and trigger a search.
   function setQuery(q) {
-    var input = document.querySelector('#pagefind-search input[type="search"], #pagefind-search input[type="text"]');
-    if (!input) {
-      // Pagefind not yet mounted; retry shortly.
-      setTimeout(function () { setQuery(q); }, 200);
+    if (typeof window.__ppwdSearchPrefill === 'function') {
+      window.__ppwdSearchPrefill(q);
       return;
     }
-    input.value = q;
-    input.dispatchEvent(new Event('input', { bubbles: true }));
-    input.focus();
-    // Scroll to the input on mobile so the result list is visible.
-    var rect = input.getBoundingClientRect();
-    if (rect.top < 0 || rect.top > window.innerHeight) {
-      input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+    setTimeout(function () { setQuery(q); }, 200);
   }
   document.querySelectorAll('[data-prefill]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      setQuery(btn.getAttribute('data-prefill'));
-    });
+    btn.addEventListener('click', function () { setQuery(btn.getAttribute('data-prefill')); });
   });
 
   // Recent-search history via localStorage. Captures whatever the user
@@ -115,10 +103,8 @@ description: "Full-text search across every page, blog post, FAQ, glossary entry
   var STORAGE_KEY = 'ppwd_recent_search';
   var MAX_RECENT = 6;
   function readRecent() {
-    try {
-      var raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? JSON.parse(raw) : [];
-    } catch (e) { return []; }
+    try { var raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : []; }
+    catch (e) { return []; }
   }
   function writeRecent(list) {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(list.slice(0, MAX_RECENT))); } catch (e) {}
@@ -151,22 +137,14 @@ description: "Full-text search across every page, blog post, FAQ, glossary entry
   var clearBtn = document.querySelector('[data-search-page-recent-clear]');
   if (clearBtn) clearBtn.addEventListener('click', function () { writeRecent([]); renderRecent(); });
 
-  // Watch the Pagefind input once it mounts and capture searches that pause
-  // for 800ms (treats them as committed).
   var captureTimer = null;
   function attachCapture() {
-    var input = document.querySelector('#pagefind-search input[type="search"], #pagefind-search input[type="text"]');
+    var input = document.querySelector('#pagefind-search .ppwd-search-input');
     if (!input) { setTimeout(attachCapture, 300); return; }
     input.addEventListener('input', function () {
       clearTimeout(captureTimer);
       captureTimer = setTimeout(function () { addRecent(input.value); }, 800);
     });
-    // Auto-focus on page load so the user can start typing immediately
-    // unless they arrived with a hash anchor or are on a small screen
-    // where the on-screen keyboard would shove the page.
-    if (window.matchMedia('(min-width: 720px)').matches && !location.hash) {
-      input.focus();
-    }
   }
   attachCapture();
   renderRecent();

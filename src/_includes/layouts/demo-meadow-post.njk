@@ -103,7 +103,8 @@ layout: layouts/demo-meadow.njk
 .demo-post-toc ol li a:hover { color:var(--me-terracotta); }
 .demo-post-toc ol li a.is-active { color:var(--me-terracotta); border-left-color:var(--me-terracotta); font-weight:600; }
 .demo-post-toc ol li.demo-post-toc-sub a { padding-left:1.4rem; font-size:0.86rem; }
-.demo-post-toc { max-height: calc(100vh - 6rem); overflow-y: auto; padding-right: 0.25rem; }
+.demo-post-toc { max-height: calc(100vh - 6rem); display: flex; flex-direction: column; min-height: 0; }
+.demo-post-toc > ol { overflow-y: auto; padding-right: 0.25rem; min-height: 0; flex: 1; }
 #demoPostContent h2 { margin: 2.4rem 0 1rem; scroll-margin-top: 6rem; }
 #demoPostContent h3 { margin: 2rem 0 0.75rem; scroll-margin-top: 6rem; }
 #demoPostContent p { margin: 0 0 1.15em; }

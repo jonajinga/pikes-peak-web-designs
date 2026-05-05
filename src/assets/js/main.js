@@ -284,49 +284,283 @@
   if (document.readyState === 'complete') initTippy();
   else window.addEventListener('load', initTippy);
 
-  /* -------- Pagefind search (lazy-loaded, supports multiple mount points) -------- */
-  let pagefindScriptPromise = null;
+  /* -------- Pagefind search — custom headless UI (lazy-loaded) -------- */
+  let pagefindModulePromise = null;
   const mountedSearchElements = new WeakSet();
 
-  const loadPagefindScript = () => {
-    if (window.PagefindUI) return Promise.resolve();
-    if (pagefindScriptPromise) return pagefindScriptPromise;
-    pagefindScriptPromise = new Promise((resolve, reject) => {
-      const s = document.createElement('script');
-      s.src = '/pagefind/pagefind-ui.js';
-      s.onload = () => resolve();
-      s.onerror = () => reject(new Error('pagefind script failed to load'));
-      document.head.appendChild(s);
-    });
-    return pagefindScriptPromise;
+  const loadPagefind = () => {
+    if (pagefindModulePromise) return pagefindModulePromise;
+    pagefindModulePromise = import('/pagefind/pagefind.js')
+      .then(async (mod) => {
+        if (typeof mod.options === 'function') {
+          await mod.options({ excerptLength: 30 });
+        }
+        return mod;
+      });
+    return pagefindModulePromise;
+  };
+
+  // Type detection from URL — drives the badge color and filter group.
+  const TYPE_DEFS = [
+    { key: 'blog',       label: 'Blog',         test: (u) => /^\/blog\//.test(u) && u !== '/blog/' },
+    { key: 'faq',        label: 'FAQ',          test: (u) => /^\/faq(\/|$)/.test(u) },
+    { key: 'glossary',   label: 'Glossary',     test: (u) => /^\/glossary(\/|$)/.test(u) },
+    { key: 'sop',        label: 'SOP',          test: (u) => /^\/sop\//.test(u) },
+    { key: 'area',       label: 'Service area', test: (u) => /^\/(service-areas|areas)\//.test(u) },
+    { key: 'demo',       label: 'Demo site',    test: (u) => /^\/demo\//.test(u) },
+    { key: 'comparison', label: 'Comparison',   test: (u) => /^\/vs-/.test(u) || /-vs-/.test(u) },
+    { key: 'case',       label: 'Case study',   test: (u) => /^\/case-studies\//.test(u) },
+    { key: 'podcast',    label: 'Podcast',      test: (u) => /^\/podcast\//.test(u) },
+    { key: 'changelog',  label: 'Changelog',    test: (u) => /^\/changelog/.test(u) },
+    { key: 'method',     label: 'Method',       test: (u) => /^\/(method|technical-approach|how-it-works)/.test(u) },
+    { key: 'pricing',    label: 'Pricing',      test: (u) => /^\/(pricing|hourly|rebuild|audit|grader|calm-site-audit)/.test(u) },
+  ];
+  const detectType = (url) => {
+    for (const t of TYPE_DEFS) if (t.test(url)) return t;
+    return { key: 'page', label: 'Page' };
+  };
+
+  // Pretty breadcrumb from URL — turns "/blog/posts/foo-bar/" → "Blog › Posts › Foo bar".
+  const breadcrumbFromUrl = (url) => {
+    const segs = url.replace(/^\/|\/$/g, '').split('/').filter(Boolean);
+    if (!segs.length) return 'Home';
+    return segs.slice(0, -1)
+      .map(s => s.replace(/[-_]/g, ' '))
+      .map(s => s.charAt(0).toUpperCase() + s.slice(1))
+      .join(' › ') || 'Home';
+  };
+
+  const escapeHtml = (str) => String(str).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+
+  // Strip Pagefind's wrapping tags + clean meta title.
+  const cleanTitle = (raw) => {
+    if (!raw) return '';
+    return String(raw).replace(/\s*\|\s*Pikes Peak Web Designs.*$/i, '').trim();
+  };
+
+  const renderResultCard = (data, idx) => {
+    const url = data.url || '#';
+    const type = detectType(url);
+    const title = cleanTitle(data.meta && data.meta.title) || data.url;
+    const excerpt = data.excerpt || '';
+    const crumb = breadcrumbFromUrl(url);
+    return (
+      '<a class="ppwd-result" href="' + escapeHtml(url) + '" role="option" data-type="' + type.key + '" data-idx="' + idx + '">' +
+        '<span class="ppwd-result-type ppwd-result-type--' + type.key + '">' + type.label + '</span>' +
+        '<h3 class="ppwd-result-title">' + escapeHtml(title) + '</h3>' +
+        '<p class="ppwd-result-excerpt">' + excerpt + '</p>' +
+        '<span class="ppwd-result-crumb">' + escapeHtml(crumb) + '</span>' +
+        '<svg class="ppwd-result-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
+      '</a>'
+    );
   };
 
   const mountPagefind = (selectorOrElement, options = {}) => {
-    return loadPagefindScript().then(() => {
-      const el = typeof selectorOrElement === 'string'
-        ? document.querySelector(selectorOrElement)
-        : selectorOrElement;
-      if (!el || mountedSearchElements.has(el) || !window.PagefindUI) return;
-      try {
-        new window.PagefindUI(Object.assign({
-          element: el,
-          showSubResults: true,
-          resetStyles: false,
-          showImages: false,
-          placeholder: 'Search articles, pages, and service areas...',
-        }, options));
-        mountedSearchElements.add(el);
-      } catch (e) { console.warn('PagefindUI init failed:', e); }
+    const el = typeof selectorOrElement === 'string'
+      ? document.querySelector(selectorOrElement)
+      : selectorOrElement;
+    if (!el || mountedSearchElements.has(el)) return Promise.resolve();
+    mountedSearchElements.add(el);
+
+    const placeholder = options.placeholder || 'Search the site...';
+    const compact = !!options.compact;
+
+    el.classList.add('ppwd-search');
+    if (compact) el.classList.add('ppwd-search--compact');
+    el.innerHTML = (
+      '<div class="ppwd-search-inputwrap">' +
+        '<svg class="ppwd-search-inputicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>' +
+        '<input type="search" class="ppwd-search-input" placeholder="' + escapeHtml(placeholder) + '" aria-label="Search the site" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">' +
+        '<button type="button" class="ppwd-search-clear" aria-label="Clear search" hidden>' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+        '</button>' +
+      '</div>' +
+      '<div class="ppwd-search-status" data-status aria-live="polite"></div>' +
+      '<div class="ppwd-search-filters" data-filters role="tablist" aria-label="Filter by section" hidden></div>' +
+      '<div class="ppwd-search-results" data-results role="listbox" aria-label="Search results"></div>' +
+      '<div class="ppwd-search-empty" data-empty hidden>' +
+        '<strong>No matches.</strong>' +
+        '<span>Try fewer or different words, or browse the <a href="/sitemap/" class="inline-link">site map</a>.</span>' +
+      '</div>'
+    );
+
+    const input = el.querySelector('.ppwd-search-input');
+    const clearBtn = el.querySelector('.ppwd-search-clear');
+    const statusEl = el.querySelector('[data-status]');
+    const filtersEl = el.querySelector('[data-filters]');
+    const resultsEl = el.querySelector('[data-results]');
+    const emptyEl = el.querySelector('[data-empty]');
+
+    let activeFilter = 'all';
+    let currentResults = [];      // [{ data, type }]
+    let activeIdx = -1;
+    let searchToken = 0;
+    let pagefindReady = null;
+
+    const setActive = (idx) => {
+      const cards = resultsEl.querySelectorAll('.ppwd-result:not([hidden])');
+      cards.forEach(c => c.classList.remove('is-active'));
+      if (idx < 0 || idx >= cards.length) { activeIdx = -1; return; }
+      activeIdx = idx;
+      cards[idx].classList.add('is-active');
+      cards[idx].scrollIntoView({ block: 'nearest' });
+    };
+
+    const renderFilters = () => {
+      const counts = { all: currentResults.length };
+      currentResults.forEach(r => { counts[r.type.key] = (counts[r.type.key] || 0) + 1; });
+      const types = TYPE_DEFS.filter(t => counts[t.key] > 0);
+      if (!types.length) { filtersEl.hidden = true; filtersEl.innerHTML = ''; return; }
+      filtersEl.hidden = false;
+      const buttons = [{ key: 'all', label: 'All' }].concat(types.map(t => ({ key: t.key, label: t.label })));
+      filtersEl.innerHTML = buttons.map(b =>
+        '<button type="button" class="ppwd-filter' + (b.key === activeFilter ? ' is-active' : '') +
+        '" data-filter="' + b.key + '" role="tab" aria-selected="' + (b.key === activeFilter) + '">' +
+          escapeHtml(b.label) +
+          '<span class="ppwd-filter-count">' + counts[b.key] + '</span>' +
+        '</button>'
+      ).join('');
+    };
+
+    const applyFilter = () => {
+      const cards = resultsEl.querySelectorAll('.ppwd-result');
+      let visible = 0;
+      cards.forEach(c => {
+        const match = activeFilter === 'all' || c.dataset.type === activeFilter;
+        c.hidden = !match;
+        if (match) visible++;
+      });
+      activeIdx = -1;
+      cards.forEach(c => c.classList.remove('is-active'));
+      emptyEl.hidden = visible !== 0 || !currentResults.length;
+      if (currentResults.length && !visible) {
+        emptyEl.hidden = false;
+        emptyEl.querySelector('strong').textContent = 'No results in that section.';
+      } else if (!currentResults.length) {
+        emptyEl.querySelector('strong').textContent = 'No matches.';
+      }
+    };
+
+    filtersEl.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-filter]');
+      if (!btn) return;
+      activeFilter = btn.dataset.filter;
+      filtersEl.querySelectorAll('[data-filter]').forEach(b => {
+        const on = b.dataset.filter === activeFilter;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', on);
+      });
+      applyFilter();
     });
+
+    const reset = () => {
+      currentResults = [];
+      resultsEl.innerHTML = '';
+      filtersEl.hidden = true; filtersEl.innerHTML = '';
+      emptyEl.hidden = true;
+      statusEl.textContent = '';
+      activeFilter = 'all';
+      activeIdx = -1;
+    };
+
+    const runSearch = async (query) => {
+      const q = (query || '').trim();
+      clearBtn.hidden = !q.length;
+      const myToken = ++searchToken;
+      if (q.length < 2) { reset(); return; }
+      statusEl.textContent = 'Searching...';
+      try {
+        const pf = await (pagefindReady = pagefindReady || loadPagefind());
+        if (myToken !== searchToken) return;
+        const search = await pf.search(q);
+        if (myToken !== searchToken) return;
+        const top = search.results.slice(0, 30);
+        const datas = await Promise.all(top.map(r => r.data()));
+        if (myToken !== searchToken) return;
+
+        currentResults = datas.map(d => ({ data: d, type: detectType(d.url || '') }));
+        if (!currentResults.length) {
+          resultsEl.innerHTML = '';
+          filtersEl.hidden = true; filtersEl.innerHTML = '';
+          emptyEl.hidden = false;
+          emptyEl.querySelector('strong').textContent = 'No matches.';
+          statusEl.textContent = '0 results for "' + q + '"';
+          return;
+        }
+        const html = currentResults.map((r, i) => renderResultCard(r.data, i)).join('');
+        resultsEl.innerHTML = html;
+        renderFilters();
+        applyFilter();
+        const total = search.results.length;
+        const showing = currentResults.length;
+        statusEl.textContent = total > showing
+          ? 'Showing top ' + showing + ' of ' + total + ' results for "' + q + '"'
+          : showing + ' result' + (showing === 1 ? '' : 's') + ' for "' + q + '"';
+      } catch (err) {
+        console.warn('Search failed:', err);
+        statusEl.textContent = '';
+        resultsEl.innerHTML = '';
+        emptyEl.hidden = false;
+        emptyEl.querySelector('strong').textContent = 'Search is offline.';
+      }
+    };
+
+    let debounceTimer = null;
+    input.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      const v = input.value;
+      debounceTimer = setTimeout(() => runSearch(v), 140);
+    });
+    clearBtn.addEventListener('click', () => {
+      input.value = '';
+      input.focus();
+      reset();
+      clearBtn.hidden = true;
+    });
+
+    // Keyboard navigation: arrows move highlight, Enter opens active.
+    input.addEventListener('keydown', (e) => {
+      const visibleCards = resultsEl.querySelectorAll('.ppwd-result:not([hidden])');
+      if (e.key === 'ArrowDown') {
+        if (!visibleCards.length) return;
+        e.preventDefault();
+        setActive(Math.min(activeIdx + 1, visibleCards.length - 1));
+      } else if (e.key === 'ArrowUp') {
+        if (!visibleCards.length) return;
+        e.preventDefault();
+        setActive(Math.max(activeIdx - 1, 0));
+      } else if (e.key === 'Enter') {
+        if (activeIdx >= 0 && visibleCards[activeIdx]) {
+          e.preventDefault();
+          window.location.href = visibleCards[activeIdx].href;
+        }
+      }
+    });
+
+    if (options.autoFocus) setTimeout(() => input.focus(), 50);
+    return Promise.resolve({ input, runSearch, focus: () => input.focus() });
+  };
+
+  // Expose a small helper so /search/ page chip prefill can drive the input.
+  window.__ppwdSearchPrefill = (q) => {
+    const inputs = $$('.ppwd-search-input');
+    if (!inputs.length) return;
+    const target = inputs[inputs.length - 1];
+    target.value = q;
+    target.dispatchEvent(new Event('input', { bubbles: true }));
+    target.focus();
+    const rect = target.getBoundingClientRect();
+    if (rect.top < 0 || rect.top > window.innerHeight) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   };
 
   // Mount immediately on any inline #pagefind-search container (e.g. /search/ page)
   $$('#pagefind-search').forEach(el => {
-    // Skip the one inside the modal (lazy-loaded on modal open)
     if (el.closest('.search-modal')) return;
-    mountPagefind(el).catch(() => {
-      el.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem">Search isn\'t available yet. Try the <a href="/sitemap/" class="inline-link">site map</a>.</p>';
-    });
+    mountPagefind(el, { autoFocus: window.matchMedia('(min-width: 720px)').matches && !location.hash });
   });
 
   /* -------- Search modal -------- */
@@ -338,14 +572,10 @@
     closeMobileNav();
     const modalContainer = searchModal.querySelector('#pagefind-search');
     if (modalContainer) {
-      mountPagefind(modalContainer, { placeholder: 'Search the site...' })
-        .then(() => {
-          const input = searchModal.querySelector('input[type="search"], input[type="text"]');
-          if (input) setTimeout(() => input.focus(), 50);
-        })
-        .catch(() => {
-          modalContainer.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem;padding:1rem">Search isn\'t available yet. Try the <a href="/sitemap/" class="inline-link">site map</a>.</p>';
-        });
+      mountPagefind(modalContainer, { placeholder: 'Search the site...', autoFocus: true });
+      // For an already-mounted modal, just re-focus the input on reopen.
+      const input = modalContainer.querySelector('.ppwd-search-input');
+      if (input) setTimeout(() => input.focus(), 50);
     }
   };
   const closeSearch = () => {
@@ -369,9 +599,7 @@
     // Mount on first open so Pagefind only loads when the user actually reaches for search
     const hamburgerEl = $('#hamburger');
     const mountOnce = () => {
-      mountPagefind(mobileSearchEl, { placeholder: 'Search the site...' }).catch(() => {
-        mobileSearchEl.innerHTML = '<p style="color:var(--text-muted);font-size:0.88rem;padding:0.5rem 0">Search is offline. Try the <a href="/sitemap/" class="inline-link">site map</a>.</p>';
-      });
+      mountPagefind(mobileSearchEl, { placeholder: 'Search the site...', compact: true });
     };
     if (hamburgerEl) {
       hamburgerEl.addEventListener('click', mountOnce, { once: true });

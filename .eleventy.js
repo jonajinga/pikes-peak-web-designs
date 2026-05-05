@@ -202,6 +202,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
             /tippy/,
             // Mark element added by pagefind highlighting.
             /^mark/,
+            // Custom search UI — markup is injected by main.js so the result
+            // cards / type badges / filter chips never appear in static HTML.
+            /^ppwd-/,
           ],
           keyframes: true,
           variables: false,
