@@ -1,8 +1,8 @@
 ---
-title: "How AI Website Builders Fool You With 'Good Enough' (And the Leads That Quietly Cost You)"
+title: "How AI Website Builders Fool You With 'Good Enough'"
 date: 2026-05-03
 label: "Comparison: AI Builders"
-description: "AI website builders generate sites that look done. The problem is what 'looks done' is not measuring. Here is the gap between what an AI builder ships and what a real custom site does."
+description: "AI website builders ship sites that look done. The problem is what 'looks done' is not measuring — and the leads that get quietly missed."
 ctaLabel: "An honest comparison"
 ctaHeading: "A real custom-coded site, no template, no AI."
 ctaText: "I build every site custom-coded, with one accountable person on every email for the life of the engagement. No template, no AI generator, no relay race. $175 a month, flat, no design deposit."

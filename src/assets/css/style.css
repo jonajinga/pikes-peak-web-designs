@@ -14479,6 +14479,221 @@ h1:focus-within em::after { transform: scaleX(1); }
 :root[data-theme="dark"] .audit-flag--bad  { color: #f08570; background: rgba(240, 133, 112, 0.12); }
 :root[data-theme="dark"] .audit-flag--mid  { color: var(--gold-400); background: rgba(221, 177, 61, 0.14); }
 :root[data-theme="dark"] .audit-flag--good { color: #5fbf81; background: rgba(95, 191, 129, 0.12); }
+
+/* ============================================================
+   Events / marketing-calendar dashboard (/events/, internal-only)
+   Treats the page as Jon's operational tool: dense, scannable,
+   no marketing chrome.
+   ============================================================ */
+.events-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin: 0 0 2.5rem;
+}
+@media (max-width: 720px) { .events-summary { grid-template-columns: repeat(2, 1fr); } }
+.events-summary-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.15rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold-400);
+  border-radius: var(--radius);
+}
+.events-summary-num {
+  font-family: var(--font-display, var(--font-body));
+  font-size: 1.85rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  line-height: 1;
+}
+.events-summary-label {
+  font-family: var(--font-display, var(--font-body));
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.events-h {
+  font-family: var(--font-display, var(--font-body));
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 2.25rem 0 1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--line);
+}
+.events-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+.events-list--past .events-card,
+.events-list--ideas .events-card { opacity: 0.85; }
+.events-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--text-muted);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.4rem 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.events-card--networking { border-left-color: #3a7bd5; }
+.events-card--speaking   { border-left-color: var(--gold-400); }
+.events-card--hosting    { border-left-color: #b85cc7; }
+.events-card--pitching   { border-left-color: #1f7a3a; }
+.events-card--podcast    { border-left-color: #d97706; }
+.events-card--conference { border-left-color: #5b6cff; }
+.events-card--outreach   { border-left-color: #14b8a6; }
+.events-card--sponsorship{ border-left-color: #b8341e; }
+.events-card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.events-card-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.events-card-type {
+  font-family: var(--font-display, var(--font-body));
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.18rem 0.5rem;
+  background: var(--bg-alt);
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.events-card-title {
+  font-family: var(--font-display, var(--font-body));
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.3;
+}
+.events-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.events-card-date  { font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+.events-card-notes {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+.events-card-prep {
+  margin: 0;
+  padding: 0.75rem 0.95rem;
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+}
+.events-card-prep-label,
+.events-card-outcome-label {
+  display: inline-block;
+  font-family: var(--font-display, var(--font-body));
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+.events-card-prep ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  display: grid;
+  gap: 0.18rem;
+}
+.events-card-outcome {
+  margin: 0;
+  padding: 0.75rem 0.95rem;
+  background: rgba(31, 122, 58, 0.06);
+  border: 1px solid rgba(31, 122, 58, 0.2);
+  border-radius: var(--radius-sm);
+}
+:root[data-theme="dark"] .events-card-outcome {
+  background: rgba(95, 191, 129, 0.06);
+  border-color: rgba(95, 191, 129, 0.2);
+}
+.events-card-outcome p { margin: 0; font-size: 0.9rem; line-height: 1.55; }
+.events-card-leads {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.18rem 0.55rem;
+  background: rgba(31, 122, 58, 0.14);
+  color: #1f7a3a;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+:root[data-theme="dark"] .events-card-leads { color: #5fbf81; background: rgba(95, 191, 129, 0.14); }
+.events-card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--font-display, var(--font-body));
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.events-card-goal,
+.events-card-status {
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  border: 1px solid var(--line);
+}
+.events-card-status--scheduled { color: #1f7a3a; background: rgba(31, 122, 58, 0.1); border-color: rgba(31, 122, 58, 0.25); }
+.events-card-status--prep      { color: #b08a32; background: rgba(176, 138, 50, 0.12); border-color: rgba(176, 138, 50, 0.3); }
+.events-card-status--idea      { color: #5b6cff; background: rgba(91, 108, 255, 0.1); border-color: rgba(91, 108, 255, 0.25); }
+.events-card-status--declined  { color: #b8341e; background: rgba(184, 52, 30, 0.1); border-color: rgba(184, 52, 30, 0.25); }
+.events-card-status--completed { color: var(--text-muted); }
+:root[data-theme="dark"] .events-card-status--scheduled { color: #5fbf81; }
+:root[data-theme="dark"] .events-card-status--prep      { color: var(--gold-400); }
+:root[data-theme="dark"] .events-card-status--declined  { color: #f08570; }
+.events-foot {
+  margin-top: 3rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.events-foot p { margin: 0 0 0.5rem; }
+.events-foot p:last-child { margin: 0; }
+.events-foot code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.84rem;
+  background: var(--surface-raised);
+  padding: 0.05rem 0.35rem;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+}
 .subscribe-side-title {
   font-family: var(--font-display, var(--font-body));
   font-size: 1.25rem;

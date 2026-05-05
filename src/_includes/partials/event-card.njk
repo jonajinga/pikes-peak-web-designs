@@ -1,0 +1,41 @@
+{# Single event card. Expects `e` in scope (the events.events item). #}
+<li class="events-card events-card--{{ e.type }}" id="event-{{ e.slug }}">
+  <header class="events-card-head">
+    <div class="events-card-title-row">
+      <span class="events-card-type">{{ e.type | replace("-", " ") }}</span>
+      <h3 class="events-card-title">{{ e.title }}</h3>
+    </div>
+    <div class="events-card-meta">
+      {% if e.date %}<span class="events-card-date">
+        {{ e.date | dateFormat if e.date | length > 7 else e.date }}
+        {% if e.end %} &ndash; {{ e.end | dateFormat }}{% endif %}
+      </span>{% endif %}
+      {% if e.location %}<span class="events-card-location">{{ e.location }}</span>{% endif %}
+      {% if e.audience %}<span class="events-card-audience">{{ e.audience }}</span>{% endif %}
+    </div>
+  </header>
+
+  {% if e.notes %}<p class="events-card-notes">{{ e.notes }}</p>{% endif %}
+
+  {% if e.prep and e.prep.length > 0 %}
+  <div class="events-card-prep">
+    <span class="events-card-prep-label">Prep</span>
+    <ul>
+      {% for item in e.prep %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if e.outcome %}
+  <div class="events-card-outcome">
+    <span class="events-card-outcome-label">Outcome</span>
+    <p>{{ e.outcome }}</p>
+    {% if e.leads %}<span class="events-card-leads">{{ e.leads }} qualified lead{% if e.leads != 1 %}s{% endif %}</span>{% endif %}
+  </div>
+  {% endif %}
+
+  <footer class="events-card-foot">
+    {% if e.goal %}<span class="events-card-goal events-card-goal--{{ e.goal }}">Goal: {{ e.goal }}</span>{% endif %}
+    <span class="events-card-status events-card-status--{{ e.status }}">{{ e.status }}</span>
+  </footer>
+</li>

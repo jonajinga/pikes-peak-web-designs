@@ -1,5 +1,5 @@
 ---
-title: "Wix, Squarespace & GoDaddy vs. a Custom Website: What Service Businesses Need to Know"
+title: "Wix, Squarespace, GoDaddy vs. a Custom Website"
 date: 2025-02-24
 label: "Making the Right Choice"
 description: "Website builders promise simplicity. Custom code delivers results. Here's an honest comparison for service business owners."

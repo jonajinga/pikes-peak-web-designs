@@ -2,7 +2,7 @@
 title: "How to Photograph Your Work for Your Website (Phone Camera, No Studio)"
 date: 2026-05-05
 label: "Practical Skill"
-description: "A field guide for service-business owners who own a phone, do good work, and have no decent photos to put on their website. Light, framing, what to capture, and how to fix the most common phone-camera mistakes."
+description: "A field guide for service-business owners with a phone, good work, and no decent photos. Light, framing, what to capture, and the common phone-camera fixes."
 ctaLabel: "Photos done? Let's build the site."
 ctaHeading: "Once you have ten good photos, the site can be built."
 ctaText: "I build custom-coded sites that compress your photos to AVIF and WebP automatically, with hand-tuned responsive sizes and real galleries built around the work. $175 a month, flat."

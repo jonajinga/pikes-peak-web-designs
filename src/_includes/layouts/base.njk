@@ -65,6 +65,7 @@
     {% if label %}<meta property="article:section" content="{{ label }}">{% endif %}
     {% if tags %}{% for tag in tags %}{% if tag != 'post' %}<meta property="article:tag" content="{{ tag }}">{% endif %}{% endfor %}{% endif %}
   {% endif %}
+  {% include "partials/structured-data.njk" %}
   {% if extraHead %}{{ extraHead | safe }}{% endif %}
 
   {# Analytics, only injected when real IDs are set in site data. Placeholder

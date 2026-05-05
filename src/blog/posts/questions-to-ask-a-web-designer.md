@@ -2,7 +2,7 @@
 title: "The Seven Questions to Ask Any Web Designer Before Hiring Them"
 date: 2026-04-26
 label: "Hiring Guide"
-description: "Seven questions that separate the web designers who will help your service business from the ones who will quietly drain your budget. Each one has a right answer; each one has a wrong answer."
+description: "Seven questions that separate the web designers who'll help your service business from the ones who'll quietly drain your budget. Each has a right answer."
 ctaLabel: "Honest Answers"
 ctaHeading: "Every one of these questions, answered straight."
 ctaText: "Custom-coded, $175 a month flat, no design deposit, twelve-month minimum. The agreement, the process, and the pricing are all public on this site."

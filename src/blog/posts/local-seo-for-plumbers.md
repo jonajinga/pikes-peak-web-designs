@@ -1,5 +1,5 @@
 ---
-title: "Local SEO for Plumbers: How to Get Found When Someone Needs a Plumber Now"
+title: "Local SEO for Plumbers: Getting Found in Search"
 date: 2025-03-03
 label: "Industry Guide: Plumbing"
 description: "Plumbing is one of the most competitive local search markets. Here's a practical guide to getting your plumbing business to the top of Google in your area."

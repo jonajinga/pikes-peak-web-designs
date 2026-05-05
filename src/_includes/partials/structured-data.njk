@@ -1,0 +1,184 @@
+{# Centralized JSON-LD. Rendered from base.njk on every page. Emits:
+   1. Organization (always)
+   2. WebSite with SearchAction (always)
+   3. BreadcrumbList (when a `breadcrumbs` array is in front matter)
+   4. BlogPosting (when ogType == 'article')
+   5. Person (when isAboutPage is true)
+   6. FAQPage (when an `faq` array is in front matter)
+   Any per-page extraHead JSON-LD layered on top still works. #}
+
+{% set _logo = site.url + '/assets/img/og/default.png' %}
+{% set _ogImage = ogImage if ogImage else site.ogImage %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site.url }}/#organization",
+      "name": "{{ site.name }}",
+      "alternateName": "{{ site.shortName or site.name }}",
+      "url": "{{ site.url }}/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}{{ site.logo or '/assets/img/og/default.png' }}",
+        "width": 1200,
+        "height": 630
+      },
+      "image": "{{ site.url }}/assets/img/og/default.png",
+      "email": "{{ site.email }}",
+      "telephone": "+1-{{ site.phone }}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "{{ site.address.city }}",
+        "addressRegion": "{{ site.address.state }}",
+        "addressCountry": "{{ site.address.country }}"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Jon Ajinga",
+        "url": "{{ site.url }}/about/"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "Canada" }
+      ],
+      "sameAs": [
+        {%- set _sameAs = [] -%}
+        {%- if site.founderSite %}{% set _sameAs = (_sameAs.push(site.founderSite), _sameAs) %}{% endif -%}
+        {%- if site.github %}{% set _sameAs = (_sameAs.push(site.github), _sameAs) %}{% endif -%}
+        {%- if site.linkedin %}{% set _sameAs = (_sameAs.push(site.linkedin), _sameAs) %}{% endif -%}
+        {%- for s in _sameAs -%}{%- if not loop.first %},{% endif %}"{{ s }}"{%- endfor -%}
+      ],
+      "slogan": "{{ site.tagline }}"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": "{{ site.name }}",
+      "description": "{{ site.description }}",
+      "inLanguage": "{{ site.locale or 'en_US' | replace('_', '-') }}",
+      "publisher": { "@id": "{{ site.url }}/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ site.url }}/search/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ page.url }}#webpage",
+      "url": "{{ site.url }}{{ page.url }}",
+      "name": "{{ title if title else site.name }}",
+      "description": "{{ description if description else site.description }}",
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}{{ _ogImage }}",
+        "width": 1200,
+        "height": 630
+      },
+      "inLanguage": "{{ site.locale or 'en_US' | replace('_', '-') }}"
+      {%- if breadcrumbs %},
+      "breadcrumb": { "@id": "{{ site.url }}{{ page.url }}#breadcrumbs" }
+      {%- endif %}
+    }
+    {%- if breadcrumbs %},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ site.url }}{{ page.url }}#breadcrumbs",
+      "itemListElement": [
+        {%- for crumb in breadcrumbs -%}
+          {%- if not loop.first %},{% endif %}
+          {
+            "@type": "ListItem",
+            "position": {{ loop.index }},
+            "name": "{{ crumb.name }}",
+            "item": "{{ site.url }}{{ crumb.url }}"
+          }
+        {%- endfor %}
+      ]
+    }
+    {%- endif %}
+    {%- if ogType == 'article' %},
+    {
+      "@type": "BlogPosting",
+      "@id": "{{ site.url }}{{ page.url }}#article",
+      "isPartOf": { "@id": "{{ site.url }}{{ page.url }}#webpage" },
+      "mainEntityOfPage": { "@id": "{{ site.url }}{{ page.url }}#webpage" },
+      "headline": "{{ title }}",
+      "description": "{{ description }}",
+      {%- if date %}
+      "datePublished": "{{ date | dateISO }}",
+      "dateModified": "{{ updated | dateISO if updated else date | dateISO }}",
+      {%- endif %}
+      "author": {
+        "@type": "Person",
+        "name": "Jon Ajinga",
+        "url": "{{ site.url }}/about/"
+      },
+      "publisher": { "@id": "{{ site.url }}/#organization" },
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}{{ _ogImage }}",
+        "width": 1200,
+        "height": 630
+      }
+      {%- if label %},
+      "articleSection": "{{ label }}"
+      {%- endif %}
+      {%- if tags %},
+      "keywords": [
+        {%- set _kw = [] -%}
+        {%- for t in tags -%}{%- if t != 'post' %}{% set _kw = (_kw.push(t), _kw) %}{% endif -%}{%- endfor -%}
+        {%- for k in _kw -%}{%- if not loop.first %},{% endif %}"{{ k }}"{%- endfor -%}
+      ]
+      {%- endif %}
+    }
+    {%- endif %}
+    {%- if isAboutPage %},
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/about/#person",
+      "name": "Jon Ajinga",
+      "url": "{{ site.url }}/about/",
+      "image": "{{ site.url }}/assets/img/jon-ajinga.webp",
+      "jobTitle": "Founder & web designer",
+      "worksFor": { "@id": "{{ site.url }}/#organization" },
+      "knowsAbout": [
+        "Custom-coded websites",
+        "Eleventy (11ty)",
+        "Local SEO for service businesses",
+        "Web accessibility (WCAG 2.2 AA)",
+        "Cloudflare Pages deployment",
+        "Schema markup and structured data"
+      ]
+    }
+    {%- endif %}
+    {%- if isFaqPage and faqs %},
+    {
+      "@type": "FAQPage",
+      "@id": "{{ site.url }}{{ page.url }}#faq",
+      "mainEntity": [
+        {%- for item in faqs -%}
+          {%- if not loop.first %},{% endif %}
+          {
+            "@type": "Question",
+            "name": "{{ item.q | replace('"', '\\"') }}",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "{{ item.a | striptags | replace('"', '\\"') | replace('\n', ' ') }}"
+            }
+          }
+        {%- endfor %}
+      ]
+    }
+    {%- endif %}
+  ]
+}
+</script>

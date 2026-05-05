@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "WordPress Alternatives for Small Business Websites in 2026"
-description: "A plain-language comparison of WordPress, Wix, Squarespace, Webflow, Framer, and custom-coded sites for small service businesses. Real tradeoffs, real costs, no hype."
+description: "A plain-language comparison of WordPress, Wix, Squarespace, Webflow, Framer, and custom-coded sites for small service businesses. Real tradeoffs, no hype."
 label: "Custom vs. Builders"
 ctaLabel: "Skip the platform hunt"
 ctaHeading: "If you would rather not pick a platform at all, that is what I do."

@@ -1,5 +1,5 @@
 ---
-title: "Electrician Website Guide: What Your Electrical Business Website Needs to Win More Jobs"
+title: "Electrician Website Guide: What Wins More Jobs"
 date: 2025-04-05
 label: "Industry Guide: Electrical"
 description: "Your electrician website needs more than a phone number. Here's what it takes to rank on Google and convert visitors into booked jobs."

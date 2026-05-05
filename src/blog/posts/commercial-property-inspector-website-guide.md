@@ -1,5 +1,5 @@
 ---
-title: "The Commercial Property Inspector Website Guide: How to Win More Contracts"
+title: "Commercial Property Inspector Website Guide"
 date: 2025-06-17
 label: "Industry Guide: Commercial Inspection"
 description: "Commercial property inspection clients are sophisticated buyers. Here's what your website needs to earn their trust and win more contracts."

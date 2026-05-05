@@ -2,7 +2,7 @@
 title: "Before You Hire a Web Designer: What You Actually Need to Know"
 date: 2026-05-05
 label: "Buying Guide"
-description: "A pre-purchase due-diligence checklist for service-business owners who are about to hire someone to build their website. The questions to ask, the answers to listen for, and the red flags that should end the conversation."
+description: "A pre-purchase due-diligence checklist for service-business owners about to hire someone to build their website. Questions to ask, red flags to watch for."
 ctaLabel: "Pass the test? Let's talk."
 ctaHeading: "If a vendor cannot answer the questions in this post, find another one."
 ctaText: "I will answer all of them on the discovery call before you sign anything. $0 down, no design deposit. The whole agency operates in public."

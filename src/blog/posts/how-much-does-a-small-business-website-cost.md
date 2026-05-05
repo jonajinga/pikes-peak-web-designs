@@ -2,7 +2,7 @@
 title: "How Much Does a Small Business Website Actually Cost?"
 date: 2026-04-15
 label: "Pricing & Budget"
-description: "An honest, vendor-by-vendor breakdown of what a small service-business website costs in 2026, from $0 DIY builders through $20,000 agency builds. Plus the math on lifetime cost, not just sticker price."
+description: "An honest, vendor-by-vendor breakdown of what a small service-business website costs in 2026, from $0 DIY through $20,000 agency. Lifetime cost, not sticker."
 ctaLabel: "One Flat Rate"
 ctaHeading: "$175 a month, every month, no surprises."
 ctaText: "Custom-coded, fast, accessible, and built for the trade you are actually in. The build kicks off the same week the first payment clears."

@@ -1,5 +1,5 @@
 ---
-title: "The Landscaping Business Website Guide: How to Compete on Google in a Trade Where Photos Matter Most"
+title: "Landscaping Website Guide: Competing on Google with Photos"
 date: 2026-05-03
 label: "Industry Guide: Landscaping"
 description: "Landscaping is a visual trade in a crowded local search market. Here is what your website needs to win on Google and turn lookers into signed-design clients."

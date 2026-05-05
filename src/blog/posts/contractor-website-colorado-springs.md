@@ -1,8 +1,8 @@
 ---
-title: "Why Every Colorado Springs Contractor Needs a Website That Actually Works"
+title: "What Colorado Springs Contractors Need in a Website"
 date: 2025-03-03
 label: "Local Business"
-description: "If your contracting business in Colorado Springs doesn't have a strong website, you're losing jobs to competitors who do. Here's what a working contractor website actually needs."
+description: "If your Colorado Springs contracting business doesn't have a strong website, you're losing jobs to competitors who do. Here's what a working one needs."
 ctaLabel: "Colorado Springs Contractors"
 ctaHeading: "A website built for Colorado Springs service businesses."
 ctaText: "I build custom-coded, fast-loading sites tuned to rank for local searches in Colorado Springs and the Front Range. $175 a month, flat, everything included."

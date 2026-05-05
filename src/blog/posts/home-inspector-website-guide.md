@@ -1,5 +1,5 @@
 ---
-title: "The Home Inspector Website Guide: What You Need to Book More Inspections"
+title: "Home Inspector Website Guide: Booking More Inspections"
 date: 2025-06-10
 label: "Industry Guide: Home Inspection"
 description: "Home buyers rely on search to find inspectors. Here's what your website needs to earn their trust and turn visits into booked inspections."

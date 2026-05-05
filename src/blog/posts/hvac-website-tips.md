@@ -1,5 +1,5 @@
 ---
-title: "What Your HVAC Company Website Needs to Convert Visitors Into Customers"
+title: "What an HVAC Website Needs to Convert Visitors"
 date: 2025-03-10
 label: "Industry Guide: HVAC"
 description: "HVAC is one of the most competitive local search markets. Here's what your website needs to win more calls from Google."

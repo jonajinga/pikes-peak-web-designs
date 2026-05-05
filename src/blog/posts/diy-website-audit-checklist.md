@@ -1,8 +1,8 @@
 ---
-title: "The 12-Point Self-Audit Any Service Business Owner Can Run on Their Own Website in Ten Minutes"
+title: "The 12-Point Website Self-Audit (Run It in 10 Minutes)"
 date: 2026-04-18
 label: "Self-Audit"
-description: "Twelve checks any small business owner can run on their own website with nothing more than a phone, a stopwatch, and ten minutes. If your site fails any of them, you are leaving leads on the table."
+description: "Twelve checks any small-business owner can run on their own website with a phone, a stopwatch, and ten minutes. Fail any and you're leaving leads on the table."
 ctaLabel: "Want a Written One?"
 ctaHeading: "Free 5-point audit, on paper, no sales call."
 ctaText: "If the self-audit turns up red flags, I run a free written diagnostic on your existing site, with the receipts. No card, no sales call attached to the report."

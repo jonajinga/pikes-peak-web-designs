@@ -1,5 +1,5 @@
 ---
-title: "WordPress vs. Custom-Coded Websites: An Honest Comparison for Service Businesses"
+title: "WordPress vs. Custom-Coded: An Honest Comparison"
 date: 2025-02-05
 label: "Web Design"
 description: "WordPress powers a third of the internet. I build my clients on custom code instead. Here is an honest look at the tradeoffs."

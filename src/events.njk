@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
-title: "Promotions &amp; Campaigns | Pikes Peak Web Designs"
-description: "Active and upcoming promotional campaigns for service-business websites: seasonal launch sprints, storm-season readiness, emergency-call setup, and partner-referral kits."
+title: "Marketing Calendar | Pikes Peak Web Designs"
+description: "Private operational dashboard. Networking, speaking, podcasts, pitch waves, and outreach campaigns Jon runs to bring new clients in."
 noindex: true
 eleventyExcludeFromCollections: true
 ---
@@ -9,68 +9,111 @@ eleventyExcludeFromCollections: true
 <section class="page-hero">
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="sep">/</span><span>Promotions</span>
+      <a href="/">Home</a><span class="sep">/</span><span>Marketing calendar</span>
     </nav>
-    <span class="section-label">Active &amp; upcoming</span>
-    <h1>Time-boxed campaigns &amp; <em>seasonal kits.</em></h1>
-    <p>Most of the work I do is on the standard plan at $175 a month, year-round, with no urgency manufactured around it. Occasionally I run a focused campaign for a specific season or audience, and active campaigns live below. Everything else is simply the standard plan.</p>
+    <span class="section-label">Internal &middot; for Jon</span>
+    <h1>Marketing <em>calendar.</em></h1>
+    <p>This is the private operational dashboard. Every networking event, podcast, speaking gig, pitch wave, and outreach campaign that brings new clients in lives here. Edit <code>src/_data/events.js</code> to add or update an entry; the page re-renders on every build.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container" style="max-width:980px">
 
-    {% set anyActive = false %}
-    {% for c in events.campaigns %}{% if c.active %}{% set anyActive = true %}{% endif %}{% endfor %}
+    {% set upcoming = [] %}
+    {% set thisWeek = [] %}
+    {% set inPrep = [] %}
+    {% set ideas = [] %}
+    {% set completed = [] %}
+    {% set declined = [] %}
 
-    {% if anyActive %}
-    <h2 style="margin-top:0">Currently running</h2>
-    <div class="proof-grid" style="margin-bottom:3rem">
-      {% for c in events.campaigns %}
-        {% if c.active %}
-        <a href="/events/{{ c.slug }}/" class="proof-card">
-          <span style="font-family:var(--font-body);font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-600);display:block;margin-bottom:0.4rem">{{ c.eyebrow }}</span>
-          <strong>{{ c.title }}</strong>
-          <span>{{ c.summary }}</span>
-        </a>
-        {% endif %}
-      {% endfor %}
+    {% for e in events.events %}
+      {% if e.status == "completed" %}
+        {% set completed = (completed.push(e), completed) %}
+      {% elif e.status == "declined" %}
+        {% set declined = (declined.push(e), declined) %}
+      {% elif e.status == "idea" %}
+        {% set ideas = (ideas.push(e), ideas) %}
+      {% elif e.status == "prep" %}
+        {% set inPrep = (inPrep.push(e), inPrep) %}
+      {% else %}
+        {% set upcoming = (upcoming.push(e), upcoming) %}
+      {% endif %}
+    {% endfor %}
+
+    {# At-a-glance summary strip #}
+    <div class="events-summary">
+      <div class="events-summary-cell">
+        <span class="events-summary-num">{{ upcoming.length + inPrep.length }}</span>
+        <span class="events-summary-label">Active or upcoming</span>
+      </div>
+      <div class="events-summary-cell">
+        <span class="events-summary-num">{{ inPrep.length }}</span>
+        <span class="events-summary-label">In prep right now</span>
+      </div>
+      <div class="events-summary-cell">
+        <span class="events-summary-num">{{ ideas.length }}</span>
+        <span class="events-summary-label">In the backlog</span>
+      </div>
+      <div class="events-summary-cell">
+        <span class="events-summary-num">{{ completed.length }}</span>
+        <span class="events-summary-label">Recently completed</span>
+      </div>
     </div>
-    {% else %}
-    <div style="padding:1.5rem 1.75rem;background:var(--bg-alt);border-left:3px solid var(--gold-500);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:3rem">
-      <h2 style="margin:0 0 0.65rem;font-size:1.2rem">No active campaigns right now.</h2>
-      <p style="margin:0;font-size:0.95rem;line-height:1.65">The standard plan is always available at $175 a month, with nothing down at signing and a two-to-three-week timeline to launch. You can <a href="/contact/" class="inline-link">book a discovery call</a> at any time. The campaigns below run on a seasonal calendar, so bookmark this page if one fits your business and check back when the window opens.</p>
-    </div>
-    {% endif %}
 
-    <h2>Seasonal calendar</h2>
-    <p>Six campaigns rotate on a yearly schedule, and each one has a fixed window and a specific target. When a campaign is live, the card above shows it. When the window closes, the kit drops off this index, but it stays available for clients to reference.</p>
-
-    <ul style="display:flex;flex-direction:column;gap:1.25rem;list-style:none;padding:0;margin-top:1.5rem">
-      {% for c in events.campaigns %}
-      <li style="padding:1.25rem 1.5rem;background:var(--surface-raised);border:1px solid var(--line);border-radius:var(--radius)">
-        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0.85rem;margin-bottom:0.65rem">
-          <span style="font-family:var(--font-body);font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-600)">{{ c.eyebrow }}</span>
-          <strong style="font-family:var(--font-display);font-size:1.05rem;color:var(--text)">{{ c.title }}</strong>
-          {% if c.active %}<span style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-600);background:var(--bg-alt);padding:0.15rem 0.55rem;border-radius:999px">Live now</span>{% endif %}
-        </div>
-        <p style="margin:0 0 0.5rem;font-size:0.94rem;line-height:1.6;color:var(--text)">{{ c.summary }}</p>
-        <p style="margin:0;font-size:0.86rem;color:var(--text-muted)"><strong>Target:</strong> {{ c.target }} &middot; <strong>Window:</strong> {{ c.window }}</p>
-      </li>
+    {# In-prep section: things that need attention #}
+    {% if inPrep.length > 0 %}
+    <h2 class="events-h">In prep — needs attention</h2>
+    <ul class="events-list">
+      {% for e in inPrep %}
+        {% include "partials/event-card.njk" %}
       {% endfor %}
     </ul>
+    {% endif %}
 
-  </div>
-</section>
+    {# Upcoming: scheduled, sorted by date #}
+    {% if upcoming.length > 0 %}
+    <h2 class="events-h">Upcoming</h2>
+    <ul class="events-list">
+      {% for e in upcoming | sort(false, false, "date") %}
+        {% include "partials/event-card.njk" %}
+      {% endfor %}
+    </ul>
+    {% endif %}
 
-<section class="cta-section">
-  <div class="cta-inner">
-    <span class="section-label">Not sure which fits?</span>
-    <h2>Most clients sign on the standard plan, not a campaign.</h2>
-    <p>The campaigns are useful when the timing genuinely matters, whether storm season, a fall tune-up cycle, or year-end. Most of the year, however, the standard plan is the right answer. The discovery call runs about twenty minutes and is meant to figure out which side of that you are on.</p>
-    <div class="cta-buttons">
-      <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
-      <a href="/pricing/" class="btn btn-outline btn-lg">See standard pricing</a>
+    {# Completed: most recent first #}
+    {% if completed.length > 0 %}
+    <h2 class="events-h">Recently completed</h2>
+    <ul class="events-list events-list--past">
+      {% for e in completed | reverse %}
+        {% include "partials/event-card.njk" %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {# Declined: kept for the rejection log + re-pitch reminders #}
+    {% if declined.length > 0 %}
+    <h2 class="events-h">Declined / passed</h2>
+    <ul class="events-list events-list--past">
+      {% for e in declined %}
+        {% include "partials/event-card.njk" %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {# Backlog / ideas: things without confirmed dates #}
+    {% if ideas.length > 0 %}
+    <h2 class="events-h">Backlog &amp; ideas</h2>
+    <ul class="events-list events-list--ideas">
+      {% for e in ideas %}
+        {% include "partials/event-card.njk" %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="events-foot">
+      <p><strong>To add an event:</strong> open <code>src/_data/events.js</code> and append an entry to the <code>events</code> array. The shape is documented at the top of the file.</p>
+      <p><strong>To close one out:</strong> set <code>status: "completed"</code> (or <code>"declined"</code>), fill in <code>outcome</code> and <code>leads</code>, and the entry moves into the historical section automatically.</p>
     </div>
   </div>
 </section>

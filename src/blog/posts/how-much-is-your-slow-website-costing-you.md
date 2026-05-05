@@ -1,8 +1,8 @@
 ---
-title: "How Much Is Your Slow Website Costing You? The Hidden Math Behind Page Speed and Lost Leads"
+title: "How Much Is Your Slow Website Costing You?"
 date: 2026-05-05
 label: "Local SEO & Performance"
-description: "A working-back-from-the-numbers guide to figuring out how many leads your slow website loses every month, what each one was worth, and the annual revenue line item nobody quantifies."
+description: "A back-from-the-numbers guide to how many leads your slow website loses each month, what each was worth, and the revenue line nobody quantifies."
 ctaLabel: "See your number, then act"
 ctaHeading: "Plug your numbers into the calculator."
 ctaText: "The lead-leakage calculator does this math live against your traffic and average job value. The free five-point audit measures it on your real URL. $0 either way, no card asked for."

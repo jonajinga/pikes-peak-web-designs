@@ -17,10 +17,15 @@ const ROOT = path.resolve(".");
 const OUT_BASE = path.join(ROOT, "src/assets/img/og");
 const POSTS_DIR = path.join(ROOT, "src/blog/posts");
 
-const VIEWPORT = { width: 1200, height: 630, deviceScaleFactor: 2 };
+// IMPORTANT: deviceScaleFactor must be 1. The og:image:width / og:image:height
+// meta declares 1200x630, and platforms (Facebook, LinkedIn, X) reject or
+// re-scale images that don't match. A factor of 2 produces a 2400x1260 PNG
+// that fails preview-tool validation.
+const VIEWPORT = { width: 1200, height: 630, deviceScaleFactor: 1 };
 
 // --- Brand template (inlined HTML + CSS, no fonts loaded over network) ---
-function template({ eyebrow, title, badge }) {
+function template({ eyebrow, title, badge, cta }) {
+  cta = cta || "Get the free 5-point audit";
   // Escape for safe HTML interpolation.
   const esc = (s) =>
     String(s)
@@ -95,18 +100,25 @@ function template({ eyebrow, title, badge }) {
     letter-spacing: -0.01em;
   }
   .foot {
-    display: flex; align-items: flex-end; justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between;
     gap: 24px;
   }
+  .cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px;
+    background: #DDB13D;
+    color: #0A1F44;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    border-radius: 4px;
+    box-shadow: 0 6px 18px rgba(221, 177, 61, 0.32);
+  }
+  .cta::after { content: '\\2192'; font-size: 19px; }
   .url {
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 18px; color: rgba(232, 236, 244, 0.7);
+    font-size: 16px; color: rgba(232, 236, 244, 0.62);
     letter-spacing: 0.02em;
-  }
-  .tagline {
-    font-style: italic;
-    font-size: 18px;
-    color: rgba(232, 236, 244, 0.68);
   }
 </style>
 </head>
@@ -125,8 +137,8 @@ function template({ eyebrow, title, badge }) {
       <h1>${esc(title)}</h1>
     </div>
     <div class="foot">
+      <span class="cta">${esc(cta)}</span>
       <span class="url">pikespeakwebdesigns.com</span>
-      <span class="tagline">A website you never have to worry about.</span>
     </div>
   </div>
 </body>
@@ -175,6 +187,7 @@ try {
       eyebrow: "Pikes Peak Web Designs",
       title: "A website you never have to worry about.",
       badge: "$175 / month flat",
+      cta: "Start with a free 5-point audit",
     }),
     path.join(OUT_BASE, "default.png")
   );
@@ -186,7 +199,12 @@ try {
     const out = path.join(OUT_BASE, "blog", `${p.slug}.png`);
     await renderTo(
       browser,
-      template({ eyebrow: p.label, title: p.title, badge: "Blog" }),
+      template({
+        eyebrow: p.label,
+        title: p.title,
+        badge: "Blog",
+        cta: "Get the free 5-point audit",
+      }),
       out
     );
     console.log(`generated og/blog/${p.slug}.png`);
@@ -202,6 +220,7 @@ try {
         eyebrow: s.season || s.eyebrow,
         title: `${s.h1} ${s.h1Em}`.replace(/\s+/g, " ").trim(),
         badge: s.occasionShort || "Season",
+        cta: "Sign up for the standard plan",
       }),
       out
     );
