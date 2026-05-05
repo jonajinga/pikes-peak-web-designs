@@ -3885,42 +3885,90 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 
 /* =============================================================
    PRINT / SAVE-AS-PDF STYLESHEET
-   Used when a reader prints a blog post or chooses "Save as PDF"
-   from the share row. Goal: produce a clean, typeset article that
-   reads well on paper and stays useful as a saved reference.
+   Used when a reader prints a blog post or saves it as a PDF from
+   the share row. Goal: produce a clean, typeset article that reads
+   well on paper, stays useful as a saved reference, and identifies
+   the source on every page through subtle Pikes Peak branding.
+   All body text renders in pure black; only the page-margin chrome
+   (running header, page number, footer) drops to a darker grey so
+   it reads as secondary without ever looking washed out.
    ============================================================= */
 @media print {
-  /* Page setup. 0.7in margins, page number in bottom centre, source
-     URL in the bottom right. Headers in the top margin identify
-     the article on every page. */
+  /* ---------------------------------------------------------------
+     Page setup with branded header and footer in the page margins.
+     - Top-left:    "Pikes Peak Web Designs" wordmark in small caps
+     - Top-right:   article title in serif italic
+     - Bottom-left: pikespeakwebdesigns.com
+     - Bottom-mid:  Page X of Y
+     - Bottom-rt:   "Custom-coded. Custom-cared-for." markline
+     The first page suppresses the top header so the article title
+     leads cleanly without a redundant repeat at the top.
+     --------------------------------------------------------------- */
   @page {
-    margin: 0.7in 0.6in 0.85in 0.6in;
-    @bottom-center {
-      content: "Page " counter(page) " of " counter(pages);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 9pt;
-      color: #555555;
-    }
-    @bottom-right {
-      content: "pikespeakwebdesigns.com";
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 9pt;
-      color: #555555;
+    size: letter;
+    margin: 0.85in 0.7in 0.95in 0.7in;
+    @top-left {
+      content: "PIKES PEAK WEB DESIGNS";
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: #1a1a1a;
+      padding-bottom: 6pt;
+      border-bottom: 0.5pt solid #999999;
+      vertical-align: bottom;
     }
     @top-right {
       content: string(posttitle);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 9pt;
       font-style: italic;
-      color: #777777;
+      color: #1a1a1a;
+      padding-bottom: 6pt;
+      border-bottom: 0.5pt solid #999999;
+      vertical-align: bottom;
+      text-align: right;
+    }
+    @bottom-left {
+      content: "pikespeakwebdesigns.com";
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #1a1a1a;
+      padding-top: 6pt;
+      border-top: 0.5pt solid #999999;
+      vertical-align: top;
+    }
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 8.5pt;
+      color: #1a1a1a;
+      padding-top: 6pt;
+      border-top: 0.5pt solid #999999;
+      vertical-align: top;
+    }
+    @bottom-right {
+      content: "Custom-coded. Custom-cared-for.";
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 8.5pt;
+      font-style: italic;
+      color: #1a1a1a;
+      padding-top: 6pt;
+      border-top: 0.5pt solid #999999;
+      vertical-align: top;
+      text-align: right;
     }
   }
   @page :first {
     margin-top: 0.6in;
-    @top-right { content: ""; }
+    @top-left { content: ""; border-bottom: none; }
+    @top-right { content: ""; border-bottom: none; }
   }
 
-  /* Strip every piece of site chrome that doesn't belong on paper. */
+  /* ---------------------------------------------------------------
+     Strip every piece of site chrome that doesn't belong on paper.
+     --------------------------------------------------------------- */
   .header,
   .topbar,
   .footer,
@@ -3947,11 +3995,13 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   video,
   .term::after { display: none !important; }
 
-  /* Document defaults. Serif typography for body, sans for headings,
-     11pt body keeps line lengths readable on US Letter. */
+  /* ---------------------------------------------------------------
+     Document defaults. Serif body at 11pt; everything in pure black
+     so nothing reads as washed-out grey on paper.
+     --------------------------------------------------------------- */
   html, body {
     background: #FFFFFF !important;
-    color: #111111 !important;
+    color: #000000 !important;
   }
   body {
     font-family: Georgia, "Times New Roman", "Liberation Serif", serif;
@@ -3980,19 +4030,33 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     margin: 0 !important;
   }
 
-  /* First-page hero: title prominent, deck slightly muted, byline +
-     date in a tight meta line, source URL underneath so the reader
-     can come back to the live article. */
+  /* ---------------------------------------------------------------
+     First-page hero: agency wordmark above title, then title, deck,
+     byline row, and the source URL underneath. Cover-page treatment
+     for the article so the saved PDF identifies the agency clearly.
+     --------------------------------------------------------------- */
   .post-hero {
-    padding: 0 0 0.9rem !important;
+    padding: 0 0 1rem !important;
     background: none !important;
-    color: #111111 !important;
-    border-bottom: 1pt solid #999999 !important;
+    color: #000000 !important;
+    border-bottom: 1pt solid #000000 !important;
     margin: 0 0 1.5rem !important;
     text-align: left !important;
     string-set: posttitle attr(data-title);
   }
   .post-hero .container { all: revert; max-width: none !important; padding: 0 !important; }
+  .post-hero::before {
+    content: "PIKES PEAK WEB DESIGNS";
+    display: block;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #000000;
+    margin-bottom: 1rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 0.5pt solid #000000;
+  }
   .post-hero .section-label {
     display: block;
     font-family: Helvetica, Arial, sans-serif !important;
@@ -4000,30 +4064,30 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     font-weight: 700 !important;
     letter-spacing: 0.16em !important;
     text-transform: uppercase !important;
-    color: #555555 !important;
-    margin-bottom: 0.4rem !important;
+    color: #000000 !important;
+    margin-bottom: 0.5rem !important;
   }
   .post-hero h1 {
     font-family: Georgia, "Times New Roman", serif !important;
-    font-size: 22pt !important;
-    line-height: 1.18 !important;
+    font-size: 24pt !important;
+    line-height: 1.15 !important;
     font-weight: 700 !important;
-    color: #111111 !important;
-    margin: 0 0 0.55rem !important;
+    color: #000000 !important;
+    margin: 0 0 0.65rem !important;
     text-align: left !important;
     max-width: none !important;
     string-set: posttitle content();
   }
   .post-hero h1 em {
     font-style: italic !important;
-    color: #111111 !important;
+    color: #000000 !important;
   }
   .post-hero .post-deck {
     font-family: Georgia, "Times New Roman", serif !important;
-    font-size: 12pt !important;
+    font-size: 12.5pt !important;
     line-height: 1.45 !important;
-    color: #333333 !important;
-    margin: 0 0 0.85rem !important;
+    color: #000000 !important;
+    margin: 0 0 0.95rem !important;
     text-align: left !important;
     max-width: none !important;
   }
@@ -4033,34 +4097,35 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     gap: 0.4rem 0.85rem !important;
     justify-content: flex-start !important;
     text-align: left !important;
-    color: #555555 !important;
+    color: #000000 !important;
     font-family: Helvetica, Arial, sans-serif !important;
-    font-size: 9pt !important;
+    font-size: 9.5pt !important;
     margin: 0 !important;
   }
-  .post-hero .post-meta-item strong { font-weight: 700; color: #111111 !important; }
+  .post-hero .post-meta-item { color: #000000 !important; }
+  .post-hero .post-meta-item strong { font-weight: 700; color: #000000 !important; }
   .post-hero .post-meta-item:not(:last-child)::after {
     content: "·";
     margin-left: 0.85rem;
-    color: #999999 !important;
+    color: #000000 !important;
   }
 
-  /* Source-URL line printed under the meta row on the first page. The
-     content is generated from the page <link rel="canonical"> via JS
-     setting body[data-print-url], or falls back to the value below. */
+  /* Source-URL line printed under the meta row on the first page. */
   .post-hero::after {
     content: "Source: " attr(data-print-url);
     display: block;
-    margin-top: 0.5rem;
+    margin-top: 0.6rem;
     font-family: Georgia, serif;
     font-size: 9.5pt;
     font-style: italic;
-    color: #666666;
+    color: #000000;
     word-break: break-all;
   }
 
-  /* Body typography. Tight headings, generous paragraph spacing,
-     hanging punctuation on first letters disabled for print. */
+  /* ---------------------------------------------------------------
+     Body typography. Pure black throughout, serif body, sized
+     properly for US Letter, with controlled page-break behaviour.
+     --------------------------------------------------------------- */
   .post-content > p:first-of-type::first-letter {
     float: none !important;
     font-size: inherit !important;
@@ -4071,9 +4136,23 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     font-family: inherit !important;
     font-weight: inherit !important;
   }
+  .post-content,
+  .post-content p,
+  .post-content li,
+  .post-content blockquote,
+  .post-content blockquote p,
+  .post-content h1,
+  .post-content h2,
+  .post-content h3,
+  .post-content h4,
+  .post-content h5,
+  .post-content h6,
+  .post-content span,
+  .post-content em,
+  .post-content strong { color: #000000 !important; }
+
   .post-content h2, .post-content h3, .post-content h4 {
     font-family: Georgia, "Times New Roman", serif !important;
-    color: #111111 !important;
     page-break-after: avoid;
     break-after: avoid;
   }
@@ -4081,7 +4160,7 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     font-size: 15pt !important;
     margin: 1.6em 0 0.55em !important;
     padding-bottom: 0.2em;
-    border-bottom: 0.5pt solid #cccccc;
+    border-bottom: 0.5pt solid #000000;
   }
   .post-content h3 {
     font-size: 12.5pt !important;
@@ -4104,14 +4183,13 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     margin: 0 0 0.35em !important;
     line-height: 1.5;
   }
-  .post-content strong { font-weight: 700; color: #000000 !important; }
+  .post-content strong { font-weight: 700; }
   .post-content em { font-style: italic; }
   .post-content blockquote {
     margin: 1.1em 0 1.1em 0.5em !important;
-    padding: 0.2em 0 0.2em 0.85em !important;
-    border-left: 2pt solid #999999 !important;
+    padding: 0.2em 0 0.2em 0.95em !important;
+    border-left: 2pt solid #000000 !important;
     background: none !important;
-    color: #333333 !important;
     font-style: italic;
     page-break-inside: avoid;
   }
@@ -4119,14 +4197,13 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     font-family: "SFMono-Regular", Menlo, Consolas, monospace !important;
     font-size: 9.5pt !important;
     background: #f4f4f1 !important;
-    color: #111111 !important;
     padding: 0.05em 0.3em !important;
     border-radius: 2pt !important;
   }
   .post-content pre {
-    background: #f8f8f5 !important;
-    border: 0.5pt solid #cccccc !important;
-    padding: 0.6em 0.8em !important;
+    background: #f4f4f1 !important;
+    border: 0.5pt solid #000000 !important;
+    padding: 0.7em 0.85em !important;
     font-size: 9pt !important;
     line-height: 1.45;
     page-break-inside: avoid;
@@ -4134,13 +4211,13 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   }
   .post-content hr {
     border: none;
-    border-top: 0.5pt solid #cccccc;
+    border-top: 0.5pt solid #000000;
     margin: 1.5em 0;
   }
   .post-content figure { page-break-inside: avoid; margin: 1em 0; }
   .post-content figcaption {
-    font-size: 9pt;
-    color: #555555;
+    font-size: 9.5pt;
+    color: #000000;
     font-style: italic;
     margin-top: 0.35em;
     text-align: center;
@@ -4153,11 +4230,12 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     page-break-inside: avoid;
   }
   .post-content th, .post-content td {
-    border: 0.5pt solid #999999;
-    padding: 0.35em 0.6em;
+    border: 0.5pt solid #000000;
+    padding: 0.4em 0.65em;
     text-align: left;
+    color: #000000 !important;
   }
-  .post-content th { background: #f0eee8 !important; font-weight: 700; }
+  .post-content th { background: #efece4 !important; font-weight: 700; }
 
   /* In-body images: cap to printable width, keep them with their captions */
   .post-content img {
@@ -4169,12 +4247,15 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     margin: 0.8em auto;
   }
 
-  /* Links: black underlined, with the destination URL printed inline
-     in a smaller grey serif so the reader keeps the reference even
-     after the link is no longer clickable. */
+  /* ---------------------------------------------------------------
+     Links: black underlined, with the destination URL printed
+     inline in a smaller italic so the reader keeps the reference
+     after the link is no longer clickable. URL stays black-italic
+     instead of grey so the reference is legible.
+     --------------------------------------------------------------- */
   .post-content a,
   .post-content a:visited {
-    color: #111111 !important;
+    color: #000000 !important;
     text-decoration: underline !important;
     border-bottom: none !important;
     font-weight: inherit !important;
@@ -4183,9 +4264,9 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   .post-content a[href^="https"]::after {
     content: " (" attr(href) ")";
     font-family: Georgia, serif;
-    font-size: 0.78em;
+    font-size: 0.82em;
     font-style: italic;
-    color: #666666;
+    color: #000000;
     word-break: break-all;
   }
   /* Don't expand internal anchor or fragment links */
@@ -4198,8 +4279,9 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
      knows the term is a defined one, but drop the data-term tooltip
      content from print. */
   .term {
-    border-bottom: 0.5pt dotted #888888 !important;
+    border-bottom: 0.5pt dotted #000000 !important;
     background: none !important;
+    color: #000000 !important;
   }
 
   /* Page-break controls */
@@ -4207,19 +4289,24 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   p, li, blockquote, figure, table { break-inside: avoid-page; page-break-inside: avoid; }
   a { word-wrap: break-word; }
 
-  /* Print-only article footer: byline + agency + URL + date saved.
-     Renders below the last paragraph as a tidy reference card. */
+  /* ---------------------------------------------------------------
+     Print-only article footer: a tidy reference block under the
+     last paragraph identifying the agency and the article URL.
+     Pure black, kept on the same page as the closing paragraph
+     where possible.
+     --------------------------------------------------------------- */
   .post-content::after {
-    content: "Pikes Peak Web Designs · pikespeakwebdesigns.com · Custom-coded websites for small service businesses";
+    content: "Pikes Peak Web Designs  ·  pikespeakwebdesigns.com  ·  Custom-coded websites for small service businesses across the U.S. and Canada.";
     display: block;
-    margin-top: 2em;
-    padding-top: 0.85em;
-    border-top: 0.5pt solid #cccccc;
+    margin-top: 2.25em;
+    padding-top: 0.95em;
+    border-top: 0.5pt solid #000000;
     font-family: Georgia, serif;
-    font-size: 9pt;
+    font-size: 9.5pt;
     font-style: italic;
-    color: #666666;
+    color: #000000;
     text-align: center;
+    page-break-inside: avoid;
   }
 }
 
