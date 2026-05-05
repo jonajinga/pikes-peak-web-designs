@@ -11,7 +11,7 @@ description: "Welcome. Pay your first month with Stripe and the build kicks off 
     </nav>
     <span class="section-label">Welcome</span>
     <h1>Sign up for the <em>standard plan.</em></h1>
-    <p>The page below is the actual signup. The first monthly payment kicks off the build the same week, the rate stays at the published price for the entire engagement, and the agreement you signed by email is the agreement I run the work against. If you have not yet had a discovery call, the <a href="/contact/" style="color:var(--gold-400);font-weight:500">contact page</a> is the right place to start instead.</p>
+    <p>The page below is the actual signup. Pay the first monthly payment with Stripe, fill out the self-serve <a href="/onboarding/" style="color:var(--gold-400);font-weight:500">onboarding form</a> when you are ready, and the build begins as soon as the agreement is signed. The rate stays at the published price for the entire engagement. If you would prefer a discovery call before signing up, the <a href="/contact/" style="color:var(--gold-400);font-weight:500">contact page</a> is the right place to start instead.</p>
   </div>
 </section>
 
@@ -40,7 +40,7 @@ description: "Welcome. Pay your first month with Stripe and the build kicks off 
         <p class="subscribe-foot">Stripe handles the card or ACH transaction directly. No card information is stored on Pikes Peak Web Designs infrastructure, only a confirmation that the charge cleared.</p>
       </div>
 
-      <aside class="subscribe-side">
+      <aside class="subscribe-side" id="hourly">
         <div class="subscribe-side-card">
           <span class="subscribe-side-eyebrow">Need extra hours of work?</span>
           <h2 class="subscribe-side-title">Outside-the-plan work, billed at $100 an hour.</h2>
@@ -52,9 +52,9 @@ description: "Welcome. Pay your first month with Stripe and the build kicks off 
             <li>A migration from an old platform</li>
             <li>A bespoke interactive page beyond the standard layouts</li>
           </ul>
-          <p>If you already have a written estimate from me and want to settle a block of hours, the link below opens a Stripe checkout for the additional hourly work.</p>
-          <a href="{{ site.hourlyUrl or 'https://buy.stripe.com/' }}" rel="noopener" target="_blank" class="btn btn-outline-dark btn-full">Pay for additional hours &rarr;</a>
-          <p class="subscribe-side-foot">If you do not have an estimate yet, send a note via the <a href="/ask/" class="inline-link">short ask form</a> first. I will scope the work and quote it before any payment.</p>
+          <p>Describe the work using the request form and I will send back a written estimate within one business day, with the hours and the deliverable named explicitly.</p>
+          <a href="/hourly-request/" class="btn btn-primary btn-full">Request a written estimate &rarr;</a>
+          <p class="subscribe-side-foot">Already have an estimate from me? The <a href="{{ site.hourlyUrl or 'https://buy.stripe.com/' }}" rel="noopener" target="_blank" class="inline-link">Stripe hourly checkout</a> is the right path to settle the block of hours.</p>
         </div>
       </aside>
     </div>
@@ -65,7 +65,7 @@ description: "Welcome. Pay your first month with Stripe and the build kicks off 
   <div class="container" style="max-width:760px">
     <div class="text-center">
       <span class="section-label">What happens next</span>
-      <h2 class="section-title" style="margin-inline:auto">Three steps from payment to live site.</h2>
+      <h2 class="section-title" style="margin-inline:auto">Four steps from payment to live site.</h2>
     </div>
     <ol class="next-steps" style="margin-top:2rem">
       <li class="next-step">
@@ -78,12 +78,19 @@ description: "Welcome. Pay your first month with Stripe and the build kicks off 
       <li class="next-step">
         <span class="next-step-num">2</span>
         <div>
-          <h3>Onboarding.</h3>
-          <p>I send you the <a href="/onboarding/" class="inline-link">onboarding form</a>, which gathers the few inputs I need from your side: your logo (if you have one), photos of your work, your services and rough pricing, your domain, and any specific deadlines. The form takes most clients fifteen to twenty minutes to fill out in one sitting.</p>
+          <h3>Self-serve onboarding.</h3>
+          <p>The <a href="/onboarding/" class="inline-link">onboarding form</a> is open and self-serve. Fill it out at your own pace, in one sitting or across a few. It gathers the few inputs I need from your side: your logo (if you have one), photos of your work, your services and rough pricing, your domain, and any specific deadlines. Most clients spend fifteen to twenty minutes on it.</p>
         </div>
       </li>
       <li class="next-step">
         <span class="next-step-num">3</span>
+        <div>
+          <h3>Agreement signed before I start building.</h3>
+          <p>I send the <a href="/agreement/" class="inline-link">service agreement</a> as a Google Docs e-signature request once the onboarding form arrives. The agreement is the same document published on this site; the signature is the green light for me to begin the build. Sign it on a phone in two minutes.</p>
+        </div>
+      </li>
+      <li class="next-step">
+        <span class="next-step-num">4</span>
         <div>
           <h3>Build and launch.</h3>
           <p>The build runs over the next two to three weeks, with a live preview link inside the first week so you can give feedback while the work is still moving. Once you have signed off on the design, I handle the DNS migration, sitemap submission, and the launch-day owner's guide.</p>
@@ -106,7 +113,7 @@ description: "Welcome. Pay your first month with Stripe and the build kicks off 
       </div>
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false">Do I need to have signed the agreement before paying? <span class="faq-icon" aria-hidden="true"></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes, the signed <a href="/agreement/" class="inline-link">service agreement</a> needs to be in place before the first payment runs. The agreement arrives by email as a Google Docs e-signature request after the discovery call, and once both signatures are in I send the link to this page so the first payment kicks the build off.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">No. Pay first, sign the agreement before I begin the build. The agreement arrives by email as a Google Docs e-signature request once you have submitted the onboarding form, and the signed agreement is what greenlights me to start the work. The full text of the <a href="/agreement/" class="inline-link">service agreement</a> is also published on this site, so there are no surprises in it.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false">Can I switch from monthly to a one-time buyout later? <span class="faq-icon" aria-hidden="true"></span></button>
@@ -117,8 +124,8 @@ description: "Welcome. Pay your first month with Stripe and the build kicks off 
         <div class="faq-answer"><div class="faq-answer-inner">The refund posture is in the <a href="/agreement/" class="inline-link">service agreement</a> in plain language. The short version: if I have not started building yet and you change your mind within the first week, the first payment is refundable in full. After the build kicks off, refunds are handled on a case-by-case basis, and I would rather find a reasonable way forward than collect against a relationship that is not working.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">Is the hourly link gated? <span class="faq-icon" aria-hidden="true"></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Soft-gated, yes. The hourly link is meant for clients who already have a written estimate from me and want to settle a block of hours, and it is not the right starting point for a new piece of work. If you do not have an estimate yet, send the request through the <a href="/ask/" class="inline-link">short ask form</a> first and I will scope the work and quote it before any payment changes hands.</div></div>
+        <button class="faq-btn" aria-expanded="false">Is the hourly Stripe link gated? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Soft-gated, yes. The Stripe hourly checkout is the path for clients who already have a written estimate from me. If you do not have an estimate yet, the <a href="/hourly-request/" class="inline-link">hourly-work request form</a> is the right starting point. Describe the work, and a written estimate lands in your inbox within one business day before any payment changes hands.</div></div>
       </div>
     </div>
   </div>

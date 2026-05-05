@@ -6,23 +6,22 @@ pagination:
   addAllPagesToCollections: true
 permalink: "/seasons/{{ page.slug }}/"
 layout: layouts/base.njk
+eleventyExcludeFromCollections: true
 eleventyComputed:
   title: "{{ page.metaTitle }}"
   description: "{{ page.metaDescription }}"
   ogImage: "{{ page.shareCard }}"
+  noindex: false
 ---
 
 <section class="page-hero page-hero--peak season-hero">
   <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="sep">/</span><a href="/seasons/">Seasons</a><span class="sep">/</span><span>{{ page.occasionShort }}</span>
-    </nav>
     <span class="section-label">{{ page.eyebrow }}</span>
     <h1>{{ page.h1 }} <em>{{ page.h1Em }}</em></h1>
     <p class="season-hero-lead">{{ page.heroLead }}</p>
     <div class="cta-buttons" style="justify-content:center;margin-top:2rem">
-      <a href="{{ page.pitchCtaUrl }}" class="btn btn-primary btn-lg">{{ page.pitchCta }}</a>
-      <a href="/pricing/" class="btn btn-outline btn-lg">See the pricing</a>
+      <a href="/subscribe/" class="btn btn-primary btn-lg">Sign up for the standard plan</a>
+      <a href="/contact/" class="btn btn-outline btn-lg">Book a discovery call first</a>
     </div>
     <p class="season-hero-meta">{{ page.season }}</p>
   </div>
@@ -48,7 +47,11 @@ eleventyComputed:
       <span class="section-label">The pitch in one paragraph</span>
       <h2 class="season-pitch-title">{{ page.pitchTitle }}</h2>
       <p class="season-pitch-body">{{ page.pitchBody }}</p>
-      <a href="{{ page.pitchCtaUrl }}" class="btn btn-primary btn-lg">{{ page.pitchCta }} &rarr;</a>
+      <div class="cta-buttons" style="justify-content:flex-start;margin-top:0.5rem">
+        <a href="/subscribe/" class="btn btn-primary btn-lg">Sign up for the standard plan &rarr;</a>
+        <a href="/contact/" class="btn btn-outline-dark">Book a discovery call</a>
+      </div>
+      <p class="season-pitch-foot">$175/month flat, no design deposit, 12-month minimum. Stripe handles the first payment, the build kicks off the same week.</p>
     </div>
   </div>
 </section>
@@ -70,34 +73,14 @@ eleventyComputed:
   </div>
 </section>
 
-<section class="section section--mist">
-  <div class="container" style="max-width:760px">
-    <div class="text-center">
-      <span class="section-label">Other occasions</span>
-      <h2 class="section-title" style="margin-inline:auto">Year-round shareable pages.</h2>
-      <p class="section-subtitle">Each one is evergreen. Same URL, every year.</p>
-    </div>
-    <ul class="seasons-cross">
-      {% for s in seasons %}
-        {% if s.slug != page.slug %}
-          <li><a href="/seasons/{{ s.slug }}/" class="seasons-cross-link">
-            <span class="seasons-cross-tag">{{ s.season }}</span>
-            <span class="seasons-cross-title">{{ s.occasionShort }}</span>
-          </a></li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </div>
-</section>
-
 <section class="cta-section">
   <div class="cta-inner">
     <span class="section-label">Ready when you are</span>
     <h2>One flat rate. Two to three weeks to launch.</h2>
-    <p>Whatever the occasion, the build is the same: custom-coded, fast, accessible, and yours for $175 a month flat.</p>
+    <p>Custom-coded, fast, accessible, and yours for $175 a month flat. Pay the first month with Stripe and the build kicks off the same week.</p>
     <div class="cta-buttons">
-      <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
-      <a href="/pricing/" class="btn btn-outline btn-lg">Read the pricing in detail</a>
+      <a href="/subscribe/" class="btn btn-primary btn-lg">Sign up &rarr;</a>
+      <a href="/contact/" class="btn btn-outline btn-lg">Book a discovery call</a>
     </div>
   </div>
 </section>

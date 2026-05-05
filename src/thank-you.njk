@@ -130,12 +130,13 @@ noindex: true
     },
     'subscribe': {
       h: 'Welcome aboard. Payment received.',
-      s: "Stripe confirmed the charge and the engagement is officially live. The build kicks off the same week, and you will hear from me on next steps shortly.",
+      s: "Stripe confirmed the charge. The onboarding form is open and self-serve; the build begins as soon as the agreement is signed.",
       nt: 'What happens next.',
-      ns: "Three short steps from here to launch.",
+      ns: "Four short steps from here to launch.",
       steps: [
-        ['Kickoff email today.', 'You will receive a short note from me with the onboarding form attached, the kickoff timeline, and the answers to anything that came up during the discovery call.'],
-        ['Onboarding form.', 'Fifteen to twenty minutes in one sitting, gathering the few things I need from your side: your logo if you have one, photos of your work, your services and rough pricing, your domain, and any specific deadlines.'],
+        ['Kickoff email today.', 'You will receive a short note from me with the link to the onboarding form, the timeline, and a heads-up that the agreement will arrive once the onboarding is in.'],
+        ['Self-serve onboarding.', 'Fill out the onboarding form on your own time. Most clients finish it in fifteen to twenty minutes. It gathers your logo if you have one, photos of your work, your services and rough pricing, your domain, and any specific deadlines.'],
+        ['Sign the agreement before I begin.', 'Once the onboarding is in, I send the service agreement as a Google Docs e-signature. Sign it on your phone in two minutes; that signature is the green light for me to start the build.'],
         ['Build and launch in two to three weeks.', 'I send a live preview link inside the first week so you can give feedback while the work is still moving, then handle DNS, sitemap submission, and the launch-day owner\'s guide once you are happy.']
       ]
     },
@@ -148,6 +149,17 @@ noindex: true
         ['Confirmation email today.', 'You will receive a short note confirming the hours are in, the scope you signed off on, and the start date.'],
         ['I begin the work.', 'I track time against the estimate as I go, and you receive a short progress note partway through if the work spans more than a few hours.'],
         ['I send the deliverable and reconcile.', 'When the work is complete, you receive the deliverable along with the actual hours used. If the work came in under the estimate, the difference is credited or refunded; if more was needed, I quote it before continuing.']
+      ]
+    },
+    'hourly-request': {
+      h: 'Hourly request received. Thanks.',
+      s: "I have the details of the work you described. A written estimate lands in your inbox within one business day, with the hours, the deliverable, and the total named explicitly.",
+      nt: 'What happens next.',
+      ns: "Three short steps.",
+      steps: [
+        ['I read your request.', 'I look at the work you described, the existing site (if you sent one), and any examples or constraints you mentioned. If anything is ambiguous, I send a quick clarifying question first.'],
+        ['I send a written estimate within one business day.', 'The estimate names the hours, the deliverable in plain language, the timeline, and the total at $100 an hour. The estimate is the contract for the work, no surprise overages.'],
+        ['You decide.', 'If the estimate looks right, the Stripe hourly checkout on the signup page settles the block of hours. If it does not, no harm done, no payment changes hands, and we can talk through alternatives.']
       ]
     },
     'audit': {

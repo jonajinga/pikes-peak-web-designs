@@ -1,0 +1,183 @@
+---
+layout: layouts/base.njk
+title: "Request Hourly Work | Pikes Peak Web Designs"
+description: "Request a written estimate for any work that sits outside the standard $175/month plan, billed at a flat $100 an hour. Custom calculators, third-party integrations, migrations, and bespoke pages."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Request hourly work</span>
+    </nav>
+    <span class="section-label">Outside-the-plan work</span>
+    <h1>Request a written estimate for <em>hourly work.</em></h1>
+    <p>Anything that sits outside the standard $175 a month plan, custom calculators built from scratch, third-party booking integrations, email-marketing templates, migrations from an old platform, bespoke interactive pages, is billed at a flat $100 an hour with a written estimate provided before any work begins. Use this form to describe what you need; you will have an estimate in writing within one business day.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="section-label">How this works</span>
+        <h2 class="section-title" style="max-width:24ch">Estimate first. Payment never before the work is scoped.</h2>
+        <p>The estimate is the actual contract for the work. It includes the hour count, the deliverable in plain English, the timeline, and the total. Once you agree, payment is settled through the Stripe hourly checkout (or by ACH if you prefer), and the work begins.</p>
+
+        <ul class="contact-info-list" style="margin-top:1.5rem">
+          <li class="contact-info-item">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <div>
+              <h3>Examples of outside-the-plan work</h3>
+              <p style="font-size:0.92rem;line-height:1.6">A custom-built calculator. A third-party booking integration (Calendly, Acuity, Square Appointments). An email-marketing template with brand parity. A migration from WordPress, Wix, Squarespace, or GoDaddy. A bespoke interactive page beyond the standard layouts. A specialty integration with the trade-specific software your business already uses.</p>
+            </div>
+          </li>
+          <li class="contact-info-item">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <div>
+              <h3>Turnaround on the estimate</h3>
+              <p style="font-size:0.92rem;line-height:1.6">Estimates land back in your inbox in writing, usually within one business day. Most jobs are quoted between 2 and 20 hours; the estimate names the exact hours and the deliverable.</p>
+            </div>
+          </li>
+          <li class="contact-info-item">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            <div>
+              <h3>Already have an estimate?</h3>
+              <p style="font-size:0.92rem;line-height:1.6">If I already sent you a written estimate and you are ready to pay, the <a href="/subscribe/#hourly" class="inline-link">Stripe hourly checkout</a> is on the signup page. This form is for new requests that have not been scoped yet.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div style="margin-top:2.5rem;padding:1.5rem 1.75rem;background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--radius)">
+          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:600;margin-bottom:0.85rem">Direct lines</h3>
+          <p style="font-size:0.92rem;color:var(--text);line-height:1.6;margin-bottom:1rem">For quick scoping conversations, every line below comes to the same person.</p>
+          <ul style="display:flex;flex-direction:column;gap:0.65rem;font-size:0.92rem">
+            <li><strong>Call or text</strong> &middot; <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a></li>
+            <li><strong>Email</strong> &middot; <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <h2 class="form-heading">Describe what you need</h2>
+        <p class="form-intro">A few fields, and an estimate lands back within one business day.</p>
+
+        <form id="hourlyForm" data-web3forms data-redirect="/thank-you/?type=hourly-request" action="https://api.web3forms.com/submit" method="POST" class="form">
+          <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
+          <input type="hidden" name="subject" value="New hourly-work request, Pikes Peak Web Designs">
+          <input type="hidden" name="from_name" value="Pikes Peak Web Designs">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-group">
+            <label for="hourlyName">Your name <span class="req">*</span></label>
+            <input type="text" id="hourlyName" name="name" placeholder="Jane Smith" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="hourlyEmail">Email <span class="req">*</span></label>
+            <input type="email" id="hourlyEmail" name="email" placeholder="jane@example.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="hourlyBusiness">Business name</label>
+            <input type="text" id="hourlyBusiness" name="business" placeholder="Smith Roofing LLC" autocomplete="organization">
+          </div>
+
+          <div class="form-group">
+            <label for="hourlySite">Site URL</label>
+            <input type="url" id="hourlySite" name="site_url" placeholder="https://yoursite.com" inputmode="url" autocomplete="url">
+          </div>
+
+          <div class="form-group">
+            <label for="hourlyClient">Are you an existing client? <span class="req">*</span></label>
+            <select id="hourlyClient" name="existing_client" required>
+              <option value="">Choose one&hellip;</option>
+              <option value="yes">Yes, on the standard $175/month plan</option>
+              <option value="no">Not yet, this would be a one-off engagement</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hourlyType">What kind of work? <span class="req">*</span></label>
+            <select id="hourlyType" name="work_type" required>
+              <option value="">Choose one&hellip;</option>
+              <option value="custom-calculator">Custom calculator built from scratch</option>
+              <option value="booking-integration">Third-party booking integration (Calendly, Acuity, etc.)</option>
+              <option value="email-template">Email-marketing template</option>
+              <option value="migration">Migration from another platform (WordPress, Wix, etc.)</option>
+              <option value="bespoke-page">Bespoke interactive or specialty page</option>
+              <option value="trade-software">Integration with trade-specific software</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hourlyDescription">Describe what you need <span class="req">*</span></label>
+            <textarea id="hourlyDescription" name="description" placeholder="Plain language is fine. What it does, who it is for, any examples on other sites you have in mind, anything technical I should know up front." required rows="6"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="hourlyTimeline">Approximate timeline</label>
+            <select id="hourlyTimeline" name="timeline">
+              <option value="">Choose one&hellip;</option>
+              <option value="asap">As soon as possible</option>
+              <option value="2-weeks">Within two weeks</option>
+              <option value="this-month">This month</option>
+              <option value="next-month">Next month</option>
+              <option value="flexible">Flexible</option>
+            </select>
+          </div>
+
+          <div id="form-error" role="alert" class="form-error">
+            Something went wrong. Please try again or email me directly at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full btn-lg">Request a written estimate</button>
+          <p class="form-hint">No payment in advance. The estimate comes first, in writing, with the hours and deliverable named explicitly.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container" style="max-width:760px">
+    <div class="text-center">
+      <span class="section-label">Common questions</span>
+      <h2 class="section-title" style="margin-inline:auto">About hourly work.</h2>
+    </div>
+    <div class="faq-list" style="margin-top:2rem">
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">What does $100 an hour actually buy? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The same engineering posture that runs every site on the standard plan. Custom code, accessibility floor, performance budget, and a written deliverable. The hourly rate is flat, the same for the second hour as the twentieth, and the estimate names the total before any work starts.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Why is this hourly instead of just bundled into the plan? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The standard $175/month plan is sized for a typical service-business website: ten content pages, blog, hosting, ongoing updates. Some work, custom calculators, third-party integrations, migrations, sits outside that envelope. Pricing it hourly is honest: small jobs stay small, big jobs are scoped on real hours rather than a guess. The plan stays at $175 either way.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Can I lock a block of hours in advance? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. Once an estimate is in writing, the <a href="/subscribe/#hourly" class="inline-link">Stripe hourly checkout</a> on the signup page handles a one-off block of hours. The block matches the estimate, no more, no less, and any unused balance is refundable.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">What if the work runs over the estimate? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">If the actual work is going to exceed the estimate, you hear about it before the overage hits, with a written reason and a revised number. You can approve, reduce scope, or stop. No surprise invoices.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">What if I need a discovery call instead of a form? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">For a brand-new website, the <a href="/contact/" class="inline-link">discovery call</a> is the right starting point. For a one-off addition to an existing site, the form on this page is faster, and a short scoping call can follow if the work warrants one.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Already on the plan?</span>
+    <h2>Most content updates are already included.</h2>
+    <p>The standard $175 a month plan includes unlimited content updates after launch, new pages within the standard scope, and ongoing maintenance. Hourly work is for things that genuinely sit outside that envelope.</p>
+    <div class="cta-buttons">
+      <a href="/whats-included/" class="btn btn-outline btn-lg">See what's included in the plan</a>
+      <a href="/subscribe/" class="btn btn-primary btn-lg">Sign up for the standard plan</a>
+    </div>
+  </div>
+</section>
