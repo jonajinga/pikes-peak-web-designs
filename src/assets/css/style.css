@@ -673,7 +673,9 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 
 .topbar {
   background: var(--navy-950);
-  color: rgba(255, 255, 255, 0.85);
+  /* WCAG 2.2 AA: 4.5:1 floor against navy-950 (#05102A).
+     #DDE3EE on #05102A = ~12.6:1, comfortably above the floor. */
+  color: #DDE3EE;
   font-size: 0.82rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -696,7 +698,8 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   font-family: var(--font-display);
   font-style: italic;
   letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.6);
+  /* #B8C0CF on navy-950 = ~7.6:1, passes WCAG AA easily. */
+  color: #B8C0CF;
   white-space: nowrap;
   flex: 0 0 auto;
   margin: 0 auto;
@@ -715,7 +718,9 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   transition: color var(--dur);
 }
 .topbar-right a:hover { color: var(--gold-400); }
-.topbar-sep { color: rgba(255, 255, 255, 0.32); }
+/* Decorative dot separators: marked aria-hidden in markup so screen readers
+   skip them, and visual contrast bumped above WCAG floor for sighted users. */
+.topbar-sep { color: #8993A8; }
 .topbar-portal {
   color: var(--gold-300) !important;
   font-weight: 600;
@@ -744,7 +749,7 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     white-space: nowrap;
     justify-self: stretch;
   }
-  .topbar-right a:not(.topbar-portal) { color: rgba(255, 255, 255, 0.88); }
+  .topbar-right a:not(.topbar-portal) { color: #DDE3EE; }
 }
 @media (max-width: 640px) {
   .topbar-inner { gap: 0.5rem; padding: 0.45rem 1rem; font-size: 0.78rem; }
