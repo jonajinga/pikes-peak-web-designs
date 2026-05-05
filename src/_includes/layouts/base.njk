@@ -32,16 +32,39 @@
   <noscript><link rel="stylesheet" href="/pagefind/pagefind-ui.css" onerror="this.remove()"></noscript>
   <link rel="preload" href="/pagefind/pagefind-ui.js" as="script">
 
+  {# OG image resolution: per-page ogImage > site default. Always served as PNG
+     at 1200x630, the canonical Open Graph aspect ratio across Facebook,
+     LinkedIn, X, iMessage, Slack, and Discord. #}
+  {% set _ogImage = ogImage if ogImage else site.ogImage %}
+  {% set _ogImageAlt = ogImageAlt if ogImageAlt else (description if description else site.description) %}
   <meta property="og:title" content="{{ title if title else site.name }}">
   <meta property="og:description" content="{{ description if description else site.description }}">
   <meta property="og:type" content="{{ ogType if ogType else 'website' }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:image" content="{{ site.url }}{{ ogImage if ogImage else site.ogImage }}">
+  <meta property="og:image" content="{{ site.url }}{{ _ogImage }}">
+  <meta property="og:image:secure_url" content="{{ site.url }}{{ _ogImage }}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ _ogImageAlt }}">
   <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:locale" content="{{ site.locale or 'en_US' }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title if title else site.name }}">
   <meta name="twitter:description" content="{{ description if description else site.description }}">
-  <meta name="twitter:image" content="{{ site.url }}{{ ogImage if ogImage else site.ogImage }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ _ogImage }}">
+  <meta name="twitter:image:alt" content="{{ _ogImageAlt }}">
+  {% if site.twitterHandle %}
+  <meta name="twitter:site" content="{{ site.twitterHandle }}">
+  <meta name="twitter:creator" content="{{ site.twitterHandle }}">
+  {% endif %}
+  {% if ogType == 'article' %}
+    {% if date %}<meta property="article:published_time" content="{{ date | dateISO }}">{% endif %}
+    {% if updated %}<meta property="article:modified_time" content="{{ updated | dateISO }}">{% elif date %}<meta property="article:modified_time" content="{{ date | dateISO }}">{% endif %}
+    <meta property="article:author" content="{{ site.url }}/about/">
+    {% if label %}<meta property="article:section" content="{{ label }}">{% endif %}
+    {% if tags %}{% for tag in tags %}{% if tag != 'post' %}<meta property="article:tag" content="{{ tag }}">{% endif %}{% endfor %}{% endif %}
+  {% endif %}
   {% if extraHead %}{{ extraHead | safe }}{% endif %}
 
   {# Analytics, only injected when real IDs are set in site data. Placeholder

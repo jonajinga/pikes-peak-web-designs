@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "og": "node scripts/generate-og-images.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

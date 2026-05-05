@@ -3945,37 +3945,38 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   padding: 1.5rem 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.5rem;
 }
 .post-share-label {
-  display: block;
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 0.85rem;
+  margin: 0;
+  flex-shrink: 0;
 }
 .post-share-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  align-items: center;
 }
 .post-share-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem;
-  min-height: 40px;
-  background: var(--navy-900);
-  border: 1px solid var(--navy-900);
-  border-radius: var(--radius);
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: #FFFFFF;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text-muted);
   text-decoration: none !important;
   cursor: pointer;
   transition: background var(--dur), border-color var(--dur), color var(--dur), transform var(--dur);
@@ -3995,6 +3996,15 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   height: 16px;
   fill: currentColor;
   flex-shrink: 0;
+}
+/* Stroke-based icons (print, copy-link, copied-check) need stroke colour
+   to follow currentColor too, since their paths are not filled. */
+.post-share-btn #postShareCopy svg,
+.post-share-btn .post-share-icon-link,
+.post-share-btn .post-share-icon-check { fill: none; stroke: currentColor; }
+@media (max-width: 480px) {
+  .post-share { gap: 0.65rem 0.85rem; }
+  .post-share-btn { width: 38px; height: 38px; }
 }
 
 /* Copy-link button shares the standard share-button style. The icon

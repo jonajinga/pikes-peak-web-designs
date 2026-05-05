@@ -23,7 +23,11 @@ export default {
     ],
   },
   url: "https://pikespeakwebdesigns.com",
-  description: "Custom-coded websites for small service businesses across the U.S. and Canada. We handle the design, the hosting, the updates, and everything else. $0 down, $175/month flat.",
+  description: "Custom-coded websites for small service businesses across the U.S. and Canada. I handle the design, the hosting, the updates, and everything else. $0 down, $175 a month flat.",
+  // Optional social handles. Render twitter:site only if the handle is set;
+  // empty strings cause platforms to ignore (or warn about) the meta tag.
+  twitterHandle: "",
+  locale: "en_US",
   phone: "9283159094",
   phoneDisplay: "(928) 315-9094",
   email: "hello@pikespeakwebdesigns.com",
@@ -31,7 +35,7 @@ export default {
   meetingTool: "Google Meet",
   hours: "Mon–Fri, 8am–6pm MT · Weekend response within one business day",
   responseTime: "one business day",
-  ogImage: "/assets/img/og-default.jpg",
+  ogImage: "/assets/img/og/default.png",
   address: {
     city: "Colorado Springs",
     state: "CO",

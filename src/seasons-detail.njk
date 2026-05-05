@@ -10,7 +10,8 @@ eleventyExcludeFromCollections: true
 eleventyComputed:
   title: "{{ page.metaTitle }}"
   description: "{{ page.metaDescription }}"
-  ogImage: "{{ page.shareCard }}"
+  ogImage: "/assets/img/og/seasons/{{ page.slug }}.png"
+  ogImageAlt: "{{ page.h1 }} {{ page.h1Em }} — Pikes Peak Web Designs"
   noindex: false
 ---
 
