@@ -3768,28 +3768,76 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   flex-shrink: 0;
 }
 
-/* Copy-link button: solid gold pill that flips to a "copied" state */
-.post-share-btn--copy {
-  background: var(--gold-400);
-  color: var(--navy-900);
-  border-color: var(--gold-400);
-  font-weight: 600;
-  position: relative;
-}
-.post-share-btn--copy:hover {
-  background: var(--gold-300);
-  border-color: var(--gold-300);
-  color: var(--navy-900);
-  transform: translateY(-1px);
-}
-.post-share-btn--copy .post-share-icon-check { display: none; }
-.post-share-btn--copy.is-copied {
+/* Copy-link button shares the standard share-button style. The icon
+   simply swaps from link-chain to checkmark when the URL is copied. */
+.post-share-btn .post-share-icon-check { display: none; }
+.post-share-btn.is-copied {
   background: var(--success, #1f8a4c);
   border-color: var(--success, #1f8a4c);
   color: #FFFFFF;
 }
-.post-share-btn--copy.is-copied .post-share-icon-link { display: none; }
-.post-share-btn--copy.is-copied .post-share-icon-check { display: inline-block; }
+.post-share-btn.is-copied .post-share-icon-link { display: none; }
+.post-share-btn.is-copied .post-share-icon-check { display: inline-block; }
+
+/* Print / save-as-PDF styles for blog posts. Strips the chrome
+   (header, footer, share row, sidebar TOC, related-articles strip,
+   CTA boxes) so the printed page is just the article body with the
+   title, byline, and content. */
+@media print {
+  .header,
+  .topbar,
+  .footer,
+  .footer-trust,
+  .back-to-top,
+  .post-progress,
+  .post-toc,
+  .post-share,
+  .post-pager,
+  .post-back-row,
+  .post-cta-box,
+  .post-author,
+  .section--cream,
+  .cta-section,
+  .breadcrumb { display: none !important; }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  .post-hero {
+    padding: 0 0 1rem !important;
+    background: none !important;
+    color: #000000 !important;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 1.5rem;
+  }
+  .post-hero h1,
+  .post-hero .post-deck,
+  .post-hero .post-meta-row,
+  .post-hero .section-label { color: #000000 !important; }
+  .post-content,
+  .post-layout {
+    max-width: none !important;
+    padding: 0 !important;
+    grid-template-columns: 1fr !important;
+  }
+  .post-content a {
+    color: #000000 !important;
+    text-decoration: underline;
+  }
+  .post-content a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #666666;
+    word-break: break-all;
+  }
+  .post-content img { max-width: 100% !important; }
+  .post-content > p:first-of-type::first-letter { float: none; font-size: inherit; padding: 0; margin: 0; color: inherit; }
+  h1, h2, h3 { page-break-after: avoid; }
+  p, li, blockquote { page-break-inside: avoid; }
+}
 
 /* Author card */
 .post-author {
