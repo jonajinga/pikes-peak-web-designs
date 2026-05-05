@@ -312,13 +312,13 @@ p + p { margin-top: 1em; }
 em { font-style: italic; }
 strong { font-weight: 700; color: var(--text); }
 
-a.inline-link, .prose a:not(.btn), .prose-policy a:not(.btn), .post-content a:not(.btn) {
+a.inline-link, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share):not(.press-asset-btn), .prose-policy a:not(.btn), .post-content a:not(.btn):not(.post-share-btn):not(.post-toc-share):not(.press-asset-btn) {
   color: var(--link);
   font-weight: 600;
   border-bottom: 1px solid var(--line-strong);
   transition: color var(--dur), border-color var(--dur);
 }
-a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, .post-content a:not(.btn):hover {
+a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share):not(.press-asset-btn):hover, .prose-policy a:not(.btn):hover, .post-content a:not(.btn):not(.post-share-btn):not(.post-toc-share):not(.press-asset-btn):hover {
   color: var(--link-hover);
   border-bottom-color: var(--gold-500);
 }
@@ -2670,6 +2670,99 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 @media (max-width: 760px) { .sample-grid { grid-template-columns: 1fr; } }
 
+/* Live-build cards: external real-world projects shipped on the open
+   web, sitting beneath the trade demos. Different visual register from
+   the sample cards (no browser chrome / screenshot, more editorial). */
+.live-builds-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 760px) { .live-builds-grid { grid-template-columns: 1fr; } }
+.live-build-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.85rem 1.85rem 1.65rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  text-decoration: none !important;
+  color: var(--text);
+  transition: border-color var(--dur), background var(--dur), transform var(--dur);
+  position: relative;
+  overflow: hidden;
+}
+.live-build-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--peak-gradient, linear-gradient(95deg, var(--gold-100), var(--gold-400) 40%, var(--navy-800)));
+  opacity: 0;
+  transition: opacity var(--dur);
+}
+.live-build-card:hover {
+  border-color: var(--gold-400);
+  background: var(--bg-alt);
+  transform: translateY(-2px);
+}
+.live-build-card:hover::before { opacity: 1; }
+.live-build-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-bottom: 0.15rem;
+  flex-wrap: wrap;
+}
+.live-build-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+}
+:root[data-theme="dark"] .live-build-tag { color: var(--gold-400); }
+.live-build-domain {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0;
+}
+.live-build-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0.1rem 0 0.4rem;
+}
+.live-build-desc {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+}
+.live-build-cta {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--gold-600);
+  margin-top: auto;
+  padding-top: 0.35rem;
+  border-bottom: 1px solid transparent;
+  align-self: flex-start;
+  transition: border-color var(--dur);
+}
+:root[data-theme="dark"] .live-build-cta { color: var(--gold-400); }
+.live-build-card:hover .live-build-cta { border-bottom-color: currentColor; }
+
 .sample-card {
   background: var(--surface-raised);
   border: 1px solid var(--line);
@@ -3225,9 +3318,15 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   .footer-top { grid-template-columns: 1fr; gap: 1.75rem; }
 }
 
-/* Force single-line column titles and links so nothing wraps awkwardly */
+/* Column titles stay on one line, but link labels are allowed to wrap
+   onto a second line rather than be truncated with an ellipsis. Full
+   words read better than abbreviations even when they wrap. */
 .footer-col-title { white-space: nowrap; }
-.footer-col a { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.footer-col a {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
 
 /* Secondary footer section: discounts, existing-clients, contact strip
    that sits below the main link columns. Lighter weight, 3-column grid
@@ -3744,22 +3843,31 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 .post-share-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.55rem 0.9rem;
-  background: var(--bg-alt);
-  border: 1px solid var(--line);
+  padding: 0.6rem 1rem;
+  min-height: 40px;
+  background: var(--navy-900);
+  border: 1px solid var(--navy-900);
   border-radius: var(--radius);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
   text-decoration: none !important;
   cursor: pointer;
   transition: background var(--dur), border-color var(--dur), color var(--dur), transform var(--dur);
 }
 .post-share-btn:hover {
-  background: var(--navy-900);
-  border-color: var(--navy-900);
-  color: #FFFFFF;
+  background: var(--gold-400);
+  border-color: var(--gold-400);
+  color: var(--navy-900);
+  transform: translateY(-1px);
+}
+.post-share-btn:focus-visible {
+  outline: 2px solid var(--gold-400);
+  outline-offset: 2px;
 }
 .post-share-btn svg {
   width: 16px;
@@ -3769,26 +3877,57 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
 }
 
 /* Copy-link button shares the standard share-button style. The icon
-   simply swaps from link-chain to checkmark when the URL is copied. */
+   swaps from link-chain to checkmark on success; the button itself
+   does not change color, so the row stays visually uniform. */
 .post-share-btn .post-share-icon-check { display: none; }
-.post-share-btn.is-copied {
-  background: var(--success, #1f8a4c);
-  border-color: var(--success, #1f8a4c);
-  color: #FFFFFF;
-}
 .post-share-btn.is-copied .post-share-icon-link { display: none; }
 .post-share-btn.is-copied .post-share-icon-check { display: inline-block; }
 
-/* Print / save-as-PDF styles for blog posts. Strips the chrome
-   (header, footer, share row, sidebar TOC, related-articles strip,
-   CTA boxes) so the printed page is just the article body with the
-   title, byline, and content. */
+/* =============================================================
+   PRINT / SAVE-AS-PDF STYLESHEET
+   Used when a reader prints a blog post or chooses "Save as PDF"
+   from the share row. Goal: produce a clean, typeset article that
+   reads well on paper and stays useful as a saved reference.
+   ============================================================= */
 @media print {
+  /* Page setup. 0.7in margins, page number in bottom centre, source
+     URL in the bottom right. Headers in the top margin identify
+     the article on every page. */
+  @page {
+    margin: 0.7in 0.6in 0.85in 0.6in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 9pt;
+      color: #555555;
+    }
+    @bottom-right {
+      content: "pikespeakwebdesigns.com";
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 9pt;
+      color: #555555;
+    }
+    @top-right {
+      content: string(posttitle);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 9pt;
+      font-style: italic;
+      color: #777777;
+    }
+  }
+  @page :first {
+    margin-top: 0.6in;
+    @top-right { content: ""; }
+  }
+
+  /* Strip every piece of site chrome that doesn't belong on paper. */
   .header,
   .topbar,
   .footer,
   .footer-trust,
+  .footer-inner,
   .back-to-top,
+  .skip-link,
   .post-progress,
   .post-toc,
   .post-share,
@@ -3798,45 +3937,290 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   .post-author,
   .section--cream,
   .cta-section,
-  .breadcrumb { display: none !important; }
+  .breadcrumb,
+  .nav-links,
+  .mobile-nav,
+  .mobile-backdrop,
+  .pagefind-search,
+  .term-popper,
+  iframe,
+  video,
+  .term::after { display: none !important; }
 
-  body {
+  /* Document defaults. Serif typography for body, sans for headings,
+     11pt body keeps line lengths readable on US Letter. */
+  html, body {
     background: #FFFFFF !important;
-    color: #000000 !important;
+    color: #111111 !important;
+  }
+  body {
+    font-family: Georgia, "Times New Roman", "Liberation Serif", serif;
     font-size: 11pt;
-    line-height: 1.5;
+    line-height: 1.55;
+    -webkit-print-color-adjust: economy;
+            print-color-adjust: economy;
   }
-  .post-hero {
-    padding: 0 0 1rem !important;
-    background: none !important;
-    color: #000000 !important;
-    border-bottom: 1px solid #cccccc;
-    margin-bottom: 1.5rem;
-  }
-  .post-hero h1,
-  .post-hero .post-deck,
-  .post-hero .post-meta-row,
-  .post-hero .section-label { color: #000000 !important; }
+
+  /* Article wrapper: full page width, no decorative backgrounds. */
+  .post-article,
+  .post-layout,
   .post-content,
+  article,
+  main,
+  .container { all: revert; }
   .post-layout {
+    display: block !important;
     max-width: none !important;
     padding: 0 !important;
-    grid-template-columns: 1fr !important;
+    margin: 0 !important;
   }
-  .post-content a {
-    color: #000000 !important;
-    text-decoration: underline;
+  .post-content {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
-  .post-content a[href^="http"]::after {
-    content: " (" attr(href) ")";
-    font-size: 0.85em;
+
+  /* First-page hero: title prominent, deck slightly muted, byline +
+     date in a tight meta line, source URL underneath so the reader
+     can come back to the live article. */
+  .post-hero {
+    padding: 0 0 0.9rem !important;
+    background: none !important;
+    color: #111111 !important;
+    border-bottom: 1pt solid #999999 !important;
+    margin: 0 0 1.5rem !important;
+    text-align: left !important;
+    string-set: posttitle attr(data-title);
+  }
+  .post-hero .container { all: revert; max-width: none !important; padding: 0 !important; }
+  .post-hero .section-label {
+    display: block;
+    font-family: Helvetica, Arial, sans-serif !important;
+    font-size: 8.5pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+    color: #555555 !important;
+    margin-bottom: 0.4rem !important;
+  }
+  .post-hero h1 {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 22pt !important;
+    line-height: 1.18 !important;
+    font-weight: 700 !important;
+    color: #111111 !important;
+    margin: 0 0 0.55rem !important;
+    text-align: left !important;
+    max-width: none !important;
+    string-set: posttitle content();
+  }
+  .post-hero h1 em {
+    font-style: italic !important;
+    color: #111111 !important;
+  }
+  .post-hero .post-deck {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 12pt !important;
+    line-height: 1.45 !important;
+    color: #333333 !important;
+    margin: 0 0 0.85rem !important;
+    text-align: left !important;
+    max-width: none !important;
+  }
+  .post-hero .post-meta-row {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.85rem !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    color: #555555 !important;
+    font-family: Helvetica, Arial, sans-serif !important;
+    font-size: 9pt !important;
+    margin: 0 !important;
+  }
+  .post-hero .post-meta-item strong { font-weight: 700; color: #111111 !important; }
+  .post-hero .post-meta-item:not(:last-child)::after {
+    content: "·";
+    margin-left: 0.85rem;
+    color: #999999 !important;
+  }
+
+  /* Source-URL line printed under the meta row on the first page. The
+     content is generated from the page <link rel="canonical"> via JS
+     setting body[data-print-url], or falls back to the value below. */
+  .post-hero::after {
+    content: "Source: " attr(data-print-url);
+    display: block;
+    margin-top: 0.5rem;
+    font-family: Georgia, serif;
+    font-size: 9.5pt;
+    font-style: italic;
     color: #666666;
     word-break: break-all;
   }
-  .post-content img { max-width: 100% !important; }
-  .post-content > p:first-of-type::first-letter { float: none; font-size: inherit; padding: 0; margin: 0; color: inherit; }
-  h1, h2, h3 { page-break-after: avoid; }
-  p, li, blockquote { page-break-inside: avoid; }
+
+  /* Body typography. Tight headings, generous paragraph spacing,
+     hanging punctuation on first letters disabled for print. */
+  .post-content > p:first-of-type::first-letter {
+    float: none !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+  }
+  .post-content h2, .post-content h3, .post-content h4 {
+    font-family: Georgia, "Times New Roman", serif !important;
+    color: #111111 !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .post-content h2 {
+    font-size: 15pt !important;
+    margin: 1.6em 0 0.55em !important;
+    padding-bottom: 0.2em;
+    border-bottom: 0.5pt solid #cccccc;
+  }
+  .post-content h3 {
+    font-size: 12.5pt !important;
+    margin: 1.3em 0 0.4em !important;
+  }
+  .post-content h4 {
+    font-size: 11.5pt !important;
+    margin: 1.1em 0 0.35em !important;
+  }
+  .post-content p {
+    margin: 0 0 0.85em !important;
+    orphans: 3;
+    widows: 3;
+  }
+  .post-content ul, .post-content ol {
+    margin: 0 0 0.95em 1.2em !important;
+    padding: 0 !important;
+  }
+  .post-content li {
+    margin: 0 0 0.35em !important;
+    line-height: 1.5;
+  }
+  .post-content strong { font-weight: 700; color: #000000 !important; }
+  .post-content em { font-style: italic; }
+  .post-content blockquote {
+    margin: 1.1em 0 1.1em 0.5em !important;
+    padding: 0.2em 0 0.2em 0.85em !important;
+    border-left: 2pt solid #999999 !important;
+    background: none !important;
+    color: #333333 !important;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  .post-content code {
+    font-family: "SFMono-Regular", Menlo, Consolas, monospace !important;
+    font-size: 9.5pt !important;
+    background: #f4f4f1 !important;
+    color: #111111 !important;
+    padding: 0.05em 0.3em !important;
+    border-radius: 2pt !important;
+  }
+  .post-content pre {
+    background: #f8f8f5 !important;
+    border: 0.5pt solid #cccccc !important;
+    padding: 0.6em 0.8em !important;
+    font-size: 9pt !important;
+    line-height: 1.45;
+    page-break-inside: avoid;
+    white-space: pre-wrap;
+  }
+  .post-content hr {
+    border: none;
+    border-top: 0.5pt solid #cccccc;
+    margin: 1.5em 0;
+  }
+  .post-content figure { page-break-inside: avoid; margin: 1em 0; }
+  .post-content figcaption {
+    font-size: 9pt;
+    color: #555555;
+    font-style: italic;
+    margin-top: 0.35em;
+    text-align: center;
+  }
+  .post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 10pt;
+    page-break-inside: avoid;
+  }
+  .post-content th, .post-content td {
+    border: 0.5pt solid #999999;
+    padding: 0.35em 0.6em;
+    text-align: left;
+  }
+  .post-content th { background: #f0eee8 !important; font-weight: 700; }
+
+  /* In-body images: cap to printable width, keep them with their captions */
+  .post-content img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+    display: block;
+    margin: 0.8em auto;
+  }
+
+  /* Links: black underlined, with the destination URL printed inline
+     in a smaller grey serif so the reader keeps the reference even
+     after the link is no longer clickable. */
+  .post-content a,
+  .post-content a:visited {
+    color: #111111 !important;
+    text-decoration: underline !important;
+    border-bottom: none !important;
+    font-weight: inherit !important;
+  }
+  .post-content a[href^="http"]::after,
+  .post-content a[href^="https"]::after {
+    content: " (" attr(href) ")";
+    font-family: Georgia, serif;
+    font-size: 0.78em;
+    font-style: italic;
+    color: #666666;
+    word-break: break-all;
+  }
+  /* Don't expand internal anchor or fragment links */
+  .post-content a[href^="#"]::after,
+  .post-content a[href^="/"]::after,
+  .post-content a[href^="mailto"]::after,
+  .post-content a[href^="tel"]::after { content: ""; }
+
+  /* Glossary tooltip terms: keep the dashed underline so the reader
+     knows the term is a defined one, but drop the data-term tooltip
+     content from print. */
+  .term {
+    border-bottom: 0.5pt dotted #888888 !important;
+    background: none !important;
+  }
+
+  /* Page-break controls */
+  h1, h2, h3, h4 { break-after: avoid; page-break-after: avoid; }
+  p, li, blockquote, figure, table { break-inside: avoid-page; page-break-inside: avoid; }
+  a { word-wrap: break-word; }
+
+  /* Print-only article footer: byline + agency + URL + date saved.
+     Renders below the last paragraph as a tidy reference card. */
+  .post-content::after {
+    content: "Pikes Peak Web Designs · pikespeakwebdesigns.com · Custom-coded websites for small service businesses";
+    display: block;
+    margin-top: 2em;
+    padding-top: 0.85em;
+    border-top: 0.5pt solid #cccccc;
+    font-family: Georgia, serif;
+    font-size: 9pt;
+    font-style: italic;
+    color: #666666;
+    text-align: center;
+  }
 }
 
 /* Author card */
