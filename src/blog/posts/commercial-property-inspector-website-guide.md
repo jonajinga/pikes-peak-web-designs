@@ -3,8 +3,8 @@ title: "Commercial Property Inspector Website Guide"
 date: 2025-06-17
 label: "Industry Guide: Commercial Inspection"
 description: "Commercial property inspection clients are sophisticated buyers. Here's what your website needs to earn their trust and win more contracts."
-ctaLabel: "Built for Commercial Inspectors"
-ctaHeading: "A website that wins commercial inspection contracts."
+ctaLabel: "If you inspect commercial property"
+ctaHeading: "I build sites for commercial inspectors."
 ctaText: "I build custom-coded, professional commercial inspection sites that read the way your buyers, lenders, and investors expect a serious vendor to read. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, inspector]

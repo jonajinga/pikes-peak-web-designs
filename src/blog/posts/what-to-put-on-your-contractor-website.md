@@ -3,8 +3,8 @@ title: "What to Put on Your Contractor Website (And What to Skip)"
 date: 2025-01-22
 label: "Industry Tips"
 description: "Most contractor websites have either too little or too much. Here's a practical list of what to include, and what to leave out."
-ctaLabel: "I plan the strategy with you"
-ctaHeading: "Contractor websites that earn the call."
+ctaLabel: "If you run a contracting business"
+ctaHeading: "I plan the page strategy with you."
 ctaText: "Every page on a site I build is planned around a single question: what does the visitor need to see in the next ten seconds to pick up the phone? $175 a month, flat, with everything included."
 layout: layouts/post.njk
 tags: [post]
@@ -66,9 +66,9 @@ tags: [post]
 <p>If your most recent review is dated several years ago, it actually works against you. It suggests you're either not getting new customers or not paying attention to your website. Keep reviews current. Rotate in new ones as you receive them.</p>
 
 <div class="post-cta-box">
-  <h3>Let us build it right from the start.</h3>
-  <p>When we build your site, we handle the strategy; what to include, how to structure it for search, what call-to-actions to use. You focus on your work. We handle the web presence.</p>
-  <a href="/contact/" class="btn btn-primary">Get Started</a>
+  <h3>Built right from the start.</h3>
+  <p>I plan the page strategy with you: what to include, how to structure it for search, what calls-to-action to use. You focus on the work; I handle the web side.</p>
+  <a href="/contact/" class="btn btn-primary">Book a discovery call</a>
 </div>
 
 <h2>One Final Rule: Make Every Page Answer "Why You?"</h2>

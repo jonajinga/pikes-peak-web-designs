@@ -85,15 +85,15 @@ The "modern builder" category. Better design tooling, cleaner output, and a visu
 
 ### Custom-coded static site
 
-What we build. A static site generator (we use [Eleventy](https://www.11ty.dev)) compiles a set of templates and Markdown files into pure HTML, which we host on a CDN.
+What I build. A static site generator (I use [Eleventy](https://www.11ty.dev)) compiles a set of templates and Markdown files into pure HTML, which I host on a CDN.
 
-**Typical cost:** $0 hosting (Cloudflare Pages free tier), $0 build tools, but requires an agency to build and maintain it. For us, that is a single flat $175/month plan with everything included.
+**Typical cost:** $0 hosting (Cloudflare Pages free tier), $0 build tools, but requires someone to build and maintain it. On the standard plan, that is a single flat $175/month with everything included.
 
 **Strengths:**
 
 - **Fast.** Sub-one-second page loads. 95–100 Google PageSpeed scores as the baseline, not the goal.
 - **Secure.** No server runtime, no database, no plugins. The attack surface is effectively zero.
-- **Maintainable.** No weekly update cycle. We ship improvements when they help; nothing breaks overnight because of a plugin update.
+- **Maintainable.** No weekly update cycle. Improvements ship when they help; nothing breaks overnight because of a plugin update.
 - **SEO ceiling-free.** Control of every meta tag, every URL, every schema block.
 - **No rent.** Hosting and SSL are included in the flat monthly rate, and you can take a clean static export of the site at any point if you ever want to move on.
 

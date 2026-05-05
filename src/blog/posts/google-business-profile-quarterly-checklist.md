@@ -1,10 +1,10 @@
 ---
-title: "The Quarterly Google Business Profile Checklist for Service Businesses"
+title: "Quarterly Google Business Profile Checklist"
 date: 2026-05-04
 label: "Local SEO"
 description: "Four maintenance tasks that take 15 minutes a quarter and meaningfully improve where your service business shows up in the Google Maps local pack."
-ctaLabel: "Local SEO done right"
-ctaHeading: "Want a website wired to your GBP from day one?"
+ctaLabel: "If you want it wired in from the start"
+ctaHeading: "I build sites with your Google Business Profile in mind from day one."
 ctaText: "I write the LocalBusiness and Service schema by hand against your real Google Business Profile. No plugin, no guesswork, no per-page drift. $175 a month, flat, no design deposit."
 layout: layouts/post.njk
 tags: [post, local-seo]

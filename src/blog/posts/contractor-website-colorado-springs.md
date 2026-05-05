@@ -4,7 +4,7 @@ date: 2025-03-03
 label: "Local Business"
 description: "If your Colorado Springs contracting business doesn't have a strong website, you're losing jobs to competitors who do. Here's what a working one needs."
 ctaLabel: "Colorado Springs Contractors"
-ctaHeading: "A website built for Colorado Springs service businesses."
+ctaHeading: "I build sites for Colorado Springs contractors."
 ctaText: "I build custom-coded, fast-loading sites tuned to rank for local searches in Colorado Springs and the Front Range. $175 a month, flat, everything included."
 layout: layouts/post.njk
 tags: [post]
@@ -47,7 +47,7 @@ tags: [post]
 
 <p>WordPress sites without ongoing maintenance become slow and vulnerable to security issues. Wix and Squarespace sites look generic and rarely rank well in local search because they're template-based and loaded with unnecessary code.</p>
 
-<p>What works is a <strong>custom-coded, purpose-built site</strong> optimized specifically for your business, your location, and your trade. That's exactly what we build.</p>
+<p>What works is a <strong>custom-coded, purpose-built site</strong> tuned specifically to your business, your location, and your trade. That is what I build.</p>
 
 <div class="post-cta-box">
   <h3>Ready for a website that actually brings in calls?</h3>

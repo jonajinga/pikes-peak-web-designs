@@ -1,5 +1,5 @@
 ---
-title: "How to Photograph Your Work for Your Website (Phone Camera, No Studio)"
+title: "How to Photograph Your Work With a Phone"
 date: 2026-05-05
 label: "Practical Skill"
 description: "A field guide for service-business owners with a phone, good work, and no decent photos. Light, framing, what to capture, and the common phone-camera fixes."

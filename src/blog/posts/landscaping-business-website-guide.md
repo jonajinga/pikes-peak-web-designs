@@ -1,10 +1,10 @@
 ---
-title: "Landscaping Website Guide: Competing on Google with Photos"
+title: "Landscaping Website Guide: Photos, Tags, and Pages"
 date: 2026-05-03
 label: "Industry Guide: Landscaping"
 description: "Landscaping is a visual trade in a crowded local search market. Here is what your website needs to win on Google and turn lookers into signed-design clients."
-ctaLabel: "Built for Landscapers"
-ctaHeading: "A landscaping website that books design consultations."
+ctaLabel: "If you run a landscaping business"
+ctaHeading: "I build sites for landscape designers."
 ctaText: "I build custom-coded landscaping sites that load fast on phones, surface real portfolio depth, and shape themselves around the seasonal calendar your business actually runs on. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, landscaping]

@@ -1,8 +1,8 @@
 ---
-title: "Open Graph Images: Why Your Links Look Plain When You Share Them"
+title: "Open Graph Images: Why Your Links Look Plain"
 date: 2026-05-06
 label: "Engagement & SEO"
-description: "If your website's links show up as a blank box on Facebook, LinkedIn, and iMessage, the fix is one image and a small block of meta tags. Here is how I do it for every client and how you can check your own site in 30 seconds."
+description: "If your links show up as a blank box on Facebook, LinkedIn, or iMessage, the fix is one image and a few meta tags. How I do it on every build."
 ctaLabel: "Standard on every build"
 ctaHeading: "Per-page Open Graph cards ship with every site I build."
 ctaText: "Custom-coded sites with branded share images on every blog post, season page, and key landing page — generated automatically at build time. $175 a month, flat."

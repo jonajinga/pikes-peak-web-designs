@@ -1,5 +1,5 @@
 ---
-title: "How to Write a Service Page That Ranks on Google and Converts Visitors"
+title: "How to Write a Service Page That Ranks"
 date: 2025-03-31
 label: "Website Strategy"
 description: "A well-written service page is one of the highest-value pages on your website. Here's exactly what to include and how to structure it."
@@ -98,9 +98,9 @@ tags: [post]
 </ul>
 
 <div class="post-cta-box">
-  <h3>We write the pages; you handle the calls.</h3>
-  <p>Every site we build includes professionally written service pages structured for search and conversion. You don't have to figure out what to write. We do it for you. $175/month flat rate.</p>
-  <a href="/contact/" class="btn btn-primary">Get Started</a>
+  <h3>I write the pages; you handle the calls.</h3>
+  <p>Every site I build ships with service-page copy structured for search and conversion, written by me, in your voice. Part of the standard plan; no separate copywriting fee.</p>
+  <a href="/contact/" class="btn btn-primary">Book a discovery call</a>
 </div>
 
 <h2>Call to Action: Make It Obvious</h2>

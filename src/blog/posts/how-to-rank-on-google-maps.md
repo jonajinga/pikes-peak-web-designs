@@ -3,8 +3,8 @@ title: "How to Rank Higher on Google Maps as a Service Business"
 date: 2025-02-03
 label: "Local SEO"
 description: "The Google Maps local pack drives more calls than any other source for local service businesses. Here's how to rank higher in it."
-ctaLabel: "Get Found Online"
-ctaHeading: "A website that works with your Google Business Profile."
+ctaLabel: "Local-pack signals built in"
+ctaHeading: "I wire the local-pack signals into the build."
 ctaText: "I build sites with the local-pack signals wired in by construction: NAP on every page, LocalBusiness schema, service-area pages, and a sitemap that gets submitted on launch day. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, local-seo]

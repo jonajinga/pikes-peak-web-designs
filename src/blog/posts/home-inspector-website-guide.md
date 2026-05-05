@@ -1,10 +1,10 @@
 ---
-title: "Home Inspector Website Guide: Booking More Inspections"
+title: "Home Inspector Website Guide: Pages and Trust Signals"
 date: 2025-06-10
 label: "Industry Guide: Home Inspection"
 description: "Home buyers rely on search to find inspectors. Here's what your website needs to earn their trust and turn visits into booked inspections."
-ctaLabel: "Built for Home Inspectors"
-ctaHeading: "A website that books more home inspections."
+ctaLabel: "If you run a home inspection business"
+ctaHeading: "I build sites for home inspectors."
 ctaText: "I build custom-coded, fast-loading inspector sites tuned to rank in the local pack so buyers and their agents find you first. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, inspector]

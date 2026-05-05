@@ -2,7 +2,7 @@
 title: "Blacklight: A Free Privacy Inspector for Any Website"
 date: 2026-05-05
 label: "Privacy & Tooling"
-description: "The Markup's Blacklight tool reveals what trackers your website is actually loading. Here is how to use it, what to do with the findings, and how I run my builds against it."
+description: "The Markup's Blacklight tool reveals what trackers your site is actually loading. Here is how to use it, and how I run it against every build."
 ctaLabel: "Privacy by construction"
 ctaHeading: "I run Blacklight against every site I build."
 ctaText: "Custom-coded sites with privacy-first analytics by default — no Facebook Pixel, no Google Tag Manager, no cookie-banner tax. $175 a month, flat."

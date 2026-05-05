@@ -1,10 +1,10 @@
 ---
-title: "Local SEO for Plumbers: Getting Found in Search"
+title: "Local SEO for Plumbers: Reaching the Map Pack"
 date: 2025-03-03
 label: "Industry Guide: Plumbing"
 description: "Plumbing is one of the most competitive local search markets. Here's a practical guide to getting your plumbing business to the top of Google in your area."
-ctaLabel: "Built for Service Businesses"
-ctaHeading: "A plumbing website that brings in calls; not just traffic."
+ctaLabel: "If you run a plumbing business"
+ctaHeading: "I build sites for plumbers."
 ctaText: "I build custom-coded sites for service businesses, with service pages, city pages, and an emergency call-out path included by default. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, plumbing, local-seo]

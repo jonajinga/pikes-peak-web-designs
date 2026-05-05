@@ -3,8 +3,8 @@ title: "How to Get More Google Reviews for Your Service Business"
 date: 2025-02-17
 label: "Reputation & Trust"
 description: "Google reviews are one of the most powerful trust signals for local service businesses. Here's a practical system for getting more of them."
-ctaLabel: "Build Your Reputation"
-ctaHeading: "A website that showcases your best reviews."
+ctaLabel: "Reviews wired into the site"
+ctaHeading: "I surface your real Google reviews on every page."
 ctaText: "I build the site, with the review surface and Google Business Profile schema wired in from day one. You focus on the work that earns the reviews. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, local-seo]
@@ -75,9 +75,9 @@ tags: [post, local-seo]
 <p>Reviews on your website serve a different purpose than reviews on Google: they're for visitors who are already on your site and deciding whether to call. The more social proof you can show in the moments before someone picks up the phone, the better your conversion rate.</p>
 
 <div class="post-cta-box">
-  <h3>We display your reviews right on your website.</h3>
-  <p>When we build your site, we include a testimonials section with your best reviews prominently featured. It's part of the package. No extra charge. $175/month flat rate.</p>
-  <a href="/contact/" class="btn btn-primary">Get Started</a>
+  <h3>I surface your real reviews right on the site.</h3>
+  <p>Every site I build ships with a testimonial surface that pulls from your real Google reviews, not curated quotes. Part of the standard plan, no extra charge.</p>
+  <a href="/contact/" class="btn btn-primary">Book a discovery call</a>
 </div>
 
 <h2>The Compound Effect</h2>

@@ -1,5 +1,5 @@
 ---
-title: "Before You Hire a Web Designer: What You Actually Need to Know"
+title: "Before You Hire a Web Designer"
 date: 2026-05-05
 label: "Buying Guide"
 description: "A pre-purchase due-diligence checklist for service-business owners about to hire someone to build their website. Questions to ask, red flags to watch for."

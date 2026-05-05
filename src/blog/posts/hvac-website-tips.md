@@ -1,10 +1,10 @@
 ---
-title: "What an HVAC Website Needs to Convert Visitors"
+title: "What an HVAC Website Needs: Pages, Forms, Local SEO"
 date: 2025-03-10
 label: "Industry Guide: HVAC"
 description: "HVAC is one of the most competitive local search markets. Here's what your website needs to win more calls from Google."
-ctaLabel: "Built for HVAC Companies"
-ctaHeading: "An HVAC website that converts."
+ctaLabel: "If you run an HVAC business"
+ctaHeading: "I build sites for HVAC operators."
 ctaText: "I build custom-coded HVAC sites with the emergency-call path, service pages, and seasonal SEO surface wired in by default. $175 a month, flat, everything included."
 layout: layouts/post.njk
 tags: [post, hvac]

@@ -1,10 +1,10 @@
 ---
-title: "The Roofing Company Website Guide: What to Include to Win More Jobs"
+title: "The Roofing Company Website Guide"
 date: 2025-03-24
 label: "Industry Guide: Roofing"
 description: "Roofing is a high-value, high-competition market. Here's what your website needs to stand out and win the jobs that matter."
-ctaLabel: "Built for Roofing Companies"
-ctaHeading: "A roofing website that wins more jobs."
+ctaLabel: "If you run a roofing business"
+ctaHeading: "I build sites for roofers."
 ctaText: "I build custom-coded, fast-loading roofing sites structured to handle storm-season traffic surges and convert under pressure. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, roofing]
@@ -59,9 +59,9 @@ tags: [post, roofing]
 <p>Something like "How to Know If You Need a Roof Repair or Full Replacement" as a page or blog post is highly searchable and demonstrates expertise. The same page can naturally lead into your process and a call to action for a free inspection.</p>
 
 <div class="post-cta-box">
-  <h3>A roofing website that captures storm leads when they spike.</h3>
-  <p>Storm damage pages, before-and-after galleries, insurance claim content, manufacturer certification display; we build it all. $175/month flat rate.</p>
-  <a href="/contact/" class="btn btn-primary">Get Started</a>
+  <h3>Built to handle the storm-season surge.</h3>
+  <p>Storm damage pages, before-and-after galleries, insurance-claim content, manufacturer-certification display. I build all of it as part of the standard plan.</p>
+  <a href="/contact/" class="btn btn-primary">Book a discovery call</a>
 </div>
 
 <h2>Commercial Roofing: Separate It From Residential</h2>

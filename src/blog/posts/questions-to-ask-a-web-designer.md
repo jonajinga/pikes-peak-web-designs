@@ -1,5 +1,5 @@
 ---
-title: "The Seven Questions to Ask Any Web Designer Before Hiring Them"
+title: "Seven Questions to Ask Any Web Designer"
 date: 2026-04-26
 label: "Hiring Guide"
 description: "Seven questions that separate the web designers who'll help your service business from the ones who'll quietly drain your budget. Each has a right answer."

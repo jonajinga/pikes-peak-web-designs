@@ -1,10 +1,10 @@
 ---
-title: "5 Signs Your Business Website Is Losing You Customers Right Now"
+title: "Five Signs Your Website Is Losing You Customers"
 date: 2025-02-18
 label: "Website Tips"
 description: "Most business owners don't realize their website is costing them jobs. Here are the five most common warning signs, and what to do about them."
-ctaLabel: "Let's Fix This"
-ctaHeading: "A website that works as hard as you do."
+ctaLabel: "If your site is hurting the business"
+ctaHeading: "I rebuild sites that are leaking leads."
 ctaText: "I identify what is costing you customers and build a site that fixes it. $175 a month, flat, no design deposit."
 layout: layouts/post.njk
 tags: [post]

@@ -66,8 +66,4 @@
 
   <!-- Polished sheen across the upper half of the same shape -->
   <use href="#ppLetter" fill="url(#ppSheen)"/>
-
-  <!-- Small gold diamond above the bowl: a quiet wordmark cue, kept small so
-       it does not muddy the 16px render. -->
-  <path d="M 296 50 L 308 64 L 296 78 L 284 64 Z" fill="#F4E4A8" opacity="0.9"/>
 </svg>

@@ -53,7 +53,7 @@ tags: [post]
 
 <h2>What a Fast Website Looks Like</h2>
 
-<p>When we build sites, they consistently score 98–100 on Google PageSpeed Insights. Here's why:</p>
+<p>Sites I build consistently score 95 to 100 on Google PageSpeed Insights. Here is why:</p>
 
 <ul>
   <li>custom-coded HTML and CSS. No frameworks, no bloat, no unused code</li>
@@ -72,14 +72,14 @@ tags: [post]
 <p>If your score is below 70, you have a significant problem that's actively hurting your search ranking and costing you leads. Below 50 is a serious issue that should be addressed immediately.</p>
 
 <div class="post-cta-box">
-  <h3>We build sites that score 98–100 on PageSpeed.</h3>
-  <p>custom-coded, no WordPress, no bloat. Fast enough to impress Google and your customers. $175/month flat rate.</p>
-  <a href="/contact/" class="btn btn-primary">Get Started</a>
+  <h3>I build sites that score 95 to 100 on PageSpeed.</h3>
+  <p>Custom-coded, no WordPress, no bloat. The PageSpeed score is a build artifact, not a goal. $175 a month, flat.</p>
+  <a href="/contact/" class="btn btn-primary">Book a discovery call</a>
 </div>
 
 <h2>The Appearance vs. Speed Trade-Off</h2>
 
-<p>Here's the thing: a fast website doesn't have to look bare or low-budget. The sites we build look polished and professional; they just don't carry the weight of a WordPress installation underneath them.</p>
+<p>Here is the thing: a fast website does not have to look bare or low-budget. The sites I build are polished and professional; they just do not carry the weight of a WordPress installation underneath them.</p>
 
 <p>The mistake most contractors make is choosing a visually impressive template with animations, parallax effects, and video backgrounds without understanding the performance cost. Those features make a site look like it was built in 2015 and load like it was too.</p>
 

@@ -1,10 +1,10 @@
 ---
-title: "Electrician Website Guide: What Wins More Jobs"
+title: "Electrician Website Guide: What Belongs on Each Page"
 date: 2025-04-05
 label: "Industry Guide: Electrical"
 description: "Your electrician website needs more than a phone number. Here's what it takes to rank on Google and convert visitors into booked jobs."
-ctaLabel: "Built for Electricians"
-ctaHeading: "An electrician website that brings in jobs."
+ctaLabel: "If you run an electrical business"
+ctaHeading: "I build sites for electricians."
 ctaText: "I build custom-coded, fast-loading electrician sites with the local-pack signals and emergency-call path wired in by default. $175 a month, flat, everything included."
 layout: layouts/post.njk
 tags: [post, electrical]

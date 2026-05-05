@@ -1,8 +1,8 @@
 ---
-title: "Rebuild Your Website, or Just Patch It? A Decision Framework."
+title: "Rebuild Your Website, or Just Patch It?"
 date: 2026-04-22
 label: "Decision Framework"
-description: "When a service-business site is hurting the business, the question is always: rebuild from scratch or patch what's there? A four-question framework, in five minutes."
+description: "When a service-business site is hurting the business: rebuild from scratch or patch what's there? A four-question framework, in five minutes."
 ctaLabel: "Honest Diagnostic"
 ctaHeading: "Free 5-point audit, written, no sales call."
 ctaText: "If I think your site is salvageable, the report will say so. If it is not, the rebuild is on offer at the standard $175 a month flat, with no design deposit."
