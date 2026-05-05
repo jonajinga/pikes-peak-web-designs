@@ -5,7 +5,7 @@ label: "Making the Right Choice"
 description: "Website builders promise simplicity. Custom code delivers results. Here's an honest comparison for service business owners."
 ctaLabel: "No Templates. No Builders."
 ctaHeading: "Custom code. Real results."
-ctaText: "custom-coded from scratch. No Wix, no Squarespace, no WordPress. $175/month flat rate."
+ctaText: "I build every site custom-coded from scratch. No Wix, no Squarespace, no WordPress, no template. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, comparison]
 ---

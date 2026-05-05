@@ -2,10 +2,10 @@
 title: "WordPress vs. Custom-Coded Websites: An Honest Comparison for Service Businesses"
 date: 2025-02-05
 label: "Web Design"
-description: "WordPress powers a third of the internet. Custom code powers our clients. Here's an honest look at the tradeoffs."
-ctaLabel: "No WordPress. Ever."
-ctaHeading: "Custom code beats WordPress every time."
-ctaText: "Faster, more secure, uniquely yours. $175/month flat rate. No WordPress, no page builders."
+description: "WordPress powers a third of the internet. I build my clients on custom code instead. Here is an honest look at the tradeoffs."
+ctaLabel: "No WordPress, no page builders"
+ctaHeading: "I build every site custom-coded."
+ctaText: "Faster than WordPress on every measurable axis, more secure by construction (no plugins to patch), and unique to your business. $175 a month, flat, no page-builder tax."
 layout: layouts/post.njk
 tags: [post, comparison]
 ---

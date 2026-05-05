@@ -5,7 +5,7 @@ label: "Industry Guide: HVAC"
 description: "HVAC is one of the most competitive local search markets. Here's what your website needs to win more calls from Google."
 ctaLabel: "Built for HVAC Companies"
 ctaHeading: "An HVAC website that converts."
-ctaText: "Emergency call buttons, service pages, seasonal SEO; everything structured to bring in calls. $175/month."
+ctaText: "I build custom-coded HVAC sites with the emergency-call path, service pages, and seasonal SEO surface wired in by default. $175 a month, flat, everything included."
 layout: layouts/post.njk
 tags: [post, hvac]
 ---

@@ -5,7 +5,7 @@ label: "Local Business"
 description: "If your contracting business in Colorado Springs doesn't have a strong website, you're losing jobs to competitors who do. Here's what a working contractor website actually needs."
 ctaLabel: "Colorado Springs Contractors"
 ctaHeading: "A website built for Colorado Springs service businesses."
-ctaText: "custom-coded, fast-loading, and built to rank for local searches. $175/month flat rate; everything included."
+ctaText: "I build custom-coded, fast-loading sites tuned to rank for local searches in Colorado Springs and the Front Range. $175 a month, flat, everything included."
 layout: layouts/post.njk
 tags: [post]
 ---

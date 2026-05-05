@@ -5,7 +5,7 @@ label: "Industry Guide: Landscaping"
 description: "Landscaping is a visual trade in a crowded local search market. Here is what your website needs to win on Google and turn lookers into signed-design clients."
 ctaLabel: "Built for Landscapers"
 ctaHeading: "A landscaping website that books design consultations."
-ctaText: "Custom-coded, fast on phones, structured around portfolio depth and seasonal demand. $175/month flat rate."
+ctaText: "I build custom-coded landscaping sites that load fast on phones, surface real portfolio depth, and shape themselves around the seasonal calendar your business actually runs on. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, landscaping]
 ---

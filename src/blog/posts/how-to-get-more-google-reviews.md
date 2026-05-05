@@ -5,7 +5,7 @@ label: "Reputation & Trust"
 description: "Google reviews are one of the most powerful trust signals for local service businesses. Here's a practical system for getting more of them."
 ctaLabel: "Build Your Reputation"
 ctaHeading: "A website that showcases your best reviews."
-ctaText: "We build the site. You focus on getting five-star reviews. $175/month flat rate."
+ctaText: "I build the site, with the review surface and Google Business Profile schema wired in from day one. You focus on the work that earns the reviews. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, local-seo]
 ---

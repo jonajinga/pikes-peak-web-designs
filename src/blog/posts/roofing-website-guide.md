@@ -5,7 +5,7 @@ label: "Industry Guide: Roofing"
 description: "Roofing is a high-value, high-competition market. Here's what your website needs to stand out and win the jobs that matter."
 ctaLabel: "Built for Roofing Companies"
 ctaHeading: "A roofing website that wins more jobs."
-ctaText: "custom-coded, fast-loading, structured for storm season surges. $175/month flat rate."
+ctaText: "I build custom-coded, fast-loading roofing sites structured to handle storm-season traffic surges and convert under pressure. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, roofing]
 ---

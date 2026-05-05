@@ -5,7 +5,7 @@ label: "Comparison: AI Builders"
 description: "AI website builders generate sites that look done. The problem is what 'looks done' is not measuring. Here is the gap between what an AI builder ships and what a real custom site does."
 ctaLabel: "An honest comparison"
 ctaHeading: "A real custom-coded site, no template, no AI."
-ctaText: "Custom-coded for your business with direct, accountable support. $175/month flat rate, $0 down."
+ctaText: "I build every site custom-coded, with one accountable person on every email for the life of the engagement. No template, no AI generator, no relay race. $175 a month, flat, no design deposit."
 layout: layouts/post.njk
 tags: [post, comparison]
 ---

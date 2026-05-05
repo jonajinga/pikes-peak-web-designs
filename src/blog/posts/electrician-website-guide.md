@@ -5,7 +5,7 @@ label: "Industry Guide: Electrical"
 description: "Your electrician website needs more than a phone number. Here's what it takes to rank on Google and convert visitors into booked jobs."
 ctaLabel: "Built for Electricians"
 ctaHeading: "An electrician website that brings in jobs."
-ctaText: "custom-coded, fast-loading, SEO-optimized for electrical service searches. $175/month, everything included."
+ctaText: "I build custom-coded, fast-loading electrician sites with the local-pack signals and emergency-call path wired in by default. $175 a month, flat, everything included."
 layout: layouts/post.njk
 tags: [post, electrical]
 ---

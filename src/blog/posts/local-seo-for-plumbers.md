@@ -5,7 +5,7 @@ label: "Industry Guide: Plumbing"
 description: "Plumbing is one of the most competitive local search markets. Here's a practical guide to getting your plumbing business to the top of Google in your area."
 ctaLabel: "Built for Service Businesses"
 ctaHeading: "A plumbing website that brings in calls; not just traffic."
-ctaText: "We specialize in custom-coded sites for service businesses. Service pages, city pages, emergency call-outs; all included. $175/month."
+ctaText: "I build custom-coded sites for service businesses, with service pages, city pages, and an emergency call-out path included by default. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, plumbing, local-seo]
 ---

@@ -5,7 +5,7 @@ label: "Online Presence"
 description: "Facebook has its place, but it's not a substitute for a website. Here's why service businesses that rely on Facebook are leaving money on the table."
 ctaLabel: "Get Found on Google"
 ctaHeading: "A website that ranks where Facebook can't."
-ctaText: "Own your online presence. custom-coded, SEO-optimized, $175/month flat rate."
+ctaText: "I build custom-coded sites that rank in Google search and the local pack, where Facebook does not. The site is yours, the domain is in your name, and you control the surface. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, local-seo]
 ---

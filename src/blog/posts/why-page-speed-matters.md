@@ -3,9 +3,9 @@ title: "Why Page Speed Matters More Than How Your Website Looks"
 date: 2025-02-10
 label: "Web Performance"
 description: "A beautiful website that loads slowly is a liability. Here's why page speed is one of the most important factors in converting visitors into calls."
-ctaLabel: "Built for Speed"
-ctaHeading: "98–100 PageSpeed. Every time."
-ctaText: "custom-coded sites with no bloated themes, no unnecessary plugins. $175/month flat rate."
+ctaLabel: "Built for speed by construction"
+ctaHeading: "95–100 PageSpeed on every site I build."
+ctaText: "I build custom-coded sites with no bloated themes, no unnecessary plugins, and no third-party tracker tax on the load path. The PageSpeed score is a build artifact, not a goal. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post]
 ---

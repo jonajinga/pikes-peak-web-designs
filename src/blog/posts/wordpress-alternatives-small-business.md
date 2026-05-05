@@ -3,6 +3,9 @@ layout: layouts/post.njk
 title: "WordPress Alternatives for Small Business Websites in 2026"
 description: "A plain-language comparison of WordPress, Wix, Squarespace, Webflow, Framer, and custom-coded sites for small service businesses. Real tradeoffs, real costs, no hype."
 label: "Custom vs. Builders"
+ctaLabel: "Skip the platform hunt"
+ctaHeading: "If you would rather not pick a platform at all, that is what I do."
+ctaText: "I run the build, the hosting, the security, the updates, and the ongoing maintenance on a single flat $175 a month. No platform shopping, no plugin upkeep, no rebuild cycle. The code is yours and the hosting account is in your name."
 date: 2026-04-22
 tags: [post, comparison]
 permalink: /blog/wordpress-alternatives-small-business/

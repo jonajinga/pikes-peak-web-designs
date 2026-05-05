@@ -5,7 +5,7 @@ label: "Industry Guide: Home Inspection"
 description: "Home buyers rely on search to find inspectors. Here's what your website needs to earn their trust and turn visits into booked inspections."
 ctaLabel: "Built for Home Inspectors"
 ctaHeading: "A website that books more home inspections."
-ctaText: "Custom-coded, fast-loading, and built to rank locally, so buyers find you first."
+ctaText: "I build custom-coded, fast-loading inspector sites tuned to rank in the local pack so buyers and their agents find you first. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, inspector]
 ---

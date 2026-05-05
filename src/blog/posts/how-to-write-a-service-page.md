@@ -3,9 +3,9 @@ title: "How to Write a Service Page That Ranks on Google and Converts Visitors"
 date: 2025-03-31
 label: "Website Strategy"
 description: "A well-written service page is one of the highest-value pages on your website. Here's exactly what to include and how to structure it."
-ctaLabel: "Done-for-You Copy"
-ctaHeading: "We write the service pages for you."
-ctaText: "Every website we build includes professionally written service pages structured to rank and convert. $175/month."
+ctaLabel: "Service-page copy, written for you"
+ctaHeading: "I write the service pages as part of the build."
+ctaText: "Every site I build ships with service-page copy structured to rank and convert, written by me, in your voice, against your actual offerings. $175 a month, flat, no separate copywriting fee."
 layout: layouts/post.njk
 tags: [post]
 ---

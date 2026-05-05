@@ -5,7 +5,7 @@ label: "Website Tips"
 description: "Most business owners don't realize their website is costing them jobs. Here are the five most common warning signs, and what to do about them."
 ctaLabel: "Let's Fix This"
 ctaHeading: "A website that works as hard as you do."
-ctaText: "We identify what's costing you customers and build a site that fixes it. $175/month flat rate."
+ctaText: "I identify what is costing you customers and build a site that fixes it. $175 a month, flat, no design deposit."
 layout: layouts/post.njk
 tags: [post]
 ---

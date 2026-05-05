@@ -5,7 +5,7 @@ label: "Practical Skill"
 description: "A field guide for service-business owners who own a phone, do good work, and have no decent photos to put on their website. Light, framing, what to capture, and how to fix the most common phone-camera mistakes."
 ctaLabel: "Photos done? Let's build the site."
 ctaHeading: "Once you have ten good photos, the site can be built."
-ctaText: "Custom-coded sites that compress your photos to AVIF/WebP automatically. Hand-coded responsive image sizes. Real galleries, not Squarespace placeholders. $175/month flat."
+ctaText: "I build custom-coded sites that compress your photos to AVIF and WebP automatically, with hand-tuned responsive sizes and real galleries built around the work. $175 a month, flat."
 layout: layouts/post.njk
 tags: [post]
 ---

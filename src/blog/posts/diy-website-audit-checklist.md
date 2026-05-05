@@ -5,7 +5,7 @@ label: "Self-Audit"
 description: "Twelve checks any small business owner can run on their own website with nothing more than a phone, a stopwatch, and ten minutes. If your site fails any of them, you are leaving leads on the table."
 ctaLabel: "Want a Written One?"
 ctaHeading: "Free 5-point audit, on paper, no sales call."
-ctaText: "If the self-audit turns up red flags, the agency runs a free written diagnostic on your existing site, with the receipts."
+ctaText: "If the self-audit turns up red flags, I run a free written diagnostic on your existing site, with the receipts. No card, no sales call attached to the report."
 layout: layouts/post.njk
 tags: [post]
 ---

@@ -3,9 +3,9 @@ title: "What to Put on Your Contractor Website (And What to Skip)"
 date: 2025-01-22
 label: "Industry Tips"
 description: "Most contractor websites have either too little or too much. Here's a practical list of what to include, and what to leave out."
-ctaLabel: "We Handle the Strategy"
-ctaHeading: "We build contractor websites that work."
-ctaText: "Every element planned for maximum impact. $175/month flat rate; everything included."
+ctaLabel: "I plan the strategy with you"
+ctaHeading: "Contractor websites that earn the call."
+ctaText: "Every page on a site I build is planned around a single question: what does the visitor need to see in the next ten seconds to pick up the phone? $175 a month, flat, with everything included."
 layout: layouts/post.njk
 tags: [post]
 ---
