@@ -95,5 +95,7 @@ tags: [post, comparison]
 
 <p>The question isn't whether a custom site costs more per month. It's whether the customers it brings in justify the cost. For most service businesses doing real volume, the answer is clearly yes.</p>
 
+<p>For a side-by-side, year-by-year breakdown of every realistic option, see <a href="/blog/how-much-does-a-small-business-website-cost/" class="inline-link">How Much Does a Small Business Website Actually Cost</a>. And before signing with any vendor, the <a href="/blog/questions-to-ask-a-web-designer/" class="inline-link">seven questions to ask</a> are the easiest way to separate good operators from bad ones.</p>
+
   </div>
   </div>

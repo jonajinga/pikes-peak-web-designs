@@ -1,0 +1,75 @@
+---
+layout: layouts/base.njk
+title: "Year-Round Shareable Pages | Pikes Peak Web Designs"
+description: "Eight evergreen landing pages, one for each occasion most service businesses face during the year. Share them on social media, paste them into a group reply, send them in an email."
+---
+
+<section class="page-hero page-hero--peak">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Seasons</span>
+    </nav>
+    <span class="section-label">Share-on-occasion pages</span>
+    <h1>Year-round pages, built for <em>actual sharing.</em></h1>
+    <p>Eight evergreen landing pages, one for each occasion most service businesses face during the year. The URL of each page never changes; share the same link every January, every Q4, every Black Friday. Each page is written for a real moment, not as a generic pitch.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:1100px">
+    <div class="seasons-grid">
+      {% for s in seasons %}
+        <a href="/seasons/{{ s.slug }}/" class="seasons-card">
+          <span class="seasons-card-tag">{{ s.season }}</span>
+          <h2 class="seasons-card-title">{{ s.h1 }} <em>{{ s.h1Em }}</em></h2>
+          <p class="seasons-card-desc">{{ s.metaDescription }}</p>
+          <span class="seasons-card-cta">Open the page &rarr;</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container" style="max-width:760px">
+    <div class="text-center">
+      <span class="section-label">How to use them</span>
+      <h2 class="section-title" style="margin-inline:auto">Three ways the pages were designed to be used.</h2>
+    </div>
+    <ol class="next-steps" style="margin-top:2rem">
+      <li class="next-step">
+        <span class="next-step-num">1</span>
+        <div>
+          <h3>Drop the link into a Facebook group reply.</h3>
+          <p>When somebody asks "should I get a new website?" in a trades Facebook group, paste the relevant occasion page. The page reads as a thoughtful answer rather than an ad, and the URL is short enough to fit any character limit.</p>
+        </div>
+      </li>
+      <li class="next-step">
+        <span class="next-step-num">2</span>
+        <div>
+          <h3>Use as the link in an Instagram or LinkedIn post.</h3>
+          <p>Each page has a clean Open Graph card, so the link previews correctly on every social platform. Instagram bio links, LinkedIn posts, and Twitter / X share-cards all work cleanly.</p>
+        </div>
+      </li>
+      <li class="next-step">
+        <span class="next-step-num">3</span>
+        <div>
+          <h3>Send the link in an email or a text.</h3>
+          <p>Each page is short enough to read on a phone in two minutes. The link is easier to share than a pitch, and the page does the explaining without any further work from you.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Or start a build</span>
+    <h2>Ready beyond the share?</h2>
+    <p>The pages are evergreen. The build is two to three weeks. Either path starts the same way.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
+      <a href="/pricing/" class="btn btn-outline btn-lg">Read the pricing</a>
+    </div>
+  </div>
+</section>

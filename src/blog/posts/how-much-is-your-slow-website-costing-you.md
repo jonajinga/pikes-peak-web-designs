@@ -88,3 +88,5 @@ tags: [post, local-seo]
 <p>Most agencies will not write this post. The reason is simple: if a $1,800 Wix subscription is leaking $14,500 a year, the agency that recommended Wix has some explaining to do. The number does not flatter anyone except the alternative.</p>
 
 <p>The math is the math. The hardest line on a service-business P&amp;L to see is the one that does not appear, revenue that never happened because the website never gave a fair-shot mobile visitor a chance to become a customer. <strong>Quantifying that line is the work this post and the calculator are trying to make easier.</strong> Once you can see it, the budget conversation gets a lot simpler.</p>
+
+<p>If you would rather check the site yourself first, the <a href="/blog/diy-website-audit-checklist/" class="inline-link">12-point self-audit</a> takes ten minutes and catches the obvious problems. If the audit says the site needs more than a patch, the <a href="/blog/rebuild-or-patch/" class="inline-link">rebuild-or-patch decision framework</a> is the right next read.</p>

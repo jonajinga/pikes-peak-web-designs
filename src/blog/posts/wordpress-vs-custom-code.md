@@ -88,5 +88,7 @@ tags: [post, comparison]
 
 <p>If you're currently on WordPress and tired of the maintenance headaches, slow load times, or generic look; we're happy to show you what a purpose-built site feels like.</p>
 
+<p>Not sure whether the existing site is salvageable? The <a href="/blog/rebuild-or-patch/" class="inline-link">rebuild-or-patch decision framework</a> is a four-question filter that returns a real answer in under five minutes.</p>
+
   </div>
   </div>

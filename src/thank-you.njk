@@ -127,6 +127,82 @@ noindex: true
         ['I follow your permission choice.', 'If you said "publish with my name," the testimonial goes onto the Samples page in short order. If you said "keep it between you and me," it stays exactly there.'],
         ['I say thank you back.', 'You get a real email from me, not an autoresponder, and if there is anything I can do for you in return I will offer it.']
       ]
+    },
+    'subscribe': {
+      h: 'Welcome aboard. Payment received.',
+      s: "Stripe confirmed the charge and the engagement is officially live. The build kicks off the same week, and you will hear from me on next steps shortly.",
+      nt: 'What happens next.',
+      ns: "Three short steps from here to launch.",
+      steps: [
+        ['Kickoff email today.', 'You will receive a short note from me with the onboarding form attached, the kickoff timeline, and the answers to anything that came up during the discovery call.'],
+        ['Onboarding form.', 'Fifteen to twenty minutes in one sitting, gathering the few things I need from your side: your logo if you have one, photos of your work, your services and rough pricing, your domain, and any specific deadlines.'],
+        ['Build and launch in two to three weeks.', 'I send a live preview link inside the first week so you can give feedback while the work is still moving, then handle DNS, sitemap submission, and the launch-day owner\'s guide once you are happy.']
+      ]
+    },
+    'hourly': {
+      h: 'Hourly block received. Thank you.',
+      s: "Stripe confirmed the charge against the hourly estimate I sent you. The work begins in line with the timeline we discussed.",
+      nt: 'What happens next.',
+      ns: "Here's how the hourly engagement runs.",
+      steps: [
+        ['Confirmation email today.', 'You will receive a short note confirming the hours are in, the scope you signed off on, and the start date.'],
+        ['I begin the work.', 'I track time against the estimate as I go, and you receive a short progress note partway through if the work spans more than a few hours.'],
+        ['I send the deliverable and reconcile.', 'When the work is complete, you receive the deliverable along with the actual hours used. If the work came in under the estimate, the difference is credited or refunded; if more was needed, I quote it before continuing.']
+      ]
+    },
+    'audit': {
+      h: 'Audit request received. Thank you.',
+      s: "I have your URL and the few details you sent. The free five-point audit lands in your inbox in roughly a week, give or take.",
+      nt: 'What happens next.',
+      ns: "Here's how the audit works.",
+      steps: [
+        ['I read your submission.', 'A real person reads it, not a queue, and I usually respond with a short confirmation in short order on most business days.'],
+        ['I run the audit.', 'I run real Lighthouse passes on your homepage and one service page, audit your schema and NAP consistency, test your mobile contact forms, and trace the conversion path from visitor to phone call.'],
+        ['I send the report.', 'You get the written report by email in either PDF or short Loom-walk-through form, whichever you prefer. If you want to talk through the findings afterwards, that conversation is also free.']
+      ]
+    },
+    'press': {
+      h: 'Press inquiry received.',
+      s: "Thanks for reaching out. Press inquiries get quick turnarounds on most business days, and I will reply with whatever you need.",
+      nt: 'What happens next.',
+      ns: "Here's how press requests typically run.",
+      steps: [
+        ['I read your inquiry.', 'I read every press inquiry that comes in, prioritised by the deadline you flagged on the form.'],
+        ['I send what you asked for.', 'A quote, the headshot, the wordmark, the fact sheet, demo screenshots, or any other asset you mentioned, attached or linked in the reply.'],
+        ['Follow-up if you want one.', 'If you want to talk through the angle on a call, or want me to live-audit a real site as part of the segment, the second reply is the right place to set that up.']
+      ]
+    },
+    'service-site-audit': {
+      h: 'Audit purchase received.',
+      s: "Stripe confirmed the charge and the deep audit is officially in motion. The deliverable lands in your inbox in roughly two weeks, give or take.",
+      nt: 'What happens next.',
+      ns: "The day-by-day flow of the audit work.",
+      steps: [
+        ['Day 1: kickoff confirmation.', 'You receive a short note from me confirming the URL I am auditing, the contact details, and the delivery window.'],
+        ['Days 1 to 7: the audit work.', 'Lighthouse passes on your top five pages, full schema and NAP cross-check, mobile-form audit on a real device, local-pack diagnostic, and a conversion-flow review traced page by page.'],
+        ['Days 7 to 10: report and walk-through.', 'You receive the PDF report along with a sixty-minute Loom that walks through every finding on screen. A thirty-minute Q&A call is available on request, no extra charge.']
+      ]
+    },
+    'ask': {
+      h: 'Question received. Thanks.',
+      s: "I read every message that comes through the ask form personally. I will reply quickly on most business days.",
+      nt: 'What happens next.',
+      ns: "Two short steps.",
+      steps: [
+        ['I read your message.', 'A real person reads it, not a queue, and the read happens quickly on most business days.'],
+        ['I reply with what you need.', 'Most asks get a written answer back. If the question is bigger than a paragraph, I will offer a short call rather than send a long email.']
+      ]
+    },
+    'partner-program': {
+      h: 'Partner inquiry received. Thank you.',
+      s: "Thanks for reaching out about the program. I will reply quickly on most business days with the next step.",
+      nt: 'What happens next.',
+      ns: "Here's how a partnership typically gets going.",
+      steps: [
+        ['Twenty-minute partner call.', 'A short conversation to make sure your client base is the right shape and the program is a good fit on both sides. There is no pressure attached and no quota to hit.'],
+        ['Sign the partner agreement.', 'A one-page Google Docs e-signature on the published <a href="/partner-agreement/" class="inline-link">partner agreement</a>. Plain English, public terms, no hidden clauses.'],
+        ['Begin referring.', 'Three attribution channels are accepted (warm intro by email, client mention on intake, or the partner referral form). You receive a quarterly partner check-in summarising referrals received, conversions, and year-to-date commission earned.']
+      ]
     }
   };
   if (type && variants[type]) {

@@ -44,6 +44,8 @@ export default {
     deposit: 0,
     pagesIncluded: 10,
   },
+  subscribeUrl: "https://buy.stripe.com/",
+  hourlyUrl: "https://buy.stripe.com/",
   utilityPages: [
     "Privacy Policy",
     "Accessibility Statement",

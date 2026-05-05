@@ -1,0 +1,137 @@
+---
+layout: layouts/base.njk
+title: "Sign up for the standard plan | Pikes Peak Web Designs"
+description: "Welcome. Pay your first month with Stripe and the build kicks off the same week. The page also covers the optional hourly add-on for work outside the standard scope."
+---
+
+<section class="page-hero page-hero--peak">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span>Sign up</span>
+    </nav>
+    <span class="section-label">Welcome</span>
+    <h1>Sign up for the <em>standard plan.</em></h1>
+    <p>The page below is the actual signup. The first monthly payment kicks off the build the same week, the rate stays at the published price for the entire engagement, and the agreement you signed by email is the agreement I run the work against. If you have not yet had a discovery call, the <a href="/contact/" style="color:var(--gold-400);font-weight:500">contact page</a> is the right place to start instead.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:980px">
+    <div class="subscribe-grid">
+      <div class="subscribe-primary">
+        <span class="subscribe-eyebrow">Monthly subscription</span>
+        <div class="subscribe-price">
+          <span class="subscribe-price-dollar">$</span>
+          <span class="subscribe-price-amount">175</span>
+          <span class="subscribe-price-unit">/month</span>
+        </div>
+        <p class="subscribe-price-sub">Nothing down at signing. 12-month minimum, then month-to-month with thirty days of notice required to cancel.</p>
+
+        <ul class="subscribe-includes">
+          <li>Custom-coded site, up to ten content pages, designed for your brand</li>
+          <li>Hosting, SSL, and uptime monitoring on a fast global CDN</li>
+          <li>Unlimited content updates after launch</li>
+          <li>Blog system included, with the same setup that powers <a href="/blog/" class="inline-link">this site's blog</a></li>
+          <li>On-page and local-SEO foundation</li>
+          <li>Direct line to me for anything urgent</li>
+        </ul>
+
+        <a href="{{ site.subscribeUrl or 'https://buy.stripe.com/' }}" rel="noopener" target="_blank" class="btn btn-primary btn-full btn-lg subscribe-cta">Pay your first month with Stripe &rarr;</a>
+        <p class="subscribe-foot">Stripe handles the card or ACH transaction directly. No card information is stored on Pikes Peak Web Designs infrastructure, only a confirmation that the charge cleared.</p>
+      </div>
+
+      <aside class="subscribe-side">
+        <div class="subscribe-side-card">
+          <span class="subscribe-side-eyebrow">Need extra hours of work?</span>
+          <h2 class="subscribe-side-title">Outside-the-plan work, billed at $100 an hour.</h2>
+          <p>Anything outside the standard scope is billed at a flat one hundred dollars an hour, with a written estimate provided before any of it starts. Examples of outside-the-plan work include:</p>
+          <ul>
+            <li>A custom calculator built from scratch</li>
+            <li>A third-party booking integration</li>
+            <li>An email-marketing template</li>
+            <li>A migration from an old platform</li>
+            <li>A bespoke interactive page beyond the standard layouts</li>
+          </ul>
+          <p>If you already have a written estimate from me and want to settle a block of hours, the link below opens a Stripe checkout for the additional hourly work.</p>
+          <a href="{{ site.hourlyUrl or 'https://buy.stripe.com/' }}" rel="noopener" target="_blank" class="btn btn-outline-dark btn-full">Pay for additional hours &rarr;</a>
+          <p class="subscribe-side-foot">If you do not have an estimate yet, send a note via the <a href="/ask/" class="inline-link">short ask form</a> first. I will scope the work and quote it before any payment.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container" style="max-width:760px">
+    <div class="text-center">
+      <span class="section-label">What happens next</span>
+      <h2 class="section-title" style="margin-inline:auto">Three steps from payment to live site.</h2>
+    </div>
+    <ol class="next-steps" style="margin-top:2rem">
+      <li class="next-step">
+        <span class="next-step-num">1</span>
+        <div>
+          <h3>The payment confirms.</h3>
+          <p>Stripe processes the charge and sends you a receipt. I receive the confirmation on my end and reach out the same day with a kickoff email.</p>
+        </div>
+      </li>
+      <li class="next-step">
+        <span class="next-step-num">2</span>
+        <div>
+          <h3>Onboarding.</h3>
+          <p>I send you the <a href="/onboarding/" class="inline-link">onboarding form</a>, which gathers the few inputs I need from your side: your logo (if you have one), photos of your work, your services and rough pricing, your domain, and any specific deadlines. The form takes most clients fifteen to twenty minutes to fill out in one sitting.</p>
+        </div>
+      </li>
+      <li class="next-step">
+        <span class="next-step-num">3</span>
+        <div>
+          <h3>Build and launch.</h3>
+          <p>The build runs over the next two to three weeks, with a live preview link inside the first week so you can give feedback while the work is still moving. Once you have signed off on the design, I handle the DNS migration, sitemap submission, and the launch-day owner's guide.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <div class="text-center">
+      <span class="section-label">Common questions about payment</span>
+      <h2 class="section-title" style="margin-inline:auto">Quick answers.</h2>
+    </div>
+    <div class="faq-list" style="margin-top:2rem">
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Why Stripe? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Stripe is the standard payment processor for small agencies, and it handles card and ACH transactions on PCI-compliant infrastructure. The agency never sees or stores your card number on its end of the wire, since Stripe holds all payment information directly. Stripe also handles dunning, dispute resolution, and the international payment surface for Canadian clients.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Do I need to have signed the agreement before paying? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, the signed <a href="/agreement/" class="inline-link">service agreement</a> needs to be in place before the first payment runs. The agreement arrives by email as a Google Docs e-signature request after the discovery call, and once both signatures are in I send the link to this page so the first payment kicks the build off.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Can I switch from monthly to a one-time buyout later? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, you can. If at some point you would rather own the code outright, I am happy to quote a buyout, and the conversation tends to be a straightforward one. There is no penalty attached to asking, and the buyout amount is calculated against the months you have already paid.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">What if I need a refund? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The refund posture is in the <a href="/agreement/" class="inline-link">service agreement</a> in plain language. The short version: if I have not started building yet and you change your mind within the first week, the first payment is refundable in full. After the build kicks off, refunds are handled on a case-by-case basis, and I would rather find a reasonable way forward than collect against a relationship that is not working.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Is the hourly link gated? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Soft-gated, yes. The hourly link is meant for clients who already have a written estimate from me and want to settle a block of hours, and it is not the right starting point for a new piece of work. If you do not have an estimate yet, send the request through the <a href="/ask/" class="inline-link">short ask form</a> first and I will scope the work and quote it before any payment changes hands.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Not yet ready to sign up?</span>
+    <h2>Start with a twenty-minute call.</h2>
+    <p>If you have not yet had a discovery call with me, the call is the right starting point. The signed agreement, the kickoff, and this payment page all come after that conversation, in that order.</p>
+    <div class="cta-buttons">
+      <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
+      <a href="/pricing/" class="btn btn-outline btn-lg">Read the plan in detail</a>
+    </div>
+  </div>
+</section>

@@ -681,29 +681,34 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0.6rem clamp(1.25rem, 3vw, 2rem);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1.5rem;
+  white-space: nowrap;
 }
 .topbar-left {
   letter-spacing: 0.02em;
-  justify-self: start;
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 .topbar-center {
   font-family: var(--font-display);
   font-style: italic;
   letter-spacing: 0.01em;
   color: rgba(255, 255, 255, 0.6);
-  justify-self: center;
   white-space: nowrap;
+  flex: 0 0 auto;
+  margin: 0 auto;
 }
 .topbar-right {
   display: flex;
   align-items: center;
   gap: 1rem;
-  justify-self: end;
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
+.topbar-right a { white-space: nowrap; }
 .topbar-right a {
   color: inherit;
   font-weight: 500;
@@ -982,23 +987,33 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 .search-modal-panel {
   position: relative;
   width: 100%;
-  max-width: 720px;
+  max-width: 760px;
   background: var(--surface-raised);
   border: 1px solid var(--line);
+  border-top: 4px solid transparent;
+  border-image: var(--peak-gradient, linear-gradient(95deg, var(--gold-100), var(--gold-400) 40%, var(--navy-800))) 1;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
-  padding: 1.5rem;
-  max-height: 85vh;
+  padding: 1.75rem 1.75rem 1rem;
+  max-height: 88vh;
   overflow-y: auto;
   animation: searchPop var(--dur) var(--ease-out);
 }
 .search-modal-head {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.25rem;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--line);
+}
+.search-modal-head-text { flex: 1; min-width: 0; }
+.search-modal-sub {
+  margin: 0.4rem 0 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.45;
 }
 .search-modal-close {
   display: inline-flex;
@@ -1009,12 +1024,77 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   border-radius: var(--radius-sm);
   color: var(--text-muted);
   transition: background var(--dur), color var(--dur);
+  flex: 0 0 auto;
 }
 .search-modal-close:hover {
   background: var(--bg-alt-2);
   color: var(--text);
 }
 .search-modal-close svg { width: 18px; height: 18px; }
+
+.search-modal-suggest {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--line);
+}
+.search-modal-suggest-label {
+  display: block;
+  font-family: var(--font-display, var(--font-body));
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.65rem;
+}
+.search-modal-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.search-chip {
+  display: inline-block;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  transition: background var(--dur), border-color var(--dur), color var(--dur);
+}
+.search-chip:hover {
+  background: var(--gold-100, #f3e3b8);
+  border-color: var(--gold-400, #c8a44a);
+  color: var(--text);
+}
+:root[data-theme="dark"] .search-chip:hover {
+  background: rgba(200, 164, 74, 0.18);
+}
+.search-modal-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1.25rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.search-modal-foot kbd {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.45rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  color: var(--text);
+  margin-right: 0.35rem;
+}
+
 @keyframes searchFadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -2698,8 +2778,8 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 .live-build-card {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
-  padding: 1.85rem 1.85rem 1.65rem;
+  gap: 0;
+  padding: 0;
   background: var(--surface-raised);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
@@ -2708,6 +2788,31 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   transition: border-color var(--dur), background var(--dur), transform var(--dur);
   position: relative;
   overflow: hidden;
+}
+.live-build-shot {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--line);
+}
+.live-build-shot img,
+.live-build-shot picture,
+.live-build-shot picture img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.live-build-card:hover .live-build-shot img { transform: scale(1.02); }
+.live-build-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.6rem 1.85rem 1.65rem;
+  flex: 1;
 }
 .live-build-card::before {
   content: "";
@@ -5235,7 +5340,7 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   max-width: 100%;
 }
 .pagefind-ui {
-  --pagefind-ui-scale: 0.9;
+  --pagefind-ui-scale: 0.95;
   --pagefind-ui-primary: var(--navy-900);
   --pagefind-ui-text: var(--text);
   --pagefind-ui-background: var(--surface-raised);
@@ -5246,6 +5351,50 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   --pagefind-ui-font: var(--font-body);
 }
 :root[data-theme="dark"] .pagefind-ui { --pagefind-ui-primary: var(--gold-400); }
+.search-modal .pagefind-ui__search-input {
+  font-size: 1.05rem;
+  padding: 0.85rem 1rem 0.85rem 2.5rem;
+  border-width: 1.5px;
+  border-color: var(--line);
+  background: var(--bg-alt);
+  transition: border-color var(--dur), background var(--dur), box-shadow var(--dur);
+}
+.search-modal .pagefind-ui__search-input:focus {
+  border-color: var(--gold-400, #c8a44a);
+  background: var(--surface-raised);
+  box-shadow: 0 0 0 3px rgba(200, 164, 74, 0.18);
+  outline: none;
+}
+.search-modal .pagefind-ui__result {
+  border-bottom: 1px solid var(--line);
+  padding-block: 0.75rem;
+  transition: background var(--dur);
+}
+.search-modal .pagefind-ui__result:hover {
+  background: var(--bg-alt);
+}
+.search-modal .pagefind-ui__result-link {
+  font-weight: 600;
+  color: var(--text);
+}
+.search-modal .pagefind-ui__result-link:hover { color: var(--gold-600, #b08a32); }
+:root[data-theme="dark"] .search-modal .pagefind-ui__result-link:hover { color: var(--gold-400); }
+.search-modal .pagefind-ui__result-excerpt {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+.search-modal .pagefind-ui__result-excerpt mark {
+  background: var(--gold-100, #f3e3b8);
+  color: var(--text);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+:root[data-theme="dark"] .search-modal .pagefind-ui__result-excerpt mark {
+  background: rgba(200, 164, 74, 0.32);
+}
+/* Hide popular-pages chip block once a query is typed (only show when results aren't displayed). */
+.search-modal-panel:has(.pagefind-ui__results-area:not(:empty)) .search-modal-suggest { display: none; }
+.search-modal-panel:has(.pagefind-ui__result) .search-modal-suggest { display: none; }
 
 /* ========== GLOSSARY ========== */
 /* Desktop: a single-line, sticky A-Z strip pinned just under the header.
@@ -13987,3 +14136,284 @@ h1:focus-within em::after { transform: scaleX(1); }
 
 /* (Demo button hardening lives inside each demo block so it's
     included in the per-demo extracted CSS bundle.) */
+
+/* ============================================================
+   Subscribe page (/subscribe/)
+   ============================================================ */
+.subscribe-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .subscribe-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+.subscribe-primary {
+  background: var(--surface-card, #fff);
+  border: 1px solid var(--line);
+  padding: 2.25rem;
+  border-radius: var(--radius, 0);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 28px rgba(0,0,0,0.05);
+}
+.subscribe-eyebrow,
+.subscribe-side-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.subscribe-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  font-family: var(--font-display, var(--font-body));
+  line-height: 1;
+  margin: 0.25rem 0 0.5rem;
+}
+.subscribe-price-dollar { font-size: 1.75rem; font-weight: 600; color: var(--text); }
+.subscribe-price-amount { font-size: clamp(3rem, 7vw, 4.25rem); font-weight: 700; color: var(--text); }
+.subscribe-price-unit { font-size: 1.05rem; color: var(--text-muted); margin-left: 0.35rem; }
+.subscribe-price-sub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0 0 1.5rem;
+}
+.subscribe-includes {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.subscribe-includes li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.97rem;
+  color: var(--text);
+}
+.subscribe-includes li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.65rem;
+  height: 0.65rem;
+  background: var(--gold-400, #c8a44a);
+  transform: rotate(45deg);
+}
+.subscribe-cta { margin-top: 0.5rem; }
+.subscribe-foot {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.subscribe-side-card {
+  background: var(--surface-soft, #faf8f3);
+  border: 1px solid var(--line);
+  padding: 1.75rem;
+  border-radius: var(--radius, 0);
+}
+.subscribe-side-title {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+.subscribe-side-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0 0 0.85rem;
+}
+.subscribe-side-card ul {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.subscribe-side-card ul li { margin-bottom: 0.35rem; }
+.subscribe-side-foot {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   Seasons (year-round, share-on-occasion landing pages)
+   ============================================================ */
+.season-hero-lead {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.season-hero-meta {
+  margin-top: 1.25rem;
+  font-family: var(--font-display, var(--font-body));
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  text-align: center;
+}
+.season-argument {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+.season-pitch {
+  background: var(--surface-card, #fff);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold-400, #c8a44a);
+  padding: 2rem 2.25rem;
+  border-radius: var(--radius, 0);
+  text-align: left;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 28px rgba(0,0,0,0.05);
+}
+.season-pitch-title {
+  font-family: var(--font-display, var(--font-body));
+  font-size: clamp(1.4rem, 1.05rem + 1.2vw, 1.85rem);
+  line-height: 1.25;
+  margin: 0.5rem 0 0.75rem;
+  font-weight: 600;
+}
+.season-pitch-body {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+  line-height: 1.65;
+}
+.seasons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 768px) {
+  .seasons-grid { grid-template-columns: 1fr; }
+}
+.seasons-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.85rem 1.85rem 1.65rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  text-decoration: none !important;
+  color: var(--text);
+  transition: border-color var(--dur), background var(--dur), transform var(--dur);
+  position: relative;
+  overflow: hidden;
+}
+.seasons-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--peak-gradient, linear-gradient(95deg, var(--gold-100), var(--gold-400) 40%, var(--navy-800)));
+  opacity: 0;
+  transition: opacity var(--dur);
+}
+.seasons-card:hover {
+  border-color: var(--gold-400);
+  background: var(--bg-alt);
+  transform: translateY(-2px);
+}
+.seasons-card:hover::before { opacity: 1; }
+.seasons-card-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+}
+:root[data-theme="dark"] .seasons-card-tag { color: var(--gold-400); }
+.seasons-card-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0.15rem 0 0.4rem;
+}
+.seasons-card-title em {
+  font-style: italic;
+  color: var(--gold-600);
+  background-image: var(--peak-gradient, linear-gradient(95deg, var(--gold-100), var(--gold-400) 40%, var(--navy-800)));
+  background-size: 100% 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+}
+:root[data-theme="dark"] .seasons-card-title em { color: var(--gold-400); }
+.seasons-card-desc {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+}
+.seasons-card-cta {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--gold-600);
+  margin-top: auto;
+  padding-top: 0.35rem;
+  border-bottom: 1px solid transparent;
+  align-self: flex-start;
+  transition: border-color var(--dur);
+}
+:root[data-theme="dark"] .seasons-card-cta { color: var(--gold-400); }
+.seasons-card:hover .seasons-card-cta { border-bottom-color: currentColor; }
+
+.seasons-cross {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+}
+@media (max-width: 640px) { .seasons-cross { grid-template-columns: 1fr; } }
+.seasons-cross-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.15rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius, 0);
+  text-decoration: none !important;
+  color: var(--text);
+  transition: border-color var(--dur), background var(--dur);
+}
+.seasons-cross-link:hover {
+  border-color: var(--gold-400);
+  background: var(--bg-alt);
+}
+.seasons-cross-tag {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.seasons-cross-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
