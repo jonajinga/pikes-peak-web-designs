@@ -3154,28 +3154,52 @@ a.inline-link:hover, .prose a:not(.btn):hover, .prose-policy a:not(.btn):hover, 
   margin: 0 auto;
   padding: clamp(3rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2rem) 2rem;
 }
+/* Brand block sits in its own row above the link columns. The brand text
+   takes the left side, the trust badges sit right (or wrap below on
+   narrow screens). */
+.footer-brand-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: end;
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.footer-brand-row .footer-brand-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  justify-self: end;
+}
+@media (max-width: 980px) {
+  .footer-brand-row {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .footer-brand-row .footer-brand-badges { justify-self: start; }
+}
+
 .footer-top {
   display: grid;
-  grid-template-columns: 1.6fr repeat(5, 1fr);
-  gap: clamp(1.25rem, 3vw, 2.25rem);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(1rem, 2.2vw, 2rem);
   margin-bottom: 2.5rem;
 }
-@media (max-width: 1280px) {
-  .footer-top {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .footer-brand { grid-column: 1 / -1; max-width: 720px; margin-bottom: 1rem; }
-}
-@media (max-width: 1024px) {
-  .footer-top { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1180px) {
+  .footer-top { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 720px) {
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 1.75rem 1.25rem; }
-  .footer-brand { max-width: none; }
+  .footer-top { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 1.25rem; }
 }
 @media (max-width: 480px) {
   .footer-top { grid-template-columns: 1fr; gap: 1.75rem; }
 }
+
+/* Force single-line column titles and links so nothing wraps awkwardly */
+.footer-col-title { white-space: nowrap; }
+.footer-col a { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* Secondary footer section: discounts, existing-clients, contact strip
    that sits below the main link columns. Lighter weight, 3-column grid
@@ -6070,6 +6094,56 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 @media (max-width: 480px) {
   .changelog-stats { grid-template-columns: 1fr; }
+}
+
+/* Theme cards: the five buyer-facing categories that map shipments to
+   work the prospect actually cares about. Anchor links into the timeline. */
+.changelog-themes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
+.changelog-theme {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  text-decoration: none !important;
+  color: var(--text);
+  transition: border-color var(--dur), background var(--dur), transform var(--dur);
+}
+.changelog-theme:hover {
+  border-color: var(--gold-400);
+  background: var(--bg-alt);
+  transform: translateY(-2px);
+}
+.changelog-theme-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  color: var(--gold-600);
+  margin-bottom: 0.35rem;
+}
+.changelog-theme-icon svg { width: 18px; height: 18px; }
+:root[data-theme="dark"] .changelog-theme-icon { color: var(--gold-400); }
+.changelog-theme strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.changelog-theme span:not(.changelog-theme-icon) {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-muted);
 }
 
 /* "How to read this page" callout above the changelog stream. */

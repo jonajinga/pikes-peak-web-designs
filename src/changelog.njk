@@ -4,14 +4,14 @@ title: "Changelog | Pikes Peak Web Designs"
 description: "What I have shipped, added, fixed, and improved on pikespeakwebdesigns.com. Updated as I ship, not quarterly."
 ---
 
-<section class="page-hero">
+<section class="page-hero page-hero--peak">
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="sep">/</span><span>Changelog</span>
     </nav>
-    <span class="section-label">Changelog</span>
-    <h1>What I have shipped, <em>in public.</em></h1>
-    <p>This page is a running record of every substantive change to pikespeakwebdesigns.com. I publish it for two reasons. <strong>For potential clients:</strong> the cadence and quality of my own site tells you more about how I work than any pitch deck would. <strong>For existing clients:</strong> when I ship something new on your site, you will see the same level of detail in your own changelog.</p>
+    <span class="section-label">Proof, not promises</span>
+    <h1>The website I sell is the website <em>I keep shipping.</em></h1>
+    <p>This page is the running receipt of how I actually work. Every substantive change to pikespeakwebdesigns.com is recorded here in plain language and dated, which means a prospect can see the cadence and quality of my own work before any conversation happens. <strong>If this site improves week after week, your site will too,</strong> because every client's site lives on the same stack, gets the same release-note treatment, and benefits from the engineering work shipped here.</p>
   </div>
 </section>
 
@@ -20,39 +20,78 @@ description: "What I have shipped, added, fixed, and improved on pikespeakwebdes
     <div class="changelog-stats">
       <div class="changelog-stat">
         <strong>{{ changelogStats.shipEvents }}</strong>
-        <span>ship events on this site to date</span>
+        <span>substantive shipments since launch</span>
       </div>
       <div class="changelog-stat">
         <strong>{{ changelogStats.categoryCount }}</strong>
-        <span>improvement categories tracked</span>
+        <span>improvement categories actively tracked</span>
       </div>
       <div class="changelog-stat">
         <strong>0</strong>
-        <span>quiet weeks; I ship continuously</span>
+        <span>quiet weeks; the work compounds continuously</span>
       </div>
       <div class="changelog-stat">
         <strong>100%</strong>
-        <span>of changes mirrored on GitHub, public-style</span>
+        <span>of changes published in public, before any sales call</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:2.5rem">
-  <div class="container" style="max-width:820px">
+<section class="section" style="padding-top:2.5rem;padding-bottom:1rem">
+  <div class="container" style="max-width:980px">
+    <div class="text-center" style="max-width:720px;margin:0 auto 2rem">
+      <span class="section-label">What I keep shipping for clients</span>
+      <h2 class="section-title" style="margin-inline:auto">Five themes, every one of them showing up on your site too.</h2>
+      <p class="section-subtitle" style="margin-inline:auto">The work below is grouped into five themes a buyer actually cares about. Every shipment on the timeline maps to one or more of them, and every theme reflects work that compounds across every site I run, including yours.</p>
+    </div>
+    <div class="changelog-themes">
+      <a href="#timeline" class="changelog-theme">
+        <span class="changelog-theme-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </span>
+        <strong>Performance</strong>
+        <span>Page-speed wins, Core Web Vitals tuning, asset-pipeline upgrades. Every gain ports to your site.</span>
+      </a>
+      <a href="#timeline" class="changelog-theme">
+        <span class="changelog-theme-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="8" r="1"/><path d="M10 10h4v6"/></svg>
+        </span>
+        <strong>Accessibility</strong>
+        <span>Screen-reader, keyboard, and contrast work. WCAG 2.2 AA holds across the entire client base.</span>
+      </a>
+      <a href="#timeline" class="changelog-theme">
+        <span class="changelog-theme-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </span>
+        <strong>Mobile &amp; conversion</strong>
+        <span>Layout work on the screens your customers actually use, where most of the lead volume lives.</span>
+      </a>
+      <a href="#timeline" class="changelog-theme">
+        <span class="changelog-theme-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </span>
+        <strong>Voice &amp; content</strong>
+        <span>Editorial cleanups, conversational copy, and the kind of writing that reads like a human, not a brochure.</span>
+      </a>
+      <a href="#timeline" class="changelog-theme">
+        <span class="changelog-theme-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        <strong>Infrastructure &amp; security</strong>
+        <span>Build pipeline, hosting, search, analytics, and security headers. The boring layer that keeps the site quiet.</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <aside class="changelog-legend" aria-label="How to read this page">
-      <h2>How to read this page</h2>
-      <p>Each entry below is a single shipment: a category tag, a short headline, and the specifics underneath. Most-recent entries first. I write it the same way we'd write a release note for an internal team. If a term is unfamiliar, the <a href="/glossary/" class="inline-link">glossary</a> defines every technical word used here.</p>
-      <ul class="changelog-legend-tags">
-        <li><span class="changelog-tag changelog-tag--major">Major</span> A new page, feature, or significant rebuild.</li>
-        <li><span class="changelog-tag">Performance</span> Speed and Core Web Vitals improvements.</li>
-        <li><span class="changelog-tag">A11y</span> Accessibility fixes for screen readers, keyboard, contrast.</li>
-        <li><span class="changelog-tag">Mobile</span> Phone- and tablet-specific layout work.</li>
-        <li><span class="changelog-tag">Voice</span> Copy, tone, and editorial cleanups.</li>
-        <li><span class="changelog-tag">Infrastructure</span> Build, hosting, search, analytics, security headers.</li>
-      </ul>
-    </aside>
+<section class="section" style="padding-top:1rem" id="timeline">
+  <div class="container" style="max-width:820px">
+    <div style="margin-bottom:2rem">
+      <span class="section-label">The timeline</span>
+      <h2 class="section-title">Most recent first.</h2>
+      <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.7;margin-top:0.5rem">Each entry below records a single shipment. There is a category tag, a short headline, and the specifics underneath. The same release-note discipline runs on every client site, so when something ships on your end the level of detail in your monthly summary matches what you see here. If a technical term is unfamiliar, the <a href="/glossary/" class="inline-link">glossary</a> defines every word used on this page.</p>
+    </div>
 
     <div class="changelog-entry">
       <header class="changelog-head">
@@ -482,7 +521,7 @@ description: "What I have shipped, added, fixed, and improved on pikespeakwebdes
     </div>
 
     <p style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);font-size:0.92rem;color:var(--text-muted);text-align:center">
-      We publish every substantive change here. For the raw commit history, see the repo on <a href="https://github.com/jonajinga/pikes-peak-web-designs" class="inline-link" rel="noopener">GitHub</a>.
+      Every substantive change is published here. The raw commit history is open on <a href="https://github.com/jonajinga/pikes-peak-web-designs" class="inline-link" rel="noopener">GitHub</a> if you want to dig further.
     </p>
 
   </div>
@@ -490,13 +529,13 @@ description: "What I have shipped, added, fixed, and improved on pikespeakwebdes
 
 <section class="cta-section">
   <div class="cta-inner">
-    <span class="section-label">Active development</span>
-    <h2>The website I sell is the website I ship.</h2>
-    <p>If this site is improving weekly, your site will improve weekly. That's the pitch, and this page is the receipt. <strong>Existing client?</strong> When I ship on your site, the same level of detail goes in your monthly summary.</p>
+    <span class="section-label">If this is the cadence you want</span>
+    <h2>Every entry above lives on your site, too.</h2>
+    <p>The work shipped on this site is the work shipped on every client site. The performance gains compound, the accessibility floor holds, and the release-note discipline runs the same way on yours. Twenty minutes on a discovery call is enough to see whether the same cadence is the right fit for what you are building.</p>
     <div class="cta-buttons">
-      <a href="/contact/" class="btn btn-primary btn-lg">Start a Conversation</a>
-      <a href="/client-portal/" class="btn btn-outline btn-lg">Client Portal</a>
-      <a href="/technical-approach/" class="btn btn-outline btn-lg">Technical Approach</a>
+      <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
+      <a href="/method/" class="btn btn-outline btn-lg">Read the methodology</a>
+      <a href="/technical-approach/" class="btn btn-outline btn-lg">Inspect the stack</a>
     </div>
   </div>
 </section>
