@@ -107,6 +107,16 @@ layout: layouts/demo-redcap.njk
 .demo-post-toc ol li a:hover { color:var(--rc-red); }
 .demo-post-toc ol li a.is-active { color:var(--rc-red); border-left-color:var(--rc-red); font-weight:600; }
 .demo-post-toc ol li.demo-post-toc-sub a { padding-left:1.4rem; font-size:0.86rem; }
+.demo-post-toc { max-height: calc(100vh - 6rem); overflow-y: auto; padding-right: 0.25rem; }
+#demoPostContent h2 { margin: 2.4rem 0 1rem; scroll-margin-top: 6rem; }
+#demoPostContent h3 { margin: 2rem 0 0.75rem; scroll-margin-top: 6rem; }
+#demoPostContent p { margin: 0 0 1.15em; }
+#demoPostContent ul, #demoPostContent ol { margin: 0 0 1.25em 1.5em; padding: 0; }
+#demoPostContent li { margin-bottom: 0.5em; line-height: 1.7; }
+#demoPostContent li:last-child { margin-bottom: 0; }
+#demoPostContent li p { margin: 0 0 0.6em; }
+#demoPostContent blockquote { margin: 1.75rem 0; padding: 1rem 1.25rem; border-left: 3px solid var(--rc-red); background: var(--rc-cream); }
+#demoPostContent hr { margin: 2.25rem 0; }
 .demo-post-share { display:flex; flex-wrap:wrap; align-items:center; gap:0.85rem 1.25rem; margin:2.5rem 0 1.5rem; padding:1.25rem 0; border-top:1px solid var(--rc-line); border-bottom:1px solid var(--rc-line); }
 .demo-post-share-label { font-family:'Oswald',sans-serif; font-size:0.74rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--rc-text-muted); }
 .demo-post-share-buttons { display:flex; flex-wrap:wrap; gap:0.5rem; }

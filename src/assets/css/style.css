@@ -3671,7 +3671,81 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   max-width: var(--max-prose);
   margin: 0 auto;
   padding: clamp(3rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2rem);
+  /* Long URLs and unbreakable strings inside body copy must wrap rather
+     than push the layout off the right edge of a phone screen. */
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  min-width: 0;
 }
+
+/* Screen-side styling for <pre><code> blocks inside post bodies. The
+   print stylesheet has its own rules; without these screen rules a long
+   code line forces horizontal scrolling on phone screens. */
+.post-content pre, .prose pre {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  -webkit-overflow-scrolling: touch;
+}
+.post-content pre code, .prose pre code {
+  background: transparent;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre;
+}
+
+/* Tables inside post bodies: scroll horizontally on narrow screens
+   instead of overflowing the viewport. */
+.post-content table, .prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+  -webkit-overflow-scrolling: touch;
+}
+.post-content table thead, .prose table thead { background: var(--bg-alt); }
+.post-content table th,
+.post-content table td,
+.prose table th,
+.prose table td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.post-content table th, .prose table th {
+  font-family: var(--font-display, var(--font-body));
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Images inside post bodies: belt-and-suspenders against overflow.
+   Base img rule already sets max-width:100%, but figure/picture wrappers
+   sometimes ship explicit widths that need this override. */
+.post-content img,
+.post-content picture,
+.post-content figure,
+.prose img,
+.prose picture,
+.prose figure {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Safety net: keep the article from ever pushing the viewport. */
+.post-article { overflow-x: clip; }
 .post-content h1 {
   font-size: clamp(2rem, 1.5rem + 2.4vw, 3rem);
   margin-bottom: 1rem;

@@ -5,7 +5,7 @@ eleventyComputed:
   description: "{% if pagination.pageNumber > 0 %}Web design tips and local SEO guides for small businesses; page {{ pagination.pageNumber + 1 }}.{% else %}Web design tips, local SEO guides, and industry-specific advice for small businesses across the U.S. and Canada.{% endif %}"
 pagination:
   data: collections.posts
-  size: 9
+  size: 10
   alias: posts
   addAllPagesToCollections: true
 permalink: /blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}
