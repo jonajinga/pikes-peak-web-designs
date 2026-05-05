@@ -1,0 +1,37 @@
+---
+layout: layouts/demo-summit.njk
+---
+
+<article>
+  <section class="summit-page-hero">
+    <div class="summit-container summit-container--narrow">
+      <nav class="summit-breadcrumb" aria-label="Breadcrumb">
+        <a href="/demo/summit-hvac/">Overview</a><span class="sep">/</span><a href="/demo/summit-hvac/blog/">Resources</a><span class="sep">/</span><span>Article</span>
+      </nav>
+      {% if eyebrow %}<span class="summit-eyebrow">{{ eyebrow }}</span>{% endif %}
+      <h1 style="max-width:24ch">{{ title }}</h1>
+      <p style="font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-size:0.82rem;color:rgba(255,255,255,0.78);letter-spacing:0.04em;margin-top:0.85rem">
+        {% if date %}{{ date | dateFormat }}{% endif %}{% if author %} &middot; {{ author }}{% else %} &middot; Summit HVAC{% endif %}{% if readingTime %} &middot; {{ readingTime }}{% endif %}
+      </p>
+    </div>
+  </section>
+
+  <section class="summit-section">
+    <div class="summit-container summit-container--narrow">
+      <div style="line-height:1.75;color:var(--su-text);font-size:1.05rem">
+        {{ content | safe }}
+      </div>
+
+      <hr style="border:0;border-top:1px solid var(--su-pale);margin:3rem 0 2rem">
+
+      <div style="background:var(--su-ice);border-left:4px solid var(--su-cyan);padding:1.5rem 1.75rem">
+        <span class="summit-eyebrow" style="margin-bottom:0.5rem">Need a tune-up or estimate?</span>
+        <h3 style="font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:700;color:var(--su-navy);margin:0 0 0.5rem">Same-week appointments. No-pressure quotes.</h3>
+        <p style="margin:0 0 1.25rem;color:var(--su-text);line-height:1.65">If your system is making a noise it did not used to make, the diagnostic is one visit and one written report. We tell you whether to repair or replace, in writing.</p>
+        <a href="/demo/summit-hvac/contact/" class="summit-btn summit-btn-primary">Request a quote</a>
+      </div>
+
+      <p style="margin-top:2.5rem"><a href="/demo/summit-hvac/blog/" style="color:var(--su-cyan-deep);font-weight:600">&larr; Back to all resources</a></p>
+    </div>
+  </section>
+</article>

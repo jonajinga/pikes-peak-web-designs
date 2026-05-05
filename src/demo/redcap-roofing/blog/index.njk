@@ -1,0 +1,46 @@
+---
+layout: layouts/demo-redcap.njk
+title: "Redcap Roofing Blog | Roofing Tips & Storm Guidance"
+description: "Practical roofing knowledge for Colorado Springs homeowners: storm damage, materials, insurance claims, and what to do before the next inspection."
+permalink: /demo/redcap-roofing/blog/
+---
+
+<section class="demo-page-hero">
+  <div class="demo-container demo-container--narrow">
+    <nav class="demo-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/redcap-roofing/">Home</a><span class="sep">/</span><span>Blog</span>
+    </nav>
+    <span class="demo-eyebrow">From the field</span>
+    <h1>Roofing notes from the <em>Front Range.</em></h1>
+    <p>Practical writing on what actually happens to roofs in Colorado weather. Hail, wind, sun, ice dams, and the insurance claims that come after. No filler, no sales-y guides, just the answers I would give a neighbor over the fence.</p>
+  </div>
+</section>
+
+<section class="demo-section demo-section--white">
+  <div class="demo-container demo-container--narrow">
+    <div class="demo-blog-list">
+      {% set redcapPosts = collections.redcapPost | reverse %}
+      {% for post in redcapPosts %}
+      <article class="demo-blog-card">
+        <span class="demo-eyebrow" style="color:var(--rc-red)">{{ post.data.eyebrow or "Article" }}</span>
+        <h2 style="font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:600;letter-spacing:0.02em;color:var(--rc-black);margin:0.4rem 0 0.6rem;line-height:1.2"><a href="{{ post.url }}" style="color:inherit;text-decoration:none">{{ post.data.title }}</a></h2>
+        <p style="color:var(--rc-text-muted);line-height:1.6;margin:0 0 0.85rem">{{ post.data.description }}</p>
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--rc-text-dim);letter-spacing:0.06em;text-transform:uppercase;margin:0">
+          {% if post.date %}{{ post.date | dateFormat }}{% endif %} &middot; {{ post.data.readingTime or "5 min read" }}
+        </p>
+        <a href="{{ post.url }}" style="display:inline-block;margin-top:1rem;color:var(--rc-red);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:0.86rem;font-family:'Oswald',sans-serif">Read article &rarr;</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="demo-section demo-section--cream">
+  <div class="demo-container demo-container--narrow" style="text-align:center">
+    <h2 class="demo-h2">Got a specific question?</h2>
+    <p class="demo-lead">If you have a roofing problem the blog does not cover, the inspection itself is free. We climb the roof, write up what we see, and tell you what to do about it.</p>
+    <div style="margin-top:1.5rem">
+      <a href="/demo/redcap-roofing/contact/" class="demo-btn demo-btn-primary">Get your free inspection</a>
+    </div>
+  </div>
+</section>

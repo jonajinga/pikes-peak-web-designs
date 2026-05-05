@@ -1,0 +1,37 @@
+---
+layout: layouts/demo-lumen.njk
+---
+
+<article>
+  <section class="lumen-page-hero">
+    <div class="lumen-container lumen-container--narrow">
+      <nav class="lumen-breadcrumb" aria-label="Breadcrumb">
+        <a href="/demo/lumen-electric/">Home</a><span class="sep">/</span><a href="/demo/lumen-electric/blog/">Notes</a><span class="sep">/</span><span>Article</span>
+      </nav>
+      {% if eyebrow %}<span class="lumen-eyebrow">{{ eyebrow }}</span>{% endif %}
+      <h1 style="max-width:24ch">{{ title }}</h1>
+      <p style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:0.82rem;color:var(--lu-gray-light);letter-spacing:0.06em;text-transform:uppercase;margin-top:0.85rem">
+        {% if date %}{{ date | dateFormat }}{% endif %}{% if author %} &middot; {{ author }}{% else %} &middot; Lumen Electric{% endif %}{% if readingTime %} &middot; {{ readingTime }}{% endif %}
+      </p>
+    </div>
+  </section>
+
+  <section class="lumen-section">
+    <div class="lumen-container lumen-container--narrow">
+      <div style="line-height:1.75;color:var(--lu-ink);font-size:1.05rem">
+        {{ content | safe }}
+      </div>
+
+      <hr style="border:0;border-top:1px solid var(--lu-line);margin:3rem 0 2rem">
+
+      <div style="background:var(--lu-bone);border-left:4px solid var(--lu-yellow);padding:1.5rem 1.75rem">
+        <span class="lumen-eyebrow" style="margin-bottom:0.5rem">Need an electrician?</span>
+        <h3 style="font-family:'Archivo',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.01em;color:var(--lu-black);margin:0 0 0.5rem;text-transform:uppercase">Same-day quotes. Code-compliant work.</h3>
+        <p style="margin:0 0 1.25rem;color:var(--lu-ink);line-height:1.65">Licensed, insured, and pulling permits when the job calls for it. The diagnostic visit is one trip and one written quote.</p>
+        <a href="/demo/lumen-electric/contact/" class="lumen-btn lumen-btn-primary">Book a job</a>
+      </div>
+
+      <p style="margin-top:2.5rem"><a href="/demo/lumen-electric/blog/" style="color:var(--lu-yellow-deep);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;font-family:'Archivo',sans-serif">&larr; Back to all notes</a></p>
+    </div>
+  </section>
+</article>

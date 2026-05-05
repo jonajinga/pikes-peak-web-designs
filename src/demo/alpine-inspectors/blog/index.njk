@@ -1,0 +1,42 @@
+---
+layout: layouts/demo-alpine.njk
+title: "Field Notes | Alpine Inspectors"
+description: "Long-form writing on home inspection along the Front Range. What we look at, what we find, and what it means for the people who hire us."
+permalink: /demo/alpine-inspectors/blog/
+---
+
+<section class="alpine-page-hero">
+  <div class="alpine-container alpine-container--narrow">
+    <nav class="alpine-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/alpine-inspectors/">Home</a><span class="sep">/</span><span>Field Notes</span>
+    </nav>
+    <span class="alpine-eyebrow">Editorial</span>
+    <h1>Field notes from <em>the field.</em></h1>
+    <p>Long-form writing on home inspection along the Front Range. What we look at, what we find, and what it means for the homeowners and agents who hire us. No rankings, no clickbait, just the report-quality detail you would expect from us.</p>
+  </div>
+</section>
+
+<section class="alpine-section">
+  <div class="alpine-container alpine-container--narrow">
+    {% set alpinePosts = collections.alpinePost | reverse %}
+    {% for post in alpinePosts %}
+    <article style="padding:2rem 0;border-bottom:1px solid var(--al-line)">
+      <span class="alpine-eyebrow">{{ post.data.eyebrow or "Field note" }}</span>
+      <h2 style="font-family:'Source Serif 4','Source Serif Pro',Georgia,serif;font-size:1.7rem;font-weight:600;color:var(--al-forest);margin:0.4rem 0 0.6rem;line-height:1.25"><a href="{{ post.url }}" style="color:inherit">{{ post.data.title }}</a></h2>
+      <p style="color:var(--al-text-muted);line-height:1.65;margin:0 0 0.85rem">{{ post.data.description }}</p>
+      <p style="font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:0.78rem;color:var(--al-taupe);letter-spacing:0.04em;margin:0">
+        {% if post.date %}{{ post.date | dateFormat }}{% endif %} &middot; {{ post.data.readingTime or "5 min read" }}
+      </p>
+      <a href="{{ post.url }}" style="display:inline-block;margin-top:0.85rem;color:var(--al-forest);font-weight:600">Read field note &rarr;</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="alpine-section alpine-section--cream-deep">
+  <div class="alpine-container alpine-container--narrow" style="text-align:center">
+    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:1.7rem;color:var(--al-forest)">Need an actual inspection?</h2>
+    <p style="color:var(--al-text);font-size:1.05rem;max-width:520px;margin:0.85rem auto 1.5rem">A written report, in plain language, within twenty-four hours of the inspection. Schedule a slot and we are usually on the calendar within the week.</p>
+    <a href="/demo/alpine-inspectors/contact/" class="alpine-btn alpine-btn-primary">Schedule an inspection</a>
+  </div>
+</section>

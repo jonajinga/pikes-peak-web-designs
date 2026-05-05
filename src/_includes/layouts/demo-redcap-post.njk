@@ -1,0 +1,37 @@
+---
+layout: layouts/demo-redcap.njk
+---
+
+<article class="demo-blog-article">
+  <section class="demo-page-hero">
+    <div class="demo-container demo-container--narrow">
+      <nav class="demo-breadcrumb" aria-label="Breadcrumb">
+        <a href="/demo/redcap-roofing/">Home</a><span class="sep">/</span><a href="/demo/redcap-roofing/blog/">Blog</a><span class="sep">/</span><span>Article</span>
+      </nav>
+      {% if eyebrow %}<span class="demo-eyebrow">{{ eyebrow }}</span>{% endif %}
+      <h1 style="max-width:24ch">{{ title }}</h1>
+      <p class="demo-blog-meta" style="font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:rgba(255,255,255,0.65);letter-spacing:0.06em;text-transform:uppercase;margin-top:0.85rem">
+        {% if date %}{{ date | dateFormat }}{% endif %}{% if author %} &middot; {{ author }}{% else %} &middot; Redcap Roofing{% endif %}{% if readingTime %} &middot; {{ readingTime }}{% endif %}
+      </p>
+    </div>
+  </section>
+
+  <section class="demo-section demo-section--white">
+    <div class="demo-container demo-container--narrow">
+      <div class="demo-blog-body">
+        {{ content | safe }}
+      </div>
+
+      <hr style="border:0;border-top:1px solid var(--rc-line);margin:3rem 0 2rem">
+
+      <div style="background:var(--rc-cream-warm);border-left:4px solid var(--rc-red);padding:1.5rem 1.75rem;border-radius:0 4px 4px 0">
+        <span class="demo-eyebrow" style="margin-bottom:0.5rem">Need a roof inspection?</span>
+        <h3 style="font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--rc-black);margin:0 0 0.5rem">Free, written, same week.</h3>
+        <p style="margin:0 0 1.25rem;color:var(--rc-text);line-height:1.6">Hail damage suspected, leak in the ceiling, or just a roof you have not had checked in a while. Either way, no pressure on the inspection itself.</p>
+        <a href="/demo/redcap-roofing/contact/" class="demo-btn demo-btn-primary">Get your free inspection</a>
+      </div>
+
+      <p style="margin-top:2.5rem"><a href="/demo/redcap-roofing/blog/" style="color:var(--rc-red);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:0.88rem;font-family:'Oswald',sans-serif">&larr; Back to all articles</a></p>
+    </div>
+  </section>
+</article>

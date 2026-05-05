@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/demo-clearwater-post.njk",
+  "tags": ["clearwaterPost"],
+  "permalink": "/demo/clearwater-plumbing/blog/{{ page.fileSlug }}/"
+}

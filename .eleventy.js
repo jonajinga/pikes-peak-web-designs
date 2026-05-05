@@ -16,10 +16,21 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
+  // Root-level favicon files emitted by `npm run favicons`. Live in src/
+  // root so they pass through to /favicon.svg, /apple-touch-icon.png, etc.
+  eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "src/favicon-32.png": "favicon-32.png" });
+  eleventyConfig.addPassthroughCopy({ "src/favicon-192.png": "favicon-192.png" });
+  eleventyConfig.addPassthroughCopy({ "src/favicon-512.png": "favicon-512.png" });
+  eleventyConfig.addPassthroughCopy({ "src/apple-touch-icon.png": "apple-touch-icon.png" });
+  eleventyConfig.addPassthroughCopy({ "src/site.webmanifest": "site.webmanifest" });
 
   // Plugins
   eleventyConfig.addPlugin(metagen);
-  eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "./_site" });
+  // Disabled: the plugin races on Windows when invoked from base.njk via
+  // shortcode (per-page copy collides). Icons are generated once via
+  // `npm run favicons` (scripts/generate-favicons.mjs) and committed.
+  // eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "./_site" });
   eleventyConfig.addPlugin(autoCacheBuster);
   eleventyConfig.addPlugin(feedPlugin, {
     type: "atom",

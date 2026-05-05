@@ -1,0 +1,42 @@
+---
+layout: layouts/demo-clearwater.njk
+title: "Tips | Clearwater Plumbing"
+description: "Practical plumbing knowledge for Colorado homeowners. Frozen-pipe prevention, water-heater choices, and the small leaks that turn into big problems."
+permalink: /demo/clearwater-plumbing/blog/
+---
+
+<section class="clearwater-page-hero">
+  <div class="clearwater-container clearwater-container--narrow">
+    <nav class="clearwater-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/clearwater-plumbing/">Home</a><span class="sep">/</span><span>Tips</span>
+    </nav>
+    <span class="clearwater-eyebrow">Knowledge</span>
+    <h1>Plumbing tips, <em>plainly written.</em></h1>
+    <p>Honest, practical writing on the plumbing problems we get called for the most. No jargon, no upsell, just the answers we would give a neighbor over the fence.</p>
+  </div>
+</section>
+
+<section class="clearwater-section">
+  <div class="clearwater-container clearwater-container--narrow">
+    {% set clearwaterPosts = collections.clearwaterPost | reverse %}
+    {% for post in clearwaterPosts %}
+    <article style="padding:2rem 0;border-bottom:1px solid var(--cw-cream-deep)">
+      <span class="clearwater-eyebrow" style="color:var(--cw-aqua-deep)">{{ post.data.eyebrow or "Tip" }}</span>
+      <h2 style="font-family:'Inter',sans-serif;font-size:1.55rem;font-weight:700;color:var(--cw-navy);margin:0.4rem 0 0.6rem;line-height:1.25"><a href="{{ post.url }}" style="color:inherit">{{ post.data.title }}</a></h2>
+      <p style="color:var(--cw-text);line-height:1.65;margin:0 0 0.85rem">{{ post.data.description }}</p>
+      <p style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:0.78rem;color:var(--cw-text);opacity:0.7;letter-spacing:0.04em;margin:0">
+        {% if post.date %}{{ post.date | dateFormat }}{% endif %} &middot; {{ post.data.readingTime or "5 min read" }}
+      </p>
+      <a href="{{ post.url }}" style="display:inline-block;margin-top:0.85rem;color:var(--cw-aqua-deep);font-weight:600">Read tip &rarr;</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="clearwater-section" style="background:var(--cw-cream)">
+  <div class="clearwater-container clearwater-container--narrow" style="text-align:center">
+    <h2 style="font-family:'Inter',sans-serif;font-size:1.7rem;color:var(--cw-navy)">Have an active leak?</h2>
+    <p style="color:var(--cw-text);font-size:1.05rem;max-width:520px;margin:0.85rem auto 1.5rem">Same-day for emergencies. Honest quotes before any work starts.</p>
+    <a href="/demo/clearwater-plumbing/contact/" class="clearwater-btn clearwater-btn-primary">Book service</a>
+  </div>
+</section>

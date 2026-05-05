@@ -1,0 +1,42 @@
+---
+layout: layouts/demo-lumen.njk
+title: "Notes | Lumen Electric"
+description: "Practical electrical knowledge for homeowners. Flickering lights, EV charger requirements, knob-and-tube wiring, and what your panel can handle."
+permalink: /demo/lumen-electric/blog/
+---
+
+<section class="lumen-page-hero">
+  <div class="lumen-container lumen-container--narrow">
+    <nav class="lumen-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/lumen-electric/">Home</a><span class="sep">/</span><span>Notes</span>
+    </nav>
+    <span class="lumen-eyebrow">From the truck</span>
+    <h1>Notes from the <em>truck.</em></h1>
+    <p>Direct, practical writing on residential electrical work. Why your lights flicker, what your panel can handle, what an EV charger install actually involves. The questions homeowners ask us most.</p>
+  </div>
+</section>
+
+<section class="lumen-section">
+  <div class="lumen-container lumen-container--narrow">
+    {% set lumenPosts = collections.lumenPost | reverse %}
+    {% for post in lumenPosts %}
+    <article style="padding:2rem 0;border-bottom:1px solid var(--lu-line)">
+      <span class="lumen-eyebrow">{{ post.data.eyebrow or "Note" }}</span>
+      <h2 style="font-family:'Archivo',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:-0.01em;color:var(--lu-black);margin:0.4rem 0 0.6rem;line-height:1.2;text-transform:uppercase"><a href="{{ post.url }}" style="color:inherit">{{ post.data.title }}</a></h2>
+      <p style="color:var(--lu-gray);line-height:1.65;margin:0 0 0.85rem">{{ post.data.description }}</p>
+      <p style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:0.78rem;color:var(--lu-gray-light);letter-spacing:0.06em;text-transform:uppercase;margin:0">
+        {% if post.date %}{{ post.date | dateFormat }}{% endif %} &middot; {{ post.data.readingTime or "5 min read" }}
+      </p>
+      <a href="{{ post.url }}" style="display:inline-block;margin-top:0.85rem;color:var(--lu-yellow-deep);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;font-family:'Archivo',sans-serif">Read note &rarr;</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="lumen-section" style="background:var(--lu-bone)">
+  <div class="lumen-container lumen-container--narrow" style="text-align:center">
+    <h2 style="font-family:'Archivo',sans-serif;font-size:1.7rem;color:var(--lu-black);text-transform:uppercase">Need a real visit?</h2>
+    <p style="color:var(--lu-ink);font-size:1.05rem;max-width:520px;margin:0.85rem auto 1.5rem">The diagnostic is one trip and one written quote. Licensed, insured, code-compliant.</p>
+    <a href="/demo/lumen-electric/contact/" class="lumen-btn lumen-btn-primary">Book a job</a>
+  </div>
+</section>

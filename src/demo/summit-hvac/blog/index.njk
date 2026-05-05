@@ -1,0 +1,42 @@
+---
+layout: layouts/demo-summit.njk
+title: "Resources | Summit HVAC"
+description: "Practical heating and cooling guidance for Colorado homeowners. Furnace replacement timing, heat pumps in cold weather, indoor air quality, and more."
+permalink: /demo/summit-hvac/blog/
+---
+
+<section class="summit-page-hero">
+  <div class="summit-container summit-container--narrow">
+    <nav class="summit-breadcrumb" aria-label="Breadcrumb">
+      <a href="/demo/summit-hvac/">Overview</a><span class="sep">/</span><span>Resources</span>
+    </nav>
+    <span class="summit-eyebrow">Knowledge base</span>
+    <h1>Heating &amp; cooling, <em>explained.</em></h1>
+    <p>Practical resources for Colorado homeowners who want to know what is going on with their HVAC system before they pick up the phone. No filler, no upsell, just the answers.</p>
+  </div>
+</section>
+
+<section class="summit-section">
+  <div class="summit-container summit-container--narrow">
+    {% set summitPosts = collections.summitPost | reverse %}
+    {% for post in summitPosts %}
+    <article style="padding:2rem 0;border-bottom:1px solid var(--su-pale)">
+      <span class="summit-eyebrow" style="color:var(--su-cyan-deep)">{{ post.data.eyebrow or "Resource" }}</span>
+      <h2 style="font-family:'Inter',sans-serif;font-size:1.55rem;font-weight:700;color:var(--su-navy);margin:0.4rem 0 0.6rem;line-height:1.25"><a href="{{ post.url }}" style="color:inherit">{{ post.data.title }}</a></h2>
+      <p style="color:var(--su-text);line-height:1.65;margin:0 0 0.85rem">{{ post.data.description }}</p>
+      <p style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:0.78rem;color:var(--su-text-muted);letter-spacing:0.04em;margin:0">
+        {% if post.date %}{{ post.date | dateFormat }}{% endif %} &middot; {{ post.data.readingTime or "5 min read" }}
+      </p>
+      <a href="{{ post.url }}" style="display:inline-block;margin-top:0.85rem;color:var(--su-cyan-deep);font-weight:600">Read article &rarr;</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="summit-section" style="background:var(--su-ice)">
+  <div class="summit-container summit-container--narrow" style="text-align:center">
+    <h2 style="font-family:'Inter',sans-serif;font-size:1.7rem;color:var(--su-navy)">Have a system issue right now?</h2>
+    <p style="color:var(--su-text);font-size:1.05rem;max-width:520px;margin:0.85rem auto 1.5rem">Diagnostics are one visit, written. We tell you whether to repair or replace and what each option costs.</p>
+    <a href="/demo/summit-hvac/contact/" class="summit-btn summit-btn-primary">Request a quote</a>
+  </div>
+</section>

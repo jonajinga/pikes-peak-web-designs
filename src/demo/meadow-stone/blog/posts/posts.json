@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/demo-meadow-post.njk",
+  "tags": ["meadowPost"],
+  "permalink": "/demo/meadow-stone/blog/{{ page.fileSlug }}/"
+}

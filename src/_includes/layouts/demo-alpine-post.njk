@@ -1,0 +1,37 @@
+---
+layout: layouts/demo-alpine.njk
+---
+
+<article class="alpine-blog-article">
+  <section class="alpine-page-hero">
+    <div class="alpine-container alpine-container--narrow">
+      <nav class="alpine-breadcrumb" aria-label="Breadcrumb">
+        <a href="/demo/alpine-inspectors/">Home</a><span class="sep">/</span><a href="/demo/alpine-inspectors/blog/">Field Notes</a><span class="sep">/</span><span>Article</span>
+      </nav>
+      {% if eyebrow %}<span class="alpine-eyebrow">{{ eyebrow }}</span>{% endif %}
+      <h1 style="max-width:24ch">{{ title }}</h1>
+      <p style="font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:0.82rem;color:var(--al-text-muted);letter-spacing:0.04em;margin-top:0.85rem">
+        {% if date %}{{ date | dateFormat }}{% endif %}{% if author %} &middot; {{ author }}{% else %} &middot; Alpine Inspectors{% endif %}{% if readingTime %} &middot; {{ readingTime }}{% endif %}
+      </p>
+    </div>
+  </section>
+
+  <section class="alpine-section">
+    <div class="alpine-container alpine-container--narrow">
+      <div class="alpine-blog-body" style="line-height:1.75;color:var(--al-text);font-size:1.05rem">
+        {{ content | safe }}
+      </div>
+
+      <hr style="border:0;border-top:1px solid var(--al-line);margin:3rem 0 2rem">
+
+      <div style="background:var(--al-cream-deep);border-left:4px solid var(--al-forest);padding:1.5rem 1.75rem">
+        <span class="alpine-eyebrow" style="margin-bottom:0.5rem">Schedule an inspection</span>
+        <h3 style="font-family:'Source Serif 4','Source Serif Pro',Georgia,serif;font-size:1.4rem;font-weight:600;color:var(--al-forest);margin:0 0 0.5rem">A written report, in plain language, in 24 hours.</h3>
+        <p style="margin:0 0 1.25rem;color:var(--al-text);line-height:1.65">Whether you are buying, selling, or just want a baseline on the home you are in, the inspection is structured to leave you with a useful document, not just a checklist.</p>
+        <a href="/demo/alpine-inspectors/contact/" class="alpine-btn alpine-btn-primary">Schedule an inspection</a>
+      </div>
+
+      <p style="margin-top:2.5rem"><a href="/demo/alpine-inspectors/blog/" style="color:var(--al-forest);font-weight:600">&larr; Back to all field notes</a></p>
+    </div>
+  </section>
+</article>

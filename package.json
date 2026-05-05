@@ -6,7 +6,8 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "og": "node scripts/generate-og-images.mjs"
+    "og": "node scripts/generate-og-images.mjs",
+    "favicons": "node scripts/generate-favicons.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

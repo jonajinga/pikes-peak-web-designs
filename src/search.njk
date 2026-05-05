@@ -1,39 +1,174 @@
 ---
 layout: layouts/base.njk
 title: "Search | Pikes Peak Web Designs"
-description: "Search every page, article, and service area on the Pikes Peak Web Designs site."
+description: "Full-text search across every page, blog post, FAQ, glossary entry, service area, and demo site."
 ---
 
-<section class="page-hero">
-  <div class="container">
+<section class="page-hero search-page-hero">
+  <div class="container" style="max-width:880px">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="sep">/</span><span>Search</span>
     </nav>
     <span class="section-label">Search</span>
-    <h1>Looking for <em>something specific?</em></h1>
-    <p>Full-text search across every page, article, and service area. Type a keyword and we'll find it.</p>
+    <h1>Search every page on this <em>website.</em></h1>
+    <p>Full-text search runs across every blog post, FAQ, glossary entry, service-area page, and demo site. Press <kbd class="search-page-kbd">/</kbd> from anywhere on the site to open the modal version, or type below.</p>
   </div>
 </section>
 
-<section class="section">
-  <div class="container" style="max-width:820px">
-    <div id="pagefind-search" class="search-panel"></div>
+<section class="section search-page-section">
+  <div class="container" style="max-width:860px">
 
-    <div style="margin-top:3rem;padding:1.75rem;background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--radius)">
-      <h2 style="font-family:var(--font-display);font-size:1.2rem;font-weight:600;margin-bottom:0.75rem">Not sure what to look for?</h2>
-      <p style="font-size:0.95rem;color:var(--text-muted);margin-bottom:1rem">Try one of these starting points:</p>
-      <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
-        <a href="/pricing/" class="btn btn-outline-dark" style="padding:0.5rem 1rem;font-size:0.88rem">Pricing</a>
-        <a href="/how-it-works/" class="btn btn-outline-dark" style="padding:0.5rem 1rem;font-size:0.88rem">How it works</a>
-        <a href="/whats-included/" class="btn btn-outline-dark" style="padding:0.5rem 1rem;font-size:0.88rem">What's included</a>
-        <a href="/faq/" class="btn btn-outline-dark" style="padding:0.5rem 1rem;font-size:0.88rem">FAQ</a>
-        <a href="/glossary/" class="btn btn-outline-dark" style="padding:0.5rem 1rem;font-size:0.88rem">Glossary</a>
-        <a href="/sitemap/" class="btn btn-outline-dark" style="padding:0.5rem 1rem;font-size:0.88rem">All pages</a>
-        <a href="/blog/" class="btn btn-outline-dark" style="padding:0.5rem 1rem;font-size:0.88rem">Blog</a>
-        <a href="/service-areas/" class="btn btn-outline-dark" style="padding:0.5rem 1rem;font-size:0.88rem">Service areas</a>
+    <div id="pagefind-search" class="search-panel search-panel--page" data-search-page-mount></div>
+
+    <div class="search-page-suggest">
+      <span class="search-page-suggest-label">Popular topics</span>
+      <div class="search-page-chips">
+        <button type="button" class="search-page-chip" data-prefill="pricing">Pricing</button>
+        <button type="button" class="search-page-chip" data-prefill="how it works">How it works</button>
+        <button type="button" class="search-page-chip" data-prefill="page speed">Page speed</button>
+        <button type="button" class="search-page-chip" data-prefill="local SEO">Local SEO</button>
+        <button type="button" class="search-page-chip" data-prefill="agreement">Agreement</button>
+        <button type="button" class="search-page-chip" data-prefill="audit">Free audit</button>
+        <button type="button" class="search-page-chip" data-prefill="onboarding">Onboarding</button>
+        <button type="button" class="search-page-chip" data-prefill="WordPress">WordPress</button>
+        <button type="button" class="search-page-chip" data-prefill="hourly">Hourly work</button>
+        <button type="button" class="search-page-chip" data-prefill="accessibility">Accessibility</button>
+        <button type="button" class="search-page-chip" data-prefill="schema">Schema markup</button>
+        <button type="button" class="search-page-chip" data-prefill="hosting">Hosting</button>
       </div>
     </div>
 
-    <p style="margin-top:2rem;font-size:0.88rem;color:var(--text-muted);text-align:center">Can't find what you're looking for? <a href="/contact/" class="inline-link">Just ask</a>; we answer every message personally.</p>
+    <div class="search-page-recent" data-search-page-recent hidden>
+      <span class="search-page-suggest-label">Recent searches</span>
+      <div class="search-page-recent-list" data-search-page-recent-list></div>
+      <button type="button" class="search-page-recent-clear" data-search-page-recent-clear>Clear history</button>
+    </div>
+
+    <div class="search-page-grid">
+      <a href="/sitemap/" class="search-page-card">
+        <span class="search-page-card-eyebrow">Browse</span>
+        <strong>Every page on the site</strong>
+        <span>The full sitemap, organized by section.</span>
+      </a>
+      <a href="/blog/" class="search-page-card">
+        <span class="search-page-card-eyebrow">Read</span>
+        <strong>The blog</strong>
+        <span>Practical writing on local SEO, page speed, and what moves the phone.</span>
+      </a>
+      <a href="/faq/" class="search-page-card">
+        <span class="search-page-card-eyebrow">Ask</span>
+        <strong>FAQ</strong>
+        <span>Forty-six questions answered straight, no sales call required.</span>
+      </a>
+      <a href="/glossary/" class="search-page-card">
+        <span class="search-page-card-eyebrow">Define</span>
+        <strong>Glossary</strong>
+        <span>Plain-language definitions for every technical term used here.</span>
+      </a>
+      <a href="/service-areas/" class="search-page-card">
+        <span class="search-page-card-eyebrow">Local</span>
+        <strong>Service areas</strong>
+        <span>Where I work across the U.S. and Canada.</span>
+      </a>
+      <a href="/samples/" class="search-page-card">
+        <span class="search-page-card-eyebrow">See</span>
+        <strong>Sample sites</strong>
+        <span>Six live demos by industry plus four real-world builds.</span>
+      </a>
+    </div>
+
+    <div class="search-page-fallback">
+      <span class="search-page-fallback-eyebrow">Cannot find it?</span>
+      <h2>I read every message personally.</h2>
+      <p>If the search did not turn up what you needed, the <a href="/ask/" class="inline-link">short ask form</a> goes straight to me. For a new website, the <a href="/contact/" class="inline-link">discovery call</a> is the right starting point.</p>
+    </div>
   </div>
 </section>
+
+<script>
+(function () {
+  // Prefill chips: pre-fill the Pagefind input and trigger a search.
+  function setQuery(q) {
+    var input = document.querySelector('#pagefind-search input[type="search"], #pagefind-search input[type="text"]');
+    if (!input) {
+      // Pagefind not yet mounted; retry shortly.
+      setTimeout(function () { setQuery(q); }, 200);
+      return;
+    }
+    input.value = q;
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    input.focus();
+    // Scroll to the input on mobile so the result list is visible.
+    var rect = input.getBoundingClientRect();
+    if (rect.top < 0 || rect.top > window.innerHeight) {
+      input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+  document.querySelectorAll('[data-prefill]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setQuery(btn.getAttribute('data-prefill'));
+    });
+  });
+
+  // Recent-search history via localStorage. Captures whatever the user
+  // typed once they pause for 800ms; cap at 6 entries; ignore blanks.
+  var STORAGE_KEY = 'ppwd_recent_search';
+  var MAX_RECENT = 6;
+  function readRecent() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) { return []; }
+  }
+  function writeRecent(list) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(list.slice(0, MAX_RECENT))); } catch (e) {}
+  }
+  function addRecent(q) {
+    q = (q || '').trim();
+    if (!q || q.length < 2) return;
+    var list = readRecent().filter(function (x) { return x.toLowerCase() !== q.toLowerCase(); });
+    list.unshift(q);
+    writeRecent(list);
+    renderRecent();
+  }
+  function renderRecent() {
+    var wrap = document.querySelector('[data-search-page-recent]');
+    var listEl = document.querySelector('[data-search-page-recent-list]');
+    if (!wrap || !listEl) return;
+    var list = readRecent();
+    if (!list.length) { wrap.hidden = true; return; }
+    wrap.hidden = false;
+    listEl.innerHTML = list.map(function (q) {
+      var safe = q.replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+      return '<button type="button" class="search-page-chip search-page-chip--recent" data-prefill="' + safe + '">' + safe + '</button>';
+    }).join('');
+    listEl.querySelectorAll('[data-prefill]').forEach(function (btn) {
+      btn.addEventListener('click', function () { setQuery(btn.getAttribute('data-prefill')); });
+    });
+  }
+  var clearBtn = document.querySelector('[data-search-page-recent-clear]');
+  if (clearBtn) clearBtn.addEventListener('click', function () { writeRecent([]); renderRecent(); });
+
+  // Watch the Pagefind input once it mounts and capture searches that pause
+  // for 800ms (treats them as committed).
+  var captureTimer = null;
+  function attachCapture() {
+    var input = document.querySelector('#pagefind-search input[type="search"], #pagefind-search input[type="text"]');
+    if (!input) { setTimeout(attachCapture, 300); return; }
+    input.addEventListener('input', function () {
+      clearTimeout(captureTimer);
+      captureTimer = setTimeout(function () { addRecent(input.value); }, 800);
+    });
+    // Auto-focus on page load so the user can start typing immediately
+    // unless they arrived with a hash anchor or are on a small screen
+    // where the on-screen keyboard would shove the page.
+    if (window.matchMedia('(min-width: 720px)').matches && !location.hash) {
+      input.focus();
+    }
+  }
+  attachCapture();
+  renderRecent();
+})();
+</script>

@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/demo-alpine-post.njk",
+  "tags": ["alpinePost"],
+  "permalink": "/demo/alpine-inspectors/blog/{{ page.fileSlug }}/"
+}

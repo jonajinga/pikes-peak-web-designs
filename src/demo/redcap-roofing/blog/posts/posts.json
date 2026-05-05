@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/demo-redcap-post.njk",
+  "tags": ["redcapPost"],
+  "permalink": "/demo/redcap-roofing/blog/{{ page.fileSlug }}/"
+}

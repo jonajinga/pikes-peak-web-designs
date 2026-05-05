@@ -1,0 +1,35 @@
+---
+layout: layouts/demo-meadow.njk
+---
+
+<article>
+  <section style="padding:5rem 0 3rem;background:var(--me-cream)">
+    <div style="max-width:720px;margin:0 auto;padding:0 1.5rem">
+      <nav aria-label="Breadcrumb" style="font-size:0.85rem;color:var(--me-deep);opacity:0.7;margin-bottom:1.5rem;font-family:'Inter',sans-serif">
+        <a href="/demo/meadow-stone/" style="color:inherit">Studio</a> / <a href="/demo/meadow-stone/blog/" style="color:inherit">Journal</a> / <span>Article</span>
+      </nav>
+      {% if eyebrow %}<span style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--me-terracotta)">{{ eyebrow }}</span>{% endif %}
+      <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.25rem,1.4rem+2.4vw,3.5rem);font-weight:500;line-height:1.15;color:var(--me-deep);margin:0.85rem 0 1rem;max-width:24ch;letter-spacing:-0.01em">{{ title }}</h1>
+      <p style="font-family:'Inter',sans-serif;font-size:0.85rem;color:var(--me-sage-deep);letter-spacing:0.02em;margin-top:1rem">
+        {% if date %}{{ date | dateFormat }}{% endif %}{% if author %} &middot; {{ author }}{% else %} &middot; Meadow &amp; Stone{% endif %}{% if readingTime %} &middot; {{ readingTime }}{% endif %}
+      </p>
+    </div>
+  </section>
+
+  <section style="padding:3rem 0 5rem;background:#FFFFFF">
+    <div style="max-width:720px;margin:0 auto;padding:0 1.5rem;font-family:'Inter',sans-serif;font-size:1.05rem;line-height:1.8;color:var(--me-deep)">
+      {{ content | safe }}
+
+      <hr style="border:0;border-top:1px solid var(--me-sage);opacity:0.3;margin:3rem 0 2rem">
+
+      <div style="background:var(--me-cream);border-left:3px solid var(--me-terracotta);padding:1.75rem 2rem;border-radius:0 14px 14px 0">
+        <span style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--me-terracotta);display:block;margin-bottom:0.5rem">Start a project</span>
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;color:var(--me-deep);margin:0 0 0.75rem;font-weight:500">A garden, a courtyard, a backyard rebuild.</h3>
+        <p style="margin:0 0 1.25rem;color:var(--me-deep);line-height:1.7">Whatever the project, the conversation starts with a site walk. We come out, look at what is there, listen to what you want, and sketch.</p>
+        <a href="/demo/meadow-stone/contact/" class="meadow-btn meadow-btn-primary">Schedule a site walk</a>
+      </div>
+
+      <p style="margin-top:2.5rem;font-family:'Inter',sans-serif"><a href="/demo/meadow-stone/blog/" style="color:var(--me-terracotta);font-weight:600">&larr; Back to the journal</a></p>
+    </div>
+  </section>
+</article>

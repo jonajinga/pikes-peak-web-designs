@@ -1,0 +1,42 @@
+---
+layout: layouts/demo-meadow.njk
+title: "Studio Journal | Meadow & Stone"
+description: "Notes from the studio: native plants, drought-resistant gardens, and how we approach a project from the first sketch to the last stone."
+permalink: /demo/meadow-stone/blog/
+---
+
+<section style="padding:5rem 0 3rem;background:var(--me-cream)">
+  <div style="max-width:760px;margin:0 auto;padding:0 1.5rem">
+    <nav aria-label="Breadcrumb" style="font-size:0.85rem;color:var(--me-deep);opacity:0.7;margin-bottom:1.5rem;font-family:'Inter',sans-serif">
+      <a href="/demo/meadow-stone/" style="color:inherit">Studio</a> / <span>Journal</span>
+    </nav>
+    <span style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--me-terracotta)">Editorial</span>
+    <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.5rem,1.5rem+2.6vw,3.75rem);font-weight:500;line-height:1.1;color:var(--me-deep);margin:0.85rem 0 1.25rem;letter-spacing:-0.01em">Studio <em style="font-style:italic;color:var(--me-terracotta)">journal.</em></h1>
+    <p style="font-family:'Inter',sans-serif;font-size:1.05rem;line-height:1.7;color:var(--me-deep);max-width:620px">Long-form notes on the design work, the planting decisions, and the gardens we have been thinking about. New entries roughly once a month, when the work justifies one.</p>
+  </div>
+</section>
+
+<section style="padding:3rem 0 5rem;background:#FFFFFF">
+  <div style="max-width:760px;margin:0 auto;padding:0 1.5rem">
+    {% set meadowPosts = collections.meadowPost | reverse %}
+    {% for post in meadowPosts %}
+    <article style="padding:2.5rem 0;border-bottom:1px solid var(--me-sage);border-bottom-color:rgba(139,157,131,0.3)">
+      <span style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--me-terracotta)">{{ post.data.eyebrow or "Note" }}</span>
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:2rem;font-weight:500;color:var(--me-deep);margin:0.5rem 0 0.75rem;line-height:1.15"><a href="{{ post.url }}" style="color:inherit">{{ post.data.title }}</a></h2>
+      <p style="font-family:'Inter',sans-serif;color:var(--me-deep);opacity:0.85;line-height:1.7;margin:0 0 1rem">{{ post.data.description }}</p>
+      <p style="font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--me-sage-deep);letter-spacing:0.02em;margin:0">
+        {% if post.date %}{{ post.date | dateFormat }}{% endif %} &middot; {{ post.data.readingTime or "5 min read" }}
+      </p>
+      <a href="{{ post.url }}" style="display:inline-block;margin-top:1rem;color:var(--me-terracotta);font-weight:600;font-family:'Inter',sans-serif">Read the entry &rarr;</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section style="padding:5rem 0;background:var(--me-cream)">
+  <div style="max-width:680px;margin:0 auto;padding:0 1.5rem;text-align:center">
+    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:2.25rem;color:var(--me-deep);font-weight:500;margin-bottom:1rem">Have a garden in mind?</h2>
+    <p style="font-family:'Inter',sans-serif;font-size:1.05rem;color:var(--me-deep);line-height:1.7;margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto">Every project starts with a site walk. We come out, look at what is there, and sketch a path forward.</p>
+    <a href="/demo/meadow-stone/contact/" class="meadow-btn meadow-btn-primary">Schedule a site walk</a>
+  </div>
+</section>

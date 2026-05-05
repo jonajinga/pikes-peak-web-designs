@@ -14694,6 +14694,213 @@ h1:focus-within em::after { transform: scaleX(1); }
   border-radius: 3px;
   border: 1px solid var(--line);
 }
+
+/* ============================================================
+   /search/ page (richer experience: hero, prefill chips,
+   recent-searches list, browse-by-section grid, fallback).
+   ============================================================ */
+.search-page-hero p { max-width: 640px; }
+.search-page-kbd {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.76rem;
+  padding: 0.12rem 0.45rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  color: var(--text);
+  margin: 0 0.15rem;
+}
+.search-page-section { padding-top: 1.5rem; }
+.search-panel--page .pagefind-ui { --pagefind-ui-scale: 1.1; }
+.search-panel--page .pagefind-ui__search-input {
+  font-size: 1.1rem;
+  padding: 1rem 1.1rem 1rem 2.8rem;
+  border-width: 2px;
+  border-color: var(--line);
+  background: var(--surface-raised);
+  border-radius: var(--radius);
+  transition: border-color var(--dur), box-shadow var(--dur);
+}
+.search-panel--page .pagefind-ui__search-input:focus {
+  border-color: var(--gold-400);
+  box-shadow: 0 0 0 4px rgba(200, 164, 74, 0.18);
+  outline: none;
+}
+.search-panel--page .pagefind-ui__results-area { margin-top: 1.5rem; }
+.search-panel--page .pagefind-ui__result {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding-left var(--dur);
+}
+.search-panel--page .pagefind-ui__result:hover { padding-left: 0.5rem; }
+.search-panel--page .pagefind-ui__result-link {
+  font-family: var(--font-display, var(--font-body));
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.search-panel--page .pagefind-ui__result-link:hover { color: var(--gold-600); }
+:root[data-theme="dark"] .search-panel--page .pagefind-ui__result-link:hover { color: var(--gold-400); }
+.search-panel--page .pagefind-ui__result-excerpt {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.search-panel--page .pagefind-ui__result-excerpt mark {
+  background: var(--gold-100);
+  color: var(--text);
+  padding: 0 3px;
+  border-radius: 2px;
+}
+:root[data-theme="dark"] .search-panel--page .pagefind-ui__result-excerpt mark {
+  background: rgba(200, 164, 74, 0.32);
+}
+
+.search-page-suggest,
+.search-page-recent {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--line);
+}
+.search-page-suggest-label {
+  display: block;
+  font-family: var(--font-display, var(--font-body));
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.search-page-chips,
+.search-page-recent-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.search-page-chip {
+  display: inline-block;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  cursor: pointer;
+  transition: background var(--dur), border-color var(--dur), transform var(--dur);
+  font-family: inherit;
+}
+.search-page-chip:hover {
+  background: var(--gold-100);
+  border-color: var(--gold-400);
+  transform: translateY(-1px);
+}
+:root[data-theme="dark"] .search-page-chip:hover { background: rgba(200, 164, 74, 0.16); }
+.search-page-chip--recent::before {
+  content: "\21BA";
+  margin-right: 0.4rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.search-page-recent-clear {
+  display: inline-block;
+  margin-top: 0.85rem;
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-display, var(--font-body));
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.search-page-recent-clear:hover { color: var(--text); }
+
+.search-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 768px) { .search-page-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .search-page-grid { grid-template-columns: 1fr; } }
+.search-page-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.15rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none !important;
+  color: var(--text);
+  transition: border-color var(--dur), background var(--dur), transform var(--dur);
+}
+.search-page-card:hover {
+  border-color: var(--gold-400);
+  background: var(--bg-alt);
+  transform: translateY(-1px);
+}
+.search-page-card-eyebrow {
+  font-family: var(--font-display, var(--font-body));
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+}
+:root[data-theme="dark"] .search-page-card-eyebrow { color: var(--gold-400); }
+.search-page-card strong {
+  font-family: var(--font-display, var(--font-body));
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.search-page-card span:last-child {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.search-page-fallback {
+  margin-top: 3rem;
+  padding: 1.75rem 2rem;
+  background: var(--bg-alt);
+  border-left: 4px solid var(--gold-400);
+  border-radius: var(--radius);
+}
+.search-page-fallback-eyebrow {
+  display: block;
+  font-family: var(--font-display, var(--font-body));
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+.search-page-fallback h2 {
+  font-family: var(--font-display, var(--font-body));
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 0.65rem;
+}
+.search-page-fallback p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
 .subscribe-side-title {
   font-family: var(--font-display, var(--font-body));
   font-size: 1.25rem;
