@@ -202,73 +202,6 @@
       </div>
 
       <div class="nav-dropdown">
-        <a href="/blog/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/blog/') or page.url | startsWith('/faq/') or page.url | startsWith('/glossary/') or page.url | startsWith('/owners-guide/') or page.url | startsWith('/changelog/') or page.url | startsWith('/about/') or page.url | startsWith('/press/') or page.url | startsWith('/partners/') or page.url | startsWith('/tools/') %} class="active" aria-current="page"{% endif %}>Resources <span class="nav-arrow">&#9660;</span></a>
-        <div class="mega-menu" role="menu" aria-label="Resources menu">
-          <div class="mega-menu-inner">
-            <div class="mega-col">
-              <h5>Read &amp; learn</h5>
-              <a href="/blog/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
-                <span><span class="mega-item-title">Blog</span><span class="mega-item-desc">Practical writing on local SEO, page speed, and what actually moves the phone.</span></span>
-              </a>
-              <a href="/faq/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-                <span><span class="mega-item-title">FAQ</span><span class="mega-item-desc">Every question I get asked, answered straight, with no marketing dance.</span></span>
-              </a>
-              <a href="/glossary/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
-                <span><span class="mega-item-title">Glossary</span><span class="mega-item-desc">Plain-language definitions for every technical term used on the site.</span></span>
-              </a>
-              <a href="/owners-guide/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-                <span><span class="mega-item-title">Owner's guide</span><span class="mega-item-desc">The post-launch reference every client receives, published in full.</span></span>
-              </a>
-            </div>
-
-            <div class="mega-col">
-              <h5>About the agency</h5>
-              <a href="/about/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                <span><span class="mega-item-title">About</span><span class="mega-item-desc">Who I am, how I work, and why I built the agency this way.</span></span>
-              </a>
-              <a href="/changelog/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
-                <span><span class="mega-item-title">Public changelog</span><span class="mega-item-desc">Every substantive change shipped to this site, dated, in plain language.</span></span>
-              </a>
-              <a href="/tools/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-                <span><span class="mega-item-title">The tools I use</span><span class="mega-item-desc">Every tool that goes into your site, with the reason each one made the cut.</span></span>
-              </a>
-              <a href="/press/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 9v12"/></svg></span>
-                <span><span class="mega-item-title">Press &amp; media kit</span><span class="mega-item-desc">Headshots, logos, fact sheet, and topics I am happy to be quoted on.</span></span>
-              </a>
-              <a href="/partners/" class="mega-item" role="menuitem">
-                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-                <span><span class="mega-item-title">Partner program</span><span class="mega-item-desc">For agencies, consultants, and coaches who refer service-business owners.</span></span>
-              </a>
-            </div>
-
-            <div class="mega-feature">
-              <span class="mega-feature-eyebrow">For existing clients</span>
-              <h3 class="mega-feature-title">The client portal lives here.</h3>
-              <p class="mega-feature-body">If you are already a client, the portal is one bookmarkable page that holds every operational form you need, organized by where you are in the engagement.</p>
-              <div class="mega-feature-stats">
-                <div class="mega-feature-stat"><strong>1</strong><span>page, four stages</span></div>
-                <div class="mega-feature-stat"><strong>0</strong><span>logins required</span></div>
-              </div>
-              <a href="/client-portal/" class="mega-feature-cta">Open the client portal &rarr;</a>
-            </div>
-          </div>
-
-          <div class="mega-foot">
-            <span>Have a question that is not in any of these? Send a quick note.</span>
-            <a href="/ask/">Use the short ask form &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="nav-dropdown">
         <a href="/service-areas/" aria-haspopup="true" aria-expanded="false"{% if page.url | startsWith('/service-areas/') or page.url | startsWith('/areas/') %} class="active" aria-current="page"{% endif %}>Service Areas <span class="nav-arrow">&#9660;</span></a>
         <div class="mega-menu" role="menu" aria-label="Service areas menu">
           <div class="mega-menu-inner">
@@ -396,6 +329,10 @@
                 <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
                 <span><span class="mega-item-title">Partner program</span><span class="mega-item-desc">For agencies, SEO consultants, and coaches: refer service-business owners, get paid recurring.</span></span>
               </a>
+              <a href="/partner-agreement/" class="mega-item" role="menuitem">
+                <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+                <span><span class="mega-item-title">Partner agreement</span><span class="mega-item-desc">The plain-language agreement potential partners sign before joining the program. Public reference copy.</span></span>
+              </a>
               <a href="/client-portal/" class="mega-item" role="menuitem">
                 <span class="mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
                 <span><span class="mega-item-title">Client portal</span><span class="mega-item-desc">For existing clients: content updates, design feedback, emergency support.</span></span>
@@ -477,27 +414,27 @@
   <div class="mobile-dropdown">
     <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Services <span class="mobile-arrow" aria-hidden="true"></span></button>
     <div class="mobile-dropdown-menu">
-      <a href="/how-it-works/">How It Works</a>
-      <a href="/whats-included/">What's Included</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/whats-included/">What's included</a>
+      <a href="/what-we-build/">What I build for you</a>
       <a href="/method/">The Service Site Standard</a>
-      <a href="/what-we-build/">What We Build For You</a>
       <a href="/pricing/">Pricing</a>
-      <a href="/samples/">Sample Websites</a>
-      <a href="/sample-forms/">Sample Forms</a>
-      <a href="/technical-approach/">Technical Approach</a>
-      <a href="/agreement/">Service Agreement</a>
+      <a href="/agreement/">Service agreement</a>
+      <a href="/samples/">Sample websites</a>
+      <a href="/sample-forms/">Sample forms</a>
+      <a href="/technical-approach/">Technical approach</a>
     </div>
   </div>
   <div class="mobile-dropdown">
     <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Tools &amp; Audits <span class="mobile-arrow" aria-hidden="true"></span></button>
     <div class="mobile-dropdown-menu">
-      <a href="/grader/">Site Grader</a>
-      <a href="/calculator/">Lead-Leakage Calculator</a>
-      <a href="/audit/">Free 5-Point Audit</a>
+      <a href="/grader/">Site grader</a>
+      <a href="/calculator/">Lead-leakage calculator</a>
+      <a href="/audit/">Free 5-point audit</a>
       <a href="/walk-through/">Walk-through</a>
       <a href="/results/">Results</a>
-      <a href="/changelog/">Public Changelog</a>
       <a href="/status/">Status &amp; performance</a>
+      <a href="/changelog/">Public changelog</a>
     </div>
   </div>
   <div class="mobile-dropdown">
@@ -508,9 +445,9 @@
       <a href="/vs-godaddy/">vs GoDaddy</a>
       <a href="/vs-webflow/">vs Webflow</a>
       <a href="/vs-wordpress/">vs WordPress</a>
-      <a href="/vs-ai-builders/">vs AI Builders</a>
+      <a href="/vs-ai-builders/">vs AI builders</a>
       <a href="/vs-agencies/">vs Agencies</a>
-      <a href="/vs-freelancer/">vs Freelance Dev</a>
+      <a href="/vs-freelancer/">vs Freelance dev</a>
     </div>
   </div>
   <div class="mobile-dropdown">
@@ -528,23 +465,52 @@
       <a href="/blog/">Blog</a>
       <a href="/faq/">FAQ</a>
       <a href="/glossary/">Glossary</a>
-      <a href="/owners-guide/">Owner's Guide</a>
-      <a href="/changelog/">Changelog</a>
+      <a href="/owners-guide/">Owner's guide</a>
+      <a href="/changelog/">Public changelog</a>
     </div>
   </div>
   <div class="mobile-dropdown">
-    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Company <span class="mobile-arrow" aria-hidden="true"></span></button>
+    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">The agency <span class="mobile-arrow" aria-hidden="true"></span></button>
     <div class="mobile-dropdown-menu">
-      <a href="/about/">About</a>
+      <a href="/about/">About Jon Ajinga</a>
       <a href="/results/">Results</a>
-      <a href="/partners/">Partner Program</a>
-      <a href="/technical-approach/">Technical Approach</a>
-      <a href="/tools/">The Tools I Use</a>
-      <a href="/style-guide/">Style Guide</a>
+      <a href="/status/">Status &amp; performance</a>
+      <a href="/tools/">The tools I use</a>
+      <a href="/style-guide/">Style guide</a>
       <a href="/accessibility/">Accessibility</a>
-      <a href="/press/">Press &amp; Media Kit</a>
+      <a href="/press/">Press &amp; media kit</a>
+      <a href="/partners/">Partner program</a>
+      <a href="/partner-agreement/">Partner agreement</a>
       <a href="/sitemap/">Sitemap</a>
-      <a href="/ask/">Ask a Question</a>
+    </div>
+  </div>
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Discounts <span class="mobile-arrow" aria-hidden="true"></span></button>
+    <div class="mobile-dropdown-menu">
+      <a href="/veterans/">Veterans</a>
+      <a href="/first-responders/">First responders</a>
+      <a href="/medical/">Medical personnel</a>
+    </div>
+  </div>
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Client services <span class="mobile-arrow" aria-hidden="true"></span></button>
+    <div class="mobile-dropdown-menu">
+      <a href="/client-portal/">Client portal</a>
+      <a href="/onboarding/">Onboarding</a>
+      <a href="/content-update/">Content updates</a>
+      <a href="/design-feedback/">Design feedback</a>
+      <a href="/emergency/">Emergency support</a>
+      <a href="/refer/">Make a referral</a>
+      <a href="/testimonial/">Submit a testimonial</a>
+    </div>
+  </div>
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">Contact <span class="mobile-arrow" aria-hidden="true"></span></button>
+    <div class="mobile-dropdown-menu">
+      <a href="/contact/">Discovery call</a>
+      <a href="/ask/">Quick question</a>
+      <a href="tel:{{ site.phone }}">{{ site.phoneDisplay }}</a>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
     </div>
   </div>
   <div class="theme-switch" role="group" aria-label="Appearance">

@@ -32,7 +32,7 @@ description: "Live performance numbers for the agency's site and every demo site
     <div class="prose" style="margin-top:3rem">
       <h2>How this works</h2>
       <p>A small Cloudflare Pages Function at <code>/api/pagespeed.json</code> calls the PageSpeed Insights API for the agency's site and every demo site on a schedule. Results are cached at the Cloudflare edge for six hours, which means the badges refresh automatically without blowing through the API's free quota. The frontend reads that JSON and renders the badge grid above.</p>
-      <p>If something is off, whether a score dropped or a site moved, you will see it on this page within six hours of the change. The full source is on <a href="https://github.com/jonajinga/pikes-peak-web-designs" rel="noopener" class="inline-link">GitHub</a>.</p>
+      <p>If something is off, whether a score dropped or a site moved, you will see it on this page within six hours of the change.</p>
 
       <h2>Recent ship cadence</h2>
       <p>The <a href="/changelog/" class="inline-link">public changelog</a> tracks every substantive change shipped. The number below is auto-derived from the changelog template at every build: <strong>{{ changelogStats.shippedRecent }}</strong> entries shipped in the last 30 days. The full history covers <strong>{{ changelogStats.shipEvents }}</strong> ship events across <strong>{{ changelogStats.categoryCount }}</strong> categories.</p>

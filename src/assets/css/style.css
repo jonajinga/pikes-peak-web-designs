@@ -681,16 +681,28 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0.6rem clamp(1.25rem, 3vw, 2rem);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 1.5rem;
 }
-.topbar-left { letter-spacing: 0.02em; }
+.topbar-left {
+  letter-spacing: 0.02em;
+  justify-self: start;
+}
+.topbar-center {
+  font-family: var(--font-display);
+  font-style: italic;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.6);
+  justify-self: center;
+  white-space: nowrap;
+}
 .topbar-right {
   display: flex;
   align-items: center;
   gap: 1rem;
+  justify-self: end;
 }
 .topbar-right a {
   color: inherit;
@@ -705,15 +717,18 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 }
 .topbar-portal:hover { color: var(--gold-200) !important; }
 
-/* Topbar tablet + below: drop the long left descriptor so the contact items
-   have room. Tablet portrait (768-1023) keeps phone, email, portal; mobile
-   compresses further to phone + portal only. */
+/* Topbar tablet + below: drop the centre markline first, then the left
+   location descriptor, so the contact cluster keeps its room. */
+@media (max-width: 1180px) {
+  .topbar-center { display: none; }
+  .topbar-inner { grid-template-columns: 1fr auto; }
+}
 @media (max-width: 1023px) {
   .topbar-inner {
     gap: 0.75rem;
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
-    flex-wrap: nowrap;
+    grid-template-columns: 1fr;
   }
   .topbar-left { display: none; }
   .topbar-right {
@@ -722,6 +737,7 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     justify-content: flex-end;
     flex-wrap: nowrap;
     white-space: nowrap;
+    justify-self: stretch;
   }
   .topbar-right a:not(.topbar-portal) { color: rgba(255, 255, 255, 0.88); }
 }
@@ -4564,6 +4580,67 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   background: var(--navy-900);
   border-color: var(--navy-900);
   color: #FFFFFF;
+}
+
+/* Founder intro on the homepage. Photo on the left, biography on
+   the right. Stacks vertically on tablet portrait and narrower. */
+.founder-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.founder-intro-photo {
+  position: relative;
+}
+.founder-intro-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 40px -22px rgba(10, 31, 68, 0.35);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.founder-intro-caption {
+  display: block;
+  margin-top: 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  text-align: center;
+}
+:root[data-theme="dark"] .founder-intro-caption { color: var(--gold-400); }
+.founder-intro-body .section-title {
+  margin-top: 0.6rem;
+  text-wrap: balance;
+}
+.founder-intro-body p {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--text);
+  margin: 0 0 1.1rem;
+}
+.founder-intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+@media (max-width: 880px) {
+  .founder-intro {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .founder-intro-photo {
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }
 
 /* Featured-article hero on /blog/ index */
