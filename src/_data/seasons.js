@@ -218,7 +218,7 @@ export default [
       },
       {
         q: "What happens if you stop running the agency?",
-        a: "The hosting account is in your name (or transferable to it), the source code is yours, and the contractual right to receive a copy of the build is in the standard <a href=\"/agreement/\" class=\"inline-link\">service agreement</a>. I have no incentive to hold any client hostage to my own continued existence, and the paperwork reflects that."
+        a: "I host the site on my own account while we are working together, but everything that matters for continuity belongs to you. The domain is in your name. The content is yours. The contractual right to receive a clean static export of the build is in the standard <a href=\"/agreement/\" class=\"inline-link\">service agreement</a>. I have no incentive to hold any client hostage to my own continued existence, and the paperwork reflects that."
       },
     ],
   },

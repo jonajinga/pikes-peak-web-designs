@@ -32,9 +32,9 @@ tags: [post]
 
 <h2>3. "What happens if I want to leave?"</h2>
 
-<p><strong>Right answer:</strong> "The code is yours. The domain is in your name. The hosting is on your account or transferable to it. I will hand you everything you need to take the site to another developer."</p>
+<p><strong>Right answer:</strong> the domain is in your name. The content (text, photos, brand assets) is yours. You receive a clean export of the site that runs on any host. The designer hands you everything you need to keep operating without them. The hosting account itself can either stay with the designer (common, and fine if the export is clean) or live in your name from day one (also fine), but the test is whether you can leave without losing anything.</p>
 
-<p><strong>Wrong answer:</strong> "The site stays on our platform" (lock-in), "We retain the source code" (a real red flag), or any answer that makes leaving expensive or difficult. This is the question most likely to expose a designer who is selling a contract trap rather than a service.</p>
+<p><strong>Wrong answer:</strong> "The site stays on our platform" (lock-in), "We retain the source code" (a real red flag), "You will need to rebuild from scratch to leave," or any answer that makes leaving expensive or difficult. This is the question most likely to expose a designer who is selling a contract trap rather than a service.</p>
 
 <p><strong>Why it matters:</strong> the relationship will end someday. Either the designer retires, the agency goes under, the price changes, the work quality drops, or your business outgrows them. The exit terms matter more than the entry terms. Read the agreement before you sign — and if there is no agreement, that is itself a red flag.</p>
 

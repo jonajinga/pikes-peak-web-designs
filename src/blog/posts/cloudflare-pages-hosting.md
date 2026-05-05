@@ -79,11 +79,11 @@ tags: [post]
 
 <h2>Who owns what</h2>
 
-<p>The hosting account is in the client's name (or transferable to it on demand). The domain is registered in the client's name at their preferred registrar, with DNS pointed at Cloudflare. The source code lives in a GitHub repository the client has full access to.</p>
+<p>I host every client's site on my own Cloudflare account while the engagement is active. The domain itself is registered in the client's own name at their preferred registrar (GoDaddy, Namecheap, Cloudflare Registrar, whichever they prefer), with DNS pointed at my hosting. The photos, the copy, and the brand assets all remain the client's property throughout.</p>
 
-<p>If the engagement ever ends, every piece of infrastructure stays with the client. They can hand the GitHub repo and the Cloudflare account to another developer who can continue from where I left off, or they can take a static export of the site and move it to a different host without rewriting anything.</p>
+<p>If the engagement ever ends, the client takes a clean static export of the site that runs on any host with no dependencies, plus full ownership of the domain and the content. There is no exit fee, no migration roadblock, and no missing piece.</p>
 
-<p>This is the right control structure on the wrong day. The arrangement is designed to survive the engagement ending, not just to function while it is running.</p>
+<p>The reasoning behind that split: the hosting account stays with me so I can patch things, ship updates, and respond to issues without waiting on credentials to be passed around. The domain and the deliverable stay with the client so the relationship can end cleanly whenever it needs to.</p>
 
 <h2>If your current site is on a slow or expensive host</h2>
 
