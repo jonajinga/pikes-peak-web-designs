@@ -17,22 +17,47 @@ permalink: /blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
       <a href="/">Home</a><span class="sep">/</span><span>Blog</span>
     </nav>
     <span class="section-label">Resources &amp; guides</span>
-    <h1>Practical advice for <em>small business websites.</em></h1>
-    <p>Industry-specific guides, local SEO tips, and straightforward thinking on what actually works for service businesses.</p>
+    <h1>Practical writing on <em>small-business websites.</em></h1>
+    <p>This is the working notebook of the agency. Industry-specific guides, local-SEO walk-throughs, and honest thinking about what actually moves the phone for small service businesses, written by the same person who builds the sites.</p>
   </div>
 </section>
+
+{% if pagination.pageNumber == 0 and posts.length > 0 %}
+{% set featured = posts[0] %}
+<section class="section" style="padding-bottom:0">
+  <div class="container">
+    <a href="{{ featured.url }}" class="blog-featured">
+      <span class="blog-featured-eyebrow">Featured article</span>
+      <h2 class="blog-featured-title">{{ featured.data.title }}</h2>
+      <p class="blog-featured-deck">{{ featured.data.description }}</p>
+      <span class="blog-featured-meta">
+        {{ featured.data.label or "Guide" }}
+        {% if featured.date %} &middot; {{ featured.date | dateFormat }}{% endif %}
+        &middot; {{ featured.templateContent | readingTime }}
+      </span>
+      <span class="blog-featured-cta">Read the article &rarr;</span>
+    </a>
+  </div>
+</section>
+{% endif %}
 
 <section class="section">
   <div class="container">
     {% if posts.length > 0 %}
+    <div class="text-center" style="max-width:680px;margin:0 auto 2rem">
+      <span class="section-label">{% if pagination.pageNumber == 0 %}More articles{% else %}All articles{% endif %}</span>
+      <h2 class="section-title" style="margin-inline:auto">Browse the full archive.</h2>
+    </div>
     <div class="post-list">
       {% for post in posts %}
+        {% if not (pagination.pageNumber == 0 and loop.index == 1) %}
         <article class="post-card">
           <div class="post-meta">{{ post.data.label or "Guide" }}{% if post.date %} &middot; {{ post.date | dateFormat }}{% endif %}</div>
           <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
           <p>{{ post.data.description }}</p>
           <a href="{{ post.url }}" class="post-link">Read article</a>
         </article>
+        {% endif %}
       {% endfor %}
     </div>
     {% endif %}
@@ -51,11 +76,25 @@ permalink: /blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
   </div>
 </section>
 
+<section class="section section--cream">
+  <div class="container" style="max-width:760px">
+    <div class="text-center">
+      <span class="section-label">Ship this same blog system on your site</span>
+      <h2 class="section-title" style="margin-inline:auto">The blog you are reading runs the same code I install on client sites.</h2>
+      <p style="font-size:1rem;line-height:1.7;color:var(--text);margin-top:1rem">The reading progress bar at the top of each article, the sticky table of contents on the side, the share buttons, the auto-generated RSS feed, the structured-data schema on every post, and the related-articles strip at the bottom are all part of one cohesive blog system. I install that exact system on a client site as a one-time $200 add-on, and once it is in place, every new post you publish runs on the same custom-coded foundation, with no plugin to maintain and no platform fees attached. From there, drafting and publishing posts is part of your unlimited content updates rather than a separate billable item.</p>
+    </div>
+    <div class="cta-buttons" style="justify-content:center;margin-top:1.75rem">
+      <a href="/contact/" class="btn btn-primary btn-lg">Start a Conversation</a>
+      <a href="/whats-included/" class="btn btn-outline-dark btn-lg">See what's included</a>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="cta-inner">
     <span class="section-label">Ready to build?</span>
-    <h2>We build the websites we write about.</h2>
-    <p>$175 a month, custom-coded, everything included. The articles explain the ideas; we deliver them.</p>
+    <h2>I build the websites I write about.</h2>
+    <p>The articles on this page explain the ideas, and the work delivers them on your behalf, on a flat $175 a month with the blog system available as a one-time add-on whenever you are ready for it.</p>
     <div class="cta-buttons">
       <a href="/contact/" class="btn btn-primary btn-lg">Start a Conversation</a>
       <a href="/pricing/" class="btn btn-outline btn-lg">See Pricing</a>

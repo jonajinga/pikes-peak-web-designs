@@ -3,42 +3,119 @@ layout: layouts/base.njk
 ogType: article
 ---
 
-<article>
-  <header class="page-hero" style="padding:clamp(3.5rem,6vw,5rem) 0 clamp(2rem,4vw,3rem)">
+{# Reading progress bar #}
+<div class="post-progress" aria-hidden="true"><span class="post-progress-bar" id="postProgressBar"></span></div>
+
+<article class="post-article">
+  <header class="page-hero post-hero">
     <div class="container" style="max-width:var(--max-prose)">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span>Article</span>
       </nav>
       {% if label %}<span class="section-label">{{ label }}</span>{% endif %}
       <h1 style="max-width:32ch">{{ title }}</h1>
-      <p style="font-size:0.95rem;color:rgba(255,255,255,0.7);margin-top:0.75rem">
-        <span>{{ content | readingTime }}</span>
-        {% if date %} &middot; <span>{{ date | dateFormat }}</span>{% endif %}
-        &middot; <span>By Pikes Peak Web Designs</span>
-      </p>
+      {% if description %}<p class="post-deck">{{ description }}</p>{% endif %}
+      <div class="post-meta-row">
+        <span class="post-meta-item"><strong>By Jon Ajinga</strong></span>
+        {% if date %}<span class="post-meta-item">{{ date | dateFormat }}</span>{% endif %}
+        <span class="post-meta-item">{{ content | readingTime }}</span>
+      </div>
     </div>
   </header>
 
-  <div class="post-content">
-    {{ content | safe }}
+  <div class="post-layout">
+    <aside class="post-toc" aria-label="In this article">
+      <div class="post-toc-inner">
+        <span class="post-toc-title">In this article</span>
+        <ol id="postTocList" class="post-toc-list"></ol>
+        <a href="#postShare" class="post-toc-share">Share this article</a>
+      </div>
+    </aside>
 
-    <div class="post-cta-box">
-      <h3>Thinking about a new website?</h3>
-      <p>The work is custom-coded, with nothing down and a flat $175 a month. It is built on <a href="/method/" class="inline-link">the Service Site Standard</a>, the seven principles behind every site I ship.</p>
-      <a href="/contact/" class="btn btn-primary">Start a Conversation &rarr;</a>
+    <div class="post-content" id="postContent">
+      {{ content | safe }}
+
+      <div class="post-share" id="postShare">
+        <span class="post-share-label">Share this article</span>
+        <div class="post-share-buttons">
+          <a href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ site.url }}{{ page.url }}" rel="noopener" target="_blank" class="post-share-btn" aria-label="Share on X">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span>X</span>
+          </a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}" rel="noopener" target="_blank" class="post-share-btn" aria-label="Share on LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.555v-5.569c0-1.328-.027-3.037-1.85-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.354V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.268 2.37 4.268 5.455v6.284zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.78 13.017H3.555V9h3.562v11.45zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:?subject={{ title | urlencode }}&body={{ site.url }}{{ page.url }}" class="post-share-btn" aria-label="Share by email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+            <span>Email</span>
+          </a>
+          <button type="button" class="post-share-btn" id="postShareCopy" data-url="{{ site.url }}{{ page.url }}" aria-label="Copy link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            <span id="postShareCopyLabel">Copy link</span>
+          </button>
+        </div>
+      </div>
+
+      <aside class="post-author">
+        <div class="post-author-photo">
+          <img src="/assets/img/jon-ajinga.webp" alt="Jon Ajinga" loading="lazy" decoding="async" width="120" height="150">
+        </div>
+        <div class="post-author-body">
+          <span class="post-author-eyebrow">About the author</span>
+          <strong>Jon Ajinga</strong>
+          <p>Jon is the founder of Pikes Peak Web Designs and the only person who writes, builds, and maintains the sites on offer here. He works with small service businesses across the U.S. and Canada and writes about local SEO, page speed, and what actually moves the phone.</p>
+          <a href="/about/" class="inline-link">More about Jon &rarr;</a>
+        </div>
+      </aside>
+
+      <div class="post-cta-box post-cta-box--blog">
+        <span class="post-cta-eyebrow">{{ ctaLabel or "Want this on your site?" }}</span>
+        <h3>{{ ctaHeading or "We ship this same blog system to every client who wants one." }}</h3>
+        <p>{{ ctaText or "The blog you are reading now, the sticky table of contents, the reading progress bar, the share buttons, the structured-data schema, and the auto-generated RSS feed, all of it, is the same blog system I install on client sites as a one-time $200 add-on. Once it is in place, every new post you publish runs on the same custom-coded foundation, with no plugin to maintain and no platform fees attached. The work is custom-coded, with nothing down and a flat $175 a month, and it is built on the <a href=\"/method/\" class=\"inline-link\">Service Site Standard</a>." | safe }}</p>
+        <div class="post-cta-buttons">
+          <a href="/contact/" class="btn btn-primary">Start a Conversation &rarr;</a>
+          <a href="/whats-included/" class="btn btn-outline-dark">See what's included</a>
+        </div>
+      </div>
+
+      {% set posts = collections.posts %}
+      {% set currentIndex = -1 %}
+      {% for p in posts %}{% if p.url === page.url %}{% set currentIndex = loop.index0 %}{% endif %}{% endfor %}
+
+      {% if posts.length > 1 %}
+      <nav class="post-pager" aria-label="More posts">
+        {% set prevIndex = currentIndex - 1 %}
+        {% set nextIndex = currentIndex + 1 %}
+        {% if prevIndex >= 0 %}
+          {% set prev = posts[prevIndex] %}
+          <a href="{{ prev.url }}" class="post-pager-link post-pager-link--prev">
+            <span class="post-pager-eyebrow">&larr; Previous</span>
+            <strong>{{ prev.data.title }}</strong>
+          </a>
+        {% else %}<span></span>{% endif %}
+        {% if nextIndex < posts.length %}
+          {% set nxt = posts[nextIndex] %}
+          <a href="{{ nxt.url }}" class="post-pager-link post-pager-link--next">
+            <span class="post-pager-eyebrow">Next &rarr;</span>
+            <strong>{{ nxt.data.title }}</strong>
+          </a>
+        {% else %}<span></span>{% endif %}
+      </nav>
+      {% endif %}
+
+      <nav aria-label="Back to blog" class="post-back-row">
+        <a href="/blog/" class="btn btn-outline-dark">&larr; Browse all articles</a>
+      </nav>
     </div>
-
-    <nav aria-label="Back to blog" style="margin-top:3rem;display:flex;justify-content:center">
-      <a href="/blog/" class="btn btn-outline-dark">&larr; Browse all articles</a>
-    </nav>
   </div>
 </article>
 
 <section class="section section--cream">
   <div class="container">
     <div class="text-center" style="margin-bottom:1.5rem">
-      <span class="section-label">More articles</span>
-      <h2 class="section-title" style="margin-inline:auto">Keep reading.</h2>
+      <span class="section-label">Keep reading</span>
+      <h2 class="section-title" style="margin-inline:auto">Related articles</h2>
     </div>
     <div class="post-list">
       {% set otherPosts = collections.posts | limit(4) %}
@@ -55,3 +132,82 @@ ogType: article
     </div>
   </div>
 </section>
+
+<script>
+(function () {
+  // Reading progress bar
+  var bar = document.getElementById('postProgressBar');
+  var content = document.getElementById('postContent');
+  function updateProgress() {
+    if (!bar || !content) return;
+    var rect = content.getBoundingClientRect();
+    var top = window.scrollY + rect.top;
+    var height = content.offsetHeight - window.innerHeight;
+    if (height <= 0) { bar.style.width = '100%'; return; }
+    var scrolled = Math.max(0, Math.min(1, (window.scrollY - top + window.innerHeight * 0.3) / height));
+    bar.style.width = (scrolled * 100) + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+
+  // Auto-build TOC from h2/h3 inside post content
+  var tocList = document.getElementById('postTocList');
+  if (content && tocList) {
+    var headings = content.querySelectorAll('h2, h3');
+    var html = '';
+    var hasItems = false;
+    headings.forEach(function (h) {
+      // Skip headings inside post-cta, post-author, post-share, post-pager
+      var inside = h.closest('.post-cta-box, .post-author, .post-share, .post-pager, .post-back-row');
+      if (inside) return;
+      if (!h.id) {
+        h.id = h.textContent.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
+      }
+      var level = h.tagName === 'H3' ? ' post-toc-sub' : '';
+      html += '<li class="post-toc-item' + level + '"><a href="#' + h.id + '">' + h.textContent + '</a></li>';
+      hasItems = true;
+    });
+    if (hasItems) {
+      tocList.innerHTML = html;
+    } else {
+      var asideEl = document.querySelector('.post-toc');
+      if (asideEl) asideEl.style.display = 'none';
+    }
+
+    // Highlight active TOC item via IntersectionObserver
+    if ('IntersectionObserver' in window && hasItems) {
+      var tocLinks = tocList.querySelectorAll('a');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(function (a) { a.classList.remove('is-active'); });
+            var match = tocList.querySelector('a[href="#' + entry.target.id + '"]');
+            if (match) match.classList.add('is-active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -70% 0px' });
+      headings.forEach(function (h) {
+        if (h.id && !h.closest('.post-cta-box, .post-author, .post-share, .post-pager, .post-back-row')) {
+          observer.observe(h);
+        }
+      });
+    }
+  }
+
+  // Copy link button
+  var copyBtn = document.getElementById('postShareCopy');
+  var copyLabel = document.getElementById('postShareCopyLabel');
+  if (copyBtn && navigator.clipboard) {
+    copyBtn.addEventListener('click', function () {
+      navigator.clipboard.writeText(copyBtn.dataset.url).then(function () {
+        if (copyLabel) {
+          var original = copyLabel.textContent;
+          copyLabel.textContent = 'Copied';
+          setTimeout(function () { copyLabel.textContent = original; }, 1800);
+        }
+      }).catch(function () {});
+    });
+  }
+})();
+</script>
