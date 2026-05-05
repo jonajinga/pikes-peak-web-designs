@@ -18,7 +18,7 @@ eleventyComputed:
   <div class="container">
     <span class="section-label">{{ page.eyebrow }}</span>
     <h1>{{ page.h1 }} <em>{{ page.h1Em }}</em></h1>
-    <p class="season-hero-lead">{{ page.heroLead }}</p>
+    <p class="season-hero-lead">{{ page.heroLead | safe }}</p>
     <div class="cta-buttons" style="justify-content:center;margin-top:2rem">
       <a href="/subscribe/" class="btn btn-primary btn-lg">Sign up for the standard plan</a>
       <a href="/contact/" class="btn btn-outline btn-lg">Book a discovery call first</a>
@@ -35,7 +35,7 @@ eleventyComputed:
     </div>
     <div class="season-argument">
       {% for paragraph in page.argumentBody %}
-        <p>{{ paragraph }}</p>
+        <p>{{ paragraph | safe }}</p>
       {% endfor %}
     </div>
   </div>
@@ -46,7 +46,7 @@ eleventyComputed:
     <div class="season-pitch">
       <span class="section-label">The pitch in one paragraph</span>
       <h2 class="season-pitch-title">{{ page.pitchTitle }}</h2>
-      <p class="season-pitch-body">{{ page.pitchBody }}</p>
+      <p class="season-pitch-body">{{ page.pitchBody | safe }}</p>
       <div class="cta-buttons" style="justify-content:flex-start;margin-top:0.5rem">
         <a href="/subscribe/" class="btn btn-primary btn-lg">Sign up for the standard plan &rarr;</a>
         <a href="/contact/" class="btn btn-outline-dark">Book a discovery call</a>
@@ -66,7 +66,7 @@ eleventyComputed:
       {% for item in page.objections %}
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">{{ item.q }} <span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">{{ item.a }}</div></div>
+          <div class="faq-answer"><div class="faq-answer-inner">{{ item.a | safe }}</div></div>
         </div>
       {% endfor %}
     </div>

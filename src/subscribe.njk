@@ -52,9 +52,18 @@ description: "Welcome. Pay your first month with Stripe and the build kicks off 
             <li>A migration from an old platform</li>
             <li>A bespoke interactive page beyond the standard layouts</li>
           </ul>
-          <p>Describe the work using the request form and I will send back a written estimate within one business day, with the hours and the deliverable named explicitly.</p>
-          <a href="/hourly-request/" class="btn btn-primary btn-full">Request a written estimate &rarr;</a>
-          <p class="subscribe-side-foot">Already have an estimate from me? The <a href="{{ site.hourlyUrl or 'https://buy.stripe.com/' }}" rel="noopener" target="_blank" class="inline-link">Stripe hourly checkout</a> is the right path to settle the block of hours.</p>
+          <div class="subscribe-side-actions">
+            <div class="subscribe-side-action">
+              <span class="subscribe-side-action-label">If you do not have an estimate yet</span>
+              <a href="/hourly-request/" class="btn btn-outline-dark btn-full">Request a written estimate &rarr;</a>
+              <p class="subscribe-side-action-sub">A quick form. The estimate lands within one business day.</p>
+            </div>
+            <div class="subscribe-side-action">
+              <span class="subscribe-side-action-label">If you already have an estimate from me</span>
+              <a href="{{ site.hourlyUrl or 'https://buy.stripe.com/' }}" rel="noopener" target="_blank" class="btn btn-primary btn-full">Pay for additional hours with Stripe &rarr;</a>
+              <p class="subscribe-side-action-sub">Stripe handles card or ACH directly. Settles the block of hours we agreed on.</p>
+            </div>
+          </div>
         </div>
       </aside>
     </div>

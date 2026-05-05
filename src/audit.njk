@@ -131,6 +131,113 @@ description: "I will audit your website for speed, mobile usability, local SEO, 
   </div>
 </section>
 
+<section class="section">
+  <div class="container" style="max-width:840px">
+    <div class="text-center" style="margin-bottom:2rem">
+      <span class="section-label">Sample audit</span>
+      <h2 class="section-title" style="margin-inline:auto">An example of what you will receive.</h2>
+      <p class="section-subtitle">A real audit, in the format I send. Plain language, ranked by impact, with a specific recommendation against each finding.</p>
+    </div>
+
+    <article class="estimate-doc" aria-label="Sample five-point website audit">
+      <header class="estimate-doc-head">
+        <div class="estimate-doc-brand">
+          <span class="estimate-doc-mark">Pikes Peak Web Designs</span>
+          <span class="estimate-doc-meta">{{ site.email }} &middot; {{ site.phoneDisplay }}</span>
+        </div>
+        <div class="estimate-doc-id">
+          <span><strong>Audit</strong> &middot; PPWD-2026-AUD-EX01</span>
+          <span><strong>Issued</strong> &middot; April 18, 2026</span>
+          <span><strong>Type</strong> &middot; Free 5-point website audit</span>
+        </div>
+      </header>
+
+      <div class="estimate-doc-parties">
+        <div>
+          <span class="estimate-doc-label">Audit prepared for</span>
+          <p>Smith's Roofing<br>3402 Industrial Way, Colorado Springs, CO 80906<br>jane@smithsroofing.example</p>
+        </div>
+        <div>
+          <span class="estimate-doc-label">Site audited</span>
+          <p>https://smithsroofing.example<br>Platform: WordPress 6.x with Astra theme<br>Reviewed: April 16&ndash;18, 2026</p>
+        </div>
+      </div>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">Summary</h3>
+        <p>Your site is doing the basics, the address is on the page, the phone number is clickable, the brand is consistent across pages. There are five concrete issues holding it back, ranked below by impact on lead generation. Three are fixable inside the existing site without a rebuild. Two would benefit from a rebuild but are not urgent on their own.</p>
+        <div class="audit-summary-grid">
+          <div class="audit-summary-cell"><span>Mobile PageSpeed</span><strong class="audit-num audit-num--bad">42</strong></div>
+          <div class="audit-summary-cell"><span>Desktop PageSpeed</span><strong class="audit-num audit-num--ok">78</strong></div>
+          <div class="audit-summary-cell"><span>WCAG 2.2 AA pass</span><strong class="audit-num audit-num--bad">No</strong></div>
+          <div class="audit-summary-cell"><span>Schema present</span><strong class="audit-num audit-num--ok">Partial</strong></div>
+          <div class="audit-summary-cell"><span>NAP consistent</span><strong class="audit-num audit-num--good">Yes</strong></div>
+          <div class="audit-summary-cell"><span>Mobile CTA visible</span><strong class="audit-num audit-num--bad">No</strong></div>
+        </div>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">1. Speed <span class="audit-flag audit-flag--bad">High impact</span></h3>
+        <p><strong>Finding.</strong> Mobile PageSpeed score of 42 out of 100. Largest Contentful Paint is 4.8 seconds; the Google threshold is 2.5. The site renders at 4.3 seconds on a real iPhone 12 over a fast home Wi-Fi network. On 4G mobile the same page takes 7.1 seconds.</p>
+        <p><strong>What is causing it.</strong> A 1.9 MB hero image (uncompressed JPEG, served at full resolution to all devices), three blocking JavaScript files in the &lt;head&gt; (Google Tag Manager, Facebook Pixel, an unused jQuery plugin), and the Astra theme's default web-font load that pulls Roboto in five weights from Google Fonts.</p>
+        <p><strong>Recommendation.</strong> Compress and serve the hero image as a responsive srcset (target 200&ndash;400 KB at the largest viewport). Move tracking scripts to defer-loaded variants and remove the unused jQuery plugin. Self-host the two font weights actually used. Estimated impact: mobile PageSpeed score moves from 42 to roughly 75&ndash;85; LCP drops to under 2.5 seconds.</p>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">2. Mobile experience <span class="audit-flag audit-flag--mid">Medium impact</span></h3>
+        <p><strong>Finding.</strong> At 360 px (small phone), the primary contact-form fields overflow horizontally by 14 px, forcing a sideways scroll. Two of the navigation links wrap onto a second line. Three buttons are below the WCAG 2.2 AA 44&times;44 px tap-target floor (currently 32&times;32 px).</p>
+        <p><strong>What is causing it.</strong> The Astra theme's container uses a fixed 1140 px max-width with 15 px gutters; on small viewports the form stretches its <code>input</code> elements to 100% but the wrapping <code>fieldset</code> retains a hardcoded padding that pushes content past the right edge.</p>
+        <p><strong>Recommendation.</strong> Override the form container's padding with a responsive rule (5 px gutters under 480 px). Set a minimum height of 44 px on every <code>.button</code> class. Move the second nav-line items into a hamburger menu under 640 px so they no longer wrap. Estimated effort to fix: 1 to 2 hours of CSS work without a rebuild.</p>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">3. Local SEO foundation <span class="audit-flag audit-flag--mid">Medium impact</span></h3>
+        <p><strong>Finding.</strong> Title tags are present on every page but six of nine pages share the identical pattern (&ldquo;Smith's Roofing &mdash; Colorado Springs Roofing&rdquo;), producing low keyword diversity in Google search-result snippets. Meta descriptions are missing on the about, gallery, and contact pages. <code>LocalBusiness</code> schema is present on the homepage only; service pages do not include it. Sitemap is auto-generated by Yoast and submitted to Google Search Console correctly. NAP (name, address, phone) matches the Google Business Profile exactly across all pages.</p>
+        <p><strong>What is causing it.</strong> Default WordPress page templates do not differentiate per-page metadata; the Yoast Local SEO add-on covers the homepage but not service pages.</p>
+        <p><strong>Recommendation.</strong> Write a unique, keyword-targeted title and meta description for each of the nine pages (target 50&ndash;60 characters for titles, 130&ndash;160 for descriptions). Extend the <code>LocalBusiness</code> schema to every service page, with the <code>areaServed</code> property listing the actual cities you cover. Estimated effort: 3 to 4 hours of content work.</p>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">4. Accessibility (WCAG 2.2 AA) <span class="audit-flag audit-flag--bad">High impact</span></h3>
+        <p><strong>Finding.</strong> WAVE flags 14 contrast errors, primarily light-gray body text (#9CA3AF) on white, which measures 2.85:1 against the WCAG floor of 4.5:1. Three form fields lack associated <code>&lt;label&gt;</code> elements (the placeholder text is doing double duty). The skip-to-content link is missing entirely. The hamburger menu opens via a <code>div</code> with a click handler, which fails keyboard navigation. ADA-compliance lawsuits are a real and rising risk for small-business sites in 2026; this site would not survive a basic compliance review.</p>
+        <p><strong>What is causing it.</strong> The Astra theme's default color palette has insufficient contrast on body text; the form fields are built with the WPForms plugin which omits explicit labels by default; the hamburger is a third-party JS snippet not native to the theme.</p>
+        <p><strong>Recommendation.</strong> Darken body text to at least #4A5463 (7.4:1 contrast ratio). Add explicit <code>&lt;label&gt;</code> tags to every form field, with <code>for</code>/<code>id</code> bindings. Add a skip-to-content link to the page header. Replace the hamburger snippet with a <code>&lt;button&gt;</code>-based equivalent that supports Enter and Space. Estimated effort: 4 to 6 hours of theme overrides, or one of the items that a rebuild would resolve cleanly.</p>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">5. Conversion path <span class="audit-flag audit-flag--bad">High impact</span></h3>
+        <p><strong>Finding.</strong> The phone number appears on the homepage and contact page but is missing from five of the nine pages, including the gallery and three service pages. On mobile, the primary CTA (&ldquo;Get a free estimate&rdquo;) sits below the fold; visitors must scroll about 600 px before encountering it. The contact form is on its own page, three clicks from the homepage on mobile. There is no &ldquo;sticky&rdquo; or &ldquo;floating&rdquo; phone-call button on mobile.</p>
+        <p><strong>What is causing it.</strong> Header design relies on a desktop-first layout where the phone number occupies the right rail. On mobile that rail collapses entirely, dropping the phone number off the visible page.</p>
+        <p><strong>Recommendation.</strong> Move the phone number into the mobile header bar so it appears on every page on every viewport. Add a sticky bottom-bar on mobile with two buttons: &ldquo;Call now&rdquo; (tel:&hellip;) and &ldquo;Get a quote&rdquo; (link to the form). Move the homepage primary CTA above the fold on mobile. Estimated effort: 2 to 3 hours of theme work, or one of the items that a rebuild would resolve cleanly.</p>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">Recommended next steps</h3>
+        <ol class="estimate-doc-scope">
+          <li><strong>Fix the speed problem first.</strong> The 1.9 MB hero is the highest-leverage change you can make without touching anything else. One hour of work; the largest impact on lead generation of anything in this report.</li>
+          <li><strong>Add the missing meta and schema.</strong> Three to four hours of content work; meaningful SEO improvement within a couple of weeks of Google re-crawling the site.</li>
+          <li><strong>Address the accessibility errors.</strong> The contrast and labels are the legal-risk floor. Cover those within thirty days.</li>
+          <li><strong>Decide whether to rebuild.</strong> Items 4 and 5 are workable on the existing platform but they reflect deeper structural issues. If you are also unhappy with how the site looks, a rebuild is the cleaner path. If the visual side is fine, the patches above will get you to a healthy site without one.</li>
+        </ol>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">If a rebuild is the right call</h3>
+        <p>The standard plan is $175 a month, flat. Two to three weeks of build, custom-coded, with the speed, accessibility, and conversion-path issues above resolved by construction rather than by patch. The full plan is on the <a href=\"/pricing/\" class=\"inline-link\">pricing page</a>; if you want to talk it through, the <a href=\"/contact/\" class=\"inline-link\">discovery call</a> is the right next step. There is no obligation either way.</p>
+        <p class="estimate-doc-signoff">&mdash; Jon Ajinga, Pikes Peak Web Designs<br>{{ site.email }} &middot; {{ site.phoneDisplay }}</p>
+      </section>
+
+      <footer class="estimate-doc-foot">
+        <span>This is a sample audit. Real audits are run on your actual URL after you submit the form above; the format and depth match this template, but the findings will be specific to your site.</span>
+      </footer>
+    </article>
+
+    <div class="text-center" style="margin-top:2rem">
+      <a href="#auditForm" class="btn btn-primary btn-lg">Request my own audit &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="cta-inner">
     <span class="section-label">Already know you need a new site?</span>

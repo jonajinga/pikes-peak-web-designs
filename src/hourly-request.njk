@@ -57,7 +57,7 @@ description: "Request a written estimate for any work that sits outside the stan
         </div>
       </div>
 
-      <div class="contact-form-card">
+      <div class="contact-form-card" id="request-form">
         <h2 class="form-heading">Describe what you need</h2>
         <p class="form-intro">A few fields, and an estimate lands back within one business day.</p>
 
@@ -135,6 +135,123 @@ description: "Request a written estimate for any work that sits outside the stan
           <p class="form-hint">No payment in advance. The estimate comes first, in writing, with the hours and deliverable named explicitly.</p>
         </form>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:840px">
+    <div class="text-center" style="margin-bottom:2rem">
+      <span class="section-label">Sample estimate</span>
+      <h2 class="section-title" style="margin-inline:auto">An example of what you will receive.</h2>
+      <p class="section-subtitle">A real estimate, in the format I send. The hours, the deliverable, the timeline, and the total are named explicitly. No moving parts after you approve it.</p>
+    </div>
+
+    <article class="estimate-doc" aria-label="Sample written estimate">
+      <header class="estimate-doc-head">
+        <div class="estimate-doc-brand">
+          <span class="estimate-doc-mark">Pikes Peak Web Designs</span>
+          <span class="estimate-doc-meta">{{ site.email }} &middot; {{ site.phoneDisplay }}</span>
+        </div>
+        <div class="estimate-doc-id">
+          <span><strong>Estimate</strong> &middot; PPWD-2026-EX01</span>
+          <span><strong>Issued</strong> &middot; April 18, 2026</span>
+          <span><strong>Valid through</strong> &middot; May 18, 2026</span>
+        </div>
+      </header>
+
+      <div class="estimate-doc-parties">
+        <div>
+          <span class="estimate-doc-label">Prepared for</span>
+          <p>Smith Roofing LLC<br>3402 Industrial Way, Colorado Springs, CO 80906<br>jane@smithroofing.example</p>
+        </div>
+        <div>
+          <span class="estimate-doc-label">Prepared by</span>
+          <p>Pikes Peak Web Designs<br>Colorado Springs, Colorado<br>{{ site.email }}</p>
+        </div>
+      </div>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">1. Project</h3>
+        <p><strong>Custom roof-replacement-cost calculator, embedded on the existing site.</strong> An interactive widget that takes square footage, pitch, material selection, and a flat-versus-low-slope qualifier, returns a live price range with a clear &ldquo;ballpark only&rdquo; disclaimer, and routes a structured lead to the existing contact form when the visitor requests a real quote.</p>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">2. Scope of work</h3>
+        <ol class="estimate-doc-scope">
+          <li><strong>Calculator logic.</strong> Pricing tiers for asphalt three-tab, architectural, metal, and TPO. Pitch multiplier, tear-off versus overlay handling, and a regional cost-floor variable maintained by you.</li>
+          <li><strong>Front-end UI.</strong> Custom-coded vanilla JavaScript and CSS, no third-party libraries. Mobile-first layout, accessible to WCAG 2.2 AA, keyboard navigable. Brand-matched typography and color palette pulled from the existing site.</li>
+          <li><strong>Lead capture.</strong> When the visitor clicks &ldquo;Get a real quote,&rdquo; the entered values pass through to the existing Web3Forms-backed contact form as hidden fields, so the inbound email contains the calculator inputs alongside the contact details.</li>
+          <li><strong>Embed and integration.</strong> Embedded on a new <code>/estimate-tool/</code> page, with a homepage hero CTA and an &ldquo;Estimate your roof&rdquo; entry point in the primary nav.</li>
+          <li><strong>Quality assurance.</strong> Cross-browser tested on Chrome, Safari, Firefox, and Edge. Mobile tested at 360, 414, 768, and 1024 px. Lighthouse run before handoff with Performance, Accessibility, Best Practices, and SEO scores documented.</li>
+          <li><strong>Documentation.</strong> A short owner&rsquo;s note delivered with the work, covering how to update the pricing tiers and the regional cost floor without touching code.</li>
+        </ol>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">3. Out of scope</h3>
+        <ul class="estimate-doc-out">
+          <li>Third-party CRM integration (HubSpot, Salesforce, JobNimbus, etc.). Quoted separately if needed.</li>
+          <li>Live shingle imagery or product picker beyond a text-and-color selector.</li>
+          <li>Connection to a real-time materials-pricing API. Pricing tiers are owner-maintained.</li>
+          <li>A/B testing infrastructure or analytics dashboards beyond the existing Umami setup.</li>
+        </ul>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">4. Hours and total</h3>
+        <table class="estimate-doc-table">
+          <thead>
+            <tr><th>Line item</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">Subtotal</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Calculator logic and pricing model</td><td class="num">3.0</td><td class="num">$100</td><td class="num">$300</td></tr>
+            <tr><td>Front-end UI build (custom code, accessible)</td><td class="num">4.5</td><td class="num">$100</td><td class="num">$450</td></tr>
+            <tr><td>Lead-capture wiring into existing contact form</td><td class="num">1.5</td><td class="num">$100</td><td class="num">$150</td></tr>
+            <tr><td>Embed page, nav entry, homepage CTA</td><td class="num">1.5</td><td class="num">$100</td><td class="num">$150</td></tr>
+            <tr><td>Cross-browser and mobile QA, Lighthouse pass</td><td class="num">1.0</td><td class="num">$100</td><td class="num">$100</td></tr>
+            <tr><td>Owner documentation, handoff</td><td class="num">0.5</td><td class="num">$100</td><td class="num">$50</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><th colspan="3">Total estimated hours</th><th class="num">12.0</th></tr>
+            <tr class="estimate-doc-total"><th colspan="3">Total</th><th class="num">$1,200 USD</th></tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">5. Timeline</h3>
+        <ul class="estimate-doc-timeline">
+          <li><strong>Day 1 &middot; Kickoff.</strong> Pricing tiers and regional cost floor confirmed by email. No call required.</li>
+          <li><strong>Days 2&ndash;5 &middot; Build.</strong> Calculator logic and UI built, embedded on a private preview URL.</li>
+          <li><strong>Days 6&ndash;7 &middot; Review.</strong> One round of revisions, structured against the preview URL.</li>
+          <li><strong>Day 8 &middot; Launch.</strong> Embed pushed live, owner documentation delivered, final invoice reconciled.</li>
+        </ul>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">6. Payment terms</h3>
+        <ul class="estimate-doc-terms">
+          <li>Total payable on approval of this estimate, in advance, via Stripe checkout (card or ACH).</li>
+          <li>If the work comes in under the estimate, the unused balance is refunded against the original payment.</li>
+          <li>If the work would exceed the estimate, you receive a written notice with a revised number before any overage hours are run. You can approve the revision, reduce scope to fit the original, or stop the work entirely.</li>
+          <li>Hourly rate is locked at $100 USD per hour for the duration of this engagement.</li>
+        </ul>
+      </section>
+
+      <section class="estimate-doc-section">
+        <h3 class="estimate-doc-h">7. Approval</h3>
+        <p>Reply to this email with &ldquo;Approved&rdquo; and the Stripe checkout link will follow. The build kicks off the first business day after payment clears.</p>
+        <p class="estimate-doc-signoff">&mdash; Jon Ajinga, Pikes Peak Web Designs<br>{{ site.email }} &middot; {{ site.phoneDisplay }}</p>
+      </section>
+
+      <footer class="estimate-doc-foot">
+        <span>This is a sample document. Real estimates are issued on request after a written description of the work; no payment changes hands before approval.</span>
+      </footer>
+    </article>
+
+    <div class="text-center" style="margin-top:2rem">
+      <a href="#request-form" class="btn btn-primary btn-lg">Request my own estimate &rarr;</a>
     </div>
   </div>
 </section>
