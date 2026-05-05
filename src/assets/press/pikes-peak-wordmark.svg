@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-label="Pikes Peak Web Designs">
+  <title>Pikes Peak Web Designs</title>
+  <desc>Wordmark logo for Pikes Peak Web Designs. The phrase "Pikes Peak" is rendered in deep navy and "Web Designs" in warm gold, set in a Playfair-style serif.</desc>
+  <style>
+    .pp-display { font: 700 64px/1 "Playfair Display", "Times New Roman", Georgia, serif; }
+    .pp-accent  { font: 600 64px/1 "Playfair Display", "Times New Roman", Georgia, serif; font-style: italic; }
+    .pp-tag     { font: 500 18px/1 "Inter", "Helvetica Neue", Arial, sans-serif; letter-spacing: 0.18em; text-transform: uppercase; }
+  </style>
+  <g>
+    <text x="40" y="98" class="pp-display" fill="#0A1F44">Pikes Peak</text>
+    <text x="380" y="98" class="pp-accent" fill="#BE9018">Web Designs</text>
+    <text x="40" y="138" class="pp-tag" fill="#0A1F44" opacity="0.7">Custom-coded. Custom-cared-for.</text>
+  </g>
+</svg>

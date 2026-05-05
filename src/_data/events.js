@@ -56,10 +56,10 @@ export default {
     },
     {
       slug: "black-friday",
-      title: "Black Friday: Lump-Sum Discount",
+      title: "Black Friday: First-Month Discount",
       eyebrow: "Late November",
       summary:
-        "Once a year I run a small Black Friday discount on the lump-sum plan. Ten percent off the $4,000 fee, or a free blog add-on, your choice. One week only.",
+        "Once a year I run a small Black Friday window where the first three months of the standard plan are cut in half. One week only, no other strings attached.",
       cta: "See the Black Friday terms",
       target: "All trades",
       window: "Nov 24 – Dec 1",

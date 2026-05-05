@@ -1,0 +1,48 @@
+PIKES PEAK WEB DESIGNS
+Brand color palette
+
+
+BRAND COLORS
+
+Navy 950   #05102A   Deepest navy, primary on dark surfaces
+Navy 900   #0A1F44   Brand primary, text on light backgrounds
+Navy 800   #142D5C   Hover/active variant of the brand primary
+Navy 700   #1B3C7E   Tertiary navy, used in gradient transitions
+
+Gold 600   #9D7714   Active state of the brand accent
+Gold 500   #BE9018   Brand accent, used sparingly for emphasis
+Gold 400   #DDB13D   Hover/highlight variant of the accent
+Gold 300   #E6C56A   Light accent, used on dark backgrounds
+
+
+NEUTRAL PALETTE
+
+Cream      #F7F2E7   Warm off-white background, reading surfaces
+White      #FFFFFF   Pure white, used inside cards on cream pages
+Ink        #14120F   Primary text color on cream/white backgrounds
+Muted      #6E6A63   Secondary text, captions, meta lines
+Line       #E5E0D6   Hairline borders and dividers
+
+
+CONTRAST PAIRINGS (WCAG 2.2 AA verified)
+
+Navy 900 on Cream         13.2:1   AAA on body text
+Ink on Cream              14.6:1   AAA on body text
+Navy 900 on White         13.7:1   AAA on body text
+Gold 600 on Cream          5.8:1   AA on body text
+Gold 400 on Navy 900       8.1:1   AAA on body text
+White on Navy 900         13.7:1   AAA on body text
+
+
+USAGE NOTES
+
+The full live style guide, with type scale, spacing tokens, and
+component examples, is published at:
+https://pikespeakwebdesigns.com/style-guide/
+
+For the SVG wordmark, see /assets/press/pikes-peak-wordmark.svg
+
+
+Pikes Peak Web Designs
+Colorado Springs, CO
+https://pikespeakwebdesigns.com

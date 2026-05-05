@@ -54,7 +54,7 @@ tags: [post, comparison]
 
 <p>The AI-generated site is locked into the platform that generated it. There is no "export to your own host" path. Quitting the AI builder means starting over from a blank page. If the platform raises prices, changes terms, sunsets a feature, or simply gets sold to another company, you have no leverage.</p>
 
-<p>A custom-coded site, whether on the monthly plan with static export or on the lump-sum plan with the source code in your own GitHub, is portable to any host, forever. The work belongs to you, not the vendor that generated it.</p>
+<p>A custom-coded site, with a clean static export available at any point if you ever decide to move on, is portable to any host, forever. The work belongs to you, not the vendor that generated it.</p>
 
 <h2>The honest math: what does "good enough" cost?</h2>
 

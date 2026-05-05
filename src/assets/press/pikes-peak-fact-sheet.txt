@@ -1,0 +1,94 @@
+PIKES PEAK WEB DESIGNS
+One-page fact sheet for editorial use
+Last updated: see https://pikespeakwebdesigns.com/changelog/
+
+
+THE AGENCY
+
+Name              Pikes Peak Web Designs
+Founder           Jon Ajinga
+Founded in        Colorado Springs, Colorado, USA
+Service           Custom-coded websites for small service
+                  businesses across the U.S. and Canada
+Website           https://pikespeakwebdesigns.com
+Press contact     Use the press inquiry form on the press page
+Phone             (928) 315-9094
+
+
+THE PRODUCT
+
+One simple plan       $175 a month, flat
+Design deposit        $0
+Hourly work outside   $100 an hour, with a written estimate up
+the standard plan     front
+Minimum term          12 months, then month-to-month with 30
+                      days notice
+Stack                 Eleventy v3 (static), vanilla CSS, vanilla
+                      JavaScript, hosted on Cloudflare Pages
+Performance target    95-100 Google PageSpeed on every page
+Accessibility floor   WCAG 2.2 AA, audited via WAVE, Lighthouse,
+                      and manual screen-reader testing
+Coverage              50 U.S. states + 10 Canadian provinces,
+                      fully remote
+Payment processor     Stripe (PCI-compliant; no card data stored
+                      on agency infrastructure)
+
+
+TRADES SERVED
+
+HVAC, plumbing, electrical, roofing, home inspection,
+commercial inspection, landscaping, general contracting,
+restoration, and adjacent local service businesses.
+
+
+DISCOUNT PROGRAMS
+
+Veterans              $25/month off, permanent
+First responders      $25/month off, permanent
+Medical personnel     $25/month off, permanent
+
+All three programs cover immediate family members and apply
+to the standard plan with no expiration.
+
+
+THE METHODOLOGY
+
+The Service Site Standard, a seven-principle operating posture
+that informs every site shipped:
+
+1. One owner, end to end
+2. Custom code over CMSes
+3. Posted prices, posted process
+4. Fast by construction, not by plugin
+5. Accessible by default
+6. Local before global
+7. Boring infrastructure
+
+Full description: https://pikespeakwebdesigns.com/method/
+
+
+TOPICS I AM HAPPY TO BE QUOTED ON
+
+- Local SEO for service businesses
+- Page-speed economics and lead leakage
+- The "good enough" trap with AI website builders
+- WordPress security for non-technical owners
+- The Service Site Standard
+- Pricing transparency in service-business marketing
+- Trade-specific website strategy (roofing, HVAC, plumbing,
+  electrical, inspection, landscaping, contracting)
+
+
+PRESS RESOURCES
+
+Brand assets       https://pikespeakwebdesigns.com/press/
+Live style guide   https://pikespeakwebdesigns.com/style-guide/
+Public changelog   https://pikespeakwebdesigns.com/changelog/
+Service agreement  https://pikespeakwebdesigns.com/agreement/
+Owner's guide      https://pikespeakwebdesigns.com/owners-guide/
+Demo sites         https://pikespeakwebdesigns.com/samples/
+
+
+Pikes Peak Web Designs
+Colorado Springs, CO
+https://pikespeakwebdesigns.com

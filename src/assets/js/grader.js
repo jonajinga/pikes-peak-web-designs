@@ -79,8 +79,8 @@
       breakdownRow('Tracker footprint', b.tracker && b.tracker.score, 20, b.tracker ? (b.tracker.trackerCount + ' detected') : 'Unknown') +
       '  </div>' +
       '  <div class="grader-card-cta">' +
-      '    <a href="/audit/" class="btn btn-primary">Get a deeper free audit</a>' +
-      '    <a href="/service-site-audit/" class="btn btn-outline-dark">Or the paid $499 audit</a>' +
+      '    <a href="/audit/" class="btn btn-primary">Get the free 5-point audit</a>' +
+      '    <a href="/contact/" class="btn btn-outline-dark">Or book a discovery call</a>' +
       '  </div>' +
       '</div>';
   }

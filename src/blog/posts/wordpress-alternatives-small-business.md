@@ -84,7 +84,7 @@ The "modern builder" category. Better design tooling, cleaner output, and a visu
 
 What we build. A static site generator (we use [Eleventy](https://www.11ty.dev)) compiles a set of templates and Markdown files into pure HTML, which we host on a CDN.
 
-**Typical cost:** $0 hosting (Cloudflare Pages free tier), $0 build tools, but requires an agency to build and maintain it. For us, that's $175/month flat-rate on the monthly plan, or $4,000 one-time on the lump-sum plan.
+**Typical cost:** $0 hosting (Cloudflare Pages free tier), $0 build tools, but requires an agency to build and maintain it. For us, that is a single flat $175/month plan with everything included.
 
 **Strengths:**
 
@@ -92,7 +92,7 @@ What we build. A static site generator (we use [Eleventy](https://www.11ty.dev))
 - **Secure.** No server runtime, no database, no plugins. The attack surface is effectively zero.
 - **Maintainable.** No weekly update cycle. We ship improvements when they help; nothing breaks overnight because of a plugin update.
 - **SEO ceiling-free.** Control of every meta tag, every URL, every schema block.
-- **No rent.** On the lump-sum plan, you own the code. On the monthly plan, hosting is included in your rate.
+- **No rent.** Hosting and SSL are included in the flat monthly rate, and you can take a clean static export of the site at any point if you ever want to move on.
 
 **Weaknesses:**
 
@@ -107,11 +107,11 @@ Here's a simplified comparison for a typical small service business:
 
 | | WordPress | Wix/Squarespace | Webflow | Custom-coded |
 |---|---|---|---|---|
-| Upfront cost | $0–$5,000 | $0 | $0–$2,000 | $0 (monthly) / $4,000 (lump) |
-| Monthly cost | $20–$50+ | $16–$59 | $29–$59+ | $0–$175 |
+| Upfront cost | $0–$5,000 | $0 | $0–$2,000 | $0 down |
+| Monthly cost | $20–$50+ | $16–$59 | $29–$59+ | $175 flat |
 | Google PageSpeed (mobile) | 40–70 | 50–75 | 80–95 | 95–100 |
 | Security risk | High | Low | Low | Very Low |
-| Ownership | You (code+data) | Platform owns it | Platform owns it | You (lump) / Agency (monthly) |
+| Ownership | You (code+data) | Platform owns it | Platform owns it | Static export available any time |
 | SEO control | Full | Limited | Good | Full |
 | Maintenance cadence | Weekly | None (hosted) | Rare | Rare |
 | Who updates content | You or dev | You | You | Email your builder |
@@ -140,8 +140,7 @@ For a typical service-business website, over five years:
 - **WordPress with an agency partner:** $3,000–$5,000 initial build + $2,400–$6,000 in hosting/plugins/maintenance + roughly $5,000 in developer hours to keep up with updates = **$10,400–$16,000**
 - **Squarespace:** $0 initial + $1,920–$3,540 in subscription + probably a full rebuild by year 5 = **$3,920–$8,540** if you DIY, more if you hire help
 - **Webflow (agency-built):** $3,000–$8,000 initial + $2,600–$5,900 in platform costs = **$5,600–$13,900**
-- **Custom-coded monthly plan with us:** $0 initial + $10,500 over five years ($175 × 60 months) = **$10,500**, with the site actively maintained, content updates included, and zero hidden fees
-- **Custom-coded lump-sum with us:** $4,000 initial + $1,800 optional hosting over 5 years + occasional updates = **$5,800–$7,000**, with full code ownership
+- **Custom-coded plan with us:** $0 initial + $10,500 over five years ($175 × 60 months) = **$10,500**, with the site actively maintained, content updates included, and zero hidden fees
 
 On a five-year horizon, a custom-coded site is competitive with or cheaper than any of the alternatives, and you avoid the hidden costs of ongoing WordPress maintenance or the forced rebuild when a hosted-builder template goes stale.
 

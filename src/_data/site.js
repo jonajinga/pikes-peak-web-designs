@@ -39,12 +39,7 @@ export default {
   },
   pricing: {
     monthly: 175,
-    concierge: 325,
-    lumpSum: 4000,
-    rebuildSprint: 4500,
-    auditPaid: 499,
-    extraPage: 150,
-    blogAddon: 200,
+    extraHourly: 100,
     minTerm: 12,
     deposit: 0,
     pagesIncluded: 10,

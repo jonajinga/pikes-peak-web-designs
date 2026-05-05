@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
-title: "Owner's Guide | Plain-Language Reference for Pikes Peak Clients | Pikes Peak Web Designs"
-description: "The post-launch reference that applies to every site I build: who maintains what, how to ask for changes, what counts as an emergency, what your domain ownership means, and how to read your monthly invoice."
+title: "Owner's Guide | Your Plain-Language Post-Launch Reference | Pikes Peak Web Designs"
+description: "Your post-launch reference: who maintains what, how to ask for changes, what counts as an emergency, what your domain ownership means, and how to read your monthly invoice."
 ---
 
 <section class="page-hero">
@@ -10,8 +10,8 @@ description: "The post-launch reference that applies to every site I build: who 
       <a href="/">Home</a><span class="sep">/</span><span>Owner's Guide</span>
     </nav>
     <span class="section-label">Owner's Guide</span>
-    <h1>The post-launch reference, <em>same for every site.</em></h1>
-    <p>This is one canonical guide that applies to every site I build. It is not a per-client deliverable, but rather the rulebook every client can rely on. The guide explains who maintains what, how to ask for things, what counts as an emergency, what I will never do without telling you, and how to read your monthly invoice. Bookmark it whenever you need a reference, since nothing in here is a secret.</p>
+    <h1>Your post-launch <em>owner's guide.</em></h1>
+    <p>This page is your reference for everything that happens once your site is live. It explains who maintains what, how to ask for changes, what counts as an emergency, what I will never do without telling you, and how to read your monthly invoice. Bookmark it whenever you need a reference, since nothing in here is a secret and there is no login standing between you and any of it.</p>
   </div>
 </section>
 
@@ -46,18 +46,18 @@ description: "The post-launch reference that applies to every site I build: who 
 
       <header style="margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line)">
         <span class="section-label">How to use this guide</span>
-        <h2 style="border-bottom:none;padding-bottom:0">One guide, every client. Same rules, every site.</h2>
-        <p style="color:var(--text-muted);font-size:0.95rem;margin-top:0.5rem">This page covers the post-launch experience for every site I build. Specifics like your domain, login, and Google Business Profile differ; the operating model below is the same for everyone. Every section is short on purpose, a website should not need a manual the size of a printer's. If something here is unclear, tell me and I fix the page.</p>
+        <h2 style="border-bottom:none;padding-bottom:0">Short sections, written for you to skim.</h2>
+        <p style="color:var(--text-muted);font-size:0.95rem;margin-top:0.5rem">Every section on this page is intentionally short. Your website should not need a manual the size of a printer's, and the goal here is for you to find what you need in under a minute and get back to running your business. If anything in here is unclear, tell me and I will fix the page rather than ask you to read around the problem.</p>
       </header>
 
       <h3 id="whats-live">1. What's live on your domain.</h3>
-      <p>Your site serves from your custom domain on Cloudflare Pages, with HTTPS, HTTP/3, and a Brotli-compressed payload. Google is told about the sitemap at launch; Bing usually picks it up from Google within two weeks. The standard inventory at launch:</p>
+      <p>Your site serves from your custom domain on Cloudflare Pages with HTTPS, HTTP/3, and a Brotli-compressed payload underneath. Google was told about your sitemap on launch day, and Bing usually picks it up from Google within roughly two weeks. The standard inventory of what is live includes the following:</p>
       <ul>
-        <li><strong>Pages.</strong> Home, About, Services (with anchor sections per offering), Pricing or Quote, Service Area pages (one per region you cover), Contact, Booking (if applicable), and Blog (if you opted in).</li>
-        <li><strong>Operational pages.</strong> Privacy Policy, Terms of Use, Accessibility Statement, Sitemap (HTML for humans + XML for crawlers), Style Guide. Every site I ship has these. They are not optional even if no one ever clicks them.</li>
-        <li><strong>SEO assets.</strong> robots.txt, sitemap.xml, RSS feed (feed.xml), JSON-LD structured data on every page, Open Graph + Twitter Card tags for link previews, canonical URLs.</li>
-        <li><strong>Search.</strong> A working full-text search box (Pagefind) that runs entirely in the visitor's browser. No server, no cookies, no API.</li>
-        <li><strong>Forms.</strong> One or more contact/quote forms wired to Web3Forms. Submissions email you directly; I keep no copy.</li>
+        <li><strong>Pages.</strong> Home, About, Services (with anchor sections per offering), Pricing or Quote, Service Area pages (one per region you cover), Contact, Booking (if applicable), and your blog.</li>
+        <li><strong>Operational pages.</strong> Privacy Policy, Terms of Use, Accessibility Statement, Sitemap (HTML for humans and XML for crawlers), and Style Guide. These are not optional even when nobody ever clicks them.</li>
+        <li><strong>SEO assets.</strong> robots.txt, sitemap.xml, RSS feed (feed.xml), JSON-LD structured data on every page, Open Graph and Twitter Card tags for link previews, and canonical URLs.</li>
+        <li><strong>Search.</strong> A working full-text search box (Pagefind) that runs entirely in the visitor's browser, with no server, no cookies, and no API call attached to it.</li>
+        <li><strong>Forms.</strong> One or more contact and quote forms wired to Web3Forms. Submissions email you directly, and no copy is kept on my side.</li>
         <li><strong>Favicons.</strong> A full favicon set (every device, every browser, every dark/light variant) generated automatically.</li>
       </ul>
 
@@ -125,7 +125,7 @@ description: "The post-launch reference that applies to every site I build: who 
         <li>"Grand Opening special. Can we put a banner at the top for two weeks?"</li>
       </ul>
       <p><strong>How to send it:</strong> email <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a>, text or call <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>, or use the <a href="/content-update/" class="inline-link">content update form</a>. All three reach the same inbox, which is mine, and I tend to reply quickly on most business days.</p>
-      <p><strong>Turnaround.</strong> Routine edits like a typo, a phone number, a price change, or a new staff bio are included on the monthly plan and tend to land quickly on most business days. A brand new page, whether a service page or a location page, is $150 apiece and tends to follow the routine work shortly after. A new section with custom layout or new behavior, like a calculator or a gallery, is quoted before I start so you know what to expect.</p>
+      <p><strong>Turnaround.</strong> Routine edits like a typo, a phone number, a price change, or a new staff bio are included on the standard plan and tend to land quickly on most business days. Anything genuinely outside the standard scope, like a custom calculator, a third-party booking integration, or a brand-new behavior on the site, is billed at a flat one hundred dollars an hour with a written estimate before I start.</p>
 
       <h3 id="emergencies">4. What counts as an emergency.</h3>
       <p>An emergency is anything visitors will see that's wrong, dangerous, or broken. Three examples I will drop everything for:</p>
@@ -209,14 +209,14 @@ description: "The post-launch reference that applies to every site I build: who 
       <p>Your GBP is separate from your website but tightly connected. I do not manage it (Google won't transfer ownership to a third party for long without flagging it). What I do is wire your site to it: structured data on the site matches your GBP profile (name, address, phone, hours, services), so Google's matching engine treats them as the same entity.</p>
       <p>Maintaining the GBP itself is your responsibility. <strong>The 15-minute quarterly checklist</strong>, hours, photos, review replies, one post, is published as its own guide on the blog: <a href="/blog/google-business-profile-quarterly-checklist/" class="inline-link">The quarterly Google Business Profile checklist for service businesses</a>. Bookmark it; run through it on the first Monday of every quarter. Compound effect over a year is real local-pack movement.</p>
 
-      <h3 id="adding-content">13. Adding pages, posts, or a blog.</h3>
-      <p>New content is part of why you have me. Some additions are included; new pages are billed at $150 each, and I always tell you in advance.</p>
+      <h3 id="adding-content">13. Adding pages, posts, or content.</h3>
+      <p>New content is part of why you have me on retainer. Most additions are included on the standard plan, and anything genuinely outside the standard scope is billed at a flat one hundred dollars an hour with a written estimate before any work starts.</p>
       <ul>
-        <li><strong>Edit to an existing page.</strong> Included on the monthly plan. Live in 1 business day.</li>
-        <li><strong>A new service page (or any new content page).</strong> $150 each, billed once. Send rough copy and photos. Usually live in 1 to 3 business days.</li>
-        <li><strong>A new blog post.</strong> Included if you write the draft and a blog section already exists (I edit, lay out, and publish). Hourly if I write it from scratch (I will quote first).</li>
-        <li><strong>A new region/area page.</strong> $150 each (counts as a new page). Send city name + a paragraph of local color (it ranks better than generic copy).</li>
-        <li><strong>A new feature (calculator, gallery, video page).</strong> Quoted before starting. Usually a few hours of work.</li>
+        <li><strong>Edits to existing pages.</strong> Included on the standard plan, and they tend to land quickly on most business days.</li>
+        <li><strong>New blog posts.</strong> The blog system is part of your standard plan. Once you send me a draft, I edit, lay out, and publish it as part of your unlimited content updates.</li>
+        <li><strong>A new content page within scope.</strong> Send rough copy and photos, and the page gets built and shipped on most business days as part of the unlimited updates.</li>
+        <li><strong>A new region or service-area page.</strong> Send the city name and a paragraph of local color (which ranks better than generic copy), and the page is part of your unlimited updates.</li>
+        <li><strong>A new behavior or integration.</strong> Custom calculators, third-party booking integrations, email-marketing templates, and similar work are quoted at the flat one hundred dollars an hour rate before I start.</li>
       </ul>
 
       <h3 id="seasonal">14. Seasonal and scheduled updates.</h3>
@@ -228,13 +228,12 @@ description: "The post-launch reference that applies to every site I build: who 
       </ul>
 
       <h3 id="invoice">15. Reading your monthly invoice.</h3>
-      <p>If you are on the monthly plan, your invoice is one line. Charges that look out of place? Email me; I explain or remove. I have never had a billing dispute go past one email.</p>
+      <p>Your invoice is essentially one line. If a charge ever looks out of place to you, email me and I will explain or remove it; I have never had a billing dispute go past a single email.</p>
       <ul>
-        <li><strong>Monthly Care Plan: $175.</strong> Hosting, SSL, monitoring, unlimited content updates, direct support. Same number every month.</li>
-        <li><strong>Add-ons (rare).</strong> Itemized below the base line. Usually new pages or features you specifically asked for.</li>
-        <li><strong>Pass-through (rare).</strong> If I paid a third party on your behalf (a stock photo, a paid font), it shows here at cost with no markup.</li>
+        <li><strong>Monthly plan: $175.</strong> Covers hosting, SSL, monitoring, unlimited content updates, the blog system, and direct support. Same number every month.</li>
+        <li><strong>Hourly work outside the plan (rare).</strong> Itemized below the base line at a flat one hundred dollars an hour, only when you have specifically asked for something outside the standard scope and I have sent a written estimate first.</li>
+        <li><strong>Pass-through (rare).</strong> If I paid a third party on your behalf, like a stock photo or a paid font, it shows here at cost with no markup.</li>
       </ul>
-      <p>Lump-sum clients see only the original payment schedule (50% on signing, 50% on launch). No recurring charges unless you opt into the optional $50/month hosting.</p>
 
       <h3 id="leaving">16. If you ever want to leave.</h3>
       <p>I do not hold your domain, content, or audience hostage. The day you ask, here is what happens:</p>
