@@ -21,24 +21,32 @@ permalink: /case-studies/
 
     <div class="case-study-grid">
       {% for cs in caseStudies %}
-        <a href="/case-studies/{{ cs.slug }}/" class="case-study-card{% if cs.selfStudy %} case-study-card--self{% endif %}">
-          <div class="case-study-card-eyebrow">
-            {% if cs.selfStudy %}<span class="case-study-card-pill">Dogfood &middot; the agency's own site</span>{% endif %}
-            <span>{{ cs.trade }}{% if cs.metro %} &middot; {{ cs.metro }}{% endif %}</span>
+        <a href="/case-studies/{{ cs.slug }}/" class="case-study-card{% if cs.selfStudy %} case-study-card--self{% endif %}{% if cs.screenshot %} case-study-card--shot{% endif %}">
+          {% if cs.screenshot %}
+          <div class="case-study-card-shot">
+            <img src="{{ cs.screenshot }}" alt="{{ cs.client }} home page screenshot" loading="lazy" decoding="async" width="1280" height="800">
           </div>
-          <h2 class="case-study-card-title">{{ cs.client }}</h2>
-          <p class="case-study-card-summary">{{ cs.summary }}</p>
-          <div class="case-study-card-metrics">
-            {% for m in cs.metrics %}
-              {% if loop.index <= 3 %}
-              <div class="case-study-card-metric">
-                <span class="case-study-card-metric-label">{{ m.label }}</span>
-                <strong class="case-study-card-metric-value">{{ m.value or m.after }}</strong>
-              </div>
-              {% endif %}
-            {% endfor %}
+          {% endif %}
+          <div class="case-study-card-body">
+            <div class="case-study-card-eyebrow">
+              {% if cs.selfStudy and not cs.screenshot %}<span class="case-study-card-pill">Dogfood &middot; the agency's own site</span>{% endif %}
+              {% if cs.selfStudy and cs.screenshot %}<span class="case-study-card-pill">Self-built</span>{% endif %}
+              <span>{{ cs.trade }}{% if cs.metro %} &middot; {{ cs.metro }}{% endif %}</span>
+            </div>
+            <h2 class="case-study-card-title">{{ cs.client }}</h2>
+            <p class="case-study-card-summary">{{ cs.summary }}</p>
+            <div class="case-study-card-metrics">
+              {% for m in cs.metrics %}
+                {% if loop.index <= 3 %}
+                <div class="case-study-card-metric">
+                  <span class="case-study-card-metric-label">{{ m.label }}</span>
+                  <strong class="case-study-card-metric-value">{{ m.value or m.after }}</strong>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <span class="case-study-card-cta">Read the case study &rarr;</span>
           </div>
-          <span class="case-study-card-cta">Read the case study &rarr;</span>
         </a>
       {% endfor %}
     </div>
