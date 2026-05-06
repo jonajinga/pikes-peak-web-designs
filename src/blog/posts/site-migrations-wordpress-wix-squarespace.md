@@ -94,7 +94,7 @@ tags: [post]
 
 <p><strong>The contact form backend.</strong> WordPress sites usually have a Contact Form 7 or WPForms plugin; Wix and Squarespace have built-in forms. The new site uses Web3Forms with a clean redirect to a thank-you page.</p>
 
-<p><strong>The performance characteristics.</strong> The new site is on Cloudflare's edge, with optimized images and a purged CSS bundle. Page load times typically drop from 3 to 6 seconds on the old platform to under 1 second on the new one.</p>
+<p><strong>The performance characteristics.</strong> The new site is on Cloudflare's edge, with optimized images and a purged CSS bundle. PageSpeed scores typically jump from the 40s and 50s on the old platform to 95 to 100 on the new one, and the site sits comfortably in the green band on every Core Web Vital.</p>
 
 <p><strong>The SEO infrastructure.</strong> robots.txt, sitemap.xml, schema markup, meta tags, OG cards. All authored fresh against the new site rather than carried forward.</p>
 

@@ -20,7 +20,7 @@ tags: [post]
 
 <p>The output is just files. No database. No server-side logic. No PHP runtime. No JavaScript framework hydrating in the browser. Just HTML that the browser can parse and render directly, the way the web was originally designed to work.</p>
 
-<p>This sounds primitive in 2026. It is also the reason the sites I build load in well under a second on a phone, score 95 to 100 on Google PageSpeed, and never need a security patch.</p>
+<p>This sounds primitive in 2026. It is also the reason the sites I build score 95 to 100 on Google PageSpeed, sit comfortably in the green band on every Core Web Vital, and never need a security patch.</p>
 
 <h2>Why I picked it over the alternatives</h2>
 

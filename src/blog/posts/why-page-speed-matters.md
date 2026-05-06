@@ -63,7 +63,7 @@ tags: [post]
   <li>Minimal JavaScript; only what's actually needed</li>
 </ul>
 
-<p>The result is a site that loads in under a second on most connections. That's what your competitors aren't offering, and it's what Google rewards.</p>
+<p>The result is a site that scores 95 to 100 on Google PageSpeed and sits in the green Core Web Vitals band on every page. That's what your competitors aren't offering, and it's what Google rewards.</p>
 
 <h2>How to Check Your Current Speed</h2>
 

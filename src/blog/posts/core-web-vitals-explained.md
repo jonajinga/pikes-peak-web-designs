@@ -79,7 +79,7 @@ tags: [post]
 <p>For every site I build, the Core Web Vitals targets are part of the build pipeline:</p>
 
 <ul>
-  <li><strong>LCP target: under 1 second.</strong> Achieved through image optimization, CSS purging, font preloading, and edge hosting.</li>
+  <li><strong>LCP target: in the green band (under 2.5 seconds).</strong> Achieved through image optimization, CSS purging, font preloading, and edge hosting.</li>
   <li><strong>INP target: under 100 ms.</strong> Achieved through minimal front-end JavaScript and no third-party trackers on the main thread.</li>
   <li><strong>CLS target: under 0.05.</strong> Achieved through explicit image dimensions, font-size-adjust, and no late-loading embeds.</li>
 </ul>

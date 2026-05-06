@@ -1193,7 +1193,8 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   min-width: 0;
 }
 .mega-col:last-child { border-right: 0; }
-.mega-col h5 {
+.mega-col h5,
+.mega-col .mega-col-h5 {
   font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 700;
@@ -1204,7 +1205,8 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   padding-bottom: 0.55rem;
   border-bottom: 1px solid var(--line);
 }
-:root[data-theme="dark"] .mega-col h5 { color: var(--gold-400); }
+:root[data-theme="dark"] .mega-col h5,
+:root[data-theme="dark"] .mega-col .mega-col-h5 { color: var(--gold-400); }
 
 /* Each link in a mega column: title + helpful one-line description. */
 .mega-item {
@@ -5716,10 +5718,76 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 .ppwd-search-allresults svg { width: 14px; height: 14px; }
 
 /* Compact variant for the mobile-nav inline search box */
-.ppwd-search--compact .ppwd-search-input { font-size: 0.95rem; padding: 0.65rem 2.4rem 0.65rem 2.5rem; }
-.ppwd-search--compact .ppwd-result { padding: 0.7rem 0.8rem; }
-.ppwd-search--compact .ppwd-result-title { font-size: 0.95rem; }
-.ppwd-search--compact .ppwd-result-excerpt { font-size: 0.84rem; -webkit-line-clamp: 2; }
+/* Compact (mobile-nav hamburger) variant: tighter, single-line title,
+   single-line excerpt with ellipsis, no breadcrumb, no arrow. Optimised
+   for the narrow ~340px sidebar so cards never wrap awkwardly. */
+.ppwd-search--compact { font-size: inherit; }
+.ppwd-search--compact .ppwd-search-input {
+  font-size: 0.95rem;
+  padding: 0.65rem 2.4rem 0.65rem 2.5rem;
+}
+.ppwd-search--compact .ppwd-search-status {
+  font-size: 0.78rem;
+  margin-top: 0.65rem;
+}
+.ppwd-search--compact .ppwd-search-filters {
+  gap: 0.3rem;
+  padding-bottom: 0.55rem;
+  margin: 0.55rem 0 0.4rem;
+}
+.ppwd-search--compact .ppwd-filter {
+  padding: 0.25rem 0.55rem;
+  font-size: 0.74rem;
+  gap: 0.3rem;
+}
+.ppwd-search--compact .ppwd-filter-count {
+  font-size: 0.66rem;
+  padding: 0 0.3em;
+}
+.ppwd-search--compact .ppwd-search-results { gap: 0.4rem; }
+.ppwd-search--compact .ppwd-result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+}
+.ppwd-search--compact .ppwd-result-type {
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  padding: 0.1rem 0.4rem;
+  align-self: flex-start;
+}
+.ppwd-search--compact .ppwd-result-title {
+  font-size: 0.92rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ppwd-search--compact .ppwd-result-excerpt {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  -webkit-line-clamp: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.ppwd-search--compact .ppwd-result-crumb,
+.ppwd-search--compact .ppwd-result-arrow { display: none; }
+.ppwd-search--compact .ppwd-search-allresults {
+  margin-top: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.78rem;
+  width: 100%;
+  justify-content: center;
+}
+.ppwd-search--compact .ppwd-search-empty {
+  padding: 1rem 0.75rem;
+}
+.ppwd-search--compact .ppwd-search-empty strong { font-size: 0.9rem; }
+.ppwd-search--compact .ppwd-search-empty span { font-size: 0.84rem; }
 
 /* Hide popular-pages chip block once any results are rendered. */
 .search-modal-panel:has(.ppwd-result) .search-modal-suggest { display: none; }
@@ -7393,9 +7461,21 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .demo-banner-label { grid-column: 2; justify-self: center; white-space: nowrap; font-size: clamp(0.62rem, 1.8vw, 0.78rem); }
 .demo-banner-actions { grid-column: 3; justify-self: end; }
 @media (max-width: 720px) {
-  .demo-banner { grid-template-columns: 1fr; gap: 0.4rem; text-align: center; position: relative; top: auto; }
-  .demo-banner-label, .demo-banner-actions { grid-column: 1; justify-self: center; }
-  .demo-header { top: 0; }
+  .demo-banner { grid-template-columns: auto 1fr; gap: 0.5rem 0.85rem; padding: 0.45rem 0.85rem; }
+  .demo-banner-label { grid-column: 1; justify-self: start; font-size: 0.62rem; }
+  .demo-banner-actions { grid-column: 2; justify-self: end; gap: 0.85rem; font-size: 0.72rem; }
+  .demo-header { top: 2rem; }
+}
+@media (max-width: 480px) {
+  .demo-banner-label { display: none; }
+  .demo-banner { grid-template-columns: 1fr; }
+  .demo-banner-actions { grid-column: 1; justify-self: center; gap: 1rem; }
+  .demo-header { top: 1.85rem; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .demo-banner { padding: 0.3rem 0.85rem; font-size: 0.7rem; }
+  .demo-header-inner { height: 56px; }
+  .demo-header { top: 1.75rem; }
 }
 .demo-banner-label {
   display: inline-flex;
@@ -9231,9 +9311,21 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .alpine-banner a { color: var(--al-taupe-light); }
 .alpine-banner a:hover { color: #FFFFFF; text-decoration: none; }
 @media (max-width: 720px) {
-  .alpine-banner { grid-template-columns: 1fr; gap: 0.4rem; text-align: center; position: relative; top: auto; }
-  .alpine-banner-label, .alpine-banner-actions { grid-column: 1; justify-self: center; }
-  .alpine-header { top: 0; }
+  .alpine-banner { grid-template-columns: auto 1fr; gap: 0.5rem 0.85rem; padding: 0.45rem 0.85rem; }
+  .alpine-banner-label { grid-column: 1; justify-self: start; font-size: 0.6rem; }
+  .alpine-banner-actions { grid-column: 2; justify-self: end; gap: 0.85rem; font-size: 0.7rem; }
+  .alpine-header { top: 2rem; }
+}
+@media (max-width: 480px) {
+  .alpine-banner-label { display: none; }
+  .alpine-banner { grid-template-columns: 1fr; }
+  .alpine-banner-actions { grid-column: 1; justify-self: center; gap: 1rem; }
+  .alpine-header { top: 1.85rem; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .alpine-banner { padding: 0.3rem 0.85rem; font-size: 0.7rem; }
+  .alpine-header { top: 1.75rem; }
+  .alpine-header-inner { padding-block: 0.4rem; }
 }
 
 .alpine-header {
@@ -9951,9 +10043,21 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .meadow-banner a { color: var(--me-cream); opacity: 0.85; }
 .meadow-banner a:hover { opacity: 1; text-decoration: none; }
 @media (max-width: 720px) {
-  .meadow-banner { grid-template-columns: 1fr; gap: 0.4rem; text-align: center; position: relative; top: auto; }
-  .meadow-banner-label, .meadow-banner-actions { grid-column: 1; justify-self: center; }
-  .meadow-header { top: 0; }
+  .meadow-banner { grid-template-columns: auto 1fr; gap: 0.5rem 0.85rem; padding: 0.45rem 0.85rem; }
+  .meadow-banner-label { grid-column: 1; justify-self: start; font-size: 0.62rem; }
+  .meadow-banner-actions { grid-column: 2; justify-self: end; gap: 0.85rem; font-size: 0.7rem; }
+  .meadow-header { top: 2rem; }
+}
+@media (max-width: 480px) {
+  .meadow-banner-label { display: none; }
+  .meadow-banner { grid-template-columns: 1fr; }
+  .meadow-banner-actions { grid-column: 1; justify-self: center; gap: 1rem; }
+  .meadow-header { top: 1.85rem; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .meadow-banner { padding: 0.3rem 0.85rem; font-size: 0.7rem; }
+  .meadow-header { top: 1.75rem; }
+  .meadow-header-inner { padding-block: 0.4rem; }
 }
 
 .meadow-header {
@@ -10493,9 +10597,20 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .summit-banner a { color: var(--su-cyan); }
 .summit-banner a:hover { color: #FFFFFF; text-decoration: none; }
 @media (max-width: 720px) {
-  .summit-banner { grid-template-columns: 1fr; gap: 0.4rem; text-align: center; position: relative; top: auto; }
-  .summit-banner-label, .summit-banner-actions { grid-column: 1; justify-self: center; }
-  .summit-header { top: 0; }
+  .summit-banner { grid-template-columns: auto 1fr; gap: 0.5rem 0.85rem; padding: 0.45rem 0.85rem; }
+  .summit-banner-label { grid-column: 1; justify-self: start; font-size: 0.6rem; }
+  .summit-banner-actions { grid-column: 2; justify-self: end; gap: 0.85rem; font-size: 0.7rem; }
+  .summit-header { top: 2rem; }
+}
+@media (max-width: 480px) {
+  .summit-banner-label { display: none; }
+  .summit-banner { grid-template-columns: 1fr; }
+  .summit-banner-actions { grid-column: 1; justify-self: center; gap: 1rem; }
+  .summit-header { top: 1.85rem; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .summit-banner { padding: 0.3rem 0.85rem; font-size: 0.68rem; }
+  .summit-header { top: 1.75rem; }
 }
 
 .summit-header {
@@ -11071,9 +11186,20 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .lumen-banner a { color: var(--lu-yellow); border-bottom: 0; }
 .lumen-banner a:hover { background: transparent; color: #FFFFFF; }
 @media (max-width: 720px) {
-  .lumen-banner { grid-template-columns: 1fr; gap: 0.4rem; text-align: center; position: relative; top: auto; }
-  .lumen-banner-label, .lumen-banner-actions { grid-column: 1; justify-self: center; }
-  .lumen-header { top: 0; }
+  .lumen-banner { grid-template-columns: auto 1fr; gap: 0.5rem 0.85rem; padding: 0.45rem 0.85rem; }
+  .lumen-banner-label { grid-column: 1; justify-self: start; font-size: 0.6rem; }
+  .lumen-banner-actions { grid-column: 2; justify-self: end; gap: 0.85rem; font-size: 0.7rem; }
+  .lumen-header { top: 2rem; }
+}
+@media (max-width: 480px) {
+  .lumen-banner-label { display: none; }
+  .lumen-banner { grid-template-columns: 1fr; }
+  .lumen-banner-actions { grid-column: 1; justify-self: center; gap: 1rem; }
+  .lumen-header { top: 1.85rem; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .lumen-banner { padding: 0.3rem 0.85rem; font-size: 0.68rem; }
+  .lumen-header { top: 1.75rem; padding-block: 0.45rem; }
 }
 
 .lumen-header {
@@ -11581,9 +11707,20 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .clearwater-banner a { color: var(--cw-peach); }
 .clearwater-banner a:hover { color: #FFFFFF; text-decoration: none; }
 @media (max-width: 720px) {
-  .clearwater-banner { grid-template-columns: 1fr; gap: 0.4rem; text-align: center; position: relative; top: auto; }
-  .clearwater-banner-label, .clearwater-banner-actions { grid-column: 1; justify-self: center; }
-  .clearwater-header { top: 0; }
+  .clearwater-banner { grid-template-columns: auto 1fr; gap: 0.5rem 0.85rem; padding: 0.45rem 0.85rem; }
+  .clearwater-banner-label { grid-column: 1; justify-self: start; font-size: 0.62rem; }
+  .clearwater-banner-actions { grid-column: 2; justify-self: end; gap: 0.85rem; font-size: 0.7rem; }
+  .clearwater-header { top: 2rem; }
+}
+@media (max-width: 480px) {
+  .clearwater-banner-label { display: none; }
+  .clearwater-banner { grid-template-columns: 1fr; }
+  .clearwater-banner-actions { grid-column: 1; justify-self: center; gap: 1rem; }
+  .clearwater-header { top: 1.85rem; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .clearwater-banner { padding: 0.3rem 0.85rem; font-size: 0.7rem; }
+  .clearwater-header { top: 1.75rem; padding-block: 0.55rem; }
 }
 
 .clearwater-header {

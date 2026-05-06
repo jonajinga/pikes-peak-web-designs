@@ -72,8 +72,8 @@ tags: [post, comparison]
 <p>A custom-coded website built for your specific business has no overhead. No platform baggage. Every line of code serves a purpose. The result:</p>
 
 <ul>
-  <li>Page load times under 1 second</li>
-  <li>PageSpeed scores of 98–100</li>
+  <li>Core Web Vitals in the green band on every page</li>
+  <li>PageSpeed scores of 95–100</li>
   <li>Clean HTML structure that Google crawls easily</li>
   <li>Service-area and service-specific pages built around how people actually search</li>
   <li>You own the files. No platform lock-in</li>

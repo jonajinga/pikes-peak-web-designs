@@ -18,7 +18,7 @@ tags: [post]
 
 <p>Carrd is a single-page-site builder priced at $9 to $49 per year. The free tier exists for personal use; the paid tiers add custom domains, forms, and a few visual options. The whole product is opinionated toward "your site is one long scrolling page with sections," which is the right shape for many small projects.</p>
 
-<p>The technical work the team has done is impressive. Carrd sites are genuinely fast (under 1 second to load on most devices), genuinely lightweight (the JavaScript footprint is small), and genuinely accessible by default (the templates are well-built). For a tool that gives non-developers a publish button, the floor of quality is higher than almost any other builder.</p>
+<p>The technical work the team has done is impressive. Carrd sites are genuinely fast (Core Web Vitals comfortably in the green band on most devices), genuinely lightweight (the JavaScript footprint is small), and genuinely accessible by default (the templates are well-built). For a tool that gives non-developers a publish button, the floor of quality is higher than almost any other builder.</p>
 
 <p>The visual templates are restrained and tasteful. There are no animated gradients, no auto-playing videos, no parallax effects that grind a phone to a halt. The default look is "professional minimal," which is the right floor for a small business.</p>
 

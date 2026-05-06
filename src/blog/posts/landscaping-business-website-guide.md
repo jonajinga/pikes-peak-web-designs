@@ -84,7 +84,7 @@ tags: [post, landscaping]
 
 <h2>Speed matters more in this trade than most</h2>
 
-<p>The customer browsing landscaping sites is almost always doing it from their phone, often outside, often standing in their yard. They are scrolling through ten or fifteen sites in one sitting. <strong>The site that loads in under a second wins; the site that takes four seconds to render its hero image is closed before it even paints.</strong></p>
+<p>The customer browsing landscaping sites is almost always doing it from their phone, often outside, often standing in their yard. They are scrolling through ten or fifteen sites in one sitting. <strong>The site that paints first wins; the site that takes four seconds to render its hero image is closed before it even shows up.</strong></p>
 
 <p>This is not a small-margin effect. Google's own data shows roughly 7&ndash;10% of mobile visitors bounce per additional second of load time. A landscaper site at 60 PageSpeed mobile is losing roughly half of its mobile traffic before the visitor reads a word. A landscaper site at 95+ keeps that traffic and gives the visitor a chance to actually see the portfolio.</p>
 
