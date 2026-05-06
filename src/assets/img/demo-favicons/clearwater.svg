@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Clearwater Plumbing">
+  <circle cx="256" cy="256" r="256" fill="#0E5B7E"/>
+  <text x="256" y="256" text-anchor="middle" dominant-baseline="central"
+    font-family="'DM Serif Display','DM Serif Text',Georgia,serif" font-weight="400"
+    font-size="320" fill="#FED7AA">C</text>
+</svg>

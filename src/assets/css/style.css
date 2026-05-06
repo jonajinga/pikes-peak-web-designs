@@ -7903,6 +7903,12 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 
 /* ========== LIVE-DEMO BANNER (persistent nag back to Pikes Peak) ========== */
+/* Layout: simple flex that pins actions to the right. The label is
+   absolutely centered relative to the banner so it sits dead-center on
+   the viewport regardless of how wide the actions group becomes. The
+   bottom-border was previously a 2px line that read as a visible "gap"
+   between the banner and the brand header — removed so the two stack
+   flush with no visual seam. */
 .demo-banner {
   background: linear-gradient(90deg, #05102A 0%, #0A1F44 100%);
   color: #FFFFFF;
@@ -7911,42 +7917,46 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: flex-end;
   position: sticky;
   top: 0;
   z-index: 200;
-  border-bottom: 2px solid var(--rc-safety);
   height: 38px;
   min-height: 38px;
 }
-.demo-banner-label { grid-column: 2; justify-self: center; white-space: nowrap; font-size: clamp(0.62rem, 1.8vw, 0.78rem); }
-.demo-banner-actions { grid-column: 3; justify-self: end; }
+.demo-banner-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: clamp(0.62rem, 1.8vw, 0.78rem);
+  pointer-events: none;
+}
+.demo-banner-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  white-space: nowrap;
+}
 @media (max-width: 720px) {
   /* Portrait phones: drop the verbose label entirely and CENTER the
      two action links as a single tightly-spaced inline row. */
   .demo-banner {
-    grid-template-columns: 1fr;
-    gap: 0;
+    justify-content: center;
     padding: 0 0.85rem;
-    column-gap: 1rem;
     height: 36px;
     min-height: 36px;
   }
   .demo-banner-label { display: none; }
   .demo-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.5rem;
     font-size: 0.78rem;
   }
   .demo-banner-actions a { white-space: nowrap; }
-  .demo-header { top: 36px; }
+  .demo-header { top: 35px; }
 }
 @media (max-width: 380px) {
   .demo-banner { padding: 0 0.65rem; }
@@ -7957,24 +7967,18 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
      two action links. Tightened height so the strip doesn't waste
      limited landscape viewport. */
   .demo-banner {
+    justify-content: center;
     padding: 0 clamp(0.85rem, 2vw, 1.5rem);
     font-size: 0.72rem;
-    grid-template-columns: 1fr;
-    gap: 0;
     height: 30px;
     min-height: 30px;
   }
   .demo-banner-label { display: none; }
   .demo-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.25rem;
     font-size: 0.72rem;
   }
-  .demo-header { top: 30px; }
+  .demo-header { top: 29px; }
 }
 .demo-banner-label {
   display: inline-flex;
@@ -8012,7 +8016,10 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   background: var(--rc-black);
   color: #FFFFFF;
   position: sticky;
-  top: 38px;
+  /* 37px (banner height 38 - 1) so the header overlaps the banner by
+     a single pixel — eliminates the sub-pixel gap that some browsers
+     leave between two sticky stack-mates at exact heights. */
+  top: 37px;
   z-index: 50;
   border-bottom: 4px solid var(--rc-red);
   /* Locked size — explicitly no transition so the header never animates
@@ -8136,7 +8143,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .demo-logo-mark { width: 36px; height: 36px; font-size: 1.05rem; }
   .demo-banner-label { font-size: 0.66rem; }
   .demo-banner-actions { gap: 0.85rem; font-size: 0.72rem; }
-  .demo-header { top: 38px; }
+  .demo-header { top: 37px; }
 }
 
 .demo-mobile-nav {
@@ -8415,7 +8422,13 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   flex-direction: column;
   gap: 0.65rem;
 }
-.demo-mega-feature-eyebrow {
+/* Each demo's body class sets a heading color for h1-h6 (e.g.
+   `.summit-site h3 { color: var(--su-navy-deep); }`), which wins the
+   cascade against a single-class .demo-mega-feature-title selector and
+   makes the megamenu title invisible against the dark feature gradient.
+   Doubling the class boosts specificity (0,2,0) above the demo's
+   `.demo-site h3` rule (0,1,1) without resorting to !important. */
+.demo-mega-feature .demo-mega-feature-eyebrow {
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 800;
@@ -8423,7 +8436,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   text-transform: uppercase;
   color: var(--demo-mega-feature-eyebrow, #FFE071);
 }
-.demo-mega-feature-title {
+.demo-mega-feature .demo-mega-feature-title {
   font-size: 1.28rem;
   line-height: 1.25;
   font-weight: 700;
@@ -8433,14 +8446,17 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   text-transform: none;
   letter-spacing: 0.01em;
 }
-.demo-mega-feature-body {
+.demo-mega-feature .demo-mega-feature-body {
   font-size: 0.93rem;
-  /* Was 82% — looked washed-out against the dark gradient. 95% gives
-     near-pure white while still reading as supporting copy under the
-     full-white title above it. */
   color: rgba(255, 255, 255, 0.95);
   margin: 0;
   line-height: 1.55;
+}
+.demo-mega-feature .demo-mega-feature-cta {
+  /* Same specificity bump for the CTA — some demos style anchors
+     globally (e.g. `.summit-site a { color: var(--su-cyan-deep); }`)
+     which would otherwise override the explicit CTA text color. */
+  color: var(--demo-mega-feature-cta-color, #0F172A);
 }
 .demo-mega-feature-cta {
   display: inline-flex;
@@ -8478,6 +8494,48 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .lumen-site .demo-mega-item-icon { background: #FACC15; color: #000000; }
 .lumen-site .demo-mega-h5,
 .lumen-site .demo-mega { border-top-color: #FACC15; }
+
+/* =============================================================
+   Demo footer-bottom: prevent the "© 2026 Brand · License · Cert"
+   line from wrapping mid-sentence into a second line. Stack the
+   left + right blocks vertically once the row gets tight (under
+   1024px) so the copyright line flows naturally on its own line. */
+.demo-footer-bottom,
+.alpine-footer-bottom,
+.summit-footer-bottom,
+.lumen-footer-bottom,
+.clearwater-footer-bottom,
+.meadow-footer-bottom {
+  text-wrap: pretty;
+}
+@media (max-width: 1024px) {
+  .demo-footer-bottom,
+  .alpine-footer-bottom,
+  .summit-footer-bottom,
+  .lumen-footer-bottom,
+  .clearwater-footer-bottom,
+  .meadow-footer-bottom {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    gap: 0.85rem !important;
+  }
+}
+
+/* =============================================================
+   Service-area map z-index isolation
+   Leaflet's internal panes use z-index 200-700, which by default
+   compare against the page's sticky banner (z-index 200) and demo
+   header (z-index 50/150) and will sit on top of them during scroll.
+   `isolation: isolate` creates a fresh stacking context so the map's
+   internal z-indexes only matter inside the map container — sticky
+   banners and headers always paint above. */
+[id$="-coverage-map"] {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  contain: layout paint;
+}
 
 /* =============================================================
    DEMO MEGAMENU SHARED — END
@@ -10093,18 +10151,25 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   font-size: 0.78rem;
   font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
   letter-spacing: 0.03em;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: flex-end;
   position: sticky;
   top: 0;
   z-index: 200;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   height: 38px;
   min-height: 38px;
 }
-.alpine-banner-label { grid-column: 2; justify-self: center; text-transform: uppercase; white-space: nowrap; font-size: clamp(0.6rem, 1.7vw, 0.78rem); }
+.alpine-banner-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: clamp(0.6rem, 1.7vw, 0.78rem);
+  pointer-events: none;
+}
 .alpine-banner-label::before {
   content: '';
   display: inline-block;
@@ -10114,30 +10179,23 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   margin-right: 0.55rem;
   vertical-align: 1px;
 }
-.alpine-banner-actions { grid-column: 3; justify-self: end; display: inline-flex; gap: 1.25rem; font-size: 0.76rem; }
+.alpine-banner-actions { display: inline-flex; align-items: center; gap: 1.25rem; font-size: 0.76rem; white-space: nowrap; }
 .alpine-banner a { color: var(--al-taupe-light); }
 .alpine-banner a:hover { color: #FFFFFF; text-decoration: none; }
 @media (max-width: 720px) {
   .alpine-banner {
-    grid-template-columns: 1fr;
-    gap: 0;
+    justify-content: center;
     padding: 0 0.85rem;
-    column-gap: 1rem;
     height: 36px;
     min-height: 36px;
   }
   .alpine-banner-label { display: none; }
   .alpine-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.5rem;
     font-size: 0.78rem;
   }
   .alpine-banner-actions a { white-space: nowrap; }
-  .alpine-header { top: 36px; }
+  .alpine-header { top: 35px; }
 }
 @media (max-width: 380px) {
   .alpine-banner { padding: 0 0.65rem; }
@@ -10145,31 +10203,25 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 @media (max-height: 500px) and (orientation: landscape) {
   .alpine-banner {
+    justify-content: center;
     padding: 0 clamp(0.85rem, 2vw, 1.5rem);
     font-size: 0.72rem;
-    grid-template-columns: 1fr;
-    gap: 0;
     height: 30px;
     min-height: 30px;
   }
   .alpine-banner-label { display: none; }
   .alpine-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.25rem;
     font-size: 0.7rem;
   }
-  .alpine-header { top: 30px; }
+  .alpine-header { top: 29px; }
 }
 
 .alpine-header {
   background: var(--al-cream);
   border-bottom: 1px solid var(--al-line);
   position: sticky;
-  top: 38px;
+  top: 37px;
   z-index: 150;
   transition: none;
 }
@@ -10230,7 +10282,8 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   font-size: 0.88rem;
   color: var(--al-forest);
   font-weight: 500;
-  padding-left: 1.5rem;
+  padding-left: 1.85rem;
+  margin-left: 0.5rem;
   border-left: 1px solid var(--al-line);
 }
 .alpine-menu-toggle {
@@ -10249,7 +10302,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 @media (max-width: 1023px) {
   .alpine-header-inner { padding: 0 1.1rem; gap: 1rem; height: 72px; min-height: 72px; }
   .alpine-banner { font-size: 0.72rem; }
-  .alpine-header { top: 38px; }
+  .alpine-header { top: 37px; }
 }
 
 .alpine-mobile-nav {
@@ -10871,42 +10924,42 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   padding: 0 1.25rem;
   font-size: 0.78rem;
   letter-spacing: 0.02em;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: flex-end;
   position: sticky;
   top: 0;
   z-index: 200;
   height: 38px;
   min-height: 38px;
 }
-.meadow-banner-label { grid-column: 2; justify-self: center; white-space: nowrap; font-size: clamp(0.65rem, 1.8vw, 0.78rem); }
+.meadow-banner-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: clamp(0.65rem, 1.8vw, 0.78rem);
+  pointer-events: none;
+}
 .meadow-banner-label::before { content: '●'; color: var(--me-terracotta); margin-right: 0.5rem; }
-.meadow-banner-actions { grid-column: 3; justify-self: end; display: inline-flex; gap: 1.25rem; font-size: 0.78rem; }
+.meadow-banner-actions { display: inline-flex; align-items: center; gap: 1.25rem; font-size: 0.78rem; white-space: nowrap; }
 .meadow-banner a { color: var(--me-cream); opacity: 0.85; }
 .meadow-banner a:hover { opacity: 1; text-decoration: none; }
 @media (max-width: 720px) {
   .meadow-banner {
-    grid-template-columns: 1fr;
-    gap: 0;
+    justify-content: center;
     padding: 0 0.85rem;
-    column-gap: 1rem;
     height: 36px;
     min-height: 36px;
   }
   .meadow-banner-label { display: none; }
   .meadow-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.5rem;
     font-size: 0.78rem;
   }
   .meadow-banner-actions a { white-space: nowrap; }
-  .meadow-header { top: 36px; }
+  .meadow-header { top: 35px; }
 }
 @media (max-width: 380px) {
   .meadow-banner { padding: 0 0.65rem; }
@@ -10914,24 +10967,18 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 @media (max-height: 500px) and (orientation: landscape) {
   .meadow-banner {
+    justify-content: center;
     padding: 0 clamp(0.85rem, 2vw, 1.5rem);
     font-size: 0.72rem;
-    grid-template-columns: 1fr;
-    gap: 0;
     height: 30px;
     min-height: 30px;
   }
   .meadow-banner-label { display: none; }
   .meadow-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.25rem;
     font-size: 0.7rem;
   }
-  .meadow-header { top: 30px; }
+  .meadow-header { top: 29px; }
 }
 
 .meadow-header {
@@ -10939,7 +10986,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   padding: 0 clamp(1.25rem, 3vw, 2.5rem);
   border-bottom: 1px solid var(--me-line);
   position: sticky;
-  top: 38px;
+  top: 37px;
   z-index: 150;
   transition: none;
 }
@@ -10977,7 +11024,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .meadow-menu-toggle { display: inline-flex; }
 }
 @media (max-width: 1023px) {
-  .meadow-header { padding: 0 clamp(1rem, 3vw, 1.5rem); top: 38px; }
+  .meadow-header { padding: 0 clamp(1rem, 3vw, 1.5rem); top: 37px; }
   .meadow-header-inner { height: 76px; min-height: 76px; }
   .meadow-banner { font-size: 0.72rem; }
 }
@@ -11462,40 +11509,41 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.74rem;
   letter-spacing: 0.03em;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: flex-end;
   position: sticky; top: 0; z-index: 200;
   height: 38px;
   min-height: 38px;
 }
-.summit-banner-label { grid-column: 2; justify-self: center; text-transform: uppercase; white-space: nowrap; font-size: clamp(0.58rem, 1.7vw, 0.74rem); }
+.summit-banner-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: clamp(0.58rem, 1.7vw, 0.74rem);
+  pointer-events: none;
+}
 .summit-banner-label::before { content: '▪'; color: var(--su-cyan); margin-right: 0.55rem; }
-.summit-banner-actions { grid-column: 3; justify-self: end; display: inline-flex; gap: 1.25rem; }
+.summit-banner-actions { display: inline-flex; align-items: center; gap: 1.25rem; white-space: nowrap; }
 .summit-banner a { color: var(--su-cyan); }
 .summit-banner a:hover { color: #FFFFFF; text-decoration: none; }
 @media (max-width: 720px) {
   .summit-banner {
-    grid-template-columns: 1fr;
-    gap: 0;
+    justify-content: center;
     padding: 0 0.85rem;
-    column-gap: 1rem;
     height: 36px;
     min-height: 36px;
   }
   .summit-banner-label { display: none; }
   .summit-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.5rem;
     font-size: 0.78rem;
   }
   .summit-banner-actions a { white-space: nowrap; }
-  .summit-header { top: 36px; }
+  .summit-header { top: 35px; }
 }
 @media (max-width: 380px) {
   .summit-banner { padding: 0 0.65rem; }
@@ -11503,30 +11551,24 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 @media (max-height: 500px) and (orientation: landscape) {
   .summit-banner {
+    justify-content: center;
     padding: 0 clamp(0.85rem, 2vw, 1.5rem);
     font-size: 0.7rem;
-    grid-template-columns: 1fr;
-    gap: 0;
     height: 30px;
     min-height: 30px;
   }
   .summit-banner-label { display: none; }
   .summit-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.25rem;
     font-size: 0.68rem;
   }
-  .summit-header { top: 30px; }
+  .summit-header { top: 29px; }
 }
 
 .summit-header {
   background: var(--su-white);
   border-bottom: 1px solid var(--su-line-light);
-  position: sticky; top: 38px; z-index: 150;
+  position: sticky; top: 37px; z-index: 150;
   padding: 0 clamp(1.25rem, 3vw, 2rem);
   transition: none;
 }
@@ -11555,7 +11597,10 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 .summit-nav-phone {
   font-family: 'JetBrains Mono', monospace; font-size: 0.88rem;
-  color: var(--su-navy-deep); padding-left: 1.25rem;
+  color: var(--su-navy-deep);
+  padding-left: 1.75rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   border-left: 1px solid var(--su-line-light);
 }
 .summit-nav-cta {
@@ -11569,7 +11614,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .summit-menu-toggle { display: inline-flex; }
 }
 @media (max-width: 1023px) {
-  .summit-header { padding: 0 1rem; top: 38px; }
+  .summit-header { padding: 0 1rem; top: 37px; }
   .summit-header-inner { height: 72px; min-height: 72px; }
   .summit-banner { font-size: 0.72rem; }
 }
@@ -11872,9 +11917,11 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .summit-footer-brand p { color: rgba(255,255,255,0.72); font-size: 0.9rem; max-width: 34ch; line-height: 1.6; margin-top: 1rem; }
 .summit-footer-col-title {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--su-cyan);
-  margin: 0 0 1rem; font-weight: 500;
+  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+  /* Brighter cyan than --su-cyan; ~13:1 contrast on the dark-navy footer
+     instead of 5:1, which felt washed-out at small uppercase sizes. */
+  color: #67E8F9;
+  margin: 0 0 1rem; font-weight: 600;
 }
 .summit-footer a { display: block; padding: 0.3rem 0; color: rgba(255,255,255,0.82); font-size: 0.92rem; }
 .summit-footer a:hover { color: #FFFFFF; text-decoration: none; }
@@ -12015,6 +12062,13 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .summit-site a.summit-btn:visited { color: #FFFFFF; text-decoration: none; }
 .summit-site a.summit-btn:hover,
 .summit-site a.summit-btn:focus { color: #FFFFFF; text-decoration: none; }
+/* The CTA section flips the button to white-bg + dark-text. Re-assert
+   that color at higher specificity than the hardening rule above so
+   the CTA "Request estimate" button text actually shows. */
+.summit-site .summit-cta a.summit-btn,
+.summit-site .summit-cta a.summit-btn:visited,
+.summit-site .summit-cta a.summit-btn:hover,
+.summit-site .summit-cta a.summit-btn:focus { color: var(--su-navy-deep); }
 .summit-site a.summit-btn-outline,
 .summit-site a.summit-btn-outline:visited { color: var(--su-navy-deep); text-decoration: none; }
 .summit-site a.summit-btn-outline:hover,
@@ -12089,38 +12143,38 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   font-family: 'Archivo', sans-serif;
   font-size: 0.74rem; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase;
-  display: grid; grid-template-columns: 1fr auto 1fr;
-  align-items: center; gap: 1rem;
+  display: flex; align-items: center; justify-content: flex-end;
   position: sticky; top: 0; z-index: 200;
   height: 38px;
   min-height: 38px;
 }
-.lumen-banner-label { grid-column: 2; justify-self: center; white-space: nowrap; font-size: clamp(0.55rem, 1.7vw, 0.74rem); letter-spacing: 0.1em; }
+.lumen-banner-label {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: clamp(0.55rem, 1.7vw, 0.74rem);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
 .lumen-banner-label::before { content: '▸'; color: var(--lu-yellow); margin-right: 0.5rem; }
-.lumen-banner-actions { grid-column: 3; justify-self: end; display: inline-flex; gap: 1.25rem; }
+.lumen-banner-actions { display: inline-flex; align-items: center; gap: 1.25rem; white-space: nowrap; }
 .lumen-banner a { color: var(--lu-yellow); border-bottom: 0; }
 .lumen-banner a:hover { background: transparent; color: #FFFFFF; }
 @media (max-width: 720px) {
   .lumen-banner {
-    grid-template-columns: 1fr;
-    gap: 0;
+    justify-content: center;
     padding: 0 0.85rem;
-    column-gap: 1rem;
     height: 36px;
     min-height: 36px;
   }
   .lumen-banner-label { display: none; }
   .lumen-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.5rem;
     font-size: 0.78rem;
   }
   .lumen-banner-actions a { white-space: nowrap; }
-  .lumen-header { top: 36px; }
+  .lumen-header { top: 35px; }
 }
 @media (max-width: 380px) {
   .lumen-banner { padding: 0 0.65rem; }
@@ -12128,31 +12182,25 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 @media (max-height: 500px) and (orientation: landscape) {
   .lumen-banner {
+    justify-content: center;
     padding: 0 clamp(0.85rem, 2vw, 1.5rem);
     font-size: 0.7rem;
-    grid-template-columns: 1fr;
-    gap: 0;
     height: 30px;
     min-height: 30px;
   }
   .lumen-banner-label { display: none; }
   .lumen-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.25rem;
     font-size: 0.68rem;
   }
-  .lumen-header { top: 30px; }
+  .lumen-header { top: 29px; }
 }
 
 .lumen-header {
   background: var(--lu-bone);
   border-bottom: 3px solid var(--lu-black);
   padding: 0 clamp(1.25rem, 3vw, 2rem);
-  position: sticky; top: 38px; z-index: 150;
+  position: sticky; top: 37px; z-index: 150;
   transition: none;
 }
 .lumen-header-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; transition: none; height: 84px; min-height: 84px; }
@@ -12197,7 +12245,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .lumen-menu-toggle { display: inline-flex; }
 }
 @media (max-width: 1023px) {
-  .lumen-header { padding: 0 1rem; top: 38px; }
+  .lumen-header { padding: 0 1rem; top: 37px; }
   .lumen-header-inner { height: 72px; min-height: 72px; }
   .lumen-banner { font-size: 0.72rem; }
 }
@@ -12638,13 +12686,19 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   background: var(--cw-navy-deep); color: var(--cw-cream);
   padding: 0 1.25rem;
   font-size: 0.8rem;
-  display: grid; grid-template-columns: 1fr auto 1fr;
-  align-items: center; gap: 1rem;
+  display: flex; align-items: center; justify-content: flex-end;
   position: sticky; top: 0; z-index: 200;
   height: 38px;
   min-height: 38px;
 }
-.clearwater-banner-label { grid-column: 2; justify-self: center; white-space: nowrap; font-size: clamp(0.65rem, 1.8vw, 0.8rem); }
+.clearwater-banner-label {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: clamp(0.65rem, 1.8vw, 0.8rem);
+  pointer-events: none;
+}
 .clearwater-banner-label::before {
   content: '';
   display: inline-block;
@@ -12654,30 +12708,23 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   margin-right: 0.55rem;
   vertical-align: 1px;
 }
-.clearwater-banner-actions { grid-column: 3; justify-self: end; display: inline-flex; gap: 1.25rem; font-size: 0.8rem; }
+.clearwater-banner-actions { display: inline-flex; align-items: center; gap: 1.25rem; font-size: 0.8rem; white-space: nowrap; }
 .clearwater-banner a { color: var(--cw-peach); }
 .clearwater-banner a:hover { color: #FFFFFF; text-decoration: none; }
 @media (max-width: 720px) {
   .clearwater-banner {
-    grid-template-columns: 1fr;
-    gap: 0;
+    justify-content: center;
     padding: 0 0.85rem;
-    column-gap: 1rem;
     height: 36px;
     min-height: 36px;
   }
   .clearwater-banner-label { display: none; }
   .clearwater-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.5rem;
     font-size: 0.78rem;
   }
   .clearwater-banner-actions a { white-space: nowrap; }
-  .clearwater-header { top: 36px; }
+  .clearwater-header { top: 35px; }
 }
 @media (max-width: 380px) {
   .clearwater-banner { padding: 0 0.65rem; }
@@ -12685,31 +12732,25 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 @media (max-height: 500px) and (orientation: landscape) {
   .clearwater-banner {
+    justify-content: center;
     padding: 0 clamp(0.85rem, 2vw, 1.5rem);
     font-size: 0.72rem;
-    grid-template-columns: 1fr;
-    gap: 0;
     height: 30px;
     min-height: 30px;
   }
   .clearwater-banner-label { display: none; }
   .clearwater-banner-actions {
-    grid-column: 1;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1.25rem;
     font-size: 0.7rem;
   }
-  .clearwater-header { top: 30px; }
+  .clearwater-header { top: 29px; }
 }
 
 .clearwater-header {
   background: var(--cw-cream);
   padding: 0 clamp(1.25rem, 3vw, 2rem);
   border-bottom: 1px solid var(--cw-line);
-  position: sticky; top: 38px; z-index: 150;
+  position: sticky; top: 37px; z-index: 150;
   transition: none;
 }
 .clearwater-header-inner { max-width: 1220px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; transition: none; height: 84px; min-height: 84px; }
@@ -12750,7 +12791,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .clearwater-menu-toggle { display: inline-flex; }
 }
 @media (max-width: 1023px) {
-  .clearwater-header { padding: 0 1rem; top: 38px; }
+  .clearwater-header { padding: 0 1rem; top: 37px; }
   .clearwater-header-inner { height: 72px; min-height: 72px; }
   .clearwater-banner { font-size: 0.72rem; }
 }
