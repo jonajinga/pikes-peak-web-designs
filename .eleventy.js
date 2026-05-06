@@ -33,7 +33,12 @@ export default function (eleventyConfig) {
   // shortcode (per-page copy collides). Icons are generated once via
   // `npm run favicons` (scripts/generate-favicons.mjs) and committed.
   // eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "./_site" });
-  eleventyConfig.addPlugin(autoCacheBuster);
+  // Default extensions don't include svg, so /favicon.svg never gets a
+  // cache-buster query string and browsers hold onto stale copies for
+  // weeks. Adding svg makes favicon updates take effect immediately.
+  eleventyConfig.addPlugin(autoCacheBuster, {
+    extensions: ["css", "js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "svg"],
+  });
   eleventyConfig.addPlugin(feedPlugin, {
     type: "atom",
     outputPath: "/feed.xml",

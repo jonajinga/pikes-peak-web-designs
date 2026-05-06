@@ -33,7 +33,7 @@
     <nav class="lumen-nav" aria-label="Main navigation">
       <a href="/demo/lumen-electric/"{% if page.url == '/demo/lumen-electric/' %} class="is-active"{% endif %}>Home</a>
 
-      <span class="demo-mega-dropdown">
+      <div class="demo-mega-dropdown">
         <a href="/demo/lumen-electric/services/"{% if page.url | startsWith('/demo/lumen-electric/services/') %} class="is-active"{% endif %}>Services <span class="demo-mega-chevron" aria-hidden="true"></span></a>
         <div class="demo-mega" role="menu" aria-label="Electrical services menu">
           <div class="demo-mega-inner">
@@ -75,9 +75,9 @@
             </aside>
           </div>
         </div>
-      </span>
+      </div>
 
-      <span class="demo-mega-dropdown">
+      <div class="demo-mega-dropdown">
         <a href="/demo/lumen-electric/service-area/"{% if page.url | startsWith('/demo/lumen-electric/service-area/') %} class="is-active"{% endif %}>Service Area <span class="demo-mega-chevron" aria-hidden="true"></span></a>
         <div class="demo-mega" role="menu" aria-label="Service area menu">
           <div class="demo-mega-inner">
@@ -119,7 +119,7 @@
             </aside>
           </div>
         </div>
-      </span>
+      </div>
 
       <a href="/demo/lumen-electric/about/"{% if page.url | startsWith('/demo/lumen-electric/about/') %} class="is-active"{% endif %}>Shop</a>
       <a href="/demo/lumen-electric/pricing/"{% if page.url | startsWith('/demo/lumen-electric/pricing/') %} class="is-active"{% endif %}>Pricing</a>

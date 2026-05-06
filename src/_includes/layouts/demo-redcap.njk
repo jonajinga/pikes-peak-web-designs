@@ -37,7 +37,7 @@
     <nav class="demo-nav" aria-label="Main navigation">
       <a href="/demo/redcap-roofing/"{% if page.url == '/demo/redcap-roofing/' %} class="is-active"{% endif %}>Home</a>
 
-      <span class="demo-mega-dropdown">
+      <div class="demo-mega-dropdown">
         <a href="/demo/redcap-roofing/services/"{% if page.url | startsWith('/demo/redcap-roofing/services/') or page.url | startsWith('/demo/redcap-roofing/residential/') or page.url | startsWith('/demo/redcap-roofing/commercial/') %} class="is-active"{% endif %}>Services <span class="demo-mega-chevron" aria-hidden="true"></span></a>
         <div class="demo-mega" role="menu" aria-label="Services menu">
           <div class="demo-mega-inner">
@@ -79,9 +79,9 @@
             </aside>
           </div>
         </div>
-      </span>
+      </div>
 
-      <span class="demo-mega-dropdown">
+      <div class="demo-mega-dropdown">
         <a href="/demo/redcap-roofing/service-area/"{% if page.url | startsWith('/demo/redcap-roofing/service-area/') %} class="is-active"{% endif %}>Service Area <span class="demo-mega-chevron" aria-hidden="true"></span></a>
         <div class="demo-mega" role="menu" aria-label="Service area menu">
           <div class="demo-mega-inner">
@@ -123,7 +123,7 @@
             </aside>
           </div>
         </div>
-      </span>
+      </div>
 
       <a href="/demo/redcap-roofing/about/"{% if page.url | startsWith('/demo/redcap-roofing/about/') %} class="is-active"{% endif %}>About</a>
       <a href="/demo/redcap-roofing/pricing/"{% if page.url | startsWith('/demo/redcap-roofing/pricing/') %} class="is-active"{% endif %}>Pricing</a>

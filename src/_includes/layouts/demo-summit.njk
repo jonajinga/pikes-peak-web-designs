@@ -36,7 +36,7 @@
     <nav class="summit-nav" aria-label="Main navigation">
       <a href="/demo/summit-hvac/"{% if page.url == '/demo/summit-hvac/' %} class="is-active"{% endif %}>Overview</a>
 
-      <span class="demo-mega-dropdown">
+      <div class="demo-mega-dropdown">
         <a href="/demo/summit-hvac/services/"{% if page.url | startsWith('/demo/summit-hvac/services/') %} class="is-active"{% endif %}>Services <span class="demo-mega-chevron" aria-hidden="true"></span></a>
         <div class="demo-mega" role="menu" aria-label="HVAC services menu">
           <div class="demo-mega-inner">
@@ -78,9 +78,9 @@
             </aside>
           </div>
         </div>
-      </span>
+      </div>
 
-      <span class="demo-mega-dropdown">
+      <div class="demo-mega-dropdown">
         <a href="/demo/summit-hvac/service-area/"{% if page.url | startsWith('/demo/summit-hvac/service-area/') %} class="is-active"{% endif %}>Service Area <span class="demo-mega-chevron" aria-hidden="true"></span></a>
         <div class="demo-mega" role="menu" aria-label="Service area menu">
           <div class="demo-mega-inner">
@@ -122,7 +122,7 @@
             </aside>
           </div>
         </div>
-      </span>
+      </div>
 
       <a href="/demo/summit-hvac/about/"{% if page.url | startsWith('/demo/summit-hvac/about/') %} class="is-active"{% endif %}>About</a>
       <a href="/demo/summit-hvac/pricing/"{% if page.url | startsWith('/demo/summit-hvac/pricing/') %} class="is-active"{% endif %}>Pricing</a>

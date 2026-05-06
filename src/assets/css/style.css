@@ -2388,6 +2388,8 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   font-size: 1.15rem;
   border-radius: 50%;
   margin-bottom: 1rem;
+  line-height: 1;
+  font-feature-settings: "lnum" 1, "tnum" 1;
 }
 :root[data-theme="dark"] .step-num { background: var(--gold-500); color: var(--navy-900); }
 .step-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; }
@@ -5832,6 +5834,8 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   font-weight: 700;
   font-size: 1rem;
   flex-shrink: 0;
+  line-height: 1;
+  font-feature-settings: "lnum" 1, "tnum" 1;
 }
 :root[data-theme="dark"] .next-step-num { background: var(--gold-500); color: var(--navy-900); }
 .next-step h3 {
@@ -8247,16 +8251,19 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .demo-mega {
   display: block;
   position: fixed;
-  top: calc(82px + 2.4rem); /* header height + banner height */
+  /* Default offset: banner (38px) + header (82px) + small gap (6px).
+     Per-demo overrides below tune this to each header's exact height. */
+  top: var(--demo-mega-top, 126px);
   left: 50%;
   transform: translateX(-50%) translateY(-8px);
   width: min(1180px, calc(100vw - 2rem));
   max-width: calc(100vw - 2rem);
   background: #FFFFFF;
-  color: #1A1F2E;
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  border-radius: 4px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.22), 0 8px 22px rgba(15, 23, 42, 0.1);
+  color: #0F172A;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  border-top: 4px solid var(--demo-mega-accent, #0F172A);
+  border-radius: 6px;
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.32), 0 10px 26px rgba(15, 23, 42, 0.14);
   padding: 0;
   opacity: 0;
   visibility: hidden;
@@ -8265,8 +8272,15 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   overflow: hidden;
   z-index: 220;
 }
+/* Per-demo offset = banner (38px) + that demo's header height + 6px. */
+.demo-site       { --demo-mega-top: 126px; } /* 38 + 82 + 6 */
+.alpine-site     { --demo-mega-top: 128px; } /* 38 + 84 + 6 */
+.summit-site     { --demo-mega-top: 124px; } /* 38 + 80 + 6 */
+.lumen-site      { --demo-mega-top: 128px; } /* 38 + 84 + 6 */
+.clearwater-site { --demo-mega-top: 128px; } /* 38 + 84 + 6 */
+.meadow-site     { --demo-mega-top: 132px; } /* 38 + 88 + 6 */
 @media (max-width: 1023px) {
-  .demo-mega { top: calc(64px + 2rem); }
+  .demo-mega { top: calc(38px + 72px + 6px); }
 }
 .demo-mega-dropdown::after {
   content: '';
@@ -8313,25 +8327,25 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 
 .demo-mega-h5 {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #6B7280;
+  color: var(--demo-mega-accent, #0F172A);
   margin: 0 0 0.95rem;
   padding-bottom: 0.55rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
 }
 
 .demo-mega-item {
   display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: 0.85rem;
-  padding: 0.55rem 0.65rem;
-  margin: 0 -0.65rem 0.15rem;
+  grid-template-columns: 38px 1fr;
+  gap: 0.9rem;
+  padding: 0.6rem 0.7rem;
+  margin: 0 -0.7rem 0.15rem;
   border-radius: 4px;
-  color: #1A1F2E;
-  text-decoration: none;
+  color: #0F172A;
+  text-decoration: none !important;
   text-transform: none !important;
   letter-spacing: 0 !important;
   border-bottom: none !important;
@@ -8339,16 +8353,20 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   transition: background 160ms ease-out, transform 160ms ease-out;
 }
 .demo-mega-item:hover, .demo-mega-item:focus-visible {
-  background: rgba(15, 23, 42, 0.04);
+  background: rgba(15, 23, 42, 0.07);
   outline: none;
   transform: translateX(2px);
 }
+.demo-mega-item:hover .demo-mega-item-title,
+.demo-mega-item:focus-visible .demo-mega-item-title {
+  color: var(--demo-mega-accent, #0F172A);
+}
 .demo-mega-item-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 4px;
-  background: rgba(15, 23, 42, 0.06);
-  color: var(--demo-mega-accent, #1A1F2E);
+  background: var(--demo-mega-accent, #0F172A);
+  color: #FFFFFF;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -8361,15 +8379,16 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   display: block;
   font-weight: 600;
   font-size: 0.95rem;
-  color: #0F172A;
-  margin-bottom: 0.15rem;
+  color: #0B1220;
+  margin-bottom: 0.18rem;
+  transition: color 140ms ease-out;
 }
 .demo-mega-item-desc {
   display: block;
-  font-size: 0.82rem;
-  color: #4B5563;
+  font-size: 0.83rem;
+  color: #374151;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 /* The right-side feature card. Each demo overrides the gradient to its
@@ -8425,6 +8444,23 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   transition: transform 180ms ease-out, box-shadow 180ms ease-out;
 }
 .demo-mega-feature-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); }
+
+/* Per-demo accent colors (drives top-border bar, h5 color, item-icon
+   background, and item-hover title color). Each demo's primary brand
+   color is reused so the panel reads as native to the surrounding site. */
+.demo-site                    { --demo-mega-accent: #DC2626; } /* Redcap red */
+.alpine-site                  { --demo-mega-accent: #0F3E2E; } /* Alpine forest */
+.summit-site                  { --demo-mega-accent: #082F49; } /* Summit deep navy */
+.lumen-site                   { --demo-mega-accent: #000000; } /* Lumen black */
+.clearwater-site              { --demo-mega-accent: #0E5B7E; } /* Clearwater teal */
+.meadow-site                  { --demo-mega-accent: #2E4033; } /* Meadow forest */
+
+/* Lumen lives in a black/yellow universe; the all-black accent reads
+   the same as the brand. Use the yellow as the icon background so the
+   icons pop instead of vanishing into the panel border. */
+.lumen-site .demo-mega-item-icon { background: #FACC15; color: #000000; }
+.lumen-site .demo-mega-h5,
+.lumen-site .demo-mega { border-top-color: #FACC15; }
 
 /* ========== HERO (asymmetric, industrial) ========== */
 .demo-hero {
@@ -15592,6 +15628,18 @@ h1:focus-within em::after { transform: scaleX(1); }
   font-weight: 700;
   flex-shrink: 0;
   margin-top: 0.3rem;
+  /* Optical centering: collapse line-height + force tabular lining
+     numerals so the digit sits at the geometric center of the circle
+     instead of riding high in the inherited line-box. */
+  line-height: 1;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+.signup-step-num span {
+  display: inline-block;
+  line-height: 1;
+  /* Playfair's numerals sit ~1px above the math center against the
+     circle. A 1-pixel down-nudge places them on the optical center. */
+  transform: translateY(1px);
 }
 .signup-step--active .signup-step-num {
   background: var(--navy-900);

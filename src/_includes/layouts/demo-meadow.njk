@@ -33,7 +33,7 @@
     <nav class="meadow-nav" aria-label="Main navigation">
       <a href="/demo/meadow-stone/"{% if page.url == '/demo/meadow-stone/' %} class="is-active"{% endif %}>Studio</a>
 
-      <span class="demo-mega-dropdown">
+      <div class="demo-mega-dropdown">
         <a href="/demo/meadow-stone/services/"{% if page.url | startsWith('/demo/meadow-stone/services/') %} class="is-active"{% endif %}>Work <span class="demo-mega-chevron" aria-hidden="true"></span></a>
         <div class="demo-mega" role="menu" aria-label="Studio work menu">
           <div class="demo-mega-inner">
@@ -75,9 +75,9 @@
             </aside>
           </div>
         </div>
-      </span>
+      </div>
 
-      <span class="demo-mega-dropdown">
+      <div class="demo-mega-dropdown">
         <a href="/demo/meadow-stone/service-area/"{% if page.url | startsWith('/demo/meadow-stone/service-area/') %} class="is-active"{% endif %}>Service Area <span class="demo-mega-chevron" aria-hidden="true"></span></a>
         <div class="demo-mega" role="menu" aria-label="Service area menu">
           <div class="demo-mega-inner">
@@ -119,7 +119,7 @@
             </aside>
           </div>
         </div>
-      </span>
+      </div>
 
       <a href="/demo/meadow-stone/about/"{% if page.url | startsWith('/demo/meadow-stone/about/') %} class="is-active"{% endif %}>Studio Notes</a>
       <a href="/demo/meadow-stone/pricing/"{% if page.url | startsWith('/demo/meadow-stone/pricing/') %} class="is-active"{% endif %}>Investment</a>
