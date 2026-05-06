@@ -7863,6 +7863,12 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
    ============================================================= */
 
 .demo-site {
+  /* Mobile guard: pinch-out / over-zoom should never reveal a sliver of
+     horizontal scroll. `overflow-x: clip` is the modern, safer cousin of
+     overflow:hidden — it prevents horizontal scroll without hiding any
+     decorative shadows or sticky elements that legitimately extend past
+     the viewport edge. */
+  overflow-x: clip;
   /* Palette — fire engine red, industrial black, safety yellow, warm cream */
   --rc-black: #0F131D;
   --rc-black-2: #1A202D;
@@ -8213,12 +8219,14 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* =====================================================
-   DEMO MEGAMENU — shared structural pattern, used inside
-   every demo's nav for the Services + Service Area items.
-   Per-demo accent colors live alongside each demo's main
-   block further below in this file.
-===================================================== */
+/* =============================================================
+   DEMO MEGAMENU SHARED — START
+   Shared structural pattern used inside every demo's nav for the
+   Services + Service Area items. The build extracts this block
+   between the SHARED — START / SHARED — END markers and prepends
+   it to every per-demo CSS bundle so all 6 demos get the same
+   megamenu styling regardless of which file they load.
+   ============================================================= */
 .demo-mega-dropdown {
   position: relative;
   display: inline-flex;
@@ -8461,6 +8469,10 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .lumen-site .demo-mega-item-icon { background: #FACC15; color: #000000; }
 .lumen-site .demo-mega-h5,
 .lumen-site .demo-mega { border-top-color: #FACC15; }
+
+/* =============================================================
+   DEMO MEGAMENU SHARED — END
+   ============================================================= */
 
 /* ========== HERO (asymmetric, industrial) ========== */
 .demo-hero {
@@ -10027,6 +10039,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
    ============================================================= */
 
 .alpine-site {
+  overflow-x: clip;
   --al-slate: #334155;
   --al-slate-deep: #1E293B;
   --al-forest: #0F3E2E;
@@ -10802,6 +10815,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
    ============================================================= */
 
 .meadow-site {
+  overflow-x: clip;
   --me-sage: #8B9D83;
   --me-sage-deep: #64755C;
   --me-terracotta: #C67B5C;
@@ -11394,6 +11408,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
    ============================================================= */
 
 .summit-site {
+  overflow-x: clip;
   --su-cyan: #0EA5E9;
   --su-cyan-deep: #0369A1;
   --su-navy: #0C4A6E;
@@ -12022,6 +12037,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
    ============================================================= */
 
 .lumen-site {
+  overflow-x: clip;
   --lu-black: #000000;
   --lu-offblack: #0A0A0A;
   --lu-ink: #171717;
@@ -12567,6 +12583,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
    ============================================================= */
 
 .clearwater-site {
+  overflow-x: clip;
   --cw-aqua: #06B6D4;
   --cw-aqua-deep: #0891B2;
   --cw-navy: #0C4A6E;

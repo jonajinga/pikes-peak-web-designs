@@ -150,7 +150,12 @@ export default function (eleventyConfig) {
     if (!fs.existsSync(cssFile)) return;
 
     try {
-      const src = fs.readFileSync(cssFile, "utf8");
+      // Normalize CRLF -> LF so the demo-block markers below (which use
+      // bare \n) match on Windows-checked-out files. Without this, the
+      // indexOf() lookups silently return -1 and the script `continue`s
+      // without writing per-demo CSS bundles, leaving stale ones in
+      // place from older builds.
+      const src = fs.readFileSync(cssFile, "utf8").replace(/\r\n/g, "\n");
 
       // Tiny reset shared by every per-demo stylesheet. Each demo defines its
       // own palette under its root body class, so we don't need the full Pikes
@@ -181,6 +186,19 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 
       const minifier = new CleanCSS({ returnPromise: false, level: 1 });
 
+      // Extract the shared megamenu block first; prepend it to every
+      // per-demo bundle so .demo-mega-* selectors land in all 6 files
+      // (the block lives inside the REDCAP comment range so without
+      // this it would only end up in demo.css).
+      let sharedMegamenuCss = "";
+      const sharedStartMarker = "/* =============================================================\n   DEMO MEGAMENU SHARED — START";
+      const sharedEndMarker = "/* =============================================================\n   DEMO MEGAMENU SHARED — END";
+      const shStart = src.indexOf(sharedStartMarker);
+      const shEnd = src.indexOf(sharedEndMarker);
+      if (shStart !== -1 && shEnd !== -1) {
+        sharedMegamenuCss = src.slice(shStart, shEnd);
+      }
+
       // Extract + minify each demo stylesheet first. We do this BEFORE
       // purging the main bundle so demo extraction reads from the full
       // source (each demo's selectors only appear on demo pages, which
@@ -191,7 +209,19 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
         const s = src.indexOf(openMarker);
         const e = src.indexOf(closeMarker);
         if (s === -1 || e === -1) continue; // demo not yet written
-        const block = demoReset + src.slice(s, e);
+        // Slice the demo-specific block, then strip the shared megamenu
+        // block out of it (so it doesn't get duplicated when we prepend
+        // it). The shared block lives inside the REDCAP slice; for the
+        // other 5 demos the strip is a no-op.
+        let demoSlice = src.slice(s, e);
+        if (shStart !== -1 && shEnd !== -1 && shStart >= s && shEnd < e) {
+          // Remove the shared block from this demo slice; we'll prepend
+          // it cleanly below so all bundles look the same.
+          const localStart = shStart - s;
+          const localEnd = shEnd - s;
+          demoSlice = demoSlice.slice(0, localStart) + demoSlice.slice(localEnd);
+        }
+        const block = demoReset + sharedMegamenuCss + demoSlice;
         const result = new CleanCSS({ returnPromise: false, level: 1 }).minify(block);
         if (!result.errors.length) {
           fs.writeFileSync(path.resolve("./_site/assets/css/", d.file), result.styles);
