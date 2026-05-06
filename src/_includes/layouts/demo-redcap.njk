@@ -36,8 +36,95 @@
 
     <nav class="demo-nav" aria-label="Main navigation">
       <a href="/demo/redcap-roofing/"{% if page.url == '/demo/redcap-roofing/' %} class="is-active"{% endif %}>Home</a>
-      <a href="/demo/redcap-roofing/services/"{% if page.url | startsWith('/demo/redcap-roofing/services/') or page.url | startsWith('/demo/redcap-roofing/residential/') or page.url | startsWith('/demo/redcap-roofing/commercial/') %} class="is-active"{% endif %}>Services</a>
-      <a href="/demo/redcap-roofing/service-area/"{% if page.url | startsWith('/demo/redcap-roofing/service-area/') %} class="is-active"{% endif %}>Service Area</a>
+
+      <span class="demo-mega-dropdown">
+        <a href="/demo/redcap-roofing/services/"{% if page.url | startsWith('/demo/redcap-roofing/services/') or page.url | startsWith('/demo/redcap-roofing/residential/') or page.url | startsWith('/demo/redcap-roofing/commercial/') %} class="is-active"{% endif %}>Services <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Services menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Core roofing</span>
+              <a href="/demo/redcap-roofing/residential/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-8 9 8v9H3z"/><path d="M9 21V13h6v8"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Residential roofing</span><span class="demo-mega-item-desc">Asphalt, metal, tile &mdash; full tear-off and overlay</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/commercial/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="12"/><path d="M3 9l9-6 9 6"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Commercial roofing</span><span class="demo-mega-item-desc">TPO, EPDM, modified bitumen for flat roofs</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/services/#storm-damage" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Storm &amp; hail damage</span><span class="demo-mega-item-desc">Free inspection within 48 hours of any storm</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Specialty</span>
+              <a href="/demo/redcap-roofing/services/#insurance-claims" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Insurance claim help</span><span class="demo-mega-item-desc">We meet your adjuster on the roof</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/services/#gutters" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18l-2 4H5z"/><path d="M5 10v8h14v-8"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Gutters</span><span class="demo-mega-item-desc">Seamless aluminum, leaf-guard install</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/services/#maintenance" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 11-14 0 7 7 0 0114 0z"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Roof maintenance</span><span class="demo-mega-item-desc">Annual tune-ups, sealant, flashing checks</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#1A1F2E;--demo-mega-feature-to:#0A0F1A;--demo-mega-feature-eyebrow:#FFE071;--demo-mega-feature-cta-bg:#DC2626;--demo-mega-feature-cta-color:#FFFFFF;">
+              <span class="demo-mega-feature-eyebrow">Storm-season urgency</span>
+              <h3 class="demo-mega-feature-title">Free inspection within 48 hours.</h3>
+              <p class="demo-mega-feature-body">Hail or wind damage along the Front Range &mdash; we are on the roof, with photos, the same week you call.</p>
+              <a href="/demo/redcap-roofing/contact/" class="demo-mega-feature-cta">Free Inspection &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </span>
+
+      <span class="demo-mega-dropdown">
+        <a href="/demo/redcap-roofing/service-area/"{% if page.url | startsWith('/demo/redcap-roofing/service-area/') %} class="is-active"{% endif %}>Service Area <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Service area menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Pikes Peak region</span>
+              <a href="/demo/redcap-roofing/service-area/#colorado-springs" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Colorado Springs</span><span class="demo-mega-item-desc">Old North End to Briargate, full coverage</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/service-area/#monument" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Monument &amp; Tri-Lakes</span><span class="demo-mega-item-desc">Higher elevations, heavier hail belt</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/service-area/#black-forest" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Black Forest</span><span class="demo-mega-item-desc">Custom homes, larger acreage roofs</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Front Range</span>
+              <a href="/demo/redcap-roofing/service-area/#falcon" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Falcon</span><span class="demo-mega-item-desc">Newer subdivisions, builder-grade upgrades</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/service-area/#fountain" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Fountain &amp; Security</span><span class="demo-mega-item-desc">South-side residential coverage</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/service-area/#manitou" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Manitou Springs</span><span class="demo-mega-item-desc">Historic homes, complex re-roofs</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#7A1B1B;--demo-mega-feature-to:#3F0A0A;--demo-mega-feature-eyebrow:#FFE071;--demo-mega-feature-cta-bg:#FFE071;--demo-mega-feature-cta-color:#1A1F2E;">
+              <span class="demo-mega-feature-eyebrow">218 reviews &middot; 4.9 stars</span>
+              <h3 class="demo-mega-feature-title">Crews on the road every weekday.</h3>
+              <p class="demo-mega-feature-body">Same-day estimates from the Springs out to Monument and Black Forest. Storm response runs seven days.</p>
+              <a href="/demo/redcap-roofing/service-area/" class="demo-mega-feature-cta">See full coverage &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </span>
+
       <a href="/demo/redcap-roofing/about/"{% if page.url | startsWith('/demo/redcap-roofing/about/') %} class="is-active"{% endif %}>About</a>
       <a href="/demo/redcap-roofing/pricing/"{% if page.url | startsWith('/demo/redcap-roofing/pricing/') %} class="is-active"{% endif %}>Pricing</a>
       <a href="/demo/redcap-roofing/blog/"{% if page.url | startsWith('/demo/redcap-roofing/blog/') %} class="is-active"{% endif %}>Blog</a>

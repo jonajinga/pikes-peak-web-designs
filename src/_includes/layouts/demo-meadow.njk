@@ -32,8 +32,95 @@
     <a href="/demo/meadow-stone/" class="meadow-logo">Meadow <em>&amp;</em> Stone</a>
     <nav class="meadow-nav" aria-label="Main navigation">
       <a href="/demo/meadow-stone/"{% if page.url == '/demo/meadow-stone/' %} class="is-active"{% endif %}>Studio</a>
-      <a href="/demo/meadow-stone/services/"{% if page.url | startsWith('/demo/meadow-stone/services/') %} class="is-active"{% endif %}>Work</a>
-      <a href="/demo/meadow-stone/service-area/"{% if page.url | startsWith('/demo/meadow-stone/service-area/') %} class="is-active"{% endif %}>Service Area</a>
+
+      <span class="demo-mega-dropdown">
+        <a href="/demo/meadow-stone/services/"{% if page.url | startsWith('/demo/meadow-stone/services/') %} class="is-active"{% endif %}>Work <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Studio work menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Design &amp; build</span>
+              <a href="/demo/meadow-stone/services/#design" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 12h18"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Full garden design</span><span class="demo-mega-item-desc">Master plans, planting palettes, hand-drawn drawings</span></span>
+              </a>
+              <a href="/demo/meadow-stone/services/#stonework" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l4-6 5 4 7-9"/><path d="M3 21h18"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Drystone walls</span><span class="demo-mega-item-desc">Locally-sourced stone, no mortar, generations</span></span>
+              </a>
+              <a href="/demo/meadow-stone/services/#patios" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><path d="M4 12h16M12 4v16"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Patios &amp; paths</span><span class="demo-mega-item-desc">Stone, gravel, decomposed granite, brick</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Planting &amp; care</span>
+              <a href="/demo/meadow-stone/services/#planting" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22V8"/><path d="M5 12c0-3 3-5 7-5s7 2 7 5-3 5-7 5-7-2-7-5z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Native planting plans</span><span class="demo-mega-item-desc">Climate-adapted, water-thrifty, year-round interest</span></span>
+              </a>
+              <a href="/demo/meadow-stone/services/#maintenance" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3l-1-1L4 15v5h5l9.7-9.7-1-1"/><path d="M16 4l4 4"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Seasonal care</span><span class="demo-mega-item-desc">Spring &amp; fall visits, hand-pruning, divisions</span></span>
+              </a>
+              <a href="/demo/meadow-stone/services/#consultation" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">On-site consultation</span><span class="demo-mega-item-desc">Two-hour walkthrough, written notes after</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#2E4033;--demo-mega-feature-to:#1A271E;--demo-mega-feature-eyebrow:#D5996B;--demo-mega-feature-cta-bg:#F5F3ED;--demo-mega-feature-cta-color:#2E4033;">
+              <span class="demo-mega-feature-eyebrow">Two designers, slow design</span>
+              <h3 class="demo-mega-feature-title">Gardens that look right at thirty.</h3>
+              <p class="demo-mega-feature-body">No catalogs, no lawn-and-shrub. We design for the way the place wants to be, then build it carefully.</p>
+              <a href="/demo/meadow-stone/contact/" class="demo-mega-feature-cta">Start a project &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </span>
+
+      <span class="demo-mega-dropdown">
+        <a href="/demo/meadow-stone/service-area/"{% if page.url | startsWith('/demo/meadow-stone/service-area/') %} class="is-active"{% endif %}>Service Area <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Service area menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Boulder county</span>
+              <a href="/demo/meadow-stone/service-area/#boulder" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Boulder</span><span class="demo-mega-item-desc">All neighborhoods, primary studio coverage</span></span>
+              </a>
+              <a href="/demo/meadow-stone/service-area/#niwot" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Niwot</span><span class="demo-mega-item-desc">Acreage estates, larger garden masterplans</span></span>
+              </a>
+              <a href="/demo/meadow-stone/service-area/#longmont" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Longmont</span><span class="demo-mega-item-desc">Urban gardens, established neighborhoods</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Front Range foothills</span>
+              <a href="/demo/meadow-stone/service-area/#gunbarrel" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Gunbarrel</span><span class="demo-mega-item-desc">Mid-century homes, full re-landscapes</span></span>
+              </a>
+              <a href="/demo/meadow-stone/service-area/#lyons" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Lyons</span><span class="demo-mega-item-desc">Stone country, drystone walls a specialty</span></span>
+              </a>
+              <a href="/demo/meadow-stone/service-area/#louisville" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Louisville &amp; Superior</span><span class="demo-mega-item-desc">Post-fire rebuilds, climate-adapted plantings</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#3E5040;--demo-mega-feature-to:#1F2A21;--demo-mega-feature-eyebrow:#D5996B;--demo-mega-feature-cta-bg:#D5996B;--demo-mega-feature-cta-color:#FFFFFF;">
+              <span class="demo-mega-feature-eyebrow">Twelve projects a year</span>
+              <h3 class="demo-mega-feature-title">A small list, taken slowly.</h3>
+              <p class="demo-mega-feature-body">We hold our season to roughly twelve client gardens. Calls early in the year are the surest way to find a place on the list.</p>
+              <a href="/demo/meadow-stone/service-area/" class="demo-mega-feature-cta">See full coverage &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </span>
+
       <a href="/demo/meadow-stone/about/"{% if page.url | startsWith('/demo/meadow-stone/about/') %} class="is-active"{% endif %}>Studio Notes</a>
       <a href="/demo/meadow-stone/pricing/"{% if page.url | startsWith('/demo/meadow-stone/pricing/') %} class="is-active"{% endif %}>Investment</a>
       <a href="/demo/meadow-stone/blog/"{% if page.url | startsWith('/demo/meadow-stone/blog/') %} class="is-active"{% endif %}>Journal</a>

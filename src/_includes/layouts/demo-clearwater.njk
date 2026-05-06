@@ -35,8 +35,95 @@
     </a>
     <nav class="clearwater-nav" aria-label="Main navigation">
       <a href="/demo/clearwater-plumbing/"{% if page.url == '/demo/clearwater-plumbing/' %} class="is-active"{% endif %}>Home</a>
-      <a href="/demo/clearwater-plumbing/services/"{% if page.url | startsWith('/demo/clearwater-plumbing/services/') %} class="is-active"{% endif %}>Services</a>
-      <a href="/demo/clearwater-plumbing/service-area/"{% if page.url | startsWith('/demo/clearwater-plumbing/service-area/') %} class="is-active"{% endif %}>Service Area</a>
+
+      <span class="demo-mega-dropdown">
+        <a href="/demo/clearwater-plumbing/services/"{% if page.url | startsWith('/demo/clearwater-plumbing/services/') %} class="is-active"{% endif %}>Services <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Plumbing services menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Emergency &amp; repair</span>
+              <a href="/demo/clearwater-plumbing/services/#emergency" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Emergency leaks</span><span class="demo-mega-item-desc">Burst pipes, hot-water-heater failures &mdash; same day</span></span>
+              </a>
+              <a href="/demo/clearwater-plumbing/services/#water-heaters" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><circle cx="12" cy="16" r="2"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Water heaters</span><span class="demo-mega-item-desc">Tank, tankless, hybrid &mdash; install &amp; service</span></span>
+              </a>
+              <a href="/demo/clearwater-plumbing/services/#drains" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v4a8 8 0 11-16 0z"/><circle cx="12" cy="12" r="2"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Drain cleaning</span><span class="demo-mega-item-desc">Snake, hydro-jet, sewer-camera survey</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Larger work</span>
+              <a href="/demo/clearwater-plumbing/services/#repipe" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18M5 6h14M5 18h14"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Whole-home repipe</span><span class="demo-mega-item-desc">Galvanized to PEX, copper as requested</span></span>
+              </a>
+              <a href="/demo/clearwater-plumbing/services/#remodel" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3l-1-1L4 15v5h5l9.7-9.7-1-1"/><path d="M16 4l4 4"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Remodel plumbing</span><span class="demo-mega-item-desc">Kitchen + bath rough-in &amp; finish</span></span>
+              </a>
+              <a href="/demo/clearwater-plumbing/services/#fixtures" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Fixtures &amp; faucets</span><span class="demo-mega-item-desc">Replace anything you can buy at a hardware store</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#0C4A6E;--demo-mega-feature-to:#062538;--demo-mega-feature-eyebrow:#FED7AA;--demo-mega-feature-cta-bg:#FED7AA;--demo-mega-feature-cta-color:#062538;">
+              <span class="demo-mega-feature-eyebrow">Family-run since 1997</span>
+              <h3 class="demo-mega-feature-title">Flat-rate pricing, clean jobsites.</h3>
+              <p class="demo-mega-feature-body">Actual humans answering the phone. No upselling, no surprise charges, no hidden fees on the invoice.</p>
+              <a href="/demo/clearwater-plumbing/contact/" class="demo-mega-feature-cta">Book Service &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </span>
+
+      <span class="demo-mega-dropdown">
+        <a href="/demo/clearwater-plumbing/service-area/"{% if page.url | startsWith('/demo/clearwater-plumbing/service-area/') %} class="is-active"{% endif %}>Service Area <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Service area menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">SLC core</span>
+              <a href="/demo/clearwater-plumbing/service-area/#salt-lake" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Salt Lake City</span><span class="demo-mega-item-desc">Avenues to Sugar House, full coverage</span></span>
+              </a>
+              <a href="/demo/clearwater-plumbing/service-area/#sandy" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Sandy</span><span class="demo-mega-item-desc">South valley single-families</span></span>
+              </a>
+              <a href="/demo/clearwater-plumbing/service-area/#murray" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Murray</span><span class="demo-mega-item-desc">Central valley, mid-vintage homes</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Surrounding valley</span>
+              <a href="/demo/clearwater-plumbing/service-area/#holladay" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Holladay</span><span class="demo-mega-item-desc">East-bench homes, larger remodels</span></span>
+              </a>
+              <a href="/demo/clearwater-plumbing/service-area/#west-valley" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">West Valley</span><span class="demo-mega-item-desc">Full residential coverage</span></span>
+              </a>
+              <a href="/demo/clearwater-plumbing/service-area/#cottonwood" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Cottonwood Heights</span><span class="demo-mega-item-desc">Foothills proximity, larger lots</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#0E5B7E;--demo-mega-feature-to:#062538;--demo-mega-feature-eyebrow:#FED7AA;--demo-mega-feature-cta-bg:#FFFFFF;--demo-mega-feature-cta-color:#062538;">
+              <span class="demo-mega-feature-eyebrow">Same-week scheduling</span>
+              <h3 class="demo-mega-feature-title">Trucks rolling daily across the valley.</h3>
+              <p class="demo-mega-feature-body">From the Avenues to Bluffdale &mdash; book in the morning, we are usually there by afternoon.</p>
+              <a href="/demo/clearwater-plumbing/service-area/" class="demo-mega-feature-cta">See full coverage &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </span>
+
       <a href="/demo/clearwater-plumbing/about/"{% if page.url | startsWith('/demo/clearwater-plumbing/about/') %} class="is-active"{% endif %}>About</a>
       <a href="/demo/clearwater-plumbing/pricing/"{% if page.url | startsWith('/demo/clearwater-plumbing/pricing/') %} class="is-active"{% endif %}>Pricing</a>
       <a href="/demo/clearwater-plumbing/blog/"{% if page.url | startsWith('/demo/clearwater-plumbing/blog/') %} class="is-active"{% endif %}>Tips</a>

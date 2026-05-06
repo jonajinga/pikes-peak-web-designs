@@ -35,8 +35,95 @@
     </a>
     <nav class="summit-nav" aria-label="Main navigation">
       <a href="/demo/summit-hvac/"{% if page.url == '/demo/summit-hvac/' %} class="is-active"{% endif %}>Overview</a>
-      <a href="/demo/summit-hvac/services/"{% if page.url | startsWith('/demo/summit-hvac/services/') %} class="is-active"{% endif %}>Services</a>
-      <a href="/demo/summit-hvac/service-area/"{% if page.url | startsWith('/demo/summit-hvac/service-area/') %} class="is-active"{% endif %}>Service Area</a>
+
+      <span class="demo-mega-dropdown">
+        <a href="/demo/summit-hvac/services/"{% if page.url | startsWith('/demo/summit-hvac/services/') %} class="is-active"{% endif %}>Services <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="HVAC services menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Heating &amp; cooling</span>
+              <a href="/demo/summit-hvac/services/#installs" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Heat pump installs</span><span class="demo-mega-item-desc">Cold-climate-rated, Manual J sized</span></span>
+              </a>
+              <a href="/demo/summit-hvac/services/#ac" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 12h18M9 6v12M15 6v12"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">AC installation</span><span class="demo-mega-item-desc">SEER2-rated equipment, refrigerant handling on site</span></span>
+              </a>
+              <a href="/demo/summit-hvac/services/#furnace" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 6 8 9 12 12s4 6 0 10"/><path d="M16 6c-2 2-2 4 0 6"/><path d="M8 6c2 2 2 4 0 6"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Furnace repair &amp; replace</span><span class="demo-mega-item-desc">Same-day diagnosis on no-heat calls</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Indoor environment</span>
+              <a href="/demo/summit-hvac/services/#air" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h13a3 3 0 100-6"/><path d="M3 16h11a3 3 0 110 6"/><path d="M3 12h17a3 3 0 100-6"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Indoor air quality</span><span class="demo-mega-item-desc">HRV, ERV, MERV-13 filtration upgrades</span></span>
+              </a>
+              <a href="/demo/summit-hvac/services/#maintenance" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3l-1-1L4 15v5h5l9.7-9.7-1-1"/><path d="M16 4l4 4"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Maintenance plans</span><span class="demo-mega-item-desc">Two visits a year, priority service all year</span></span>
+              </a>
+              <a href="/demo/summit-hvac/services/#manual-j" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Heat-load calculations</span><span class="demo-mega-item-desc">Manual J on every install &mdash; no rule-of-thumb sizing</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#082F49;--demo-mega-feature-to:#031621;--demo-mega-feature-eyebrow:#06B6D4;--demo-mega-feature-cta-bg:#06B6D4;--demo-mega-feature-cta-color:#031621;">
+              <span class="demo-mega-feature-eyebrow">Engineering-grade</span>
+              <h3 class="demo-mega-feature-title">Properly sized systems, every time.</h3>
+              <p class="demo-mega-feature-body">Manual J load calculation on every install &mdash; the same level of rigor commercial engineers expect.</p>
+              <a href="/demo/summit-hvac/contact/" class="demo-mega-feature-cta">Request estimate &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </span>
+
+      <span class="demo-mega-dropdown">
+        <a href="/demo/summit-hvac/service-area/"{% if page.url | startsWith('/demo/summit-hvac/service-area/') %} class="is-active"{% endif %}>Service Area <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Service area menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Denver core</span>
+              <a href="/demo/summit-hvac/service-area/#denver" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Denver</span><span class="demo-mega-item-desc">All neighborhoods inside the I-25/I-225 loop</span></span>
+              </a>
+              <a href="/demo/summit-hvac/service-area/#aurora" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Aurora</span><span class="demo-mega-item-desc">Older single-families east of I-225</span></span>
+              </a>
+              <a href="/demo/summit-hvac/service-area/#lakewood" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Lakewood</span><span class="demo-mega-item-desc">Foothills proximity, mixed-vintage homes</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">South metro</span>
+              <a href="/demo/summit-hvac/service-area/#centennial" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Centennial</span><span class="demo-mega-item-desc">Full coverage south of E-470</span></span>
+              </a>
+              <a href="/demo/summit-hvac/service-area/#highlands-ranch" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Highlands Ranch</span><span class="demo-mega-item-desc">Newer subdivisions, builder-grade upgrades</span></span>
+              </a>
+              <a href="/demo/summit-hvac/service-area/#englewood" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Englewood &amp; Littleton</span><span class="demo-mega-item-desc">Older bungalows, full ductwork rebuilds</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#0F2740;--demo-mega-feature-to:#06121E;--demo-mega-feature-eyebrow:#06B6D4;--demo-mega-feature-cta-bg:#FFFFFF;--demo-mega-feature-cta-color:#082F49;">
+              <span class="demo-mega-feature-eyebrow">Five-county coverage</span>
+              <h3 class="demo-mega-feature-title">From Boulder down to Castle Rock.</h3>
+              <p class="demo-mega-feature-body">Two trucks running daily across the metro &mdash; same-day estimates inside our primary zone.</p>
+              <a href="/demo/summit-hvac/service-area/" class="demo-mega-feature-cta">See full coverage &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </span>
+
       <a href="/demo/summit-hvac/about/"{% if page.url | startsWith('/demo/summit-hvac/about/') %} class="is-active"{% endif %}>About</a>
       <a href="/demo/summit-hvac/pricing/"{% if page.url | startsWith('/demo/summit-hvac/pricing/') %} class="is-active"{% endif %}>Pricing</a>
       <a href="/demo/summit-hvac/blog/"{% if page.url | startsWith('/demo/summit-hvac/blog/') %} class="is-active"{% endif %}>Resources</a>
