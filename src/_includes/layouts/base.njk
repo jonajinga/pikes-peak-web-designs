@@ -30,10 +30,9 @@
 
   <link rel="preload" href="/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
-
-  <link rel="preload" href="/pagefind/pagefind-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.remove()">
-  <noscript><link rel="stylesheet" href="/pagefind/pagefind-ui.css" onerror="this.remove()"></noscript>
-  <link rel="preload" href="/pagefind/pagefind-ui.js" as="script">
+  {# Pagefind's default UI (pagefind-ui.css/js) is no longer used; the
+     custom .ppwd-search UI loads /pagefind/pagefind.js on demand. The
+     two preloads were ~14 KiB of dead weight on every page. #}
 
   {# OG image resolution: per-page ogImage > site default. Always served as PNG
      at 1200x630, the canonical Open Graph aspect ratio across Facebook,

@@ -209,13 +209,12 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
           deep: [
             // Theme attribute selector — must be kept on every :root rule.
             /\[data-theme/,
-            // Runtime-injected libraries: pagefind UI, leaflet maps, tippy tooltips.
-            // deep matches anywhere in compound selectors like
-            // .mobile-search-box .pagefind-ui__drawer.
-            /pagefind/,
+            // Runtime-injected libraries: leaflet maps + tippy tooltips.
             /leaflet/,
             /tippy/,
-            // Mark element added by pagefind highlighting.
+            // Mark element added by Pagefind result highlighting (the only
+            // pagefind-related selector we still need; the legacy
+            // .pagefind-ui__* classes are gone with the custom search UI).
             /^mark/,
             // Custom search UI — markup is injected by main.js so the result
             // cards / type badges / filter chips never appear in static HTML.

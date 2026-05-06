@@ -1524,7 +1524,6 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   border-radius: var(--radius-sm);
   border: 1px solid var(--line);
   background: var(--bg-alt-2);
-  transition: background var(--dur), border-color var(--dur), color var(--dur);
   cursor: pointer;
   width: 100%;
   margin-bottom: 0.2rem;
@@ -1663,7 +1662,6 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background var(--dur), color var(--dur), box-shadow var(--dur);
   min-height: 40px;
 }
 .theme-switch-btn:hover {
