@@ -1,6 +1,7 @@
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import { DateTime } from "luxon";
 import { minify } from "html-minifier-terser";
+import { minify as terserMinify } from "terser";
 import CleanCSS from "clean-css";
 import { PurgeCSS } from "purgecss";
 import Image from "@11ty/eleventy-img";
@@ -51,12 +52,26 @@ export default function (eleventyConfig) {
     },
   });
 
+  // Wrap every <a href="mailto:..."> in <!--email_off--> ... <!--/email_off-->
+  // so Cloudflare's "Email Address Obfuscation" feature stops auto-injecting
+  // /cdn-cgi/scripts/.../email-decode.min.js. The injected script was
+  // showing up as a chained dependency on every page; wrapping kills it.
+  // Runs in every environment, before HTML minification.
+  eleventyConfig.addTransform("emailOff", (content, outputPath) => {
+    if (!outputPath || !outputPath.endsWith(".html")) return content;
+    return content.replace(
+      /(<a\b[^>]*\bhref=["']mailto:[^"']*["'][^>]*>[\s\S]*?<\/a>)/gi,
+      "<!--email_off-->$1<!--/email_off-->"
+    );
+  });
+
   // HTML minification (production only)
   if (process.env.NODE_ENV === "production") {
     eleventyConfig.addTransform("htmlmin", async (content, outputPath) => {
       if (outputPath && outputPath.endsWith(".html")) {
         return minify(content, {
           removeComments: true,
+          ignoreCustomComments: [/^email_off$/, /^\/email_off$/],
           collapseWhitespace: true,
           minifyCSS: true,
           minifyJS: true,
@@ -226,6 +241,36 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
     } catch (e) {
       console.warn("CSS build failed:", e.message);
     }
+  });
+
+  // Minify every shipped JS asset with terser. Lighthouse flagged main.js
+  // (~7.8 KiB unminified) as an "Est savings of 2 KiB"; running terser
+  // takes it down to roughly 5 KiB and also strips comments + whitespace
+  // from any other JS we copy through (e.g. grader.js).
+  eleventyConfig.on("eleventy.after", async () => {
+    const jsDir = path.resolve("./_site/assets/js");
+    if (!fs.existsSync(jsDir)) return;
+    const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true })
+      .flatMap(d => d.isDirectory() ? walk(path.join(dir, d.name)) : [path.join(dir, d.name)]);
+    const jsFiles = walk(jsDir).filter(p => p.endsWith(".js"));
+    let savedTotal = 0;
+    for (const file of jsFiles) {
+      try {
+        const src = fs.readFileSync(file, "utf8");
+        const result = await terserMinify(src, {
+          compress: { passes: 2 },
+          mangle: true,
+          format: { comments: false },
+        });
+        if (result.code && result.code.length < src.length) {
+          savedTotal += src.length - result.code.length;
+          fs.writeFileSync(file, result.code);
+        }
+      } catch (e) {
+        console.warn(`[js-min] ${path.basename(file)} skipped:`, e.message);
+      }
+    }
+    if (savedTotal > 0) console.log(`[js-min] saved ${(savedTotal / 1024).toFixed(1)} KiB across ${jsFiles.length} files`);
   });
 
   // Pagefind search index — run after every build (works with Cloudflare Pages)

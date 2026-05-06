@@ -133,9 +133,24 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/@popperjs/core@2" defer></script>
-<script src="https://unpkg.com/tippy.js@6" defer></script>
 <script src="/assets/js/main.js" defer></script>
-<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+{# Tippy/Popper only fetch on pages that actually have a glossary term;
+   they were costing two third-party requests on every page otherwise. #}
+<script>
+(function () {
+  if (!document.querySelector('.term[data-term]')) return;
+  function load(src) {
+    return new Promise(function (resolve, reject) {
+      var s = document.createElement('script');
+      s.src = src; s.defer = true;
+      s.onload = resolve; s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+  load('https://unpkg.com/@popperjs/core@2')
+    .then(function () { return load('https://unpkg.com/tippy.js@6'); })
+    .catch(function () { /* tippy is enhancement-only; ignore */ });
+})();
+</script>
 </body>
 </html>

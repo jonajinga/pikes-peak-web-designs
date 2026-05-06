@@ -5478,7 +5478,8 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 }
 .ppwd-search-status:empty { display: none; }
 
-.ppwd-search-filters {
+.ppwd-search-filters { display: none; }
+.ppwd-search-filters:not([hidden]) {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
@@ -5675,7 +5676,8 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   color: var(--gold-400);
 }
 
-.ppwd-search-empty {
+.ppwd-search-empty { display: none; }
+.ppwd-search-empty:not([hidden]) {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -5688,6 +5690,32 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 }
 .ppwd-search-empty strong { color: var(--text); font-size: 1rem; }
 .ppwd-search-empty span { color: var(--text-muted); font-size: 0.92rem; }
+
+.ppwd-search-allresults { display: none; }
+.ppwd-search-allresults:not([hidden]) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 1rem 0 0;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  transition: background var(--dur), border-color var(--dur), color var(--dur);
+}
+.ppwd-search-allresults:not([hidden]):hover {
+  background: var(--gold-100, #f3e3b8);
+  border-color: var(--gold-400, #c8a44a);
+  color: var(--text);
+}
+:root[data-theme="dark"] .ppwd-search-allresults:not([hidden]):hover {
+  background: rgba(200, 164, 74, 0.18);
+}
+.ppwd-search-allresults svg { width: 14px; height: 14px; }
 
 /* Compact variant for the mobile-nav inline search box */
 .ppwd-search--compact .ppwd-search-input { font-size: 0.95rem; padding: 0.65rem 2.4rem 0.65rem 2.5rem; }
@@ -5750,7 +5778,7 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 @media (max-width: 768px) {
   .glossary-index {
     position: fixed;
-    top: 50%;
+    top: 50vh;
     right: 0.4rem;
     transform: translateY(-50%);
     flex-direction: column;
@@ -5761,26 +5789,41 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     border: 1px solid var(--line);
     border-radius: var(--radius);
     box-shadow: 0 6px 16px rgba(10, 31, 68, 0.18);
-    max-height: calc(100vh - 4rem);
+    max-height: calc(100vh - 6rem);
     overflow-y: auto;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .glossary-letter {
     flex: 0 0 auto;
-    min-width: 28px;
-    width: 28px;
-    height: 26px;
+    min-width: 26px;
+    width: 26px;
+    height: 24px;
     padding: 0.2rem 0;
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  /* Reserve space on the right edge of every glossary section so body
+     text never sits under the A-Z floater. The floater is ~32px wide
+     plus 0.4rem clearance + 0.6rem visual margin = roughly 56px. */
+  .glossary-section,
+  .glossary-section h2,
+  .glossary-section .glossary-entry,
+  .glossary-search-wrap {
+    padding-right: 3.2rem;
+  }
 }
 @media (max-width: 360px) {
-  .glossary-index { right: 0.25rem; }
-  .glossary-letter { width: 24px; height: 22px; font-size: 0.72rem; }
+  .glossary-index { right: 0.3rem; padding: 0.3rem 0.25rem; }
+  .glossary-letter { width: 22px; height: 22px; font-size: 0.7rem; }
+  .glossary-section,
+  .glossary-section h2,
+  .glossary-section .glossary-entry,
+  .glossary-search-wrap {
+    padding-right: 2.6rem;
+  }
 }
 .glossary-section {
   margin-bottom: 2.5rem;

@@ -369,6 +369,8 @@
 
     el.classList.add('ppwd-search');
     if (compact) el.classList.add('ppwd-search--compact');
+    const inModal = !!el.closest('.search-modal');
+    const onSearchPage = window.location.pathname.replace(/\/+$/, '') === '/search';
     el.innerHTML = (
       '<div class="ppwd-search-inputwrap">' +
         '<svg class="ppwd-search-inputicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>' +
@@ -383,7 +385,13 @@
       '<div class="ppwd-search-empty" data-empty hidden>' +
         '<strong>No matches.</strong>' +
         '<span>Try fewer or different words, or browse the <a href="/sitemap/" class="inline-link">site map</a>.</span>' +
-      '</div>'
+      '</div>' +
+      (!onSearchPage
+        ? '<a class="ppwd-search-allresults" data-allresults href="/search/" hidden>' +
+            '<span data-allresults-text>See all matches on the search page</span>' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
+          '</a>'
+        : '')
     );
 
     const input = el.querySelector('.ppwd-search-input');
@@ -392,6 +400,8 @@
     const filtersEl = el.querySelector('[data-filters]');
     const resultsEl = el.querySelector('[data-results]');
     const emptyEl = el.querySelector('[data-empty]');
+    const allResultsEl = el.querySelector('[data-allresults]');
+    const allResultsTextEl = el.querySelector('[data-allresults-text]');
 
     let activeFilter = 'all';
     let currentResults = [];      // [{ data, type }]
@@ -463,6 +473,7 @@
       statusEl.textContent = '';
       activeFilter = 'all';
       activeIdx = -1;
+      if (allResultsEl) allResultsEl.hidden = true;
     };
 
     const runSearch = async (query) => {
@@ -487,6 +498,7 @@
           emptyEl.hidden = false;
           emptyEl.querySelector('strong').textContent = 'No matches.';
           statusEl.textContent = '0 results for "' + q + '"';
+          if (allResultsEl) allResultsEl.hidden = true;
           return;
         }
         const html = currentResults.map((r, i) => renderResultCard(r.data, i)).join('');
@@ -498,12 +510,22 @@
         statusEl.textContent = total > showing
           ? 'Showing top ' + showing + ' of ' + total + ' results for "' + q + '"'
           : showing + ' result' + (showing === 1 ? '' : 's') + ' for "' + q + '"';
+        if (allResultsEl) {
+          allResultsEl.hidden = false;
+          allResultsEl.href = '/search/?q=' + encodeURIComponent(q);
+          if (allResultsTextEl) {
+            allResultsTextEl.textContent = total > showing
+              ? 'See all ' + total + ' matches on the search page'
+              : 'Open these results on the search page';
+          }
+        }
       } catch (err) {
         console.warn('Search failed:', err);
         statusEl.textContent = '';
         resultsEl.innerHTML = '';
         emptyEl.hidden = false;
         emptyEl.querySelector('strong').textContent = 'Search is offline.';
+        if (allResultsEl) allResultsEl.hidden = true;
       }
     };
 
@@ -561,6 +583,18 @@
   $$('#pagefind-search').forEach(el => {
     if (el.closest('.search-modal')) return;
     mountPagefind(el, { autoFocus: window.matchMedia('(min-width: 720px)').matches && !location.hash });
+    // Seed from ?q= on the /search/ page so the modal's "see all" link works.
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const seeded = params.get('q');
+      if (seeded) {
+        const input = el.querySelector('.ppwd-search-input');
+        if (input) {
+          input.value = seeded;
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }
+    } catch (e) { /* ignore */ }
   });
 
   /* -------- Search modal -------- */
