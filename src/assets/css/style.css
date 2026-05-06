@@ -8602,6 +8602,105 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 
 /* =============================================================
+   DEMO BLOG POST — print stylesheet (all 6 demos)
+   Strips chrome (banner / header / mobile-nav / footer / sticky TOC /
+   related-posts grid) and renders the article body at 10.5pt serif on
+   a clean white page with footer page numbers. Targets every demo's
+   blog article via the per-demo body class plus generic .{demo}-blog-
+   body content wrapper. Ships with the shared megamenu block so it
+   lands in every per-demo CSS bundle.
+   ============================================================= */
+@media print {
+  body.demo-site,
+  body.alpine-site,
+  body.summit-site,
+  body.lumen-site,
+  body.clearwater-site,
+  body.meadow-site {
+    background: #FFFFFF !important;
+    color: #1a1a1a !important;
+  }
+  .demo-banner, .alpine-banner, .summit-banner, .lumen-banner, .clearwater-banner, .meadow-banner,
+  .demo-header, .alpine-header, .summit-header, .lumen-header, .clearwater-header, .meadow-header,
+  .demo-mobile-nav, .alpine-mobile-nav, .summit-mobile-nav, .lumen-mobile-nav, .clearwater-mobile-nav, .meadow-mobile-nav,
+  .demo-footer, .alpine-footer, .summit-footer, .lumen-footer, .clearwater-footer, .meadow-footer,
+  .demo-post-toc,
+  .demo-blog-related, .alpine-blog-related, .summit-blog-related, .lumen-blog-related, .clearwater-blog-related, .meadow-blog-related,
+  .alpine-breadcrumb, .summit-breadcrumb, .lumen-breadcrumb, .clearwater-breadcrumb, .meadow-breadcrumb, .demo-breadcrumb {
+    display: none !important;
+  }
+  .demo-page-hero, .alpine-page-hero, .summit-page-hero, .lumen-page-hero, .clearwater-page-hero, .meadow-page-hero {
+    background: #FFFFFF !important;
+    padding: 0 0 0.25in !important;
+    border-bottom: 1px solid #999 !important;
+    margin-bottom: 0.3in !important;
+  }
+  .demo-blog-body, .alpine-blog-body, .summit-blog-body, .lumen-blog-body, .clearwater-blog-body, .meadow-blog-body {
+    font-family: Georgia, 'Source Serif 4', 'Source Serif Pro', serif !important;
+    font-size: 10.5pt !important;
+    line-height: 1.55 !important;
+    color: #1a1a1a !important;
+    max-width: none !important;
+  }
+  .demo-blog-body h1, .alpine-blog-body h1, .summit-blog-body h1, .lumen-blog-body h1, .clearwater-blog-body h1, .meadow-blog-body h1,
+  .demo-page-hero h1, .alpine-page-hero h1, .summit-page-hero h1, .lumen-page-hero h1, .clearwater-page-hero h1, .meadow-page-hero h1 {
+    font-family: Georgia, serif !important;
+    font-size: 18pt !important;
+    color: #000 !important;
+    margin: 0 0 0.15in !important;
+    page-break-after: avoid;
+  }
+  .demo-blog-body h2, .alpine-blog-body h2, .summit-blog-body h2, .lumen-blog-body h2, .clearwater-blog-body h2, .meadow-blog-body h2 {
+    font-family: Georgia, serif !important;
+    font-size: 14pt !important;
+    color: #000 !important;
+    margin: 0.35in 0 0.1in !important;
+    page-break-after: avoid;
+  }
+  .demo-blog-body h3, .alpine-blog-body h3, .summit-blog-body h3, .lumen-blog-body h3, .clearwater-blog-body h3, .meadow-blog-body h3 {
+    font-family: Georgia, serif !important;
+    font-size: 12pt !important;
+    color: #000 !important;
+    margin: 0.22in 0 0.08in !important;
+    page-break-after: avoid;
+  }
+  .demo-blog-body p, .alpine-blog-body p, .summit-blog-body p, .lumen-blog-body p, .clearwater-blog-body p, .meadow-blog-body p { margin: 0 0 0.14in !important; orphans: 3; widows: 3; }
+  .demo-blog-body ul, .alpine-blog-body ul, .summit-blog-body ul, .lumen-blog-body ul, .clearwater-blog-body ul, .meadow-blog-body ul,
+  .demo-blog-body ol, .alpine-blog-body ol, .summit-blog-body ol, .lumen-blog-body ol, .clearwater-blog-body ol, .meadow-blog-body ol { margin: 0 0 0.18in 0.3in !important; padding: 0 !important; }
+  .demo-blog-body li, .alpine-blog-body li, .summit-blog-body li, .lumen-blog-body li, .clearwater-blog-body li, .meadow-blog-body li { margin: 0 0 0.06in !important; }
+  .demo-blog-body strong, .alpine-blog-body strong, .summit-blog-body strong, .lumen-blog-body strong, .clearwater-blog-body strong, .meadow-blog-body strong { font-weight: 700; color: #000 !important; }
+  .demo-blog-body a, .alpine-blog-body a, .summit-blog-body a, .lumen-blog-body a, .clearwater-blog-body a, .meadow-blog-body a {
+    color: #000 !important;
+    text-decoration: underline !important;
+  }
+  .demo-blog-body a[href^="http"]::after, .alpine-blog-body a[href^="http"]::after, .summit-blog-body a[href^="http"]::after, .lumen-blog-body a[href^="http"]::after, .clearwater-blog-body a[href^="http"]::after, .meadow-blog-body a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #555;
+    word-break: break-all;
+  }
+  .demo-blog-body .alpine-feature, .demo-blog-body .summit-cta, .demo-blog-body .lumen-feature, .demo-blog-body .clearwater-feature, .demo-blog-body .meadow-feature,
+  .alpine-blog-body .alpine-feature, .summit-blog-body .summit-cta, .lumen-blog-body .lumen-feature, .clearwater-blog-body .clearwater-feature, .meadow-blog-body .meadow-feature {
+    display: none !important;
+  }
+  @page {
+    margin: 0.6in 0.6in 0.7in;
+    @bottom-center {
+      content: "Pikes Peak Web Designs — pikespeakwebdesigns.com";
+      font-family: Georgia, serif;
+      font-size: 8pt;
+      color: #777;
+    }
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: Georgia, serif;
+      font-size: 8pt;
+      color: #777;
+    }
+  }
+}
+
+/* =============================================================
    DEMO MEGAMENU SHARED — END
    ============================================================= */
 
@@ -10056,10 +10155,14 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .demo-site h1, .demo-site h2, .demo-site h3 { overflow-wrap: break-word; word-break: break-word; }
 .demo-site .demo-hero-card { min-width: 0; }
 @media (max-width: 880px) {
-  /* Beat any inline grid-template-columns on demo content pages */
+  /* Beat any inline grid-template-columns on demo content pages.
+     Catches both direct children of .demo-container AND deeper-nested
+     grids (e.g. .demo-services zip-code lists inside .demo-area-grid). */
   .demo-site .demo-contact-grid,
   .demo-site .demo-area-grid,
   .demo-site .demo-team-grid,
+  .demo-site main [style*="grid-template-columns:repeat(3"],
+  .demo-site main [style*="grid-template-columns:repeat(4"],
   .demo-site main > section .demo-container > div[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
@@ -10126,6 +10229,14 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .demo-site .lighthouse-card { padding: 1.5rem 1rem; }
   .demo-site .lighthouse-scores { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
   .demo-site .lighthouse-foot { font-size: 0.72rem; }
+  /* Collapse remaining 2-col inline grids (e.g. zip-code lists in
+     service-area page) to single column at narrow phone widths.
+     Inline style="grid-template-columns:1fr 1fr" beats class rules,
+     so target the inline value directly. */
+  .demo-site main [style*="grid-template-columns:1fr 1fr"]:not([style*="1fr 1fr 1fr"]),
+  .demo-site main [style*="grid-template-columns:repeat(2"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ---- Redcap button hardening: lock colors, add focus-visible ---- */
@@ -10881,9 +10992,12 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .alpine-site .alpine-spec { min-width: 0; }
 .alpine-site code { word-break: break-word; white-space: normal; }
 @media (max-width: 880px) {
-  /* Beat any inline grid-template-columns on content pages */
+  /* Beat any inline grid-template-columns on content pages, including
+     deep-nested grids (3-col / 4-col layouts that overflow on phones). */
   .alpine-site .alpine-contact-grid,
   .alpine-site .alpine-team-grid,
+  .alpine-site main [style*="grid-template-columns:repeat(3"],
+  .alpine-site main [style*="grid-template-columns:repeat(4"],
   .alpine-site main > section .alpine-container > div[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 1.75rem !important;
@@ -10912,6 +11026,11 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .alpine-site .alpine-stats { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .alpine-site .alpine-hero-meta { padding: 1.25rem; }
   .alpine-site .alpine-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
+  /* Collapse remaining 2-col inline grids to single column. */
+  .alpine-site main [style*="grid-template-columns:1fr 1fr"]:not([style*="1fr 1fr 1fr"]),
+  .alpine-site main [style*="grid-template-columns:repeat(2"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ---- Alpine button hardening: lock colors + nav CTA ---- */
@@ -11478,9 +11597,12 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .meadow-site h1, .meadow-site h2, .meadow-site h3 { overflow-wrap: break-word; word-break: break-word; }
 .meadow-site .meadow-hero-card { min-width: 0; }
 @media (max-width: 880px) {
-  /* Override any inline grid-template-columns on content pages */
+  /* Override any inline grid-template-columns on content pages,
+     including deep-nested 3-col / 4-col grids. */
   .meadow-site .meadow-contact-grid,
   .meadow-site .meadow-team-grid,
+  .meadow-site main [style*="grid-template-columns:repeat(3"],
+  .meadow-site main [style*="grid-template-columns:repeat(4"],
   .meadow-site main > section .meadow-container > div[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 1.75rem !important;
@@ -11511,6 +11633,11 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .meadow-site .meadow-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
   .meadow-site .meadow-testimonial { padding: 1.5rem; }
   .meadow-site .meadow-feature { padding: 1.5rem 1.25rem; }
+  /* Collapse remaining 2-col inline grids to single column. */
+  .meadow-site main [style*="grid-template-columns:1fr 1fr"]:not([style*="1fr 1fr 1fr"]),
+  .meadow-site main [style*="grid-template-columns:repeat(2"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ---- Meadow button hardening: lock colors + nav CTA ---- */
@@ -12122,6 +12249,8 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .summit-site code, .summit-site .summit-spec-row .v { word-break: break-word; white-space: normal; }
 @media (max-width: 880px) {
   .summit-site .summit-contact-grid,
+  .summit-site main [style*="grid-template-columns:repeat(3"],
+  .summit-site main [style*="grid-template-columns:repeat(4"],
   .summit-site main > section .summit-container > div[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 1.75rem !important;
@@ -12153,6 +12282,11 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .summit-site .summit-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
   .summit-site .summit-spec-row { grid-template-columns: 1fr; gap: 0.15rem; padding-bottom: 0.85rem; }
   .summit-site .summit-spec-row .k { font-size: 0.68rem; }
+  /* Collapse remaining 2-col inline grids to single column. */
+  .summit-site main [style*="grid-template-columns:1fr 1fr"]:not([style*="1fr 1fr 1fr"]),
+  .summit-site main [style*="grid-template-columns:repeat(2"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ---- Summit button hardening: lock colors + nav CTA ---- */
@@ -12647,6 +12781,8 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .lumen-site h1, .lumen-site h2, .lumen-site h3 { overflow-wrap: break-word; word-break: break-word; }
 @media (max-width: 880px) {
   .lumen-site .lumen-contact-grid,
+  .lumen-site main [style*="grid-template-columns:repeat(3"],
+  .lumen-site main [style*="grid-template-columns:repeat(4"],
   .lumen-site main > section .lumen-container > div[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
@@ -12682,6 +12818,11 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .lumen-site .lumen-stat:last-child { border-bottom: 0; }
   .lumen-site .lumen-stat-num { font-size: clamp(2.75rem, 13vw, 3.5rem); }
   .lumen-site .lumen-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
+  /* Collapse remaining 2-col inline grids to single column. */
+  .lumen-site main [style*="grid-template-columns:1fr 1fr"]:not([style*="1fr 1fr 1fr"]),
+  .lumen-site main [style*="grid-template-columns:repeat(2"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ---- Lumen button hardening: lock colors per section, kill the global a underline on buttons ---- */
@@ -13276,6 +13417,8 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .clearwater-site .clearwater-hero-card { min-width: 0; }
 @media (max-width: 880px) {
   .clearwater-site .clearwater-contact-grid,
+  .clearwater-site main [style*="grid-template-columns:repeat(3"],
+  .clearwater-site main [style*="grid-template-columns:repeat(4"],
   .clearwater-site main > section .clearwater-container > div[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 1.75rem !important;
@@ -13306,6 +13449,11 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .clearwater-site .clearwater-mobile-nav { padding: 4.5rem 1.25rem 1.5rem; }
   .clearwater-site .clearwater-testimonial { padding: 1.5rem 1.25rem; }
   .clearwater-site .clearwater-service { padding: 1.5rem 1.25rem; }
+  /* Collapse remaining 2-col inline grids to single column. */
+  .clearwater-site main [style*="grid-template-columns:1fr 1fr"]:not([style*="1fr 1fr 1fr"]),
+  .clearwater-site main [style*="grid-template-columns:repeat(2"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ---- Clearwater button hardening: lock colors + nav CTA ---- */
