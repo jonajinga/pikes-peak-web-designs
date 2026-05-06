@@ -1,68 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Pikes Peak Web Designs">
-  <defs>
-    <!-- Rounded navy tile, soft radial light from upper-left for depth. -->
-    <radialGradient id="ppTile" cx="28%" cy="22%" r="95%">
-      <stop offset="0"    stop-color="#16305C"/>
-      <stop offset="0.55" stop-color="#0A1F44"/>
-      <stop offset="1"    stop-color="#06132E"/>
-    </radialGradient>
+  <!-- Solid navy tile in the brand color (--navy-900). -->
+  <rect width="512" height="512" rx="80" ry="80" fill="#0A1F44"/>
 
-    <!-- Brushed-gold peak gradient: cool highlight near summit, brand gold mid,
-         deeper amber at the base. -->
-    <linearGradient id="ppPeak" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0"    stop-color="#FFEAA8"/>
-      <stop offset="0.18" stop-color="#F0CE6E"/>
-      <stop offset="0.55" stop-color="#DDB13D"/>
-      <stop offset="0.85" stop-color="#B58820"/>
-      <stop offset="1"    stop-color="#8E6612"/>
-    </linearGradient>
-
-    <!-- Smaller back-peak gradient: muted navy-blue, sits behind the main peak
-         to give the mark a sense of range/depth without crowding 16px renders. -->
-    <linearGradient id="ppBackPeak" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0"    stop-color="#3D5C95"/>
-      <stop offset="1"    stop-color="#1B3C7E"/>
-    </linearGradient>
-
-    <!-- Snow cap: cool-white to faint blue. -->
-    <linearGradient id="ppSnow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0"   stop-color="#FFFFFF"/>
-      <stop offset="1"   stop-color="#E5EBF7"/>
-    </linearGradient>
-
-    <!-- Warm halo behind the summit, subtle. -->
-    <radialGradient id="ppGlow" cx="55%" cy="35%" r="55%">
-      <stop offset="0"   stop-color="#FFD56A" stop-opacity="0.30"/>
-      <stop offset="0.6" stop-color="#DDB13D" stop-opacity="0.08"/>
-      <stop offset="1"   stop-color="#DDB13D" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-
-  <!-- Rounded square tile with depth gradient -->
-  <rect width="512" height="512" rx="96" ry="96" fill="url(#ppTile)"/>
-
-  <!-- Inner glass-edge highlight on the tile (top-left lit edge) -->
-  <rect x="3" y="3" width="506" height="506" rx="93" ry="93"
-        fill="none" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="2"/>
-
-  <!-- Warm halo around the summit area -->
-  <circle cx="290" cy="170" r="195" fill="url(#ppGlow)"/>
-
-  <!-- Back peak (smaller, off to the right, muted blue). Drawn first so the
-       main peak sits in front. -->
-  <path d="M 250 420 L 360 195 L 470 420 Z" fill="url(#ppBackPeak)"/>
-
-  <!-- Main peak — bold gold triangle, asymmetric so the silhouette reads as
-       a real mountain rather than a perfect equilateral. -->
-  <path d="M 60 420 L 230 96 L 410 420 Z" fill="url(#ppPeak)"/>
-
-  <!-- Snow cap on main peak — irregular ridgeline, kept simple enough to
-       still read at 16px. -->
-  <path d="M 162 290 L 195 245 L 215 270 L 230 96 L 252 268 L 282 232 L 318 290
-           L 296 304 L 272 280 L 250 305 L 230 285 L 210 308 L 192 286 L 175 308 Z"
-        fill="url(#ppSnow)"/>
-
-  <!-- Tiny gold accent at the very summit for sparkle (a pinprick of pure
-       highlight, ignored at very small sizes but visible at 32px+). -->
-  <circle cx="230" cy="98" r="9" fill="#FFEAA8"/>
+  <!-- Clean white P, fill-rule even-odd so the inner counter is cut out. -->
+  <path fill="#FFFFFF" fill-rule="evenodd" d="
+    M 144 88
+    L 144 424
+    L 220 424
+    L 220 280
+    L 296 280
+    Q 396 280 396 184
+    Q 396 88 296 88
+    Z
+    M 220 152
+    L 220 216
+    L 288 216
+    Q 320 216 320 184
+    Q 320 152 288 152
+    Z
+  "/>
 </svg>
