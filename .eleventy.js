@@ -230,6 +230,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
             // Custom search UI — markup is injected by main.js so the result
             // cards / type badges / filter chips never appear in static HTML.
             /^ppwd-/,
+            // Site grader report card — JS-rendered after a successful API
+            // call; selectors won't appear in the static /grader/ HTML.
+            /^grader-/,
           ],
           keyframes: true,
           variables: false,
@@ -281,7 +284,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
                 "show", "scrolled", "expanded", "collapsed", "is-fixed", "is-hidden",
               ],
               deep: [
-                /\[data-theme/, /leaflet/, /tippy/, /^mark/, /^ppwd-/,
+                /\[data-theme/, /leaflet/, /tippy/, /^mark/, /^ppwd-/, /^grader-/,
               ],
               keyframes: true,
               variables: false,

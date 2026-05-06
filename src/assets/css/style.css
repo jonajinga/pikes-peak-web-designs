@@ -14838,6 +14838,151 @@ h1:focus-within em::after { transform: scaleX(1); }
   gap: 0.75rem;
   flex-wrap: wrap;
 }
+.grader-card-actions { margin-left: auto; flex-shrink: 0; }
+@media (max-width: 640px) {
+  .grader-card-head { flex-direction: column; align-items: flex-start; }
+  .grader-card-actions { margin-left: 0; }
+}
+.grader-card-checked {
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+}
+.grader-row--good .grader-row-bar-fill { background: var(--success); }
+.grader-row--ok   .grader-row-bar-fill { background: var(--warning); }
+.grader-row--bad  .grader-row-bar-fill { background: var(--danger); }
+.grader-row-detail strong { color: var(--text); font-weight: 600; }
+.grader-card-foot { display: flex; flex-direction: column; gap: 1rem; }
+.grader-card-print-head,
+.grader-card-print-foot,
+.grader-card-print-brand,
+.grader-card-print-tagline { display: none; }
+
+/* ============================================================
+   Grader — print stylesheet (Save as PDF). Strips chrome and lays
+   out the report on one A4/Letter sheet at high contrast for ink.
+   ============================================================ */
+@media print {
+  .topbar, .header, .mobile-nav, .mobile-backdrop, .back-to-top,
+  .ppwd-search, .search-modal, .footer, .cta-section,
+  .page-hero, .grader-form, .grader-card-actions,
+  .grader-card-cta, .prose { display: none !important; }
+  body { background: #FFFFFF !important; color: #000 !important; }
+  .section { padding: 0 !important; }
+  .container { max-width: none !important; padding: 0 0.5in !important; }
+  .grader-card {
+    border: 1px solid #999 !important;
+    border-top: 4px solid #5a3f00 !important;
+    box-shadow: none !important;
+    padding: 0.5in 0 !important;
+    background: #FFFFFF !important;
+    page-break-inside: avoid;
+  }
+  .grader-card-print-head {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+    padding: 0 0.5in 0.4in;
+    margin-bottom: 0.4in;
+    border-bottom: 1px solid #999;
+  }
+  .grader-card-print-brand {
+    display: block !important;
+    font-family: Georgia, serif;
+    font-size: 16pt;
+    font-weight: 700;
+    color: #0A1F44;
+  }
+  .grader-card-print-tagline {
+    display: block !important;
+    font-family: Georgia, serif;
+    font-size: 10pt;
+    color: #555;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .grader-card-head {
+    padding: 0 0.5in;
+    gap: 0.4in;
+    border-bottom: 1px solid #999;
+    padding-bottom: 0.3in;
+  }
+  .grader-card-grade {
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 36pt !important;
+    background: #FFF !important;
+    border: 2px solid #000 !important;
+    color: #000 !important;
+  }
+  .grader-card--green .grader-card-grade { color: #1f7a3a !important; border-color: #1f7a3a !important; }
+  .grader-card--amber .grader-card-grade { color: #b08a32 !important; border-color: #b08a32 !important; }
+  .grader-card--red .grader-card-grade   { color: #b8341e !important; border-color: #b8341e !important; }
+  .grader-card-score { font-size: 20pt !important; color: #000 !important; }
+  .grader-card-score-max { color: #555 !important; font-size: 11pt !important; }
+  .grader-card-url { color: #333 !important; font-size: 10pt !important; }
+  .grader-card-checked { color: #555 !important; font-size: 9pt !important; }
+  .grader-card-recommendation {
+    margin: 0.3in 0.5in !important;
+    padding: 0.18in 0.25in !important;
+    background: #FFF !important;
+    border-left: 3px solid #000 !important;
+    font-size: 11pt !important;
+    color: #000 !important;
+  }
+  .grader-card-recommendation strong { color: #000 !important; }
+  .grader-breakdown {
+    padding: 0 0.5in !important;
+    gap: 0.18in !important;
+    margin-bottom: 0.3in !important;
+  }
+  .grader-row {
+    grid-template-columns: 1.7in 1fr 0.5in !important;
+    font-size: 10pt !important;
+    page-break-inside: avoid;
+  }
+  .grader-row-label { color: #000 !important; font-weight: 600 !important; }
+  .grader-row-score { color: #000 !important; }
+  .grader-row-bar {
+    height: 6px !important;
+    background: #DDD !important;
+    border: 1px solid #999 !important;
+  }
+  .grader-row--good .grader-row-bar-fill { background: #1f7a3a !important; }
+  .grader-row--ok   .grader-row-bar-fill { background: #b08a32 !important; }
+  .grader-row--bad  .grader-row-bar-fill { background: #b8341e !important; }
+  .grader-row-detail {
+    font-size: 9pt !important;
+    color: #333 !important;
+    margin-left: 1.7in !important;
+  }
+  .grader-card-print-foot {
+    display: block !important;
+    margin: 0.3in 0.5in 0 !important;
+    padding-top: 0.2in;
+    border-top: 1px solid #999;
+    font-family: Georgia, serif;
+    font-size: 8pt;
+    color: #555;
+    line-height: 1.5;
+  }
+  @page {
+    margin: 0.5in 0.4in 0.55in;
+    @bottom-center {
+      content: "Pikes Peak Web Designs — Site Grader Report";
+      font-family: Georgia, serif;
+      font-size: 8pt;
+      color: #777;
+    }
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: Georgia, serif;
+      font-size: 8pt;
+      color: #777;
+    }
+  }
+}
 
 /* ============================================================
    Press strip (homepage "As featured in")
