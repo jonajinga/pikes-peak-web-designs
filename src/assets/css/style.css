@@ -2925,17 +2925,35 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 .live-build-card:hover .live-build-cta { border-bottom-color: currentColor; }
 
 .sample-card {
+  position: relative;
   background: var(--surface-raised);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: border-color var(--dur), box-shadow var(--dur), transform var(--dur);
+  transition: border-color var(--dur), box-shadow var(--dur), transform var(--dur), background var(--dur);
 }
-.sample-card:hover {
-  border-color: var(--line-strong);
-  box-shadow: var(--shadow-lg);
+.sample-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--peak-gradient, linear-gradient(95deg, var(--gold-100), var(--gold-400) 40%, var(--navy-800)));
+  opacity: 0;
+  transition: opacity var(--dur);
+  z-index: 2;
+  pointer-events: none;
+}
+.sample-card:hover,
+.sample-card:focus-within {
+  border-color: var(--gold-400);
+  background: var(--bg-alt);
   transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
 }
+.sample-card:hover::before,
+.sample-card:focus-within::before { opacity: 1; }
 .sample-browser {
   background: var(--bg-alt-2);
   padding: 0.75rem 1rem 0;
@@ -14777,6 +14795,11 @@ h1:focus-within em::after { transform: scaleX(1); }
   border-bottom: 1px solid var(--line);
   overflow: hidden;
 }
+.case-study-card-shot picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .case-study-card-shot img {
   width: 100%;
   height: 100%;
@@ -14871,6 +14894,150 @@ h1:focus-within em::after { transform: scaleX(1); }
   font-size: 0.95rem;
 }
 .case-study-fallback p { margin: 0.5rem 0 0; }
+
+/* ============================================================
+   Sign-up flow — three-step stepper used on /subscribe/ and
+   /subscribe/payment/. Each step is a numbered card with its own
+   CTA button. Active step gets the gold border; completed steps
+   get a check-mark badge.
+   ============================================================ */
+.signup-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  counter-reset: signup-step;
+}
+.signup-step {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--line);
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+.signup-step--active {
+  border-left-color: var(--gold-500);
+  box-shadow: 0 12px 36px -22px rgba(10, 31, 68, 0.18);
+}
+.signup-step--done {
+  border-left-color: var(--success, #1f7a3a);
+  background: var(--bg-alt);
+  opacity: 0.92;
+}
+.signup-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  border: 2px solid var(--line);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.signup-step--active .signup-step-num {
+  background: var(--navy-900);
+  color: var(--gold-400);
+  border-color: var(--navy-900);
+}
+.signup-step-num--done {
+  background: var(--success, #1f7a3a);
+  color: #FFFFFF;
+  border-color: var(--success, #1f7a3a);
+}
+.signup-step-num--done svg { width: 26px; height: 26px; }
+.signup-step-body { min-width: 0; }
+.signup-step-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 0.45rem;
+}
+.signup-step--done .signup-step-eyebrow { color: var(--success, #1f7a3a); }
+:root[data-theme="dark"] .signup-step-eyebrow { color: var(--gold-400); }
+.signup-step-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+  color: var(--text);
+  line-height: 1.25;
+}
+.signup-step-body p {
+  margin: 0 0 1rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 60ch;
+}
+.signup-step-cta {
+  margin-top: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.signup-step-cta-secondary {
+  margin-top: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 1.15rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+}
+.signup-step-foot {
+  margin: 0.85rem 0 0;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+@media (max-width: 640px) {
+  .signup-step {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 1.4rem 1.5rem;
+  }
+  .signup-step-num { width: 44px; height: 44px; font-size: 1.2rem; }
+  .signup-step-num--done svg { width: 22px; height: 22px; }
+  .signup-step-title { font-size: 1.25rem; }
+}
+.signup-steps--compact .signup-step { padding: 1.4rem 1.6rem; }
+.signup-fallback {
+  margin: 2.5rem 0 0;
+  padding: 1.5rem 1.75rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold-500);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.signup-fallback h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+.signup-fallback p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text);
+}
 
 /* ============================================================
    Partners page body (in toc-layout) — list and section spacing

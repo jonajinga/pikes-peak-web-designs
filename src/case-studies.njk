@@ -24,7 +24,7 @@ permalink: /case-studies/
         <a href="/case-studies/{{ cs.slug }}/" class="case-study-card{% if cs.selfStudy %} case-study-card--self{% endif %}{% if cs.screenshot %} case-study-card--shot{% endif %}">
           {% if cs.screenshot %}
           <div class="case-study-card-shot">
-            <img src="{{ cs.screenshot }}" alt="{{ cs.client }} home page screenshot" loading="lazy" decoding="async" width="1280" height="800">
+            {% image cs.screenshot, cs.client + " home page screenshot", "(min-width: 1100px) 480px, (min-width: 720px) 45vw, 92vw", [480, 760, 1100] %}
           </div>
           {% endif %}
           <div class="case-study-card-body">

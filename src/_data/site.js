@@ -48,6 +48,14 @@ export default {
     deposit: 0,
     pagesIncluded: 10,
   },
+  // Signup workflow:
+  //   1. Prospect lands on /subscribe/ (entry point).
+  //   2. Click "Sign the agreement" → Documenso. Configure Documenso's
+  //      post-sign redirect to /subscribe/payment/.
+  //   3. /subscribe/payment/ has the Stripe Checkout button. Configure
+  //      Stripe's success_url to /onboarding/.
+  //   4. /onboarding/ collects the build inputs.
+  agreementSignUrl: "https://app.documenso.com/d/BA0T0nJ5mxGayQhTOIZny",
   subscribeUrl: "https://buy.stripe.com/",
   hourlyUrl: "https://buy.stripe.com/",
   utilityPages: [

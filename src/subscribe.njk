@@ -1,7 +1,8 @@
 ---
 layout: layouts/base.njk
-title: "Sign up for the standard plan | Pikes Peak Web Designs"
-description: "Pay your first month with Stripe and the build kicks off the same week. Plus the optional hourly add-on for work outside the standard scope."
+title: "Sign Up | Three Steps to Kickoff | Pikes Peak Web Designs"
+description: "Sign the service agreement, pay your first month, send your onboarding details. Three steps, in that order, and the build kicks off the same week."
+permalink: /subscribe/
 ---
 
 <section class="page-hero page-hero--peak">
@@ -10,16 +11,61 @@ description: "Pay your first month with Stripe and the build kicks off the same 
       <a href="/">Home</a><span class="sep">/</span><span>Sign up</span>
     </nav>
     <span class="section-label">Welcome</span>
-    <h1>Sign up for the <em>standard plan.</em></h1>
-    <p>The page below is the actual signup. Pay the first monthly payment with Stripe, fill out the self-serve <a href="/onboarding/" style="color:var(--gold-400);font-weight:500">onboarding form</a> when you are ready, and the build begins as soon as the agreement is signed. The rate stays at the published price for the entire engagement. If you would prefer a discovery call before signing up, the <a href="/contact/" style="color:var(--gold-400);font-weight:500">contact page</a> is the right place to start instead.</p>
+    <h1>Three steps to <em>kickoff.</em></h1>
+    <p>The signup is sequenced so each step is small and reversible. Sign the agreement first; pay the first month second; send the onboarding details third. The build begins the same week the third step lands. If you would prefer a discovery call before signing up, the <a href="/contact/" style="color:var(--gold-400);font-weight:500">contact page</a> is the right place to start instead.</p>
   </div>
 </section>
 
 <section class="section">
+  <div class="container" style="max-width:900px">
+
+    <ol class="signup-steps" aria-label="Signup steps">
+
+      <li class="signup-step signup-step--active">
+        <div class="signup-step-num"><span>1</span></div>
+        <div class="signup-step-body">
+          <span class="signup-step-eyebrow">Step one &middot; right now</span>
+          <h2 class="signup-step-title">Read &amp; sign the service agreement.</h2>
+          <p>The full <a href="/agreement/" class="inline-link">service agreement</a> is published on this site, so there are no surprises. The signing itself happens in Documenso, on your phone or laptop, and takes about two minutes. Once you sign, Documenso will redirect you to the payment page automatically.</p>
+          <a href="{{ site.agreementSignUrl }}" rel="noopener" target="_blank" class="btn btn-primary btn-lg signup-step-cta">
+            Sign the agreement &rarr;
+          </a>
+          <p class="signup-step-foot">Opens Documenso in a new tab. <a href="/agreement/" class="inline-link">Read the agreement first</a> if you have not yet.</p>
+        </div>
+      </li>
+
+      <li class="signup-step">
+        <div class="signup-step-num"><span>2</span></div>
+        <div class="signup-step-body">
+          <span class="signup-step-eyebrow">Step two &middot; immediately after signing</span>
+          <h2 class="signup-step-title">Pay your first month, $175.</h2>
+          <p>Stripe Checkout handles the card or ACH transaction directly. The first payment is what kicks off the build. After Stripe confirms, it will redirect you to the onboarding form for step three.</p>
+          <a href="/subscribe/payment/" class="btn btn-outline-dark signup-step-cta-secondary">
+            Skip ahead to payment &rarr;
+          </a>
+          <p class="signup-step-foot">You normally land here automatically after Documenso. Use the link only if you have already signed the agreement and need to come back.</p>
+        </div>
+      </li>
+
+      <li class="signup-step">
+        <div class="signup-step-num"><span>3</span></div>
+        <div class="signup-step-body">
+          <span class="signup-step-eyebrow">Step three &middot; right after payment</span>
+          <h2 class="signup-step-title">Send your onboarding details.</h2>
+          <p>The <a href="/onboarding/" class="inline-link">onboarding form</a> gathers the few inputs I need from your side: your logo (if you have one), photos of your work, your services and rough pricing, your domain, and any specific deadlines. Most clients spend fifteen to twenty minutes on it. Stripe redirects you here automatically once the payment clears.</p>
+        </div>
+      </li>
+
+    </ol>
+
+  </div>
+</section>
+
+<section class="section section--cream">
   <div class="container" style="max-width:980px">
     <div class="subscribe-grid">
       <div class="subscribe-primary">
-        <span class="subscribe-eyebrow">Monthly subscription</span>
+        <span class="subscribe-eyebrow">What the $175 covers</span>
         <div class="subscribe-price">
           <span class="subscribe-price-dollar">$</span>
           <span class="subscribe-price-amount">175</span>
@@ -35,9 +81,6 @@ description: "Pay your first month with Stripe and the build kicks off the same 
           <li>On-page and local-SEO foundation</li>
           <li>Direct line to me for anything urgent</li>
         </ul>
-
-        <a href="{{ site.subscribeUrl or 'https://buy.stripe.com/' }}" rel="noopener" target="_blank" class="btn btn-primary btn-full btn-lg subscribe-cta">Pay your first month with Stripe &rarr;</a>
-        <p class="subscribe-foot">Stripe handles the card or ACH transaction directly. No card information is stored on Pikes Peak Web Designs infrastructure, only a confirmation that the charge cleared.</p>
       </div>
 
       <aside class="subscribe-side" id="hourly">
@@ -70,71 +113,36 @@ description: "Pay your first month with Stripe and the build kicks off the same 
   </div>
 </section>
 
-<section class="section section--cream">
-  <div class="container" style="max-width:760px">
-    <div class="text-center">
-      <span class="section-label">What happens next</span>
-      <h2 class="section-title" style="margin-inline:auto">Four steps from payment to live site.</h2>
-    </div>
-    <ol class="next-steps" style="margin-top:2rem">
-      <li class="next-step">
-        <span class="next-step-num">1</span>
-        <div>
-          <h3>The payment confirms.</h3>
-          <p>Stripe processes the charge and sends you a receipt. I receive the confirmation on my end and reach out the same day with a kickoff email.</p>
-        </div>
-      </li>
-      <li class="next-step">
-        <span class="next-step-num">2</span>
-        <div>
-          <h3>Self-serve onboarding.</h3>
-          <p>The <a href="/onboarding/" class="inline-link">onboarding form</a> is open and self-serve. Fill it out at your own pace, in one sitting or across a few. It gathers the few inputs I need from your side: your logo (if you have one), photos of your work, your services and rough pricing, your domain, and any specific deadlines. Most clients spend fifteen to twenty minutes on it.</p>
-        </div>
-      </li>
-      <li class="next-step">
-        <span class="next-step-num">3</span>
-        <div>
-          <h3>Agreement signed before I start building.</h3>
-          <p>I send the <a href="/agreement/" class="inline-link">service agreement</a> as a Google Docs e-signature request once the onboarding form arrives. The agreement is the same document published on this site; the signature is the green light for me to begin the build. Sign it on a phone in two minutes.</p>
-        </div>
-      </li>
-      <li class="next-step">
-        <span class="next-step-num">4</span>
-        <div>
-          <h3>Build and launch.</h3>
-          <p>The build runs over the next two to three weeks, with a live preview link inside the first week so you can give feedback while the work is still moving. Once you have signed off on the design, I handle the DNS migration, sitemap submission, and the launch-day owner's guide.</p>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
-
 <section class="section">
   <div class="container" style="max-width:760px">
     <div class="text-center">
-      <span class="section-label">Common questions about payment</span>
+      <span class="section-label">Common questions about signup</span>
       <h2 class="section-title" style="margin-inline:auto">Quick answers.</h2>
     </div>
     <div class="faq-list" style="margin-top:2rem">
       <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Why this order? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The agreement comes first because it sets the rules of the engagement before either of us is on the hook for anything. Payment comes second because the agreement says &quot;the first $175 kicks off the build,&quot; and that is the literal moment it does. Onboarding comes third because the questions in the onboarding form only matter once both of us are committed.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">What if I have already had a discovery call? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Same flow. The discovery call replaces the &quot;is this a fit&quot; conversation, but the three steps above are still the actual signup. If you came from a call and the link to this page came from me, you can proceed straight through.</div></div>
+      </div>
+      <div class="faq-item">
         <button class="faq-btn" aria-expanded="false">Why Stripe? <span class="faq-icon" aria-hidden="true"></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Stripe is the standard payment processor for small agencies, and it handles card and ACH transactions on PCI-compliant infrastructure. The agency never sees or stores your card number on its end of the wire, since Stripe holds all payment information directly. Stripe also handles dunning, dispute resolution, and the international payment surface for Canadian clients.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Stripe is the standard payment processor for small agencies. It handles card and ACH transactions on PCI-compliant infrastructure, and the agency never sees or stores your card number on its end of the wire. Stripe also handles dunning, dispute resolution, and the international payment surface for Canadian clients.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">Do I need to have signed the agreement before paying? <span class="faq-icon" aria-hidden="true"></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">No. Pay first, sign the agreement before I begin the build. The agreement arrives by email as a Google Docs e-signature request once you have submitted the onboarding form, and the signed agreement is what greenlights me to start the work. The full text of the <a href="/agreement/" class="inline-link">service agreement</a> is also published on this site, so there are no surprises in it.</div></div>
+        <button class="faq-btn" aria-expanded="false">What if I sign the agreement but do not pay right away? <span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Nothing breaks. The agreement does not begin the engagement on its own; the first paid invoice does. You can sign today and pay tomorrow if that is easier. The build starts when the payment clears, not before.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">Can I switch from monthly to a one-time buyout later? <span class="faq-icon" aria-hidden="true"></span></button>
+        <button class="faq-btn" aria-expanded="false">Can I switch to a one-time buyout later? <span class="faq-icon" aria-hidden="true"></span></button>
         <div class="faq-answer"><div class="faq-answer-inner">Yes, you can. If at some point you would rather own the code outright, I am happy to quote a buyout, and the conversation tends to be a straightforward one. There is no penalty attached to asking, and the buyout amount is calculated against the months you have already paid.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false">What if I need a refund? <span class="faq-icon" aria-hidden="true"></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">The refund posture is in the <a href="/agreement/" class="inline-link">service agreement</a> in plain language. The short version: if I have not started building yet and you change your mind within the first week, the first payment is refundable in full. After the build kicks off, refunds are handled on a case-by-case basis, and I would rather find a reasonable way forward than collect against a relationship that is not working.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">Is the hourly Stripe link gated? <span class="faq-icon" aria-hidden="true"></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Soft-gated, yes. The Stripe hourly checkout is the path for clients who already have a written estimate from me. If you do not have an estimate yet, the <a href="/hourly-request/" class="inline-link">hourly-work request form</a> is the right starting point. Describe the work, and a written estimate lands in your inbox within one business day before any payment changes hands.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">The refund posture is in the <a href="/agreement/" class="inline-link">service agreement</a> in plain language. The short version: if I have not started building yet and you change your mind within the first week, the first payment is refundable in full. After the build kicks off, refunds are handled on a case-by-case basis.</div></div>
       </div>
     </div>
   </div>
@@ -144,7 +152,7 @@ description: "Pay your first month with Stripe and the build kicks off the same 
   <div class="cta-inner">
     <span class="section-label">Not yet ready to sign up?</span>
     <h2>Start with a twenty-minute call.</h2>
-    <p>If you have not yet had a discovery call with me, the call is the right starting point. The signed agreement, the kickoff, and this payment page all come after that conversation, in that order.</p>
+    <p>If you have not yet had a discovery call with me, the call is the right starting point. The signed agreement, the kickoff, and this signup page all come after that conversation, in that order.</p>
     <div class="cta-buttons">
       <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
       <a href="/pricing/" class="btn btn-outline btn-lg">Read the plan in detail</a>

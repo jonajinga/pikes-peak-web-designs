@@ -1,0 +1,94 @@
+---
+layout: layouts/base.njk
+title: "Pay Your First Month | Step 2 of 3 | Pikes Peak Web Designs"
+description: "Agreement signed. Now your first month: $175 via Stripe. The build begins the moment the payment clears."
+permalink: /subscribe/payment/
+noindex: true
+---
+
+<section class="page-hero page-hero--peak">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/subscribe/">Sign up</a><span class="sep">/</span><span>Payment</span>
+    </nav>
+    <span class="section-label">Step 2 of 3</span>
+    <h1>Agreement signed. <em>Now your first month.</em></h1>
+    <p>Stripe Checkout handles the card or ACH directly. The first $175 kicks off the build. After the payment clears, Stripe will redirect you to the onboarding form for the final step.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+
+    <ol class="signup-steps signup-steps--compact" aria-label="Signup progress">
+      <li class="signup-step signup-step--done">
+        <div class="signup-step-num signup-step-num--done" aria-label="Step 1 complete">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="signup-step-body">
+          <span class="signup-step-eyebrow">Step one &middot; complete</span>
+          <h2 class="signup-step-title">Service agreement signed.</h2>
+          <p>Documenso has the countersigned PDF on file and a copy is in your inbox.</p>
+        </div>
+      </li>
+
+      <li class="signup-step signup-step--active">
+        <div class="signup-step-num"><span>2</span></div>
+        <div class="signup-step-body">
+          <span class="signup-step-eyebrow">Step two &middot; right now</span>
+          <h2 class="signup-step-title">Pay your first month, $175.</h2>
+          <p>Stripe Checkout opens in a new tab. Card or ACH; both clear within minutes. The first payment is what kicks off the build, and Stripe will redirect you to the onboarding form once it confirms.</p>
+          <a href="{{ site.subscribeUrl }}" rel="noopener" target="_blank" class="btn btn-primary btn-lg signup-step-cta">
+            Pay your first month with Stripe &rarr;
+          </a>
+          <p class="signup-step-foot">No card information is stored on Pikes Peak Web Designs infrastructure, only a confirmation that the charge cleared.</p>
+        </div>
+      </li>
+
+      <li class="signup-step">
+        <div class="signup-step-num"><span>3</span></div>
+        <div class="signup-step-body">
+          <span class="signup-step-eyebrow">Step three &middot; right after payment</span>
+          <h2 class="signup-step-title">Send your onboarding details.</h2>
+          <p>Stripe redirects you to <a href="/onboarding/" class="inline-link">the onboarding form</a> the moment the payment confirms. Fifteen to twenty minutes of inputs from your side: logo, photos, services, pricing, domain, deadlines. The build runs the same week.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="signup-fallback">
+      <h3>Trouble paying?</h3>
+      <p>If the Stripe checkout will not load on your device, or your card is being declined for a reason that is not obvious, the <a href="/ask/" class="inline-link">short ask form</a> goes straight to me and I can sort it out, often by sending an alternate invoice link directly. There is no part of this you have to figure out alone.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container" style="max-width:760px">
+    <div class="text-center" style="margin-bottom:2rem">
+      <span class="section-label">What you are paying for</span>
+      <h2 class="section-title" style="margin-inline:auto">$175 covers everything inside the standard plan.</h2>
+    </div>
+    <ul class="subscribe-includes" style="max-width:620px;margin:0 auto">
+      <li>Custom-coded site, up to ten content pages, designed for your brand</li>
+      <li>Hosting, SSL, and uptime monitoring on a fast global CDN</li>
+      <li>Unlimited content updates after launch</li>
+      <li>Blog system included, with the same setup that powers <a href="/blog/" class="inline-link">this site's blog</a></li>
+      <li>On-page and local-SEO foundation</li>
+      <li>Direct line to me for anything urgent</li>
+    </ul>
+    <p style="text-align:center;font-size:0.92rem;color:var(--text-muted);margin-top:1.5rem">12-month minimum, then month-to-month with thirty days of notice required to cancel.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Have not signed the agreement yet?</span>
+    <h2>Start with step one.</h2>
+    <p>You landed on the payment page directly. If you have not yet signed the service agreement in Documenso, that is the first step.</p>
+    <div class="cta-buttons">
+      <a href="/subscribe/" class="btn btn-primary btn-lg">Back to the signup page</a>
+      <a href="{{ site.agreementSignUrl }}" rel="noopener" target="_blank" class="btn btn-outline btn-lg">Sign the agreement now &rarr;</a>
+    </div>
+  </div>
+</section>
