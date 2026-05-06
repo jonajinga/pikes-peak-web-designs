@@ -14953,19 +14953,20 @@ h1:focus-within em::after { transform: scaleX(1); }
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
   counter-reset: signup-step;
 }
 .signup-step {
   display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 1.5rem;
-  padding: 1.75rem 2rem;
+  grid-template-columns: 72px 1fr;
+  gap: 1.85rem;
+  padding: 2.25rem 2.5rem 2.4rem;
   background: var(--surface);
   border: 1px solid var(--line);
   border-left: 4px solid var(--line);
   border-radius: var(--radius-lg);
   position: relative;
+  align-items: start;
 }
 .signup-step--active {
   border-left-color: var(--gold-500);
@@ -14980,16 +14981,17 @@ h1:focus-within em::after { transform: scaleX(1); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: var(--bg-alt);
   color: var(--text-muted);
   border: 2px solid var(--line);
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   font-weight: 700;
   flex-shrink: 0;
+  margin-top: 0.15rem;
 }
 .signup-step--active .signup-step-num {
   background: var(--navy-900);
@@ -15011,58 +15013,58 @@ h1:focus-within em::after { transform: scaleX(1); }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold-600);
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.7rem;
 }
 .signup-step--done .signup-step-eyebrow { color: var(--success, #1f7a3a); }
 :root[data-theme="dark"] .signup-step-eyebrow { color: var(--gold-400); }
 .signup-step-title {
   font-family: var(--font-display);
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.85rem;
   color: var(--text);
   line-height: 1.25;
 }
 .signup-step-body p {
-  margin: 0 0 1rem;
-  font-size: 0.98rem;
-  line-height: 1.6;
+  margin: 0 0 1.35rem;
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--text);
   max-width: 60ch;
 }
 .signup-step-cta {
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
 }
 .signup-step-cta-secondary {
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.65rem 1.15rem;
+  padding: 0.7rem 1.2rem;
   font-size: 0.92rem;
   font-weight: 600;
   border-radius: var(--radius);
 }
 .signup-step-foot {
-  margin: 0.85rem 0 0;
-  font-size: 0.84rem;
+  margin: 1.15rem 0 0;
+  font-size: 0.86rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 @media (max-width: 640px) {
   .signup-step {
     grid-template-columns: 1fr;
-    gap: 0.85rem;
-    padding: 1.4rem 1.5rem;
+    gap: 1rem;
+    padding: 1.65rem 1.6rem 1.85rem;
   }
-  .signup-step-num { width: 44px; height: 44px; font-size: 1.2rem; }
-  .signup-step-num--done svg { width: 22px; height: 22px; }
-  .signup-step-title { font-size: 1.25rem; }
+  .signup-step-num { width: 48px; height: 48px; font-size: 1.25rem; margin-top: 0; }
+  .signup-step-num--done svg { width: 24px; height: 24px; }
+  .signup-step-title { font-size: 1.3rem; }
 }
-.signup-steps--compact .signup-step { padding: 1.4rem 1.6rem; }
+.signup-steps--compact .signup-step { padding: 1.85rem 2rem 2rem; }
 .signup-fallback {
   margin: 2.5rem 0 0;
   padding: 1.5rem 1.75rem;
