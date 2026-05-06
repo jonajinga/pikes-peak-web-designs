@@ -192,6 +192,18 @@
     }, { passive: true });
   }
 
+  /* -------- Glossary A-Z floater (mobile) --------
+     Reveal the fixed-position A-Z rail only after the user scrolls past
+     the hero region. Prevents it from covering the hero copy on load. */
+  const glossaryIndex = $('.glossary-index');
+  if (glossaryIndex) {
+    const reveal = () => {
+      glossaryIndex.classList.toggle('is-revealed', window.scrollY > 220);
+    };
+    reveal();
+    window.addEventListener('scroll', reveal, { passive: true });
+  }
+
   /* -------- Smooth scroll -------- */
   $$('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
