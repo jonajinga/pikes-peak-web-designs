@@ -7926,7 +7926,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   top: 0;
   /* Painted above Leaflet's max pane z-index (700) so map tiles and
      popups never bleed over the banner during scroll. */
-  z-index: 1001;
+  z-index: 100;
   height: 38px;
   min-height: 38px;
 }
@@ -8182,7 +8182,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   padding: 4.5rem 1.5rem 2rem;
   transform: translateX(100%);
   transition: transform 0.3s ease-out;
-  z-index: 250;
+  z-index: 9999;
   overflow-y: auto;
   box-shadow: -10px 0 50px rgba(0,0,0,0.6);
   border-left: 4px solid var(--rc-red);
@@ -8591,7 +8591,13 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 [id$="-coverage-map"] {
   position: relative;
   z-index: 0;
+  /* Triple-belted: isolation makes a new stacking context, transform
+     makes a containing block for fixed-positioned descendants too,
+     and contain limits Leaflet's paint to inside this box. Even on
+     browsers where isolation alone leaks, this combination forces
+     the map's internal panes to scope their z-indexes here. */
   isolation: isolate;
+  transform: translateZ(0);
   contain: layout paint;
 }
 
@@ -10215,7 +10221,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   gap: 1rem;
   position: sticky;
   top: 0;
-  z-index: 1001;
+  z-index: 100;
   height: 38px;
   min-height: 38px;
 }
@@ -10384,7 +10390,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   padding: 4.5rem 1.75rem 2rem;
   transform: translateX(100%);
   transition: transform 0.28s ease-out;
-  z-index: 250;
+  z-index: 9999;
   overflow-y: auto;
   box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);
 }
@@ -11002,7 +11008,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   gap: 1rem;
   position: sticky;
   top: 0;
-  z-index: 1001;
+  z-index: 100;
   height: 38px;
   min-height: 38px;
 }
@@ -11116,7 +11122,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   width: min(360px, 92vw); background: var(--me-cream);
   padding: 4.5rem 1.75rem 2rem;
   transform: translateX(100%); transition: transform 0.28s;
-  z-index: 250; overflow-y: auto;
+  z-index: 9999; overflow-y: auto;
   border-left: 1px solid var(--me-line);
 }
 .meadow-mobile-nav-close {
@@ -11595,7 +11601,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 1rem;
-  position: sticky; top: 0; z-index: 1001;
+  position: sticky; top: 0; z-index: 100;
   height: 38px;
   min-height: 38px;
 }
@@ -11714,7 +11720,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   width: min(360px, 92vw); background: var(--su-navy-deep); color: var(--su-pale);
   padding: 4.5rem 1.75rem 2rem;
   transform: translateX(100%); transition: transform 0.28s;
-  z-index: 250; overflow-y: auto;
+  z-index: 9999; overflow-y: auto;
 }
 .summit-mobile-nav-close {
   position: absolute;
@@ -12237,7 +12243,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   letter-spacing: 0.14em; text-transform: uppercase;
   display: grid; grid-template-columns: 1fr auto 1fr;
   align-items: center; gap: 1rem;
-  position: sticky; top: 0; z-index: 1001;
+  position: sticky; top: 0; z-index: 100;
   height: 38px;
   min-height: 38px;
 }
@@ -12357,7 +12363,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   background: var(--lu-black); color: #FFFFFF;
   padding: 4.5rem 1.75rem 2rem;
   transform: translateX(100%); transition: transform 0.2s ease-out;
-  z-index: 250; overflow-y: auto;
+  z-index: 9999; overflow-y: auto;
 }
 .lumen-mobile-nav-close {
   position: absolute;
@@ -12790,7 +12796,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   font-size: 0.8rem;
   display: grid; grid-template-columns: 1fr auto 1fr;
   align-items: center; gap: 1rem;
-  position: sticky; top: 0; z-index: 1001;
+  position: sticky; top: 0; z-index: 100;
   height: 38px;
   min-height: 38px;
 }
@@ -12912,7 +12918,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   background: var(--cw-cream);
   padding: 4.5rem 1.75rem 2rem;
   transform: translateX(100%); transition: transform 0.28s;
-  z-index: 250; overflow-y: auto;
+  z-index: 9999; overflow-y: auto;
   border-left: 1px solid var(--cw-line);
 }
 .clearwater-mobile-nav-close {
