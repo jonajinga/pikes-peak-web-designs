@@ -14873,29 +14873,199 @@ h1:focus-within em::after { transform: scaleX(1); }
 .case-study-fallback p { margin: 0.5rem 0 0; }
 
 /* ============================================================
-   Case study — print stylesheet (Save as PDF)
+   Partners page body (in toc-layout) — list and section spacing
+   ============================================================ */
+.partners-body h2 { margin-top: 2.75rem; }
+.partners-body h2:first-child { margin-top: 0; }
+.partners-body p { margin: 0 0 1rem; max-width: 70ch; line-height: 1.65; }
+.partners-body ul:not([class]) {
+  margin: 0 0 1.5rem 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 70ch;
+}
+.partners-body ul:not([class]) li { line-height: 1.55; }
+.partners-ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  list-style: decimal inside;
+  margin: 0.5rem 0 1.5rem;
+  padding: 0;
+  max-width: 70ch;
+}
+.partners-ol li { line-height: 1.6; padding-left: 0.25rem; }
+.partners-body .faq-list { margin-top: 1.25rem; max-width: 70ch; }
+
+/* ============================================================
+   Case study — print cover page (screen hidden, PDF page 1)
+   ============================================================ */
+.case-study-print-cover { display: none; }
+
+@media print {
+  .case-study .case-study-print-cover {
+    display: flex !important;
+    flex-direction: column;
+    min-height: calc(100vh - 1.6in);
+    padding: 0.4in 0;
+    page-break-after: always;
+    color: #000;
+    background: #FFFFFF;
+  }
+  .case-study-print-cover-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+  .case-study-print-cover-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: #0A1F44;
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+    font-size: 22pt;
+    font-weight: 700;
+    border-radius: 6px;
+  }
+  .case-study-print-cover-wordmark {
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    color: #0A1F44;
+    letter-spacing: -0.005em;
+  }
+  .case-study-print-cover-wordmark strong { font-weight: 700; }
+  .case-study-print-cover-tagline {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: #5a6478;
+    font-size: 10pt;
+    margin-bottom: 1.2in;
+  }
+  .case-study-print-cover-rule {
+    border-top: 2px solid #0A1F44;
+    width: 60px;
+    margin: 0 0 0.4in;
+  }
+  .case-study-print-cover-eyebrow {
+    display: inline-block;
+    font-family: Georgia, serif;
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8E6612;
+    margin-bottom: 0.25in;
+  }
+  .case-study-print-cover-title {
+    font-family: Georgia, serif;
+    font-size: 28pt;
+    font-weight: 700;
+    line-height: 1.18;
+    color: #0A1F44;
+    margin: 0 0 0.25in;
+    max-width: 6.5in;
+    page-break-after: avoid;
+  }
+  .case-study-print-cover-meta {
+    font-family: Georgia, serif;
+    font-size: 11pt;
+    color: #333;
+    margin-bottom: 0.3in;
+  }
+  .case-study-print-cover-meta strong { color: #0A1F44; }
+  .case-study-print-cover-summary {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    line-height: 1.55;
+    color: #333;
+    max-width: 6.5in;
+    margin: 0 0 0.4in;
+  }
+  .case-study-print-cover-summary-block {
+    padding: 0.22in 0.28in;
+    border-left: 3px solid #8E6612;
+    background: #F8F5EE;
+    max-width: 6.5in;
+    margin-bottom: 0.4in;
+    page-break-inside: avoid;
+  }
+  .case-study-print-cover-summary-label {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5a3f00;
+    margin-bottom: 0.12in;
+  }
+  .case-study-print-cover-bullets {
+    margin: 0;
+    padding-left: 1.1em;
+    font-family: Georgia, serif;
+    font-size: 10pt;
+    line-height: 1.55;
+    color: #222;
+  }
+  .case-study-print-cover-bullets li { margin-bottom: 0.08in; }
+  .case-study-print-cover-bullets strong { color: #0A1F44; }
+  .case-study-print-cover-foot {
+    margin-top: auto;
+    padding-top: 0.3in;
+    border-top: 1px solid #BBB;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.2in;
+    font-family: Georgia, serif;
+    font-size: 9pt;
+  }
+  .case-study-print-cover-foot-label {
+    display: block;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 0.05in;
+  }
+  .case-study-print-cover-foot-value { color: #222; }
+}
+
+/* ============================================================
+   Case study body — print stylesheet (continues after cover)
    ============================================================ */
 @media print {
   .topbar, .header, .mobile-nav, .mobile-backdrop, .back-to-top,
   .case-study-toolbar, .case-study-back, .case-study-cta,
   .footer, .ppwd-search, .search-modal { display: none !important; }
+  /* The hero section duplicates info on the cover; suppress it on print. */
+  .case-study .page-hero,
+  .case-study .page-hero--peak { display: none !important; }
   body { background: #FFFFFF !important; color: #000000 !important; }
-  .page-hero, .page-hero--peak {
-    background: #FFFFFF !important;
-    color: #000000 !important;
-    padding: 1.5rem 0 1rem !important;
-    text-align: left !important;
-  }
-  .page-hero h1 { color: #000000 !important; font-size: 22pt !important; }
-  .page-hero h1 em { color: #5a3f00 !important; }
-  .page-hero p { color: #333 !important; font-size: 11pt !important; max-width: none !important; }
-  .page-hero .breadcrumb,
-  .page-hero .section-label { color: #555 !important; justify-content: flex-start !important; }
-  .page-hero .breadcrumb a { color: #333 !important; }
   .case-study .container { max-width: none !important; padding: 0 0.5in !important; }
+  .case-study .section { padding: 0.3in 0 0 !important; }
+  /* Section heading "Outcome metrics at a glance" prefix above the metrics
+     grid on print only, so the printed body knows where it starts. */
+  .case-study .section:first-of-type .container::before {
+    content: "Outcome metrics at a glance";
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #0A1F44;
+    margin-bottom: 0.18in;
+    page-break-after: avoid;
+  }
   .case-metrics, .case-metrics--greenfield {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.5rem !important;
+    margin: 0 0 0.3in !important;
   }
   .case-metric {
     padding: 0.5rem 0.75rem !important;
@@ -14907,19 +15077,45 @@ h1:focus-within em::after { transform: scaleX(1); }
   .case-metric-label { color: #555 !important; font-size: 8pt !important; }
   .case-metric-value { color: #000 !important; font-size: 14pt !important; }
   .case-metric-note { color: #333 !important; font-size: 9pt !important; }
-  .case-study-body { font-size: 10pt !important; line-height: 1.5 !important; }
-  .case-study-body h2 { font-size: 14pt !important; color: #000 !important; margin-top: 1rem !important; page-break-after: avoid; }
-  .case-study-body h3 { font-size: 12pt !important; color: #000 !important; page-break-after: avoid; }
+  /* Body content — the actual case study narrative. CRITICAL: must
+     remain visible. Earlier the grader's print rule hid .prose
+     globally; that has been scoped to .grader-explainer. */
+  .case-study-body {
+    display: block !important;
+    font-family: Georgia, serif !important;
+    font-size: 10.5pt !important;
+    line-height: 1.55 !important;
+    color: #1a1a1a !important;
+    margin-top: 0.25in !important;
+  }
+  .case-study-body h2 {
+    font-family: Georgia, serif !important;
+    font-size: 14pt !important;
+    color: #0A1F44 !important;
+    margin: 0.35in 0 0.12in !important;
+    page-break-after: avoid;
+  }
+  .case-study-body h3 {
+    font-family: Georgia, serif !important;
+    font-size: 12pt !important;
+    color: #0A1F44 !important;
+    margin: 0.22in 0 0.08in !important;
+    page-break-after: avoid;
+  }
+  .case-study-body p { margin: 0 0 0.14in !important; }
+  .case-study-body ul, .case-study-body ol { margin: 0 0 0.18in 0.3in !important; padding: 0 !important; }
+  .case-study-body li { margin: 0 0 0.06in !important; }
+  .case-study-body strong { font-weight: 700; color: #0A1F44 !important; }
   .case-study-body a { color: #5a3f00 !important; text-decoration: underline; }
   .case-study-body a[href^="http"]::after,
   .case-study-body a[href^="/"]::after {
     content: " (" attr(href) ")";
     font-size: 8pt;
-    color: #555;
+    color: #777;
     word-break: break-all;
   }
   .case-study-body p, .case-study-body li { orphans: 3; widows: 3; }
-  /* Page header on every printed page so PDF reads as a real document */
+  /* Page numbers + brand on every printed page (cover + body). */
   @page {
     margin: 0.6in 0.6in 0.7in;
     @bottom-center {
@@ -14934,6 +15130,11 @@ h1:focus-within em::after { transform: scaleX(1); }
       font-size: 8pt;
       color: #777;
     }
+  }
+  /* The cover page is page 1 — no header on it. */
+  @page :first {
+    @bottom-center { content: ""; }
+    @bottom-right { content: ""; }
   }
 }
 
@@ -15193,7 +15394,7 @@ h1:focus-within em::after { transform: scaleX(1); }
   .topbar, .header, .mobile-nav, .mobile-backdrop, .back-to-top,
   .ppwd-search, .search-modal, .footer, .cta-section,
   .page-hero, .grader-form, .grader-card-actions,
-  .grader-card-cta, .prose { display: none !important; }
+  .grader-card-cta, .grader-explainer { display: none !important; }
   body { background: #FFFFFF !important; color: #000 !important; }
   .section { padding: 0 !important; }
   .container { max-width: none !important; padding: 0 0.5in !important; }

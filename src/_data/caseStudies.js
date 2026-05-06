@@ -21,7 +21,7 @@ export default [
     slug: "service-site-standard-applied-to-itself",
     client: "Pikes Peak Web Designs",
     liveUrl: "https://pikespeakwebdesigns.com",
-    screenshot: null, // self-reference, no need for a screenshot card
+    screenshot: "/assets/img/samples/live-pikes-peak.png",
     trade: "Custom-coded web design",
     metro: "Colorado Springs, CO (national reach)",
     summary: "The agency's own website. First site, built from scratch on the Service Site Standard. No prior site to migrate, no legacy to undo — every number on this page is what shipped on day one.",

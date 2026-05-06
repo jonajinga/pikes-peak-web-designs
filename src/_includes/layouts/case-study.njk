@@ -4,6 +4,52 @@ layout: layouts/base.njk
 
 <article class="case-study">
 
+{# Print-only cover page. Shown only via @media print so the PDF reads
+   as a real document with a branded title page, meta, and exec summary
+   before the body. Aria-hidden so screen readers skip the duplicate. #}
+<aside class="case-study-print-cover" aria-hidden="true">
+  <div class="case-study-print-cover-brand">
+    <span class="case-study-print-cover-mark">P</span>
+    <span class="case-study-print-cover-wordmark">
+      <strong>Pikes Peak</strong> Web Designs
+    </span>
+  </div>
+  <div class="case-study-print-cover-tagline">{{ site.voice.markline or 'Custom-coded. Custom-cared-for.' }}</div>
+  <div class="case-study-print-cover-rule"></div>
+  <span class="case-study-print-cover-eyebrow">Case Study</span>
+  <h1 class="case-study-print-cover-title">{{ title }}</h1>
+  <div class="case-study-print-cover-meta">
+    <strong>{{ client }}</strong>{% if trade %} &middot; {{ trade }}{% endif %}{% if metro %} &middot; {{ metro }}{% endif %}
+  </div>
+  {% if summary %}<p class="case-study-print-cover-summary">{{ summary }}</p>{% endif %}
+  {% if metrics and metrics.length %}
+  <div class="case-study-print-cover-summary-block">
+    <span class="case-study-print-cover-summary-label">Executive summary</span>
+    <ul class="case-study-print-cover-bullets">
+      {% for m in metrics %}
+        <li><strong>{{ m.label }}:</strong> {{ m.value or m.after }}{% if m.note %} &mdash; {{ m.note }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  <div class="case-study-print-cover-foot">
+    <div>
+      <span class="case-study-print-cover-foot-label">Prepared by</span>
+      <span class="case-study-print-cover-foot-value">Pikes Peak Web Designs &middot; pikespeakwebdesigns.com</span>
+    </div>
+    {% if liveUrl %}
+    <div>
+      <span class="case-study-print-cover-foot-label">Live URL</span>
+      <span class="case-study-print-cover-foot-value">{{ liveUrl | replace("https://", "") | replace("http://", "") }}</span>
+    </div>
+    {% endif %}
+    <div>
+      <span class="case-study-print-cover-foot-label">Document date</span>
+      <span class="case-study-print-cover-foot-value">{{ "" | currentYear }}</span>
+    </div>
+  </div>
+</aside>
+
 <section class="page-hero page-hero--peak">
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
