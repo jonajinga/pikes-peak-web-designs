@@ -71,8 +71,8 @@ export default {
     "Privacy-focused analytics (Umami + Cloudflare)",
   ],
   stats: {
-    loadTime: "<1s",
     pageSpeed: "95–100",
+    coreWebVitals: "Green",
     areasServed: "50 states + Canada",
     buildTime: "2–3 weeks",
   },

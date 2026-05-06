@@ -4527,6 +4527,7 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
 }
+.post-author-photo picture { display: block; }
 .post-author-photo img {
   width: 96px;
   height: 120px;
@@ -4784,6 +4785,7 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 .founder-intro-photo {
   position: relative;
 }
+.founder-intro-photo picture { display: block; width: 100%; }
 .founder-intro-photo img {
   display: block;
   width: 100%;
@@ -5035,6 +5037,7 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   border: 1px solid var(--line);
   background: var(--bg-alt-2);
 }
+.founder-photo picture { display: block; width: 100%; height: 100%; }
 .founder-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .founder-photo::after {
   content: '';

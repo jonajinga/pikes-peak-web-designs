@@ -85,7 +85,7 @@ export default {
   // Self-cited performance + accessibility targets (verifiable by
   // running pagespeed.web.dev / Lighthouse / WAVE on any demo).
   pageSpeedRange: "95–100",
-  loadTimeTarget: "< 1s",
+  webVitalsBand: "Green",
   uptimeTarget: "99.99%",
   wcagLevel: "WCAG 2.2 AA",
   // Operational: real client outcomes will land here once published
