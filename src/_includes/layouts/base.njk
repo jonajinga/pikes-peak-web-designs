@@ -14,25 +14,19 @@
 
   {% include "partials/critical-css.njk" %}
 
-  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
-  {# Preload the two display fonts most commonly involved in LCP (h1 + body). #}
-  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/playfair-display/files/playfair-display-latin-600-normal.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/inter/files/inter-latin-400-normal.woff2" crossorigin>
+  {# Preload the two woff2 files involved in LCP (h1 display + body)
+     so they overlap the HTML download. Same-origin, no third-party
+     DNS/TLS round-trip — Bunny was costing ~200-400ms on every cold
+     visit before. @font-face declarations live in the inlined critical
+     CSS above. #}
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/playfair-display-latin-600.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-400.woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  {# Manifest dropped intentionally — it was a 332ms chained critical
-     request on every page and this site is a brochure, not a PWA.
-     Icons and theme color come from the link tags above. #}
 
-  {# Stylesheet is render-blocking on purpose. Per-page bundles are
-     ~50 KB minified / ~10 KB brotli at the edge, so blocking is fast
-     and avoids the flash-of-unstyled-content the preload+onload pattern
-     produces on every navigation. The font CSS stays non-blocking
-     (Bunny is third-party; we don't want it on the critical path). #}
-  <link rel="preload" href="https://fonts.bunny.net/css?family=inter:400,500,600,700|playfair-display:400,500,600,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700|playfair-display:400,500,600,700&display=swap"></noscript>
-
+  {# Per-page CSS gets inlined into <style> in eleventy.after; this
+     <link> is the placeholder that build hook replaces. #}
   <link rel="stylesheet" href="/assets/css/style.css">
   {# Pagefind's default UI (pagefind-ui.css/js) is no longer used; the
      custom .ppwd-search UI loads /pagefind/pagefind.js on demand. The
