@@ -82,8 +82,10 @@ export default function (eleventyConfig) {
     });
   }
 
-  // Image shortcode using @11ty/eleventy-img
-  eleventyConfig.addAsyncShortcode("image", async (src, alt, sizes = "100vw", widths = [400, 800, 1200]) => {
+  // Image shortcode using @11ty/eleventy-img.
+  // Pass priority="eager" for above-the-fold / LCP images so the browser
+  // downloads them immediately (no lazy-load delay, fetchpriority high).
+  eleventyConfig.addAsyncShortcode("image", async (src, alt, sizes = "100vw", widths = [400, 800, 1200], priority = "lazy") => {
     const fullSrc = src.startsWith("/") ? `./src${src}` : src;
     let metadata = await Image(fullSrc, {
       widths,
@@ -91,11 +93,13 @@ export default function (eleventyConfig) {
       outputDir: "./_site/assets/img/",
       urlPath: "/assets/img/",
     });
+    const isEager = priority === "eager";
     const imageAttributes = {
       alt,
       sizes,
-      loading: "lazy",
-      decoding: "async",
+      loading: isEager ? "eager" : "lazy",
+      decoding: isEager ? "sync" : "async",
+      ...(isEager ? { fetchpriority: "high" } : {}),
     };
     return Image.generateHTML(metadata, imageAttributes);
   });
