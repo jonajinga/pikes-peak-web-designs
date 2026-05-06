@@ -7805,9 +7805,27 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .demo-header { top: 1.85rem; }
 }
 @media (max-height: 500px) and (orientation: landscape) {
-  .demo-banner { padding: 0.3rem 0.85rem; font-size: 0.7rem; }
-  .demo-header-inner { height: 56px; }
-  .demo-header { top: 1.75rem; }
+  /* Banner only — tighter padding so the strip doesn't waste landscape
+     viewport. Header is intentionally NOT shrunk; its full height is
+     part of the demo's visual identity. */
+  .demo-banner {
+    padding: 0.4rem clamp(0.85rem, 2vw, 1.5rem);
+    font-size: 0.74rem;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+  }
+  .demo-banner-label {
+    grid-column: 1;
+    justify-self: start;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+  }
+  .demo-banner-actions {
+    grid-column: 2;
+    justify-self: end;
+    gap: 1rem;
+    font-size: 0.72rem;
+  }
 }
 .demo-banner-label {
   display: inline-flex;
@@ -9655,9 +9673,14 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .alpine-header { top: 1.85rem; }
 }
 @media (max-height: 500px) and (orientation: landscape) {
-  .alpine-banner { padding: 0.3rem 0.85rem; font-size: 0.7rem; }
-  .alpine-header { top: 1.75rem; }
-  .alpine-header-inner { padding-block: 0.4rem; }
+  .alpine-banner {
+    padding: 0.4rem clamp(0.85rem, 2vw, 1.5rem);
+    font-size: 0.72rem;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+  }
+  .alpine-banner-label { grid-column: 1; justify-self: start; display: inline-flex; font-size: 0.6rem; }
+  .alpine-banner-actions { grid-column: 2; justify-self: end; gap: 1rem; font-size: 0.7rem; }
 }
 
 .alpine-header {
@@ -10387,9 +10410,14 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .meadow-header { top: 1.85rem; }
 }
 @media (max-height: 500px) and (orientation: landscape) {
-  .meadow-banner { padding: 0.3rem 0.85rem; font-size: 0.7rem; }
-  .meadow-header { top: 1.75rem; }
-  .meadow-header-inner { padding-block: 0.4rem; }
+  .meadow-banner {
+    padding: 0.4rem clamp(0.85rem, 2vw, 1.5rem);
+    font-size: 0.72rem;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+  }
+  .meadow-banner-label { grid-column: 1; justify-self: start; display: inline-flex; font-size: 0.6rem; }
+  .meadow-banner-actions { grid-column: 2; justify-self: end; gap: 1rem; font-size: 0.7rem; }
 }
 
 .meadow-header {
@@ -10941,8 +10969,14 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .summit-header { top: 1.85rem; }
 }
 @media (max-height: 500px) and (orientation: landscape) {
-  .summit-banner { padding: 0.3rem 0.85rem; font-size: 0.68rem; }
-  .summit-header { top: 1.75rem; }
+  .summit-banner {
+    padding: 0.4rem clamp(0.85rem, 2vw, 1.5rem);
+    font-size: 0.7rem;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+  }
+  .summit-banner-label { grid-column: 1; justify-self: start; display: inline-flex; font-size: 0.58rem; }
+  .summit-banner-actions { grid-column: 2; justify-self: end; gap: 1rem; font-size: 0.68rem; }
 }
 
 .summit-header {
@@ -11530,8 +11564,14 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .lumen-header { top: 1.85rem; }
 }
 @media (max-height: 500px) and (orientation: landscape) {
-  .lumen-banner { padding: 0.3rem 0.85rem; font-size: 0.68rem; }
-  .lumen-header { top: 1.75rem; padding-block: 0.45rem; }
+  .lumen-banner {
+    padding: 0.4rem clamp(0.85rem, 2vw, 1.5rem);
+    font-size: 0.7rem;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+  }
+  .lumen-banner-label { grid-column: 1; justify-self: start; display: inline-flex; font-size: 0.58rem; }
+  .lumen-banner-actions { grid-column: 2; justify-self: end; gap: 1rem; font-size: 0.68rem; }
 }
 
 .lumen-header {
@@ -12051,8 +12091,14 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .clearwater-header { top: 1.85rem; }
 }
 @media (max-height: 500px) and (orientation: landscape) {
-  .clearwater-banner { padding: 0.3rem 0.85rem; font-size: 0.7rem; }
-  .clearwater-header { top: 1.75rem; padding-block: 0.55rem; }
+  .clearwater-banner {
+    padding: 0.4rem clamp(0.85rem, 2vw, 1.5rem);
+    font-size: 0.72rem;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+  }
+  .clearwater-banner-label { grid-column: 1; justify-self: start; display: inline-flex; font-size: 0.6rem; }
+  .clearwater-banner-actions { grid-column: 2; justify-self: end; gap: 1rem; font-size: 0.7rem; }
 }
 
 .clearwater-header {
