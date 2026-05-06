@@ -949,21 +949,62 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   text-align: center;
 }
 .mobile-nav-footer-link {
-  display: inline-block;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.9rem;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 600;
   color: var(--text);
   text-decoration: none;
-  transition: color var(--dur);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: color var(--dur), background var(--dur), border-color var(--dur);
 }
-.mobile-nav-footer-link:hover { color: var(--navy-900); }
-:root[data-theme="dark"] .mobile-nav-footer-link:hover { color: var(--gold-400); }
+.mobile-nav-footer-link:hover,
+.mobile-nav-footer-link:focus-visible {
+  background: var(--surface);
+  border-color: var(--navy-700);
+  color: var(--navy-900);
+  outline: none;
+}
+:root[data-theme="dark"] .mobile-nav-footer-link {
+  background: var(--bg-alt-2);
+  border-color: var(--line-strong);
+}
+:root[data-theme="dark"] .mobile-nav-footer-link:hover,
+:root[data-theme="dark"] .mobile-nav-footer-link:focus-visible {
+  border-color: var(--gold-400);
+  color: var(--gold-400);
+}
+.mobile-nav-footer-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.mobile-nav-footer-target { font-weight: 600; }
+.mobile-nav-footer-arrow {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--dur);
+  flex-shrink: 0;
+}
+.mobile-nav-footer-link:hover .mobile-nav-footer-arrow,
+.mobile-nav-footer-link:focus-visible .mobile-nav-footer-arrow {
+  transform: translateX(3px);
+}
 .mobile-nav-footer-link[aria-current="page"] {
   color: var(--navy-900);
-  font-weight: 600;
+  border-color: var(--navy-700);
+  background: var(--surface);
 }
-:root[data-theme="dark"] .mobile-nav-footer-link[aria-current="page"] { color: var(--gold-400); }
+:root[data-theme="dark"] .mobile-nav-footer-link[aria-current="page"] {
+  color: var(--gold-400);
+  border-color: var(--gold-400);
+}
 
 /* Search modal */
 .search-modal {
@@ -3329,7 +3370,7 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .footer-trust-inner {
-  max-width: var(--max-width);
+  max-width: 1600px;
   margin: 0 auto;
   padding: 1.25rem clamp(1.25rem, 3vw, 2rem);
   display: flex;
@@ -3363,7 +3404,10 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 }
 
 .footer-inner {
-  max-width: var(--max-width);
+  /* Widened beyond --max-width (1280px) so all eight footer columns
+     have enough room for their link labels at desktop. Links also
+     have white-space:nowrap so a label can never break mid-word. */
+  max-width: 1600px;
   margin: 0 auto;
   padding: clamp(3rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2rem) 2rem;
 }
@@ -3530,6 +3574,7 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   font-size: 0.92rem;
   color: rgba(255, 255, 255, 0.82);
   transition: color var(--dur);
+  white-space: nowrap;
 }
 .footer-col a:hover { color: var(--gold-400); }
 .footer-view-all {
@@ -4512,6 +4557,260 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
     color: #000000;
     text-align: center;
     page-break-inside: avoid;
+  }
+
+  /* ===============================================================
+     Case-study print treatment.
+     The page-hero on a case study becomes a branded cover sheet:
+     agency wordmark on top, eyebrow (trade · metro), large title,
+     summary, generated-at line — then a hard page break before the
+     metrics + body. Without these rules, only the metrics grid +
+     headline rendered legibly because the surrounding decorative
+     dark hero washed out and the prose body inherited site colors
+     instead of the print body defaults below.
+     =============================================================== */
+  .case-study-toolbar,
+  .case-study-back,
+  .case-study-cta,
+  .case-study .breadcrumb { display: none !important; }
+
+  .case-study .page-hero,
+  .case-study .page-hero--peak {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    padding: 0 0 1.25rem !important;
+    margin: 0 0 1.5rem !important;
+    border-bottom: 1pt solid #000000 !important;
+    text-align: left !important;
+    page-break-after: always;
+    string-set: posttitle attr(data-title);
+  }
+  .case-study .page-hero .container { all: revert; max-width: none !important; padding: 0 !important; }
+
+  /* Cover sheet: agency wordmark above the eyebrow / title block,
+     followed by tagline + URL + generated date, all in agency-brand
+     typography (small-caps Helvetica wordmark, serif body). */
+  .case-study .page-hero::before {
+    content: "PIKES PEAK WEB DESIGNS";
+    display: block;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11pt;
+    font-weight: 700;
+    letter-spacing: 0.20em;
+    color: #000000;
+    margin: 0 0 0.35rem;
+    padding: 0 0 0.5rem;
+    border-bottom: 0.5pt solid #000000;
+  }
+  .case-study .page-hero::after {
+    content: "Custom-coded. Custom-cared-for.  ·  pikespeakwebdesigns.com";
+    display: block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 9.5pt;
+    font-style: italic;
+    color: #000000;
+    margin: 0.65rem 0 0;
+    padding: 0.5rem 0 0;
+    border-top: 0.5pt solid #000000;
+  }
+  .case-study .page-hero .section-label {
+    display: block;
+    font-family: Helvetica, Arial, sans-serif !important;
+    font-size: 8.5pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+    color: #000000 !important;
+    margin: 1.4rem 0 0.5rem !important;
+  }
+  .case-study .page-hero h1 {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 26pt !important;
+    line-height: 1.12 !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+    margin: 0 0 0.6rem !important;
+    text-align: left !important;
+    max-width: none !important;
+    string-set: posttitle content();
+  }
+  .case-study .page-hero p {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 12pt !important;
+    line-height: 1.45 !important;
+    color: #000000 !important;
+    margin: 0 0 0.85rem !important;
+    text-align: left !important;
+    max-width: none !important;
+  }
+
+  /* Section wrapper around metrics + body: full-width, no decorative
+     site backgrounds, no constrained max-width since print pages
+     take care of margins via @page. */
+  .case-study .section {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .case-study .section .container {
+    all: revert;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Outcome metrics: clean monochrome grid. Drop the gold/navy
+     accent colors so the printed page reads as one editorial unit. */
+  .case-study .case-metrics {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.9rem 1.5rem !important;
+    margin: 0 0 1.4rem !important;
+    page-break-inside: avoid;
+  }
+  .case-study .case-metric {
+    background: none !important;
+    border: 0.5pt solid #000000 !important;
+    padding: 0.7rem 0.9rem !important;
+    border-radius: 0 !important;
+  }
+  .case-study .case-metric-label {
+    font-family: Helvetica, Arial, sans-serif !important;
+    font-size: 8.5pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    color: #000000 !important;
+    margin: 0 0 0.35rem !important;
+  }
+  .case-study .case-metric-value,
+  .case-study .case-metric-after,
+  .case-study .case-metric-before,
+  .case-study .case-metric-arrow {
+    color: #000000 !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+  }
+  .case-study .case-metric-value {
+    font-size: 18pt !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+  }
+  .case-study .case-metric-row {
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem;
+    font-size: 13pt !important;
+    line-height: 1.2 !important;
+  }
+  .case-study .case-metric-before { text-decoration: line-through; opacity: 0.7; }
+  .case-study .case-metric-after { font-weight: 700; }
+  .case-study .case-metric-note {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 9.5pt !important;
+    color: #000000 !important;
+    font-style: italic;
+    margin: 0.4rem 0 0 !important;
+  }
+
+  /* Article body: the prose case-study text. Forces black ink,
+     standard print typography, and link-rendering with URLs in
+     parentheses (so a printed page is a useful artifact even when
+     hyperlinks aren't clickable). Mirrors the .post-content rules
+     above. */
+  .case-study .case-study-body,
+  .case-study .case-study-body * {
+    color: #000000 !important;
+    background: none !important;
+  }
+  .case-study .case-study-body {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 11pt !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .case-study .case-study-body h2 {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 15pt !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+    margin: 1.6em 0 0.55em !important;
+    page-break-after: avoid;
+  }
+  .case-study .case-study-body h3 {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 12.5pt !important;
+    font-weight: 700 !important;
+    margin: 1.3em 0 0.4em !important;
+    page-break-after: avoid;
+  }
+  .case-study .case-study-body p {
+    margin: 0 0 0.85em !important;
+    orphans: 3;
+    widows: 3;
+  }
+  .case-study .case-study-body ul,
+  .case-study .case-study-body ol {
+    margin: 0 0 0.95em 1.2em !important;
+    padding: 0 !important;
+  }
+  .case-study .case-study-body li { margin: 0 0 0.35em !important; line-height: 1.5; }
+  .case-study .case-study-body strong { font-weight: 700; }
+  .case-study .case-study-body em { font-style: italic; }
+  .case-study .case-study-body blockquote {
+    margin: 1.1em 0 1.1em 0.5em !important;
+    padding: 0.2em 0 0.2em 0.95em !important;
+    border-left: 2pt solid #000000 !important;
+    background: none !important;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  .case-study .case-study-body a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+  .case-study .case-study-body a[href^="http"]::after,
+  .case-study .case-study-body a[href^="https"]::after {
+    content: " (" attr(href) ")";
+    font-family: Georgia, serif;
+    font-size: 0.82em;
+    font-style: italic;
+    color: #000000;
+    word-break: break-all;
+  }
+  .case-study .case-study-body a[href^="#"]::after,
+  .case-study .case-study-body a[href^="/"]::after,
+  .case-study .case-study-body a[href^="mailto"]::after,
+  .case-study .case-study-body a[href^="tel"]::after { content: ""; }
+  .case-study .case-study-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 10pt;
+    page-break-inside: avoid;
+  }
+  .case-study .case-study-body th,
+  .case-study .case-study-body td {
+    border: 0.5pt solid #000000;
+    padding: 0.4em 0.55em;
+    text-align: left;
+    vertical-align: top;
+  }
+  .case-study .case-study-body th {
+    font-family: Helvetica, Arial, sans-serif !important;
+    font-size: 9pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: #f4f4f1 !important;
+  }
+  .case-study .case-study-body figure { page-break-inside: avoid; margin: 1em 0; }
+  .case-study .case-study-body hr {
+    border: none;
+    border-top: 0.5pt solid #000000;
+    margin: 1.5em 0;
   }
 }
 
@@ -14443,14 +14742,15 @@ h1:focus-within em::after { transform: scaleX(1); }
 .case-study-card {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  padding: 1.75rem 1.85rem;
+  gap: 0;
+  padding: 0;
   background: var(--surface);
   border: 1px solid var(--line);
   border-top: 4px solid var(--gold-500);
   border-radius: var(--radius-lg);
   text-decoration: none;
   color: var(--text);
+  overflow: hidden;
   transition: transform var(--dur), box-shadow var(--dur), border-color var(--dur);
 }
 .case-study-card:hover,
@@ -14462,6 +14762,33 @@ h1:focus-within em::after { transform: scaleX(1); }
 }
 .case-study-card--self { border-top-color: var(--navy-700); }
 .case-study-card--self:hover { border-top-color: var(--navy-900); }
+.case-study-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.5rem 1.75rem 1.75rem;
+  flex: 1;
+}
+.case-study-card-shot {
+  position: relative;
+  display: block;
+  aspect-ratio: 1280 / 800;
+  background: var(--bg-alt-2);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.case-study-card-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.case-study-card:hover .case-study-card-shot img,
+.case-study-card:focus-visible .case-study-card-shot img {
+  transform: scale(1.02);
+}
 .case-study-card-eyebrow {
   display: flex;
   flex-wrap: wrap;

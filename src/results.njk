@@ -82,7 +82,7 @@ description: "The performance, accessibility, and content numbers behind every s
 
     {% if results.clientCallouts and results.clientCallouts.length %}
     <h2 style="margin-top:3rem">Client outcomes</h2>
-    <p>Specific results from client work. Each one links to the case study where the numbers come from.</p>
+    <p>Specific results from client work. Each one links to the case study where the numbers come from. <a href="/case-studies/" class="inline-link">See every published case study &rarr;</a></p>
     <div class="proof-grid">
       {% for callout in results.clientCallouts %}
       <a href="{{ callout.url }}" class="proof-card">
@@ -94,7 +94,7 @@ description: "The performance, accessibility, and content numbers behind every s
     </div>
     {% else %}
     <h2 style="margin-top:3rem">Client outcomes</h2>
-    <p>This section will populate as clients give permission to publish their numbers. Until then, the verifiable architectural metrics above are the proof.</p>
+    <p>This section will populate as clients give permission to publish their numbers. Until then, the verifiable architectural metrics above are the proof — and you can read the editor's own <a href="/case-studies/" class="inline-link">applied case study</a>, where the Service Site Standard was applied to this very site.</p>
     {% endif %}
 
     <div style="margin-top:3rem;padding:1.5rem 1.75rem;background:var(--bg-alt);border-left:3px solid var(--gold-500);border-radius:0 var(--radius-sm) var(--radius-sm) 0">
