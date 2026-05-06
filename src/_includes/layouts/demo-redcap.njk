@@ -125,9 +125,138 @@
         </div>
       </div>
 
-      <a href="/demo/redcap-roofing/about/"{% if page.url | startsWith('/demo/redcap-roofing/about/') %} class="is-active"{% endif %}>About</a>
-      <a href="/demo/redcap-roofing/pricing/"{% if page.url | startsWith('/demo/redcap-roofing/pricing/') %} class="is-active"{% endif %}>Pricing</a>
-      <a href="/demo/redcap-roofing/blog/"{% if page.url | startsWith('/demo/redcap-roofing/blog/') %} class="is-active"{% endif %}>Blog</a>
+      <div class="demo-mega-dropdown">
+        <a href="/demo/redcap-roofing/about/"{% if page.url | startsWith('/demo/redcap-roofing/about/') %} class="is-active"{% endif %}>About <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="About menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">The shop</span>
+              <a href="/demo/redcap-roofing/about/#story" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-8 9 8v9H3z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Our story</span><span class="demo-mega-item-desc">Family-owned in the Springs since 2009</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/about/#crew" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M3 21a9 9 0 0118 0"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Meet the crew</span><span class="demo-mega-item-desc">Eight roofers + a project lead per job</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/about/#values" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">What we stand for</span><span class="demo-mega-item-desc">Clean jobsites, honest estimates, no upsells</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Credentials</span>
+              <a href="/demo/redcap-roofing/about/#certifications" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">GAF Master Elite</span><span class="demo-mega-item-desc">Top 2% of roofing contractors nationally</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/about/#license" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Licensed &amp; insured</span><span class="demo-mega-item-desc">Colorado RF-18432, $2M general liability</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/testimonials/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Reviews</span><span class="demo-mega-item-desc">218 Google reviews &middot; 4.9 stars</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#1A1F2E;--demo-mega-feature-to:#0A0F1A;--demo-mega-feature-eyebrow:#FFE071;--demo-mega-feature-cta-bg:#FFE071;--demo-mega-feature-cta-color:#1A1F2E;">
+              <span class="demo-mega-feature-eyebrow">15 years on Front Range roofs</span>
+              <h3 class="demo-mega-feature-title">The same crew shows up every time.</h3>
+              <p class="demo-mega-feature-body">No subcontractors, no relay teams. The same eight roofers who installed your neighbor's roof do yours.</p>
+              <a href="/demo/redcap-roofing/about/" class="demo-mega-feature-cta">Read our story &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-mega-dropdown">
+        <a href="/demo/redcap-roofing/pricing/"{% if page.url | startsWith('/demo/redcap-roofing/pricing/') %} class="is-active"{% endif %}>Pricing <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Pricing menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">By project</span>
+              <a href="/demo/redcap-roofing/pricing/#tear-off" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-8 9 8v9H3z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Full tear-off</span><span class="demo-mega-item-desc">Strip, deck repair, new underlayment, install</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/pricing/#overlay" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="12"/><path d="M3 9l9-6 9 6"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Roof overlay</span><span class="demo-mega-item-desc">Newer roofs in good shape, lower cost</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/pricing/#repair" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3l-1-1L4 15v5h5l9.7-9.7-1-1"/><path d="M16 4l4 4"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Repair work</span><span class="demo-mega-item-desc">Hourly or flat-rate, free estimate first</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Always included</span>
+              <a href="/demo/redcap-roofing/pricing/#warranty" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">5-year workmanship warranty</span><span class="demo-mega-item-desc">Plus the manufacturer's material warranty</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/pricing/#cleanup" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18l-2 4H5z"/><path d="M5 10v8h14v-8"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Magnet sweep daily</span><span class="demo-mega-item-desc">No nails left in the yard, ever</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/pricing/#financing" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Financing options</span><span class="demo-mega-item-desc">12, 24, 60-month plans through Hearth</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#7A1B1B;--demo-mega-feature-to:#3F0A0A;--demo-mega-feature-eyebrow:#FFE071;--demo-mega-feature-cta-bg:#FFE071;--demo-mega-feature-cta-color:#1A1F2E;">
+              <span class="demo-mega-feature-eyebrow">Free written estimate</span>
+              <h3 class="demo-mega-feature-title">Same-day quotes on storm damage.</h3>
+              <p class="demo-mega-feature-body">We climb the roof, take photos, write the estimate, and send it the same day. No waiting around.</p>
+              <a href="/demo/redcap-roofing/contact/" class="demo-mega-feature-cta">Request estimate &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-mega-dropdown">
+        <a href="/demo/redcap-roofing/blog/"{% if page.url | startsWith('/demo/redcap-roofing/blog/') %} class="is-active"{% endif %}>Blog <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Blog menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Recent posts</span>
+              <a href="/demo/redcap-roofing/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16"/><path d="M3 8h18M8 4v16"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">After the storm checklist</span><span class="demo-mega-item-desc">What to do in the first 48 hours</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Roof life expectancy by material</span><span class="demo-mega-item-desc">Asphalt, metal, tile, and clay compared</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Insurance claim 101</span><span class="demo-mega-item-desc">Reading your scope-of-loss line by line</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Topics</span>
+              <a href="/demo/redcap-roofing/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Storm prep</span><span class="demo-mega-item-desc">8 articles</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="12"/><path d="M3 9l9-6 9 6"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Materials guides</span><span class="demo-mega-item-desc">5 articles</span></span>
+              </a>
+              <a href="/demo/redcap-roofing/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Maintenance tips</span><span class="demo-mega-item-desc">11 articles</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#1A1F2E;--demo-mega-feature-to:#0A0F1A;--demo-mega-feature-eyebrow:#FFE071;--demo-mega-feature-cta-bg:#FFE071;--demo-mega-feature-cta-color:#1A1F2E;">
+              <span class="demo-mega-feature-eyebrow">Storm season newsletter</span>
+              <h3 class="demo-mega-feature-title">Roof health tips, monthly.</h3>
+              <p class="demo-mega-feature-body">No spam, no upsells. Just the warning signs and the maintenance windows for the Front Range climate.</p>
+              <a href="/demo/redcap-roofing/blog/" class="demo-mega-feature-cta">Read the blog &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
       <a href="tel:9283159094" class="demo-nav-phone">(928) 315-9094</a>
       <a href="/demo/redcap-roofing/contact/" class="demo-nav-cta">Free Inspection</a>
     </nav>

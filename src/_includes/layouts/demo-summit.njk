@@ -124,9 +124,137 @@
         </div>
       </div>
 
-      <a href="/demo/summit-hvac/about/"{% if page.url | startsWith('/demo/summit-hvac/about/') %} class="is-active"{% endif %}>About</a>
-      <a href="/demo/summit-hvac/pricing/"{% if page.url | startsWith('/demo/summit-hvac/pricing/') %} class="is-active"{% endif %}>Pricing</a>
-      <a href="/demo/summit-hvac/blog/"{% if page.url | startsWith('/demo/summit-hvac/blog/') %} class="is-active"{% endif %}>Resources</a>
+      <div class="demo-mega-dropdown">
+        <a href="/demo/summit-hvac/about/"{% if page.url | startsWith('/demo/summit-hvac/about/') %} class="is-active"{% endif %}>About <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="About menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">The firm</span>
+              <a href="/demo/summit-hvac/about/#story" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-8 9 8v9H3z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Our story</span><span class="demo-mega-item-desc">Engineer-led HVAC for Denver metro since 2007</span></span>
+              </a>
+              <a href="/demo/summit-hvac/about/#team" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M3 21a9 9 0 0118 0"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Meet the team</span><span class="demo-mega-item-desc">Two journeymen, one design engineer, full-time</span></span>
+              </a>
+              <a href="/demo/summit-hvac/about/#values" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">What we stand for</span><span class="demo-mega-item-desc">Right-sized systems, no oversold equipment, ever</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">How we work</span>
+              <a href="/demo/summit-hvac/about/#process" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">The Manual J process</span><span class="demo-mega-item-desc">Room-by-room load calc before any quote</span></span>
+              </a>
+              <a href="/demo/summit-hvac/about/#license" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Licensed &amp; bonded</span><span class="demo-mega-item-desc">Colorado MP-2215, NATE-certified technicians</span></span>
+              </a>
+              <a href="/demo/summit-hvac/about/#warranty" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Workmanship warranty</span><span class="demo-mega-item-desc">10 years on installs, 2 years on repairs</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#082F49;--demo-mega-feature-to:#031621;--demo-mega-feature-eyebrow:#06B6D4;--demo-mega-feature-cta-bg:#06B6D4;--demo-mega-feature-cta-color:#082F49;">
+              <span class="demo-mega-feature-eyebrow">18 years on Denver homes</span>
+              <h3 class="demo-mega-feature-title">No oversized equipment, no shortcuts.</h3>
+              <p class="demo-mega-feature-body">We pencil out the heat load before we quote &mdash; the same engineering rigor commercial firms expect.</p>
+              <a href="/demo/summit-hvac/about/" class="demo-mega-feature-cta">Read our story &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-mega-dropdown">
+        <a href="/demo/summit-hvac/pricing/"{% if page.url | startsWith('/demo/summit-hvac/pricing/') %} class="is-active"{% endif %}>Pricing <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Pricing menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">By project</span>
+              <a href="/demo/summit-hvac/pricing/#heat-pump" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Heat pump install</span><span class="demo-mega-item-desc">From $11,400 &mdash; cold-climate-rated, sized for Denver</span></span>
+              </a>
+              <a href="/demo/summit-hvac/pricing/#furnace" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 6 8 9 12 12s4 6 0 10"/><path d="M16 6c-2 2-2 4 0 6"/><path d="M8 6c2 2 2 4 0 6"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Furnace replacement</span><span class="demo-mega-item-desc">From $5,200 &mdash; 96% AFUE two-stage</span></span>
+              </a>
+              <a href="/demo/summit-hvac/pricing/#ac" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 12h18M9 6v12M15 6v12"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">AC swap-in</span><span class="demo-mega-item-desc">From $6,800 &mdash; SEER2-rated condenser + coil</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Always included</span>
+              <a href="/demo/summit-hvac/pricing/#manual-j" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Manual J load calc</span><span class="demo-mega-item-desc">Free with every install quote, no shortcut</span></span>
+              </a>
+              <a href="/demo/summit-hvac/pricing/#permit" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Permits &amp; inspection</span><span class="demo-mega-item-desc">Pulled and closed by us, included in price</span></span>
+              </a>
+              <a href="/demo/summit-hvac/pricing/#rebates" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12V7H6a2 2 0 110-4h13v4"/><path d="M4 5v14a2 2 0 002 2h14v-7H6a2 2 0 110-4"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Rebate paperwork</span><span class="demo-mega-item-desc">Xcel + IRA tax credit forms filed for you</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#0F2740;--demo-mega-feature-to:#06121E;--demo-mega-feature-eyebrow:#06B6D4;--demo-mega-feature-cta-bg:#FFFFFF;--demo-mega-feature-cta-color:#082F49;">
+              <span class="demo-mega-feature-eyebrow">Free in-home estimate</span>
+              <h3 class="demo-mega-feature-title">Fixed-price quotes, written same day.</h3>
+              <p class="demo-mega-feature-body">We measure, calculate, and quote in one visit &mdash; no surprises after the truck leaves.</p>
+              <a href="/demo/summit-hvac/contact/" class="demo-mega-feature-cta">Request estimate &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-mega-dropdown">
+        <a href="/demo/summit-hvac/blog/"{% if page.url | startsWith('/demo/summit-hvac/blog/') %} class="is-active"{% endif %}>Resources <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Resources menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Recent posts</span>
+              <a href="/demo/summit-hvac/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16"/><path d="M3 8h18M8 4v16"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Heat pumps at altitude</span><span class="demo-mega-item-desc">What works at 5,280 feet and what doesn't</span></span>
+              </a>
+              <a href="/demo/summit-hvac/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Why bigger isn't better</span><span class="demo-mega-item-desc">The cost of an oversized AC, in numbers</span></span>
+              </a>
+              <a href="/demo/summit-hvac/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12V7H6a2 2 0 110-4h13v4"/><path d="M4 5v14a2 2 0 002 2h14v-7H6a2 2 0 110-4"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Xcel rebates 2026</span><span class="demo-mega-item-desc">Stacking IRA + utility incentives, line by line</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Topics</span>
+              <a href="/demo/summit-hvac/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Heat pumps</span><span class="demo-mega-item-desc">7 articles</span></span>
+              </a>
+              <a href="/demo/summit-hvac/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h13a3 3 0 100-6"/><path d="M3 16h11a3 3 0 110 6"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Indoor air quality</span><span class="demo-mega-item-desc">5 articles</span></span>
+              </a>
+              <a href="/demo/summit-hvac/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3l-1-1L4 15v5h5l9.7-9.7-1-1"/><path d="M16 4l4 4"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Maintenance &amp; tuning</span><span class="demo-mega-item-desc">9 articles</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#082F49;--demo-mega-feature-to:#031621;--demo-mega-feature-eyebrow:#06B6D4;--demo-mega-feature-cta-bg:#06B6D4;--demo-mega-feature-cta-color:#082F49;">
+              <span class="demo-mega-feature-eyebrow">Engineer's notebook</span>
+              <h3 class="demo-mega-feature-title">HVAC science, in plain English.</h3>
+              <p class="demo-mega-feature-body">Real load calcs, real efficiency numbers, no marketing fluff. Written for homeowners who want the math.</p>
+              <a href="/demo/summit-hvac/blog/" class="demo-mega-feature-cta">Browse resources &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </div>
       <a href="tel:9283159094" class="summit-nav-phone">(928) 315-9094</a>
       <a href="/demo/summit-hvac/contact/" class="summit-nav-cta">Request estimate</a>
     </nav>

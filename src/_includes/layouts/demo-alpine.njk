@@ -123,9 +123,138 @@
         </div>
       </div>
 
-      <a href="/demo/alpine-inspectors/about/"{% if page.url | startsWith('/demo/alpine-inspectors/about/') %} class="is-active"{% endif %}>About</a>
-      <a href="/demo/alpine-inspectors/pricing/"{% if page.url | startsWith('/demo/alpine-inspectors/pricing/') %} class="is-active"{% endif %}>Pricing</a>
-      <a href="/demo/alpine-inspectors/blog/"{% if page.url | startsWith('/demo/alpine-inspectors/blog/') %} class="is-active"{% endif %}>Field Notes</a>
+      <div class="demo-mega-dropdown">
+        <a href="/demo/alpine-inspectors/about/"{% if page.url | startsWith('/demo/alpine-inspectors/about/') %} class="is-active"{% endif %}>About <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="About menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">The firm</span>
+              <a href="/demo/alpine-inspectors/about/#story" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-8 9 8v9H3z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Our story</span><span class="demo-mega-item-desc">Family-run inspections in the Springs since 2011</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/about/#team" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M3 21a9 9 0 0118 0"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Meet the inspectors</span><span class="demo-mega-item-desc">Three full-time inspectors, no rotating contractors</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/about/#values" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">What we stand for</span><span class="demo-mega-item-desc">Plain-English reports, no scare tactics, no upsells</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Credentials</span>
+              <a href="/demo/alpine-inspectors/about/#certifications" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">InterNACHI certified</span><span class="demo-mega-item-desc">CPI status &middot; Code of Ethics enforced</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/about/#license" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Licensed &amp; insured</span><span class="demo-mega-item-desc">Colorado HI-08214, $1M E&amp;O coverage</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/about/#sample-report" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Sample report</span><span class="demo-mega-item-desc">See exactly what you receive within 24 hours</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#0F3E2E;--demo-mega-feature-to:#06231A;--demo-mega-feature-eyebrow:#D6CBB4;--demo-mega-feature-cta-bg:#FFFFFF;--demo-mega-feature-cta-color:#0F3E2E;">
+              <span class="demo-mega-feature-eyebrow">14 years on Front Range homes</span>
+              <h3 class="demo-mega-feature-title">We walk every roof, open every panel.</h3>
+              <p class="demo-mega-feature-body">No drone-only roof passes, no skipping the crawlspace. The full inspection, every time.</p>
+              <a href="/demo/alpine-inspectors/about/" class="demo-mega-feature-cta">Read our story &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-mega-dropdown">
+        <a href="/demo/alpine-inspectors/pricing/"{% if page.url | startsWith('/demo/alpine-inspectors/pricing/') %} class="is-active"{% endif %}>Pricing <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Pricing menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">By service</span>
+              <a href="/demo/alpine-inspectors/pricing/#residential" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-8 9 8v9H3z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Residential inspection</span><span class="demo-mega-item-desc">From $425 &mdash; flat-rate by square footage</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/pricing/#sewer-scope" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Sewer scope add-on</span><span class="demo-mega-item-desc">$175 with full inspection, $225 standalone</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/pricing/#radon" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Radon test add-on</span><span class="demo-mega-item-desc">$150 with inspection, EPA-protocol monitor</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Always included</span>
+              <a href="/demo/alpine-inspectors/pricing/#report" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">24-hour digital report</span><span class="demo-mega-item-desc">Photos, videos, and a clear repair list</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/pricing/#walkthrough" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M3 21a9 9 0 0118 0"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Onsite walkthrough</span><span class="demo-mega-item-desc">Free for buyers &mdash; we walk you through findings</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/pricing/#callback" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M12 6v6l4 2"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Lifetime callbacks</span><span class="demo-mega-item-desc">Question on the report next year? Just call.</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#1F3328;--demo-mega-feature-to:#0E1F18;--demo-mega-feature-eyebrow:#D6CBB4;--demo-mega-feature-cta-bg:#D6CBB4;--demo-mega-feature-cta-color:#0F3E2E;">
+              <span class="demo-mega-feature-eyebrow">No drive-time fees</span>
+              <h3 class="demo-mega-feature-title">Flat pricing, anywhere on the Front Range.</h3>
+              <p class="demo-mega-feature-body">Same price in Manitou as in Falcon. Mileage and travel time are always included.</p>
+              <a href="/demo/alpine-inspectors/contact/" class="demo-mega-feature-cta">Get a quote &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-mega-dropdown">
+        <a href="/demo/alpine-inspectors/blog/"{% if page.url | startsWith('/demo/alpine-inspectors/blog/') %} class="is-active"{% endif %}>Field Notes <span class="demo-mega-chevron" aria-hidden="true"></span></a>
+        <div class="demo-mega" role="menu" aria-label="Field Notes menu">
+          <div class="demo-mega-inner">
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Recent posts</span>
+              <a href="/demo/alpine-inspectors/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16"/><path d="M3 8h18M8 4v16"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Reading a sewer scope video</span><span class="demo-mega-item-desc">What roots, bellies, and offsets actually look like</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M12 6v6l4 2"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Radon levels in the Springs</span><span class="demo-mega-item-desc">Why our region runs hotter than the EPA average</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-8 9 8v9H3z"/><path d="M9 21V13h6v8"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Crawlspace red flags</span><span class="demo-mega-item-desc">Five signs we always note in older Springs homes</span></span>
+              </a>
+            </div>
+            <div class="demo-mega-col">
+              <span class="demo-mega-h5">Topics</span>
+              <a href="/demo/alpine-inspectors/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-8 9 8v9H3z"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Buyer guides</span><span class="demo-mega-item-desc">9 articles</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Radon &amp; air quality</span><span class="demo-mega-item-desc">6 articles</span></span>
+              </a>
+              <a href="/demo/alpine-inspectors/blog/" class="demo-mega-item" role="menuitem">
+                <span class="demo-mega-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13"/></svg></span>
+                <span class="demo-mega-item-body"><span class="demo-mega-item-title">Maintenance calendar</span><span class="demo-mega-item-desc">12 articles</span></span>
+              </a>
+            </div>
+            <aside class="demo-mega-feature" style="--demo-mega-feature-from:#0F3E2E;--demo-mega-feature-to:#06231A;--demo-mega-feature-eyebrow:#D6CBB4;--demo-mega-feature-cta-bg:#FFFFFF;--demo-mega-feature-cta-color:#0F3E2E;">
+              <span class="demo-mega-feature-eyebrow">Quarterly notes</span>
+              <h3 class="demo-mega-feature-title">Inspection lessons, no fluff.</h3>
+              <p class="demo-mega-feature-body">Real findings from real Front Range homes &mdash; what we keep seeing, and how to stay ahead of it.</p>
+              <a href="/demo/alpine-inspectors/blog/" class="demo-mega-feature-cta">Browse the field notes &rarr;</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
       <a href="/demo/alpine-inspectors/contact/"{% if page.url | startsWith('/demo/alpine-inspectors/contact/') %} class="is-active"{% endif %}>Contact</a>
       <a href="tel:9283159094" class="alpine-nav-phone">(928) 315-9094</a>
     </nav>
