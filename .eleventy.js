@@ -11,6 +11,7 @@ import autoCacheBuster from "eleventy-auto-cache-buster";
 import { execSync } from "child_process";
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 
 export default function (eleventyConfig) {
   // Passthrough
@@ -237,6 +238,66 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
       const minStyle = minifier.minify(mainCss);
       if (!minStyle.errors.length) fs.writeFileSync(cssFile, minStyle.styles);
       else console.warn("style.css minify errors:", minStyle.errors);
+
+      // Per-page CSS bundles. The site-wide purge above keeps any rule
+      // used on at least one page; we now run a second purge per HTML
+      // file, dropping rules that page does not actually use. Lighthouse
+      // flagged ~311 KiB of unused CSS on /results/ even after the site
+      // purge — most pages only use ~30-80 KiB of the ~450 KiB sheet.
+      try {
+        const purgedSiteCss = fs.readFileSync(cssFile, "utf8");
+        const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true })
+          .flatMap(d => d.isDirectory() ? walk(path.join(dir, d.name)) : [path.join(dir, d.name)]);
+        const htmlFiles = walk(path.resolve("./_site"))
+          .filter(p => p.endsWith(".html") && !p.includes(`${path.sep}demo${path.sep}`));
+
+        const cssDir = path.resolve("./_site/assets/css");
+        const writtenHashes = new Set();
+        let totalBytesBefore = 0;
+        let totalBytesAfter = 0;
+
+        for (const htmlPath of htmlFiles) {
+          const html = fs.readFileSync(htmlPath, "utf8");
+          totalBytesBefore += purgedSiteCss.length;
+          const pagePurge = await new PurgeCSS().purge({
+            content: [{ raw: html, extension: "html" }],
+            css: [{ raw: purgedSiteCss }],
+            defaultExtractor: (content) => content.match(/[A-Za-z0-9_:/-]+/g) || [],
+            safelist: {
+              standard: [
+                "open", "is-open", "active", "is-active", "is-loading", "is-scrolled",
+                "show", "scrolled", "expanded", "collapsed", "is-fixed", "is-hidden",
+              ],
+              deep: [
+                /\[data-theme/, /leaflet/, /tippy/, /^mark/, /^ppwd-/,
+              ],
+              keyframes: true,
+              variables: false,
+            },
+          });
+          const pageCss = pagePurge?.[0]?.css || purgedSiteCss;
+          totalBytesAfter += pageCss.length;
+          const hash = crypto.createHash("sha1").update(pageCss).digest("hex").slice(0, 10);
+          const outName = `style-${hash}.css`;
+          const outPath = path.join(cssDir, outName);
+          if (!writtenHashes.has(hash)) {
+            fs.writeFileSync(outPath, pageCss);
+            writtenHashes.add(hash);
+          }
+          // Repoint the <link rel="preload"> and <noscript> stylesheet
+          // refs from /assets/css/style.css(?v=...) to the per-page bundle.
+          const updated = html.replace(
+            /\/assets\/css\/style\.css(\?v=[A-Za-z0-9]+)?/g,
+            `/assets/css/${outName}`
+          );
+          if (updated !== html) fs.writeFileSync(htmlPath, updated);
+        }
+        const beforeKb = Math.round(totalBytesBefore / 1024);
+        const afterKb = Math.round(totalBytesAfter / 1024);
+        console.log(`[per-page-css] ${writtenHashes.size} unique bundles for ${htmlFiles.length} pages; ${beforeKb} KB -> ${afterKb} KB shipped (${Math.round(100 - afterKb/beforeKb*100)}% reduction)`);
+      } catch (e) {
+        console.warn("[per-page-css] failed:", e.message);
+      }
     } catch (e) {
       console.warn("CSS build failed:", e.message);
     }
