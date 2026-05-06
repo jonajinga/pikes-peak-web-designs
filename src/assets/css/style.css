@@ -8336,13 +8336,18 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .demo-mega-h5 {
   display: block;
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--demo-mega-accent, #0F172A);
-  margin: 0 0 0.95rem;
-  padding-bottom: 0.55rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+  /* Force a near-black for the text itself so the column header always
+     reads at 17:1+ contrast on the white panel; the brand accent shows
+     up as a 3px left-border treatment instead of as low-contrast color
+     on small uppercase type. */
+  color: #0B1220;
+  margin: 0 0 1rem;
+  padding: 0 0 0.55rem 0.6rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.18);
+  border-left: 3px solid var(--demo-mega-accent, #0F172A);
 }
 
 .demo-mega-item {
@@ -8385,16 +8390,17 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 .demo-mega-item-body { min-width: 0; display: block; }
 .demo-mega-item-title {
   display: block;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: 0.97rem;
   color: #0B1220;
-  margin-bottom: 0.18rem;
+  margin-bottom: 0.2rem;
   transition: color 140ms ease-out;
 }
 .demo-mega-item-desc {
   display: block;
-  font-size: 0.83rem;
-  color: #374151;
+  font-size: 0.84rem;
+  /* gray-800 — 12:1 contrast on white, well above WCAG AAA */
+  color: #1F2937;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -8411,16 +8417,16 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 .demo-mega-feature-eyebrow {
   display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--demo-mega-feature-eyebrow, #FFE071);
 }
 .demo-mega-feature-title {
-  font-size: 1.25rem;
+  font-size: 1.28rem;
   line-height: 1.25;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
   color: #FFFFFF;
   font-family: var(--demo-mega-feature-font, inherit);
@@ -8428,10 +8434,13 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   letter-spacing: 0.01em;
 }
 .demo-mega-feature-body {
-  font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.93rem;
+  /* Was 82% — looked washed-out against the dark gradient. 95% gives
+     near-pure white while still reading as supporting copy under the
+     full-white title above it. */
+  color: rgba(255, 255, 255, 0.95);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 .demo-mega-feature-cta {
   display: inline-flex;
