@@ -15159,11 +15159,13 @@ h1:focus-within em::after { transform: scaleX(1); }
   font-weight: 600;
   border-radius: var(--radius);
 }
-.signup-step-foot {
-  margin: 1.4rem 0 0;
+/* More specific than .signup-step-body p so the top-margin sticks. */
+.signup-step .signup-step-body p.signup-step-foot {
+  margin: 1.5rem 0 0;
   font-size: 0.86rem;
   color: var(--text-muted);
   line-height: 1.55;
+  max-width: 60ch;
 }
 @media (max-width: 640px) {
   .signup-step {
