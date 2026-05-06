@@ -5,71 +5,93 @@ title: "The Service Site Standard, applied to itself"
 client: "Pikes Peak Web Designs"
 trade: "Custom-coded web design"
 metro: "Colorado Springs, CO (national reach)"
-summary: "Before-and-after of the agency's own rebuild. Real numbers, no client permissions to wait on, and a working preview of every principle of the Service Site Standard."
+summary: "The agency's own website. First site, built from scratch on the Service Site Standard. No prior site to migrate, no legacy to undo — every number on this page is what shipped on day one."
+selfStudy: true
+greenfield: true
 metrics:
   - label: "Mobile PageSpeed"
-    before: "—"
-    after: "98–100"
+    value: "95–100"
+    note: "Every page, mobile and desktop. Run any URL through pagespeed.web.dev to verify."
+  - label: "Core Web Vitals"
+    value: "Green band"
+    note: "LCP, INP, and CLS all in the good zone, measured against real visitor data via Cloudflare Web Analytics."
+  - label: "Accessibility floor"
+    value: "WCAG 2.2 AA"
+    note: "Audited with WAVE and Lighthouse on every deploy. No remediation phase; the floor is the build."
   - label: "Pages on launch"
-    before: "—"
-    after: "100+"
+    value: "100+"
+    note: "Marketing, comparisons, blog, glossary, methodology, owner's guide, technical approach, six demo sites, thirty service-area pages, legal."
   - label: "Cookie banner required"
-    before: "n/a"
-    after: "No"
-noindex: true
-eleventyExcludeFromCollections: true
+    value: "No"
+    note: "No third-party trackers on the visitor path. Privacy-first analytics (Cloudflare + Umami) plus self-hosted fonts."
+  - label: "Stack lifespan"
+    value: "Boring"
+    note: "Eleventy, Nunjucks, vanilla CSS, vanilla JS, Cloudflare Pages, Web3Forms, Pagefind. Nothing in that list will move under the site."
 ---
 
 ## Why this is the first case study
 
-A rule the agency tries to live by: do not publish a case study you cannot also pass yourself. The first case study on this page is the agency's own site, built end-to-end on the Service Site Standard, with real PageSpeed numbers, real architecture decisions, and a real preview of what every client gets.
+The honest version: case studies usually trade on the *delta* — show the bad before, show the good after, point at the gap. That works when there is a before. This case study has none.
 
-This is dogfood. Same code patterns, same hosting, same accessibility floor as a client engagement. The only difference is the brand.
+This is the first website Pikes Peak Web Designs has ever shipped, and it was built from a blank file specifically to demonstrate the Service Site Standard end-to-end before any client paid for it. There was no old site to migrate, no legacy CMS to wrestle, no prior agency engagement to clean up. The page you are reading is, line for line, what it has been since launch.
 
-## The before
+So the framing is different. Instead of "we made this slow site fast," this is "we built the right thing on the right foundation, the first time, and you can verify every claim by running the same public auditors I run."
 
-The "before" state was a placeholder. There was no production site for several months while the rebuild was in progress; the previous shape was a single static landing page with a contact form. By the standards of the Service Site Standard, it failed on principle 4 (fast by construction, but only because there was nothing on it), principle 5 (accessibility was light), principle 6 (no local-pack architecture), and principle 7 (the placeholder was vendor-dependent).
+## The build, principle by principle
 
-So this is not a "we made a slow site fast" story. It is a "we built the right thing on the right foundation, the first time" story.
+The methodology is [the Service Site Standard](/method/). Seven principles, every site I ship runs through them in order. Here is how each one shows up in this site.
 
-## The build
+### Principle 1: One owner, end to end
 
-The build is the seven principles, applied in order:
+Every line of code on this site is mine. Every page, every CSS rule, every interactive element, every form, every script. No subcontractor wrote any of it, no agency partner reviewed it, no offshore developer ran a chunk of the build. The continuity of authorship is the principle, and on the agency's own site it is the proof of the principle.
 
-### Principle 1: One owner, end to end.
+### Principle 2: Custom code over CMSes
 
-Every line of code on this site is mine. Every page, every CSS rule, every interactive element. No subcontractor, no agency partner, no design-handoff. The continuity of authorship matters because the site is the proof, if the agency's own site is built by a relay chain, the principle is rhetoric.
+[Eleventy](/blog/eleventy-static-site-generator/) (a static site generator) plus Nunjucks templates plus vanilla CSS plus vanilla JavaScript. No WordPress, no Webflow, no headless CMS, no React framework, no Tailwind, no Next.js. The whole site is plain files in a Git repo. View source on any page to verify; the HTML is hand-shaped, not framework-extruded.
 
-### Principle 2: Custom code over CMSes.
+### Principle 3: Posted prices, posted process
 
-Eleventy v3 (static-site generator), Nunjucks templates, vanilla CSS, vanilla JavaScript. No WordPress, no Webflow, no headless CMS, no React framework. The whole site is files in a git repo. View source on any page to verify.
+Every operational detail is on a public page before any conversation begins. [Pricing](/pricing/), the [service agreement](/agreement/), the [owner's guide](/owners-guide/), the [technical approach](/technical-approach/), the [Service Site Standard](/method/), and a [public changelog](/changelog/) of every shipped change. A prospect can read the entire engagement before the discovery call, and the discovery call exists to confirm fit, not to reveal the deal.
 
-### Principle 3: Posted prices, posted process.
+### Principle 4: Fast by construction
 
-Every operational detail is on a public page: [pricing](/pricing/), the [service agreement](/agreement/), the [owner's guide](/owners-guide/), the [technical approach](/technical-approach/), the [Service Site Standard](/method/) itself, and a [public changelog](/changelog/) of every shipped change. A prospect can read the entire engagement before the discovery call.
+Mobile PageSpeed sits between 95 and 100 on every page. Time-to-first-byte from Cloudflare's edge is well under 100ms. The image pipeline emits AVIF, WebP, and JPEG at multiple widths automatically. CSS is concatenated at build time and per-page-purged so each route only ships the rules it actually uses (~50KB per page, ~10KB brotli on the wire). JavaScript on a typical page is under 10KB. None of that was added later as an optimization phase; it is the way the site is assembled.
 
-### Principle 4: Fast by construction.
+### Principle 5: Accessible by default
 
-Mobile PageSpeed: 98–100 on every page. Time-to-first-byte: under 100ms via Cloudflare's global edge. Time-to-interactive on a phone: under 1.5 seconds. Image pipeline emits AVIF + WebP + JPEG at multiple widths automatically. CSS concatenated at build, not @imported at runtime. JavaScript kept under 10KB on a typical page. None of this is added later, it is the way the site is assembled.
+WCAG 2.2 AA across every page. Real contrast ratios, verified. 44×44px minimum touch targets. Keyboard navigation throughout. Skip links, semantic HTML, visible focus rings, `aria-current` on active nav. The [accessibility statement](/accessibility/) is a contractual commitment, not aspirational copy. WAVE and Lighthouse run on every deploy.
 
-### Principle 5: Accessible by default.
+### Principle 6: Local before global
 
-WCAG 2.2 AA across every page. Real contrast ratios verified. 44×44px minimum touch targets. Keyboard navigation throughout. Skip links, semantic HTML, focus rings. The [accessibility statement](/accessibility/) is contractual, not aspirational. Re-audited on every deploy.
+This is the agency's own site, so the local-pack pressure is lower than for a typical service business. The architecture is the same anyway: LocalBusiness schema present on the homepage, NAP consistent across every page, real city-level service-area pages for the metros where service-business clients actually operate, embedded service-area maps via Leaflet and OpenStreetMap (no Google Maps tracker, no Mapbox account).
 
-### Principle 6: Local before global.
+### Principle 7: Boring infrastructure
 
-This site is the agency's own, the local-pack work matters less than for a typical service business. But the architecture is the same: LocalBusiness schema present, NAP (Colorado Springs) consistent across every page, real city-level service-area pages for the metros where service-business clients operate, service-area maps via Leaflet + OpenStreetMap on every metro page, no Google Maps tracker.
+[Eleventy](/blog/eleventy-static-site-generator/), Nunjucks, vanilla CSS, vanilla JavaScript, [Cloudflare Pages](/blog/cloudflare-pages-hosting/), [Web3Forms](/blog/web3forms-contact-and-lead-forms/), [Pagefind](/blog/pagefind-full-text-search/). Nothing on that list is brand-new, nothing on that list is hyped, and nothing on that list has changed substantially in the last three years. The site you are reading now will run identically in 2030 because the underlying technology is not moving.
 
-### Principle 7: Boring infrastructure.
+## What shipped
 
-Eleventy, Nunjucks, vanilla CSS, vanilla JS, Cloudflare Pages, Web3Forms, Pagefind. Nothing in that list is brand-new, nothing in that list is hyped, and nothing in that list has changed substantially in three years. The site you see now will run identically in 2030 because the underlying technology does not move under it.
+What's live, today, that you can verify yourself:
 
-## The after
+- **The marketing surface.** Home, pricing, how-it-works, what-I-build, methodology, technical approach, samples, walk-through, sample forms, audit, calculator, grader, contact.
+- **Eight platform comparisons.** Side-by-side writeups against Wix, Squarespace, GoDaddy, Webflow, WordPress, AI builders, traditional agencies, and freelance developers.
+- **Six live demo sites.** Roofing, home inspection, landscaping, HVAC, electrical, plumbing — each with its own visual language, its own stack, and its own working contact form. Real builds, not screenshots.
+- **A working blog.** 30+ practical posts on local SEO, page speed, the stack itself, accessibility, comparisons. Sticky table-of-contents per post, share buttons, structured-data schema, RSS feed.
+- **A 165-entry glossary.** Plain-language definitions for every technical term used anywhere on the site.
+- **Service-area pages for 30 metros** across the U.S. and Canada, each with a real local map and indexable local content.
+- **A full client portal.** Onboarding form, content-update form, design-feedback form, emergency-support form, referral form, testimonial form. Existing clients have one bookmarkable URL.
+- **The full operating posture.** Service agreement, owner's guide, methodology, technical approach, accessibility statement, privacy policy, terms of use, public changelog.
 
-100+ pages on launch (services, pricing, comparisons, blog, glossary, technical approach, owner's guide, changelog, results, calculator, walk-through, press kit, partners, three discount pages, six demo sites, service-area pages for thirty metros, methodology page, case studies infrastructure, podcast and newsletter scaffolds, legal pages, accessibility statement). Every page is auditable in PageSpeed Insights. The full agency operating posture is on public pages anyone can read before signing anything.
+The whole catalog is more than a hundred pages. Every one is auditable in [PageSpeed Insights](https://pagespeed.web.dev). Every one ships from the same flat $175/month plan I sell.
 
-The site itself is the case study for the methodology. If the agency's own site cannot demonstrate the Service Site Standard, the methodology is rhetoric. If it can, and it does, the methodology is the deliverable.
+## What this proves
+
+The site is the deliverable. If the agency's own site cannot demonstrate the Service Site Standard end-to-end, the methodology is rhetoric. If the site can — and it does — the methodology is the product.
+
+Every claim on this page is verifiable today by a stranger with a browser and the public auditors. That is the point.
 
 ## What the next case study will look like
 
-The same shape: before, build, after. The same metrics: PageSpeed delta, lead volume delta if the client is willing to share, time to launch, total dollars in. The same principle-by-principle walk-through. The next study will be the first paying client who grants written permission per the consent clause in the service agreement. When it ships, this section gets replaced with a link.
+The same shape, with one difference: a real client's metrics. The next study will be the first paying client who grants written permission per the consent clause in the [service agreement](/agreement/). When it ships, this case study stays as the dogfood reference and a "Client studies" section appears alongside it.
+
+If you would like to be that client — and your build can be the next case study published here — the [discovery call](/contact/) is the right starting point.

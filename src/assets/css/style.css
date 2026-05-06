@@ -14396,6 +14396,220 @@ h1:focus-within em::after { transform: scaleX(1); }
 .case-metric-after { color: var(--navy-900); font-weight: 600; }
 :root[data-theme="dark"] .case-metric-after { color: var(--gold-300); }
 
+/* Greenfield variant: no before/after split, just the value + a note. */
+.case-metrics--greenfield { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 720px) { .case-metrics--greenfield { grid-template-columns: 1fr; } }
+.case-metric-value {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  line-height: 1.1;
+  margin-top: 0.1rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+:root[data-theme="dark"] .case-metric-value { color: var(--gold-300); }
+.case-metric-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* Toolbar above the case study body (Print / Save as PDF) */
+.case-study-toolbar {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.btn-sm {
+  padding: 0.5rem 0.95rem;
+  font-size: 0.85rem;
+  gap: 0.4rem;
+}
+.btn-sm svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* ============================================================
+   Case studies index — card grid
+   ============================================================ */
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin: 1rem 0 3rem;
+}
+.case-study-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.75rem 1.85rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold-500);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform var(--dur), box-shadow var(--dur), border-color var(--dur);
+}
+.case-study-card:hover,
+.case-study-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px -22px rgba(10, 31, 68, 0.35);
+  border-top-color: var(--gold-400);
+  outline: none;
+}
+.case-study-card--self { border-top-color: var(--navy-700); }
+.case-study-card--self:hover { border-top-color: var(--navy-900); }
+.case-study-card-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+.case-study-card-pill {
+  display: inline-block;
+  padding: 0.18rem 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--bg-alt);
+  color: var(--navy-700);
+  border-radius: 999px;
+  border: 1px solid var(--line);
+}
+:root[data-theme="dark"] .case-study-card-pill { color: var(--gold-300); border-color: var(--line-strong); }
+.case-study-card-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+}
+.case-study-card-summary {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+.case-study-card-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  margin-top: 0.4rem;
+  border-top: 1px solid var(--line);
+}
+.case-study-card-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.case-study-card-metric-label {
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.case-study-card-metric-value {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  line-height: 1.1;
+}
+:root[data-theme="dark"] .case-study-card-metric-value { color: var(--gold-300); }
+.case-study-card-cta {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--gold-700, #8a6a25);
+  font-size: 0.9rem;
+}
+:root[data-theme="dark"] .case-study-card-cta { color: var(--gold-400); }
+
+.case-study-fallback {
+  padding: 1.75rem 2rem;
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--gold-500);
+  margin: 2.5rem 0 0;
+  font-size: 0.95rem;
+}
+.case-study-fallback p { margin: 0.5rem 0 0; }
+
+/* ============================================================
+   Case study — print stylesheet (Save as PDF)
+   ============================================================ */
+@media print {
+  .topbar, .header, .mobile-nav, .mobile-backdrop, .back-to-top,
+  .case-study-toolbar, .case-study-back, .case-study-cta,
+  .footer, .ppwd-search, .search-modal { display: none !important; }
+  body { background: #FFFFFF !important; color: #000000 !important; }
+  .page-hero, .page-hero--peak {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    padding: 1.5rem 0 1rem !important;
+    text-align: left !important;
+  }
+  .page-hero h1 { color: #000000 !important; font-size: 22pt !important; }
+  .page-hero h1 em { color: #5a3f00 !important; }
+  .page-hero p { color: #333 !important; font-size: 11pt !important; max-width: none !important; }
+  .page-hero .breadcrumb,
+  .page-hero .section-label { color: #555 !important; justify-content: flex-start !important; }
+  .page-hero .breadcrumb a { color: #333 !important; }
+  .case-study .container { max-width: none !important; padding: 0 0.5in !important; }
+  .case-metrics, .case-metrics--greenfield {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+  .case-metric {
+    padding: 0.5rem 0.75rem !important;
+    border: 1px solid #999 !important;
+    border-top: 2px solid #5a3f00 !important;
+    background: #FFF !important;
+    page-break-inside: avoid;
+  }
+  .case-metric-label { color: #555 !important; font-size: 8pt !important; }
+  .case-metric-value { color: #000 !important; font-size: 14pt !important; }
+  .case-metric-note { color: #333 !important; font-size: 9pt !important; }
+  .case-study-body { font-size: 10pt !important; line-height: 1.5 !important; }
+  .case-study-body h2 { font-size: 14pt !important; color: #000 !important; margin-top: 1rem !important; page-break-after: avoid; }
+  .case-study-body h3 { font-size: 12pt !important; color: #000 !important; page-break-after: avoid; }
+  .case-study-body a { color: #5a3f00 !important; text-decoration: underline; }
+  .case-study-body a[href^="http"]::after,
+  .case-study-body a[href^="/"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #555;
+    word-break: break-all;
+  }
+  .case-study-body p, .case-study-body li { orphans: 3; widows: 3; }
+  /* Page header on every printed page so PDF reads as a real document */
+  @page {
+    margin: 0.6in 0.6in 0.7in;
+    @bottom-center {
+      content: "Pikes Peak Web Designs — pikespeakwebdesigns.com";
+      font-family: Georgia, serif;
+      font-size: 8pt;
+      color: #777;
+    }
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: Georgia, serif;
+      font-size: 8pt;
+      color: #777;
+    }
+  }
+}
+
 /* ============================================================
    Status page — PageSpeed badge grid
    ============================================================ */

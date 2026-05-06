@@ -2,6 +2,8 @@
 layout: layouts/base.njk
 ---
 
+<article class="case-study">
+
 <section class="page-hero page-hero--peak">
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -10,6 +12,12 @@ layout: layouts/base.njk
     <span class="section-label">{{ trade }}{% if metro %} &middot; {{ metro }}{% endif %}</span>
     <h1>{{ title }}</h1>
     {% if summary %}<p>{{ summary }}</p>{% endif %}
+    <div class="case-study-toolbar" role="toolbar" aria-label="Case study actions">
+      <button type="button" class="btn btn-outline btn-sm" onclick="window.print()" aria-label="Print or save as PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print / Save as PDF
+      </button>
+    </div>
   </div>
 </section>
 
@@ -17,32 +25,37 @@ layout: layouts/base.njk
   <div class="container" style="max-width:980px">
 
     {% if metrics and metrics.length %}
-    <div class="case-metrics" aria-label="Outcome metrics">
+    <div class="case-metrics{% if greenfield %} case-metrics--greenfield{% endif %}" aria-label="Outcome metrics">
       {% for m in metrics %}
         <div class="case-metric">
           <span class="case-metric-label">{{ m.label }}</span>
-          <div class="case-metric-row">
-            <span class="case-metric-before">{{ m.before }}</span>
-            <span class="case-metric-arrow" aria-hidden="true">&rarr;</span>
-            <span class="case-metric-after">{{ m.after }}</span>
-          </div>
+          {% if greenfield or m.value %}
+            <div class="case-metric-value">{{ m.value or m.after }}</div>
+            {% if m.note %}<p class="case-metric-note">{{ m.note }}</p>{% endif %}
+          {% else %}
+            <div class="case-metric-row">
+              <span class="case-metric-before">{{ m.before }}</span>
+              <span class="case-metric-arrow" aria-hidden="true">&rarr;</span>
+              <span class="case-metric-after">{{ m.after }}</span>
+            </div>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
     {% endif %}
 
-    <div class="prose" style="margin-top:2.5rem">
+    <div class="prose case-study-body" style="margin-top:2.5rem">
       {{ content | safe }}
     </div>
 
-    <nav aria-label="Back to case studies" style="margin-top:3rem;display:flex;justify-content:center">
+    <nav aria-label="Back to case studies" class="case-study-back" style="margin-top:3rem;display:flex;justify-content:center">
       <a href="/case-studies/" class="btn btn-outline-dark">&larr; All case studies</a>
     </nav>
 
   </div>
 </section>
 
-<section class="cta-section">
+<section class="cta-section case-study-cta">
   <div class="cta-inner">
     <span class="section-label">Ready to see numbers like this on your site?</span>
     <h2>Twenty minutes is plenty.</h2>
@@ -53,3 +66,5 @@ layout: layouts/base.njk
     </div>
   </div>
 </section>
+
+</article>

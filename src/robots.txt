@@ -9,7 +9,6 @@ Disallow: /design-feedback/
 Disallow: /refer/
 Disallow: /testimonial/
 Disallow: /testimonials/
-Disallow: /case-studies/
 Disallow: /events/
 Disallow: /newsletter/
 Disallow: /podcast/
