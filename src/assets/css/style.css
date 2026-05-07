@@ -14293,16 +14293,21 @@ a { touch-action: manipulation; }
 }
 .sop-sidebar {
   position: sticky;
-  top: 5rem;
+  top: 5.5rem;
   align-self: start;
   background: var(--bg-alt);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.25rem 1rem;
+  padding: 1.5rem 1.1rem;
   font-size: 0.92rem;
-  max-height: calc(100vh - 6rem);
+  max-height: calc(100vh - 7rem);
   overflow-y: auto;
+  /* Subtle scroll-shadow when content overflows. */
+  scrollbar-width: thin;
 }
+.sop-sidebar::-webkit-scrollbar { width: 6px; }
+.sop-sidebar::-webkit-scrollbar-track { background: transparent; }
+.sop-sidebar::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
 @media (max-width: 880px) {
   .sop-sidebar { position: static; max-height: none; }
 }
@@ -14348,13 +14353,121 @@ a { touch-action: manipulation; }
   color: var(--text-muted);
   min-width: 1.6em;
 }
-.sop-content { min-width: 0; }
-.sop-content h2 { margin-top: 2.5rem; padding-top: 0; }
-.sop-content h2:first-child { margin-top: 0; }
-.sop-content h3 { margin-top: 1.75rem; }
-.sop-content h2, .sop-content h3 { color: var(--text); font-family: var(--font-display); }
-.sop-content > p, .sop-content ul, .sop-content ol { max-width: 70ch; }
+.sop-content {
+  min-width: 0;
+  /* Slightly looser leading throughout the SOP body so the operational
+     prose feels less dense. The lifecycle and marketing pages run long;
+     1.7 reads better than the site-default 1.55 at this length. */
+  line-height: 1.7;
+}
+.sop-content h2 {
+  margin-top: 3.25rem;
+  margin-bottom: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+.sop-content h2:first-child,
+.sop-content h2:first-of-type {
+  margin-top: 1.5rem;
+  padding-top: 0;
+  border-top: 0;
+}
+.sop-content h3 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.65rem;
+  font-size: 1.18rem;
+  font-weight: 700;
+}
+.sop-content h2, .sop-content h3, .sop-content h4 {
+  color: var(--text);
+  font-family: var(--font-display);
+  scroll-margin-top: 6rem;
+}
+.sop-content > p,
+.sop-content > ul,
+.sop-content > ol,
+.sop-content blockquote {
+  max-width: 72ch;
+}
+.sop-content > p { margin: 0 0 1.15rem; }
 .sop-content ul.sop-grid-list { max-width: none; }
+/* Body lists: more generous spacing between items + a softer bullet. */
+.sop-content > ul,
+.sop-content > ol {
+  margin: 0 0 1.5rem 1.25rem;
+  padding-left: 0.5rem;
+}
+.sop-content > ul li,
+.sop-content > ol li {
+  margin-bottom: 0.55rem;
+  padding-left: 0.25rem;
+}
+.sop-content > ul li::marker { color: var(--gold-600); }
+:root[data-theme="dark"] .sop-content > ul li::marker { color: var(--gold-400); }
+.sop-content > ul li:last-child,
+.sop-content > ol li:last-child { margin-bottom: 0; }
+/* Inline links within the SOP body get a subtle gold underline so the
+   many cross-references between SOPs are visually distinct from prose
+   without being noisy. */
+.sop-content p a:not(.btn),
+.sop-content li a:not(.btn) {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--gold-500);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--dur), color var(--dur);
+}
+.sop-content p a:not(.btn):hover,
+.sop-content li a:not(.btn):hover {
+  color: var(--gold-700, var(--gold-600));
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
+:root[data-theme="dark"] .sop-content p a:not(.btn),
+:root[data-theme="dark"] .sop-content li a:not(.btn) { text-decoration-color: var(--gold-400); }
+:root[data-theme="dark"] .sop-content p a:not(.btn):hover,
+:root[data-theme="dark"] .sop-content li a:not(.btn):hover { color: var(--gold-300); }
+/* Tables in SOP pages get clean grid styling — used heavily for the
+   new tools.njk role-access matrix and vendor inventory. */
+.sop-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0 1.75rem;
+  font-size: 0.93rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.sop-content thead th {
+  background: var(--bg-alt);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 2px solid var(--line);
+}
+.sop-content tbody td {
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  line-height: 1.55;
+}
+.sop-content tbody tr:last-child td { border-bottom: 0; }
+.sop-content tbody tr:nth-child(even) { background: var(--bg-alt-2, var(--bg-alt)); }
+@media (max-width: 720px) {
+  .sop-content table { font-size: 0.86rem; }
+  .sop-content thead th { padding: 0.55rem 0.65rem; font-size: 0.68rem; }
+  .sop-content tbody td { padding: 0.55rem 0.65rem; }
+}
 .sop-content code, .sop-content kbd {
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: 0.88em;
@@ -14380,29 +14493,53 @@ a { touch-action: manipulation; }
   padding: 0;
 }
 .sop-callout {
-  display: flex;
-  gap: 0.85rem;
-  padding: 1rem 1.25rem;
+  display: block;
+  padding: 1rem 1.25rem 1rem 1.5rem;
   background: var(--bg-alt);
   border-left: 4px solid var(--gold-500);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  margin: 1.25rem 0;
+  margin: 1.5rem 0;
   font-size: 0.95rem;
+  line-height: 1.6;
 }
+.sop-callout p { margin: 0 0 0.5rem; }
+.sop-callout p:last-child { margin-bottom: 0; }
 .sop-callout--warn { border-left-color: var(--danger, #A1190F); background: rgba(161, 25, 15, 0.06); }
 .sop-callout--ok   { border-left-color: var(--success, #0F6B3F); background: rgba(15, 107, 63, 0.06); }
-.sop-callout strong { display: block; margin-bottom: 0.25rem; }
+.sop-callout strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+}
+.sop-callout--warn strong { color: var(--danger, #A1190F); }
+.sop-callout--ok strong   { color: var(--success, #0F6B3F); }
+:root[data-theme="dark"] .sop-callout strong { color: var(--gold-400); }
+:root[data-theme="dark"] .sop-callout--warn strong { color: #FCA5A5; }
+:root[data-theme="dark"] .sop-callout--ok strong { color: #86EFAC; }
+
 .sop-meta {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin: 1.25rem 0 2rem;
-  padding: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem 1.5rem;
+  margin: 0.5rem 0 2.5rem;
+  padding: 1.5rem 1.75rem;
   background: var(--bg-alt);
   border: 1px solid var(--line);
+  border-top: 3px solid var(--gold-500);
   border-radius: var(--radius);
+  position: relative;
 }
-.sop-meta div { font-size: 0.92rem; }
+:root[data-theme="dark"] .sop-meta { border-top-color: var(--gold-400); }
+.sop-meta div {
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--text);
+}
 .sop-meta strong {
   display: block;
   font-family: var(--font-body);
@@ -14411,34 +14548,41 @@ a { touch-action: manipulation; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold-600);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.45rem;
 }
 :root[data-theme="dark"] .sop-meta strong { color: var(--gold-400); }
+
 .sop-checklist {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0.5rem 0 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
-  max-width: 70ch;
+  gap: 0.7rem;
+  max-width: 72ch;
 }
 .sop-checklist li {
   position: relative;
-  padding-left: 2rem;
-  line-height: 1.55;
+  padding: 0.15rem 0 0.15rem 2.1rem;
+  line-height: 1.6;
+  transition: padding-left var(--dur);
 }
 .sop-checklist li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.18rem;
-  width: 1.25rem;
-  height: 1.25rem;
+  top: 0.32rem;
+  width: 1.2rem;
+  height: 1.2rem;
   border: 2px solid var(--line-strong);
   border-radius: 4px;
   background: var(--surface);
+  transition: border-color var(--dur), background var(--dur);
 }
+.sop-checklist li:hover::before {
+  border-color: var(--gold-500);
+}
+:root[data-theme="dark"] .sop-checklist li:hover::before { border-color: var(--gold-400); }
 .sop-prevnext {
   display: flex;
   justify-content: space-between;
@@ -14469,24 +14613,35 @@ a { touch-action: manipulation; }
   background: var(--bg-alt);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
-  margin: 1.25rem 0;
+  padding: 1.4rem 1.6rem 1.25rem;
+  margin: 1.5rem 0;
+  transition: border-color var(--dur), box-shadow var(--dur);
 }
+.sop-template:hover {
+  border-color: var(--gold-500);
+  box-shadow: 0 4px 14px rgba(10, 31, 68, 0.06);
+}
+:root[data-theme="dark"] .sop-template:hover { border-color: var(--gold-400); }
 .sop-template-label {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold-600);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--line);
 }
 :root[data-theme="dark"] .sop-template-label { color: var(--gold-400); }
 .sop-template pre {
   margin: 0;
   background: var(--surface);
+  border: 1px solid var(--line);
   white-space: pre-wrap;
   word-break: break-word;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 /* Wide prose: keeps the container roomy for headings, lists, code, but
