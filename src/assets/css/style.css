@@ -14393,22 +14393,24 @@ a { touch-action: manipulation; }
   max-width: 72ch;
 }
 .sop-content > p { margin: 0 0 1.15rem; }
-.sop-content ul.sop-grid-list { max-width: none; }
-/* Body lists: more generous spacing between items + a softer bullet. */
-.sop-content > ul,
-.sop-content > ol {
+/* Body lists: more generous spacing between items + a softer bullet.
+   Scoped to plain (un-classed) lists so class-marked lists like
+   .sop-checklist keep their own padding/margin/marker rules without a
+   specificity fight. */
+.sop-content > ul:not([class]),
+.sop-content > ol:not([class]) {
   margin: 0 0 1.5rem 1.25rem;
   padding-left: 0.5rem;
 }
-.sop-content > ul li,
-.sop-content > ol li {
+.sop-content > ul:not([class]) li,
+.sop-content > ol:not([class]) li {
   margin-bottom: 0.55rem;
   padding-left: 0.25rem;
 }
-.sop-content > ul li::marker { color: var(--gold-600); }
-:root[data-theme="dark"] .sop-content > ul li::marker { color: var(--gold-400); }
-.sop-content > ul li:last-child,
-.sop-content > ol li:last-child { margin-bottom: 0; }
+.sop-content > ul:not([class]) li::marker { color: var(--gold-600); }
+:root[data-theme="dark"] .sop-content > ul:not([class]) li::marker { color: var(--gold-400); }
+.sop-content > ul:not([class]) li:last-child,
+.sop-content > ol:not([class]) li:last-child { margin-bottom: 0; }
 /* Inline links within the SOP body get a subtle gold underline so the
    many cross-references between SOPs are visually distinct from prose
    without being noisy. */
