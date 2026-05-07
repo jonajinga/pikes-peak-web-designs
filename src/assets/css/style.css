@@ -8154,7 +8154,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 .demo-menu-toggle svg { width: 22px; height: 22px; }
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
   .demo-nav:not(.demo-nav--mobile) { display: none; }
   .demo-menu-toggle { display: inline-flex; }
   .demo-nav-phone { display: none; }
@@ -10493,7 +10493,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   color: var(--al-ink);
   border: 1px solid var(--al-line);
 }
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
   .alpine-nav:not(.alpine-nav--mobile) { display: none; }
   .alpine-menu-toggle { display: inline-flex; }
 }
@@ -11240,7 +11240,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 .meadow-nav-cta:hover { background: var(--me-terracotta-deep) !important; color: var(--me-cream) !important; border-bottom: 0 !important; }
 .meadow-menu-toggle { display: none; width: 44px; height: 44px; border-radius: var(--me-radius-sm); border: 1px solid var(--me-line); color: var(--me-charcoal); align-items: center; justify-content: center; }
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
   .meadow-nav:not(.meadow-nav--mobile) { display: none; }
   .meadow-menu-toggle { display: inline-flex; }
 }
@@ -11848,7 +11848,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 .summit-nav-cta:hover { background: var(--su-navy-deep); color: #FFFFFF !important; text-decoration: none !important; }
 .summit-menu-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--su-ink); border: 1px solid var(--su-line); border-radius: 4px; }
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
   .summit-nav:not(.summit-nav--mobile) { display: none; }
   .summit-menu-toggle { display: inline-flex; }
 }
@@ -12498,7 +12498,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   background: var(--lu-black); color: var(--lu-yellow);
   align-items: center; justify-content: center;
 }
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
   .lumen-nav:not(.lumen-nav--mobile) { display: none; }
   .lumen-menu-toggle { display: inline-flex; }
 }
@@ -13062,7 +13062,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
 }
 .clearwater-nav-cta:hover { background: var(--cw-ink); color: #FFFFFF !important; text-decoration: none !important; }
 .clearwater-menu-toggle { display: none; width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--cw-aqua); color: var(--cw-navy-deep); align-items: center; justify-content: center; background: transparent; }
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
   .clearwater-nav:not(.clearwater-nav--mobile) { display: none; }
   .clearwater-menu-toggle { display: inline-flex; }
 }
