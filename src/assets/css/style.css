@@ -10429,7 +10429,16 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   letter-spacing: -0.01em;
   line-height: 1;
   white-space: nowrap;
+  text-decoration: none;
 }
+/* The global `.alpine-site a:hover { text-decoration: underline }` rule
+   would otherwise underline the entire logo block (including the
+   "Certified · Colorado Springs" eyebrow underneath) on hover. Lock it
+   off here. */
+.alpine-site a.alpine-logo,
+.alpine-site a.alpine-logo:hover,
+.alpine-site a.alpine-logo:focus,
+.alpine-site a.alpine-logo:visited { text-decoration: none; }
 .alpine-logo em {
   display: block;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
