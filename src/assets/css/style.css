@@ -1817,7 +1817,7 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   .theme-switch-btn svg { width: 13px; height: 13px; }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 2000px) {
   .nav-links { display: none; }
   .mega-menu { display: none; }
 }
