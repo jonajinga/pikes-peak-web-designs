@@ -16148,13 +16148,20 @@ h1:focus-within em::after { transform: scaleX(1); }
   padding-top: 0.1em;
 }
 :root[data-theme="dark"] .planner-q-week { color: var(--gold-300); }
+/* The <li> has 3 children (.planner-q-week, <strong>, <p>) but only 2
+   grid columns. Auto-placement would drop <p> into column 1 row 2,
+   inheriting the narrow 5.25rem label-column width. Force <strong>
+   and <p> to share column 2 so they stack under the focus heading
+   while the label sits to their left. */
 .planner-q-rhythm strong {
   display: block;
+  grid-column: 2;
   font-size: 1rem;
   margin-bottom: 0.15rem;
   color: var(--text);
 }
 .planner-q-rhythm p {
+  grid-column: 2;
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -16401,52 +16408,37 @@ h1:focus-within em::after { transform: scaleX(1); }
 :root[data-theme="dark"] .planner-week-budget strong { color: var(--gold-300); }
 .planner-plus { color: var(--text-soft); font-weight: 700; }
 
-/* ----------------------- DAY VIEW ----------------------- */
+/* ----------------------- DAY VIEW -----------------------
+   9 half-hour rows from 9:00 to 1:30. Blocks span the right number
+   of rows via inline custom properties (--row, --span). Grid rows
+   give percentage-positioning for free without the auto-height
+   containing-block trap that made `position: absolute; height: %`
+   collapse to zero in the previous version. */
 .planner-day-timeline {
-  position: relative;
-  display: grid;
-  grid-template-columns: 4rem 1fr;
-  gap: 1rem;
   background: var(--planner-surface);
   border: 1px solid var(--planner-line);
   border-radius: var(--radius);
   padding: 1.25rem 1.25rem 1.5rem;
 }
-.planner-day-rule {
-  position: relative;
-  border-right: 1px solid var(--planner-line);
-  min-height: 28rem;
-}
-.planner-day-rule span {
-  position: absolute;
-  right: 0.6rem;
-  transform: translateY(-50%);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-  background: var(--planner-surface);
-  padding: 0 0.25rem;
-}
 .planner-day-blocks {
-  position: relative;
   list-style: none;
   margin: 0;
   padding: 0;
-  min-height: 28rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(9, minmax(3.5rem, auto));
+  gap: 0.4rem;
 }
 .planner-day-block {
-  position: absolute;
-  inset: var(--start) 0 auto 0;
-  height: var(--span);
-  padding: 0.6rem 0.85rem 0.7rem;
+  grid-column: 1;
+  grid-row: var(--row) / span var(--span);
+  padding: 0.7rem 0.95rem 0.85rem;
   border-radius: var(--radius);
   border-left: 3px solid var(--planner-line-strong);
   background: var(--planner-surface-2);
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  overflow: hidden;
+  gap: 0.3rem;
 }
 .planner-day-block time {
   font-size: 0.74rem;
@@ -16474,14 +16466,15 @@ h1:focus-within em::after { transform: scaleX(1); }
 .planner-day-block.planner-block--comms  { border-left-color: var(--navy-600); background: linear-gradient(90deg, var(--planner-q2) 0%, var(--planner-surface-2) 50%); }
 
 @media (max-width: 768px) {
-  .planner-day-timeline { grid-template-columns: 1fr; padding: 1rem; }
-  .planner-day-rule { display: none; }
-  .planner-day-blocks { min-height: 0; }
-  .planner-day-block {
-    position: static;
-    height: auto;
-    margin-bottom: 0.6rem;
+  .planner-day-timeline { padding: 1rem; }
+  /* On narrow screens, drop the proportional row sizing so each block
+     simply flows in document order with content-driven height. The
+     visual ordering still reads top-to-bottom by time. */
+  .planner-day-blocks {
+    grid-template-rows: none;
+    grid-auto-rows: auto;
   }
+  .planner-day-block { grid-row: auto; }
 }
 
 .planner-day-tally {

@@ -302,39 +302,28 @@ sopGoal: "The visual calendar — five views over the same 21-hour week. Year fo
     </header>
 
     <div class="planner-day-timeline">
-      <div class="planner-day-rule" aria-hidden="true">
-        <span style="top: 0%">9:00</span>
-        <span style="top: 11.1%">9:30</span>
-        <span style="top: 33.3%">10:30</span>
-        <span style="top: 55.5%">11:30</span>
-        <span style="top: 66.6%">12:00</span>
-        <span style="top: 77.7%">12:30</span>
-        <span style="top: 88.8%">1:00</span>
-        <span style="top: 100%">1:30</span>
-      </div>
-
       <ol class="planner-day-blocks">
-        <li class="planner-day-block planner-block--triage" style="--start: 0%; --span: 11.1%">
+        <li class="planner-day-block planner-block--triage" style="--row: 1; --span: 1">
           <time>9:00 &ndash; 9:30 &middot; 30 min</time>
           <strong>Inbox triage</strong>
           <p>Reply to anything urgent. Snooze thoughtful responses to the comms slot at 1:00. Archive the rest. Hard cap at 30 minutes; if I'm still in email at 9:35, something is wrong.</p>
         </li>
-        <li class="planner-day-block planner-block--deep" style="--start: 11.1%; --span: 55.5%">
+        <li class="planner-day-block planner-block--deep" style="--row: 2; --span: 5">
           <time>9:30 &ndash; 12:00 &middot; 2.5 hours</time>
           <strong>Deep work, part 1 &middot; the load-bearing block</strong>
           <p>The single most valuable block of the day. Whatever the highest-leverage thing is &mdash; client build, content draft, outreach batch &mdash; owns it. Email closed, phone in another room, no ad-hoc meetings, no context-switching. Protect it like a load-bearing wall.</p>
         </li>
-        <li class="planner-day-block planner-block--break" style="--start: 66.6%; --span: 11.1%">
+        <li class="planner-day-block planner-block--break" style="--row: 7; --span: 1">
           <time>12:00 &ndash; 12:30 &middot; 30 min, off-clock</time>
           <strong>Real break</strong>
           <p>Lunch and a walk away from the screen. Phone in pocket, no podcasts, just time to actually think. Most blog post angles I write come out of this walk &mdash; not an accident.</p>
         </li>
-        <li class="planner-day-block planner-block--deep" style="--start: 77.7%; --span: 11.1%">
+        <li class="planner-day-block planner-block--deep" style="--row: 8; --span: 1">
           <time>12:30 &ndash; 1:00 &middot; 30 min</time>
           <strong>Deep work, part 2</strong>
           <p>Continue the morning's task to a clean stopping point, or pick up the day's secondary deep task. Same rules as part 1: no email, no ad-hoc meetings.</p>
         </li>
-        <li class="planner-day-block planner-block--comms" style="--start: 88.8%; --span: 11.1%">
+        <li class="planner-day-block planner-block--comms" style="--row: 9; --span: 1">
           <time>1:00 &ndash; 1:30 &middot; 30 min</time>
           <strong>Comms + shutdown</strong>
           <p>Reply to DMs, social comments, slower-thread emails. Scheduled discovery calls land here when booked. Last 10 minutes: mark today done, pull tomorrow's top three into a written list, close every browser tab. The shutdown is what makes tomorrow's 9:30 block possible.</p>
