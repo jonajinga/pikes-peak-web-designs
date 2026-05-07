@@ -167,6 +167,44 @@ layout: layouts/base.njk
 
         <h2>How I work with {{ area.city }} businesses.</h2>
         <p>I am Jon. Based in Colorado Springs, CO, and I work with service businesses across the U.S. and Canada entirely remotely. No awkward in-person meetings, no travel charges, no geographic limitations. Most sites are live within 2&ndash;3 weeks of my first call. The same person who picks up your call is the one writing your code.</p>
+
+        {% if area.localContext %}
+        <h2>What's specific to {{ area.city }}.</h2>
+        <p>{{ area.localContext }}</p>
+        {% endif %}
+
+        {% if area.localFaq and area.localFaq.length %}
+        <h2>Common questions about web design in {{ area.city }}.</h2>
+        <div class="faq-list" style="margin-top:1.25rem">
+          {% for item in area.localFaq %}
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false"><span>{{ item.q }}</span> <span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">{{ item.a }}</div></div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if area.relatedPosts and area.relatedPosts.length %}
+        <h2>More on local SEO for {{ area.city }}.</h2>
+        <div class="post-list" style="margin-top:1.25rem">
+          {% for slug in area.relatedPosts %}
+            {% set targetUrl = "/blog/" + slug + "/" %}
+            {% set match = false %}
+            {% for post in collections.posts %}
+              {% if post.url == targetUrl %}{% set match = post %}{% endif %}
+            {% endfor %}
+            {% if match %}
+            <article class="post-card">
+              <div class="post-meta">{{ match.data.label or "Guide" }}</div>
+              <h3><a href="{{ match.url }}">{{ match.data.title }}</a></h3>
+              <p>{{ match.data.description }}</p>
+              <a href="{{ match.url }}" class="post-link">Read article</a>
+            </article>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
       </div>
 
       <aside style="position:sticky;top:100px;display:flex;flex-direction:column;gap:1rem">
