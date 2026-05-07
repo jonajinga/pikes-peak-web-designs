@@ -8620,46 +8620,133 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
     background: #FFFFFF !important;
     color: #1a1a1a !important;
   }
+
+  /* ----- Hide all non-content chrome on print ----- */
+  /* (1) Live-demo banner, brand header, mobile-nav, footer, page TOC,
+        breadcrumbs — the standard demo-site chrome.  */
   .demo-banner, .alpine-banner, .summit-banner, .lumen-banner, .clearwater-banner, .meadow-banner,
   .demo-header, .alpine-header, .summit-header, .lumen-header, .clearwater-header, .meadow-header,
   .demo-mobile-nav, .alpine-mobile-nav, .summit-mobile-nav, .lumen-mobile-nav, .clearwater-mobile-nav, .meadow-mobile-nav,
   .demo-footer, .alpine-footer, .summit-footer, .lumen-footer, .clearwater-footer, .meadow-footer,
   .demo-post-toc,
+  .alpine-breadcrumb, .summit-breadcrumb, .lumen-breadcrumb, .clearwater-breadcrumb, .meadow-breadcrumb, .demo-breadcrumb,
+  /* (2) Share-button rail under the article.  */
+  .demo-post-share, .demo-post-share-buttons,
+  /* (3) Inline mid-article CTA boxes / feature blocks ("Schedule an
+        inspection", "Request estimate", etc.) — they're calls-to-action
+        the printed reader can't act on.  */
+  .alpine-blog-article .alpine-feature, .alpine-blog-body + .alpine-feature,
+  .demo-blog-body .alpine-feature, .alpine-blog-body .alpine-feature,
+  .summit-cta, .clearwater-feature, .meadow-feature, .lumen-feature,
+  /* (4) "Next / Prev article" navigation strip.  */
+  nav[aria-label="More articles"],
+  /* (5) "Keep reading" / "Related" / "More posts" sections at the end
+        of a post — most demos use a section--cream-deep variant for
+        this. Hide every per-demo flavor.  */
   .demo-blog-related, .alpine-blog-related, .summit-blog-related, .lumen-blog-related, .clearwater-blog-related, .meadow-blog-related,
-  .alpine-breadcrumb, .summit-breadcrumb, .lumen-breadcrumb, .clearwater-breadcrumb, .meadow-breadcrumb, .demo-breadcrumb {
+  .alpine-blog-article .alpine-section--cream-deep,
+  .summit-blog-article .summit-section--pale,
+  .summit-blog-article .summit-section--navy,
+  .lumen-blog-article .lumen-section--bone,
+  .clearwater-blog-article .clearwater-section--cream,
+  .meadow-blog-article .meadow-section--cream-deep,
+  /* (6) "Back to all field notes" / "Back to blog" trailing link.  */
+  .alpine-blog-body p:last-child a[href*="/blog/"],
+  /* (7) The print-/share-modal popover (if it ever appears) and any
+        copy-link toast.  */
+  .ppwd-share-modal, .ppwd-search, .search-modal, .back-to-top {
     display: none !important;
   }
+
+  /* ----- Page hero: keep title + eyebrow only, drop all background ----- */
   .demo-page-hero, .alpine-page-hero, .summit-page-hero, .lumen-page-hero, .clearwater-page-hero, .meadow-page-hero {
     background: #FFFFFF !important;
-    padding: 0 0 0.25in !important;
-    border-bottom: 1px solid #999 !important;
-    margin-bottom: 0.3in !important;
+    padding: 0 0 0.18in !important;
+    border-bottom: 0 !important;
+    margin: 0 0 0.25in !important;
   }
+  /* The eyebrow ("For sellers" etc.) above the title — render as a
+     small uppercase tag in print. */
+  .alpine-eyebrow, .summit-eyebrow, .lumen-eyebrow, .clearwater-eyebrow, .meadow-eyebrow, .demo-eyebrow {
+    display: inline-block !important;
+    font-family: Georgia, serif !important;
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #555 !important;
+    margin: 0 0 0.08in !important;
+    padding: 0 !important;
+    background: none !important;
+  }
+
+  /* ----- Article body: 10.5pt serif, 1.55 leading, full-width ----- */
   .demo-blog-body, .alpine-blog-body, .summit-blog-body, .lumen-blog-body, .clearwater-blog-body, .meadow-blog-body {
     font-family: Georgia, 'Source Serif 4', 'Source Serif Pro', serif !important;
     font-size: 10.5pt !important;
     line-height: 1.55 !important;
     color: #1a1a1a !important;
     max-width: none !important;
+    /* Drop the 2-column grid the desktop layout uses (TOC + body) so
+       the body reflows to full page width. */
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
   }
+  /* Normalize the section + container wrappers so margins don't compound. */
+  .alpine-blog-article .alpine-section,
+  .summit-blog-article .summit-section,
+  .lumen-blog-article .lumen-section,
+  .clearwater-blog-article .clearwater-section,
+  .meadow-blog-article .meadow-section,
+  .demo-blog-article .demo-section {
+    padding: 0 !important;
+    background: #FFFFFF !important;
+  }
+  .alpine-container, .summit-container, .lumen-container, .clearwater-container, .meadow-container, .demo-container,
+  .alpine-container--narrow, .summit-container--narrow, .lumen-container--narrow, .clearwater-container--narrow, .meadow-container--narrow, .demo-container--narrow {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  /* The 2-col grid (TOC + body) collapses to 1-col since TOC is hidden. */
+  .alpine-blog-body, .summit-blog-body, .lumen-blog-body, .clearwater-blog-body, .meadow-blog-body, .demo-blog-body {
+    display: block !important;
+  }
+  /* Beat any inline grid-template-columns on the post wrapper. */
+  .alpine-blog-article div[style*="grid-template-columns"],
+  .summit-blog-article div[style*="grid-template-columns"],
+  .lumen-blog-article div[style*="grid-template-columns"],
+  .clearwater-blog-article div[style*="grid-template-columns"],
+  .meadow-blog-article div[style*="grid-template-columns"],
+  .demo-blog-article div[style*="grid-template-columns"] {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+  }
+
   .demo-blog-body h1, .alpine-blog-body h1, .summit-blog-body h1, .lumen-blog-body h1, .clearwater-blog-body h1, .meadow-blog-body h1,
   .demo-page-hero h1, .alpine-page-hero h1, .summit-page-hero h1, .lumen-page-hero h1, .clearwater-page-hero h1, .meadow-page-hero h1 {
     font-family: Georgia, serif !important;
-    font-size: 18pt !important;
+    font-size: 22pt !important;
+    font-weight: 700 !important;
     color: #000 !important;
     margin: 0 0 0.15in !important;
+    line-height: 1.18 !important;
+    text-wrap: balance;
     page-break-after: avoid;
   }
   .demo-blog-body h2, .alpine-blog-body h2, .summit-blog-body h2, .lumen-blog-body h2, .clearwater-blog-body h2, .meadow-blog-body h2 {
     font-family: Georgia, serif !important;
     font-size: 14pt !important;
+    font-weight: 700 !important;
     color: #000 !important;
     margin: 0.35in 0 0.1in !important;
+    line-height: 1.28 !important;
     page-break-after: avoid;
   }
   .demo-blog-body h3, .alpine-blog-body h3, .summit-blog-body h3, .lumen-blog-body h3, .clearwater-blog-body h3, .meadow-blog-body h3 {
     font-family: Georgia, serif !important;
     font-size: 12pt !important;
+    font-weight: 700 !important;
     color: #000 !important;
     margin: 0.22in 0 0.08in !important;
     page-break-after: avoid;
@@ -8669,6 +8756,7 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
   .demo-blog-body ol, .alpine-blog-body ol, .summit-blog-body ol, .lumen-blog-body ol, .clearwater-blog-body ol, .meadow-blog-body ol { margin: 0 0 0.18in 0.3in !important; padding: 0 !important; }
   .demo-blog-body li, .alpine-blog-body li, .summit-blog-body li, .lumen-blog-body li, .clearwater-blog-body li, .meadow-blog-body li { margin: 0 0 0.06in !important; }
   .demo-blog-body strong, .alpine-blog-body strong, .summit-blog-body strong, .lumen-blog-body strong, .clearwater-blog-body strong, .meadow-blog-body strong { font-weight: 700; color: #000 !important; }
+  .demo-blog-body em, .alpine-blog-body em, .summit-blog-body em, .lumen-blog-body em, .clearwater-blog-body em, .meadow-blog-body em { font-style: italic; color: #000 !important; }
   .demo-blog-body a, .alpine-blog-body a, .summit-blog-body a, .lumen-blog-body a, .clearwater-blog-body a, .meadow-blog-body a {
     color: #000 !important;
     text-decoration: underline !important;
@@ -8679,23 +8767,54 @@ a.portal-card.portal-card--urgent:hover .portal-arrow { color: var(--danger); }
     color: #555;
     word-break: break-all;
   }
-  .demo-blog-body .alpine-feature, .demo-blog-body .summit-cta, .demo-blog-body .lumen-feature, .demo-blog-body .clearwater-feature, .demo-blog-body .meadow-feature,
-  .alpine-blog-body .alpine-feature, .summit-blog-body .summit-cta, .lumen-blog-body .lumen-feature, .clearwater-blog-body .clearwater-feature, .meadow-blog-body .meadow-feature {
-    display: none !important;
+  .demo-blog-body blockquote, .alpine-blog-body blockquote, .summit-blog-body blockquote, .lumen-blog-body blockquote, .clearwater-blog-body blockquote, .meadow-blog-body blockquote {
+    margin: 0.18in 0 !important;
+    padding: 0 0 0 0.25in !important;
+    border-left: 2px solid #555 !important;
+    background: transparent !important;
+    color: #333 !important;
+    font-style: italic;
   }
+  .demo-blog-body hr, .alpine-blog-body hr, .summit-blog-body hr, .lumen-blog-body hr, .clearwater-blog-body hr, .meadow-blog-body hr {
+    border: 0 !important;
+    border-top: 1px solid #ccc !important;
+    margin: 0.25in 0 !important;
+  }
+
+  /* ----- Page chrome: 0.7in margins, brand banner top + page numbers ----- */
+  /* @top-center renders on every page as the running header. The path
+     is shown right-aligned so the printed reader has a real URL.
+     @bottom-left and @bottom-right form the running footer. */
   @page {
-    margin: 0.6in 0.6in 0.7in;
-    @bottom-center {
-      content: "Pikes Peak Web Designs — pikespeakwebdesigns.com";
+    margin: 0.85in 0.7in 0.85in;
+    @top-left {
+      content: "Pikes Peak Web Designs";
+      font-family: Georgia, serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #555;
+      margin-bottom: 0.2in;
+      vertical-align: top;
+    }
+    @top-right {
+      content: "pikespeakwebdesigns.com";
+      font-family: Georgia, serif;
+      font-size: 8.5pt;
+      color: #555;
+      margin-bottom: 0.2in;
+      vertical-align: top;
+    }
+    @bottom-left {
+      content: "Printed " counter(page) " / " counter(pages);
       font-family: Georgia, serif;
       font-size: 8pt;
-      color: #777;
+      color: #999;
     }
     @bottom-right {
-      content: "Page " counter(page) " of " counter(pages);
+      content: "Pikes Peak Web Designs \2014  pikespeakwebdesigns.com";
       font-family: Georgia, serif;
       font-size: 8pt;
-      color: #777;
+      color: #999;
     }
   }
 }
