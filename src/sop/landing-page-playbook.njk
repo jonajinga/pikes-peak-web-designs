@@ -47,7 +47,7 @@ sopGoal: "Ship a focused, conversion-tuned landing page in under 4 hours when a 
 <ul>
   <li>UTM convention: <code>utm_source=[channel]&amp;utm_medium=[type]&amp;utm_campaign=[slug]&amp;utm_content=[creative]</code>.</li>
   <li>Cloudflare + Umami event tracking on the form-submit (page-load on the thank-you page is the conversion event).</li>
-  <li>If paid ads: configure the conversion event in Google Ads / Meta tied to the thank-you-page load.</li>
+  <li>If a partner is driving the traffic: confirm with them which UTM source value they will use so the inbound resolves cleanly in the dashboard.</li>
   <li>Log the campaign in <code>_data/events.js</code> with start + end dates.</li>
 </ul>
 
@@ -78,7 +78,7 @@ sopGoal: "Ship a focused, conversion-tuned landing page in under 4 hours when a 
 <h2>Steps to ship a new landing page</h2>
 <ul class="sop-checklist">
   <li>Confirm the campaign brief: audience, headline, offer, CTA, expiry date.</li>
-  <li>Create the page in <code>src/events/&lt;slug&gt;.njk</code> (for events) or <code>src/lp/&lt;slug&gt;.njk</code> (for paid-ads/partner).</li>
+  <li>Create the page in <code>src/events/&lt;slug&gt;.njk</code> (for events) or <code>src/lp/&lt;slug&gt;.njk</code> (for partner / referral campaigns).</li>
   <li>Compose body using the standard structure. Reuse the existing components (hero, trust strip, FAQ accordion).</li>
   <li>Wire the form: fields, hidden UTMs, Web3Forms key, unique subject line, redirect to thank-you page.</li>
   <li>Build a campaign-specific thank-you page if the messaging differs from the standard one.</li>

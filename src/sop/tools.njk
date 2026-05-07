@@ -139,3 +139,158 @@ sopGoal: "The full stack we use, where credentials live, who has access. One sou
   <li>SSH keys (rotate annually)</li>
 </ul>
 <p>If a credential is suspected compromised: rotate same day. Don't wait for the schedule.</p>
+
+<h2>Per-role access matrix</h2>
+<p>Who gets access to what. Rows are tools; columns are the four standard roles. Anything not listed is owner-only by default.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool / system</th>
+      <th>Owner (Jon)</th>
+      <th>Trusted freelancer</th>
+      <th>Client</th>
+      <th>Read-only auditor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1Password</td><td>Full</td><td>Scoped vaults only</td><td>None</td><td>None</td></tr>
+    <tr><td>GitHub org (active repos)</td><td>Owner</td><td>Write on assigned repos</td><td>Read on their own repo (on request)</td><td>None</td></tr>
+    <tr><td>Cloudflare Pages</td><td>Owner</td><td>Project-scoped editor</td><td>None (their domain registrar is theirs)</td><td>None</td></tr>
+    <tr><td>Cloudflare DNS (per client)</td><td>Owner</td><td>None</td><td>Read on their own zone (on request)</td><td>None</td></tr>
+    <tr><td>Domain registrar</td><td>Owner of agency domains; co-managed for client domains held under our account</td><td>None</td><td>Owner of their own domains</td><td>None</td></tr>
+    <tr><td>Web3Forms</td><td>Owner</td><td>None</td><td>None (data forwarded to their email)</td><td>None</td></tr>
+    <tr><td>Cloudflare Web Analytics</td><td>Owner</td><td>Per-property read</td><td>Per-property read</td><td>Read</td></tr>
+    <tr><td>Umami</td><td>Owner</td><td>Read</td><td>Read on their own property</td><td>Read</td></tr>
+    <tr><td>Google Search Console (per client)</td><td>Owner of property</td><td>None</td><td>Owner of their own property; I'm a delegated user</td><td>None</td></tr>
+    <tr><td>Google Drive (agency operations)</td><td>Owner</td><td>Per-folder editor</td><td>None</td><td>Per-folder reader on financials</td></tr>
+    <tr><td>Google Drive (per-client folders)</td><td>Owner</td><td>Editor while engaged on the project</td><td>Editor on their own folder; Owner on offboarding</td><td>None</td></tr>
+    <tr><td>Stripe</td><td>Full</td><td>None</td><td>None</td><td>None</td></tr>
+    <tr><td>Buffer / scheduling tool</td><td>Full</td><td>None</td><td>None</td><td>None</td></tr>
+    <tr><td>Documenso</td><td>Full</td><td>None</td><td>Recipient only</td><td>None</td></tr>
+    <tr><td>Build pipeline (Eleventy local + CI)</td><td>Full</td><td>Full</td><td>None</td><td>None</td></tr>
+  </tbody>
+</table>
+
+<h2>Credential-handling protocol</h2>
+<p>1Password is the single source of truth for every credential the agency touches. The protocol is meant to be boring; boring is what survives.</p>
+
+<ul>
+  <li><strong>Vault structure.</strong> Three top-level vaults: <em>Personal</em> (Jon-only, my own non-agency credentials), <em>Agency</em> (shared with anyone on the team for shared agency tools: GitHub org, Cloudflare account, Stripe), <em>Per-client</em> (one vault per active monthly client; access granted to whoever is working on that client and revoked when the engagement ends or the freelancer rolls off).</li>
+  <li><strong>Rotation cadence.</strong> Shared credentials in the Agency vault rotate every 90 days. Per-person credentials (a freelancer's GitHub token, their Cloudflare API key) rotate on offboarding, not on a calendar. The semi-annual full audit (Jan + Jul) is a backstop for anything missed.</li>
+  <li><strong>Never-in-Slack rule.</strong> No credential ever travels through Slack, Discord, email body, or any DM. Sharing happens via 1Password's "share item" flow, which generates a single-use, time-limited link. If a tool requires emailing a credential as part of its onboarding, that credential gets rotated within 24 hours of the tool accepting it.</li>
+  <li><strong>Access by least privilege.</strong> A freelancer who only needs to touch one client gets access to that client's vault and the Agency vault. They do NOT get access to other client vaults, even if it would be convenient. Convenience is not a security argument.</li>
+  <li><strong>2FA / MFA mandatory.</strong> Every tool that supports 2FA has it enabled, with the second factor stored in 1Password's TOTP feature (not in a separate Google Authenticator on a single phone). Hardware keys (YubiKey) for the highest-stakes accounts: GitHub, Cloudflare, registrar, 1Password itself.</li>
+  <li><strong>Recovery codes printed.</strong> The 1Password recovery code, the YubiKey backup codes, and the registrar emergency recovery process are all printed on paper, sealed in an envelope, and stored in a fireproof box. Digital-only recovery is a single point of failure.</li>
+</ul>
+
+<h2>Per-tool client-facing vs. owner-only access</h2>
+<p>A common question: which tools does a client get a login to, and which are mine alone? The defaults below are not negotiable; they protect both parties.</p>
+
+<p><strong>Tools the client always has direct ownership of (their own login, their own seat):</strong></p>
+<ul>
+  <li>Domain registrar (their domain, their account &mdash; I never own a client's primary domain)</li>
+  <li>Google Business Profile (the client's, claimed by them, I'm a manager at most)</li>
+  <li>Their email host (Google Workspace, Fastmail, whatever)</li>
+  <li>Their social media accounts (LinkedIn, Instagram, etc.)</li>
+  <li>Stripe (if I'm building them a Stripe-powered checkout, the Stripe account is theirs from day one)</li>
+</ul>
+
+<p><strong>Tools the client gets read-access to:</strong></p>
+<ul>
+  <li>Cloudflare Web Analytics for their site</li>
+  <li>Google Search Console for their property (they're owner; I'm delegated)</li>
+  <li>Their site's GitHub repo (read-only on request; we can grant it without changing anything else)</li>
+</ul>
+
+<p><strong>Tools the client never gets a login to:</strong></p>
+<ul>
+  <li>The build pipeline (Eleventy locally, Cloudflare Pages CI)</li>
+  <li>The 1Password vault (theirs lives in my account, not theirs &mdash; if they want their own, that's their setup)</li>
+  <li>Web3Forms (their form data forwards to their email; they don't need a Web3Forms login)</li>
+  <li>The agency's analytics admin (Cloudflare Web Analytics admin account, Umami admin)</li>
+  <li>The agency's billing tools (Stripe Atlas, the books)</li>
+</ul>
+
+<h2>Freelancer NDA / contract handling</h2>
+<ul>
+  <li><strong>Template location.</strong> Freelancer NDA template is in 1Password's <em>Operations</em> vault under "Freelancer NDA". DocuSign-ready Word doc; do not edit the boilerplate without legal review.</li>
+  <li><strong>Signing flow.</strong> NDA goes out via DocuSign before any access is granted. No exceptions, even for short engagements. The signed copy is archived in Drive at <code>/Operations/Freelancers/{freelancer-name}/NDA-signed.pdf</code>.</li>
+  <li><strong>Retention.</strong> Signed NDAs are retained for 7 years past the engagement end date. Per-engagement work product (PRs, design files) is retained for 2 years.</li>
+  <li><strong>Per-project contract.</strong> For longer or higher-stakes engagements, a per-project services agreement on top of the NDA. Specifies scope, deliverables, payment terms, IP assignment, indemnification.</li>
+  <li><strong>What gets shared with freelancers.</strong> Per-client vault access (scoped), the onboarding doc, the SOPs they need (this portal). Freelancers do NOT see: client-list with revenue figures, the agency's financials, other clients' vaults, the full client roster.</li>
+  <li><strong>What stays owner-only.</strong> Pricing strategy, cold-outreach prospect lists, internal financial dashboards, partner agreements, the agency's own brand-credentials backups.</li>
+</ul>
+
+<h2>Offboarding access-revocation checklist</h2>
+<p>Run within 4 hours of a freelancer's last engagement day. Order matters; do not deviate without a documented reason.</p>
+<ol class="sop-checklist">
+  <li>1Password: revoke vault access. Their personal vault stays with them; the agency and per-client vaults are removed. This is the single most important step; everything else flows from here.</li>
+  <li>Rotate any shared credentials they had access to. Even if no breach is suspected. The cost is 30 minutes; the upside if a credential ever leaks is incalculable.</li>
+  <li>GitHub org: remove from the org. Existing PRs they authored remain in the history; they no longer have write access.</li>
+  <li>Cloudflare account: remove their user. Verify any project-scoped editors are also revoked.</li>
+  <li>Google Drive: remove access from per-client folders. Operations folder access reviewed and removed if applicable.</li>
+  <li>Slack / Discord / wherever we communicated: remove from the workspace.</li>
+  <li>Billing tool (the freelancer-payment side): mark engagement closed; ensure final invoice paid before access is revoked there.</li>
+  <li>Calendar: remove from any shared calendars; remove their email from any recurring meeting invites.</li>
+  <li>Document the revocation: timestamp, who did it, anything unusual. Stored in Drive at <code>/Operations/Freelancers/{name}/offboarding.md</code>.</li>
+  <li>If the freelancer leaves on good terms, send the standard appreciation email and offer a reference. Maintain the relationship; freelancing economies are small.</li>
+</ol>
+
+<h2>Vendor / SaaS inventory</h2>
+<p>Every paid tool the agency relies on. Updated each January during the annual review.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Monthly</th>
+      <th>Annual</th>
+      <th>Renewal</th>
+      <th>Cancellation path</th>
+      <th>Criticality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1Password (team)</td><td>variable per seat</td><td>~$200/yr at our scale</td><td>auto, calendar reminder for review</td><td>Account → Billing → Cancel</td><td>Mission-critical</td></tr>
+    <tr><td>GitHub Team</td><td>$4/user/mo</td><td>~$100/yr at our scale</td><td>auto-monthly</td><td>Org settings → Billing → Cancel plan</td><td>Mission-critical</td></tr>
+    <tr><td>Cloudflare Pages</td><td>$0 (Free tier)</td><td>$0</td><td>n/a</td><td>n/a</td><td>Mission-critical</td></tr>
+    <tr><td>Cloudflare DNS / WAF</td><td>$0</td><td>$0</td><td>n/a</td><td>n/a</td><td>Mission-critical</td></tr>
+    <tr><td>Domain registrar (agency)</td><td>n/a</td><td>~$15/domain/yr</td><td>annual</td><td>Registrar dashboard → Domain → Cancel auto-renew</td><td>Mission-critical</td></tr>
+    <tr><td>Stripe</td><td>per-transaction</td><td>per-transaction</td><td>n/a</td><td>Stripe → Settings → Close account</td><td>Mission-critical</td></tr>
+    <tr><td>Documenso (e-sign)</td><td>varies</td><td>~$120-240/yr</td><td>annual</td><td>Account → Cancel subscription</td><td>Nice-to-have (alternatives exist)</td></tr>
+    <tr><td>Web3Forms</td><td>$0 (Free tier per client)</td><td>$0</td><td>n/a</td><td>per-account</td><td>Mission-critical for client forms</td></tr>
+    <tr><td>Buffer (or equivalent scheduler)</td><td>~$15/mo</td><td>~$180/yr</td><td>monthly auto</td><td>Account → Billing → Cancel</td><td>Nice-to-have</td></tr>
+    <tr><td>Buttondown (newsletter)</td><td>~$9-29/mo by list size</td><td>~$108-348/yr</td><td>monthly auto</td><td>Settings → Cancel</td><td>Mission-critical</td></tr>
+    <tr><td>Umami Cloud (analytics)</td><td>~$9/mo</td><td>~$108/yr</td><td>monthly auto</td><td>Account → Cancel subscription</td><td>Nice-to-have (Cloudflare Web Analytics is the backstop)</td></tr>
+    <tr><td>Google Workspace</td><td>$6-12/user/mo</td><td>~$72-144/user/yr</td><td>monthly auto</td><td>Admin Console → Billing → Cancel</td><td>Mission-critical</td></tr>
+  </tbody>
+</table>
+<p>Total annual SaaS spend should not grow faster than agency revenue grows. The January review is where I check that ratio.</p>
+
+<h2>Hardware checklist for the operator's machine</h2>
+<p>The single laptop the agency runs on is itself part of the security perimeter. Run this audit quarterly.</p>
+<ul class="sop-checklist">
+  <li>Full-disk encryption enabled (FileVault on Mac, BitLocker on Windows)</li>
+  <li>OS auto-update enabled; current major version installed</li>
+  <li>Password manager browser extension installed and signed in</li>
+  <li>2FA hardware key (YubiKey) physically present; backup key stored in a separate location</li>
+  <li>Time Machine / equivalent local backup running on a daily schedule to an encrypted external drive</li>
+  <li>Cloud backup for the working directory (e.g., Backblaze) configured and verified</li>
+  <li>Recovery codes for 1Password, GitHub, Cloudflare, registrar printed and stored in fireproof box</li>
+  <li>Firewall enabled; no inbound services running unless explicitly required</li>
+  <li>Browser running with reasonable privacy defaults (uBlock Origin, HTTPS-only mode, third-party cookies blocked)</li>
+  <li>Old credentials and SSH keys cleaned up (every 6 months)</li>
+  <li>Lock-screen timeout set to 5 minutes max; lock when stepping away</li>
+  <li>If laptop is lost or stolen: documented response in /sop/checklists/ "Security incident response"</li>
+</ul>
+
+<h2>Read-only auditor access</h2>
+<p>For accountants, lawyers, prospective acquirers, or insurance auditors who legitimately need to look but not touch.</p>
+<ul>
+  <li><strong>Scoped Drive folder.</strong> A single folder at <code>/Operations/Audits/{auditor-name}/</code> with read-only permission. Anything they need lives there; they have no access to anything else.</li>
+  <li><strong>Financials view.</strong> Read access to a specific Stripe export folder and the books export folder. Never live access to Stripe or the books platform.</li>
+  <li><strong>Time-boxed.</strong> Auditor access is granted with an expiry date; calendar reminder set for the day after expiry to revoke.</li>
+  <li><strong>No production access.</strong> Auditors do not get access to client repos, client analytics, client credentials, or anything that touches active client work.</li>
+  <li><strong>NDA before access.</strong> Standard auditor NDA signed via DocuSign; archived alongside the audit.</li>
+  <li><strong>Documented.</strong> Each audit has a one-page record: who, what was reviewed, what was found, dates of access. Filed in <code>/Operations/Audits/{auditor-name}/log.md</code>.</li>
+</ul>

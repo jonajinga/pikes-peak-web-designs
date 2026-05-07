@@ -230,3 +230,216 @@ sopGoal: "Print-friendly consolidated checklists. One source of truth for the wo
   <li>Day +7 of end_date: removed from WHOIS-watch list</li>
   <li>Day +7 of end_date: CRM updated with end date + reason</li>
 </ul>
+
+<h2>Domain migration</h2>
+<p>Three variants &mdash; pick the one that matches the situation.</p>
+<p><strong>Transfer-in</strong> (new client bringing an existing domain into our setup):</p>
+<ul class="sop-checklist">
+  <li>Confirm registrar of record and current renewal date</li>
+  <li>Client unlocks domain at current registrar; auth/EPP code retrieved</li>
+  <li>Initiate transfer at our registrar; pay one-year extension as required by ICANN</li>
+  <li>Approve transfer email at the existing registrar (5-7 day window)</li>
+  <li>Verify new WHOIS shows correct contacts within 24h of transfer completion</li>
+  <li>DNS records re-created at new registrar before nameserver switch</li>
+  <li>Switch nameservers; monitor propagation (24-48h)</li>
+  <li>Verify SSL renews cleanly on first request after switch</li>
+  <li>Update client's invoice template + 1Password vault entry with new registrar info</li>
+</ul>
+<p><strong>Transfer-out</strong> (client leaving and taking domain elsewhere):</p>
+<ul class="sop-checklist">
+  <li>Receive written request via email (not Slack/DM); confirm against signed agreement</li>
+  <li>Unlock domain at our registrar</li>
+  <li>Generate auth/EPP code; send via 1Password share or password-protected PDF</li>
+  <li>Document the transfer-out date in the client's offboarding entry</li>
+  <li>Verify successful transfer via WHOIS within 7 days</li>
+  <li>After confirmation, remove the domain from our registrar account</li>
+  <li>Send the standard offboarding handoff email (template in /sop/email-templates/)</li>
+</ul>
+<p><strong>DNS-only handoff</strong> (client keeping domain at our registrar but moving DNS):</p>
+<ul class="sop-checklist">
+  <li>Capture current DNS zone as a text export (BIND format) for the client's records</li>
+  <li>Coordinate the cutover time with the client; minimum 24h notice</li>
+  <li>Lower TTL on every record to 300s, 24h before the cutover</li>
+  <li>At cutover: client's new DNS provider is live; monitor for issues</li>
+  <li>Restore TTLs to standard values 7 days post-cutover</li>
+  <li>Document the new DNS provider in our records for any future ownership changes</li>
+</ul>
+
+<h2>Mid-engagement quarterly review (QBR prep)</h2>
+<p>Run the day before a scheduled client QBR.</p>
+<ul class="sop-checklist">
+  <li>Pull traffic data (Cloudflare Web Analytics + Umami) for the trailing 90 days</li>
+  <li>Pull Search Console performance: top 10 queries, top 10 pages, CTR, average position</li>
+  <li>Pull Lighthouse scores on the top 5 pages by traffic; note any regression vs last quarter</li>
+  <li>Compile a brief "what changed" log: deploys, content updates, structural changes</li>
+  <li>Review the open ticket / request backlog with the client; flag anything that should be in the QBR conversation</li>
+  <li>Identify 2-3 observations worth raising as recommendations</li>
+  <li>Draft a one-page QBR summary; send to client 24h before the call so they can prepare</li>
+  <li>Confirm calendar invite, Google Meet link, and that the client has dial-in info</li>
+  <li>Block the 30 minutes after the QBR for note-taking and follow-up email</li>
+</ul>
+
+<h2>Freelancer onboarding &mdash; Day 1</h2>
+<p>First day of any new freelancer engagement. NDA signed before any of this runs.</p>
+<ul class="sop-checklist">
+  <li>1Password invite sent and accepted; "Operations" + "Per-client (assigned)" vaults shared</li>
+  <li>NDA signed via DocuSign; signed copy archived in Drive under /Freelancers/{name}/</li>
+  <li>GitHub org invite sent; freelancer accepts and confirms 2FA enabled</li>
+  <li>Cloudflare account access scoped to the projects they'll touch</li>
+  <li>Repo access verified: clone works, can build locally</li>
+  <li>Onboarding doc shared (link in 1Password Operations vault)</li>
+  <li>Kickoff call held: stack walkthrough, active engagements overview, week-one ticket assigned</li>
+  <li>Communication channel established: shared Slack DM or email thread per freelancer preference</li>
+  <li>Invoice format and payment terms confirmed in writing</li>
+</ul>
+
+<h2>Freelancer onboarding &mdash; Week 1</h2>
+<ul class="sop-checklist">
+  <li>First ticket shipped (any size; the goal is to confirm the workflow runs end-to-end)</li>
+  <li>Code review pass complete; feedback documented for any patterns the freelancer should adopt</li>
+  <li>Comms norms confirmed: response SLA, channel preference, time-zone handling</li>
+  <li>Freelancer has access to the test environment for any client they'll touch</li>
+  <li>Any access gaps surfaced and fixed (a tool we forgot to grant, a credential that wasn't shared)</li>
+  <li>End-of-week sync (15 min): what worked, what was confusing, what to adjust</li>
+</ul>
+
+<h2>Freelancer onboarding &mdash; Month 1</h2>
+<ul class="sop-checklist">
+  <li>Retention decision made: continuing, scaling up, or wrapping the engagement</li>
+  <li>If continuing: scope expansion or contraction discussed; new tickets queued</li>
+  <li>Onboarding doc updated with anything the freelancer flagged that wasn't clear</li>
+  <li>Performance retrospective: what's working, what isn't, what to change</li>
+  <li>Freelancer's preferred working pattern documented (hours, communication, deadlines)</li>
+  <li>If wrapping: offboarding checklist initiated (see access-revocation below)</li>
+</ul>
+
+<h2>Client offboarding cleanup</h2>
+<p>Run within 7 days of the engagement end date. Distinct from the broader offboarding SOP, which handles client comms; this is the operational cleanup.</p>
+<ul class="sop-checklist">
+  <li>Domain registrar access transferred (per domain-migration variant above)</li>
+  <li>Cloudflare project ownership transferred or project deleted, depending on agreement</li>
+  <li>Drive folder shared with the client at full ownership; my access removed</li>
+  <li>Google Business Profile: confirm I never had access, or remove if I did</li>
+  <li>GitHub repo archived (not deleted); client given a final clone if desired</li>
+  <li>Final invoice closed; refund or pro-rata calculated if applicable</li>
+  <li>Uptime monitor disabled</li>
+  <li>WHOIS-watch monitor disabled</li>
+  <li>Active-clients sheet updated; client moved to the "former" tab with end-date and reason</li>
+  <li>1Password client vault archived (kept for 12 months for tax/legal, then deleted)</li>
+</ul>
+
+<h2>Holiday / PTO handoff</h2>
+<p>Run 5 business days before any closure or PTO of more than 2 days.</p>
+<ul class="sop-checklist">
+  <li>Closure dates confirmed and added to public-facing places where relevant (footer notice, site banner if appropriate)</li>
+  <li>Auto-responder drafted (template in /sop/email-templates/) and scheduled to activate at start of closure</li>
+  <li>Backup contact briefed on every active monthly client account</li>
+  <li>Backup contact's access scoped (1Password, GitHub, Cloudflare) for the closure window only</li>
+  <li>Active client list shared with backup, with notes on each client's recent activity</li>
+  <li>Uptime monitor escalation contact updated to backup for the window</li>
+  <li>Scheduled posts queued through the entire closure (LinkedIn, blog, newsletter)</li>
+  <li>Voicemail updated with closure dates and emergency protocol link</li>
+  <li>Client notification: any client with active in-progress work gets a heads-up email 7-10 days before</li>
+  <li>Day-of-return: backup access revoked, auto-responder cleared, voicemail restored</li>
+</ul>
+
+<h2>Security incident response</h2>
+<p>Run when any of the following are suspected: credential leak, unauthorized access, defacement, malware, suspicious DNS change.</p>
+<ul class="sop-checklist">
+  <li>Confirm the incident is real (false alarms cost reputation, real ones cost worse if you delay)</li>
+  <li>Identify which credentials are potentially compromised; rotate in this order: 1Password master, then any shared per-client credentials touched, then per-tool API keys</li>
+  <li>Take affected systems off the internet if they're actively serving malicious content (Cloudflare → Pause Site)</li>
+  <li>Notify affected clients within 24 hours, in writing, with what's known and what's still being determined</li>
+  <li>Capture forensic snapshot before remediation: logs, file hashes, screenshots</li>
+  <li>Remediate: replace compromised credentials, restore from clean backup, patch the entry vector</li>
+  <li>Verify clean state: full scan of the affected site, malware scan, integrity check on every active client</li>
+  <li>Post-incident: written report to affected clients, internal retro, update SOP if a procedure gap was exposed</li>
+  <li>Notify any required parties (insurance, registrar, hosting provider, law enforcement if PII exposed)</li>
+</ul>
+
+<h2>Brand-asset receipt</h2>
+<p>Run when receiving brand assets from a new or existing client.</p>
+<ul class="sop-checklist">
+  <li>Logo received in vector format (SVG or AI/EPS); raster fallbacks (PNG with transparency, JPEG)</li>
+  <li>Logo color variants: full-color, single-color black, single-color white, on-light, on-dark</li>
+  <li>Color values documented: HEX, RGB, optionally Pantone for print needs</li>
+  <li>Font names documented; license confirmed (purchased, free, or open-source like Bunny)</li>
+  <li>Photo usage rights confirmed: stock licenses, original photography releases, or noted as "client-supplied, client-warrants-rights"</li>
+  <li>Voice/tone guidelines noted if provided</li>
+  <li>All assets stored in /Drive/{client}/Brand/, with a README documenting what's there and any usage restrictions</li>
+  <li>Receipt-confirmation email sent to client (template in /sop/email-templates/)</li>
+</ul>
+
+<h2>Accessibility regression spot-check (monthly)</h2>
+<ul class="sop-checklist">
+  <li>Run automated WAVE scan on the top 5 pages by traffic; record any new errors</li>
+  <li>Keyboard-only walkthrough: tab through homepage + one form page, confirm focus order is sensible</li>
+  <li>Screen reader spot-check (VoiceOver on Mac, NVDA on Windows): homepage hero + main nav</li>
+  <li>Contrast: verify 4.5:1 minimum on body text, 3:1 on large text, on the top 5 pages</li>
+  <li>Alt text: confirm all hero images have meaningful alt text (not "image" or empty)</li>
+  <li>Touch target: confirm interactive elements meet 44&times;44px on mobile</li>
+  <li>Document findings in the monthly maintenance log; flag any regression for fix this week</li>
+</ul>
+
+<h2>Performance regression spot-check (monthly)</h2>
+<ul class="sop-checklist">
+  <li>Lighthouse mobile scan on the top 5 pages by traffic</li>
+  <li>Performance score must remain &ge; 95 on each; investigate any drop</li>
+  <li>LCP &lt; 2.5s, INP &lt; 200ms, CLS &lt; 0.1 (Core Web Vitals thresholds)</li>
+  <li>Image budget: confirm no page has a hero image &gt; 200KB or any single image &gt; 500KB</li>
+  <li>Total page weight: flag any page now &gt; 500KB transferred</li>
+  <li>Document any regression with the suspected cause; fix this week</li>
+  <li>Run for every active monthly client, not just the most visible ones</li>
+</ul>
+
+<h2>Content publishing pre-flight (blog post)</h2>
+<ul class="sop-checklist">
+  <li>Title under 60 characters; meta description 50-160 characters with the target keyword</li>
+  <li>OG image generated and present at /assets/img/og/blog/{slug}.png</li>
+  <li>At least 3 internal links to other posts or relevant site pages</li>
+  <li>Schema markup present: BlogPosting with author, date, image</li>
+  <li>Reading time &gt; 3 minutes (anything shorter is usually a social post, not a blog post)</li>
+  <li>One external authoritative link if making a factual claim</li>
+  <li>CTA box at end with relevant standard-plan tie-in (not aggressive sales)</li>
+  <li>Social repurposing rhythm scheduled: LinkedIn announcement Day 0, plus the 6-post fan-out per /sop/social-media/</li>
+  <li>Newsletter mention queued for the next bi-weekly send</li>
+  <li>Cross-link added in any related existing post that should now point at this one</li>
+</ul>
+
+<h2>Vendor / SaaS annual review</h2>
+<p>Run once per year (typically January). For every paid tool in the agency stack:</p>
+<ul class="sop-checklist">
+  <li>Renewal date documented in the vendor inventory in /sop/tools/</li>
+  <li>Annual cost confirmed against current invoice; flag any silent price increase</li>
+  <li>Usage check: am I actually using this? If usage is &lt; 20% of plan, downgrade or kill</li>
+  <li>Cancellation contact / URL verified (some tools hide cancellation behind support requests; document the path)</li>
+  <li>Criticality re-evaluated: mission-critical / nice-to-have / replaceable</li>
+  <li>If replaceable: research the alternative; note in inventory for next year's review</li>
+  <li>Total annual SaaS spend tallied; flag if growth outpaces revenue growth</li>
+</ul>
+
+<h2>New-client kickoff prep</h2>
+<p>Run the day before a new-client kickoff meeting.</p>
+<ul class="sop-checklist">
+  <li>Agenda drafted and shared with client 24h ahead</li>
+  <li>Onboarding worksheet sent (covers content inventory, brand assets, current site audit if applicable)</li>
+  <li>Google Meet / calendar invite confirmed</li>
+  <li>Client's existing site reviewed: SEO state, accessibility issues, performance baseline</li>
+  <li>1Password vault created for the client; standard credentials slots prepared</li>
+  <li>Drive folder created at /Drive/{client}/ with sub-folders: Brand, Content, Build, Reference</li>
+  <li>GitHub repo provisioned (private), README populated with project info</li>
+  <li>Cloudflare Pages project provisioned and connected to the repo</li>
+  <li>Active-clients sheet updated with new client info, start date, agreed scope</li>
+</ul>
+
+<h2>Backup verification (quarterly)</h2>
+<p>Run once per quarter as a deliberate check, not a hopeful assumption.</p>
+<ul class="sop-checklist">
+  <li>Identify what is backed up: GitHub (push history = backup), Cloudflare Pages (deploy history = rollback), client Drive (Google's backup), 1Password (multi-device sync = backup)</li>
+  <li>Restore drill on one client: clone the GitHub repo to a fresh machine, run the build, confirm output matches production</li>
+  <li>Verify integrity: sample 3 client repos for any silently corrupted files</li>
+  <li>Document the recovery time objective (RTO): for our setup, full site restore is &lt; 2 hours</li>
+  <li>Document the recovery point objective (RPO): with GitHub-as-source-of-truth and atomic deploys, RPO is the last commit (essentially zero data loss)</li>
+  <li>If 1Password sync ever fails on any device, treat as critical; the master credential store cannot have a single point of failure</li>
+  <li>Review the offsite backup: Drive backups should be exported quarterly to a local encrypted disk for the truly catastrophic scenario</li>
+</ul>

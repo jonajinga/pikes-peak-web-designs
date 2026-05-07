@@ -250,7 +250,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
           standard: [
             // Stateful classes toggled by JS that may not appear in static HTML.
             "open", "is-open", "active", "is-active", "is-loading", "is-scrolled",
-            "show", "scrolled", "expanded", "collapsed", "is-fixed", "is-hidden",
+            "show", "scrolled", "expanded", "collapsed", "is-fixed", "is-hidden", "is-revealed",
           ],
           deep: [
             // Theme attribute selector — must be kept on every :root rule.
@@ -316,7 +316,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
             safelist: {
               standard: [
                 "open", "is-open", "active", "is-active", "is-loading", "is-scrolled",
-                "show", "scrolled", "expanded", "collapsed", "is-fixed", "is-hidden",
+                "show", "scrolled", "expanded", "collapsed", "is-fixed", "is-hidden", "is-revealed",
               ],
               deep: [
                 /\[data-theme/, /leaflet/, /tippy/, /^mark/, /^ppwd-/, /^grader-/,
