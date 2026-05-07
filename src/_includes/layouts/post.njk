@@ -10,6 +10,17 @@ eleventyComputed:
 <div class="post-progress" aria-hidden="true"><span class="post-progress-bar" id="postProgressBar"></span></div>
 
 <article class="post-article">
+  {# Print-only running header. Lives in document flow so it always
+     appears on the first printed page even on browsers that don't
+     support @page margin boxes (Chrome respects @page only when the
+     "Headers and footers" checkbox is off). #}
+  <div class="post-print-header" aria-hidden="true">
+    <span class="post-print-brand">Pikes Peak Web Designs</span>
+    <span class="post-print-divider">&middot;</span>
+    <span class="post-print-domain">pikespeakwebdesigns.com</span>
+    {% if date %}<span class="post-print-date">{{ date | dateFormat }}</span>{% endif %}
+  </div>
+
   <header class="page-hero post-hero" data-title="{{ title }}" data-print-url="{{ site.url }}{{ page.url }}">
     <div class="container" style="max-width:var(--max-prose)">
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -113,6 +124,14 @@ eleventyComputed:
       <nav aria-label="Back to blog" class="post-back-row">
         <a href="/blog/" class="btn btn-outline-dark">&larr; Browse all articles</a>
       </nav>
+
+      {# Print-only running footer. Same fallback rationale as the
+         print header above — guarantees brand + URL appear even if the
+         @page rules don't render in the user's browser. #}
+      <div class="post-print-footer" aria-hidden="true">
+        <span class="post-print-markline">Custom-coded. Custom-cared-for.</span>
+        <span class="post-print-source">{{ site.url }}{{ page.url }}</span>
+      </div>
     </div>
   </div>
 </article>
