@@ -15,6 +15,10 @@
   <link rel="icon" type="image/svg+xml" href="/assets/img/demo-favicons/redcap.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/demo-favicons/redcap.svg">
   <link rel="stylesheet" href="/assets/css/demo.css">
+  {% if site.umamiWebsiteId %}
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.umamiWebsiteId }}"></script>
+  <script defer src="/assets/js/umami-tracking.js"></script>
+  {% endif %}
   {% if extraHead %}{{ extraHead | safe }}{% endif %}
 </head>
 <body class="demo-site">

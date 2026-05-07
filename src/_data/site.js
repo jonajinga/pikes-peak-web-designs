@@ -24,6 +24,10 @@ export default {
   },
   url: "https://pikespeakwebdesigns.com",
   description: "Custom-coded websites for small service businesses across the U.S. and Canada. I handle the design, the hosting, the updates, and everything else. $0 down, $175 a month flat.",
+  // Umami Cloud privacy-friendly analytics. The base.njk script tag is
+  // gated on this value, so it's safe to flip on by setting the ID and
+  // off by clearing the string.
+  umamiWebsiteId: "8bb5417d-5a24-4126-9950-9fdbd61aa414",
   // Optional social handles. Render twitter:site only if the handle is set;
   // empty strings cause platforms to ignore (or warn about) the meta tag.
   twitterHandle: "",

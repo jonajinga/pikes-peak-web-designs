@@ -74,6 +74,7 @@
      to enable. #}
   {% if site.umamiWebsiteId %}
   <script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.umamiWebsiteId }}"></script>
+  <script defer src="/assets/js/umami-tracking.js"></script>
   {% endif %}
   {% if site.cloudflareBeaconToken %}
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflareBeaconToken }}"}'></script>
