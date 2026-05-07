@@ -268,6 +268,11 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
             // Site grader report card — JS-rendered after a successful API
             // call; selectors won't appear in the static /grader/ HTML.
             /^grader-/,
+            // SOP planner: only one view is rendered "active" in static HTML;
+            // the other four are hidden until JS toggles them, so keep every
+            // planner-* selector across the per-page purge runs.
+            /^planner-/,
+            /^sop-backlink/,
           ],
           keyframes: true,
           variables: false,
@@ -320,6 +325,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
               ],
               deep: [
                 /\[data-theme/, /leaflet/, /tippy/, /^mark/, /^ppwd-/, /^grader-/,
+                /^planner-/, /^sop-backlink/,
               ],
               keyframes: true,
               variables: false,

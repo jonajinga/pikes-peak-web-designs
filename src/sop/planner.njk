@@ -1,0 +1,395 @@
+---
+layout: layouts/sop-fullwidth.njk
+permalink: /sop/planner/
+title: Planner
+sopGoal: "The visual calendar — five views over the same 21-hour week. Year for the anchors, quarter for the rhythm, month for the recurring obligations, week for the actual schedule, day for the four-hour block."
+---
+
+<div class="planner" data-planner>
+
+  <div class="planner-toolbar" role="tablist" aria-label="Calendar view">
+    <button type="button" class="planner-tab" data-view="year"    role="tab" aria-selected="false">Year</button>
+    <button type="button" class="planner-tab" data-view="quarter" role="tab" aria-selected="false">Quarter</button>
+    <button type="button" class="planner-tab" data-view="month"   role="tab" aria-selected="false">Month</button>
+    <button type="button" class="planner-tab is-active" data-view="week" role="tab" aria-selected="true">Week</button>
+    <button type="button" class="planner-tab" data-view="day"     role="tab" aria-selected="false">Day</button>
+    <span class="planner-budget" aria-hidden="true">21 hr / week &middot; 4 hr / day ceiling</span>
+  </div>
+
+  {# ============================================================
+     YEAR VIEW
+     ============================================================ #}
+  <section class="planner-view" data-view="year" role="tabpanel" hidden>
+    <header class="planner-view-head">
+      <h2>Year &middot; the twelve recurring anchors</h2>
+      <p>Each cell is one month. The badge marks the quarter; the bullets are the fixed anchors that fall in that month, on top of the weekly and monthly cadences. Recurring closures (Thanksgiving week, late December, July 4 week) are flagged.</p>
+    </header>
+
+    <div class="planner-year-grid">
+      {% set months = [
+        { name: "January",   q: "Q1", anchors: ["Annual planning week (week 1)", "Tax doc gathering (1099s, P&L)", "Year-end review post"] },
+        { name: "February",  q: "Q1", anchors: ["Q1 case study published", "Tax filing window opens", "Vendor &amp; SaaS annual review"] },
+        { name: "March",     q: "Q1", anchors: ["Q1 recalibration day", "Client QBRs round 1 (mid-month)"] },
+        { name: "April",     q: "Q2", anchors: ["Quarterly partner check-ins", "Tax filing closes", "Reviews-asking sweep"] },
+        { name: "May",       q: "Q2", anchors: ["Q2 case study draft", "Mid-year content audit"] },
+        { name: "June",      q: "Q2", anchors: ["Q2 recalibration day", "Client QBRs round 2 (mid-month)", "Mid-year capacity review"] },
+        { name: "July",      q: "Q3", anchors: ["Mid-year retro", "PTO planning for late summer", "Annual pricing review", "<em>Closed: July 3-5 week</em>"] },
+        { name: "August",    q: "Q3", anchors: ["Q3 case study draft", "Quarterly partner check-ins"] },
+        { name: "September", q: "Q3", anchors: ["Q3 recalibration day", "Client QBRs round 3", "Annual rate-adjustment notices (60-day lead)"] },
+        { name: "October",   q: "Q4", anchors: ["Q4 sprint planning", "Holiday-closure copy drafted", "Annual accessibility audit"] },
+        { name: "November",  q: "Q4", anchors: ["Q4 case study published", "<em>Closed: Thanksgiving Wed-Fri</em>", "Holiday auto-responder activates"] },
+        { name: "December",  q: "Q4", anchors: ["Year-end retro started", "Client QBRs round 4 (annual review)", "Backups verified", "<em>Closed: Dec 24 - Jan 2</em>"] }
+      ] %}
+
+      {% for m in months %}
+      <article class="planner-month-card" data-quarter="{{ m.q | lower }}">
+        <header>
+          <h3>{{ m.name }}</h3>
+          <span class="planner-q-pill">{{ m.q }}</span>
+        </header>
+        <ul>
+          {% for a in m.anchors %}<li>{{ a | safe }}</li>{% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  {# ============================================================
+     QUARTER VIEW
+     ============================================================ #}
+  <section class="planner-view" data-view="quarter" role="tabpanel" hidden>
+    <header class="planner-view-head">
+      <h2>Quarter &middot; what runs every three months, regardless of which quarter</h2>
+      <p>Five things repeat every quarter. The third month of each quarter is the heaviest (QBR batching); the second is when the case study ships; the first is for recalibration and partner checks.</p>
+    </header>
+
+    <div class="planner-quarter-grid">
+      {% set quarters = [
+        { q: "Q1", months: "January &middot; February &middot; March",
+          rhythm: [
+            { week: "Month 1", focus: "Annual planning + Q1 recalibration", detail: "First Monday: annual planning week. Mid-month: confirm quarter goals." },
+            { week: "Month 2", focus: "Case study published", detail: "Q1 case study ships. Vendor / SaaS annual review." },
+            { week: "Month 3", focus: "Client QBRs (round 1)", detail: "Batch QBRs across the first half of monthly clients. Reviews-asking sweep." }
+          ] },
+        { q: "Q2", months: "April &middot; May &middot; June",
+          rhythm: [
+            { week: "Month 1", focus: "Partner check-ins + reviews sweep", detail: "Quarterly partner sync. Reviews-asking on recently-launched clients." },
+            { week: "Month 2", focus: "Case study published + content audit", detail: "Q2 case study ships. Mid-year content audit (refresh / kill / promote)." },
+            { week: "Month 3", focus: "Client QBRs (round 2) + capacity review", detail: "Round 2 of QBRs. Confirm capacity is below ceiling for H2." }
+          ] },
+        { q: "Q3", months: "July &middot; August &middot; September",
+          rhythm: [
+            { week: "Month 1", focus: "Mid-year retro + pricing review", detail: "What is on/off track. Annual pricing review with client list." },
+            { week: "Month 2", focus: "Case study + partner check-ins", detail: "Q3 case study ships. Partner sync." },
+            { week: "Month 3", focus: "Client QBRs (round 3) + rate notices", detail: "Round 3 of QBRs. Annual rate-adjustment notices go out (60-day lead)." }
+          ] },
+        { q: "Q4", months: "October &middot; November &middot; December",
+          rhythm: [
+            { week: "Month 1", focus: "Q4 sprint + a11y audit", detail: "Quarter sprint planning. Annual accessibility audit on the agency site + every active client site." },
+            { week: "Month 2", focus: "Case study + holiday prep", detail: "Q4 case study ships. Holiday-closure copy drafted; scheduled posts queued." },
+            { week: "Month 3", focus: "Client QBRs (round 4) + year-end retro", detail: "Round 4 of QBRs (treated as annual review). Backups verified. Year-end retro." }
+          ] }
+      ] %}
+
+      {% for quarter in quarters %}
+      <article class="planner-quarter-card" data-quarter="{{ quarter.q | lower }}">
+        <header>
+          <span class="planner-q-pill">{{ quarter.q }}</span>
+          <p class="planner-q-months">{{ quarter.months | safe }}</p>
+        </header>
+        <ol class="planner-q-rhythm">
+          {% for r in quarter.rhythm %}
+          <li>
+            <span class="planner-q-week">{{ r.week }}</span>
+            <strong>{{ r.focus }}</strong>
+            <p>{{ r.detail }}</p>
+          </li>
+          {% endfor %}
+        </ol>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="planner-quarter-recap">
+      <strong>Every quarter, without fail:</strong>
+      <ul>
+        <li>Client QBRs (batched in month 3)</li>
+        <li>One published case study (month 2)</li>
+        <li>Partner check-ins (month 1 or 2)</li>
+        <li>Vendor / SaaS review (rolling, anchored to renewal dates)</li>
+        <li>Reviews-asking sweep (month 1)</li>
+      </ul>
+    </div>
+  </section>
+
+  {# ============================================================
+     MONTH VIEW — template month, Sun-Sat, with anchors placed on canonical days
+     ============================================================ #}
+  <section class="planner-view" data-view="month" role="tabpanel" hidden>
+    <header class="planner-view-head">
+      <h2>Month &middot; a typical four-week template</h2>
+      <p>Monthly anchors land on canonical days regardless of which calendar month: first Monday is the invoice run; first Tuesday is month-ahead planning; the 15th anchors the editorial planning + maintenance pass; the last Friday is metrics + retro. Weekly cadence overlays this every week (Mon outreach, Wed content/maintenance, Fri admin/newsletter).</p>
+    </header>
+
+    <div class="planner-month">
+      <div class="planner-month-head">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+      <div class="planner-month-grid">
+        {# Week 1 — first row: assume month starts on a Monday for the template; pad Sunday #}
+        <div class="planner-day is-pad"></div>
+        <div class="planner-day"><span class="planner-date">1</span><strong>First Mon</strong><p>Invoice run before noon. Outreach batch (~25 prospects, M1).</p></div>
+        <div class="planner-day"><span class="planner-date">2</span><strong>First Tue</strong><p>Month-ahead planning (30 min). Deep client work block.</p></div>
+        <div class="planner-day"><span class="planner-date">3</span><strong>Wed</strong><p>Maintenance pass + content production.</p></div>
+        <div class="planner-day"><span class="planner-date">4</span><strong>Thu</strong><p>Deep client work block.</p></div>
+        <div class="planner-day"><span class="planner-date">5</span><strong>Fri</strong><p>Admin / invoicing / planning. Newsletter ships if alt week.</p></div>
+        <div class="planner-day is-weekend"><span class="planner-date">6</span><span class="planner-weekend-label">Sun social batch</span></div>
+
+        {# Week 2 #}
+        <div class="planner-day is-weekend"><span class="planner-date">7</span></div>
+        <div class="planner-day"><span class="planner-date">8</span><strong>Mon</strong><p>Outreach batch + newsletter draft (alt weeks).</p></div>
+        <div class="planner-day"><span class="planner-date">9</span><strong>Tue</strong><p>Deep client work block.</p></div>
+        <div class="planner-day"><span class="planner-date">10</span><strong>Wed</strong><p>Maintenance pass + content production.</p></div>
+        <div class="planner-day"><span class="planner-date">11</span><strong>Thu</strong><p>Deep client work block.</p></div>
+        <div class="planner-day"><span class="planner-date">12</span><strong>Fri</strong><p>Admin / invoicing / planning.</p></div>
+        <div class="planner-day is-weekend"><span class="planner-date">13</span><span class="planner-weekend-label">Sun social batch</span></div>
+
+        {# Week 3 — mid-month anchors #}
+        <div class="planner-day is-weekend"><span class="planner-date">14</span></div>
+        <div class="planner-day is-anchor"><span class="planner-date">15</span><strong>Mid-month</strong><p>Editorial planning. Maintenance check on every active site (Lighthouse, a11y spot, broken links, security advisories).</p></div>
+        <div class="planner-day"><span class="planner-date">16</span><strong>Tue</strong><p>Deep client work block.</p></div>
+        <div class="planner-day"><span class="planner-date">17</span><strong>Wed</strong><p>Maintenance + content production.</p></div>
+        <div class="planner-day"><span class="planner-date">18</span><strong>Thu</strong><p>Deep client work block.</p></div>
+        <div class="planner-day"><span class="planner-date">19</span><strong>Fri</strong><p>Admin / invoicing. Newsletter ships if alt week.</p></div>
+        <div class="planner-day is-weekend"><span class="planner-date">20</span><span class="planner-weekend-label">Sun social batch</span></div>
+
+        {# Week 4 #}
+        <div class="planner-day is-weekend"><span class="planner-date">21</span></div>
+        <div class="planner-day"><span class="planner-date">22</span><strong>Mon</strong><p>Outreach batch.</p></div>
+        <div class="planner-day"><span class="planner-date">23</span><strong>Tue</strong><p>Deep client work block.</p></div>
+        <div class="planner-day"><span class="planner-date">24</span><strong>Wed</strong><p>Maintenance + content production.</p></div>
+        <div class="planner-day"><span class="planner-date">25</span><strong>Thu</strong><p>Deep client work block.</p></div>
+        <div class="planner-day is-anchor"><span class="planner-date">26</span><strong>Last Fri</strong><p>Metrics review + retro (60 min). Pull dashboard numbers, compare month-ago + quarter-ago, write a short retro.</p></div>
+        <div class="planner-day is-weekend"><span class="planner-date">27</span><span class="planner-weekend-label">Sun social batch</span></div>
+
+        {# Week 5 (overflow days, dimmed) #}
+        <div class="planner-day is-weekend is-pad"><span class="planner-date">28</span></div>
+        <div class="planner-day is-pad"><span class="planner-date">29</span><span class="planner-pad-label">overflow / next month rolls in</span></div>
+        <div class="planner-day is-pad"><span class="planner-date">30</span></div>
+        <div class="planner-day is-pad"><span class="planner-date">31</span></div>
+        <div class="planner-day is-pad"></div>
+        <div class="planner-day is-pad"></div>
+        <div class="planner-day is-pad"></div>
+      </div>
+    </div>
+
+    <div class="planner-legend" aria-label="Month legend">
+      <span><span class="planner-swatch is-anchor"></span> Monthly anchor</span>
+      <span><span class="planner-swatch is-weekend"></span> Weekend / Sunday batch</span>
+      <span><span class="planner-swatch is-pad"></span> Padding / overflow</span>
+    </div>
+  </section>
+
+  {# ============================================================
+     WEEK VIEW — Mon-Fri columns + Sunday batch row
+     ============================================================ #}
+  <section class="planner-view is-active" data-view="week" role="tabpanel">
+    <header class="planner-view-head">
+      <h2>Week &middot; the actual five-day shape</h2>
+      <p>Each weekday is a single 4-hour working block, 9:00am to 1:30pm, with a 30-minute off-clock break at noon. Sunday adds a 60-minute social batch. Saturday is off. Total: 21 working hours.</p>
+    </header>
+
+    <div class="planner-week">
+      {% set weekdays = [
+        { name: "Monday",    range: "9:00 &ndash; 1:30", owns: "Cold outreach + newsletter draft (alt weeks)",
+          blocks: [
+            { time: "9:00", end: "9:30", label: "Inbox triage", kind: "triage" },
+            { time: "9:30", end: "11:00", label: "Outreach batch &middot; ~25 prospects, 4-touch sequence", kind: "deep", link: "/sop/cold-outreach/" },
+            { time: "11:00", end: "11:30", label: "Newsletter draft (alt weeks)", kind: "deep", link: "/sop/email-newsletter/" },
+            { time: "11:30", end: "12:00", label: "Client work carry-over slot", kind: "deep" },
+            { time: "12:00", end: "12:30", label: "Lunch &middot; off-clock break", kind: "break" },
+            { time: "12:30", end: "1:00", label: "Deep work part 2 / client work", kind: "deep" },
+            { time: "1:00", end: "1:30", label: "Comms + shutdown", kind: "comms" }
+          ] },
+        { name: "Tuesday",   range: "9:00 &ndash; 1:30", owns: "Deep client work &middot; single engagement",
+          blocks: [
+            { time: "9:00", end: "9:30", label: "Inbox triage", kind: "triage" },
+            { time: "9:30", end: "12:00", label: "Deep client work &middot; no context-switching", kind: "deep" },
+            { time: "12:00", end: "12:30", label: "Lunch &middot; off-clock break", kind: "break" },
+            { time: "12:30", end: "1:00", label: "Deep client work continues", kind: "deep" },
+            { time: "1:00", end: "1:30", label: "Comms + shutdown", kind: "comms" }
+          ] },
+        { name: "Wednesday", range: "9:00 &ndash; 1:30", owns: "Maintenance pass + content production",
+          blocks: [
+            { time: "9:00", end: "9:30", label: "Inbox triage", kind: "triage" },
+            { time: "9:30", end: "10:30", label: "Maintenance pass &middot; all active client sites", kind: "deep", link: "/sop/maintenance/" },
+            { time: "10:30", end: "12:00", label: "Content production &middot; research / draft / edit", kind: "deep", link: "/sop/content-marketing-ops/" },
+            { time: "12:00", end: "12:30", label: "Lunch &middot; off-clock break", kind: "break" },
+            { time: "12:30", end: "1:00", label: "Content production continues", kind: "deep" },
+            { time: "1:00", end: "1:30", label: "Comms + shutdown", kind: "comms" }
+          ] },
+        { name: "Thursday",  range: "9:00 &ndash; 1:30", owns: "Deep client work &middot; single engagement",
+          blocks: [
+            { time: "9:00", end: "9:30", label: "Inbox triage", kind: "triage" },
+            { time: "9:30", end: "12:00", label: "Deep client work &middot; no context-switching", kind: "deep" },
+            { time: "12:00", end: "12:30", label: "Lunch &middot; off-clock break", kind: "break" },
+            { time: "12:30", end: "1:00", label: "Deep client work continues", kind: "deep" },
+            { time: "1:00", end: "1:30", label: "Comms + shutdown", kind: "comms" }
+          ] },
+        { name: "Friday",    range: "9:00 &ndash; 1:30", owns: "Admin + newsletter ship + week planning",
+          blocks: [
+            { time: "9:00", end: "9:30", label: "Inbox triage", kind: "triage" },
+            { time: "9:30", end: "10:30", label: "Admin &middot; invoicing, expenses, comms backlog", kind: "deep", link: "/sop/billing/" },
+            { time: "10:30", end: "11:30", label: "Content repurposing + newsletter ship (alt weeks)", kind: "deep", link: "/sop/email-newsletter/" },
+            { time: "11:30", end: "12:00", label: "Week-ahead planning + retro", kind: "deep" },
+            { time: "12:00", end: "12:30", label: "Lunch &middot; off-clock break", kind: "break" },
+            { time: "12:30", end: "1:00", label: "Planning continues / catchup", kind: "deep" },
+            { time: "1:00", end: "1:30", label: "Comms + shutdown", kind: "comms" }
+          ] }
+      ] %}
+
+      {% for d in weekdays %}
+      <article class="planner-day-col">
+        <header>
+          <h3>{{ d.name }}</h3>
+          <span class="planner-day-range">{{ d.range | safe }}</span>
+          <span class="planner-day-owns">{{ d.owns | safe }}</span>
+        </header>
+        <ol class="planner-block-list">
+          {% for b in d.blocks %}
+          <li class="planner-block planner-block--{{ b.kind }}">
+            <time>{{ b.time }} &ndash; {{ b.end }}</time>
+            {% if b.link %}<a href="{{ b.link }}">{{ b.label | safe }}</a>{% else %}<span>{{ b.label | safe }}</span>{% endif %}
+          </li>
+          {% endfor %}
+        </ol>
+      </article>
+      {% endfor %}
+
+      <article class="planner-day-col planner-day-col--sun">
+        <header>
+          <h3>Sunday</h3>
+          <span class="planner-day-range">~60 min, afternoon</span>
+          <span class="planner-day-owns">Social-media batch</span>
+        </header>
+        <ol class="planner-block-list">
+          <li class="planner-block planner-block--deep">
+            <time>~60 min</time>
+            <a href="/sop/social-media/">Draft + schedule the week's 4-5 posts</a>
+          </li>
+        </ol>
+        <p class="planner-day-note">Saturday is off. The Sunday batch is the deliberate exception &mdash; one hour on Sunday saves about five hours of mid-week context-switching.</p>
+      </article>
+    </div>
+
+    <div class="planner-week-budget">
+      <span><strong>20 hr</strong> weekday block</span>
+      <span class="planner-plus">+</span>
+      <span><strong>1 hr</strong> Sunday batch</span>
+      <span class="planner-plus">=</span>
+      <span><strong>21 hr</strong> total weekly capacity</span>
+    </div>
+  </section>
+
+  {# ============================================================
+     DAY VIEW — single column timeline, 9:00 to 1:30
+     ============================================================ #}
+  <section class="planner-view" data-view="day" role="tabpanel" hidden>
+    <header class="planner-view-head">
+      <h2>Day &middot; the four-hour working block</h2>
+      <p>The same shape every weekday. Triage opens; shutdown closes. The deep-work content in the middle changes by day (Tue/Thu = client; Wed = maintenance + content; Mon = outreach + newsletter; Fri = admin + planning) but the bookends never move. 1:30pm on, the day is closed.</p>
+    </header>
+
+    <div class="planner-day-timeline">
+      <div class="planner-day-rule" aria-hidden="true">
+        <span style="top: 0%">9:00</span>
+        <span style="top: 11.1%">9:30</span>
+        <span style="top: 33.3%">10:30</span>
+        <span style="top: 55.5%">11:30</span>
+        <span style="top: 66.6%">12:00</span>
+        <span style="top: 77.7%">12:30</span>
+        <span style="top: 88.8%">1:00</span>
+        <span style="top: 100%">1:30</span>
+      </div>
+
+      <ol class="planner-day-blocks">
+        <li class="planner-day-block planner-block--triage" style="--start: 0%; --span: 11.1%">
+          <time>9:00 &ndash; 9:30 &middot; 30 min</time>
+          <strong>Inbox triage</strong>
+          <p>Reply to anything urgent. Snooze thoughtful responses to the comms slot at 1:00. Archive the rest. Hard cap at 30 minutes; if I'm still in email at 9:35, something is wrong.</p>
+        </li>
+        <li class="planner-day-block planner-block--deep" style="--start: 11.1%; --span: 55.5%">
+          <time>9:30 &ndash; 12:00 &middot; 2.5 hours</time>
+          <strong>Deep work, part 1 &middot; the load-bearing block</strong>
+          <p>The single most valuable block of the day. Whatever the highest-leverage thing is &mdash; client build, content draft, outreach batch &mdash; owns it. Email closed, phone in another room, no ad-hoc meetings, no context-switching. Protect it like a load-bearing wall.</p>
+        </li>
+        <li class="planner-day-block planner-block--break" style="--start: 66.6%; --span: 11.1%">
+          <time>12:00 &ndash; 12:30 &middot; 30 min, off-clock</time>
+          <strong>Real break</strong>
+          <p>Lunch and a walk away from the screen. Phone in pocket, no podcasts, just time to actually think. Most blog post angles I write come out of this walk &mdash; not an accident.</p>
+        </li>
+        <li class="planner-day-block planner-block--deep" style="--start: 77.7%; --span: 11.1%">
+          <time>12:30 &ndash; 1:00 &middot; 30 min</time>
+          <strong>Deep work, part 2</strong>
+          <p>Continue the morning's task to a clean stopping point, or pick up the day's secondary deep task. Same rules as part 1: no email, no ad-hoc meetings.</p>
+        </li>
+        <li class="planner-day-block planner-block--comms" style="--start: 88.8%; --span: 11.1%">
+          <time>1:00 &ndash; 1:30 &middot; 30 min</time>
+          <strong>Comms + shutdown</strong>
+          <p>Reply to DMs, social comments, slower-thread emails. Scheduled discovery calls land here when booked. Last 10 minutes: mark today done, pull tomorrow's top three into a written list, close every browser tab. The shutdown is what makes tomorrow's 9:30 block possible.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="planner-day-tally">
+      <span><strong>4 hr</strong> working content</span>
+      <span class="planner-plus">+</span>
+      <span><strong>30 min</strong> off-clock break</span>
+      <span class="planner-plus">=</span>
+      <span><strong>4.5 hr</strong> wall-clock window, 9:00 &ndash; 1:30</span>
+    </div>
+  </section>
+
+</div>
+
+<p style="margin-top:2.5rem;color:var(--text-soft);font-size:0.92rem">
+  Looking for the prose-and-cross-reference version of this calendar? See <a href="/sop/calendar/">Calendar &amp; cadence</a> &mdash; same rhythms, more narrative.
+</p>
+
+<script>
+  (function () {
+    var planner = document.querySelector('[data-planner]');
+    if (!planner) return;
+    var tabs = planner.querySelectorAll('.planner-tab');
+    var views = planner.querySelectorAll('.planner-view');
+    function show(name) {
+      tabs.forEach(function (t) {
+        var on = t.getAttribute('data-view') === name;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      views.forEach(function (v) {
+        var on = v.getAttribute('data-view') === name;
+        v.classList.toggle('is-active', on);
+        if (on) { v.removeAttribute('hidden'); } else { v.setAttribute('hidden', ''); }
+      });
+      try { history.replaceState(null, '', '#' + name); } catch (e) {}
+    }
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () { show(t.getAttribute('data-view')); });
+      t.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        var arr = Array.prototype.slice.call(tabs);
+        var idx = arr.indexOf(t);
+        var next = e.key === 'ArrowRight' ? (idx + 1) % arr.length : (idx - 1 + arr.length) % arr.length;
+        arr[next].focus();
+        show(arr[next].getAttribute('data-view'));
+      });
+    });
+    var initial = (location.hash || '').replace('#', '');
+    var valid = ['year', 'quarter', 'month', 'week', 'day'];
+    if (valid.indexOf(initial) !== -1) { show(initial); } else { show('week'); }
+  })();
+</script>

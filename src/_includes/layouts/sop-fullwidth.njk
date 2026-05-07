@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+noindex: true
+---
+
+<div data-pagefind-ignore="all">
+
+<section class="page-hero" style="padding-bottom:1.25rem">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/sop/">SOP Portal</a>{% if title %}<span class="sep">/</span><span>{{ title }}</span>{% endif %}
+    </nav>
+    <span class="section-label">SOP &middot; Internal team reference</span>
+    <h1>{{ title or "SOP Portal" }}</h1>
+    {% if sopGoal %}<p>{{ sopGoal }}</p>{% endif %}
+    <p style="margin-top:1rem"><a class="sop-backlink" href="/sop/">&larr; Back to SOP portal</a></p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:1rem">
+  <div class="container" style="max-width:1320px">
+    {{ content | safe }}
+  </div>
+</section>
+
+</div>
