@@ -314,6 +314,38 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
         for (const htmlPath of htmlFiles) {
           const html = fs.readFileSync(htmlPath, "utf8");
           totalBytesBefore += purgedSiteCss.length;
+
+          // Per-page safelist. The site-wide pass already kept anything
+          // used on at least one page; this second pass shaves the rest
+          // per-page, so the safelist here only protects JS-toggled
+          // classes (which won't appear in static HTML) and patterns
+          // specific to the page type. Page-type detection is by URL
+          // path so we don't ship Leaflet rules on the home page or
+          // planner rules on a service page.
+          const deepSafelist = [
+            // Theme attribute — every :root rule.
+            /\[data-theme/,
+            // JS-rendered search UI is sitewide (header + modal).
+            /^ppwd-/,
+            // Pagefind result highlighting <mark>.
+            /^mark/,
+          ];
+          if (htmlPath.includes(`${path.sep}areas${path.sep}`) ||
+              htmlPath.includes(`${path.sep}service-areas${path.sep}`)) {
+            deepSafelist.push(/leaflet/);
+          }
+          if (htmlPath.includes(`${path.sep}glossary${path.sep}`) ||
+              htmlPath.includes(`${path.sep}faq${path.sep}`) ||
+              htmlPath.includes(`${path.sep}method${path.sep}`)) {
+            deepSafelist.push(/tippy/);
+          }
+          if (htmlPath.includes(`${path.sep}grader${path.sep}`)) {
+            deepSafelist.push(/^grader-/);
+          }
+          if (htmlPath.includes(`${path.sep}sop${path.sep}`)) {
+            deepSafelist.push(/^planner-/, /^sop-backlink/);
+          }
+
           const pagePurge = await new PurgeCSS().purge({
             content: [{ raw: html, extension: "html" }],
             css: [{ raw: purgedSiteCss }],
@@ -323,10 +355,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
                 "open", "is-open", "active", "is-active", "is-loading", "is-scrolled",
                 "show", "scrolled", "expanded", "collapsed", "is-fixed", "is-hidden", "is-revealed",
               ],
-              deep: [
-                /\[data-theme/, /leaflet/, /tippy/, /^mark/, /^ppwd-/, /^grader-/,
-                /^planner-/, /^sop-backlink/,
-              ],
+              deep: deepSafelist,
               keyframes: true,
               variables: false,
             },

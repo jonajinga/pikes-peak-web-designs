@@ -93,8 +93,39 @@
      conditionally render. Set site.umamiWebsiteId / site.cloudflareBeaconToken
      to enable. #}
   {% if site.umamiWebsiteId %}
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.umamiWebsiteId }}"></script>
-  <script defer src="/assets/js/umami-tracking.js"></script>
+  {#- Umami analytics: load AFTER the page hits LCP rather than during
+      the critical path. Defer alone still queues the request during
+      HTML parse, contending with bandwidth that could be serving the
+      font + CSS the hero needs. Triggering on the load event delays
+      Umami to ~Time-to-Interactive-ish, which is exactly when
+      analytics SHOULD start (the user has the page; tracking begins).
+      Falls back to a 4s setTimeout in case the load event has already
+      fired by the time this script parses (it has on bfcache restores). -#}
+  <script>
+    (function(){
+      var loaded = false;
+      function loadUmami(){
+        if (loaded) return; loaded = true;
+        var s = document.createElement('script');
+        s.defer = true;
+        s.src = 'https://cloud.umami.is/script.js';
+        s.dataset.websiteId = '{{ site.umamiWebsiteId }}';
+        document.head.appendChild(s);
+        var t = document.createElement('script');
+        t.defer = true;
+        t.src = '/assets/js/umami-tracking.js';
+        document.head.appendChild(t);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(loadUmami, 0);
+      } else {
+        addEventListener('load', function(){ setTimeout(loadUmami, 0); }, { once: true });
+        // Belt-and-suspenders: 4-second fallback so analytics never hangs
+        // if the load event is suppressed by some edge case.
+        setTimeout(loadUmami, 4000);
+      }
+    })();
+  </script>
   {% endif %}
   {% if site.cloudflareBeaconToken %}
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflareBeaconToken }}"}'></script>
