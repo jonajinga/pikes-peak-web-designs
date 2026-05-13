@@ -292,16 +292,31 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
       if (!minStyle.errors.length) fs.writeFileSync(cssFile, minStyle.styles);
       else console.warn("style.css minify errors:", minStyle.errors);
 
-      // Per-page inlined CSS. The site-wide purge above keeps any rule
-      // used on at least one page; we now run a second purge per HTML
-      // file and inline the page-specific result directly into the HTML
-      // <head>, replacing the <link rel="stylesheet"> reference. Two
-      // wins: (1) drops the render-blocking network request entirely,
-      // (2) eliminates the FOUC the preload+onload pattern produced on
-      // every navigation. Cost: HTML grows by ~10-15 KB brotli per
-      // page, but most marketing visitors are first-time so the
-      // first-paint win dominates.
-      try {
+      // PER-PAGE CSS INLINING IS DISABLED.
+      //
+      // Previously this block ran a second PurgeCSS pass per HTML file
+      // and inlined the result as <style> in <head>, replacing the
+      // external stylesheet <link>. The intent was "0 ms CSS cost per
+      // page navigation" — but in practice it pushed 60-90 KB of CSS
+      // into every HTML response, so the home-page <head> grew to
+      // ~93 KB of inline <style> and the browser had to parse all of
+      // it before first paint. On Slow 4G + mid-range mobile, LCP
+      // stalled at 4.4-4.5 s.
+      //
+      // Switched to: site-wide purged style.css ships as ONE external
+      // file with `<link rel="preload" as="style" onload="...">` in
+      // base.njk. Critical above-the-fold rules stay inlined in the
+      // critical-css partial. First paint happens immediately from
+      // the small inlined critical block; the bigger external CSS
+      // arrives in parallel and upgrades the page. Cache hit means
+      // 0 CSS network cost on every subsequent navigation.
+      //
+      // The loop below is left in place but no-ops because base.njk
+      // now emits <link rel="preload" ...> instead of <link rel="stylesheet" ...>,
+      // so the regex on line 373 never matches anything and no file
+      // is rewritten. Keeping the loop disabled (early return) so the
+      // build doesn't waste time running PurgeCSS per page for nothing.
+      if (false) try {
         const purgedSiteCss = fs.readFileSync(cssFile, "utf8");
         const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true })
           .flatMap(d => d.isDirectory() ? walk(path.join(dir, d.name)) : [path.join(dir, d.name)]);

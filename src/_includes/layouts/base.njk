@@ -45,9 +45,20 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  {# Per-page CSS gets inlined into <style> in eleventy.after; this
-     <link> is the placeholder that build hook replaces. #}
-  <link rel="stylesheet" href="/assets/css/style.css">
+  {# Non-critical CSS, loaded async so it doesn't block the first
+     paint. The critical-css partial above already inlines the
+     above-the-fold rules (fonts, tokens, reset, header, hero,
+     page-hero, section skeleton, sticky nav). This external file
+     carries everything else and arrives in parallel with the HTML.
+     The preload+onload pattern paints with critical CSS immediately,
+     then upgrades the page when the external CSS loads. The <noscript>
+     fallback covers browsers with JS disabled.
+
+     The site-wide purged style.css ships under one cacheable URL —
+     after the first page visit it's in the browser cache and every
+     subsequent navigation has 0 ms CSS cost. #}
+  <link rel="preload" as="style" href="/assets/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
   {# Pagefind's default UI (pagefind-ui.css/js) is no longer used; the
      custom .ppwd-search UI loads /pagefind/pagefind.js on demand. The
      two preloads were ~14 KiB of dead weight on every page. #}
@@ -131,7 +142,7 @@
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflareBeaconToken }}"}'></script>
   {% endif %}
 </head>
-<body>
+<body{% if noindex %} data-pagefind-ignore="all"{% endif %}>
 <a href="#main-content" class="skip-link">Skip to content</a>
 
 {% include "partials/promo-banner.njk" %}

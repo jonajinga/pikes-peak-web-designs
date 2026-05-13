@@ -1003,10 +1003,14 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold-600);
+  /* Light theme: gold-700 (#6A4F0C) is ~7.1:1 on cream and 9.5:1 on
+     white — comfortably above the 4.5:1 AA floor that gold-600 was
+     skirting (gold-600 on cream is ~4.3:1, which Lighthouse flagged).
+     Dark theme: gold-300 reads as ~9:1 on the dark navy panel bg. */
+  color: var(--gold-700);
   line-height: 1;
 }
-:root[data-theme="dark"] .mobile-nav-footer-label { color: var(--gold-400); }
+:root[data-theme="dark"] .mobile-nav-footer-label { color: var(--gold-300); }
 .mobile-nav-footer-target {
   display: block;
   font-family: var(--font-display);
@@ -5346,10 +5350,13 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold-600);
+  /* Caption sits on .section--cream (--bg-alt #FBF7EE). gold-600
+     (#926C10) was ~4.3:1 there — below the 4.5:1 AA floor. gold-700
+     (#6A4F0C) is ~7.1:1 and clears AA comfortably. */
+  color: var(--gold-700);
   text-align: center;
 }
-:root[data-theme="dark"] .founder-intro-caption { color: var(--gold-400); }
+:root[data-theme="dark"] .founder-intro-caption { color: var(--gold-300); }
 .founder-intro-body .section-title {
   margin-top: 0.6rem;
   text-wrap: balance;
