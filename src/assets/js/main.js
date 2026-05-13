@@ -14,7 +14,10 @@
     typeof matchMedia !== 'undefined' && matchMedia('(prefers-color-scheme: dark)').matches;
   const applyTheme = (mode) => {
     const resolved = mode === 'system' ? (systemPrefersDark() ? 'dark' : 'light') : mode;
-    document.documentElement.setAttribute('data-theme', resolved);
+    const d = document.documentElement;
+    d.setAttribute('data-theme', resolved);
+    d.style.colorScheme = resolved;
+    d.style.backgroundColor = resolved === 'dark' ? '#071125' : '#FFFFFF';
   };
   const getStoredTheme = () => {
     try { return localStorage.getItem(THEME_KEY) || 'system'; } catch (e) { return 'system'; }
