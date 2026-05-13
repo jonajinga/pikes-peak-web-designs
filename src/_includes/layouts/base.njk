@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  {#- color-scheme meta is parsed by the user agent BEFORE any CSS, so
+      the browser's "initial canvas" (the blank background painted
+      between the HTML arriving and the inline <style> finishing
+      parse) gets painted in dark when the system / stored preference
+      is dark, instead of the user-agent default white that produced
+      the flash on every navigation. The inline no-flash script
+      below then sets style.colorScheme on <html> explicitly to
+      lock in the stored preference even when it disagrees with the
+      system. -#}
+  <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0A1F44" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#071125" media="(prefers-color-scheme: dark)">
   <title>{{ title if title else site.name }}</title>
@@ -10,7 +20,7 @@
   {% if canonicalUrl %}<link rel="canonical" href="{{ canonicalUrl }}">{% else %}<link rel="canonical" href="{{ site.url }}{{ page.url }}">{% endif %}
   {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
 
-  <script>(function(){try{var t=localStorage.getItem('pp-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <script>(function(){try{var t=localStorage.getItem('pp-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';var r=document.documentElement;r.setAttribute('data-theme',t);r.style.colorScheme=t;r.style.background=t==='dark'?'#071125':'#FFFFFF';}catch(e){}})();</script>
 
   {% include "partials/critical-css.njk" %}
 

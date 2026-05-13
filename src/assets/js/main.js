@@ -14,7 +14,15 @@
     typeof matchMedia !== 'undefined' && matchMedia('(prefers-color-scheme: dark)').matches;
   const applyTheme = (mode) => {
     const resolved = mode === 'system' ? (systemPrefersDark() ? 'dark' : 'light') : mode;
-    document.documentElement.setAttribute('data-theme', resolved);
+    const root = document.documentElement;
+    root.setAttribute('data-theme', resolved);
+    // Keep the inline color-scheme + background in sync with the no-flash
+    // bootstrap script in base.njk. Without this, toggling the theme
+    // wouldn't update the inline html background that the bootstrap sets
+    // to prevent the white flash on first paint, so the page would stay
+    // the wrong color until the next full reload.
+    root.style.colorScheme = resolved;
+    root.style.background = resolved === 'dark' ? '#071125' : '#FFFFFF';
   };
   const getStoredTheme = () => {
     try { return localStorage.getItem(THEME_KEY) || 'system'; } catch (e) { return 'system'; }
