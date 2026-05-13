@@ -79,3 +79,5 @@ tags: [post]
 <p>Local pack rankings are the difference between a service business getting twenty calls a week and getting two. The local pack is the three-listing block at the top of Google's local results, above the standard organic listings. Being in it is high-leverage; being just below it is much less so.</p>
 
 <p>NAP consistency is the second-highest-impact local SEO factor I know of, behind only Google Business Profile completeness and ahead of nearly everything else &mdash; review velocity, backlinks, on-page content. The fix is unglamorous, takes one focused hour to audit and another hour to remediate, and shows up in rankings within four to eight weeks. That is the boringest, highest-ROI hour a local service business can spend on its web presence.</p>
+
+<p>For the wider context on how local-search visibility actually translates into booked work &mdash; alongside the speed, conversion-path, and maintenance levers that compound with it &mdash; the <a href="/roi/" class="inline-link">return-on-investment page</a> walks through the math with a worked example for a typical local service business.</p>

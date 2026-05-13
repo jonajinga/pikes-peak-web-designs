@@ -317,7 +317,6 @@ a.inline-link, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share):not(
   font-weight: 600;
   border-bottom: 1px solid var(--line-strong);
   transition: color var(--dur), border-color var(--dur);
-  overflow-wrap: anywhere;
 }
 a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share):not(.press-asset-btn):hover, .prose-policy a:not(.btn):hover, .post-content a:not(.btn):not(.post-share-btn):not(.post-toc-share):not(.press-asset-btn):hover {
   color: var(--link-hover);
@@ -867,8 +866,8 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-sm);
   color: var(--text);
   transition: color var(--dur), background var(--dur);
@@ -1946,18 +1945,46 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 }
 .hero-secondary-link {
   margin: 0 0 2.25rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.75rem;
+  align-items: stretch;
 }
+.hero-secondary-sep { display: none; } /* legacy middle-dot separator, no longer rendered */
 .hero-secondary-link a {
-  color: rgba(255, 255, 255, 0.78);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  padding-bottom: 1px;
-  transition: color var(--dur), border-color var(--dur);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem 0.55rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  min-height: 38px;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.03);
+  transition: background var(--dur), border-color var(--dur), color var(--dur), transform var(--dur);
+}
+.hero-secondary-link a::after {
+  content: "\2192"; /* → */
+  font-size: 1.05em;
+  line-height: 1;
+  color: var(--gold-300);
+  transition: transform var(--dur), color var(--dur);
 }
 .hero-secondary-link a:hover,
 .hero-secondary-link a:focus-visible {
-  color: var(--gold-400);
-  border-bottom-color: var(--gold-400);
+  color: #FFFFFF;
+  background: rgba(221, 177, 61, 0.14);
+  border-color: var(--gold-400);
+  transform: translateY(-1px);
+}
+.hero-secondary-link a:hover::after,
+.hero-secondary-link a:focus-visible::after {
+  color: var(--gold-300);
+  transform: translateX(2px);
 }
 .hero-card-secondary {
   margin-top: 0.5rem;
@@ -2796,10 +2823,6 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 1.75rem;
-}
-@media (max-width: 880px) {
-  .cta-buttons { flex-direction: column; align-items: stretch; }
-  .cta-buttons .btn { width: 100%; }
 }
 .cta-section .btn-primary {
   background: var(--gold-400);
@@ -13955,7 +13978,7 @@ a { touch-action: manipulation; }
   .pricing-header .price-amount { font-size: 2.35rem; }
   .plan-card-price { font-size: 2rem; }
   .mobile-nav { width: 100vw; }
-  .nav-icon-btn { width: 40px; height: 40px; }
+  .nav-icon-btn { width: 38px; height: 38px; }
   .logo { font-size: 1.05rem; }
   .trust-chip { font-size: 0.68rem; }
 }
@@ -15883,6 +15906,391 @@ h1:focus-within em::after { transform: scaleX(1); }
   background: var(--peak-gradient);
   pointer-events: none;
 }
+
+/* ============================================================
+   ROI page (/roi/) — return-on-investment narrative.
+   ============================================================ */
+.roi-intro { max-width: 72ch; }
+.roi-intro p { margin: 0 0 1.15rem; font-size: 1rem; line-height: 1.65; color: var(--text); }
+.roi-intro p:last-child { margin-bottom: 0; }
+
+/* The four-lever cards — 2-up grid on desktop, stacked on phones. Each
+   card carries a circled number badge that sits half-outside the top
+   border, body prose, and a quieter "by the numbers" footnote separated
+   by a hairline rule. Same hover affordance as feature-card / step-card
+   for consistency across the site. */
+.roi-levers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+@media (max-width: 880px) { .roi-levers { grid-template-columns: 1fr; gap: 1.1rem; } }
+
+.roi-lever {
+  position: relative;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem 1.65rem 1.75rem;
+  transition: border-color var(--dur), box-shadow var(--dur), transform var(--dur);
+}
+.roi-lever:hover {
+  border-color: var(--navy-700);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+:root[data-theme="dark"] .roi-lever:hover { border-color: var(--gold-500); }
+
+.roi-lever-num {
+  position: absolute;
+  top: -16px;
+  left: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--navy-900);
+  color: var(--gold-300);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  line-height: 1;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+:root[data-theme="dark"] .roi-lever-num { background: var(--gold-500); color: var(--navy-900); }
+
+.roi-lever h3 {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  margin: 0.4rem 0 0.75rem;
+  line-height: 1.3;
+}
+.roi-lever p { margin: 0 0 0.9rem; font-size: 0.94rem; line-height: 1.6; }
+.roi-lever p:last-child { margin-bottom: 0; }
+.roi-lever-foot {
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* Worked-example section — sits on the cream/mist alt background to
+   visually separate the math-heavy block from the prose blocks above
+   and below. Subheads in display serif, lists tight, footer callout
+   reuses the gold-rule pattern. */
+.roi-example h3 {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  margin: 2.5rem 0 0.85rem;
+  letter-spacing: -0.005em;
+}
+.roi-example h3:first-of-type { margin-top: 1.25rem; }
+.roi-example p { margin: 0 0 1.1rem; line-height: 1.65; }
+.roi-example ul {
+  margin: 0 0 1.6rem;
+  padding-left: 1.5rem;
+}
+.roi-example li { margin-bottom: 0.5rem; line-height: 1.55; }
+.roi-example li:last-child { margin-bottom: 0; }
+
+/* Stat strip at the top of the worked example. Four little tile-cards
+   anchoring the assumptions the math is going to use. Mirrors the
+   stats-grid pattern from the homepage but tighter. */
+.roi-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin: 1.5rem 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 880px) { .roi-stats { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .roi-stats { grid-template-columns: 1fr; } }
+.roi-stat {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold-500);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.15rem 1.15rem;
+  text-align: center;
+}
+:root[data-theme="dark"] .roi-stat { border-top-color: var(--gold-400); }
+.roi-stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--navy-900);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+:root[data-theme="dark"] .roi-stat-num { color: var(--gold-300); }
+.roi-stat-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* Before/after comparison — two cards side-by-side. The "before"
+   card carries a danger-coded left rule (the current-state cost);
+   the "after" card carries a gold rule (the lifted-state outcome).
+   Each card's bullets are quick scannable wins. */
+.roi-ba {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+}
+@media (max-width: 780px) { .roi-ba { grid-template-columns: 1fr; } }
+.roi-ba-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.5rem 1.5rem;
+}
+.roi-ba--before { border-left: 4px solid var(--danger, #A1190F); }
+.roi-ba--after { border-left: 4px solid var(--gold-500); }
+.roi-ba-eyebrow {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+.roi-ba--before .roi-ba-eyebrow { color: var(--danger, #A1190F); }
+.roi-ba--after .roi-ba-eyebrow { color: var(--gold-600); }
+:root[data-theme="dark"] .roi-ba--before .roi-ba-eyebrow { color: #FCA5A5; }
+:root[data-theme="dark"] .roi-ba--after .roi-ba-eyebrow { color: var(--gold-400); }
+.roi-ba-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin: 0 0 0.85rem;
+  letter-spacing: -0.005em;
+}
+.roi-ba-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.roi-ba-card li {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  padding-left: 1.15rem;
+  position: relative;
+  color: var(--text);
+  margin: 0;
+}
+.roi-ba-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background: var(--gold-500);
+  border-radius: 50%;
+}
+.roi-ba--before li::before { background: var(--danger, #A1190F); }
+
+/* Bottom-line conclusion block — sits below the before/after compare,
+   prints the headline-number ROI claim in display serif so the page
+   has one prominent visual landing spot. */
+.roi-bottomline {
+  margin: 1.75rem 0 0;
+  padding: 1.5rem 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.roi-bottomline-eyebrow {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 0.55rem;
+}
+:root[data-theme="dark"] .roi-bottomline-eyebrow { color: var(--gold-400); }
+.roi-bottomline p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  line-height: 1.5;
+  color: var(--text);
+  max-width: 56ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.roi-bottomline p strong { font-weight: 700; }
+
+.roi-callout {
+  margin-top: 2.25rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border-left: 3px solid var(--gold-500);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.roi-callout p { margin: 0; font-size: 0.96rem; line-height: 1.65; }
+
+/* Cost-side comparison — three scenario cards in a row, each capturing
+   the apples-to-apples accounting against a common alternative
+   (DIY/Wix, agency retainer, freelancer). Mirrors the four-lever
+   card grammar so the page feels consistent end to end. */
+.roi-cost {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 2rem 0 0;
+}
+@media (max-width: 1024px) { .roi-cost { grid-template-columns: 1fr; gap: 1rem; } }
+
+.roi-cost-card {
+  position: relative;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.65rem 1.5rem 1.6rem;
+  transition: border-color var(--dur), box-shadow var(--dur), transform var(--dur);
+}
+.roi-cost-card:hover {
+  border-color: var(--navy-700);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+:root[data-theme="dark"] .roi-cost-card:hover { border-color: var(--gold-500); }
+.roi-cost-eyebrow {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 0.55rem;
+}
+:root[data-theme="dark"] .roi-cost-eyebrow { color: var(--gold-400); }
+.roi-cost-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin: 0 0 0.85rem;
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+}
+.roi-cost-card p { margin: 0 0 0.85rem; font-size: 0.93rem; line-height: 1.6; }
+.roi-cost-card p:last-child { margin-bottom: 0; }
+.roi-cost-tally {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.roi-cost-tally strong { color: var(--text); font-weight: 700; }
+
+.roi-cost-foot {
+  margin-top: 2rem;
+  max-width: 72ch;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+/* Honest-caveats list. Each li is a self-contained card with a
+   gold left-rule, a strong-led summary, and a clarifier sentence. */
+.roi-caveats {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.roi-caveats li {
+  padding: 1.1rem 1.4rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold-500);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  line-height: 1.6;
+}
+.roi-caveats strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Verification-steps list. Three rows; each carries a circled number
+   in the gold accent so the visual treatment matches the "five points"
+   list on /audit/. Single column at every breakpoint — these steps
+   want to read top-to-bottom, not as a grid. */
+.roi-verify {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  counter-reset: roi-verify;
+}
+.roi-verify li {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: 1.1rem 1.4rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  counter-increment: roi-verify;
+  transition: border-color var(--dur);
+}
+.roi-verify li:hover { border-color: var(--navy-700); }
+.roi-verify li::before {
+  content: counter(roi-verify);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--gold-500);
+  color: var(--navy-900);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50%;
+  line-height: 1;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+:root[data-theme="dark"] .roi-verify li::before { background: var(--gold-400); color: var(--navy-950); }
+.roi-verify strong { display: block; margin-bottom: 0.3rem; font-weight: 700; }
+.roi-verify p { margin: 0; font-size: 0.93rem; line-height: 1.6; color: var(--text-muted); }
+
+.roi-related {
+  margin-top: 2.5rem;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  text-align: center;
+}
+.roi-related a { margin: 0 0.45rem; }
 
 /* ============================================================
    SOP Planner (/sop/planner/) — visual calendar with tab views.

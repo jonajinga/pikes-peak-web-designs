@@ -68,7 +68,7 @@ tags: [post]
 
 <h2>What "passing" actually means for ranking</h2>
 
-<p>Google has been deliberately vague about how much Core Web Vitals affect ranking. The honest summary based on what the search community has measured: passing all three thresholds is a small but real ranking signal, and failing them is a slightly larger negative signal. The effect is most pronounced when two pages are otherwise tied; the one with better Core Web Vitals wins the tiebreak.</p>
+<p>Google has been deliberately vague about how much Core Web Vitals affect ranking. The realistic summary based on what the search community has measured: passing all three thresholds is a small but real ranking signal, and failing them is a slightly larger negative signal. The effect is most pronounced when two pages are otherwise tied; the one with better Core Web Vitals wins the tiebreak.</p>
 
 <p>For a small service business competing with a few local rivals, all of whom have mediocre sites, passing Core Web Vitals can be enough on its own to move from page two to page one. For a business in a competitive national category, Core Web Vitals matter but cannot make up for thin content or weak backlinks.</p>
 

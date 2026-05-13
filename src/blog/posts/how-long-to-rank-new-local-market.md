@@ -142,7 +142,7 @@ tags: [post]
   <li><strong>Active local citations.</strong> Submitting NAP-consistent listings to the top 10-15 local directories on launch day, rather than waiting, accelerates the prominence climb by several weeks.</li>
 </ul>
 
-<h2>The honest summary</h2>
+<h2>The summary</h2>
 
 <p>For a service business launching a properly-built website in a moderately competitive local market with no paid acquisition: meaningful organic traffic by month three, a real lead-generating SEO engine by month six, dominant local-pack presence by month twelve. The pitch decks that promise faster timelines are usually charging more for the same outcome on a worse footing. The cynics who say "you can't rank without paying for ads" are usually quoting outdated playbooks from before local SEO matured.</p>
 

@@ -79,6 +79,7 @@ tags: [post, local-seo]
 
 <ol>
   <li><strong>The <a href="/calculator/" class="inline-link">interactive calculator</a>.</strong> Plug in your real numbers (visitors, mobile share, current PageSpeed, conversion rate, average job value, close rate). Get the annual leakage estimate in 30 seconds. Numbers run in your browser; nothing leaves your device.</li>
+  <li><strong>The <a href="/roi/" class="inline-link">return-on-investment page</a>.</strong> The calculator on this post handles the speed-and-conversion lever. The ROI page walks through all four levers a well-built site moves &mdash; speed, local search, conversion path, maintenance &mdash; with the worked-example math and the cost-side comparison against the standard plan.</li>
   <li><strong>The <a href="/audit/" class="inline-link">free 5-point audit</a>.</strong> If you would rather have me run real Lighthouse numbers and a real schema check on your URL and write up the findings, that takes five business days, costs nothing, and the deliverable is a written report you can act on with or without me.</li>
   <li><strong>The <a href="/contact/" class="inline-link">discovery call</a>.</strong> Twenty minutes. Bring the numbers from the calculator. We will talk through where they come from and what a custom build would actually change.</li>
 </ol>

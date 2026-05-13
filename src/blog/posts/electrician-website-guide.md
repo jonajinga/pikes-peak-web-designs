@@ -82,7 +82,7 @@ tags: [post, electrical]
 
 <p>If you offer emergency or same-day electrical service, your phone number needs to be at the very top of the page, visible without scrolling. Not in the footer. Not on a contact page someone has to navigate to. At the top of the page, on mobile, in large font; ideally as a tap-to-call link on mobile devices.</p>
 
-<p>A website that puts the phone number three scrolls deep will lose emergency calls to competitors who make it easy to call immediately. This is one of the highest-ROI improvements you can make to an electrician website.</p>
+<p>A website that puts the phone number three scrolls deep will lose emergency calls to competitors who make it easy to call immediately. This is one of the highest-ROI improvements you can make to an electrician website &mdash; and one of the four levers the <a href="/roi/" class="inline-link">return-on-investment page</a> walks through with a worked-example calculation for a typical local service business.</p>
 
 <h2>Photos of Your Work Build Trust; Even Simple Ones</h2>
 

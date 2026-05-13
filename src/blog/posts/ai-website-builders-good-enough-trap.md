@@ -56,7 +56,7 @@ tags: [post, comparison]
 
 <p>A custom-coded site, with a clean static export available at any point if you ever decide to move on, is portable to any host, forever. The work belongs to you, not the vendor that generated it.</p>
 
-<h2>The honest math: what does "good enough" cost?</h2>
+<h2>The math: what does "good enough" cost?</h2>
 
 <p>If your service business has an average job value of $500, and a custom-coded site converts even one extra mobile visitor a week into a phone call (because it loads fast enough that they did not bounce), that is one additional job a week, fifty additional jobs a year, $25,000 of additional pipeline. If your average job is $5,000, the math is an order of magnitude bigger.</p>
 

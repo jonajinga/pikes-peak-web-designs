@@ -10,7 +10,7 @@
   {% if canonicalUrl %}<link rel="canonical" href="{{ canonicalUrl }}">{% else %}<link rel="canonical" href="{{ site.url }}{{ page.url }}">{% endif %}
   {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
 
-  <script>(function(){try{var t=localStorage.getItem('pp-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';var d=document.documentElement;d.setAttribute('data-theme',t);d.style.colorScheme=t;d.style.backgroundColor=t==='dark'?'#071125':'#FFFFFF';}catch(e){}})();</script>
+  <script>(function(){try{var t=localStorage.getItem('pp-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 
   {% include "partials/critical-css.njk" %}
 
@@ -21,9 +21,19 @@
      CSS above. #}
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/playfair-display-latin-600.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-400.woff2" crossorigin>
+  {# Favicon stack. The SVG carries embedded prefers-color-scheme CSS
+     so it adapts to dark browser UI in modern Safari / Firefox / Chrome.
+     PNG variants cover everything else: 16/32/48 for tab and Windows
+     shortcut, 180 for iOS home-screen, 192/512 for Android + PWA.
+     site.webmanifest declares the 512 maskable variant for Android
+     adaptive icons. #}
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   {# Per-page CSS gets inlined into <style> in eleventy.after; this
      <link> is the placeholder that build hook replaces. #}

@@ -34,7 +34,7 @@ tags: [post]
 
 <p><strong>Side businesses with low operating tempo.</strong> A weekend-only bookkeeping service, a retired contractor who takes one or two consulting jobs a year. The website does not need to do much; one page is enough.</p>
 
-<p>For these cases, recommending Carrd is the honest answer. The cost is genuinely $9 to $49 per year. The site genuinely works. There is no reason to spend more.</p>
+<p>For these cases, recommending Carrd is the right answer. The cost is genuinely $9 to $49 per year. The site genuinely works. There is no reason to spend more.</p>
 
 <h2>When a custom site is worth more</h2>
 

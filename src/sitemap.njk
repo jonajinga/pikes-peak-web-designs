@@ -4,8 +4,24 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {#-
+    Public sitemap. Belt-and-suspenders exclusion for internal pages:
+    - The /feed/ URLs are the Atom feed routes, never sitemap entries.
+    - page.data.noindex covers SOP, planner, post-signup, agreements,
+      onboarding, owner's guide, changelog, partner-agreement, etc.
+    - The /demo/ URL-prefix filter covers the portfolio sample-site
+      pages (full sister-brand HTML documents with their own <head>)
+      that don't go through base.njk and therefore don't inherit
+      page.data.noindex from a layout. Without this prefix every demo
+      sub-page would surface in the public sitemap. The standalone
+      sample-forms hub at /sample-forms/ and its public sub-pages stay
+      in the sitemap — they are intended public demonstration pages.
+  -#}
   {% for page in collections.all %}
-    {% if page.url and not page.url.startsWith('/feed') and not page.data.noindex %}
+    {% if page.url
+      and not page.url.startsWith('/feed')
+      and not page.url.startsWith('/demo/')
+      and not page.data.noindex %}
     <url>
       <loc>https://pikespeakwebdesigns.com{{ page.url }}</loc>
       {% if page.date %}<lastmod>{{ page.date | dateISO }}</lastmod>{% endif %}
