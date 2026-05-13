@@ -317,6 +317,7 @@ a.inline-link, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share):not(
   font-weight: 600;
   border-bottom: 1px solid var(--line-strong);
   transition: color var(--dur), border-color var(--dur);
+  overflow-wrap: anywhere;
 }
 a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share):not(.press-asset-btn):hover, .prose-policy a:not(.btn):hover, .post-content a:not(.btn):not(.post-share-btn):not(.post-toc-share):not(.press-asset-btn):hover {
   color: var(--link-hover);
@@ -866,8 +867,8 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-sm);
   color: var(--text);
   transition: color var(--dur), background var(--dur);
@@ -2795,6 +2796,10 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 1.75rem;
+}
+@media (max-width: 880px) {
+  .cta-buttons { flex-direction: column; align-items: stretch; }
+  .cta-buttons .btn { width: 100%; }
 }
 .cta-section .btn-primary {
   background: var(--gold-400);
@@ -13950,7 +13955,7 @@ a { touch-action: manipulation; }
   .pricing-header .price-amount { font-size: 2.35rem; }
   .plan-card-price { font-size: 2rem; }
   .mobile-nav { width: 100vw; }
-  .nav-icon-btn { width: 38px; height: 38px; }
+  .nav-icon-btn { width: 40px; height: 40px; }
   .logo { font-size: 1.05rem; }
   .trust-chip { font-size: 0.68rem; }
 }

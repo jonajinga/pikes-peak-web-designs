@@ -87,7 +87,7 @@ extraHead: '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/le
         var m = L.marker([c.lat, c.lng]).addTo(map);
         m.bindPopup(
           '<strong>' + c.name + '</strong><br>' +
-          '<a href="/areas/' + c.slug + '/" style="color:#1d4ed8;font-weight:600">View local market &rarr;</a>'
+          '<a href="/areas/' + c.slug + '/" style="color:var(--navy-800);font-weight:600">View local market &rarr;</a>'
         );
         markers.push(m);
       });
