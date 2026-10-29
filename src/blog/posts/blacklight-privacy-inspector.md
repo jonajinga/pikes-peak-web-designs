@@ -63,13 +63,13 @@ tags: [post]
 
 <h3>If the report shows session recording</h3>
 
-<p>Look at this one closely, because session recording surprises owners more than any other tracker. The vendor says the tool helps you "understand visitor behavior." In fact, it records every mouse movement, scroll, and click, and often every key typed into a form. It sends all of it to an outside server, where the owner can play it back like a video, and visitors don't know unless the cookie banner says so, which most don't.</p>
+<p>Look at this one closely, because session recording surprises owners more than any other tracker. The vendor says the tool helps you "understand visitor behavior." In fact, it records every mouse movement, scroll, and click, and often every key typed into a form. It sends all of it to an outside server, where the owner can play it back like a video. Visitors don't know unless the cookie banner says so, and most banners don't.</p>
 
 <p>Regulators and courts are taking a harder line on session recording. In California, lawsuits have treated it as a violation of wiretap laws, and they've been expensive. If your report shows session recording, talk to a lawyer or remove the tracker. Doing nothing is the riskiest choice.</p>
 
 <h2>How I run my own builds against Blacklight</h2>
 
-<p>Before I launch any client site, I run it through Blacklight as part of my launch checklist. I expect zero ad trackers, zero session recording, zero canvas fingerprinting, and zero Facebook tracking, and most of my sites pass clean. Now and then, Blacklight lists Cloudflare Web Analytics as a tracker. That's correct by its definition, because Cloudflare is an outside company, but its analytics use no cookies, hide visitors' IP addresses, and combine the numbers before any data leaves the visit. I say so on every site's privacy page, so the report stays accurate.</p>
+<p>Before I launch any client site, I run it through Blacklight as part of my launch checklist. I expect zero ad trackers, zero session recording, zero canvas fingerprinting, and zero Facebook tracking, and most of my sites pass clean. Now and then, Blacklight lists Cloudflare Web Analytics as a tracker. That's correct by its definition, because Cloudflare is an outside company. But its analytics use no cookies, hide visitors' IP addresses, and combine the numbers before any data leaves the visit. I say so on every site's privacy page, so the report stays accurate.</p>
 
 <p>Blacklight gives me an independent check that the privacy I promise on my sales pages matches what the live site does. If a stray tracker slips in, Blacklight catches it before launch. For example, switching the network that delivers a site's files (the CDN) can suddenly load Google Fonts from googleapis.com. The check is a set step in every build.</p>
 
