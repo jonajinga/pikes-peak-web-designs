@@ -2,64 +2,64 @@
 title: "Submitting Your Sitemap: A Three-Engine Plan"
 date: 2026-05-07
 label: "SEO Operations"
-description: "The first 90% of a small business's search visibility comes from two search engines. This is the practical, non-mystical playbook for telling them your site exists."
+description: "About 90% of a small business's search visibility comes from two search engines. Here's a plain, practical plan for telling them your site exists."
 ctaLabel: "Sitemap submission included"
-ctaHeading: "I submit your sitemap to Google and Bing on launch day."
-ctaText: "Every site I build ships with a clean sitemap and a robots.txt that points to it. On launch day I personally submit the sitemap to Google Search Console and Bing Webmaster Tools so the indexing clock starts on day one. Part of the standard plan."
+ctaHeading: "I submit your sitemap to Google and Bing on launch day"
+ctaText: "Every site I build comes with a clean sitemap and a robots.txt file that points to it. On launch day, I submit the sitemap to Google Search Console and Bing Webmaster Tools myself, so indexing starts on day one. Part of the standard plan."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>A small business owner whose new site has been live for three weeks asks the question every week: "I haven't shown up on Google yet, is something wrong?" The answer is almost always the same: nothing is wrong, the site has just not been formally introduced to the search engines yet. Submitting a sitemap is the formal introduction. It is the fastest way to take a new site from "exists somewhere on the internet" to "indexed and ranking" without waiting weeks for the discovery crawl to find every page on its own.</p>
+<p>I hear the same question every week, usually from an owner whose new site went live three weeks ago: "I haven't shown up on Google yet. Is something wrong?" Almost always, nothing is wrong. The search engines just haven't been introduced to the site, and a sitemap is that introduction. It gets a new site indexed (added to a search engine's records) far sooner than waiting for the engine to find every page on its own.</p>
 
-<p>This post is the overview. The follow-up posts in this series go into the specifics for <a href="/blog/submitting-sitemap-to-google/" class="inline-link">Google Search Console</a> and <a href="/blog/submitting-sitemap-to-bing/" class="inline-link">Bing Webmaster Tools</a> respectively. The pattern is the same in both, but the dashboards are different and the indexing economics are different, and a real launch plan handles both.</p>
+<p>This post is the overview. The follow-up posts cover <a href="/blog/submitting-sitemap-to-google/" class="inline-link">Google Search Console</a> and <a href="/blog/submitting-sitemap-to-bing/" class="inline-link">Bing Webmaster Tools</a> in detail. The dashboards differ, and so does what each engine is worth to you, so a good launch plan covers both.</p>
 
-<h2>What a sitemap actually is</h2>
+<h2>What a sitemap is</h2>
 
-<p>A sitemap is an XML file that lists every page on your website that you want a search engine to index. The file lives at a predictable URL (typically <code>/sitemap.xml</code>) and contains the URL of each page, optionally the date it was last modified, and a few other metadata fields that most engines ignore in 2026.</p>
+<p>A sitemap is a file, in a format called XML, that lists every page you want search engines to index. It usually sits at <code>/sitemap.xml</code> and gives each page's address, sometimes with the date it last changed, plus a few details most engines now ignore.</p>
 
-<p>The point of the file is discovery. Search engines find pages two ways: by following links from pages they already know about, and by reading sitemaps. The first method is slow and depends on the site's internal linking and external backlinks. The second method is instant: hand the search engine the file and it knows the full inventory of pages within a few seconds.</p>
+<p>Search engines find pages in two ways: by following links, and by reading sitemaps. Following links is slow, and it depends on how well your pages link to each other and how many other sites link to you. A sitemap is instant: the engine reads the file and knows every page within seconds.</p>
 
-<p>For a brand-new site with no external backlinks, the difference is meaningful. Without a sitemap, Google will eventually find the homepage (because it monitors DNS and certificate transparency logs and follows up with a discovery crawl), but it might be a month before it has crawled the rest of the site. With a sitemap submitted on launch day, the discovery happens in hours and the indexing happens in days.</p>
+<p>For a brand-new site, that matters. Without a sitemap, Google finds the home page eventually, because it watches public records of new domains and security certificates. But reaching the rest of the site might take a month. With a sitemap submitted on launch day, Google finds the pages in hours and indexes them in days.</p>
 
 <h2>The three engines that matter</h2>
 
-<p>Search-engine market share in 2026 in the United States breaks down roughly as follows:</p>
+<p>Here's roughly how U.S. search traffic splits in 2026:</p>
 
 <ul>
-  <li><strong>Google.</strong> Around 88% of US search traffic. Indexing here is non-negotiable.</li>
-  <li><strong>Bing.</strong> Around 7% of US search traffic directly, but Bing's index also powers DuckDuckGo, Yahoo, ChatGPT search, Perplexity, and a growing fraction of AI-assistant search. The effective reach of a Bing-indexed site is closer to 12%.</li>
-  <li><strong>Everything else.</strong> Yandex (Russia), Baidu (China), Naver (Korea), Brave Search (small but growing). For a US small business serving local customers, none of these meaningfully move the needle.</li>
+  <li><strong>Google.</strong> About 88% of U.S. search traffic. Being indexed here is essential.</li>
+  <li><strong>Bing.</strong> About 7% directly. Bing's index also feeds DuckDuckGo, Yahoo, ChatGPT search, Perplexity, and a growing share of AI-assistant search, so its total reach is closer to 12%.</li>
+  <li><strong>Everything else.</strong> Yandex (Russia), Baidu (China), Naver (Korea), and Brave Search (small but growing). For a U.S. small business with local customers, none of these makes a noticeable difference.</li>
 </ul>
 
-<p>The three-engine plan is therefore: Google, Bing, and IndexNow. The first two cover the search engines proper. IndexNow is a free push protocol that Bing and Yandex both accept and that turns a one-shot sitemap submission into ongoing real-time updates whenever a page changes.</p>
+<p>So the plan covers Google, Bing, and IndexNow, a free service that Bing and Yandex both accept. Instead of relying on a one-time submission, IndexNow tells them about each page as soon as it changes.</p>
 
-<h2>What the submission flow looks like end to end</h2>
+<h2>The submission, step by step</h2>
 
-<p>A complete sitemap submission for a new small business website is a one-time setup task that takes about thirty minutes if you have not done it before, and about five minutes if you have. The high-level flow is the same in both Search Console and Bing Webmaster Tools:</p>
+<p>It's a one-time setup: about 30 minutes the first time and five after that. The steps are the same for Google and Bing:</p>
 
 <ol>
-  <li><strong>Verify ownership.</strong> The search engine needs to confirm you actually control the domain. The easiest method is the DNS TXT record: you add a small text record to your DNS provider, the search engine reads it within a few minutes, ownership is verified. The TXT record stays in DNS forever, which means you can re-verify on any browser without going through the flow again.</li>
-  <li><strong>Add the property.</strong> Once verified, you have a "property" inside the dashboard. This is the search engine's view of your site, where the indexing reports, search queries, and crawl errors live.</li>
-  <li><strong>Submit the sitemap URL.</strong> The submission itself is a single field. You enter the path to your sitemap file (typically <code>sitemap.xml</code>) and the search engine fetches it, parses it, and queues every URL inside for crawling.</li>
-  <li><strong>Wait for the crawl.</strong> The first sitemap-driven crawl typically completes within 24 to 72 hours. Google reports the URLs in the Indexing report; Bing in the Sitemaps report. Both will show "discovered: yes, indexed: not yet" for some pages, "discovered and indexed" for others, and a small number of "discovered but not indexed for quality reasons" — which is normal.</li>
-  <li><strong>Monitor.</strong> A new property normally goes from one indexed page (the homepage, found before the sitemap submission) to between 60% and 90% of the sitemap's URLs within four to six weeks. Coverage settles after that point. Pages that never index are usually thin (low word count, light internal linking) and benefit from being either improved or excluded from the sitemap.</li>
+  <li><strong>Verify ownership.</strong> The easiest proof that you control the domain is a DNS TXT record, a short line of text you add in your domain's settings. The search engine reads it within minutes. Leave it in place for good, and you won't need to verify again.</li>
+  <li><strong>Add the property.</strong> Your site then appears in the dashboard as a "property," with reports on indexing, searches, and crawl errors (problems the engine hit while reading your pages).</li>
+  <li><strong>Submit the sitemap address.</strong> Enter the path, usually <code>sitemap.xml</code>, in a single field. The search engine reads the file and lines up every page for a visit.</li>
+  <li><strong>Wait for the crawl.</strong> The first round of visits usually finishes within 24 to 72 hours, and the results show in Google's Indexing report and Bing's Sitemaps report. Some pages will be indexed, some found but not yet indexed, and a few left out for quality reasons. That's normal.</li>
+  <li><strong>Keep an eye on it.</strong> A new site usually goes from one indexed page (the home page) to 60% to 90% of the sitemap within four to six weeks, then levels off. Pages that never get indexed are usually thin, with few words and few links from other pages. Improve them or drop them from the sitemap.</li>
 </ol>
 
 <h2>Why the order matters</h2>
 
-<p>Submit Google first, Bing second. The two engines crawl independently and there is no SEO reason to favor one with the first submission, but the practical reason is simpler: Bing Webmaster Tools has an "Import from Google Search Console" button that copies your verification, your sitemaps, and most of your settings over with a single click. If you have done the Google work first, the Bing setup is two minutes instead of fifteen.</p>
+<p>Do Google first. Neither engine ranks you higher for going first, but Bing Webmaster Tools has an "Import from Google Search Console" button that copies your verification, your sitemaps, and most of your settings in one click. With Google done, the Bing setup takes two minutes instead of 15.</p>
 
-<p>The IndexNow step comes after both. Once both engines have your sitemap, IndexNow becomes the ongoing automation: every time a page changes, the protocol pings Bing and Yandex to re-crawl that specific URL within minutes rather than days. Cloudflare offers IndexNow as a one-toggle feature in their dashboard if your site is on Cloudflare Pages or is fronted by their CDN. The toggle takes about ten seconds and replaces a manual workflow you would otherwise have to remember.</p>
+<p>IndexNow comes last. Each time a page changes, it asks Bing and Yandex to revisit that page within minutes rather than days. If your site is hosted on Cloudflare Pages or runs through Cloudflare's network, IndexNow is one switch in the Cloudflare dashboard. It takes about 10 seconds and replaces a task you'd otherwise have to remember.</p>
 
-<h2>What does not need to be submitted anywhere</h2>
+<h2>Places you can skip</h2>
 
-<p>For completeness: there are several places people sometimes try to submit sitemaps that are no longer worth the time.</p>
+<p>A few other places are no longer worth the time.</p>
 
-<p><strong>Web directories.</strong> The DMOZ-style directory submission flow is dead. The directories that still exist either no longer accept submissions or no longer pass any authority. Skip.</p>
+<p><strong>Web directories.</strong> Directory submissions in the style of the old DMOZ are dead. The directories that remain either don't take submissions or don't help your ranking.</p>
 
-<p><strong>RSS aggregators.</strong> Modern aggregators discover RSS feeds automatically as soon as a feed link appears in the page <code>&lt;head&gt;</code>. No submission needed.</p>
+<p><strong>RSS readers.</strong> Feed readers find your RSS feed (the list of your latest posts) on their own once a link to it sits in your page code (the <code>&lt;head&gt;</code>).</p>
 
-<p><strong>AI search engines.</strong> Perplexity, ChatGPT search, and Claude search all use either Bing's index or their own crawlers that discover pages independently. As soon as you are indexed in Google and Bing, the AI assistants find you. There is no separate AI submission flow worth doing.</p>
+<p><strong>AI search engines.</strong> Perplexity, ChatGPT search, and Claude search use Bing's index or their own crawlers. Once Google and Bing have you, the AI assistants find you too, with no separate submission.</p>
 
-<p>The plan is, intentionally, narrow. Three steps, all free, all permanent. The follow-up posts in this series cover Google and Bing in detail.</p>
+<p>The plan is narrow on purpose: three steps, all free and all permanent. The next two posts in this series cover Google and Bing in detail.</p>
