@@ -3842,6 +3842,59 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 }
 .back-to-top svg { width: 20px; height: 20px; }
 
+/* ========== MOBILE ACTION BAR ==========
+   Phones only. main.js adds .is-visible once the page's top section
+   scrolls away and removes it near closing calls to action and the
+   footer. A hidden bar uses visibility so its links leave the tab order.
+   While it shows, the back-to-top button moves up to clear it. */
+.action-bar { display: none; }
+@media (max-width: 720px) {
+  .action-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom));
+    background: var(--navy-900);
+    border-top: 1px solid var(--navy-700);
+    box-shadow: 0 -6px 18px rgba(10, 31, 68, 0.18);
+    transform: translateY(100%);
+    visibility: hidden;
+    transition: transform 0.25s ease, visibility 0s linear 0.25s;
+  }
+  .action-bar.is-visible {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.25s ease, visibility 0s;
+  }
+  .action-bar-btn {
+    flex: 1 1 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 44px;
+    padding: 0.55rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  .action-bar-btn--primary { background: var(--gold-400); color: var(--navy-900); }
+  .action-bar-btn--call { color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.35); }
+  .action-bar-btn--call svg { width: 18px; height: 18px; flex: none; }
+  .action-bar-visible .back-to-top { bottom: calc(4.75rem + env(safe-area-inset-bottom)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .action-bar, .action-bar.is-visible { transition: none; }
+}
+@media print {
+  .action-bar { display: none !important; }
+}
+
 /* ========== BLOG LIST ========== */
 .post-list {
   display: grid;
