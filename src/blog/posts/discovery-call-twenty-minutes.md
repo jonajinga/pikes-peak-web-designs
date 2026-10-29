@@ -88,7 +88,7 @@ tags: [post]
 
 <p><strong>I will not pressure a decision.</strong> If you want to think about it, that is fine. The pricing on the agreement does not expire.</p>
 
-<p><strong>I will not give you free strategy work.</strong> If you want a free audit of your current site, the <a href="/audit/" class="inline-link">five-point audit</a> is the right path; I run those independently of any sales process. The discovery call is for the rebuild conversation.</p>
+<p><strong>I will not give you free strategy work.</strong> The discovery call is for the rebuild conversation.</p>
 
 <h2>If you have not had a discovery call yet</h2>
 

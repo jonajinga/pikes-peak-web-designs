@@ -12,6 +12,7 @@ import { execSync } from "child_process";
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import site from "./src/_data/site.js";
 
 export default function (eleventyConfig) {
   // Passthrough
@@ -39,7 +40,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(autoCacheBuster, {
     extensions: ["css", "js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "svg"],
   });
-  eleventyConfig.addPlugin(feedPlugin, {
+  // The Atom feed is the blog's public broadcast, so it is only built while
+  // the blog itself is public (see blogPublic in src/_data/site.js).
+  if (site.blogPublic) eleventyConfig.addPlugin(feedPlugin, {
     type: "atom",
     outputPath: "/feed.xml",
     collection: {
@@ -265,9 +268,6 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
             // Custom search UI — markup is injected by main.js so the result
             // cards / type badges / filter chips never appear in static HTML.
             /^ppwd-/,
-            // Site grader report card — JS-rendered after a successful API
-            // call; selectors won't appear in the static /grader/ HTML.
-            /^grader-/,
             // SOP planner: only one view is rendered "active" in static HTML;
             // the other four are hidden until JS toggles them, so keep every
             // planner-* selector across the per-page purge runs.
@@ -354,9 +354,6 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
               htmlPath.includes(`${path.sep}method${path.sep}`)) {
             deepSafelist.push(/tippy/);
           }
-          if (htmlPath.includes(`${path.sep}grader${path.sep}`)) {
-            deepSafelist.push(/^grader-/);
-          }
           if (htmlPath.includes(`${path.sep}sop${path.sep}`)) {
             deepSafelist.push(/^planner-/, /^sop-backlink/);
           }
@@ -404,7 +401,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   // Minify every shipped JS asset with terser. Lighthouse flagged main.js
   // (~7.8 KiB unminified) as an "Est savings of 2 KiB"; running terser
   // takes it down to roughly 5 KiB and also strips comments + whitespace
-  // from any other JS we copy through (e.g. grader.js).
+  // from any other JS we copy through.
   eleventyConfig.on("eleventy.after", async () => {
     const jsDir = path.resolve("./_site/assets/js");
     if (!fs.existsSync(jsDir)) return;

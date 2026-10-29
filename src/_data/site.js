@@ -28,6 +28,12 @@ export default {
   // gated on this value, so it's safe to flip on by setting the ID and
   // off by clearing the string.
   umamiWebsiteId: "8bb5417d-5a24-4126-9950-9fdbd61aa414",
+  // The blog ships hidden until it is ready. While false, every /blog/
+  // page is noindex (kept out of search engines, site search, and the
+  // XML sitemap), the Atom feed is not generated, and the area pages and
+  // /results/ do not link to it. Flip to true to publish, then restore
+  // the nav, footer, and sitemap links by hand.
+  blogPublic: false,
   // Optional social handles. Render twitter:site only if the handle is set;
   // empty strings cause platforms to ignore (or warn about) the meta tag.
   twitterHandle: "",

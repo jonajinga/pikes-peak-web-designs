@@ -4,8 +4,8 @@ date: 2026-04-22
 label: "Decision Framework"
 description: "When a service-business site is hurting the business: rebuild from scratch or patch what's there? A four-question framework, in five minutes."
 ctaLabel: "Honest Diagnostic"
-ctaHeading: "Free 5-point audit, written, no sales call."
-ctaText: "If I think your site is salvageable, the report will say so. If it is not, the rebuild is on offer at the standard $175 a month flat, with no design deposit."
+ctaHeading: "Twenty minutes is plenty."
+ctaText: "Bring your URL to a discovery call. If I think your site is salvageable, I will say so. If it is not, the rebuild is on offer at the standard $175 a month flat, with no design deposit."
 layout: layouts/post.njk
 tags: [post]
 ---
@@ -76,7 +76,6 @@ tags: [post]
 <p>If the framework returned "rebuild," the path is simpler:</p>
 
 <ol>
-  <li>Run the free written <a href="/audit/">five-point audit</a> first. The audit is independent of the rebuild offer; it returns a real diagnostic regardless.</li>
   <li>Confirm the rebuild scope. Most service business rebuilds are eight to twelve pages, the same shape as the existing site, just rebuilt on a stack that does not need babysitting.</li>
   <li>Pick the path that fits the budget. Subscription, freelancer, agency, or DIY. Each has a different lifetime-cost profile.</li>
   <li>Run the build. Two to three weeks is the realistic timeline for a careful build of a typical service business site.</li>
@@ -86,4 +85,4 @@ tags: [post]
 
 <p>If you are reading this post, you almost certainly already know the answer. The four-question framework is mostly for the small percentage of cases where the call is genuinely close. The other ninety percent of the time, the gut answer is the right one — most owners who suspect they need a rebuild are correct. The framework just makes it easier to commit.</p>
 
-<p>If the suspicion is "the site is hurting the business," the next step is the <a href="/audit/">free five-point audit</a>. The audit is the cheapest way to convert a suspicion into a written diagnostic. After that the decision becomes a small one.</p>
+<p>If the suspicion is "the site is hurting the business," the next step is a twenty-minute <a href="/contact/">discovery call</a>. It is the quickest way to turn a suspicion into a plain answer. After that the decision becomes a small one.</p>

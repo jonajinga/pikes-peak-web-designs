@@ -43,13 +43,11 @@ description: "A plain-language map of every page on the Pikes Peak Web Designs w
           <li><a href="#legal">Legal</a></li>
           <li><a href="#seo-files">Discoverability</a></li>
           <li><a href="#service-areas">Service areas</a></li>
-          <li><a href="#blog-posts">Reading list</a></li>
           <li><a href="#demos">Live demos</a></li>
         </ol>
         <div class="toc-side-title" style="margin-top:1.5rem">Other formats</div>
         <ol class="toc-list">
           <li><a href="/sitemap.xml">XML sitemap</a></li>
-          <li><a href="/feed.xml">RSS / Atom feed</a></li>
           <li><a href="/search/">Full-text search</a></li>
         </ol>
       </aside>
@@ -69,10 +67,6 @@ description: "A plain-language map of every page on the Pikes Peak Web Designs w
             <li><a href="/sample-forms/">Sample Forms<span>Eight industry-specific intakes</span></a></li>
             <li><a href="/pricing/">Pricing<span>One simple $175/month plan, everything included</span></a></li>
             <li><a href="/method/">The Service Site Standard<span>The seven-principle methodology behind the work</span></a></li>
-            <li><a href="/audit/">Free 5-Point Audit<span>A free written diagnostic of your current site</span></a></li>
-            <li><a href="/grader/">Site Grader<span>A 5-second 0-to-100 grade across speed, schema, local SEO, HTTPS, and trackers</span></a></li>
-            <li><a href="/calculator/">Lead-Leakage Calculator<span>See the annual revenue your slow site is leaking</span></a></li>
-            <li><a href="/walk-through/">Walk-through<span>A guided tour of a finished site, sales-call-free</span></a></li>
           </ul>
         </section>
 
@@ -95,7 +89,6 @@ description: "A plain-language map of every page on the Pikes Peak Web Designs w
           <span class="sitemap-eyebrow">03 / Reference</span>
           <h2>Learn</h2>
           <ul class="sitemap-list">
-            <li><a href="/blog/">Blog<span>Practical writing on local SEO, page speed, and what moves the phone</span></a></li>
             <li><a href="/faq/">FAQ<span>Every question, answered straight</span></a></li>
             <li><a href="/glossary/">Glossary<span>Plain-language definitions for every technical term used on the site</span></a></li>
             <li><a href="/owners-guide/">Owner's guide<span>The post-launch reference every client receives, published in full</span></a></li>
@@ -184,7 +177,6 @@ description: "A plain-language map of every page on the Pikes Peak Web Designs w
           <ul class="sitemap-list">
             <li><a href="/sitemap.xml">sitemap.xml<span>Machine-readable sitemap submitted to Google Search Console</span></a></li>
             <li><a href="/robots.txt">robots.txt<span>Crawler directives</span></a></li>
-            <li><a href="/feed.xml">feed.xml<span>RSS / Atom feed of blog posts</span></a></li>
             <li><a href="/search/">search<span>Pagefind-powered full-text search across the whole site</span></a></li>
             <li><a href="/site.webmanifest">site.webmanifest<span>Installable-PWA manifest with brand icons</span></a></li>
           </ul>
@@ -211,19 +203,8 @@ description: "A plain-language map of every page on the Pikes Peak Web Designs w
           <p style="margin-top:1.25rem"><a href="/service-areas/" class="inline-link">See all 26 metros &rarr;</a></p>
         </section>
 
-        <section class="sitemap-toc-section" id="blog-posts">
-          <span class="sitemap-eyebrow">12 / Reading list</span>
-          <h2>Blog posts</h2>
-          <p>All published blog posts. The <a href="/blog/" class="inline-link">blog index</a> is the canonical landing page; this is the alphabetical list.</p>
-          <ul class="sitemap-list sitemap-list--compact">
-            {% for post in collections.posts | reverse %}
-              <li><a href="{{ post.url }}">{{ post.data.title }}<span>{{ post.data.description }}</span></a></li>
-            {% endfor %}
-          </ul>
-        </section>
-
         <section class="sitemap-toc-section" id="demos">
-          <span class="sitemap-eyebrow">13 / Live demos</span>
+          <span class="sitemap-eyebrow">12 / Live demos</span>
           <h2>Sample sites</h2>
           <p>Six full demo sites covering the major trades, each a complete operational build with home, services, pricing, about, contact, plus legal, sitemap, brand-guideline pages, and a working blog with three sample articles per demo.</p>
           <div class="sitemap-areas">

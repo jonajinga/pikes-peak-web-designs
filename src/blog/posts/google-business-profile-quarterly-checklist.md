@@ -69,4 +69,4 @@ tags: [post, local-seo]
 
 <p>Set a recurring reminder for the first Monday of each quarter (January, April, July, October). Compound that over a year and your GBP is one of the most-active in your trade in your metro, which is exactly the signal Google's local algorithm looks for.</p>
 
-<p>If your website is wired up to your GBP correctly, matching name, address, phone, hours, and structured data, the impact compounds further. <a href="/audit/" class="inline-link">A free 5-point website audit</a> includes a check on whether your site and your GBP are saying the same thing about your business. Most are not, and the fix is usually simple.</p>
+<p>If your website is wired up to your GBP correctly, matching name, address, phone, hours, and structured data, the impact compounds further. It is worth checking whether your site and your GBP are saying the same thing about your business. Most are not, and the fix is usually simple.</p>

@@ -111,7 +111,7 @@ tags: [post]
 <ol>
   <li><strong>If the website is a hobby and lead generation does not matter</strong>, a DIY builder is fine. Nothing in this post applies.</li>
   <li><strong>If the website is the front door of a service business</strong>, the cheapest option is almost always the most expensive in lifetime terms. Spend a little more on something that does not need babysitting.</li>
-  <li><strong>If you do not know which category you are in</strong>, the free <a href="/audit/">five-point audit</a> will tell you in writing whether the existing site is salvageable. The audit is free regardless of which path you eventually choose.</li>
+  <li><strong>If you do not know which category you are in</strong>, a twenty-minute <a href="/contact/">discovery call</a> will settle whether the existing site is salvageable. The call is free regardless of which path you eventually choose.</li>
 </ol>
 
 <p>The honest answer to "how much does a small business website cost" is not a number. It is the gap between what you pay this year and what you pay over the lifetime of the asset. Anyone who quotes only year one is selling year one. The question to ask any vendor is "what does this look like at year five?" — the answer to that question separates the real options from the fake ones.</p>

@@ -97,4 +97,4 @@ tags: [post]
 
 <p>If your site's sitemap looks meaningfully different from that pattern (much shorter than your actual page count, much longer because of stale URLs, missing entirely), that is a real opportunity for improvement.</p>
 
-<p>If you want me to look at your specific site, the <a href="/audit/" class="inline-link">free five-point audit</a> covers sitemap configuration as part of the standard pass. The audit returns a written report with the specific issues and recommended fixes; if the issues are minor, you can address them on whatever platform you are on. If they are not, the rebuild conversation is the next step.</p>
+<p>If you want me to look at your specific site, bring it to a twenty-minute <a href="/contact/" class="inline-link">discovery call</a>. If the issues are minor, you can address them on whatever platform you are on. If they are not, the rebuild conversation is the next step.</p>

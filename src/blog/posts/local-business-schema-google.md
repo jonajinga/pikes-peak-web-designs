@@ -101,5 +101,3 @@ tags: [post]
 <h2>If your current site has no schema</h2>
 
 <p>It is the cheapest local-SEO improvement available, and one of the highest-leverage. For sites I build, schema is part of the standard plan from launch. For sites I do not build, the path depends on the platform: WordPress users can install Yoast or Rank Math (acceptable but template-grade), Squarespace and Wix users have built-in schema that may need configuration, custom-coded sites need the schema authored by hand.</p>
-
-<p>The free <a href="/audit/" class="inline-link">five-point audit</a> covers schema as part of the standard pass; the report names whether your site has it, what types are present, what is missing, and what to do about each gap.</p>

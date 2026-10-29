@@ -333,7 +333,7 @@
     { key: 'podcast',    label: 'Podcast',      test: (u) => /^\/podcast\//.test(u) },
     { key: 'changelog',  label: 'Changelog',    test: (u) => /^\/changelog/.test(u) },
     { key: 'method',     label: 'Method',       test: (u) => /^\/(method|technical-approach|how-it-works)/.test(u) },
-    { key: 'pricing',    label: 'Pricing',      test: (u) => /^\/(pricing|hourly|rebuild|audit|grader|calm-site-audit)/.test(u) },
+    { key: 'pricing',    label: 'Pricing',      test: (u) => /^\/(pricing|hourly|rebuild)/.test(u) },
   ];
   const detectType = (url) => {
     for (const t of TYPE_DEFS) if (t.test(url)) return t;

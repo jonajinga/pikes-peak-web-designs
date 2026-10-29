@@ -90,4 +90,4 @@ tags: [post]
 
 <p>The most common failure pattern across small-business sites is a single oversized hero image dragging LCP into the red. The fix is image optimization, which I cover in detail in <a href="/blog/image-optimization-photos-slow-site/" class="inline-link">a separate post</a>. Closing that one issue often moves a site from "failing all three" to "passing all three" without touching anything else.</p>
 
-<p>For sites with deeper performance issues (heavy JavaScript, many third-party trackers, slow hosting), the fix path is broader. The free <a href="/audit/" class="inline-link">five-point audit</a> covers Core Web Vitals as part of the standard pass; the report names the specific causes and what each fix would involve.</p>
+<p>For sites with deeper performance issues (heavy JavaScript, many third-party trackers, slow hosting), the fix path is broader.</p>

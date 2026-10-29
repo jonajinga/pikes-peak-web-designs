@@ -4,7 +4,6 @@ export default {
     { label: "What's Included", url: "/whats-included/" },
     { label: "Sample Websites", url: "/samples/" },
     { label: "Pricing", url: "/pricing/" },
-    { label: "Blog", url: "/blog/" },
     { label: "About", url: "/about/" },
   ],
   megaMenu: {

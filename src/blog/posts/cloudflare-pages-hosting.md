@@ -75,7 +75,7 @@ tags: [post]
 
 <p>For most small service businesses, the static-only model is exactly right. The site is a brochure plus a contact form, and the contact form is handled by <a href="/blog/web3forms-contact-and-lead-forms/" class="inline-link">Web3Forms</a> rather than by the hosting layer.</p>
 
-<p>For the rare client that genuinely needs server-side logic (a custom calculator, a dynamic search of inventory, a third-party API integration), Cloudflare Pages includes Cloudflare Workers, the serverless function platform. I can write small server-side endpoints that run alongside the static site, with the same edge-network distribution. The site grader on this site is built this way: static page plus a Worker that calls Google's PageSpeed Insights API.</p>
+<p>For the rare client that genuinely needs server-side logic (a custom calculator, a dynamic search of inventory, a third-party API integration), Cloudflare Pages includes Cloudflare Workers, the serverless function platform. I can write small server-side endpoints that run alongside the static site, with the same edge-network distribution. The live status page on this site is built this way: static page plus a Worker that calls Google's PageSpeed Insights API.</p>
 
 <h2>Who owns what</h2>
 

@@ -98,6 +98,4 @@ tags: [post]
 
 <p>The first step is the automated check. Visit <a href="https://wave.webaim.org" rel="noopener" class="inline-link">wave.webaim.org</a>, paste your homepage URL, and read the report. If WAVE finds errors (red circles on the report), those are the most significant issues and worth fixing first. Warnings (yellow triangles) are softer issues that may or may not be problems depending on context.</p>
 
-<p>The free <a href="/audit/" class="inline-link">five-point audit</a> covers accessibility as part of the standard pass. The report names what the site fails, what the fixes look like, and whether the issues are fixable on the existing platform or require a rebuild.</p>
-
 <p>For sites I build, accessibility is not an add-on or a remediation phase. It is part of how the site is constructed from the first commit. The fix path on a site already built without accessibility in mind is harder; building it in from the start is easier.</p>

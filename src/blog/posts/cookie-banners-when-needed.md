@@ -97,5 +97,3 @@ tags: [post]
 <p><strong>Browser DevTools, "Application" tab, "Cookies" panel.</strong> Visit your homepage in a fresh incognito window, open DevTools, and check what cookies were set on the first page load. If only your own domain's cookies are present (session cookies, theme preference, etc.), you are likely fine without consent. If third-party domains have set cookies, you need consent.</p>
 
 <p>Most small-business websites that have never been audited fall into one of three patterns: clean and don't need a banner (about a third), light tracking that could be removed to clean up the consent surface (about a third), or heavy tracking that genuinely needs a properly-configured banner (the remaining third).</p>
-
-<p>The free <a href="/audit/" class="inline-link">five-point audit</a> covers tracker exposure and consent requirements as part of the standard pass. The report names what is actually happening on the site and what changes (if any) would let the banner go away.</p>

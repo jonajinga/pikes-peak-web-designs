@@ -117,4 +117,4 @@ Best time to visit: Weekday afternoons
 
 <p><strong>The form has no "from" address.</strong> Clients click reply on the inbox notification and the email goes to the form vendor, not the visitor. The fix is configuring the reply-to header to use the submitted email field, which Web3Forms does automatically.</p>
 
-<p>If your site has any of these issues, the fix is usually faster than the diagnostic. The free <a href="/audit/" class="inline-link">five-point audit</a> covers form configuration as part of the standard pass; I will tell you in writing whether your forms are working and what to change if they are not.</p>
+<p>If your site has any of these issues, the fix is usually faster than the diagnostic.</p>

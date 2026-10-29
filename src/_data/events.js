@@ -90,7 +90,7 @@ export default {
       prep: [
         "Decide whether to share a booth with an existing client",
         "Get quote on 10x10 booth",
-        "Design takeaway: laminated 'free 5-point audit' card with QR code",
+        "Design takeaway: laminated card with QR code to book a discovery call",
       ],
       notes: "Ambitious. ROI uncertain. Decide by July; deposit due 60 days out.",
     },

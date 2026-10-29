@@ -185,7 +185,7 @@ layout: layouts/base.njk
         </div>
         {% endif %}
 
-        {% if area.relatedPosts and area.relatedPosts.length %}
+        {% if site.blogPublic and area.relatedPosts and area.relatedPosts.length %}
         <h2>More on local SEO for {{ area.city }}.</h2>
         <div class="post-list" style="margin-top:1.25rem">
           {% for slug in area.relatedPosts %}

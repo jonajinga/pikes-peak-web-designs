@@ -3,9 +3,9 @@ title: "How Much Is Your Slow Website Costing You?"
 date: 2026-05-05
 label: "Local SEO & Performance"
 description: "A back-from-the-numbers guide to how many leads your slow website loses each month, what each was worth, and the revenue line nobody quantifies."
-ctaLabel: "See your number, then act"
-ctaHeading: "Plug your numbers into the calculator."
-ctaText: "The lead-leakage calculator does this math live against your traffic and average job value. The free five-point audit measures it on your real URL. $0 either way, no card asked for."
+ctaLabel: "Run the math, then act"
+ctaHeading: "Bring your numbers to a twenty-minute call."
+ctaText: "Work through the math above against your own traffic and average job value, then book a discovery call. We will talk through where the numbers come from and what a custom build would actually change."
 layout: layouts/post.njk
 tags: [post, local-seo]
 ---
@@ -65,29 +65,27 @@ tags: [post, local-seo]
 <p>This math is rough on purpose. Several things I am NOT counting:</p>
 
 <ul>
-  <li><strong>Lower local-pack ranking from generic schema.</strong> A real custom site moves you up in the Google Maps three-pack, which has more conversion impact than any other single factor for service-business search. The calculator does not estimate this.</li>
-  <li><strong>Better forms.</strong> A trade-specific intake form (real fields, real urgency routing) converts measurably better than a generic Name/Email/Message form. The lift is typically 1.5&ndash;2&times;. Not in the calculator.</li>
-  <li><strong>Long-tail organic traffic from real city pages.</strong> Doorway service-area pages do not rank. Real, indexable city pages with local content compound over time. Not in the calculator.</li>
-  <li><strong>Retention impact of a maintained site.</strong> A custom site does not break, does not get hacked, does not regress when WordPress pushes an update. Stability is a real revenue protector. Not in the calculator.</li>
+  <li><strong>Lower local-pack ranking from generic schema.</strong> A real custom site moves you up in the Google Maps three-pack, which has more conversion impact than any other single factor for service-business search. The math above does not estimate this.</li>
+  <li><strong>Better forms.</strong> A trade-specific intake form (real fields, real urgency routing) converts measurably better than a generic Name/Email/Message form. The lift is typically 1.5&ndash;2&times;. Not counted here.</li>
+  <li><strong>Long-tail organic traffic from real city pages.</strong> Doorway service-area pages do not rank. Real, indexable city pages with local content compound over time. Not counted here.</li>
+  <li><strong>Retention impact of a maintained site.</strong> A custom site does not break, does not get hacked, does not regress when WordPress pushes an update. Stability is a real revenue protector. Not counted here.</li>
 </ul>
 
 <p>So the number you arrive at is the floor, the page-speed line alone, not counting any of the other levers a custom-coded site moves at the same time.</p>
 
 <h2>Pull the actual lever</h2>
 
-<p>Three ways to apply this:</p>
+<p>Two ways to apply this:</p>
 
 <ol>
-  <li><strong>The <a href="/calculator/" class="inline-link">interactive calculator</a>.</strong> Plug in your real numbers (visitors, mobile share, current PageSpeed, conversion rate, average job value, close rate). Get the annual leakage estimate in 30 seconds. Numbers run in your browser; nothing leaves your device.</li>
-  <li><strong>The <a href="/roi/" class="inline-link">return-on-investment page</a>.</strong> The calculator on this post handles the speed-and-conversion lever. The ROI page walks through all four levers a well-built site moves &mdash; speed, local search, conversion path, maintenance &mdash; with the worked-example math and the cost-side comparison against the standard plan.</li>
-  <li><strong>The <a href="/audit/" class="inline-link">free 5-point audit</a>.</strong> If you would rather have me run real Lighthouse numbers and a real schema check on your URL and write up the findings, that takes five business days, costs nothing, and the deliverable is a written report you can act on with or without me.</li>
-  <li><strong>The <a href="/contact/" class="inline-link">discovery call</a>.</strong> Twenty minutes. Bring the numbers from the calculator. We will talk through where they come from and what a custom build would actually change.</li>
+  <li><strong>The <a href="/roi/" class="inline-link">return-on-investment page</a>.</strong> This post handles the speed-and-conversion lever. The ROI page walks through all four levers a well-built site moves &mdash; speed, local search, conversion path, maintenance &mdash; with the worked-example math and the cost-side comparison against the standard plan.</li>
+  <li><strong>The <a href="/contact/" class="inline-link">discovery call</a>.</strong> Twenty minutes. Bring your numbers from the math above. We will talk through where they come from and what a custom build would actually change.</li>
 </ol>
 
 <h2>The thing nobody puts on a website</h2>
 
 <p>Most agencies will not write this post. The reason is simple: if a $1,800 Wix subscription is leaking $14,500 a year, the agency that recommended Wix has some explaining to do. The number does not flatter anyone except the alternative.</p>
 
-<p>The math is the math. The hardest line on a service-business P&amp;L to see is the one that does not appear, revenue that never happened because the website never gave a fair-shot mobile visitor a chance to become a customer. <strong>Quantifying that line is the work this post and the calculator are trying to make easier.</strong> Once you can see it, the budget conversation gets a lot simpler.</p>
+<p>The math is the math. The hardest line on a service-business P&amp;L to see is the one that does not appear, revenue that never happened because the website never gave a fair-shot mobile visitor a chance to become a customer. <strong>Quantifying that line is the work this post is trying to make easier.</strong> Once you can see it, the budget conversation gets a lot simpler.</p>
 
 <p>If you would rather check the site yourself first, the <a href="/blog/diy-website-audit-checklist/" class="inline-link">12-point self-audit</a> takes ten minutes and catches the obvious problems. If the audit says the site needs more than a patch, the <a href="/blog/rebuild-or-patch/" class="inline-link">rebuild-or-patch decision framework</a> is the right next read.</p>

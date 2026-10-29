@@ -74,6 +74,4 @@ tags: [post, comparison]
 
 <p>If the math above suggests a custom site pays for itself, the next step is figuring out which kind makes sense for your business. <a href="/vs-ai-builders/" class="inline-link">The detailed comparison page</a> walks through the side-by-side, including a breakdown table on the things that move revenue.</p>
 
-<p>If you want a free, written audit of your current AI-built site, real Lighthouse numbers, real schema check, real conversion-flow review, the <a href="/audit/" class="inline-link">5-point audit</a> covers it. No obligation, no sales call required, deliverable is a written report you can act on with or without me.</p>
-
 <p>The site that ranks, loads fast, and converts is the site that pays for itself. The AI builder generates a draft of that site, not the site itself. Knowing the difference is the work.</p>

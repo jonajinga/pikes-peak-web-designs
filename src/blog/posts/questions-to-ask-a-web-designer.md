@@ -75,5 +75,3 @@ tags: [post]
 <p>Seven questions takes about fifteen minutes to ask. The web design relationship will run for years. Fifteen minutes well spent up front saves a lot of pain later.</p>
 
 <p>For reference, the answers to all seven, for the agency you are reading right now, are public on the site. The <a href="/pricing/">pricing page</a> covers cost in detail; the <a href="/agreement/">service agreement</a> covers what happens when you want to leave; the <a href="/about/">about page</a> covers who writes the code; the <a href="/method/">methodology page</a> covers the stack and the engineering posture. None of those are sales pages; they are the same answers any reasonable buyer should expect from any vendor.</p>
-
-<p>If you are at the "considering web designers" stage, the next step is the free <a href="/audit/">five-point audit</a> on your existing site. The audit is independent of any decision about who builds the next one — it just gives you a written baseline to compare proposals against.</p>

@@ -71,16 +71,6 @@ export default {
     placeholderEyebrow: "Behind the scenes",
     placeholderTitle: "Coming soon — read the launch process below.",
   },
-  auditWalkedThrough: {
-    slug: "audit-walked-through",
-    title: "The free 5-point audit, walked through live",
-    description: "Six minutes auditing a real volunteer's site on camera: speed, mobile, local SEO, accessibility, conversion path.",
-    duration: "6 min",
-    youtubeId: "",
-    transcript: "/transcripts/audit-walked-through/",
-    placeholderEyebrow: "Live audit",
-    placeholderTitle: "Coming soon — request a written audit on your URL.",
-  },
   pageSpeedFeel: {
     slug: "pagespeed-feel",
     title: "What 95–100 PageSpeed actually feels like",

@@ -34,7 +34,7 @@ export default [
       },
       {
         q: "Is replacing my current site really worth it?",
-        a: "Sometimes yes, sometimes no. The <a href=\"/audit/\" class=\"inline-link\">free five-point audit</a> gives you a written diagnostic of what is actually wrong with the existing site. If it is salvageable, I will say so. If a rebuild would pay for itself in leads, the audit will explain why."
+        a: "Sometimes yes, sometimes no. Bring your URL to the twenty-minute <a href=\"/contact/\" class=\"inline-link\">discovery call</a> and I will tell you plainly what is wrong with the existing site. If it is salvageable, I will say so. If a rebuild would pay for itself in leads, I will explain why."
       },
       {
         q: "What if I need to start in February or March instead?",
@@ -92,17 +92,17 @@ export default [
     argumentTitle: "What I usually find when I look at an older site.",
     argumentBody: [
       "The fonts are usually fine. The colors are usually fine. The real problems are almost always one of three things: the site loads too slowly on a phone, so half the visitors give up before it even renders. The contact form is broken or routing to a folder nobody monitors. Or the site is missing the basics that local-pack ranking depends on, the address on the page, the schema, the service-area pages.",
-      "The <a href=\"/audit/\" class=\"inline-link\">free five-point audit</a> is the cheapest way to find out which of those three is happening on your site. It takes me a few hours to run, you get a written report, and there is no sales call attached. If your site is in good shape, the report says so.",
-      "If the report turns up real issues, a rebuild is two to three weeks of work, and the next twelve months of leads run on a system that does not need babysitting.",
+      "A twenty-minute <a href=\"/contact/\" class=\"inline-link\">discovery call</a> is the quickest way to find out which of those three is happening on your site. Bring the URL and I will tell you plainly. If your site is in good shape, I will say so.",
+      "If the call turns up real issues, a rebuild is two to three weeks of work, and the next twelve months of leads run on a system that does not need babysitting.",
     ],
-    pitchTitle: "Start with the audit. The rebuild only happens if it is actually warranted.",
-    pitchBody: "The <a href=\"/audit/\" class=\"inline-link\">free five-point audit</a> returns a written report within about a week. If the rebuild is the right call, the standard plan is $175 a month flat with no design deposit.",
+    pitchTitle: "Start with a conversation. The rebuild only happens if it is actually warranted.",
+    pitchBody: "A twenty-minute <a href=\"/contact/\" class=\"inline-link\">discovery call</a> settles whether your site needs one. If the rebuild is the right call, the standard plan is $175 a month flat with no design deposit.",
     pitchCta: "Sign up for the standard plan",
     pitchCtaUrl: "/subscribe/",
     objections: [
       {
         q: "I do not even know if my site is salvageable.",
-        a: "The <a href=\"/audit/\" class=\"inline-link\">free five-point audit</a> is built for exactly that question. The written report covers speed, mobile usability, the contact form, the local-SEO surface, and the basic accessibility floor. If the site is in better shape than you thought, the report will tell you that."
+        a: "That is what the twenty-minute <a href=\"/contact/\" class=\"inline-link\">discovery call</a> is for. Bring the URL and we will look at speed, mobile usability, the contact form, the local-SEO surface, and the basic accessibility floor together. If the site is in better shape than you thought, I will tell you that."
       },
       {
         q: "Can I keep my current domain?",
@@ -182,7 +182,7 @@ export default [
       },
       {
         q: "Should I patch my existing site for the season instead?",
-        a: "Maybe. The <a href=\"/audit/\" class=\"inline-link\">free five-point audit</a> will tell you in writing whether the existing site is salvageable for the season or whether a rebuild is the better call. The audit is free regardless."
+        a: "Maybe. Bring the URL to a <a href=\"/contact/\" class=\"inline-link\">discovery call</a> and I will tell you whether the existing site is salvageable for the season or whether a rebuild is the better call. The call is free regardless."
       },
     ],
   },
@@ -247,10 +247,6 @@ export default [
       {
         q: "Can I get a discount for signing up on Black Friday?",
         a: "No, and I would rather be honest about why. A discount on a $175 monthly subscription is symbolic. The version of that promise that is actually worth something is to keep the rate flat year-round, which I do."
-      },
-      {
-        q: "What about the audit, or any other thing — anything seasonal?",
-        a: "The <a href=\"/audit/\" class=\"inline-link\">free five-point audit</a> is free year-round. The standard plan rate is the standard plan rate year-round. I do not run seasonal pricing on either."
       },
       {
         q: "If I sign up in mid-November, will I be live before the New Year?",

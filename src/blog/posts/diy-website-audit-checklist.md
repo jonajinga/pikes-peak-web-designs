@@ -3,9 +3,9 @@ title: "The 12-Point Website Self-Audit (Run It in 10 Minutes)"
 date: 2026-04-18
 label: "Self-Audit"
 description: "Twelve checks any small-business owner can run on their own website with a phone, a stopwatch, and ten minutes. Fail any and you're leaving leads on the table."
-ctaLabel: "Want a Written One?"
-ctaHeading: "Free 5-point audit, on paper, no sales call."
-ctaText: "If the self-audit turns up red flags, I run a free written diagnostic on your existing site, with the receipts. No card, no sales call attached to the report."
+ctaLabel: "Want a Second Opinion?"
+ctaHeading: "Twenty minutes, your URL, no pitch deck."
+ctaText: "If the self-audit turns up red flags, bring the URL to a discovery call and I will walk through what I see on your existing site. If it is salvageable, I will say so."
 layout: layouts/post.njk
 tags: [post]
 ---
@@ -79,6 +79,6 @@ tags: [post]
 
 <h2>What to do next</h2>
 
-<p>If the self-audit raised any red flags, the next step is the free written <a href="/audit/">five-point audit</a>. It is not a sales pitch in disguise; it is a real written diagnostic, the same kind any reputable inspector would write. If the existing site is salvageable, the audit will say so. If it is not, the rebuild option is on offer at the standard <a href="/pricing/">$175-a-month flat rate</a>.</p>
+<p>If the self-audit raised any red flags, the next step is a twenty-minute <a href="/contact/">discovery call</a>. Bring the URL and I will tell you plainly whether the existing site is salvageable. If it is not, the rebuild option is on offer at the standard <a href="/pricing/">$175-a-month flat rate</a>.</p>
 
 <p>The honest version of this entire post: most small business websites have at least four of these twelve problems, and each one is costing leads. The good news is that all twelve are fixable. The hard part is finding ten minutes to look at the site you stopped looking at three months ago.</p>
