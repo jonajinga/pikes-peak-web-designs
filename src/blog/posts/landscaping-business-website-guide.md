@@ -70,7 +70,7 @@ tags: [post, landscaping]
 
 <ul>
   <li><strong>What kind of project?</strong> One-time install, maintenance, design-build, or ongoing seasonal work. This sorts each lead at once.</li>
-  <li><strong>Approximate yard size and feature.</strong> Front yard, backyard, or full property; small, medium, or large. You'll know whether it's a $5K touch-up or a $50K full design.</li>
+  <li><strong>Approximate yard size and feature.</strong> Front yard, backyard, or full property, and whether it's small, medium, or large. You'll know whether it's a $5K touch-up or a $50K full design.</li>
   <li><strong>Budget range.</strong> A simple range ("under $5K", "$5K&ndash;$15K", "$15K&ndash;$50K", "$50K+", "not sure yet") filters out poor fits before a call. For any business with a wide price range, it's the most useful question on the form.</li>
   <li><strong>Timing.</strong> "I want this done in spring", "this fall", "next year", or "still figuring out" decides which list the lead goes on.</li>
   <li><strong>How they found you.</strong> One click tells you which marketing is working.</li>
@@ -109,7 +109,7 @@ tags: [post, landscaping]
   <li>"Do I need a landscape designer or just a maintenance company"</li>
 </ul>
 
-<p>A 1,000&ndash;1,500 word post that answers the question plainly, with photos and a clear next step, ranks for years; a 5,000-word guide isn't needed. Written one a month, five or ten of them bring in more search visitors than your business profile can alone.</p>
+<p>These don't need to be 5,000-word guides. A 1,000&ndash;1,500 word post that answers the question plainly, with photos and a clear next step, ranks for years. Written one a month, five or ten of them bring in more search visitors than your business profile can alone.</p>
 
 <h2>The bottom line</h2>
 

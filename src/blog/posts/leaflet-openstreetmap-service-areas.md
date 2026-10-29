@@ -2,87 +2,87 @@
 title: "How I Build Service-Area Maps with Leaflet and OpenStreetMap"
 date: 2026-05-10
 label: "The Stack"
-description: "Every service business website gets an interactive map of where the business actually serves. Here is the open-source, zero-API-cost stack I use to build it."
+description: "Every service business website I build gets an interactive map of the area the business serves. Here are the free, open-source tools I use to build it, with no map fees."
 ctaLabel: "Service-area map included"
-ctaHeading: "Every service business site I build gets a real map."
-ctaText: "Not a screenshot from Google Maps and not a static SVG. A real interactive map showing every neighborhood, ZIP code, or city you cover, with a pin on the shop and links into the relevant city pages. Part of the standard plan, no API fees."
+ctaHeading: "Every service business site I build gets an interactive map"
+ctaText: "The map shows every neighborhood, ZIP code, or city you cover, with a pin on your shop and links to the matching city pages. It's part of the standard plan, with no map fees."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>Every service business has a service area. The HVAC company that covers Denver metro but not Boulder. The roofer who works the Pikes Peak corridor from Colorado Springs up to Monument and out to Black Forest, but not Pueblo. The plumber whose ten-truck fleet covers Salt Lake County but stops short of Provo. The boundaries of where a business will and will not drive a truck are a meaningful sales conversation: a customer who finds you online needs to know within five seconds whether you cover their address before they bother filling out a form.</p>
+<p>Every service business has a service area. The HVAC company covers the Denver metro but not Boulder. The roofer works the Pikes Peak corridor from Colorado Springs up to Monument and out to Black Forest, but not Pueblo. The plumber's ten-truck fleet covers Salt Lake County but stops short of Provo. A customer who finds you online needs to know within five seconds whether you cover their address, before they bother with a form.</p>
 
-<p>The tool that conveys this best is a map. Not a screenshot from Google Maps with a few highlighted neighborhoods. Not a static list of ZIP codes. A real, interactive, zoomable map with every covered city pinned, the shop's location marked, and a click on each pin linking to the relevant service-area page. The stack I use to build these is two open-source projects that cost nothing to use: Leaflet and OpenStreetMap.</p>
+<p>A map shows this best: an interactive one that visitors can zoom, with every covered city pinned, the shop marked, and each pin linking to that city's page on your site. I build these with two free, open-source projects (software anyone may use and inspect): Leaflet and OpenStreetMap.</p>
 
 <h2>Why not just use Google Maps embed</h2>
 
-<p>The Google Maps JavaScript API is the default option that most people reach for first. It is also the wrong default for small business service-area maps in 2026, for three concrete reasons.</p>
+<p>Most people reach first for Google's maps service for websites (the Google Maps JavaScript API, a way for a page to request maps from Google). For a small business service-area map in 2026, it's the wrong default, for three reasons.</p>
 
-<p><strong>It costs money.</strong> Google's Maps API has a free monthly tier of about 28,000 map loads, after which the cost is $7 per 1,000 loads. For a small site this is unlikely to be a budget problem on day one. It becomes a budget problem the month a press placement or a viral local mention sends 50,000 visitors to the service area page in a week. The bill arrives 30 days later. I do not want to be in the position of asking a client whether I should remove the map to control cost.</p>
+<p><strong>It costs money.</strong> Google's free monthly allowance is about 28,000 map loads, and after that the cost is $7 per 1,000. That's rarely a problem on day one. It becomes one the month a news story or a popular local post sends 50,000 visitors to the page in a week, and the bill arrives 30 days later. I don't want to ask a client whether to remove the map to control the cost.</p>
 
-<p><strong>It requires an API key.</strong> Google's Maps API key has to be billing-enabled and credit-card-attached, even for the free tier. The key gets restricted by referrer or IP, but it is still a credential that lives in the page's JavaScript. The setup work is not hard, but it is process I would rather not impose on every client.</p>
+<p><strong>It requires an API key.</strong> The key (a password that identifies your account to Google) needs billing turned on and a credit card attached, even for the free allowance. It can be locked to your site, but it's still a credential sitting in the page's code. The setup isn't hard, but I'd rather not put every client through it.</p>
 
-<p><strong>It pulls a third-party tracker.</strong> Loading the Google Maps JS adds Google's tracking infrastructure to the page. For a privacy-conscious client (or a client subject to GDPR-style consent rules even if they do not realize it yet), this is a problem. The agency stack already minimizes third-party JS aggressively; opting back into Google for the map would undo that.</p>
+<p><strong>It brings in a tracker.</strong> Google's map code adds Google's tracking to the page. That's a problem for a client who cares about privacy, or who falls under consent rules like Europe's GDPR without knowing it yet. I keep outside code to a minimum on every site, and a Google map would undo that.</p>
 
-<p>The alternative — Leaflet plus OpenStreetMap tiles — has none of those tradeoffs.</p>
+<p>Leaflet with OpenStreetMap map images has none of these trade-offs.</p>
 
 <h2>What Leaflet is</h2>
 
-<p>Leaflet is a small open-source JavaScript library that renders interactive maps. The library is about 42KB minified and gzipped, has been around since 2011, is maintained by the OpenStreetMap community, and is used in production at Facebook, Pinterest, Etsy, and (until they switched to their own renderer) GitHub. The license is BSD-2-Clause, which means free for any use including commercial, with no attribution requirement in the JavaScript itself.</p>
+<p>Leaflet is a small, free JavaScript library (ready-made code a page can load) for interactive maps. It's about 42KB once compressed, has been around since 2011, is maintained by the OpenStreetMap community, and runs at Facebook, Pinterest, Etsy, and, until it switched to its own system, GitHub. Its license, BSD-2-Clause, allows any use, including commercial, with no credit line required in the code itself.</p>
 
-<p>The library handles the parts of an interactive map that are the same in every implementation: pan, zoom, marker placement, popup rendering, layer toggling, mobile touch handling, retina-display tile loading, accessibility focus management. What it does not include is the map data itself. The tiles — the actual rendered images of streets and parks and landmarks — come from a separate provider. For my agency stack, that provider is OpenStreetMap.</p>
+<p>Leaflet handles the parts that are the same on every map: panning, zooming, pins, pop-up boxes, layers, touch screens, sharp images on high-resolution screens, and keyboard focus. It doesn't include the map itself. The "tiles", the small square images of streets, parks, and landmarks, come from a separate provider. On my sites, that's OpenStreetMap.</p>
 
 <h2>What OpenStreetMap is</h2>
 
-<p>OpenStreetMap (OSM) is a community-maintained open dataset of the physical world. Volunteers contribute road centerlines, building footprints, business locations, park boundaries, and the like; a global cleaning pipeline merges and validates them; the result is a dataset comparable to Google Maps in coverage and, in some regions (cycling infrastructure especially), better.</p>
+<p>OpenStreetMap (OSM) is a free map of the world built by volunteers. They add roads, building outlines, business locations, park boundaries, and more. A worldwide review process checks and merges the changes. The result rivals Google Maps in coverage and, in some places (bike routes especially), beats it.</p>
 
-<p>The OSM data is licensed under the Open Database License (ODbL), which means free to use including commercially, with attribution to "© OpenStreetMap contributors." Most map renderings include the attribution as a small line of text in the bottom-right corner of the map, which Leaflet does automatically. The attribution is the only obligation; there is no fee, no API key, and no rate limit beyond the polite-use guidelines for the public tile servers.</p>
+<p>The OSM data is licensed under the Open Database License (ODbL). It's free for any use, including commercial, if you credit "© OpenStreetMap contributors". Leaflet adds that line in the map's bottom-right corner automatically. The credit is the only obligation: no fee, no API key, and no usage cap beyond the fair-use guidelines for the public tile servers.</p>
 
-<p>For higher-traffic sites I sometimes route the tiles through a paid OSM proxy (Stadia Maps, Mapbox's OSM-based tiles, or self-hosted via OpenMapTiles), but the public tile servers are sufficient for any small business service-area map I have built. The traffic profile of a service-area page is low enough that the courtesy use guidelines never become a concern.</p>
+<p>For a high-traffic site, I can route the tiles through a paid OSM provider (Stadia Maps, Mapbox's OSM-based tiles, or my own copy through OpenMapTiles). For every small business service-area map I've built, the public servers have been enough, because these pages don't get enough traffic to strain the fair-use guidelines.</p>
 
 <h2>The technical setup, end to end</h2>
 
-<p>The full stack for one of these maps is about thirty lines of HTML and JavaScript. The flow:</p>
+<p>One of these maps takes about 30 lines of HTML and JavaScript. The steps:</p>
 
 <ol>
-  <li>Load Leaflet's CSS and JavaScript from a CDN. Both files are tiny and cached aggressively across the web.</li>
-  <li>Add a single <code>&lt;div&gt;</code> with a unique ID to the page where the map should render. Set its height in CSS.</li>
-  <li>In a small script block, instantiate a Leaflet map centered on the business's primary city, with an appropriate zoom level (10 for metro coverage, 11-12 for tighter local).</li>
-  <li>Add an OSM tile layer to the map. Three lines of JavaScript.</li>
-  <li>For each city or neighborhood the business covers, add a marker at that location's lat/lng. The lat/lng comes from a hand-curated list inside the page's JavaScript or from a build-time data file.</li>
-  <li>Bind a popup to each marker with the city name, the ZIP code(s) it covers, and a link into the corresponding service-area page on the site.</li>
-  <li>Add a distinct marker for the business's shop or office location, styled differently from the area markers (a custom icon, a different color, or a label).</li>
+  <li>Load Leaflet's style and code files from a CDN, a network of servers that delivers common files quickly. Both files are tiny, and browsers keep copies of them.</li>
+  <li>Add one <code>&lt;div&gt;</code> (an empty box on the page) with its own ID where the map should go, and set its height in the stylesheet.</li>
+  <li>In a short script, create a Leaflet map centered on the business's main city at a suitable zoom level (10 for a metro area, 11 or 12 for a tighter area).</li>
+  <li>Add the OSM tile layer. That's three lines of JavaScript.</li>
+  <li>Add a pin for each city or neighborhood the business covers, placed by its latitude and longitude (lat/lng). The coordinates come from a hand-made list in the page's code or from a data file used when the site is built.</li>
+  <li>Attach a pop-up to each pin with the city name, the ZIP codes it covers, and a link to that city's page on the site.</li>
+  <li>Add a separate pin for the business's shop or office, styled differently (a custom icon, a different color, or a label).</li>
 </ol>
 
-<p>The result is an interactive map with the business's coverage geography rendered on top of OpenStreetMap's road layer, every covered area pinned, every pin linked to the city's dedicated service-area page, and the shop pinned distinctly so visitors can see where the operation is based.</p>
+<p>The result shows the business's coverage on top of OpenStreetMap's streets. Every covered area is pinned and linked to its own page, and the shop stands out so visitors can see where the business is based.</p>
 
 <h2>The data file pattern</h2>
 
-<p>The lat/lng list for the covered areas could live as inline JavaScript in the page, but the cleaner pattern in my stack is to put it in a build-time data file. For Eleventy, that means a JavaScript module under <code>src/_data/</code> that exports an array of <code>{ name, zip, lat, lng }</code> objects.</p>
+<p>The list of coordinates could sit inside the page's code, but I keep it in a data file that the site reads when it's built. In Eleventy, the tool I use to build sites, that's a file in <code>src/_data/</code> that lists each area as <code>{ name, zip, lat, lng }</code>.</p>
 
-<p>The advantage of the data file is that the same dataset can drive multiple things on the site:</p>
+<p>A data file lets one list feed several parts of the site:</p>
 
 <ul>
-  <li>The interactive map markers.</li>
-  <li>The static list of service areas in the footer.</li>
-  <li>The individual <code>/service-area/colorado-springs/</code> pages, generated via Eleventy pagination.</li>
-  <li>The <a href="/blog/local-seo-service-area-pages/" class="inline-link">local-SEO content</a> on each city page.</li>
+  <li>The interactive map pins.</li>
+  <li>The list of service areas in the footer.</li>
+  <li>The individual <code>/service-area/colorado-springs/</code> pages, which Eleventy creates one per city.</li>
+  <li>The <a href="/blog/local-seo-service-area-pages/" class="inline-link">local search content</a> on each city page.</li>
 </ul>
 
-<p>The lat/lng values themselves come from manually looking up each city or neighborhood in OpenStreetMap and copying the coordinates from the URL bar (OSM puts them in the URL as you pan). The whole exercise for a 12-area service map takes about twenty minutes the first time. Updates (a new city added, a coverage change) are a one-line edit to the data file.</p>
+<p>I find the coordinates by looking up each place in OpenStreetMap and copying them from the address bar, where OSM shows them as you move the map. A 12-area map takes about 20 minutes the first time. Adding a city or changing the coverage later is a one-line edit.</p>
 
 <h2>Performance characteristics</h2>
 
-<p>The performance of a Leaflet+OSM map is genuinely fast. The Leaflet library itself is around 42KB after compression. The OSM tiles are PNG images cached aggressively by the browser; a typical service-area map at zoom level 11 renders five to twelve tiles depending on screen size, around 100-300KB total on first load and effectively instant on subsequent visits.</p>
+<p>A Leaflet and OSM map is fast. Leaflet is about 42KB compressed. The tiles are PNG images that the browser saves for reuse. A typical service-area map at zoom level 11 shows five to 12 tiles, depending on screen size: about 100-300KB on the first visit and nearly instant after that.</p>
 
-<p>The map does not block page rendering. I load Leaflet with the <code>defer</code> attribute and instantiate the map only after the page is interactive. The result is that the service-area page itself loads at 90+ Lighthouse Performance even with the map present; the map fades in over the next half-second after the page is usable.</p>
+<p>The map doesn't hold up the rest of the page. I load Leaflet with the <code>defer</code> setting, which tells the browser to wait, and draw the map only once the page is usable. The page still scores 90 or above for performance in Lighthouse, Google's testing tool, and the map fades in within the next half-second.</p>
 
-<p>Compared to a Google Maps embed, the Leaflet+OSM stack is roughly half the JavaScript weight, has zero analytics overhead, and never sends a request to a Google domain. The visitor's browser session stays inside the agency's infrastructure and Cloudflare's edge cache.</p>
+<p>Compared with a Google Maps embed, this setup has about half the code, adds no tracking, and never contacts a Google server. The visitor's browser talks only to my hosting and Cloudflare's servers.</p>
 
 <h2>Accessibility and mobile</h2>
 
-<p>Leaflet handles keyboard navigation out of the box: tab into the map, arrow keys to pan, plus and minus for zoom. Markers are real DOM elements that can take focus, and popups have proper close-on-Escape behavior. The mobile touch handling is solid — pinch to zoom, drag to pan, tap a marker for the popup. None of this required any custom code in my implementation.</p>
+<p>Leaflet supports the keyboard from the start: tab into the map, use the arrow keys to pan, and use plus and minus to zoom. Pins are page elements that can take keyboard focus, and pop-ups close with the Escape key. On phones, you pinch to zoom, drag to pan, and tap a pin for its pop-up. None of this took any custom code.</p>
 
-<p>The one accessibility consideration worth calling out: the Leaflet container needs an explicit <code>role="region"</code> and <code>aria-label</code> describing what the map shows ("Map of [Business] service area covering [Region]"). Leaflet doesn't add these automatically. They go in the HTML markup of the map's <code>&lt;div&gt;</code>.</p>
+<p>One accessibility step is worth noting. The map's box needs a <code>role="region"</code> and an <code>aria-label</code>, labels that tell screen readers what the map shows ("Map of [Business] service area covering [Region]"). Leaflet doesn't add them, so I put them in the map's <code>&lt;div&gt;</code>.</p>
 
-<p>The next post in this thread covers the customer-facing side: <a href="/blog/service-area-map-client-value/" class="inline-link">what a real interactive service-area map actually does for a small business's marketing</a>, in concrete terms.</p>
+<p>The next post covers the customer side: <a href="/blog/service-area-map-client-value/" class="inline-link">what an interactive service-area map does for a small business's marketing</a>, in concrete terms.</p>
