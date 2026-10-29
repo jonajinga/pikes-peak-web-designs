@@ -19,6 +19,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
+  eleventyConfig.addPassthroughCopy({ "src/_redirects": "_redirects" });
   // Root-level favicon files emitted by `npm run favicons`. Live in src/
   // root so they pass through to /favicon.svg, /apple-touch-icon.png, etc.
   eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
