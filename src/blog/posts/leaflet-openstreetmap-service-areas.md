@@ -64,7 +64,7 @@ tags: [post]
   <li>The interactive map pins.</li>
   <li>The list of service areas in the footer.</li>
   <li>The individual <code>/service-area/colorado-springs/</code> pages, which Eleventy creates one per city.</li>
-  <li>The <a href="/blog/local-seo-service-area-pages/" class="inline-link">local search content</a> on each city page.</li>
+  <li>The <a href="/blog/service-area-pages-local-seo/" class="inline-link">local search content</a> on each city page.</li>
 </ul>
 
 <p>I look up each place in OpenStreetMap and copy its coordinates from the address bar. A 12-area map takes about 20 minutes the first time, and adding a city later is a one-line edit.</p>

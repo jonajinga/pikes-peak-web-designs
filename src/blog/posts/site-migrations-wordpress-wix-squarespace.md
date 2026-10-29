@@ -12,7 +12,7 @@ tags: [post]
 
 <p>Many small-business site moves go wrong the same way. The old addresses show "page not found" errors, Google treats the new site as a stranger, and rankings that took years to build reset overnight. The new site exists, but the leads stop coming.</p>
 
-<p>That's preventable. The work is careful rather than hard: mapping old addresses to new ones, setting up redirects, reviewing content, switching the DNS (the settings that point your domain at your site and your email), and checking everything after launch.</p>
+<p>That's preventable. The work is careful rather than hard: mapping old addresses to new ones, setting up redirects, reviewing content, switching the DNS, and checking everything after launch. DNS is the set of settings that point your domain at your site and your email.</p>
 
 <p>Here's how I handle a move off WordPress, Wix, or Squarespace: what carries over, what I rebuild, and what to watch for on each platform.</p>
 

@@ -2,107 +2,101 @@
 title: "Google Search Console: What I Set Up for Every Client"
 date: 2026-05-08
 label: "SEO Operations"
-description: "Search Console is the ground truth for how Google sees your website. Here is what I configure on every client account and what to watch for once it is running."
-ctaLabel: "Search Console wired in"
-ctaHeading: "I set up GSC on every site, before launch."
-ctaText: "Property verified, sitemap submitted, baseline screenshot saved, and access shared with you. Part of the standard plan, not an add-on."
+description: "Search Console is the most reliable record of how Google sees your website. Here's what I set up on every client account and what to watch once it's running."
+ctaLabel: "Search Console set up for you"
+ctaHeading: "I set up Search Console on every site before launch"
+ctaText: "I verify your site with Google, submit the sitemap, save a starting snapshot, and share access with you. It's part of the standard plan, not an add-on."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>Google Search Console (GSC, formerly Webmaster Tools) is the single most important diagnostic surface for any site that wants to be findable on Google. It tells you which queries are bringing visitors to your site, which pages Google has indexed, which pages it has refused to index and why, what mobile-usability errors it has noticed, and what structured-data warnings it has raised. None of that information is available through Google Analytics, Cloudflare, or any other third-party tool. Search Console is the only source.</p>
+<p>Google Search Console (GSC, once called Webmaster Tools) is Google's free dashboard for site owners, and the most important tool for any site that wants to be found on Google. It shows which searches bring visitors, which pages Google has added to its index (the catalog it draws results from) or refused and why, problems it found on phones, and warnings about your structured data (code that describes your business to search engines). No other tool, including Google Analytics and Cloudflare, has this information.</p>
 
-<p>For every site I build, the Search Console setup is part of the standard plan. The work is not glamorous and most clients never directly look at the dashboard, but the alternative is shipping a site without the basic diagnostic feedback loop that tells me whether Google is actually finding it. Below is what I configure for each client and what I watch for during the first ninety days.</p>
+<p>I set it up on every site I build, as part of the standard plan. Most clients never open the dashboard, but without it I'd have no way to tell whether Google is finding the site. Here's what I set up and what I watch in the first 90 days.</p>
 
 <h2>Step 1: Verify the property</h2>
 
-<p>The first task is proving to Google that I actually own or operate the domain. Search Console offers several verification methods (HTML file upload, HTML meta tag, DNS TXT record, Google Analytics, Google Tag Manager). The best for a long-term client engagement is the DNS TXT record because it survives migrations, redesigns, and platform changes.</p>
-
-<p>Concretely:</p>
+<p>First I prove to Google that I run the domain. Of the several ways to do it, the best for a long-term client is a DNS TXT record (a short text note in your domain's settings), because it survives moves, redesigns, and platform changes. The others are uploading a file, adding a page tag, or linking Google Analytics or Google Tag Manager.</p>
 
 <ol>
-  <li>Add the domain as a "Domain" property in Search Console (not the URL-prefix variant; Domain covers all subdomains and protocols at once).</li>
-  <li>Google generates a TXT record value.</li>
-  <li>I add the TXT record to whichever DNS provider the client uses (Cloudflare, GoDaddy, Namecheap, Google Domains, etc.).</li>
-  <li>Verification usually completes within fifteen minutes, occasionally a few hours.</li>
+  <li>Add the domain as a "Domain" property, not the "URL prefix" kind, so it covers every subdomain (such as shop.yourbusiness.com) and both http and https at once.</li>
+  <li>Google creates a TXT record value.</li>
+  <li>I add the record wherever the client's DNS is managed (Cloudflare, GoDaddy, Namecheap, Google Domains, and so on).</li>
+  <li>Verification usually finishes within 15 minutes, occasionally a few hours.</li>
 </ol>
 
-<p>The TXT record stays in DNS forever. I never have to re-verify, and any future Google product that needs to confirm domain ownership recognizes the record automatically.</p>
+<p>The record stays for good, so I never verify again, and future Google products that need proof of ownership recognize it.</p>
 
 <h2>Step 2: Submit the sitemap</h2>
 
-<p>Once the property is verified, I submit the XML sitemap. Every site I build ships with one at <code>/sitemap.xml</code>, auto-generated at build time from the current set of pages. The sitemap tells Google which URLs the site considers canonical, when each one was last modified, and how they relate.</p>
+<p>Next I submit the XML sitemap, a file listing every page. Every site I build generates one at <code>/sitemap.xml</code> each time it's built. It tells Google which addresses are official, when each page changed, and how they relate.</p>
 
-<p>Submitting the sitemap to Search Console accomplishes two things:</p>
+<p>Submitting it does two things:</p>
 
 <ol>
-  <li>Google pulls the sitemap on a roughly daily cadence and uses it to decide which URLs to crawl.</li>
-  <li>Search Console starts reporting on the sitemap specifically: how many URLs were submitted, how many got indexed, and which were rejected with reasons.</li>
+  <li>Google reads the sitemap about once a day to decide which pages to visit (crawl).</li>
+  <li>Search Console reports how many pages were submitted, how many were indexed, and which were rejected and why.</li>
 </ol>
 
-<p>The sitemap submission is permanent. If a new URL is added to the site after launch, the next build adds it to the sitemap, the next sitemap pull picks it up, and Google crawls it within a few days. I do not have to manually request indexing for individual pages in normal cases.</p>
+<p>You submit it only once. New pages join the sitemap at the next build, and Google crawls them within a few days without being asked.</p>
 
 <h2>Step 3: Submit the canonical homepage URL</h2>
 
-<p>For brand-new sites, I do submit the homepage URL via the URL Inspection tool's "Request Indexing" button. This nudges Google to crawl the homepage immediately rather than waiting for the standard discovery cadence. On a fresh domain, the difference between "request indexing" and "wait for the crawler" is often a week of indexing lag.</p>
+<p>For a brand-new site, I submit the homepage's official (canonical) address with the URL Inspection tool's "Request Indexing" button. Google then crawls it right away instead of waiting to find it, which on a new domain often saves a week.</p>
 
-<p>I do this once per launch, not as ongoing practice. Google explicitly rate-limits the request-indexing tool, and using it routinely for every page change is the wrong instinct.</p>
+<p>I do this once per launch, not as a habit. Google limits how often you can use the button.</p>
 
 <h2>Step 4: Connect to Google Analytics 4 (if used)</h2>
 
-<p>Most of my clients use the privacy-respecting analytics stack I set up by default (Cloudflare Web Analytics plus Umami, both cookie-free). For those clients, no GA4 connection is needed.</p>
-
-<p>For clients who want GA4 (occasionally a marketing-team requirement), I connect the GA4 property to Search Console so the queries data shows up alongside their other analytics. This is a one-click link in the Search Console settings.</p>
+<p>Most of my clients use the privacy-friendly visitor statistics I set up by default (Cloudflare Web Analytics plus Umami, both without cookies), so they don't need Google Analytics 4 (GA4). For clients who want GA4, often because a marketing team requires it, I link it to Search Console in one click so search data appears beside their other statistics.</p>
 
 <h2>Step 5: Save a baseline screenshot</h2>
 
-<p>This step is the one most agencies skip. Before any optimization work, I save a screenshot of the Performance tab covering the past 28 days (which is mostly empty for a new site, but baseline-zero is still a baseline). For an existing site, this captures the pre-rebuild state of the queries, impressions, and click data.</p>
+<p>Most agencies skip this. Before any improvement work, I save a screenshot of the Performance report for the past 28 days. On a new site it's mostly empty, but zero is still a starting point, and on an existing site it records the searches, appearances in results (impressions), and clicks before the rebuild.</p>
 
-<p>The reason this matters: ninety days after launch, when a client asks whether the rebuild has helped, the only way to answer the question rigorously is to compare the new dashboard to the old one. Without a baseline, the question becomes a vibes-based estimate.</p>
+<p>Ninety days after launch, when a client asks whether the rebuild helped, comparing the new numbers with the old is the only rigorous answer. Without a baseline, it's a guess.</p>
 
 <h2>Step 6: Share access with the client</h2>
 
-<p>The Search Console property belongs to the client, not to me. I add my email as a user (not the owner; user-level access is sufficient for ongoing diagnostics), and I leave the client as the verified owner. If the client ever wants to remove me, it is one click, and they retain full access to the historical data without my involvement.</p>
-
-<p>This is the right control structure on the wrong day. If the engagement ends, the client keeps everything.</p>
+<p>The Search Console property belongs to you. I add myself as a user, which is enough for ongoing checks, and leave you as the verified owner. You can remove me with one click and keep all the history, so if we ever stop working together, you keep everything.</p>
 
 <h2>What I watch for in the first 90 days</h2>
 
-<p>After launch, Search Console becomes a passive monitoring surface. I check it weekly for the first quarter and monthly thereafter. The four reports that matter:</p>
+<p>I check Search Console weekly for the first three months and monthly after that. Four reports matter:</p>
 
-<p><strong>Coverage.</strong> Tells me how many URLs Google has actually indexed versus how many are submitted. A healthy site after sixty days should have 90 to 100 percent of its submitted pages indexed. If the indexed count is lower, the Coverage report names the reasons (which I then go fix).</p>
+<p><strong>Coverage.</strong> How many submitted pages are indexed. After 60 days, a healthy site should be at 90 to 100 percent. If it's lower, the report names the reasons, and I fix them.</p>
 
-<p><strong>Performance.</strong> Tells me what queries are bringing traffic to which pages. The most useful filter is by page: I open a specific service page, see what queries Google is sending traffic for, and check whether those queries match what I designed the page to rank for. If the page is ranking for unexpected queries, the on-page copy may need adjusting.</p>
+<p><strong>Performance.</strong> Which searches bring visitors to which pages. I check that each service page draws the searches I built it for, and adjust its wording if it doesn't.</p>
 
-<p><strong>Mobile Usability.</strong> Tells me whether Google's mobile crawler is finding any layout issues that hurt the page's mobile-search ranking. Sites I build pass this 100 percent of the time at launch (the build pipeline checks for the same issues), but it is worth confirming Google agrees.</p>
+<p><strong>Mobile Usability.</strong> Whether Google found layout problems on phones that hurt mobile rankings. Sites I build pass at launch every time, because my build process checks for the same problems, but it's worth confirming Google agrees.</p>
 
-<p><strong>Enhancements (specifically, structured data).</strong> Tells me whether the LocalBusiness, FAQ, and Article schema I shipped is parsing cleanly on Google's end. Schema warnings in the first few weeks after launch are common (Google sometimes takes time to validate new schema types) and most resolve on their own.</p>
+<p><strong>Enhancements (structured data).</strong> Whether the LocalBusiness, FAQ, and Article schema I added reads correctly. Warnings are common in the first few weeks while Google validates new schema, and most clear on their own.</p>
 
 <h2>What clients should do in Search Console</h2>
 
-<p>Most of my clients never log in to Search Console themselves, and that is fine. The property is set up; I monitor it; I send a short summary on the quarterly review call. Clients who do want to engage with Search Console directly can do two useful things:</p>
+<p>Most of my clients never log in, and that's fine. I watch the property and send a short summary on the quarterly review call. If you'd like to use it yourself, two habits help:</p>
 
-<p><strong>Check the Performance report monthly.</strong> Filter to the past 28 days, sort by clicks descending, and look at the top queries. This is the cleanest view of how your site is actually being found, far better than vanity metrics like total visits.</p>
+<p><strong>Check the Performance report monthly.</strong> Set it to the past 28 days, sort by clicks, and read the top searches. It shows how people find your site far better than headline numbers like total visits.</p>
 
-<p><strong>Use the URL Inspection tool when you publish a new page.</strong> After publishing a new service page or blog post, paste the URL into the inspection box and click "Request Indexing." Google does not always need this nudge, but it sometimes does, and the nudge takes thirty seconds.</p>
+<p><strong>Use URL Inspection when you publish a new page.</strong> Paste the page's address into the inspection box and click "Request Indexing." Google doesn't always need the prompt, and it takes 30 seconds.</p>
 
-<p>That is the entire client-facing GSC workflow. The deeper diagnostic work (resolving Coverage errors, fixing schema warnings, investigating sudden traffic drops) is part of my standard maintenance and is included in the monthly plan.</p>
+<p>The deeper work, such as fixing Coverage errors and schema warnings or looking into a sudden traffic drop, is part of my regular maintenance and included in the monthly plan.</p>
 
 <h2>What Search Console does not tell you</h2>
 
-<p>A short honest list of GSC's limits, since the tool does have them:</p>
+<p>The tool has limits:</p>
 
 <ul>
-  <li>It only reports on Google. Bing, DuckDuckGo, Brave Search, and the other engines have their own webmaster tools (Bing Webmaster Tools is the most useful; the rest can usually be skipped).</li>
-  <li>It does not track returning visitors, conversion rate, or anything past the click. For that you need a real analytics tool (Cloudflare, Umami, or GA4).</li>
-  <li>It does not catch every technical SEO issue. The Coverage and Mobile Usability reports are good but not comprehensive; tools like Ahrefs, Screaming Frog, and Sitebulb find things GSC does not.</li>
-  <li>The query data is sampled and lagged. Today's clicks show up in the report tomorrow, and very-low-click queries get bucketed into "(other)" rather than reported individually.</li>
+  <li>It covers only Google. Bing Webmaster Tools is the most useful of the other search engines' tools, and the rest can usually be skipped.</li>
+  <li>It stops at the click, so it can't track returning visitors or how many become customers. For that you need a visitor-statistics tool (Cloudflare, Umami, or GA4).</li>
+  <li>It misses some technical problems that tools like Ahrefs, Screaming Frog, and Sitebulb find.</li>
+  <li>Its search data is sampled and a day behind, and searches with very few clicks are grouped under "(other)."</li>
 </ul>
 
-<p>For most service-business sites, GSC plus Cloudflare Web Analytics plus a quarterly Ahrefs site-audit covers 95 percent of the legitimate technical-SEO surface. Anything more elaborate than that is usually scope creep.</p>
+<p>For most service-business sites, Search Console, Cloudflare Web Analytics, and a quarterly Ahrefs scan cover 95 percent of the technical search work that matters.</p>
 
 <h2>If your current site does not have GSC set up</h2>
 
-<p>The setup takes about thirty minutes if you have DNS access. Verify the domain, submit the sitemap, save a baseline screenshot, share access with whoever maintains the site. The work is small and the dataset that opens up after a few weeks of crawling is genuinely useful.</p>
+<p>Setup takes about 30 minutes if you can reach your DNS settings: verify the domain, submit the sitemap, save a baseline screenshot, and share access with whoever looks after the site. After a few weeks of crawling, the data becomes useful.</p>
 
-<p>If the thirty minutes is the blocker, that is exactly the kind of operational work I handle as part of the standard plan. The site I build comes with Search Console wired in before launch, the sitemap submitted, and the baseline saved. There is no separate SEO-onboarding fee for any of it.</p>
+<p>If finding 30 minutes is the problem, I handle this as part of the standard plan. Every site I build has Search Console set up before launch, with the sitemap submitted and the baseline saved, at no separate fee.</p>

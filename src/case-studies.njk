@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Case Studies | Pikes Peak Web Designs"
-description: "Real builds, real outcomes. Case studies for sites I have shipped, written in plain language and verifiable in public auditors."
+description: "Case studies of sites I've built, written in plain words, with scores you can check yourself in free public tools."
 permalink: /case-studies/
 ---
 
@@ -11,8 +11,8 @@ permalink: /case-studies/
       <a href="/">Home</a><span class="sep">/</span><span>Case studies</span>
     </nav>
     <span class="section-label">Case studies</span>
-    <h1>Real builds, <em>verifiable numbers.</em></h1>
-    <p>Every case study is a real site, with the architecture decisions named, the metrics published, and the auditors anyone can run themselves. Client studies populate as written permission lands; the agency's own site is published as the methodology in practice.</p>
+    <h1>Sites I've built, <em>with numbers you can check</em></h1>
+    <p>Each case study covers a live site I built and the scores anyone can test. There are no paid-client case studies yet. Until the first client gives written permission, these are my own projects and a volunteer site for a hockey club.</p>
   </div>
 </section>
 
@@ -29,8 +29,8 @@ permalink: /case-studies/
           {% endif %}
           <div class="case-study-card-body">
             <div class="case-study-card-eyebrow">
-              {% if cs.selfStudy and not cs.screenshot %}<span class="case-study-card-pill">Dogfood &middot; the agency's own site</span>{% endif %}
-              {% if cs.selfStudy and cs.screenshot %}<span class="case-study-card-pill">Self-built</span>{% endif %}
+              {% if cs.selfStudy and not cs.screenshot %}<span class="case-study-card-pill">My own business site</span>{% endif %}
+              {% if cs.selfStudy and cs.screenshot %}<span class="case-study-card-pill">My own project</span>{% endif %}
               <span>{{ cs.trade }}{% if cs.metro %} &middot; {{ cs.metro }}{% endif %}</span>
             </div>
             <h2 class="case-study-card-title">{{ cs.client }}</h2>
@@ -53,12 +53,11 @@ permalink: /case-studies/
 
     <aside class="case-study-fallback">
       <span class="section-label">More to come</span>
-      <p>Each new study lands here as a paying client signs the publish-consent clause in the <a href="/agreement/" class="inline-link">service agreement</a>. Until then, here is the rest of the public proof you can audit yourself today:</p>
+      <p>Client studies follow the publishing clause in the <a href="/agreement/" class="inline-link">service agreement</a>. Until the first one arrives, here's more you can check yourself:</p>
       <ul style="margin:1.25rem 0 0;line-height:1.9">
-        <li><a href="/samples/" class="inline-link">Six demo sites</a>, six trades, six visual languages, every page custom-coded. Test any one in <a href="https://pagespeed.web.dev" rel="noopener" class="inline-link">PageSpeed Insights</a>.</li>
-        <li><a href="/technical-approach/" class="inline-link">Technical approach</a>, the stack, the targets, and the measurements every site is held to.</li>
-        <li><a href="/changelog/" class="inline-link">Public changelog</a>, the ship cadence on this site, in the shape a real client release log takes.</li>
-        <li><a href="/owners-guide/" class="inline-link">Owner's Guide</a>, what every client receives on launch day, in plain language.</li>
+        <li><a href="/samples/" class="inline-link">Six demo sites</a> for six trades, each with its own look and every page custom-coded. Test any of them in <a href="https://pagespeed.web.dev" rel="noopener" class="inline-link">Google's speed test</a>.</li>
+        <li><a href="/technical-approach/" class="inline-link">Technical approach</a>: the tools, the targets, and the measurements every site is held to.</li>
+        <li><a href="/owners-guide/" class="inline-link">Owner's guide</a>: what every client receives on launch day, in plain language.</li>
       </ul>
     </aside>
 
@@ -67,13 +66,12 @@ permalink: /case-studies/
 
 <section class="cta-section">
   <div class="cta-inner">
-    <span class="section-label">Want your build to be the next case study?</span>
-    <h2>Twenty minutes is plenty.</h2>
-    <p>Book a discovery call. If we are a fit, your site is the next one written up here, with your written permission and your real numbers.</p>
+    <span class="section-label">Want your site to be the next case study?</span>
+    <h2>Your site could be the next one here</h2>
+    <p>Sign up when you're ready. If we're a good fit and you give written permission, I'll write up your site here too.</p>
     <div class="cta-buttons">
-      <a href="/subscribe/" class="btn btn-primary btn-lg">Start Now</a>
-      <a href="/contact/" class="btn btn-outline btn-lg">Or Book a Discovery Call</a>
-      <a href="/samples/" class="btn btn-outline btn-lg">See sample websites</a>
+      <a href="/subscribe/" class="btn btn-primary btn-lg">Start now</a>
     </div>
+    <p class="cta-sub">Prefer to talk first? <a href="/contact/">Book a free call</a>. It takes 20 to 30 minutes on Google Meet.</p>
   </div>
 </section>

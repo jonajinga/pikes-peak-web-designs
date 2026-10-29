@@ -1,70 +1,68 @@
 ---
 layout: layouts/case-study.njk
 permalink: /case-studies/the-freethinking-times/
-title: "The Freethinking Times — an independent publication, custom-built"
+title: "The Freethinking Times: an independent publication, custom-built"
 client: "The Freethinking Times"
 liveUrl: "https://thefreethinkingtimes.com"
 trade: "Independent publication"
-metro: "Open-web project"
-summary: "An independent publication on philosophy, history, and ideas, designed and built from a blank file. Custom editorial layout, integrated newsletter, RSS feed, and the same accessibility and performance bar every site here ships with."
+metro: "Online project"
+summary: "An independent publication on philosophy, history, and ideas, built from a blank file, with a custom editorial layout, a built-in newsletter, an RSS feed, and the same accessibility and speed standards as every site I build."
 selfStudy: true
 greenfield: true
 metrics:
-  - label: "Mobile PageSpeed"
+  - label: "Speed score on phones"
     value: "95–100"
-    note: "Every page, mobile and desktop. Verifiable in pagespeed.web.dev against thefreethinkingtimes.com."
-  - label: "Accessibility floor"
+    note: "Every page, on phones and computers. Check thefreethinkingtimes.com at pagespeed.web.dev."
+  - label: "Accessibility standard"
     value: "WCAG 2.2 AA"
-    note: "Long-form editorial design with serif body, generous leading, and high-contrast tokens. Audited on every deploy."
+    note: "Serif body text, generous line spacing, and high-contrast colors, checked every time I publish a change."
   - label: "Newsletter"
     value: "Self-hosted"
-    note: "Subscribe form integrated directly into the site, sender on a privacy-respecting platform, no third-party tracker on the page."
+    note: "The sign-up form is part of the site, emails go out through a privacy-respecting service, and no outside tracker loads."
   - label: "RSS feed"
     value: "Atom 1.0"
-    note: "Auto-generated on every build. Real readers can subscribe in any RSS client without depending on the site's own delivery."
-  - label: "Cookie banner required"
+    note: "Updated with every change, so readers can follow along in any feed reader."
+  - label: "Cookie banner needed"
     value: "No"
-    note: "No third-party analytics, no Facebook pixel, no Google fonts on the visitor path. Privacy-first by construction."
+    note: "No outside analytics, ad trackers, or outside fonts load for visitors."
 ---
 
-## The brief, framed honestly
+## The project
 
-The Freethinking Times is an independent publication on philosophy, history, and ideas. It belongs to its author; it does not live inside Substack, Medium, or any other host that owns the audience. The point of the project is to demonstrate what an independent publication looks like when it is built like a proper site, not assembled out of a templated subscription product.
+The Freethinking Times is an independent publication on philosophy, history, and ideas. It belongs to its author instead of to a publishing platform that owns the audience.
 
-There was no prior version. The whole publication was designed and built greenfield, from a blank file, specifically to be the reference shape of "an independent publication that owns its own URL, its own subscribers, its own search ranking, and its own engineering posture."
+I built it from a blank file, with no earlier version, as a model for a publication that owns its address, its subscribers, and its place in search results.
 
-## The build, end to end
+## The build
 
-The reading experience is the load-bearing piece. Long-form essays use a deliberate serif body face with generous leading and a column width tuned to a comfortable reading length. Pull quotes, footnotes, and inline citations all use proper semantic markup so screen readers and search engines see them as what they are. Every essay carries structured data so it shows up in Google search with the right author, date, and excerpt.
+The reading experience matters most: a serif typeface, generous line spacing, and a comfortable column width. Pull quotes, footnotes, and citations are marked up for screen readers and search engines, and every essay carries labels that help it appear in Google with the right author, date, and excerpt.
 
-The newsletter is integrated into the site itself, not bolted on via a third-party widget. Visitors who want the next issue subscribe directly. No cookie banner is required because no tracker is loaded; the subscribe action is a form post to a privacy-respecting platform, and the form itself is on the site.
+The newsletter sign-up is part of the site and sends to a privacy-respecting service. No tracker loads, so no cookie banner is needed.
 
-The RSS feed is real and complete. Every essay appears in the feed in a format any RSS client can consume. Readers who prefer to control their own subscriptions can do so without depending on the site for delivery.
-
-Search runs client-side via Pagefind: full-text across every essay, no backend, no API key. The site is a static build deployed to Cloudflare's edge, which means the response is fast everywhere in the world and the platform never goes "down for maintenance."
+Readers can follow every essay in any feed reader and search the whole publication in their browser. The site is served from a fast global network, so it's quick everywhere and never goes down for maintenance.
 
 ## The principles applied
 
-### Local before global, but applied to readership
+### Local before global, applied to readers
 
-The Freethinking Times has no local-pack pressure (it is not a service business). The principle applies in a different shape: every essay has a real, indexable URL — not a hash-routed SPA pseudo-page — so a reader linking to a piece can be confident the link will resolve and search engines can index it cleanly.
+The Freethinking Times isn't a service business, so Google's map results don't apply. Here the principle means every essay has its own permanent address that search engines can index, so a link to a piece always works.
 
 ### Custom code over CMSes
 
-Eleventy + Nunjucks + vanilla CSS + vanilla JS, as on every site I ship. No Substack, no Ghost, no Medium, no headless CMS. The author owns the codebase, the content, and the audience.
+It's custom code, as on every site I build, with no publishing platform or content management system underneath. The author owns the code, the content, and the audience.
 
 ### Fast by construction
 
-Mobile PageSpeed 95–100 across the publication including long-form essay templates with embedded illustrations. Image pipeline emits AVIF + WebP + JPEG at multiple widths automatically. CSS per-page-purged at build. JavaScript minimal.
+Every page scores 95 to 100 on Google's speed test on phones, including long essays with illustrations. Images come in several sizes, and each page loads only the styles it uses.
 
 ### Boring infrastructure
 
-Eleventy + Cloudflare Pages. The technology under this publication will run identically in 2030. No vendor lock-in, no migration risk, no quarterly platform upgrade.
+The publication runs on proven tools and a fast global network, so it will work the same way in 2030, with no forced platform upgrades.
 
-## Why it qualifies as a case study
+## Why it belongs here
 
-A blog or a service-business news section is a smaller variant of the same job. If the engineering posture can carry a real publication with structured data, integrated newsletter, RSS feed, and 95–100 PageSpeed, then "can you add a blog to my site" is a yes with no hedge.
+A blog or news section on a service-business site is a smaller version of the same job. If I can build this publication, adding a blog to your site is an easy yes.
 
 ## Visit the live site
 
-The publication is on the open web at <a href="https://thefreethinkingtimes.com" rel="noopener" class="inline-link">thefreethinkingtimes.com</a>. Run any URL through PageSpeed Insights. View source on any essay. The page-speed numbers, the structured-data shape, and the privacy posture are all auditable in the public tools.
+The publication is at <a href="https://thefreethinkingtimes.com" rel="noopener" class="inline-link">thefreethinkingtimes.com</a>. Run any page through Google's speed test, or view the source of any essay.

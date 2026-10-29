@@ -2,83 +2,83 @@
 title: "Carrd vs. a Custom Site for a Service Business"
 date: 2026-06-01
 label: "Comparisons"
-description: "Carrd is the cleanest of the single-page site builders. Here is when it is genuinely the right answer and when a custom site is worth more."
+description: "Carrd is the cleanest of the single-page site builders. Here's when it's the right choice and when a custom site is worth more."
 ctaLabel: "Beyond a single page?"
-ctaHeading: "When Carrd is right, I will tell you."
-ctaText: "If a single page is genuinely all you need, Carrd is the cheapest path. If your business needs services pages, blog content, local-SEO depth, or specialty forms, a custom build pays back."
+ctaHeading: "When Carrd is right, I'll tell you"
+ctaText: "If a single page is all you need, Carrd is the cheapest path. If your business needs service pages, a blog, a strong local search presence, or specialty forms, a custom build pays for itself."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>Of the various website builders aimed at small businesses, <a href="https://carrd.co" rel="noopener" class="inline-link">Carrd</a> is the one I respect most. It is genuinely well-designed, fast, cheap, and clean. The single-page sites it produces look professional, load quickly, and do not carry the usual builder bloat. For the right business in the right stage, Carrd is the correct answer.</p>
+<p>Of the website builders aimed at small businesses, <a href="https://carrd.co" rel="noopener" class="inline-link">Carrd</a> is the one I respect most. It's well designed, fast, cheap, and clean. Its single-page sites look professional, load quickly, and carry none of the usual builder bloat. For the right business at the right stage, Carrd is the correct choice.</p>
 
-<p>For most service businesses, however, Carrd is undersized. The single-page constraint that makes it fast also caps how much SEO depth and conversion architecture the site can carry. This post walks through when Carrd is genuinely the right tool, when a custom site is worth more, and how to tell which category your business is actually in.</p>
+<p>Most service businesses, though, need more than Carrd gives. The single page that keeps it fast also limits how much search ranking strength (SEO, or search engine optimization) and how many paths to a call the site can hold.</p>
 
 <h2>What Carrd does well</h2>
 
-<p>Carrd is a single-page-site builder priced at $9 to $49 per year. The free tier exists for personal use; the paid tiers add custom domains, forms, and a few visual options. The whole product is opinionated toward "your site is one long scrolling page with sections," which is the right shape for many small projects.</p>
+<p>Carrd builds single-page sites for $9 to $49 a year. The free version is for personal use, and the paid versions add your own domain, forms, and a few design options. Every Carrd site is one long scrolling page with sections, which is the right shape for many small projects.</p>
 
-<p>The technical work the team has done is impressive. Carrd sites are genuinely fast (Core Web Vitals comfortably in the green band on most devices), genuinely lightweight (the JavaScript footprint is small), and genuinely accessible by default (the templates are well-built). For a tool that gives non-developers a publish button, the floor of quality is higher than almost any other builder.</p>
+<p>The technical work behind it is impressive. Carrd sites are fast, with Google's page-experience scores (Core Web Vitals) well in the green on most devices. They're lightweight, with little JavaScript, the code that makes pages interactive, and the templates are accessible by default. For a tool that gives non-developers a publish button, its baseline quality beats almost every other builder.</p>
 
-<p>The visual templates are restrained and tasteful. There are no animated gradients, no auto-playing videos, no parallax effects that grind a phone to a halt. The default look is "professional minimal," which is the right floor for a small business.</p>
+<p>The templates are restrained and tasteful, without animated color washes, auto-playing videos, or scrolling effects that slow a phone to a crawl. The clean, professional default suits a small business.</p>
 
-<p>The admin experience is clean. Editing a Carrd site is roughly as easy as editing a Google Doc. There are no plugin conflicts, no theme update notifications, no security patches to apply.</p>
+<p>Editing is easy, about like editing a Google Doc. There are no plugin conflicts, theme update notices, or security patches to apply.</p>
 
-<h2>When Carrd is genuinely the right answer</h2>
+<h2>When Carrd is the right choice</h2>
 
-<p>Three categories of small business are well-served by Carrd:</p>
+<p>Carrd serves three kinds of small business well:</p>
 
-<p><strong>Single-service operators with no SEO ambitions.</strong> A solo therapist who gets all clients via referrals, a personal trainer with a full Instagram-driven roster, a freelance designer who works only with returning clients. The website's job is to look professional and have a contact form; SEO is irrelevant because customers do not find these businesses via Google. Carrd does this perfectly.</p>
+<p><strong>Single-service operators who don't need search traffic.</strong> A solo therapist whose clients come by referral, a personal trainer booked through Instagram, or a freelance designer with only returning clients. The site needs to look professional and offer a contact form. Customers don't find these businesses on Google, so search ranking doesn't matter, and Carrd does the job perfectly.</p>
 
-<p><strong>Pre-launch businesses establishing a placeholder.</strong> A business that is six months away from opening and needs a "we are coming, here is the email signup" page. Carrd is the right tool for this stage. The full marketing site can be built later when the business is operational.</p>
+<p><strong>Businesses that haven't opened yet.</strong> A business six months from opening may need a "coming soon, sign up for news" page. Carrd is the right tool for that stage, and the full site can come later, once the business is running.</p>
 
-<p><strong>Side businesses with low operating tempo.</strong> A weekend-only bookkeeping service, a retired contractor who takes one or two consulting jobs a year. The website does not need to do much; one page is enough.</p>
+<p><strong>Side businesses with a light workload.</strong> A weekend-only bookkeeping service or a retired contractor who takes one or two consulting jobs a year needs only one page.</p>
 
-<p>For these cases, recommending Carrd is the right answer. The cost is genuinely $9 to $49 per year. The site genuinely works. There is no reason to spend more.</p>
+<p>For these businesses, I recommend Carrd. It costs $9 to $49 a year, the site works, and there's no reason to spend more.</p>
 
 <h2>When a custom site is worth more</h2>
 
-<p>Most service businesses are in a different category, and the math comes out differently:</p>
+<p>Most service businesses are in a different position, and the math comes out differently:</p>
 
-<p><strong>Businesses that get customers via Google.</strong> A roofer in Colorado Springs, an HVAC operator covering the Front Range, a plumber serving the metro. Customers find these businesses by searching for "roofer near me" or "emergency plumber Colorado Springs." Google's local-pack algorithm strongly weights:</p>
+<p><strong>Businesses that get customers from Google.</strong> A roofer in Colorado Springs, an HVAC company covering the Front Range, or a plumber serving the metro area. Customers find them by searching "roofer near me" or "emergency plumber Colorado Springs." Google's map results (the "local pack") give heavy weight to:</p>
 
 <ul>
-  <li>Multiple service-specific pages, each optimized for a specific query.</li>
-  <li>Multiple service-area pages, each with real local content for a specific city.</li>
-  <li>Schema markup naming the business as a specific LocalBusiness subtype.</li>
-  <li>FAQ pages with structured Q&amp;A that can render as rich results.</li>
+  <li>Several service pages, each written for one search.</li>
+  <li>Several service-area pages, each with local content for one city.</li>
+  <li>Schema markup, hidden labels that name the business as a specific type of LocalBusiness.</li>
+  <li>FAQ pages with structured questions and answers that can appear as rich results, the enhanced listings in Google.</li>
 </ul>
 
-<p>None of these are possible on a single-page site. Carrd by design is one URL with anchors; Google reads it as one page about everything, which is structurally weaker than 15 pages each about a specific thing.</p>
+<p>A single-page site can't offer any of these. A Carrd site is one address with jump links, so Google reads it as one page about everything. That's weaker than 15 pages that each cover one thing.</p>
 
-<p><strong>Businesses with multiple distinct customer profiles.</strong> A contractor who serves both homeowners and commercial property managers. Each audience needs different copy, different examples, different conversion paths. A single-page site has to compromise; a multi-page site lets each audience get its own surface.</p>
+<p><strong>Businesses with different kinds of customers.</strong> A contractor may serve both homeowners and commercial property managers. Each group needs its own copy, examples, and path to a call. A single page has to compromise, and a multi-page site gives each group its own pages.</p>
 
-<p><strong>Businesses publishing content over time.</strong> A landscape designer with a portfolio that grows yearly, a roofer who writes a few storm-damage articles each year, an inspector who maintains a glossary of inspection terms. Carrd does not have a real blog system; the site cannot grow into the content rhythm.</p>
+<p><strong>Businesses that publish over time.</strong> A landscape designer with a growing portfolio, a roofer who writes a few storm-damage articles a year, or an inspector who keeps a glossary. Carrd has no full blog system, so the site can't grow with regular publishing.</p>
 
-<p><strong>Businesses with specialty conversion forms.</strong> An emergency-service request form for a plumber, a bid form for a contractor, a pre-listing inspection request for a home inspector. Carrd's form support is functional but limited; specialty forms with conditional fields, multi-step flows, or trade-specific intake questions are out of reach.</p>
+<p><strong>Businesses that need specialty forms.</strong> A plumber's emergency request, a contractor's bid form, or a home inspector's pre-listing request. Carrd's forms work but are limited, so forms with several steps, trade-specific questions, or fields that depend on earlier answers are out of reach.</p>
 
-<p>For businesses in these categories, the lift from a properly-architected multi-page site over a single-page site is meaningful. More search visibility, more qualified leads, more capacity to grow into the website rather than outgrow it.</p>
+<p>For these businesses, a well-planned multi-page site does much better than a single page. It brings more search visibility, more leads that fit, and room to grow into the site instead of outgrowing it.</p>
 
 <h2>The cost comparison</h2>
 
-<p>Carrd: $9 to $49 per year, depending on tier. The paid Pro Plus tier ($49) is what most small businesses would actually want. Roughly $4 per month.</p>
+<p>Carrd costs $9 to $49 a year, depending on the version. Most small businesses would want Pro Plus at $49, about $4 a month.</p>
 
-<p>The standard plan I run: $175 a month, $0 down. Roughly $2,100 per year.</p>
+<p>My standard plan is $175 a month with $0 down, about $2,100 a year.</p>
 
-<p>The honest comparison: Carrd is 40 times cheaper. For a business that genuinely fits Carrd's shape, the math is overwhelming. For a business that does not, the cheaper site costs the difference in lost leads. A roofing business missing the local-pack ranking that 15 service-area pages would unlock is not saving $4 a month; it is leaving thousands of dollars in unbooked work on the table.</p>
+<p>So Carrd is about 40 times cheaper. For a business that fits Carrd's shape, that settles it. For a business that doesn't, the cheaper site costs the difference in lost leads. A roofing business that misses the local-pack ranking 15 service-area pages would earn isn't saving $4 a month; it's leaving thousands of dollars of work on the table.</p>
 
-<p>The right way to think about the cost is "what would each option produce in monthly leads, and what is the difference in revenue against the price difference." For most service businesses with non-trivial revenue per job, the multi-page custom site pays for itself many times over.</p>
+<p>The right question is what each option would bring in each month, and how the revenue difference compares to the price difference. For most service businesses with a solid amount per job, a multi-page custom site pays for itself many times over.</p>
 
 <h2>The migration path</h2>
 
-<p>For businesses that start on Carrd and outgrow it, migration is straightforward. The content is small (a single page typically translates to four or five pages of structured content); the platform-specific assets are minimal; the URL changes can be redirected cleanly.</p>
+<p>For a business that starts on Carrd and outgrows it, moving is straightforward. The content is small: a single page usually becomes four or five structured pages. Little is tied to the platform, and the old addresses can be redirected cleanly.</p>
 
-<p>I have not yet rebuilt a Carrd site for a client (Carrd users tend to be either at the right stage for it or pre-stage), but the migration shape would be similar to any other small platform: pull the content, plan the URL structure, build the new site, set up redirects, decommission the Carrd subscription.</p>
+<p>I haven't yet rebuilt a Carrd site for a client, since Carrd users are usually either at the right stage for it or not yet open. The move would look like any other small platform's. I'd pull the content, plan the page addresses, build the new site, set up redirects, and cancel the Carrd subscription.</p>
 
 <h2>If you are evaluating Carrd</h2>
 
-<p>The honest test is "is search-engine traffic part of how customers find me?" If no, Carrd is probably the right answer. If yes, the question shifts to whether a single page can carry enough SEO surface to compete in your local market. Usually it cannot.</p>
+<p>The test is one question: does search traffic help customers find you? If not, Carrd is probably right. If it does, the next question is whether a single page can carry enough search strength to compete in your local market, and usually it can't.</p>
 
-<p>For most service businesses, the answer to the first question is yes — search traffic matters because phone customers in 2026 are increasingly Google-first. The second answer is therefore no — a single page is not enough. The math points to a multi-page custom site.</p>
+<p>For most service businesses, search traffic matters, because in 2026 more and more customers start on Google before they call. A single page isn't enough for them, so the math points to a multi-page custom site.</p>
 
-<p>If you are unsure which category you are in, the <a href="/contact/" class="inline-link">discovery call</a> covers exactly this question. If your business genuinely fits Carrd, I will tell you that on the call rather than pitching the standard plan. The honest answer is the right starting point.</p>
+<p>If you're not sure which group you're in, a <a href="/contact/" class="inline-link">discovery call</a> covers exactly this question. If your business fits Carrd, I'll tell you so on the call rather than pitch you the standard plan.</p>

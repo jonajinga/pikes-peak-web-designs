@@ -48,7 +48,7 @@ tags: [post]
 
 <h2>Why the order matters</h2>
 
-<p>Do Google first. Neither engine ranks you higher for going first, but Bing Webmaster Tools has an "Import from Google Search Console" button that copies your verification, your sitemaps, and most of your settings in one click. With Google done, the Bing setup takes two minutes instead of 15.</p>
+<p>Do Google first. Neither engine ranks you higher for going first. But Bing Webmaster Tools has an "Import from Google Search Console" button that copies your verification, your sitemaps, and most of your settings in one click. With Google done, the Bing setup takes two minutes instead of 15.</p>
 
 <p>IndexNow comes last. Each time a page changes, it asks Bing and Yandex to revisit that page within minutes rather than days. If your site is hosted on Cloudflare Pages or runs through Cloudflare's network, IndexNow is one switch in the Cloudflare dashboard. It takes about 10 seconds and replaces a task you'd otherwise have to remember.</p>
 

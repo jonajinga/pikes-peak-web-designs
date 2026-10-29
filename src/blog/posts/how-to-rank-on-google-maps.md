@@ -2,100 +2,100 @@
 title: "How to Rank Higher on Google Maps as a Service Business"
 date: 2025-02-03
 label: "Local SEO"
-description: "The Google Maps local pack drives more calls than any other source for local service businesses. Here's how to rank higher in it."
-ctaLabel: "Local-pack signals built in"
-ctaHeading: "I wire the local-pack signals into the build."
-ctaText: "I build sites with the local-pack signals wired in by construction: NAP on every page, LocalBusiness schema, service-area pages, and a sitemap that gets submitted on launch day. $175 a month, flat."
+description: "Google's map results bring local service businesses more calls than any other source. Here's how to rank higher in them."
+ctaLabel: "Map-ranking signals built in"
+ctaHeading: "I build the map-ranking signals into your site"
+ctaText: "Every site I build has what Google's map results look for: your name, address, and phone on every page, LocalBusiness schema (code that gives Google your business details), service-area pages, and a sitemap submitted at launch. It's $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, local-seo]
 ---
 
-<p>When a homeowner needs a plumber, an electrician, or an HVAC tech, most of them don't start with a Google search and scroll through ten blue links. They look at the map. The "Local Pack"; the three businesses that appear below the map at the top of local search results; captures more clicks than almost everything else on the page combined.</p>
+<p>When homeowners need a plumber, an electrician, or an HVAC tech, most look at the map before the list of search results. The three businesses shown under it, called the "local pack," get more clicks than almost everything else on the page combined.</p>
 
-<p>If your business isn't in that box, you're invisible to a huge segment of people actively ready to hire.</p>
+<p>If you're not in that box, a huge share of people ready to hire never see you.</p>
 
-<p>Here's what actually moves the needle on your Google Maps ranking, and what doesn't.</p>
+<p>Here's what moves your Google Maps ranking, and what doesn't.</p>
 
 <h2>First: Your Google Business Profile Is the Foundation</h2>
 
-<p>Google Maps rankings are driven primarily by your <strong>Google Business Profile</strong> (formerly Google My Business). If you haven't claimed and verified yours, that's step one. Everything else is secondary until that's done.</p>
+<p>Your Google Business Profile (formerly Google My Business), the free listing that puts you on the map, drives your Maps ranking more than anything else. If you haven't claimed and verified yours, start there.</p>
 
-<p>Once claimed, the completeness and accuracy of your profile matters enormously. Fill out every section:</p>
+<p>Then fill out every section completely and accurately:</p>
 <ul>
-  <li>Business name (exactly as it appears on your signage and website)</li>
-  <li>Primary and secondary categories (be specific; "Plumber" rather than just "Home Services")</li>
+  <li>Business name (exactly as it appears on your signs and website)</li>
+  <li>Primary and secondary categories (be specific: "Plumber" instead of just "Home Services")</li>
   <li>Business hours, including holiday hours</li>
-  <li>Service area (the cities and zip codes you actually serve)</li>
-  <li>Phone number and website URL</li>
-  <li>A thorough business description using the terms customers search for</li>
-  <li>Photos; at least 10 real photos of your work, your truck, your team</li>
+  <li>Service area (the cities and zip codes you serve)</li>
+  <li>Phone number and website address</li>
+  <li>A full business description that uses the words customers search for</li>
+  <li>Photos: at least 10 of your work, your truck, and your crew</li>
 </ul>
 
-<p>An incomplete profile is a signal to Google that the business may be inactive or untrustworthy. Complete profiles rank better. It's that simple.</p>
+<p>Google reads an incomplete profile as a sign the business may be inactive or unreliable, so complete profiles rank better.</p>
 
 <h2>Reviews Are the Single Biggest Ranking Factor</h2>
 
-<p>Ask any local SEO professional what matters most for map pack rankings and they'll say reviews. Not just the star rating; the <strong>quantity, recency, and response rate</strong> all matter.</p>
+<p>Ask any local search specialist what matters most for map rankings, and they'll say reviews. The star rating counts, and so do the number of reviews, how recent they are, and how often you reply.</p>
 
-<p>Google wants to surface businesses that are actively serving customers and engaging with feedback. A business with 3 reviews from 2019 will consistently rank below a competitor with 40 recent reviews; even if the older business has a higher average rating.</p>
+<p>Google wants to show businesses that are serving customers and answering feedback. A business with three reviews from 2019 will regularly rank below a competitor with 40 recent ones, even if its average rating is higher.</p>
 
-<p>The most effective way to get reviews is embarrassingly simple: ask. After completing a job, send a follow-up text with a direct link to your Google review page. Most satisfied customers won't leave a review on their own, but most will when asked directly and given an easy link.</p>
+<p>The best way to get reviews is almost too simple: ask. Most satisfied customers won't leave one unprompted, but most will if you text them a direct link to your review page after the job.</p>
 
-<p>Also respond to every review; positive and negative. Responses show Google and potential customers that you're an engaged, real business.</p>
+<p>Reply to every review, good and bad. Replies show Google and potential customers that you're an active, engaged business.</p>
 
 <h2>NAP Consistency Across the Web</h2>
 
-<p>NAP stands for Name, Address, Phone number. Google cross-references your business information across dozens of online directories; Yelp, Angi, HomeAdvisor, BBB, Yellow Pages, and many more. When your NAP is consistent across all of them, it reinforces to Google that your business is legitimate and trustworthy.</p>
+<p>NAP stands for your business name, address, and phone number. Google compares these details across dozens of online directories, such as Yelp, Angi, HomeAdvisor, BBB, and Yellow Pages, and when they match everywhere, Google is more confident your business is legitimate.</p>
 
-<p>Inconsistencies; different phone numbers, slightly different business names, old addresses; create confusion and suppress your ranking. Audit your listings and make them consistent.</p>
+<p>Mismatches, such as different phone numbers, slightly different names, or old addresses, confuse Google and hold your ranking down. Check your listings and make them match.</p>
 
 <h2>Your Website Still Matters</h2>
 
-<p>Your Google Business Profile and your website are connected in Google's eyes. A well-built, fast-loading website that clearly mentions your business name, service area, and the specific services you offer strengthens your map pack ranking.</p>
+<p>Google links your profile and your website, so a fast site that clearly states your name, service area, and services strengthens your map ranking.</p>
 
-<p>Specifically:</p>
+<p>In particular:</p>
 <ul>
-  <li>Your website URL should be linked from your Google Business Profile</li>
-  <li>Your website should include your business name, address, and phone number (matching your profile exactly)</li>
-  <li>Your website should have dedicated pages or sections for each major service you offer</li>
-  <li>Your website should load fast (page speed is a ranking signal)</li>
+  <li>Your profile should link to your website</li>
+  <li>Your website should show your business name, address, and phone number, matching your profile exactly</li>
+  <li>Your website should have a page or section for each major service</li>
+  <li>Your website should load fast, since page speed is a ranking signal</li>
 </ul>
 
-<p>A slow, outdated, or poorly structured website drags down your map ranking. This is one reason why having a professionally built, fast-loading site pays off in ways beyond just direct traffic.</p>
+<p>A slow, outdated, or poorly organized website pulls your map ranking down, which is one reason a professionally built, fast site pays off beyond the visits it brings in directly.</p>
 
 <h2>Proximity, Relevance, and Prominence</h2>
 
-<p>Google uses three core factors to determine map rankings:</p>
+<p>Google uses three main factors to rank map results:</p>
 
 <ul>
-  <li><strong>Proximity</strong>; How close is the searcher to your business location? You can't control this, but serving a defined geographic area helps Google understand where you operate.</li>
-  <li><strong>Relevance</strong>; Does your profile match what the person is searching for? This is why your categories, description, and services section should be specific and thorough.</li>
-  <li><strong>Prominence</strong>; How well-known and credible is your business online? This is determined by reviews, backlinks, directory listings, and overall web presence.</li>
+  <li><strong>Proximity:</strong> how close is the searcher to your business? You can't control this, but serving a defined area helps Google understand where you work.</li>
+  <li><strong>Relevance:</strong> does your profile match the search? That's why your categories, description, and services should be specific and thorough.</li>
+  <li><strong>Prominence:</strong> how well known and trusted is your business online? Reviews, links from other sites (backlinks), directory listings, and your overall presence on the web decide it.</li>
 </ul>
 
-<p>You can't control proximity. You can absolutely control relevance and prominence.</p>
+<p>You can't control proximity, but you can control relevance and prominence.</p>
 
 <h2>Post Regularly to Your Profile</h2>
 
-<p>Google Business Profiles allow you to post updates, offers, and photos directly to your listing. Businesses that post regularly signal to Google that they're active. Posts don't need to be elaborate; a photo of a recent job with a sentence or two of description is enough. Once a week is ideal; once a month is better than nothing.</p>
+<p>You can post updates, offers, and photos straight to your profile, and regular posts show Google you're active. A photo of a recent job with a sentence or two is enough. Once a week is ideal, and once a month is better than nothing.</p>
 
 <div class="post-cta-box">
-  <h3>Your website is part of your map ranking.</h3>
-  <p>We build fast, correctly structured websites that support your Google Business Profile and help you rank in the local pack. $175/month, no large design deposit.</p>
-  <a href="/contact/" class="btn btn-primary">Get Started</a>
+  <h3>Your website is part of your map ranking</h3>
+  <p>I build fast, well-structured websites that support your profile and help you rank in the map results, for $175 a month with $0 down. The first call is free: 20 to 30 minutes on Google Meet.</p>
+  <a href="/contact/" class="btn btn-primary">Book a free call</a>
 </div>
 
-<h2>What Doesn't Work (Stop Wasting Time)</h2>
+<h2>What Wastes Your Time</h2>
 
-<p>A few things that contractors often waste time on:</p>
+<p>A few things contractors often spend time on that hurt more than help:</p>
 
 <ul>
-  <li><strong>Keyword stuffing your business name</strong>; Adding "plumber" or "HVAC" to your actual business name listing violates Google's guidelines and can get your listing suspended.</li>
-  <li><strong>Buying fake reviews</strong>; Google has sophisticated detection for fake reviews, and getting caught results in penalty or listing removal.</li>
-  <li><strong>Ignoring the mobile experience</strong>; Most map searches happen on phones. If your website loads slowly or looks broken on mobile, it hurts your ranking and your conversion rate.</li>
+  <li><strong>Stuffing keywords into your business name:</strong> adding "plumber" or "HVAC" to your business name on the listing breaks Google's rules and can get the listing suspended.</li>
+  <li><strong>Buying fake reviews:</strong> Google is good at spotting them, and getting caught means a penalty or removal.</li>
+  <li><strong>Ignoring phones:</strong> most map searches happen on phones. If your site loads slowly or looks broken on one, it hurts both your ranking and the number of visitors who call.</li>
 </ul>
 
-<p>Local map ranking is a long game. Businesses that show up consistently in the top three positions got there by doing the basics well over time: complete profile, regular reviews, consistent NAP data, and a strong website. None of it is complicated. Most of your competitors aren't doing it well. That's your opportunity.</p>
+<p>Map ranking is a long game. The top three got there by doing the basics well over time: a complete profile, steady reviews, consistent NAP details, and a strong website. None of it is complicated, and most of your competitors aren't doing it well, which is your opportunity.</p>
 
   </div>
   </div>

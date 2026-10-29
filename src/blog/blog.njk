@@ -1,8 +1,8 @@
 ---
 layout: layouts/base.njk
 eleventyComputed:
-  title: "{% if pagination.pageNumber > 0 %}Blog; Page {{ pagination.pageNumber + 1 }} | Pikes Peak Web Designs{% else %}Blog | Pikes Peak Web Designs{% endif %}"
-  description: "{% if pagination.pageNumber > 0 %}Web design tips and local SEO guides for small businesses; page {{ pagination.pageNumber + 1 }}.{% else %}Web design tips, local SEO guides, and industry-specific advice for small businesses across the U.S. and Canada.{% endif %}"
+  title: "{% if pagination.pageNumber > 0 %}Blog, Page {{ pagination.pageNumber + 1 }} | Pikes Peak Web Designs{% else %}Blog | Pikes Peak Web Designs{% endif %}"
+  description: "{% if pagination.pageNumber > 0 %}Web design tips and local search guides for small businesses, page {{ pagination.pageNumber + 1 }}.{% else %}Web design tips, local search guides, and advice for specific trades, written for small businesses across the U.S. and Canada.{% endif %}"
 pagination:
   data: collections.posts
   size: 10
@@ -16,9 +16,9 @@ permalink: /blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="sep">/</span><span>Blog</span>
     </nav>
-    <span class="section-label">Resources &amp; guides</span>
-    <h1>Practical writing on <em>small-business websites.</em></h1>
-    <p>This is the working notebook of the agency. Industry-specific guides, local-SEO walk-throughs, and honest thinking about what actually moves the phone for small service businesses, written by the same person who builds the sites.</p>
+    <span class="section-label">Resources and guides</span>
+    <h1>Practical guides for <em>websites that bring in work</em></h1>
+    <p>These are my working notes on small-business websites: guides for specific trades, step-by-step advice on local search, and plain talk about what makes the phone ring. I write every article, and I build the sites too.</p>
   </div>
 </section>
 
@@ -46,7 +46,7 @@ permalink: /blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
     {% if posts.length > 0 %}
     <div class="text-center" style="max-width:680px;margin:0 auto 2rem">
       <span class="section-label">{% if pagination.pageNumber == 0 %}More articles{% else %}All articles{% endif %}</span>
-      <h2 class="section-title" style="margin-inline:auto">Browse the full archive.</h2>
+      <h2 class="section-title" style="margin-inline:auto">Browse the full archive</h2>
     </div>
     <div class="post-list">
       {% for post in posts %}
@@ -79,12 +79,12 @@ permalink: /blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
 <section class="section section--cream">
   <div class="container" style="max-width:760px">
     <div class="text-center">
-      <span class="section-label">Ship this same blog system on your site</span>
-      <h2 class="section-title" style="margin-inline:auto">The blog you are reading runs the same code I install on client sites.</h2>
-      <p style="font-size:1rem;line-height:1.7;color:var(--text);margin-top:1rem">The reading-progress bar at the top of each article, the sticky table of contents on the side, the share buttons, the auto-generated RSS feed, the structured-data schema on every post, and the related-articles strip at the bottom are all part of one cohesive blog system. The same system ships with every site I build as part of the standard plan, with no separate add-on fee, and once it is in place every new post you publish runs on the same custom-coded foundation. From there, drafting and publishing posts is simply part of your unlimited content updates rather than a separate billable item.</p>
+      <span class="section-label">The same blog on your site</span>
+      <h2 class="section-title" style="margin-inline:auto">This blog runs on the same code I install on client sites</h2>
+      <p style="font-size:1rem;line-height:1.7;color:var(--text);margin-top:1rem">Every article here has a reading-progress bar, a table of contents that stays in view, share buttons, and a strip of related articles. Behind the scenes, each post carries labels that describe it to Google (schema), and the blog offers a feed readers can subscribe to (RSS). This whole blog system comes with every site I build as part of the standard plan, at no extra fee. Publishing your posts is part of your unlimited content updates, so it never shows up as a separate bill.</p>
     </div>
     <div class="cta-buttons" style="justify-content:center;margin-top:1.75rem">
-      <a href="/contact/" class="btn btn-primary btn-lg">Start a Conversation</a>
+      <a href="/subscribe/" class="btn btn-primary btn-lg">Start now</a>
       <a href="/whats-included/" class="btn btn-outline-dark btn-lg">See what's included</a>
     </div>
   </div>
@@ -93,11 +93,11 @@ permalink: /blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
 <section class="cta-section">
   <div class="cta-inner">
     <span class="section-label">Ready to build?</span>
-    <h2>I build the websites I write about.</h2>
-    <p>The articles on this page explain the ideas, and the work delivers them on your behalf, on a flat $175 a month with the blog system available as a one-time add-on whenever you are ready for it.</p>
+    <h2>I build the websites I write about</h2>
+    <p>These articles explain the ideas, and I put them to work on your site for $175 a month, with $0 down and the blog system included. If you'd like to talk first, the free call takes 20 to 30 minutes on Google Meet.</p>
     <div class="cta-buttons">
-      <a href="/contact/" class="btn btn-primary btn-lg">Start a Conversation</a>
-      <a href="/pricing/" class="btn btn-outline btn-lg">See Pricing</a>
+      <a href="/subscribe/" class="btn btn-primary btn-lg">Start now</a>
+      <a href="/contact/" class="btn btn-outline btn-lg">Prefer to talk first? Book a free call</a>
     </div>
   </div>
 </section>

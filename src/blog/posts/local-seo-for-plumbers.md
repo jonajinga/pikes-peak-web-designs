@@ -83,7 +83,7 @@ tags: [post, plumbing, local-seo]
 
 <h2>Do the Basics Consistently</h2>
 
-<p>The plumbers at the top of local search kept doing the basics: a complete Google profile, steady reviews, a fast and well-organized website, a page for each service, and the same name, address, and phone number (NAP) in every directory.</p>
+<p>The plumbers at the top of local search kept doing the basics. They have a complete Google profile, steady reviews, a fast and well-organized website, a page for each service, and the same name, address, and phone number (NAP) in every directory.</p>
 
 <p>Most plumbing companies do this poorly or not at all. A business that does it steadily, even slowly, will outrank them.</p>
 

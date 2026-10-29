@@ -3,7 +3,7 @@ layout: layouts/base.njk
 ogType: article
 eleventyComputed:
   ogImage: "/assets/img/og/blog/{{ page.fileSlug }}.png"
-  ogImageAlt: "{{ title }} — Pikes Peak Web Designs"
+  ogImageAlt: "{{ title }}, from Pikes Peak Web Designs"
 ---
 
 {# Reading progress bar #}
@@ -81,18 +81,18 @@ eleventyComputed:
         <div class="post-author-body">
           <span class="post-author-eyebrow">About the author</span>
           <strong>Jon Ajinga</strong>
-          <p>Jon is the founder of Pikes Peak Web Designs and the only person who writes, builds, and maintains the sites on offer here. He works with small service businesses across the U.S. and Canada and writes about local SEO, page speed, and what actually moves the phone.</p>
+          <p>Jon founded Pikes Peak Web Designs, and he is the only person who writes, builds, and looks after its websites. He works with small service businesses across the U.S. and Canada and writes about local search, page speed, and what makes the phone ring.</p>
           <a href="/about/" class="inline-link">More about Jon &rarr;</a>
         </div>
       </aside>
 
       <div class="post-cta-box post-cta-box--blog">
         <span class="post-cta-eyebrow">{{ ctaLabel or "Want this on your site?" }}</span>
-        <h3>{{ ctaHeading or "I ship this same blog system to every client." }}</h3>
-        <p>{{ ctaText or "The blog you are reading now, the sticky table of contents, the reading-progress bar, the share buttons, the structured-data schema, and the auto-generated RSS feed, all of it, is the same blog system I install on every client site as part of the standard plan. Once it is in place, every new post you publish runs on the same custom-coded foundation, with no plugin to maintain and no platform fees attached. The work is custom-coded, with nothing down and a flat $175 a month, and it is built on the <a href=\"/method/\" class=\"inline-link\">Service Site Standard</a>." | safe }}</p>
+        <h3>{{ ctaHeading or "Every client site gets this same blog system" }}</h3>
+        <p>{{ ctaText or "This blog is the same system I install on every client site as part of the standard plan. It includes the table of contents that stays in view, the reading-progress bar, the share buttons, the hidden labels that describe each post to Google (schema), and a feed readers can subscribe to (RSS). Every post you publish runs on the same custom-coded foundation, with no plugin to maintain and no platform fees. It's $175 a month with $0 down, built on the <a href=\"/method/\" class=\"inline-link\">Service Site Standard</a>." | safe }}</p>
         <div class="post-cta-buttons">
-          <a href="/contact/" class="btn btn-primary">Start a Conversation &rarr;</a>
-          <a href="/whats-included/" class="btn btn-outline-dark">See what's included</a>
+          <a href="/subscribe/" class="btn btn-primary">Start now &rarr;</a>
+          <a href="/contact/" class="btn btn-outline-dark">Prefer to talk first? Book a free call</a>
         </div>
       </div>
 
@@ -129,7 +129,7 @@ eleventyComputed:
          print header above — guarantees brand + URL appear even if the
          @page rules don't render in the user's browser. #}
       <div class="post-print-footer" aria-hidden="true">
-        <span class="post-print-markline">Custom-coded. Custom-cared-for.</span>
+        <span class="post-print-markline">A website you never have to worry about</span>
         <span class="post-print-source">{{ site.url }}{{ page.url }}</span>
       </div>
     </div>

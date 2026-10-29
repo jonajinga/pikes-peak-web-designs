@@ -70,7 +70,7 @@ tags: [post]
 <ul>
   <li><strong>"You own the source code, in your GitHub account."</strong> The most portable answer: you can take the site to any host or developer.</li>
   <li><strong>"You get a static export, the final files."</strong> The site can run anywhere, even without the source code.</li>
-  <li><strong>"Nothing; the site is on our platform."</strong> Wix, Squarespace, or a builder of their own. You rent for as long as you stay.</li>
+  <li><strong>"Nothing. The site is on our platform."</strong> Wix, Squarespace, or a builder of their own. You rent for as long as you stay.</li>
   <li><strong>"You own everything, but you pay a fee to leave."</strong> That fee holds your site hostage. Walk away.</li>
 </ul>
 

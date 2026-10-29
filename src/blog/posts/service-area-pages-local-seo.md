@@ -18,7 +18,7 @@ tags: [post]
 
 <p>A service-area page is one page on the site for one place the business serves. For a homeowner in Black Forest looking for a roofer, it's the page that says, "Yes, that includes you."</p>
 
-<p>For Google, it's a clear sign that the business is relevant there. Google's local ranking weighs the business's main location, how close the searcher is, the areas listed in the site's structured data (code that describes the business to search engines, also called schema), and pages that name the area. A service-area page supports all four.</p>
+<p>For Google, it's a clear sign that the business is relevant there. Google's local ranking weighs four things: the business's main location, how close the searcher is, the areas named in the site's structured data, and pages that name the area. Structured data, also called schema, is code that describes the business to search engines. A service-area page supports all four.</p>
 
 <h2>Telling a useful page from a copy</h2>
 

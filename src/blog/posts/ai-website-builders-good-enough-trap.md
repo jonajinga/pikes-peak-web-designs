@@ -14,8 +14,6 @@ tags: [post, comparison]
 
 <p>The site has headers, sections, photos, and a contact form, all in the right places, so it looks done. The trouble is what "looks done" leaves unmeasured. In local search, a site can look done and still lose to competitors, and that costs you customers without ever sending a bill.</p>
 
-<p>This post is about that gap and what it costs over a year.</p>
-
 <h2>What an AI builder does</h2>
 
 <p>An AI builder takes a little information (your trade, name, and location), picks a template, fills it with generic text, and sometimes adds stock-style images. The result is a Wix or Squarespace site you didn't have to lay out yourself. The "AI" part is the auto-fill.</p>

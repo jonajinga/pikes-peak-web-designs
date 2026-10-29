@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Content Update Request | Pikes Peak Web Designs"
-description: "Existing clients: request a content change on your site. New service, new hours, new photo, typo fix; I handle it, with quick turnarounds on most business days."
+description: "For existing clients: request a change to your site, such as a new service, new hours, a new photo, or a typo fix, and I'll take care of it."
 noindex: true
 ---
 
@@ -11,16 +11,16 @@ noindex: true
       <a href="/">Home</a><span class="sep">/</span><a href="/client-portal/">Client Portal</a><span class="sep">/</span><span>Content Update</span>
     </nav>
     <span class="section-label">For current clients</span>
-    <h1>Request a <em>content update.</em></h1>
-    <p>Whether the change is a new service, updated hours, a team photo to swap in, a price change, or a typo to fix, you simply tell me what you want changed and I handle it. Routine updates like these tend to land quickly on most business days.</p>
+    <h1>Tell me what to change, <em>and I'll take care of it</em></h1>
+    <p>Whether it's a new service, new hours, a team photo to swap in, a price change, or a typo, tell me what you'd like changed and I'll handle it. I make routine updates like these quickly on most business days.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container" style="max-width:720px">
     <div class="contact-form-card">
-      <h2 class="form-heading">Tell us what to change</h2>
-      <p class="form-intro">Be as specific or as rough as you like. I will reply to confirm and flag anything that needs clarification.</p>
+      <h2 class="form-heading">Tell me what to change</h2>
+      <p class="form-intro">Be as specific or as rough as you like. I'll reply to confirm and ask about anything that needs clarifying.</p>
 
       <form data-web3forms data-redirect="/thank-you/?type=content-update" action="https://api.web3forms.com/submit" method="POST" class="form">
         <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
@@ -42,7 +42,7 @@ noindex: true
         <div class="form-group">
           <label for="urgency">How urgent is this?</label>
           <select id="urgency" name="urgency">
-            <option value="normal">Normal (within 1 business day)</option>
+            <option value="normal">Normal (within one business day)</option>
             <option value="this-week">Whenever you can this week</option>
             <option value="specific-date">I have a specific date in mind</option>
             <option value="urgent-today">I need it live today if possible</option>
@@ -51,37 +51,37 @@ noindex: true
 
         <div class="form-group">
           <label for="targetDate">If you have a target date, when does it need to be live?</label>
-          <input type="text" id="targetDate" name="targetDate" placeholder="e.g. by Friday, or before Nov 15">
+          <input type="text" id="targetDate" name="targetDate" placeholder="For example, by Friday or before Nov. 15">
         </div>
 
         <div class="form-group">
           <label for="whatToChange">What do you want changed? <span class="req">*</span></label>
-          <textarea id="whatToChange" name="whatToChange" rows="7" placeholder="e.g.&#10;Our new hours are Mon-Fri 7am-6pm, Sat 8am-2pm.&#10;Please add a new service page for gutter cleaning with a $99 minimum.&#10;Swap the team photo on the About page for the new one (attached/in Dropbox)." required></textarea>
+          <textarea id="whatToChange" name="whatToChange" rows="7" placeholder="For example:&#10;Our new hours are Mon-Fri 7am-6pm, Sat 8am-2pm.&#10;Please add a new service page for gutter cleaning with a $99 minimum.&#10;Swap the team photo on the About page for the new one (it's in Dropbox)." required></textarea>
         </div>
 
         <div class="form-group">
           <label for="links">Any links, files, or photos I need?</label>
-          <textarea id="links" name="links" rows="3" placeholder="Paste any URLs to shared folders (Drive, Dropbox, etc.) or just describe what you've sent."></textarea>
+          <textarea id="links" name="links" rows="3" placeholder="Paste links to shared folders (Drive, Dropbox, and so on), or describe what you've sent."></textarea>
         </div>
 
         <div class="form-group">
-          <label for="pageUrl">Which page(s) does this affect? (if known)</label>
-          <input type="text" id="pageUrl" name="pageUrl" placeholder="e.g. yourbusiness.com/services/ or About page">
+          <label for="pageUrl">Which pages does this affect, if you know?</label>
+          <input type="text" id="pageUrl" name="pageUrl" placeholder="For example, yourbusiness.com/services/ or the About page">
         </div>
 
         <div id="form-error" role="alert" class="form-error">
-          Something went wrong. Please try again or email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+          Something went wrong. Please try again, or email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
         </div>
 
         <button type="submit" class="btn btn-primary btn-full btn-lg">Send update request</button>
-        <p class="form-hint">Prefer email or phone? <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a> or <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. All three go to the same place.</p>
+        <p class="form-hint">Prefer email or phone? Use <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a> or <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. All three reach me.</p>
       </form>
     </div>
 
     <div class="form-callout">
       <h3>Is it urgent or broken?</h3>
-      <p>If the site is down or displaying something harmful to your business right now, use the emergency form instead so I can triage it faster.</p>
-      <a href="/emergency/" class="btn btn-outline-dark">Emergency support &rarr;</a>
+      <p>If the site is down or showing something that's hurting your business right now, use the emergency form instead so I can deal with it first.</p>
+      <a href="/emergency/" class="btn btn-outline-dark">Get emergency support &rarr;</a>
     </div>
   </div>
 </section>

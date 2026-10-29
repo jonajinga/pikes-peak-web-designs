@@ -2,115 +2,115 @@
 title: "DNS for Small Business Owners: A Plain-Language Guide"
 date: 2026-05-17
 label: "The Stack"
-description: "Domain records control where your website lives, where your email goes, and whether anyone can pretend to be you. A plain explanation, no jargon."
+description: "Domain records control where your website lives, where your email goes, and whether anyone can pretend to be you. Here's a plain explanation."
 ctaLabel: "DNS handled for you"
-ctaHeading: "I configure every record at launch."
-ctaText: "Domain pointed at hosting, MX records for whichever email provider you use, SPF/DKIM/DMARC for spam protection, monitoring on the renewal. All part of the standard plan."
+ctaHeading: "I set up every record at launch"
+ctaText: "I point your domain to your hosting, set up the email records for whichever provider you use, and add the SPF, DKIM, and DMARC records that keep your mail out of spam. I also watch your renewal date. It's all part of the standard plan."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>DNS is one of those parts of running a website that nobody explains to small business owners until something goes wrong. A new site does not load on a particular phone, an important email lands in the recipient's spam folder, the domain quietly expires because the renewal email got lost, and suddenly DNS becomes a vocabulary problem on top of an emergency.</p>
+<p>Nobody explains DNS to small-business owners until something goes wrong. A new site won't load on someone's phone, an important email lands in a customer's spam folder, or the domain expires because the renewal notice got lost. Then DNS becomes a vocabulary lesson in the middle of an emergency.</p>
 
-<p>This post is the explanation I want every client to have read before they need it. What DNS actually is, the five record types that matter for a small business, what happens when each one is wrong, and how I configure them at launch.</p>
+<p>This is the explanation I want every client to read before they need it.</p>
 
-<h2>What DNS actually is</h2>
+<h2>What DNS is</h2>
 
-<p>DNS is the internet's address book. When a visitor types <code>yourbusiness.com</code> into their browser, the browser does not know where on the internet that name actually lives. It asks the DNS system, "where is yourbusiness.com?" The DNS system returns a numeric IP address, the browser opens a connection to that address, and the website loads.</p>
+<p>DNS, the Domain Name System, is the internet's address book. When a visitor types <code>yourbusiness.com</code> into a browser, the browser doesn't know where on the internet that name lives. It asks DNS, "Where is yourbusiness.com?" DNS answers with a numeric IP address, the browser connects to that address, and the website loads.</p>
 
-<p>Every domain has a small set of records that tell the DNS system how to answer that question. Those records live at your domain registrar (where you bought the domain) or at a separate DNS provider (Cloudflare, Route 53, etc.). They are public, queryable by anyone, and they govern more than just the website. Email, file sharing, video conferencing, and almost every internet-facing service that uses your domain reads from the same records.</p>
+<p>Every domain has a small set of records that tell DNS how to answer. They live at your domain registrar, where you bought the domain, or at a DNS provider such as Cloudflare or Route 53. Anyone can look them up, and they control more than the website: email, file sharing, video calls, and nearly every online service that uses your domain read from them.</p>
 
 <h2>The five records that matter</h2>
 
-<p>Most small business domains need exactly five record types configured. Each one solves a specific problem, and the cost of getting any of them wrong is real.</p>
+<p>Most small-business domains need exactly five types of record. Each one solves a specific problem, and getting any of them wrong has a cost.</p>
 
 <h3>1. A and AAAA records (where the website lives)</h3>
 
-<p>The A record points your domain at the IP address of the server hosting your website. AAAA is the same thing for IPv6 addresses (the newer numbering system). When a visitor types your domain, the browser reads the A record to find the website.</p>
+<p>The A record points your domain to the IP address of the server that hosts your website. AAAA does the same for IPv6 addresses, the newer numbering system. When a visitor types your domain, the browser reads the A record to find the site.</p>
 
-<p>For sites I build on Cloudflare Pages, the A record is replaced by a CNAME (see below) that points at Cloudflare's edge network. The visitor's browser is then routed to whichever Cloudflare data center is geographically closest, which is what makes the site fast worldwide.</p>
+<p>For sites I build on Cloudflare Pages, a CNAME record (see below) takes the A record's place and points to Cloudflare's worldwide network. Each visitor's browser then reaches the nearest Cloudflare data center, which is what makes the site fast everywhere.</p>
 
-<p><strong>What goes wrong:</strong> if the A record is missing or wrong, the website does not load at all. The browser shows "this site can't be reached." Common after a site migration when the old A record was removed before the new one was set.</p>
+<p><strong>What goes wrong:</strong> if the A record is missing or wrong, the website doesn't load at all, and the browser shows "This site can't be reached." It often happens after a move to a new host, when the old A record was removed before the new one was set.</p>
 
 <h3>2. CNAME records (aliases)</h3>
 
-<p>CNAME records say "this name is an alias for that other name." Used for two main things: pointing the <code>www.</code> subdomain at the same place as the bare domain, and pointing the domain at a hosting provider's server name (so they can change IP addresses without you having to update your DNS).</p>
+<p>A CNAME record says, "This name is another name for that one." It has two main uses. It points the <code>www.</code> version of your address to the same place as the plain domain. It also points your domain to a hosting company's server name, so the host can change its IP addresses without you updating anything.</p>
 
-<p>For sites I build, the typical CNAME setup is:</p>
+<p>For sites I build, the usual CNAME setup is:</p>
 
 <ul>
-  <li><code>www.yourbusiness.com</code> → CNAME to <code>yourbusiness.com</code> (so both versions of the URL work)</li>
-  <li><code>yourbusiness.com</code> → CNAME to Cloudflare Pages' edge address</li>
+  <li><code>www.yourbusiness.com</code> → CNAME to <code>yourbusiness.com</code> (so both versions of the address work)</li>
+  <li><code>yourbusiness.com</code> → CNAME to Cloudflare Pages' network address</li>
 </ul>
 
-<p><strong>What goes wrong:</strong> a missing <code>www.</code> CNAME means visitors who type the URL with <code>www</code> in front see an error. This used to be more common than it sounds.</p>
+<p><strong>What goes wrong:</strong> without a <code>www.</code> CNAME, visitors who type <code>www</code> in front of your address see an error. This used to be more common than it sounds.</p>
 
 <h3>3. MX records (where email goes)</h3>
 
-<p>MX records tell the internet where to deliver email sent to your domain. If someone emails <code>jane@yourbusiness.com</code>, their email server reads your MX records to figure out which mail server to deliver to. The MX records typically point at Google Workspace, Microsoft 365, or whatever email provider you actually use.</p>
+<p>MX records tell the internet where to deliver email sent to your domain. When someone emails <code>jane@yourbusiness.com</code>, their email server reads your MX records to find the right mail server. They usually point to Google Workspace, Microsoft 365, or whichever email provider you use.</p>
 
-<p><strong>What goes wrong:</strong> if MX records are missing or wrong, email sent to your domain bounces. The sender gets a "delivery failed" notification. This is usually noticed within hours of a configuration error because someone tries to email the business and cannot.</p>
+<p><strong>What goes wrong:</strong> if MX records are missing or wrong, email to your domain bounces, and the sender gets a "delivery failed" notice. People usually notice within hours, because someone tries to email the business and can't.</p>
 
-<p>For sites I build, I configure MX records to point at whichever email provider the client uses (or sets up at launch). I do not host email myself, but I make sure the records are correct so the client's chosen provider works.</p>
+<p>For sites I build, I point the MX records to the email provider the client uses or sets up at launch. I don't host email myself, but I make sure the records are right so the client's provider works.</p>
 
 <h3>4. SPF, DKIM, and DMARC records (spam protection)</h3>
 
-<p>This is the trio of records that decides whether email sent from your domain reaches the recipient's inbox or gets filtered as spam. They are technical, often skipped during initial setup, and the cost of skipping them is that legitimate emails from your business start landing in spam folders without explanation.</p>
+<p>These three records decide whether email from your domain reaches the inbox or lands in spam. They're technical and often skipped at setup, and then legitimate emails from your business land in spam with no explanation.</p>
 
-<p><strong>SPF (Sender Policy Framework)</strong> is a TXT record that lists which mail servers are allowed to send email from your domain. Without SPF, anyone can pretend to be sending from your domain. With SPF, the recipient's mail server can verify "yes, this email came from a server you authorized." Looks like:</p>
+<p><strong>SPF (Sender Policy Framework)</strong> is a TXT record, a short line of text, that lists the mail servers allowed to send email for your domain. Without SPF, anyone can pretend to send from your domain. With it, the receiving server can confirm the email came from a server you approved. It looks like this:</p>
 
 <pre><code>v=spf1 include:_spf.google.com ~all</code></pre>
 
-<p><strong>DKIM (DomainKeys Identified Mail)</strong> is a cryptographic signature on every email your mail server sends, verifiable by the recipient. Configured by your email provider; you copy the public key from their setup wizard into a TXT record at your DNS host. Without DKIM, the recipient has no cryptographic proof that the email actually came from your mail server.</p>
+<p><strong>DKIM (DomainKeys Identified Mail)</strong> adds a coded signature to every email your mail server sends, which the receiver can check. Your email provider sets it up, and you copy the public key from their setup screens into a TXT record at your DNS host. Without DKIM, the receiver has no proof that the email came from your mail server.</p>
 
-<p><strong>DMARC (Domain-based Message Authentication)</strong> is the policy that tells receiving mail servers what to do with mail that fails SPF or DKIM checks. Without DMARC, the receiver decides on its own (usually conservatively, meaning more of your legitimate mail goes to spam). With a properly configured DMARC record, you can say "if my mail fails the checks, reject it outright" — which both protects your domain from spoofing and signals to receivers that your real mail is trustworthy.</p>
+<p><strong>DMARC (Domain-based Message Authentication)</strong> tells receiving servers what to do with mail that fails the SPF or DKIM checks. Without it, each receiver decides alone, usually cautiously, so more of your legitimate mail goes to spam. A properly set DMARC record can say, "If my mail fails the checks, reject it." That protects your domain from impostors and tells receivers your own mail can be trusted.</p>
 
-<p><strong>What goes wrong:</strong> small business email bouncing into spam folders. The most common cause across every client I have worked with. The fix is correct SPF, DKIM, and DMARC records, and it makes a measurable difference in deliverability within days.</p>
+<p><strong>What goes wrong:</strong> small-business email lands in spam. It's the most common problem I've seen across all my clients. Correct SPF, DKIM, and DMARC records fix it, and delivery improves measurably within days.</p>
 
-<h3>5. TXT records (verification + miscellany)</h3>
+<h3>5. TXT records (verification and other uses)</h3>
 
-<p>The catch-all record type for tasks that need a small text string at a specific name. Most commonly used for:</p>
+<p>TXT records are the catch-all type, for any task that needs a short line of text at a specific name. They're most often used for:</p>
 
 <ul>
-  <li>Domain verification (Google Search Console, Microsoft 365, etc.)</li>
+  <li>Proving you own the domain (Google Search Console, Microsoft 365, and others)</li>
   <li>SPF and DMARC (described above)</li>
-  <li>Domain-based service discovery for some platforms</li>
+  <li>Helping some platforms find services connected to your domain</li>
 </ul>
 
-<p>TXT records do not break anything if extra ones are present, but they should be cleaned up periodically. A domain with thirty stale TXT records from past services is harder to audit when something goes wrong.</p>
+<p>Extra TXT records don't break anything, but they should be cleaned up from time to time. A domain with 30 stale TXT records from old services is harder to check when something goes wrong.</p>
 
 <h2>What I do at launch</h2>
 
-<p>For every site I build, I configure DNS at the client's preferred registrar (or move it to Cloudflare DNS if they want, which is faster and free). The launch checklist:</p>
+<p>For every site I build, I set up DNS at the client's preferred registrar, or I move it to Cloudflare DNS if they'd like, which is faster and free. Here's the launch checklist:</p>
 
 <ol>
-  <li><strong>A/CNAME for the website.</strong> Point the domain at Cloudflare Pages' edge address.</li>
-  <li><strong>CNAME for <code>www.</code></strong>. Make both URL versions work.</li>
-  <li><strong>MX records.</strong> Point at the client's email provider.</li>
-  <li><strong>SPF.</strong> List the email provider's authorized servers.</li>
-  <li><strong>DKIM.</strong> Set the public-key TXT record from the email provider.</li>
-  <li><strong>DMARC.</strong> Start with a permissive monitoring policy, then tighten to enforcement after thirty days of clean reports.</li>
-  <li><strong>Domain verification TXT.</strong> Add the Google Search Console verification record (and any other services the client uses).</li>
+  <li><strong>A/CNAME for the website.</strong> Point the domain to Cloudflare Pages' network address.</li>
+  <li><strong>CNAME for <code>www.</code></strong>. Make both versions of the address work.</li>
+  <li><strong>MX records.</strong> Point to the client's email provider.</li>
+  <li><strong>SPF.</strong> List the email provider's approved servers.</li>
+  <li><strong>DKIM.</strong> Add the public-key TXT record from the email provider.</li>
+  <li><strong>DMARC.</strong> Start with a relaxed policy that only reports, then tighten it to block failing mail after 30 days of clean reports.</li>
+  <li><strong>Domain verification TXT.</strong> Add the Google Search Console verification record, plus any others the client's services need.</li>
 </ol>
 
-<p>The whole DNS setup takes about an hour at launch. After that, the records stay stable until the client adds a new email provider or service that needs its own record.</p>
+<p>The whole DNS setup takes about an hour at launch. After that, the records stay put until the client adds a new email provider or a service that needs its own record.</p>
 
 <h2>Domain renewal: the part that fails silently</h2>
 
-<p>One non-DNS task that ties to the same control surface: domain renewal. Every domain has an expiration date. Registrars send renewal-reminder emails, but those emails often land in spam or get ignored. If the domain expires and no one notices, the website goes dark and email stops working overnight.</p>
+<p>One task outside DNS is tied to the same settings: renewing the domain. Every domain has an expiration date. Registrars send reminder emails, but those often land in spam or get ignored. If the domain expires and nobody notices, the website goes dark and email stops working overnight.</p>
 
-<p>I monitor renewal dates directly via WHOIS rather than relying on the registrar's email reminders. Sixty days, thirty days, and seven days before expiration, I send the client a heads-up. If the domain does lapse, most TLDs have a thirty-day redemption window during which it can still be recovered, and I help with that.</p>
+<p>I track renewal dates myself through WHOIS, the public registry of domain records, instead of relying on the registrar's reminders. I send the client a heads-up 60 days, 30 days, and seven days before expiration. If a domain does lapse, most domain endings (TLDs, such as .com) allow 30 days during which it can still be recovered, and I help with that.</p>
 
-<p>This is one of those small operational things that almost never matters and is catastrophic when it does.</p>
+<p>It's one of those small chores that almost never matters and is a disaster when it does.</p>
 
 <h2>If your current DNS is messy</h2>
 
-<p>Three quick checks any business owner can run:</p>
+<p>Any business owner can run three quick checks:</p>
 
-<p><strong>1. Does <code>www.yourbusiness.com</code> work?</strong> If only the bare domain works, your <code>www.</code> CNAME is missing.</p>
+<p><strong>1. Does <code>www.yourbusiness.com</code> work?</strong> If only the plain domain works, your <code>www.</code> CNAME is missing.</p>
 
-<p><strong>2. Send a test email to a Gmail account from your business email and look at the headers.</strong> If SPF or DKIM is failing, Gmail will say so in the message details. Failed checks land you in spam more often.</p>
+<p><strong>2. Send a test email to a Gmail account from your business email and look at the headers.</strong> If SPF or DKIM is failing, Gmail says so in the message details, and failed checks send you to spam more often.</p>
 
-<p><strong>3. Check your domain's expiration date.</strong> Go to <a href="https://whois.icann.org" rel="noopener" class="inline-link">whois.icann.org</a>, type your domain, and look at the expiration date. If it is less than ninety days away and you have not seen a renewal email, set a calendar reminder.</p>
+<p><strong>3. Check your domain's expiration date.</strong> Go to <a href="https://whois.icann.org" rel="noopener" class="inline-link">whois.icann.org</a>, type your domain, and look at the expiration date. If it's less than 90 days away and you haven't seen a renewal email, set a calendar reminder.</p>
 
-<p>For sites I build, all three of these are wired in at launch and monitored thereafter. For sites I do not build, the same checks apply, and the fixes are usually small.</p>
+<p>For sites I build, I set up all three at launch and keep watching them. For other sites, the same checks apply, and the fixes are usually small.</p>

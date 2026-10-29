@@ -1,70 +1,66 @@
 ---
 layout: layouts/case-study.njk
 permalink: /case-studies/the-great-agnostic/
-title: "The Great Agnostic — a literary archive in monochrome"
+title: "The Great Agnostic: a literary archive in monochrome"
 client: "The Great Agnostic"
 liveUrl: "https://thegreatagnostic.com"
 trade: "Literary archive"
-metro: "Open-web project"
-summary: "A complete archive of Robert Green Ingersoll's twelve-volume Dresden Edition, designed and built from a blank file with a custom Victorian typographic system, full structured data, and a monochrome aesthetic. 177 verbatim works, a biography, a timeline, and a connections graph, all on the same engineering posture every client site here uses."
+metro: "Online project"
+summary: "A complete archive of Robert Green Ingersoll's 12-volume Dresden Edition, built from a blank file: 177 works in full, a biography, a timeline, and a map of his connections, in a monochrome Victorian design built the same way as every client site."
 selfStudy: true
 greenfield: true
 metrics:
-  - label: "Verbatim works rendered"
+  - label: "Works in full text"
     value: "177"
-    note: "Every essay, lecture, and interview from the 12-volume Dresden Edition, ingested from source TXTs into custom Eleventy templates."
-  - label: "Mobile PageSpeed"
+    note: "Every essay, lecture, and interview in the Dresden Edition, from the original text files."
+  - label: "Speed score on phones"
     value: "95–100"
-    note: "Every page, mobile and desktop. Verifiable in pagespeed.web.dev against thegreatagnostic.com."
-  - label: "Accessibility floor"
+    note: "Every page, on phones and computers. Check thegreatagnostic.com at pagespeed.web.dev."
+  - label: "Accessibility standard"
     value: "WCAG 2.2 AA"
-    note: "Long-form Victorian-era prose with custom drop caps and italic emphasis, audited for color contrast and semantic structure."
-  - label: "Schema coverage"
-    value: "Per-work + Person"
-    note: "Every work ships CreativeWork JSON-LD. Biography ships Person + WebSite + BreadcrumbList. FAQ page ships FAQPage."
-  - label: "Theme system"
-    value: "Light + dark"
-    note: "Two-mode toggle with localStorage + prefers-color-scheme, no flash of wrong theme on initial paint."
+    note: "Long Victorian prose with drop caps and italics, checked for color contrast and page structure."
+  - label: "Search-engine labels"
+    value: "Every work"
+    note: "Each work, the biography, and the FAQ carry labels that tell search engines what they are."
+  - label: "Light and dark mode"
+    value: "Both"
+    note: "Readers can switch modes, and the page never flashes the wrong one as it loads."
 ---
 
-## The brief, framed honestly
+## The project
 
-The Great Agnostic is a personal project: a literary archive of Robert Green Ingersoll, the nineteenth-century orator known to history as "the Great Agnostic." His complete works fill twelve volumes in the Dresden Edition, and at the time of this build, no clean, reader-friendly, search-engine-indexable version of the full corpus existed online. Plain-text scans on archive.org. PDFs on Project Gutenberg. A few of the more famous lectures floated around in blog excerpts. Nothing approaching a real archive.
+The Great Agnostic is my archive of Robert Green Ingersoll, the 19th-century speaker known as "the Great Agnostic." His works fill the 12-volume Dresden Edition, but when I built the site, no clean, searchable version of the full collection existed online: only scans on archive.org, PDFs on Project Gutenberg, and excerpts quoted on blogs. Now the whole archive is online, laid out for readers and search engines alike.
 
-This is the entire archive, on the open web, with a structure that respects both the reader and the search engine. Built greenfield, no pre-existing site to migrate, no CMS to fight with.
+## The build
 
-## The build, end to end
+A script I wrote reads the Dresden Edition's original text files and turns each work into its own page, with its own address, search-engine labels, and links to the previous and next work: 177 in all.
 
-The full Dresden Edition was ingested from source TXTs into Eleventy via a custom pipeline (`scripts/ingest-dresden.mjs`) that reads a manifest of WORKS, identifies each work's body content by a distinctive start-marker phrase, and emits per-work markdown files into the Eleventy collection. 177 works in total, each with its own URL, breadcrumb, structured-data block, and prev/next navigation.
+The look is Victorian: Playfair Display and Crimson Pro type on warm cream and charcoal, with drop caps, the original italics, and a table of contents that stays in view on long pieces.
 
-The visual register is Victorian. Playfair Display for display, Crimson Pro for body, monochrome palette throughout (paper warm-cream, ink dark charcoal, no chromatic accent). The typographic system carries drop caps on long-form work, italic emphasis preserved from the source text, and a sticky table of contents on every long piece.
-
-Beyond the works themselves, the site ships a full biography, a 25-event timeline, a connections graph linking Ingersoll to thirteen contemporaries (Whitman, Twain, Lincoln, etc.), a resources page with the original Dresden Edition source links, an FAQ, and a privacy/terms layer for completeness.
-
-Search runs client-side via Pagefind across every word of every work. RSS feed for the blog. JSON-LD on every page in the right shape (CreativeWork for works, Person for the biography, BlogPosting for posts, FAQPage for the FAQ).
+The site adds a biography, a 25-event timeline, a map linking Ingersoll to 13 contemporaries (Whitman, Twain, Lincoln, and others), source links, an FAQ, privacy and terms pages, full-text search, and an RSS feed for the blog.
 
 ## The principles applied
 
 ### Custom code over CMSes
 
-Eleventy v3 (ESM), Nunjucks templates, vanilla CSS, vanilla JS. No WordPress, no headless CMS. The 177-work corpus would have needed its own migration tooling on any CMS; on Eleventy each work is a markdown file, and the build emits the entire archive in under three seconds.
+With no content management system, the 177 works needed no import tools. Each is a simple text file, and the whole archive builds in under three seconds.
 
 ### Fast by construction
 
-Mobile PageSpeed 95–100 across every page, including the works themselves which run several thousand words each. CSS concatenated and per-page-purged at build time. No analytics tracker. No third-party fonts on the visitor path.
+Every page scores 95 to 100 on Google's speed test on phones, even works several thousand words long, and no tracking scripts or outside fonts load for visitors.
 
 ### Accessible by default
 
-Long-form Victorian prose has its own accessibility hazards — drop caps, all-caps section heads, italic emphasis dense enough to fight contrast. Each was solved by hand: drop caps use real `:first-letter` rules with adequate size and color, all-caps is reserved for section labels not body, italics retain full text contrast. WCAG 2.2 AA across the corpus.
+Victorian prose brings its own accessibility problems: drop caps, all-capital headings, and dense italics. I handled each by hand, and the whole collection meets WCAG 2.2 AA.
 
 ### Boring infrastructure
 
-Eleventy + Nunjucks + Cloudflare Pages. No build step that depends on a vendor's account, no deploy that depends on a runtime service. The site is files in a repo, hashed and deployed.
+The site is a set of files built with proven tools. Publishing it depends on no single company's account and no service running behind the scenes.
 
-## Why it qualifies as a case study
+## Why it belongs here
 
-Most service-business websites are a tenth this complex: ten or twenty pages, a blog, a contact form. The Great Agnostic is 177+ pages of long-form historical prose, custom-typeset, fully structured for search, with a working theme toggle and a working search and a working RSS feed and a working FAQPage rich-result. If the engineering posture can produce that, a roofing site or a plumbing site is a smaller version of the same job.
+Most service-business sites are a tenth as complex: 10 or 20 pages, a blog, and a contact form. This archive has more than 177 pages of long historical writing, with search, light and dark modes, an RSS feed, and an FAQ that can appear in Google's rich results. A roofing or plumbing site is a smaller version of the same job.
 
 ## Visit the live site
 
-The whole archive is on the open web at <a href="https://thegreatagnostic.com" rel="noopener" class="inline-link">thegreatagnostic.com</a>. Run any URL through PageSpeed Insights. View source on any work. The page-speed numbers, the structured-data shape, and the accessibility posture are all auditable in the public tools.
+The archive is at <a href="https://thegreatagnostic.com" rel="noopener" class="inline-link">thegreatagnostic.com</a>. Run any page through Google's speed test, or view the source of any work.

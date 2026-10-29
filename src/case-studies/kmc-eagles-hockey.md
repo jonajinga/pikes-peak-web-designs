@@ -6,7 +6,7 @@ client: "KMC Eagles Hockey"
 liveUrl: "https://kmceagles.org"
 trade: "Amateur ice hockey club"
 metro: "Kaiserslautern, Germany"
-summary: "A new website for an amateur hockey club in the Kaiserslautern Military Community. It replaced the club's older site with one that players can run their season from: the schedule, whether they are coming, and how to find the rink."
+summary: "A new website for an amateur hockey club in the Kaiserslautern Military Community. It replaced the club's older site with one that players can run their season from: the schedule, whether they're coming, and how to find the rink."
 selfStudy: false
 greenfield: false
 metrics:
@@ -26,13 +26,13 @@ metrics:
 
 ## The club
 
-The KMC Eagles are an amateur ice hockey club for the Kaiserslautern Military Community in Germany, which takes in Ramstein, Landstuhl, Baumholder, and Zweibrücken. The club plays out of the Zweibrücken Ice Rink from late September to April. Anyone sixteen or older can join: service members of every branch, their families, civilians, NATO personnel, and local players. Military hockey in Zweibrücken goes back to 1953, and the club keeps that history on its site.
+The KMC Eagles are an amateur ice hockey club for the Kaiserslautern Military Community in Germany, which takes in Ramstein, Landstuhl, Baumholder, and Zweibrücken. The club plays out of the Zweibrücken Ice Rink from late September to April. Anyone 16 or older can join: service members of every branch, their families, civilians, NATO personnel, and local players. Military hockey in Zweibrücken goes back to 1953, and the club keeps that history on its site.
 
-I sit on the club's leadership team, and I built the website as a volunteer. No one paid for it. I include it here because it is a working site for a real organization, and it shows the same care I give every client.
+I sit on the club's leadership team, and I built the website as a volunteer. No one paid for it. I include it here because it's a working site for an active club, and it shows the same care I give every client.
 
 ## Where the old site fell short
 
-The club's earlier site, kmceagles.com, was built on tools from around 2014, and it shows its age. It loads parts of itself over insecure connections, which modern browsers block. Its buttons and some of its links have no names a screen reader can announce, and the page does not say what language it is in. It still links to Google+, a service that closed in 2019.
+The club's earlier site, kmceagles.com, was built on tools from around 2014, and it shows its age. It loads parts of itself over insecure connections, which modern browsers block. Its buttons and some of its links have no names a screen reader can announce, and the page doesn't say what language it's in. It still links to Google+, a service that closed in 2019.
 
 None of this is unusual. Volunteer clubs keep old websites because no one has the time to replace them.
 
@@ -46,17 +46,17 @@ Rinks are often poor places for a phone signal, so the site plans for it. From t
 
 Each rink has a page with its address, a map, and directions. The page also gives the European emergency number, 112, the nearest emergency department, and where to find the first-aid kit and the defibrillator.
 
-For coaches and club leaders, the site carries the jobs a volunteer club would otherwise juggle by text message and spreadsheet: rosters, attendance, rides, duties such as bringing the pucks, subs from other teams, waiting lists when an event is full, dues, the team kitty, polls, and game stats. A change shows up for everyone within about twenty seconds, with no need to reload the page. The club's leaders edit the public pages themselves, with a written guide to help them.
+For coaches and club leaders, the site carries the jobs a volunteer club would otherwise juggle by text message and spreadsheet: rosters, attendance, rides, duties such as bringing the pucks, subs from other teams, waiting lists when an event is full, dues, the team kitty, polls, and game stats. A change shows up for everyone within about 20 seconds, with no need to reload the page. The club's leaders edit the public pages themselves, with a written guide to help them.
 
 Members stay in charge of their own information. Each one chooses how much of their profile the public sees, and each can download or delete their data from their settings. A language switch translates the pages for German speakers, and the site carries the Impressum and privacy pages that German law requires.
 
 ## The numbers
 
-I tested both home pages with Lighthouse, the free testing tool built into Google Chrome, on October 29, 2026. The new site scores 100 for accessibility, up from 71, and 100 for search-engine basics, up from 92. Its best-practices score rose from 68 to 93, and the new home page loads entirely over a secure connection.
+I tested both home pages with the free testing tool built into Google Chrome on October 29, 2026. The new site scores 100 for accessibility, up from 71, and 100 for search-engine basics, up from 92. Its best-practices score rose from 68 to 93, and the new home page loads entirely over a secure connection.
 
 ## Why it belongs here
 
-A hockey club is not a plumbing company, but the two need many of the same things: a schedule people trust, a quick way to say yes, directions that work on a phone, and pages that everyone can use, including people who rely on a screen reader. This site does those things for a club run by volunteers. I would bring the same care to yours.
+A hockey club isn't a plumbing company, but the two need many of the same things: a schedule people trust, a quick way to say yes, directions that work on a phone, and pages that everyone can use, including people who rely on a screen reader. This site does those things for a club run by volunteers. I would bring the same care to yours.
 
 ## Visit the live site
 

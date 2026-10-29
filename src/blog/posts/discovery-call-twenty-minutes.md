@@ -1,97 +1,95 @@
 ---
-title: "The Discovery Call: Twenty Minutes, No Pressure"
+title: "The Discovery Call: 20 to 30 Minutes, No Pressure"
 date: 2026-05-28
 label: "Process & Operations"
-description: "The discovery call is twenty minutes on Google Meet. Here is exactly what I ask, what you should ask back, and what happens after."
+description: "The discovery call is a free 20 to 30 minutes on Google Meet. Here's what I ask, what you should ask me, and what happens after."
 ctaLabel: "Book the call"
-ctaHeading: "Twenty minutes, no commitment, no pitch."
-ctaText: "If we are a fit, the next step is a written agreement and the standard plan starts. If we are not, I will tell you that and point you somewhere useful. Either outcome is fine."
+ctaHeading: "A free call, 20 to 30 minutes on Google Meet"
+ctaText: "If we're a good fit, I send the plain-English service agreement, and work starts when your first payment clears. If we're not, I'll tell you so and point you somewhere useful. Either outcome is fine."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>The discovery call is the first conversation between any prospective client and me. It runs about twenty minutes on Google Meet (or by phone if a video call does not work for the day). It is free, it is the only step before any commitment, and it is the only way I take on new clients.</p>
-
-<p>This post explains what the call covers, what I ask, what you should ask back, and what happens whether or not we end up working together.</p>
+<p>The discovery call is a first conversation between you and me. It runs 20 to 30 minutes on Google Meet, or by phone if video doesn't suit you that day. It's free, and it's optional: if you've already decided, you can sign up without one.</p>
 
 <h2>Why a call rather than email</h2>
 
-<p>I work with small business owners. Email is a perfectly fine medium for many things, but for the first conversation it has consistently produced worse outcomes than a short call. The reasons:</p>
+<p>I work with small-business owners. Email is fine for many things, but for a first conversation, a short call has given better results every time. Here's why.</p>
 
-<p>Most of the questions I need to ask are open-ended, and most of the answers are easier to give in conversation than in writing. "What does a successful month look like for your business?" is a question that produces a clear answer in 90 seconds of conversation and a fuzzy answer in three days of email back-and-forth.</p>
+<p>Most of my questions are open-ended, and most answers are easier to say than to write. "What does a good month look like for your business?" gets a clear answer in 90 seconds of talking and a fuzzy one after three days of emails back and forth.</p>
 
-<p>The call also lets me filter quickly. I do not take on every client; some prospects are not the right fit, either because their needs do not match what I do or because I am not the right vendor for their stage. Twenty minutes on a call surfaces this with much less friction than a multi-day email exchange that ends in a polite no.</p>
+<p>The call also helps me sort quickly. I don't take on every client, because some needs don't match what I do, and some businesses are at a stage where I'm not the right fit. A short call shows this with far less effort than a long email exchange that ends in a polite no.</p>
 
-<p>For the prospect, the call is also the cleanest way to evaluate me. Most agencies sound impressive in their marketing copy and disappointing in their first conversation; the gap between the two is the signal that matters. A short call lets you decide whether the person you would actually be working with is someone you want to work with.</p>
+<p>For you, the call is the clearest way to judge me. Many agencies sound impressive in their marketing and disappointing on the phone, and that gap is what you need to see. A short call lets you decide whether you want to work with the person who would do the work.</p>
 
 <h2>What I ask</h2>
 
-<p>The call has a loose structure. I have a small set of questions I want to get answers to; the order varies based on the conversation. The questions:</p>
+<p>The call has a loose structure. I have a short set of questions, and their order follows the conversation:</p>
 
-<p><strong>What does your business do, and where?</strong> Geography, trade, scale. The local-pack work I do is heavily shaped by the city or region the business operates in.</p>
+<p><strong>What does your business do, and where?</strong> Your location, trade, and size. My work on Google's map results (the "local pack") depends heavily on the city or region you serve.</p>
 
-<p><strong>What does a typical customer look like?</strong> Homeowner, commercial buyer, agent, builder. Different customer profiles need different things from a website. Different conversion paths.</p>
+<p><strong>What does a typical customer look like?</strong> A homeowner, a commercial buyer, an agent, or a builder. Different customers need different things from a website, including different paths to a call.</p>
 
-<p><strong>How do customers currently find you?</strong> Word of mouth, Google, paid ads, Yelp, Facebook, the directory in the trade publication. The dominant channel determines what the website needs to do most strongly.</p>
+<p><strong>How do customers find you now?</strong> Word of mouth, Google, paid ads, Yelp, Facebook, or a trade directory. Your main source decides what the website most needs to do.</p>
 
-<p><strong>What is your current website doing right and wrong?</strong> If the site exists, this is where I learn what the visible problems are from the owner's perspective. The honest answer is sometimes "I do not know," which is itself useful.</p>
+<p><strong>What is your current website doing right and wrong?</strong> If you have a site, this tells me what problems you see as the owner. Sometimes the answer is "I don't know," which is useful too.</p>
 
-<p><strong>What would success look like in the first 90 days?</strong> This question separates owners who want a website (vague, abstract) from owners who want specific outcomes (more inspections booked, fewer phone-tag missed calls, the storm-season surge captured). The answer shapes the design priorities.</p>
+<p><strong>What would success look like in the first 90 days?</strong> This separates owners who want a website in general from owners who want specific results, such as more inspections booked, fewer missed calls, or more of the storm-season rush. The answer shapes the design priorities.</p>
 
-<p><strong>What is your timeline, if any?</strong> Some prospects need to be live before the next busy season; others have no specific deadline. Both are fine, but knowing changes the schedule.</p>
+<p><strong>What is your timeline, if any?</strong> Some businesses need to be live before the next busy season, and others have no deadline. Either is fine, but knowing changes the schedule.</p>
 
-<p><strong>What concerns you about hiring a web designer?</strong> The honest answers usually involve cost, lock-in, or having been burned by a previous vendor. Naming the concern up front is the fastest way to address it.</p>
+<p><strong>What concerns you about hiring a web designer?</strong> The answers usually involve cost, being locked in, or a bad experience with a past vendor. Naming the concern up front is the fastest way to deal with it.</p>
 
-<p>That is the framework, not a script. Most calls cover all of these in some form, with detours into whatever the prospect most wants to talk about.</p>
+<p>That's a framework, not a script. Most calls cover all of these in some form, with detours into whatever you most want to talk about.</p>
 
 <h2>What you should ask</h2>
 
-<p>The call is not a sales pitch directed at you; it is a mutual evaluation. The questions worth asking from your side:</p>
+<p>We're each deciding whether we want to work together. Here are questions worth asking from your side:</p>
 
-<p><strong>Who actually does the work?</strong> The honest answer for any small agency should be a specific person's name. Mine is "me, Jon Ajinga, end to end." The wrong answer is "we have a team" with no specifics.</p>
+<p><strong>Who does the work?</strong> At any small business, the answer should be a specific person's name. Mine is "Me, Jon Ajinga, from start to finish." The wrong answer is "We have a team," with no names.</p>
 
-<p><strong>What stack do you build on, and why?</strong> I cover this in detail on the <a href="/method/" class="inline-link">methodology page</a> and across the tech-stack series, but the short version of my answer is "Eleventy + vanilla CSS + Cloudflare Pages, because static sites are fast, secure, and outlast platform churn." If a vendor cannot answer this question with specifics, that is a flag.</p>
+<p><strong>What stack do you build on, and why?</strong> I cover my tools in detail on the <a href="/method/" class="inline-link">methodology page</a> and in a series of posts. The short version: Eleventy, plain CSS, and Cloudflare Pages, because static sites, made of ready-built files, are fast and secure and outlast changing platforms. If a vendor can't answer this with specifics, that's a warning sign.</p>
 
-<p><strong>What happens if I want to leave?</strong> Covered in the <a href="/agreement/" class="inline-link">service agreement</a>: the domain is yours throughout, the content is yours, you receive a clean static export of the site on exit. No exit fee. No platform lock-in.</p>
+<p><strong>What happens if I want to leave?</strong> The <a href="/agreement/" class="inline-link">service agreement</a> covers this. Your domain is registered in your name and stays under your control, and your content is yours. I own the code, so there's no export of the site and no code buyout. If you cancel, I help you move the domain to a registrar you choose, and the site goes offline at the end of the term.</p>
 
-<p><strong>How much does it cost, all in?</strong> $175 a month flat, $0 down at signing, twelve-month minimum. After year one it is month-to-month. Anything outside the standard scope is $100 an hour with a written estimate first. No retainer creep, no surprise fees.</p>
+<p><strong>How much does it cost, all in?</strong> $175 a month, with $0 down and a 12-month minimum, then month to month with 30 days' written notice. Work outside the plan costs $100 an hour, with a written estimate first, so fees never creep up by surprise.</p>
 
-<p><strong>How long will it take to launch?</strong> Two to three weeks from kickoff for a typical service-business site. The build queue is usually one to two weeks out, so total time from discovery call to launch is about a month.</p>
+<p><strong>How long will it take to launch?</strong> Two to three weeks for a typical service-business site. Work begins when your first payment clears.</p>
 
-<p><strong>Can I see real client work?</strong> The site you are reading is a representative example of what I ship. I have a <a href="/samples/" class="inline-link">samples page</a> with six trade-specific demo builds and four real-world live sites I designed and built.</p>
+<p><strong>Can I see work you've built?</strong> The site you're reading is a fair example of what I build. The <a href="/samples/" class="inline-link">samples page</a> has six demo sites for different trades, and my case studies cover four live sites I designed and built.</p>
 
-<p>You can ask any of these on the call directly. I will answer them in plain language without dancing.</p>
+<p>You can ask any of these on the call, and I'll answer in plain language.</p>
 
 <h2>What happens during the call</h2>
 
-<p>Practical detail: the call is on Google Meet by default. I send a calendar invite with the link after you book. There is no preparation required from your side; I do not ask you to fill out anything before the call.</p>
+<p>The call is on Google Meet unless we arrange otherwise. After you book, I send a calendar invitation with the link. You don't need to prepare or fill out anything beforehand.</p>
 
-<p>I take notes during the call (visible to me only) on what we discuss. If we agree to work together, those notes become the seed for the proposal and the kickoff documents. If we do not, the notes get archived.</p>
+<p>I take notes during the call, for my eyes only. If we agree to work together, those notes become the starting point for the proposal and the first project documents. If we don't, I archive them.</p>
 
 <p>The call ends one of three ways:</p>
 
 <ol>
-  <li>"This sounds like a good fit for both of us." I send the service agreement by email within 24 hours. You sign it whenever you are ready (no expiration on the offer); the engagement starts when you submit the first month's payment.</li>
-  <li>"I am not the right fit for what you need." I tell you that on the call and (where I can) point you at someone who is. I do not take engagements that are not a clean fit; nobody is happy at the end of those.</li>
-  <li>"We both need to think about it." Some prospects want to evaluate other options before committing. I do not push for a decision on the call. I will follow up with a short email recap a few days later, and you reach back out when you are ready.</li>
+  <li>"This sounds like a good fit for both of us." I email the service agreement within 24 hours. You sign it whenever you're ready, since the offer doesn't expire, and work starts when your first payment clears.</li>
+  <li>"I am not the right fit for what you need." I tell you on the call and, where I can, point you to someone who is. I only take projects that are a clear fit, because the others leave nobody happy.</li>
+  <li>"We both need to think about it." Some owners want to compare options before deciding, and I don't push for a decision on the call. I send a short recap by email a few days later, and you get back in touch when you're ready.</li>
 </ol>
 
-<p>None of the three outcomes is the wrong outcome. The call is meant to surface the fit honestly, not to pressure a sign-up.</p>
+<p>Each of the three is a good result. The call is meant to show whether we fit, without pressure to sign up.</p>
 
 <h2>What I will not do on the call</h2>
 
-<p>A few things I explicitly avoid:</p>
+<p>I avoid a few things on purpose:</p>
 
-<p><strong>I will not pitch.</strong> I describe what I do; you decide whether it fits. There is no presentation, no slide deck, no "here is why we are better than the competition."</p>
+<p><strong>I will not pitch.</strong> I describe what I do, and you decide whether it fits. You won't see a presentation, a slide deck, or a "here's why we beat the competition."</p>
 
-<p><strong>I will not bash competitors.</strong> If you ask me about another web designer, I will tell you what I know factually. I will not run them down in your favor.</p>
+<p><strong>I will not bash competitors.</strong> If you ask me about another web designer, I'll tell you the facts I know and leave the judging to you.</p>
 
-<p><strong>I will not pressure a decision.</strong> If you want to think about it, that is fine. The pricing on the agreement does not expire.</p>
+<p><strong>I will not pressure a decision.</strong> If you want to think about it, that's fine. The pricing in the agreement doesn't expire.</p>
 
-<p><strong>I will not give you free strategy work.</strong> The discovery call is for the rebuild conversation.</p>
+<p><strong>I will not give you free strategy work.</strong> The discovery call is for talking about your website.</p>
 
 <h2>If you have not had a discovery call yet</h2>
 
-<p>The booking link is on the <a href="/contact/" class="inline-link">contact page</a>. Pick a time that works; I will send the calendar invite. The call is free regardless of what comes after.</p>
+<p>The booking link is on the <a href="/contact/" class="inline-link">contact page</a>. Pick a time that works, and I'll send the calendar invitation. The call is free, whatever comes after.</p>
 
-<p>If you would rather start with the written form (some people prefer to think on paper before talking), the same form on the contact page accepts a written description of what you are looking for, and I will reply by email before suggesting a call.</p>
+<p>If you'd rather start in writing, since some people like to think on paper first, the form on the contact page takes a written description of what you need. I'll reply by email before suggesting a call.</p>

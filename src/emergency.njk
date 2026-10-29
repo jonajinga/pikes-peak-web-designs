@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Emergency Support | Pikes Peak Web Designs"
-description: "For existing clients: site down, dangerous error, or anything costing business right now. Emergencies skip the queue and I respond fast."
+description: "For existing clients: a site that's down, a serious error, or anything costing you business right now. Emergencies skip the queue, and I respond fast."
 noindex: true
 ---
 
@@ -11,21 +11,21 @@ noindex: true
       <a href="/">Home</a><span class="sep">/</span><a href="/client-portal/">Client Portal</a><span class="sep">/</span><span>Emergency Support</span>
     </nav>
     <span class="section-label">Urgent issues</span>
-    <h1>Something's wrong. <em>We fix it fast.</em></h1>
-    <p>Use this form if your site is down, displaying wrong information that is costing you business, or has a security concern. Emergencies skip the queue and get handled fast on most business days.</p>
+    <h1>Something's wrong? <em>I'll fix it fast</em></h1>
+    <p>Use this form if your site is down, is showing wrong information that's costing you business, or has a security problem. Emergencies skip the queue and get handled fast on most business days.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container" style="max-width:720px">
     <div class="form-callout form-callout--danger">
-      <strong>Call us if it's truly urgent.</strong>
-      <span>Text or call <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a> for immediate attention. The form is a backup and a way to put all the detail in one place, but phone is faster when the clock matters.</span>
+      <strong>Call me if it's urgent.</strong>
+      <span>Call or text <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a> for immediate attention. The form is a backup and a way to put every detail in one place, but the phone is faster when the clock matters.</span>
     </div>
 
     <div class="contact-form-card">
       <h2 class="form-heading">Describe the emergency</h2>
-      <p class="form-intro">Give us as much detail as you can. Screenshots help. I will start investigating the moment the form lands.</p>
+      <p class="form-intro">Give me as much detail as you can, and include screenshots if you have them. I start looking into it the moment your form arrives.</p>
 
       <form data-web3forms data-redirect="/thank-you/?type=emergency" action="https://api.web3forms.com/submit" method="POST" class="form">
         <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
@@ -53,27 +53,27 @@ noindex: true
           <label for="severity">How bad is it right now? <span class="req">*</span></label>
           <select id="severity" name="severity" required>
             <option value="">Choose one…</option>
-            <option value="site-down">Site is completely down</option>
-            <option value="partial-outage">Part of the site is broken (form, page, checkout, etc.)</option>
+            <option value="site-down">The site is completely down</option>
+            <option value="partial-outage">Part of the site is broken (a form, a page, checkout, or similar)</option>
             <option value="wrong-info">Wrong information is live and costing us business</option>
             <option value="security">Security concern (suspicious activity, defaced content)</option>
-            <option value="other-urgent">Other urgent issue; I'll explain below</option>
+            <option value="other-urgent">Another urgent issue (I'll explain below)</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="whenStarted">When did the issue start?</label>
-          <input type="text" id="whenStarted" name="whenStarted" placeholder="e.g. 'About 2 hours ago' or 'Since this morning'">
+          <input type="text" id="whenStarted" name="whenStarted" placeholder="For example, 'about two hours ago' or 'since this morning'">
         </div>
 
         <div class="form-group">
-          <label for="affectedUrl">Which URL or page is affected?</label>
-          <input type="text" id="affectedUrl" name="affectedUrl" placeholder="e.g. yourbusiness.com/contact/">
+          <label for="affectedUrl">Which page is affected?</label>
+          <input type="text" id="affectedUrl" name="affectedUrl" placeholder="For example, yourbusiness.com/contact/">
         </div>
 
         <div class="form-group">
           <label for="description">What's happening? <span class="req">*</span></label>
-          <textarea id="description" name="description" rows="6" placeholder="Describe what you or your customers are seeing. Include any error messages. If you have a screenshot, paste a link to it." required></textarea>
+          <textarea id="description" name="description" rows="6" placeholder="Describe what you or your customers are seeing, including any error messages. If you have a screenshot, paste a link to it." required></textarea>
         </div>
 
         <div class="form-group">
@@ -82,11 +82,11 @@ noindex: true
         </div>
 
         <div id="form-error" role="alert" class="form-error">
-          Something went wrong submitting this. Please call <a href="tel:{{ site.phone }}">{{ site.phoneDisplay }}</a> immediately.
+          Something went wrong sending this. Please call <a href="tel:{{ site.phone }}">{{ site.phoneDisplay }}</a> right away.
         </div>
 
-        <button type="submit" class="btn btn-primary btn-full btn-lg">Submit emergency request</button>
-        <p class="form-hint">If this is truly time-critical, <strong>call me</strong> at <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>; I pick up or call back quickly.</p>
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Send emergency request</button>
+        <p class="form-hint"><strong>Time-critical?</strong> Call me at <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. I pick up or call back quickly.</p>
       </form>
     </div>
   </div>

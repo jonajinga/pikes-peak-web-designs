@@ -2,150 +2,150 @@
 title: "How to Photograph Your Work With a Phone"
 date: 2026-05-05
 label: "Practical Skill"
-description: "A field guide for service-business owners with a phone, good work, and no decent photos. Light, framing, what to capture, and the common phone-camera fixes."
+description: "A field guide for service-business owners with a phone, good work, and no decent photos: light, framing, what to capture, and common phone-camera fixes."
 ctaLabel: "Photos done? Let's build the site."
-ctaHeading: "Once you have ten good photos, the site can be built."
-ctaText: "I build custom-coded sites that compress your photos to AVIF and WebP automatically, with hand-tuned responsive sizes and real galleries built around the work. $175 a month, flat."
+ctaHeading: "Once you have 10 good photos, I can build the site"
+ctaText: "I build custom-coded sites that automatically convert your photos to small, fast formats (AVIF and WebP), size each one by hand for every screen, and build galleries around your work. It's $175 a month, flat."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>Photography is the single biggest gap on most service-business websites. The work is good, the customers are happy, the trucks are on the road every day, but the website has stock photos of generic "smiling contractor with clipboard" because nobody on the team thinks of themselves as a photographer.</p>
+<p>Photos are the biggest gap on most service-business websites. The work is good and the customers are happy, but the site shows a stock "smiling contractor with clipboard," because nobody in the business thinks of themselves as a photographer.</p>
 
-<p>The good news: you do not need a photographer. You need a phone, ten minutes per job, and a few habits. This is the field guide. It is not about making magazine photos. It is about making photos that close customers.</p>
+<p>You don't need one. You need a phone, 10 minutes per job, and a few habits. This guide isn't about magazine photos; it's about photos that win customers.</p>
 
 <h2>Why this matters more than any other content</h2>
 
-<p>For service businesses, the website is a portfolio. The customer wants to know: what does YOUR work look like, in MY kind of property, in MY climate? Stock photos answer the wrong question. Real job photos answer the right one. Conversion-rate impact is real and measurable, the agencies that A/B test it consistently see 1.5&ndash;2&times; lifts when generic stock is replaced with real work.</p>
+<p>For a service business, the website is a portfolio. Customers want to see your work on a property like theirs, in their climate, and stock photos can't show them that. Agencies that test this side by side (A/B testing) regularly see 1.5&ndash;2&times; more inquiries when stock photos give way to real work.</p>
 
-<p>And the cost is essentially zero. Ten phone photos per finished job. Ten minutes. The skill is taking the photos, not editing them.</p>
+<p>It costs almost nothing: 10 phone photos per finished job, in 10 minutes. The skill is in taking them, not editing them.</p>
 
 <h2>The five photos every job should produce</h2>
 
-<p>Standardize. Same five photos every job, every time. Consistency is what makes a portfolio look professional, not artistry.</p>
+<p>Take the same five photos on every job. Consistency, more than artistry, makes a portfolio look professional.</p>
 
 <ol>
-  <li><strong>Wide before.</strong> Standing at the curb or wide-angle position, capture the whole scene before you start. Shows the original condition.</li>
-  <li><strong>Wide after.</strong> Same angle, same distance, same lens. Shows the finished work in context.</li>
-  <li><strong>Detail shot.</strong> One close-up of the specific thing you fixed or installed. The valve replacement, the ridge cap, the panel upgrade, the irrigation head.</li>
-  <li><strong>You / your crew on site.</strong> One photo with a person in it. Customers buy from people. The brand becomes human.</li>
-  <li><strong>Truck or branded equipment.</strong> One photo with your business name visible, truck wrap, sign, branded bin. Reinforces that this is your real work.</li>
+  <li><strong>Wide before.</strong> From the curb or another wide spot, the whole scene before you start.</li>
+  <li><strong>Wide after.</strong> Same angle, distance, and lens, showing the finished work in context.</li>
+  <li><strong>Detail shot.</strong> One close-up of what you fixed or installed: the valve, the ridge cap, the panel upgrade, the irrigation head.</li>
+  <li><strong>You or your crew on site.</strong> One photo with a person in it, because customers buy from people.</li>
+  <li><strong>Truck or branded equipment.</strong> Your business name on a truck wrap, sign, or branded bin, which confirms the work is yours.</li>
 </ol>
 
-<p>Five photos. Every job. Within a year you have a hundred sets. The portfolio grows automatically.</p>
+<p>Five photos a job adds up to 100 sets within a year.</p>
 
-<h2>Light is everything. Here is how to get it right.</h2>
+<h2>Light is everything, so get it right</h2>
 
-<p>The single biggest mistake on phone photos is bad light. Three rules will fix 90% of it:</p>
+<p>Bad light is the biggest mistake in phone photos. Three rules fix 90% of it:</p>
 
 <h3>Shoot in natural light when possible</h3>
 
-<p>Outdoor work in the morning or late afternoon (the "golden hour" 1&ndash;2 hours after sunrise or before sunset) gets you flattering, directional light without harsh shadows. Midday direct sun creates squinting faces and blown-out roofs. Cloudy days are actually great, the cloud cover is a giant softbox. Drizzle is not a deal-breaker; just protect the phone.</p>
+<p>Outdoors, shoot in the "golden hour," one to two hours after sunrise or before sunset, for soft light without harsh shadows. Midday sun gives squinting faces and washed-out roofs. Cloudy days are great, since clouds soften light like a photographer's softbox, and drizzle is fine if you protect the phone.</p>
 
 <h3>For interior work, open every blind and turn on every light</h3>
 
-<p>Indoor service photos (HVAC closet, electrical panel, plumbing under sink) are notoriously dark. Most owners shoot with their back to the only light source, which throws their shadow on the subject. Fix:</p>
+<p>Indoor service photos (an HVAC closet, an electrical panel, the plumbing under a sink) are often dark, and most owners stand with their back to the only light, shadowing the subject. The fix:</p>
 
 <ul>
   <li>Open every blind in the room.</li>
-  <li>Turn on every light, including ones you do not normally use.</li>
-  <li>If still dark, turn on the phone's flashlight and have someone else hold it from a different angle than the camera.</li>
-  <li>Avoid the phone's built-in camera flash. It washes out colors and creates harsh shadows.</li>
+  <li>Turn on every light, including ones you don't usually use.</li>
+  <li>If it's still dark, have someone hold a phone flashlight at a different angle from the camera.</li>
+  <li>Skip the built-in flash, which washes out colors and creates harsh shadows.</li>
 </ul>
 
 <h3>Watch where the light is coming from</h3>
 
-<p>The light should be on YOUR side or to your side, NEVER directly behind the subject. A common mistake: photographing a roof with the sun behind it, the roof is a silhouette and the photo is unusable. Shoot with the sun behind you and you keep the surface detail.</p>
+<p>Keep the light behind you or to one side, never behind the subject. A roof shot against the sun is a silhouette, while one with the sun at your back keeps every shingle's detail.</p>
 
 <h2>Framing rules that take 30 seconds to learn</h2>
 
 <h3>Wide enough to show context</h3>
 
-<p>Customers want to see the work IN the property. A close-up of a single shingle tells them nothing; a roof shot showing the chimney, gable, and trim shows them the work in real conditions.</p>
+<p>A close-up of one shingle tells customers nothing. A roof shot with the chimney, gable, and trim shows the work in place.</p>
 
-<h3>Square it up, no Dutch angles</h3>
+<h3>Square it up and keep it level</h3>
 
-<p>Hold the phone level. Use the built-in grid (Settings → Camera → Grid on iPhone; Settings → Camera → Grid lines on Android). Align verticals (door frames, downspouts, walls) with the grid lines. A crooked photo signals amateur work even when the work itself is excellent.</p>
+<p>Avoid tilted shots (Dutch angles). Turn on the camera grid (Settings → Camera → Grid on iPhone, or Settings → Camera → Grid lines on Android) and line up door frames, downspouts, and walls with it. A crooked photo looks amateur even when the work is excellent.</p>
 
-<h3>Get closer for detail shots, not for everything</h3>
+<h3>Get closer only for detail shots</h3>
 
-<p>Phone cameras have wide-angle lenses. Stepping back makes things look further apart than they are; stepping forward distorts close subjects. For detail shots, get within 12&ndash;18 inches and let the camera do the work.</p>
+<p>Phone lenses are wide-angle, so stepping back spreads things apart and stepping in close distorts them. For detail shots, get within 12&ndash;18 inches and let the camera do the work.</p>
 
 <h3>Leave breathing room around the subject</h3>
 
-<p>Do not crop tightly in-camera. Frame loose; you can always crop tighter in editing. Cropping wider after the fact is impossible.</p>
+<p>Frame loosely. You can always crop tighter later, but you can't add back what you left out.</p>
 
 <h2>Specific composition advice by trade</h2>
 
 <h3>Roofers</h3>
 
-<p>Drone shots are gold if you have one ($300 entry-level drones now produce great photos). For ground-based: shoot from the front yard at a slight angle so you see the ridge, slope, and at least one valley. Avoid shooting straight up at the eave.</p>
+<p>Drone shots are gold, and a $300 entry-level drone now takes great photos. From the ground, shoot from the front yard at a slight angle to show the ridge, the slope, and at least one valley, instead of straight up at the eave.</p>
 
 <h3>HVAC</h3>
 
-<p>Outdoor unit installs: shot from the side at ~30&deg; angle, showing the unit, the line set, and the disconnect cleanly run. Indoor: the new air handler with the pan visible, a labeled main panel, the zoning controller. Customers want to see clean line work.</p>
+<p>Shoot outdoor units from the side at about 30&deg;, showing the unit, the line set, and the neatly run disconnect. Indoors, show the new air handler with the pan visible, a labeled main panel, and the zoning controller, because customers want to see clean line work.</p>
 
 <h3>Plumbers</h3>
 
-<p>The hardest trade for photos, most work is hidden after install. Solutions: photograph during the repair (parts laid out neatly on a drop cloth before reinstall), photograph the access (clean cuts in drywall, with a small ruler showing how minimal the damage was), photograph the finished cabinet with the new fixture in pride of place.</p>
+<p>Plumbing is the hardest trade for photos, because the work is hidden once it's done. Photograph the repair in progress with parts laid out on a drop cloth, the clean drywall cut with a small ruler showing how little damage you did, and the finished cabinet with the new fixture in pride of place.</p>
 
 <h3>Electricians</h3>
 
-<p>Panel upgrades photograph beautifully, the old crowded panel and the new clean-laid-out panel side-by-side is selling material on its own. EV charger installs: the charger mounted, the breaker, and the run from panel to garage. Whole-home rewires: drone photos of the property are a good cover; detail shots of switch boxes and outlets show craft.</p>
+<p>An old, crowded panel beside the new, neat one sells the work on its own. For EV chargers, show the charger, the breaker, and the run from panel to garage. For whole-home rewires, a drone photo makes a good cover, and close-ups of switch boxes and outlets show the craft.</p>
 
 <h3>Roofing inspectors / home inspectors</h3>
 
-<p>Photograph everything you find. Annotated photos in the report ARE the deliverable for inspectors, phone-camera quality is fine, but consistent angles and good light separate "thorough inspector" from "I'm not sure what I'm looking at."</p>
+<p>Photograph everything you find, because the annotated photos are the product an inspector sells. Phone quality is fine, but steady angles and good light make you look thorough instead of unsure.</p>
 
 <h3>Landscapers</h3>
 
-<p>Hardest trade to photograph well. Photos at install do not show the design; you need to come back at peak season (often 3&ndash;6 months later) to capture the garden as it was meant to look. Standardize: photograph the finished install, then photograph again at month 3 and month 12. The maturity arc tells the customer what their garden will become.</p>
+<p>Install photos don't show the design, so come back at peak season, often three to six months later, to capture the garden as intended. Photograph the finished install, then again at month 3 and month 12, so customers see what their garden will become.</p>
 
-<h2>What NOT to do</h2>
+<h2>What to avoid</h2>
 
 <ul>
-  <li><strong>Do not use stock photography.</strong> Customers can spot it instantly and it signals "this person has not built a real portfolio yet."</li>
-  <li><strong>Do not use photos of someone else's work.</strong> Even by accident. Even if the customer never finds out. The customer who DOES recognize their neighbor's house in your portfolio loses all trust.</li>
-  <li><strong>Do not use heavy filters.</strong> Saturation cranked up, "vintage" overlays, Instagram filters. They make photos look like marketing rather than evidence. Customers want evidence.</li>
-  <li><strong>Do not use "watermarked" photos.</strong> Your business name on every corner of every image looks insecure. The website itself is the watermark.</li>
-  <li><strong>Do not photograph customers' faces without explicit written permission.</strong> Even if they smile and wave. Get a signed release if a face is visible.</li>
+  <li><strong>Stock photography.</strong> Customers spot it at once, and it tells them you haven't built a portfolio yet.</li>
+  <li><strong>Photos of someone else's work.</strong> Not even by accident. A customer who recognizes a neighbor's house in your portfolio stops trusting you.</li>
+  <li><strong>Heavy filters.</strong> Boosted color, "vintage" overlays, and Instagram filters look like marketing, when customers want evidence.</li>
+  <li><strong>Watermarks.</strong> Your name on every corner of every image looks insecure. The website itself is the watermark.</li>
+  <li><strong>Customers' faces without written permission.</strong> Get a signed release whenever a face is visible, even if they smile and wave.</li>
 </ul>
 
-<h2>The ten-photo starter set</h2>
+<h2>The 10-photo starter set</h2>
 
-<p>If you do nothing else, get these ten photos in the next 30 days:</p>
+<p>If you do nothing else, take these 10 photos in the next 30 days:</p>
 
 <ol>
-  <li>Your truck or van, with branding visible, parked at a real job site.</li>
-  <li>You (and crew if applicable) on a real job, in real work clothes.</li>
-  <li>One wide before-and-after pair, same angle.</li>
+  <li>Your truck or van, with the branding visible, at a job site.</li>
+  <li>You, and your crew if you have one, on a job in work clothes.</li>
+  <li>One wide before-and-after pair from the same angle.</li>
   <li>One detail shot of your most common service.</li>
-  <li>One photo of a real client receiving the finished work (with permission).</li>
-  <li>One workshop / equipment photo, tools laid out, vehicle outfitted, license / insurance certificate framed.</li>
-  <li>One photo of a less-common service you offer (so the website does not feel one-note).</li>
-  <li>One seasonal photo (snow, fall colors, summer storm aftermath, spring install) to ground the brand in your local climate.</li>
-  <li>One photo of you with a long-time client (with permission). Trust signal.</li>
-  <li>One vertical-format hero candidate for mobile views, tall, with negative space at the top for headline overlay.</li>
+  <li>One photo of a client receiving the finished work (with permission).</li>
+  <li>One workshop or equipment photo: tools laid out, the vehicle fitted out, or your license or insurance certificate framed.</li>
+  <li>One photo of a less common service, to show your range.</li>
+  <li>One seasonal photo (snow, fall colors, storm cleanup, a spring install) that ties your brand to the local climate.</li>
+  <li>One photo of you with a long-time client (with permission).</li>
+  <li>One tall, vertical photo for the top of the page on phones, with empty space at the top for a headline.</li>
 </ol>
 
-<p>Once those ten exist, the site can be designed around real work. Add new photos at a rate of five per finished job, and the portfolio compounds quickly.</p>
+<p>With those 10, the site can be designed around your work. Add five photos for each finished job after that.</p>
 
 <h2>How the site handles them</h2>
 
-<p>Once you give me ten good photos, here is what happens on the technical side:</p>
+<p>Once you send me 10 good photos, I take care of the technical side:</p>
 
 <ul>
-  <li><strong>Format conversion.</strong> Each photo gets emitted in AVIF (newest, smallest), WebP (broad support), and JPEG (universal fallback). The browser picks the smallest format it supports automatically.</li>
-  <li><strong>Multiple sizes.</strong> Every photo gets generated at 4&ndash;6 widths (e.g., 480px, 800px, 1200px, 1600px, 2000px). The browser downloads only the size that fits the visitor's screen.</li>
-  <li><strong>Lazy loading.</strong> Photos below the fold do not download until the visitor scrolls near them. Massive bandwidth savings on long pages.</li>
-  <li><strong>EXIF stripping.</strong> Phone photos contain GPS coordinates and personal metadata; I strip them on import.</li>
-  <li><strong>Alt text.</strong> Every photo gets a written alt text describing what is in it, for screen readers, for SEO, and as a fallback if the image fails to load.</li>
+  <li><strong>Format conversion.</strong> Each photo is saved as AVIF (the newest, smallest format), WebP (widely supported), and JPEG (works everywhere), and each browser picks the smallest it can show.</li>
+  <li><strong>Multiple sizes.</strong> Each photo comes in four to six widths (for example, 480px, 800px, 1200px, 1600px, and 2000px), and the browser downloads only the one that fits the screen.</li>
+  <li><strong>Lazy loading.</strong> Photos further down the page download only as the visitor scrolls near them, which saves a great deal of data on long pages.</li>
+  <li><strong>Privacy cleanup.</strong> I strip out the hidden details phone photos carry (EXIF data), including GPS coordinates.</li>
+  <li><strong>Alt text.</strong> Every photo gets a written description for screen readers, for search engines, and in case the image doesn't load.</li>
 </ul>
 
-<p>You take the photos. I do everything after that.</p>
+<p>You take the photos, and I handle everything after that.</p>
 
 <h2>Closing thought</h2>
 
-<p>Photography is the single highest-leverage thing a service-business owner can do for their website that does not cost money. Ten minutes per job, a phone, the rules above, and within a year you have something no competitor's stock-photo site can match: <strong>a portfolio of real work in your real market that earns trust before the visitor reaches the contact form.</strong></p>
+<p>Photography is the most valuable free thing you can do for your website. Within a year, 10 minutes per job gives you what no stock-photo site can match: a portfolio of your own work in your own market that earns trust before the visitor reaches the contact form.</p>
 
-<p>If you have ten good photos and want to see what a site built around them actually looks like, the <a href="/contact/" class="inline-link">discovery call</a> is the next step. The first thing I do is review your photo set and tell you honestly which ones are usable, which ones need a redo, and what gaps to fill.</p>
+<p>If you have 10 good photos and want to see a site built around them, a <a href="/contact/" class="inline-link">free call</a> is the next step. I'll go through your photos and tell you which ones work, which need a retake, and what's missing.</p>

@@ -77,4 +77,4 @@ Approved by Jon Ajinga on October 29, 2026. Every visitor-facing page on pikespe
 - **Logos.** Jon does not design logos.
 - **Ownership.** The client's domain is registered in the client's name, and the client controls it. On the monthly plan, Jon owns the code. At cancellation, Jon helps move the domain to a registrar of the client's choice and the website goes offline at the end of the term. There is no export of the site and no code buyout.
 - **Case studies.** There are no paid-client case studies yet. Don't promise "real-client before-and-after numbers".
-- **Agreement.** Describe it as a plain-English service agreement, not a "one-page" agreement; it has 13 sections.
+- **Agreement.** Describe it as a plain-English service agreement, not a "one-page" agreement; it has 12 sections.

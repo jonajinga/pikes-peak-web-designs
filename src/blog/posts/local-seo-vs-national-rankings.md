@@ -26,7 +26,7 @@ tags: [post]
 
 <p>Three things, roughly in the order Google weighs them:</p>
 
-<p><strong>Proximity.</strong> Google checks how close the business's listed address is to the searcher. All else equal, a roofer five miles away beats one 15 miles away. This comes from your Google Business Profile (GBP), the free listing behind your spot on the map, not from your website. It's the strongest single factor in the map results, so a site built for national search with a wrong or missing profile loses to a weaker local site with a complete one.</p>
+<p><strong>Proximity.</strong> Google checks how close the business's listed address is to the searcher. All else equal, a roofer five miles away beats one 15 miles away. This comes from your Google Business Profile (GBP), the free listing behind your spot on the map, not from your website. It's the strongest single factor in the map results. A site built for national search with a wrong or missing profile loses to a weaker local site with a complete one.</p>
 
 <p><strong>Relevance.</strong> Does the site name the service and the places a local searcher uses? "We provide quality service to discerning homeowners" loses to "we install asphalt shingle, metal, and tile roofs in Colorado Springs, Monument, and Black Forest", even if the first site looks nicer.</p>
 
@@ -41,7 +41,7 @@ tags: [post]
 <ul>
   <li>The homepage names the city or metro area in its main headline (the H1), not only in the summary shown in search results (the meta description). "Roofing in Colorado Springs" is the page's subject; words like "high-quality" and "experienced" add nothing Google uses.</li>
   <li>Each major service has its own page that pairs the service with the place. "Asphalt shingle roof replacement in Colorado Springs" is separate from the homepage, because the two aim at different searches.</li>
-  <li>Each main area you cover, such as Monument, Black Forest, Falcon, and Manitou Springs, gets its own page with local content (notable neighborhoods, local building styles, the weather) instead of a thin copy of the homepage (a "doorway page").</li>
+  <li>Each main area you cover, such as Monument, Black Forest, Falcon, and Manitou Springs, gets its own page. Instead of a thin copy of the homepage (a "doorway page"), it has local content: notable neighborhoods, local building styles, and the weather.</li>
   <li>The footer shows the full name, address, and phone number (NAP) in a form Google can read, identical to your Google Business Profile and every directory listing.</li>
   <li>Schema, hidden code that describes the business to Google, marks it as a <code>LocalBusiness</code> whose <code>areaServed</code> lists the places you cover instead of a vague "United States".</li>
   <li>An interactive map, built with Leaflet on OpenStreetMap so there are no Google Maps fees, lets visitors see in five seconds whether you serve their address.</li>
@@ -51,7 +51,7 @@ tags: [post]
 
 <h2>What about national clients?</h2>
 
-<p>Most service businesses don't have any. A roofer in Atlanta, a plumber in Salt Lake, or a landscaper in Boulder earns everything within 30 miles of the shop, so money spent on national SEO buys visitors who will never call.</p>
+<p>Most service businesses don't have any. A roofer in Atlanta, a plumber in Salt Lake, or a landscaper in Boulder earns everything within 30 miles of the shop. Money spent on national SEO buys visitors who will never call.</p>
 
 <p>Some businesses are national: a software company sold by subscription, a national franchise, or a distributor selling to businesses in every state. National search terms are worth pursuing for them. Even so, the smart ones still build local pages for their major markets, so the answer is often "both".</p>
 
@@ -64,7 +64,7 @@ tags: [post]
 <ol>
   <li>Look at the homepage's H1 (the largest headline). If it doesn't name the city, the designer hasn't started on local search.</li>
   <li>Look at the page addresses. If there's no <code>/service-areas/[city]/</code> page for each city the business covers, the site is missing easy local relevance.</li>
-  <li>Look at the footer. If it says "Colorado Springs and surrounding areas" instead of the full street address, city, state, and ZIP in plain text, Google's crawler (the program that reads websites) can't find it, and neither can local searchers.</li>
+  <li>Look at the footer. Does it give the full street address, city, state, and ZIP in plain text, or only "Colorado Springs and surrounding areas"? If it's vague, Google's crawler (the program that reads websites) can't find the address, and neither can local searchers.</li>
 </ol>
 
 <p>A site that fails any of these is built for the wrong audience. Fixing it is what makes the rest of the SEO spending pay off.</p>

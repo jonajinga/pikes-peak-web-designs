@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Accessibility Statement | Pikes Peak Web Designs"
-description: "My commitment to WCAG 2.2 AA accessibility on this website, on every site I build, the methods I use to test, and how to reach me if something doesn't work for you."
+description: "My commitment to WCAG 2.2 AA accessibility on this website and on every site I build, how I test, and how to reach me if something doesn't work for you."
 ---
 
 <section class="page-hero">
@@ -10,8 +10,8 @@ description: "My commitment to WCAG 2.2 AA accessibility on this website, on eve
       <a href="/">Home</a><span class="sep">/</span><span>Accessibility</span>
     </nav>
     <span class="section-label">Accessibility</span>
-    <h1>Everyone should be able to <em>use the web.</em></h1>
-    <p>I build every website to WCAG 2.2 AA as the baseline, not the goal. If something on this site does not work for you, I want to hear about it directly, and I will fix it.</p>
+    <h1>Everyone should be able to use this site, <em>and I'll fix anything that gets in the way</em></h1>
+    <p>I build every website to WCAG 2.2 AA as the baseline, the minimum every site meets. If something on this site doesn't work for you, please tell me directly, and I'll fix it.</p>
   </div>
 </section>
 
@@ -24,109 +24,109 @@ description: "My commitment to WCAG 2.2 AA accessibility on this website, on eve
         <ol class="toc-list">
           <li><a href="#my-commitment">My commitment</a></li>
           <li><a href="#what-i-do-on-every-site">What I do on every site</a></li>
-          <li><a href="#wcag-2-2-highlights-we-specifically-test">WCAG 2.2 highlights</a></li>
+          <li><a href="#wcag-2-2-highlights-we-specifically-test">WCAG 2.2 criteria I test</a></li>
           <li><a href="#how-i-test">How I test</a></li>
           <li><a href="#known-limitations">Known limitations</a></li>
           <li><a href="#standards-we-conform-to">Standards I conform to</a></li>
-          <li><a href="#assistive-technologies-i-test-against">Assistive tech tested</a></li>
+          <li><a href="#assistive-technologies-i-test-against">Assistive technology I test</a></li>
           <li><a href="#how-to-reach-me">How to reach me</a></li>
-          <li><a href="#my-commitment-on-client-sites">Commitment on client sites</a></li>
-          <li><a href="#if-something-doesn-t-work-tell-me">Feedback &amp; questions</a></li>
+          <li><a href="#my-commitment-on-client-sites">My commitment on client sites</a></li>
+          <li><a href="#if-something-doesn-t-work-tell-me">Feedback and questions</a></li>
         </ol>
       </aside>
 
       <article class="toc-content prose">
     <p><strong>Last updated:</strong> April 25, 2026</p>
     <p><strong>Conformance target:</strong> Web Content Accessibility Guidelines (WCAG) 2.2, Level AA, plus Section 508.</p>
-    <p><strong>Conformance status:</strong> partially conformant. Most of the site fully meets the standard; specific known limitations are listed below.</p>
+    <p><strong>Conformance status:</strong> partially conformant. Most of the site fully meets the standard, and the known limitations are listed below.</p>
 
     <h2 id="my-commitment">My commitment</h2>
-    <p>Accessibility is a baseline on every site I design and build, including this one. My working standard is <strong>WCAG 2.2 Level AA</strong>, the Web Content Accessibility Guidelines from the W3C. This covers color contrast, keyboard navigation, screen-reader support, focus visibility, motion, language, and clear labeling. It's the same standard I write into my client agreements; not aspirational, contractual.</p>
-    <p>Beyond the legal floor, I treat accessibility as a quality marker. A site that fails screen-reader users tends to fail search-engine crawlers, color-blind visitors, mobile keyboards, and aging eyes too. Building accessibly means building well.</p>
+    <p>Accessibility is a baseline on every site I design and build, including this one. My working standard is WCAG 2.2 Level AA, the Web Content Accessibility Guidelines from the W3C. It covers color contrast, keyboard navigation, screen-reader support, visible focus, motion, language, and clear labels. I write the same standard into my client agreements, so it's a contractual commitment, not an aspiration.</p>
+    <p>Beyond the legal minimum, I treat accessibility as a mark of quality. A site that fails screen-reader users usually also fails search-engine crawlers, color-blind visitors, people using phone keyboards, and aging eyes. Building accessibly means building well.</p>
 
     <h2 id="what-i-do-on-every-site">What I do on every site</h2>
     <ul>
-      <li><strong>Real contrast ratios.</strong> I verify every text/background combination against WCAG AA (4.5:1 for normal text, 3:1 for large text and UI components) using the TPGi Colour Contrast Analyser. Every combination, every theme.</li>
-      <li><strong>Full keyboard navigation.</strong> Every interactive control is reachable by <kbd>Tab</kbd> and operable by keyboard alone. Focus rings are visible (3 px gold ring at 3 px offset) and predictable. Tab order matches visual order.</li>
-      <li><strong>Semantic HTML.</strong> Headings in order, landmarks labeled, lists that are actually lists, buttons that are actually buttons. Screen readers get a clean structure to navigate by region or heading.</li>
-      <li><strong>Skip links.</strong> "Skip to content" appears as the first focusable element on every page so keyboard and screen-reader users can bypass the navigation.</li>
-      <li><strong>Landmarks.</strong> Each region of the page (<code>header</code>, <code>nav</code>, <code>main</code>, <code>aside</code>, <code>footer</code>) is a real HTML5 landmark, with <code>aria-label</code> where multiple instances exist.</li>
-      <li><strong>Image alt text.</strong> Decorative SVGs are hidden from assistive technology with <code>aria-hidden="true"</code> and <code>focusable="false"</code>. Meaningful images get real alt text. Complex images (charts, diagrams) get long descriptions.</li>
-      <li><strong>Motion respected.</strong> Animations honor <code>prefers-reduced-motion</code>. If your system says slow things down, I do; transitions and movement effects are disabled.</li>
-      <li><strong>Forms with proper labels.</strong> Every field has a visible label, not just placeholder text. Errors are announced via <code>role="alert"</code> and explained in plain language with a path to fix them.</li>
-      <li><strong>Light and dark themes.</strong> Color pairs meet contrast targets in both modes. The toggle has three states (Light, System, Dark) with the user's choice saved across sessions.</li>
-      <li><strong>44 x 44 CSS pixel touch targets.</strong> Interactive elements are comfortably large on a phone. Spacing between adjacent targets prevents accidental taps.</li>
-      <li><strong>Forced-colors mode (Windows High Contrast).</strong> The site renders legibly when the OS forces colors; I use <code>forced-colors: active</code> media queries where component styling needs to defer to system colors.</li>
-      <li><strong>Screen reader hidden text</strong> via <code>.sr-only</code> utility class for context that's visually obvious but missing from a screen-reader's serial reading order.</li>
-      <li><strong>Language attribute</strong> set on <code>&lt;html lang="en"&gt;</code> so screen readers use the right pronunciation engine.</li>
-      <li><strong>Color is never the only carrier of meaning.</strong> Status badges combine color with an icon or label; required form fields have an asterisk plus a visible label suffix.</li>
-      <li><strong>aria-current="page"</strong> on the active nav link so screen-reader users know where they are.</li>
+      <li><strong>Measured contrast ratios.</strong> I check every text and background pair against WCAG AA (4.5:1 for normal text, and 3:1 for large text and interface parts) with the TPGi Colour Contrast Analyser. That's every pair, in every theme.</li>
+      <li><strong>Full keyboard navigation.</strong> Every interactive control can be reached with <kbd>Tab</kbd> and used with the keyboard alone. Focus rings are visible (a 3 px gold ring at a 3 px offset) and predictable, and the tab order matches the visual order.</li>
+      <li><strong>Semantic HTML.</strong> Headings are in order, landmarks are labeled, lists are coded as lists, and buttons are coded as buttons, so screen readers get a clean structure to move through by region or heading.</li>
+      <li><strong>Skip links.</strong> "Skip to content" is the first focusable element on every page, so keyboard and screen-reader users can jump past the navigation.</li>
+      <li><strong>Landmarks.</strong> Each region of the page (<code>header</code>, <code>nav</code>, <code>main</code>, <code>aside</code>, and <code>footer</code>) is a proper HTML5 landmark, with an <code>aria-label</code> where there's more than one of a kind.</li>
+      <li><strong>Image alt text.</strong> Decorative SVGs are hidden from assistive technology with <code>aria-hidden="true"</code> and <code>focusable="false"</code>. Meaningful images get descriptive alt text, and complex images (charts and diagrams) get long descriptions.</li>
+      <li><strong>Reduced motion respected.</strong> Animations honor <code>prefers-reduced-motion</code>. If your device asks for less motion, the site turns off transitions and movement effects.</li>
+      <li><strong>Forms with proper labels.</strong> Every field has a visible label, not just placeholder text. Errors are announced through <code>role="alert"</code> and explained in plain language, with a way to fix them.</li>
+      <li><strong>Light and dark themes.</strong> Color pairs meet the contrast targets in both modes. The toggle has three states (Light, System, and Dark), and your choice is saved between visits.</li>
+      <li><strong>Touch targets of 44 x 44 CSS pixels.</strong> Interactive elements are comfortably large on a phone, and the spacing between neighboring targets prevents accidental taps.</li>
+      <li><strong>Forced-colors mode (Windows High Contrast).</strong> The site stays readable when the operating system forces its own colors, and I use <code>forced-colors: active</code> media queries where a component's styling needs to give way to system colors.</li>
+      <li><strong>Text for screen readers only</strong>, through the <code>.sr-only</code> utility class, for context that's obvious on screen but missing when a screen reader reads the page in order.</li>
+      <li><strong>Language attribute</strong> set on <code>&lt;html lang="en"&gt;</code>, so screen readers use the right pronunciation.</li>
+      <li><strong>Color is never the only way meaning is shown.</strong> Status badges pair color with an icon or a label, and required form fields have an asterisk plus a visible label suffix.</li>
+      <li><strong>aria-current="page"</strong> on the active menu link, so screen-reader users know where they are.</li>
     </ul>
 
-    <h2 id="wcag-2-2-highlights-we-specifically-test">WCAG 2.2 highlights we specifically test</h2>
-    <p>WCAG 2.2 added nine new criteria over 2.1. I test the ones most relevant to a marketing site:</p>
+    <h2 id="wcag-2-2-highlights-we-specifically-test">WCAG 2.2 criteria I test specifically</h2>
+    <p>WCAG 2.2 added nine new criteria to version 2.1. I test the ones that matter most for a marketing site:</p>
     <ul>
-      <li><strong>2.4.11 Focus Not Obscured (AA).</strong> The focused element is never fully hidden under a sticky header, modal, or cookie banner.</li>
-      <li><strong>2.4.12 Focus Not Obscured (AAA).</strong> No part of the focused element is hidden. I treat this as a hard target on this site.</li>
-      <li><strong>2.5.7 Dragging Movements (AA).</strong> No interaction depends on dragging. Where I use carousels, they have button alternatives.</li>
-      <li><strong>2.5.8 Target Size Minimum (AA).</strong> 44 x 44 px minimum on every interactive control.</li>
-      <li><strong>3.3.7 Redundant Entry (A).</strong> If a form asks for the same information twice in a multi-step flow, we pre-fill or skip the second prompt.</li>
-      <li><strong>3.3.8 Accessible Authentication (AA).</strong> N/A; I do not have user authentication on the site.</li>
+      <li><strong>2.4.11 Focus Not Obscured (AA).</strong> The focused element is never fully hidden under a sticky header, a pop-up, or a cookie banner.</li>
+      <li><strong>2.4.12 Focus Not Obscured (AAA).</strong> No part of the focused element is hidden. I treat this as a firm target on this site.</li>
+      <li><strong>2.5.7 Dragging Movements (AA).</strong> No interaction depends on dragging. Where I use carousels, they have buttons as an alternative.</li>
+      <li><strong>2.5.8 Target Size Minimum (AA).</strong> At least 44 x 44 px on every interactive control.</li>
+      <li><strong>3.3.7 Redundant Entry (A).</strong> If a multi-step form would ask for the same information twice, I fill it in for you or skip the second request.</li>
+      <li><strong>3.3.8 Accessible Authentication (AA).</strong> Not applicable, because the site has no user logins.</li>
     </ul>
 
     <h2 id="how-i-test">How I test</h2>
-    <p>Every site, before launch and on every significant change, we run through:</p>
+    <p>On every site, before launch and after every significant change, I run through these checks:</p>
     <ul>
-      <li><strong>Automated audits</strong>: Lighthouse (Chrome DevTools), axe DevTools, and WAVE. Zero criticals and zero serious issues required to ship.</li>
-      <li><strong>Keyboard-only navigation</strong> from the first focusable element to the last on every page. Every interactive control reachable, operable, and visibly focused.</li>
-      <li><strong>Screen-reader testing</strong>: VoiceOver on macOS and iOS; NVDA on Windows. I read every page top to bottom to catch landmark, heading, and label issues.</li>
-      <li><strong>Browser zoom</strong> up to 200% without horizontal scrolling and without content clipping.</li>
-      <li><strong>Color-contrast verification</strong> on every text/background combination in both light and dark themes.</li>
-      <li><strong>Reduced-motion verification</strong> with the OS-level setting enabled. All animations and transitions disabled when set.</li>
+      <li><strong>Automated audits</strong> with three checkers: Google's audit built into Chrome DevTools, axe DevTools, and WAVE. A site launches only with zero critical and zero serious issues.</li>
+      <li><strong>Keyboard-only navigation</strong> from the first focusable element to the last, on every page. Every interactive control must be reachable, usable, and visibly focused.</li>
+      <li><strong>Screen-reader testing</strong> with VoiceOver on macOS and iOS, and NVDA on Windows. I listen to every page from top to bottom to catch problems with landmarks, headings, and labels.</li>
+      <li><strong>Browser zoom</strong> up to 200%, with no sideways scrolling and no clipped content.</li>
+      <li><strong>Contrast checks</strong> on every text and background pair, in both light and dark themes.</li>
+      <li><strong>Reduced-motion checks</strong> with the operating-system setting turned on, confirming that every animation and transition stops.</li>
       <li><strong>Forced-colors testing</strong> in Windows High Contrast mode.</li>
-      <li><strong>Manual review</strong> of any new component for: heading order, label binding, focus order, ARIA usage, and color independence.</li>
+      <li><strong>Manual review</strong> of every new component for heading order, label connections, focus order, ARIA use, and meaning that doesn't depend on color.</li>
     </ul>
 
     <h2 id="known-limitations">Known limitations</h2>
-    <p>I am not perfect and I do not pretend to be. Current known limitations on this site:</p>
+    <p>These are the limitations I know about on this site today:</p>
     <ul>
-      <li><strong>Demo sites under <code>/demo/</code></strong> share most of my accessibility posture but are designed to showcase distinct typographic and visual systems for different industries. Each demo's own accessibility statement documents any deviations specific to its design system.</li>
-      <li><strong>Third-party embeds</strong> (Pagefind search UI, Tippy.js tooltips). I have configured both to use accessible defaults, but their internal markup is theirs to maintain. I monitor releases and audit on each upgrade.</li>
-      <li><strong>PDF documents</strong> (if any are linked from the site) are not always tagged for screen readers. Where we link to a PDF, we provide an HTML alternative or a plain-text summary.</li>
+      <li><strong>Demo sites under <code>/demo/</code></strong> follow most of my accessibility approach, but each one shows off a different typographic and visual style for a different industry. Each demo's own accessibility statement lists any differences that come from its design.</li>
+      <li><strong>Outside components</strong> (the site search interface and the glossary tooltips). I've set both to use accessible defaults, but their internal code is maintained by others. I watch their releases and check each upgrade.</li>
+      <li><strong>PDF documents</strong> (if the site links to any) aren't always tagged for screen readers. Wherever I link to a PDF, I provide an HTML version or a plain-text summary.</li>
     </ul>
-    <p>If you find something else on the site that does not work for you, please tell me. Accessibility issues skip the queue and get handled fast on most business days, and the fix tends to land in short order from there.</p>
+    <p>If you find anything else on the site that doesn't work for you, please tell me. Accessibility issues skip the queue, and I handle them quickly on most business days.</p>
 
-    <h2 id="standards-we-conform-to">Standards we conform to</h2>
+    <h2 id="standards-we-conform-to">Standards I conform to</h2>
     <ul>
       <li><strong>WCAG 2.2 Level AA</strong>: the W3C's accessibility standard.</li>
-      <li><strong>Section 508</strong> of the US Rehabilitation Act, as updated in 2018 to align with WCAG 2.0 AA.</li>
-      <li><strong>EN 301 549</strong>: the European accessibility standard for ICT, which references WCAG 2.1 AA. I exceed this with my 2.2 AA target.</li>
-      <li><strong>ADA Title III</strong>: while the ADA does not formally specify WCAG, US courts have routinely treated WCAG AA as the de facto standard. My work is built to that bar.</li>
+      <li><strong>Section 508</strong> of the U.S. Rehabilitation Act, as updated in 2018 to align with WCAG 2.0 AA.</li>
+      <li><strong>EN 301 549</strong>: the European accessibility standard for information and communication technology, which references WCAG 2.1 AA. My WCAG 2.2 AA target goes beyond it.</li>
+      <li><strong>ADA Title III</strong>: the ADA doesn't formally name WCAG, but U.S. courts have routinely treated WCAG AA as the de facto standard. My work is built to that level.</li>
     </ul>
 
-    <h2 id="assistive-technologies-i-test-against">Assistive technologies I test against</h2>
+    <h2 id="assistive-technologies-i-test-against">Assistive technology I test with</h2>
     <ul>
-      <li><strong>Screen readers</strong>: VoiceOver (macOS, iOS), NVDA (Windows), TalkBack (Android, when relevant to a build).</li>
-      <li><strong>Magnification</strong>: macOS Zoom, Windows Magnifier, browser zoom up to 400%.</li>
-      <li><strong>Speech input</strong>: Voice Control (macOS, iOS), Dragon NaturallySpeaking (Windows).</li>
-      <li><strong>Keyboard-only</strong>: every interaction tested without a pointing device.</li>
+      <li><strong>Screen readers</strong>: VoiceOver (macOS and iOS), NVDA (Windows), and TalkBack (Android, when a build calls for it).</li>
+      <li><strong>Magnification</strong>: macOS Zoom, Windows Magnifier, and browser zoom up to 400%.</li>
+      <li><strong>Speech input</strong>: Voice Control (macOS and iOS) and Dragon NaturallySpeaking (Windows).</li>
+      <li><strong>Keyboard only</strong>: every interaction tested without a mouse or other pointing device.</li>
     </ul>
 
     <h2 id="how-to-reach-me">How to reach me</h2>
-    <p>If any part of this website isn't working for you, or if you need information in a different format (large text, audio, printed, plain text email instead of an HTML form), contact me any way you like. I will respond quickly and work with you to fix it.</p>
+    <p>If any part of this website isn't working for you, or you need information in another format (large text, audio, print, or a plain-text email instead of an HTML form), contact me however you like. I'll respond quickly and work with you to fix it.</p>
     <ul>
-      <li><strong>Email:</strong> <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a> with the subject "Accessibility". I tend to reply quickly on most business days.</li>
-      <li><strong>Call or text:</strong> <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. Direct line, no menu.</li>
-      <li><strong>Quick form:</strong> <a href="/ask/" class="inline-link">/ask/</a> with topic set to "Accessibility issue or feedback". Same inbox.</li>
+      <li><strong>Email:</strong> <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a>, with the subject "Accessibility".</li>
+      <li><strong>Call or text:</strong> <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a>. It's my direct line, with no menu.</li>
+      <li><strong>Quick form:</strong> the <a href="/contact/" class="inline-link">contact page</a> links to a short question form. Set the topic to "Accessibility issue or feedback", and it reaches the same inbox.</li>
     </ul>
-    <p>If I can't resolve the issue, you can also escalate to:</p>
+    <p>If I can't resolve the issue, you can also take it to:</p>
     <ul>
-      <li>The US Department of Justice's ADA Information Line: <strong>1-800-514-0301</strong> (voice) or <strong>1-833-610-1264</strong> (TTY).</li>
+      <li>The U.S. Department of Justice's ADA Information Line: 1-800-514-0301 (voice) or 1-833-610-1264 (TTY).</li>
       <li>Your state's protection and advocacy organization.</li>
     </ul>
 
     <h2 id="my-commitment-on-client-sites">My commitment on client sites</h2>
-    <p>Every site I build for a client ships with an accessibility statement like this one, tuned to that business. It's one of the operational pages I include on every project, at no extra cost and without counting against your page total. Accessibility is part of the deliverable, not an upsell.</p>
+    <p>Every site I build for a client launches with an accessibility statement like this one, written for that business. It's one of the operational pages I include on every project, at no extra cost, and it doesn't count against your page total. Accessibility comes standard with every site, never as an extra.</p>
       </article>
 
     </div>
@@ -135,12 +135,12 @@ description: "My commitment to WCAG 2.2 AA accessibility on this website, on eve
 
 <section class="cta-section">
   <div class="cta-inner">
-    <span class="section-label">A real person, always</span>
-    <h2 id="if-something-doesn-t-work-tell-me">If something doesn't work, tell me.</h2>
-    <p>I can't fix what I do not know about. Reach out any way you want; I will hear from you and get on it.</p>
+    <span class="section-label">One person reads every message</span>
+    <h2 id="if-something-doesn-t-work-tell-me">If something doesn't work, tell me</h2>
+    <p>I can only fix what I know about. Reach me any way you like, and I'll get to work on it.</p>
     <div class="cta-buttons">
-      <a href="/ask/" class="btn btn-primary btn-lg">Send a quick message</a>
-      <a href="mailto:{{ site.email }}" class="btn btn-outline btn-lg">Email directly</a>
+      <a href="/contact/" class="btn btn-primary btn-lg">Report a problem</a>
     </div>
+    <p style="margin-top:1.25rem"><a href="mailto:{{ site.email }}" class="inline-link" style="color:var(--gold-400)">Prefer email? Write to me directly</a></p>
   </div>
 </section>

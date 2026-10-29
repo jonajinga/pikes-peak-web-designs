@@ -10,7 +10,7 @@ layout: layouts/post.njk
 tags: [post, landscaping]
 ---
 
-<p>In landscaping, the website does some of the hardest selling. A homeowner is spending thousands on a part of the property they see every day, and before calling, they want to see what you've built in yards and climates like theirs.</p>
+<p>In landscaping, the website does some of the hardest selling. A homeowner is spending thousands on a part of the property they see every day. Before calling, they want to see what you've built in yards and climates like theirs.</p>
 
 <p>It's also a crowded local market. Most landscaping sites look alike: stock photos, a "transforming outdoor spaces since [year]" headline, a contact form, and a Facebook icon. The sites that book serious design clients month after month do a few things differently.</p>
 
@@ -46,7 +46,7 @@ tags: [post, landscaping]
 <p>The work on your own pages that helps:</p>
 
 <ul>
-  <li><strong>City pages with local substance.</strong> If you serve five towns, build five distinct pages, each with photos of work in <em>that</em> town, local conditions (clay soil here, drought rules there, HOA styles in a third), and a local landmark. Google's local ranking system penalizes "doorway pages", which repeat the same text with only the city name swapped.</li>
+  <li><strong>City pages with local substance.</strong> If you serve five towns, build five distinct pages. Give each one photos of work in <em>that</em> town, local conditions (clay soil here, drought rules there, HOA styles in a third), and a local landmark. Google's local ranking system penalizes "doorway pages", which repeat the same text with only the city name swapped.</li>
   <li><strong>A page for each service, with schema.</strong> Give "drystone walls", "native plant design", "irrigation install", "outdoor lighting", and "patio build" each their own page and photos. Add schema to each: hidden code that tells Google the page describes a local business and a specific service. A custom-coded site does this; most templates don't.</li>
   <li><strong>A match with your Google Business Profile.</strong> Your name, address, and phone number (NAP) must match your Google Business Profile (GBP) exactly on every page. A phone number in a different format or an address shortened differently breaks the match, and map rankings depend on it.</li>
   <li><strong>Reviews on the site.</strong> Show your strongest Google reviews on the homepage and the matching service pages. New visitors won't go looking on Google Maps; they'll leave.</li>
@@ -84,7 +84,7 @@ tags: [post, landscaping]
 
 <p>Google's own data shows that roughly 7&ndash;10% of phone visitors leave for each extra second of load time. A landscaping site that scores 60 on Google's phone speed test (PageSpeed, rated 0 to 100) loses roughly half its phone visitors before they read a word. A site at 95 or above keeps them.</p>
 
-<p>Speed comes from how the site is built, not from a plugin added later: right-sized AVIF or WebP images, very little JavaScript (the code that makes pages interactive), no heavy template code, and hand-written styles. <a href="/vs-wix/" class="inline-link">A custom-coded site is fast by design</a>, and most template platforms aren't.</p>
+<p>Speed comes from how the site is built, not from a plugin added later. It takes right-sized AVIF or WebP images, very little JavaScript (the code that makes pages interactive), no heavy template code, and hand-written styles. <a href="/vs-wix/" class="inline-link">A custom-coded site is fast by design</a>, and most template platforms aren't.</p>
 
 <h2>Show the trust signals landscape buyers look for</h2>
 

@@ -88,6 +88,6 @@ tags: [post]
 
 <p>Open <a href="https://pagespeed.web.dev" rel="noopener" class="inline-link">pagespeed.web.dev</a>, paste your address, and run the test. If images are the problem, the "Opportunities" section lists "Properly size images" or "Serve images in next-gen formats". The report, from Google's Lighthouse testing tool, names each oversized image and how much you'd save.</p>
 
-<p>On sites I build, image optimization is part of the standard plan. Elsewhere, the fix depends on the platform: WordPress sites can install ShortPixel or EWWW Image Optimizer, Wix and Squarespace have built-in optimization that may be switched off, and custom-coded sites need an automatic step like mine.</p>
+<p>On sites I build, image optimization is part of the standard plan. Elsewhere, the fix depends on the platform. WordPress sites can install ShortPixel or EWWW Image Optimizer, and Wix and Squarespace have built-in optimization that may be switched off. Custom-coded sites need an automatic step like mine.</p>
 
 <p>The effort is small, and for most small-business sites it's the biggest speed gain available.</p>

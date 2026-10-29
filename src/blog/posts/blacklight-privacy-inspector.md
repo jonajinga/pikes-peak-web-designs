@@ -12,7 +12,7 @@ tags: [post]
 
 <p>Most service-business owners don't know what their website does out of sight. The contact form and the analytics dashboard are the parts you see. You don't see the outside trackers loading on every page, the session-replay scripts recording every mouse move, or the ad-network pixels building profiles of every visitor. You don't see that the cookie banner exists because of those trackers.</p>
 
-<p>The Markup, a nonprofit newsroom that does investigative journalism, built a tool that shows all of this. It's called <a href="https://themarkup.org/blacklight" rel="noopener" class="inline-link">Blacklight</a>, and it's the clearest way I've found to see what a website loads for someone else's benefit. This post covers what Blacklight does, how to use it, what to do with the results, and how it fits into my own build process.</p>
+<p>The Markup, a nonprofit newsroom that does investigative journalism, built a tool that shows all of this. It's called <a href="https://themarkup.org/blacklight" rel="noopener" class="inline-link">Blacklight</a>, and it's the clearest way I've found to see what a website loads for someone else's benefit.</p>
 
 <h2>What Blacklight is</h2>
 

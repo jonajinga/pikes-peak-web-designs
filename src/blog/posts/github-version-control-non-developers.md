@@ -2,87 +2,83 @@
 title: "GitHub: Version Control for Non-Developers, Explained"
 date: 2026-05-19
 label: "The Stack"
-description: "Every site I build lives in a Git repository, with a permanent record of every change. Here is what that means for a small business owner."
+description: "Every site I build lives in a Git repository, with a permanent record of every change. Here's what that means for a small business owner."
 ctaLabel: "Versioned by default"
-ctaHeading: "Every change to your site is logged forever."
-ctaText: "Every site I build is stored in a Git repository, with a permanent history of every change. Rollback to any past version is a few minutes of work, and you can always see exactly what changed and when."
+ctaHeading: "Every change to your site stays on record"
+ctaText: "Every site I build is stored in a Git repository with a permanent history of every change. Rolling back to any past version takes a few minutes, and you can always see what changed and when."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>If you have ever asked a developer how their work is organized and gotten back a barrage of acronyms (Git, GitHub, repos, branches, commits, pull requests), you have run into one of the most universal pieces of software-development infrastructure in 2026. Every site I build lives in a Git repository on GitHub, and the repository is one of the quiet workhorses behind everything else. This post is the version of that conversation I want every client to have read.</p>
+<p>Ask a developer how their work is organized and you may get a string of terms back: Git, GitHub, repos, branches, commits, pull requests. They name one of the most common tools in software in 2026. Every site I build lives in a Git repository on GitHub, and that repository supports everything else I do. This post is the explanation I'd like every client to read.</p>
 
-<p>The short version: Git is a way of tracking every change to a set of files, with a permanent timestamped log. GitHub is the place where the Git repository lives, with a friendly web interface on top. Together they mean every line of code that has ever existed on your site is recoverable, and every change can be inspected, reverted, or audited at any time.</p>
+<p>The short version: Git records every change to a set of files in a permanent, dated log, and GitHub stores that record online where you can browse it. Together they mean every line of code your site has ever had can be recovered, and every change can be inspected, undone, or traced at any time.</p>
 
-<h2>What a "repository" actually is</h2>
+<h2>What a "repository" is</h2>
 
-<p>A Git repository (often shortened to "repo") is a folder of files with a hidden tracking layer underneath. The folder itself looks normal — just files and subfolders — but Git keeps a complete history of every change ever made to those files. Every save, every deletion, every line modified, every new file added.</p>
+<p>A Git repository ("repo" for short) is a folder of files with a hidden tracking layer underneath. It looks like an ordinary folder, but Git keeps a full history of every save, deletion, edited line, and new file.</p>
 
-<p>That history is permanent. Files deleted from the repository can be recovered from any past version. A change made today can be inspected against the version from a year ago, with the differences highlighted line by line. The repository is, in effect, a complete time machine for the codebase.</p>
+<p>That history is permanent. A deleted file can be brought back, and today's version of a page can be compared line by line with last year's. In effect, the repository is a time machine for your site's code.</p>
 
-<p>For sites I build, the repository contains everything that produces the site: the HTML templates, the Markdown content, the CSS, the JavaScript, the configuration files, the build scripts, the deployment instructions. Plus images and other assets that ship with the site. If the entire repository were copied to a new machine, the site could be rebuilt from scratch in two minutes.</p>
+<p>For the sites I build, it holds everything that produces the site: the page templates, the written content, the styling and scripts, the settings, the build and publishing instructions, and the images. Copied to a new computer, it could rebuild the whole site from scratch in two minutes.</p>
 
 <h2>What "commits" are</h2>
 
-<p>Every change to the repository is grouped into a "commit." A commit is a labeled snapshot: a description of what changed, who made the change, and when. A typical commit message reads something like "Add hours of operation to contact page" or "Fix typo in service-area description for Boulder."</p>
+<p>Each change is saved as a "commit": a labeled snapshot of what changed, who changed it, and when. A typical commit message reads "Add hours of operation to contact page" or "Fix typo in service-area description for Boulder."</p>
 
-<p>The commit history reads like a project log. Six months after launch, you can scroll through the commits and see exactly what changed on which day. Six years after launch, the log is still there, with every modification annotated.</p>
+<p>The commits read like a project log. Six months or six years after launch, you can scroll through and see what changed on which day.</p>
 
-<p>For most clients, the commit log is invisible — they email me with content updates, I make the change, the commit lands, the site updates. The client sees the result; the log records the work. But the log is available to the client at any time, and on the rare occasion when something needs auditing ("who removed the Saturday hours from the contact page?"), the answer is one search in the commit log.</p>
+<p>Most clients never see the log. You email me an update, I make the change and save the commit, and the site updates. The log is there whenever you want it, though, and a question like "who removed the Saturday hours from the contact page?" takes one search to answer.</p>
 
 <h2>What "deploy on push" means</h2>
 
-<p>The connection between the GitHub repository and the live website is automatic. Every time I push a commit to the repository's main branch, Cloudflare Pages detects the push within a few seconds, pulls the new code, runs the build pipeline, and publishes the result to the live website. The whole flow takes 30 seconds to two minutes.</p>
+<p>The repository and the live site are linked. When I send ("push") a commit to the main version of the repository, Cloudflare Pages, the service that hosts the site, notices within seconds, builds the site from the new code, and publishes it. The whole process takes 30 seconds to two minutes.</p>
 
-<p>This is the modern small-business-website workflow. There is no FTP, no manual file uploading, no "remember to copy the changed files to the server." A change is committed once, and the deployment is automatic.</p>
-
-<p>The advantage from a client perspective is that updates are fast and reliable. The advantage from my perspective is that I can never forget to deploy a change, and I can never accidentally upload the wrong files.</p>
+<p>Nobody copies files to a server by hand or has to remember which files changed. For you, that means fast, reliable updates. For me, it means I can't forget to publish a change or upload the wrong files.</p>
 
 <h2>Why this matters for a small business</h2>
 
-<p>The repository system produces three concrete client-facing benefits.</p>
+<p>The repository gives you two practical benefits.</p>
 
-<p><strong>Rollback to any past version is fast.</strong> If a change introduces a problem (a copy edit produces a broken layout, a new feature has an unexpected side effect), reverting to the previous version is one Git command and one redeploy. The site is back to its previous state within minutes, with no data loss.</p>
+<p><strong>Rolling back is fast.</strong> If a change causes a problem, such as a text edit that breaks a layout, one Git command and one republish restore the previous version within minutes, with nothing lost.</p>
 
-<p><strong>Audit trail is permanent.</strong> Every word on the website was added at a specific time by a specific person. If a price was changed by mistake or a service description got accidentally edited, the change is recoverable and the timeline is recoverable.</p>
-
-<p><strong>The site is portable.</strong> If the client ever moves to a different developer, the entire site (and its history) is in the repository. The new developer clones the repository, runs the build, and continues. There is no "the old developer needs to give us access to the proprietary platform" step.</p>
+<p><strong>The record is permanent.</strong> Every word on the site was added at a known time by a known person. If a price or a service description is changed by mistake, both the old text and the timeline can be recovered.</p>
 
 <h2>Where the repository lives</h2>
 
-<p>For sites I build, the repository is hosted on GitHub under my own organization, with the client granted appropriate access. I do this for two reasons:</p>
+<p>On the monthly plan I own the code, so each client's repository is private and kept in my own GitHub account, with access for the client where it's useful. I do it this way for two reasons:</p>
 
-<p><strong>Operational continuity.</strong> Hosting the repository in my account means I can make changes without coordinating credentials with the client. I can deploy fixes at midnight on a Saturday during a storm-season traffic spike without waiting on the client to grant access.</p>
+<p><strong>I can act right away.</strong> I can make changes without sorting out passwords with you first. If a fix is needed at midnight on a Saturday during storm season, I don't have to wait for access.</p>
 
-<p><strong>Backup and continuity.</strong> The repository is automatically backed up by GitHub's infrastructure, with version history preserved indefinitely. Every commit is replicated across GitHub's data centers within seconds of being pushed.</p>
+<p><strong>It's backed up.</strong> GitHub backs up every repository automatically, keeps the history indefinitely, and copies each commit across its data centers within seconds.</p>
 
-<p>If a client wants their own copy of the repository (for backup, for archival, or because they want to engage another developer), I provide a clone at any point during or after the engagement. The repository is small (typically a few hundred KB plus the image assets), and a complete copy fits on any modern device.</p>
+<p>Your domain is registered in your name, and you control it. If you cancel, I help you move the domain to a registrar of your choice, and the website goes offline at the end of the term. The repository stays with me, because there's no export of the site and no code buyout.</p>
 
-<h2>What the client typically interacts with</h2>
+<h2>What clients interact with</h2>
 
-<p>For most clients, the answer is "nothing directly." The repository is the developer's tool, not the client's tool. Updates flow through email or the content-update form; I make the changes in the repository; the changes go live; the client sees the result.</p>
+<p>For most clients, nothing. The repository is my tool. You send updates by email or through the content-update form, I make the changes, and they go live.</p>
 
-<p>For clients who do want to look at the repository, GitHub provides a clean web interface. They can browse the file tree, read the commit log, search for specific files or terms, and view the differences between any two versions. No technical knowledge required to read; some technical knowledge required to write changes.</p>
+<p>Clients who want to look can use GitHub's web pages to browse the files, read the log, search, and compare any two versions. Reading takes no technical knowledge; making changes takes some.</p>
 
-<p>For clients with a developer on staff or a tech-comfortable team, the repository becomes a collaboration surface. The team member can review my changes before they go live, propose edits via pull requests, or even handle small content updates themselves. This is rare on small-business engagements but supported on the rare occasions when it comes up.</p>
+<p>If you have a developer on staff, the repository can become a shared workspace. They can review my changes before they go live, suggest edits through pull requests (proposed changes I review first), or make small content updates themselves. That's rare for small businesses, but I support it.</p>
 
-<h2>What this skips</h2>
+<h2>What this prevents</h2>
 
-<p>By using GitHub for version control, I get to skip a category of small-business-website pain that older workflows produce:</p>
+<p>Version control spares you the headaches older ways of working cause:</p>
 
 <ul>
-  <li>No "the developer accidentally overwrote my logo and now it is gone forever."</li>
-  <li>No "we hired someone to update the site and they broke something we cannot identify."</li>
-  <li>No "the previous version of this page had a paragraph I wanted to keep but I deleted it."</li>
-  <li>No "I have no idea what changed between last week and this week."</li>
+  <li>"The developer overwrote my logo, and now it's gone for good."</li>
+  <li>"We hired someone to update the site, and they broke something we can't find."</li>
+  <li>"The old version of this page had a paragraph I wanted, and I deleted it."</li>
+  <li>"I have no idea what changed between last week and this week."</li>
 </ul>
 
-<p>The repository solves all four of these by keeping every version recoverable.</p>
+<p>The repository solves all four by keeping every version recoverable.</p>
 
 <h2>If your current site has no version control</h2>
 
-<p>Most small-business websites built before 2018 have no version-control history. The site exists as a snapshot on a server; previous versions are gone forever; the developer has no log of changes; rolling back is rebuilding.</p>
+<p>Most small-business websites built before 2018 have no version history. The site exists only as it is now, earlier versions are gone, and rolling back means rebuilding.</p>
 
-<p>For sites I build, version control is part of the standard plan from day one. For sites I do not build, retroactively adding version control is straightforward but the historical record cannot be reconstructed (the past is just gone). Going forward, every change is logged, but pre-engagement history is not recoverable.</p>
+<p>Sites I build have version control from day one, as part of the standard plan. Another site can add it at any time, but the past can't be recovered; only changes from that point on are logged.</p>
 
-<p>Worth being clear: most small businesses never need the version history. The site runs, the changes happen, and the past versions are not consulted. But on the rare occasion when something does go wrong, having the history is the difference between a 5-minute rollback and a 5-day rebuild.</p>
+<p>Most small businesses never need the history. But on the rare day something goes wrong, it's the difference between a five-minute rollback and a five-day rebuild.</p>

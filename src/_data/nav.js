@@ -8,7 +8,7 @@ export default {
   ],
   megaMenu: {
     southwest: {
-      label: "Southwest & West",
+      label: "Southwest and West",
       // Sorted by state then city
       cities: [
         { label: "Phoenix, AZ", slug: "phoenix-az" },
@@ -22,7 +22,7 @@ export default {
       ],
     },
     south: {
-      label: "South & Texas",
+      label: "South and Texas",
       // Sorted by state then city
       cities: [
         { label: "Atlanta, GA", slug: "atlanta-ga" },
@@ -36,7 +36,7 @@ export default {
       ],
     },
     east: {
-      label: "Florida, Midwest & Northeast",
+      label: "Florida, Midwest, and Northeast",
       // Sorted by state then city
       cities: [
         { label: "Jacksonville, FL", slug: "jacksonville-fl" },

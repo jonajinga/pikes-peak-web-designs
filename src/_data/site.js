@@ -1,13 +1,13 @@
 export default {
   name: "Pikes Peak Web Designs",
   shortName: "Pikes Peak",
-  tagline: "A website you never have to worry about.",
+  tagline: "A website you never have to worry about",
   // Brand voice constants. Used across templates so the signature line,
   // sign-off, and forbidden-word list are pulled programmatically rather
   // than copy-pasted (and drifting) page-to-page.
   voice: {
     signature: "A website you never have to worry about.",
-    markline: "Custom-coded. Custom-cared-for.",
+    markline: "A website you never have to worry about",
     signoff: "Boring is the feature.",
     methodology: "The Service Site Standard",
     forbiddenWords: [
@@ -23,7 +23,7 @@ export default {
     ],
   },
   url: "https://pikespeakwebdesigns.com",
-  description: "Custom-coded websites for small service businesses across the U.S. and Canada. I handle the design, the hosting, the updates, and everything else. $0 down, $175 a month flat.",
+  description: "Custom-coded websites for small service businesses across the U.S. and Canada. I design, build, host, and look after your site for $175 a month, with $0 down.",
   // Umami Cloud privacy-friendly analytics. The base.njk script tag is
   // gated on this value, so it's safe to flip on by setting the ID and
   // off by clearing the string.

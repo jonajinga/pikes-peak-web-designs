@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Design Feedback | Pikes Peak Web Designs"
-description: "For clients reviewing a preview link during the build: give structured feedback so we nail the next round. Love it, change something, or just a question; all fine."
+description: "For clients reviewing a preview link during the build: send your notes in one place so the next round gets it right. Praise, changes, and questions are all welcome."
 noindex: true
 ---
 
@@ -11,8 +11,8 @@ noindex: true
       <a href="/">Home</a><span class="sep">/</span><a href="/client-portal/">Client Portal</a><span class="sep">/</span><span>Design Feedback</span>
     </nav>
     <span class="section-label">During the build</span>
-    <h1>Tell us what you <em>really think.</em></h1>
-    <p>Reviewing a preview link? Use this form so every note is in one place. Be honest: we'd rather hear "I don't love this" now than after we launch.</p>
+    <h1>Tell me what you think, <em>so the next round gets it right</em></h1>
+    <p>Reviewing a preview link? Use this form to keep every note in one place. Be candid: I'd rather hear "I don't love this" now than after launch.</p>
   </div>
 </section>
 
@@ -20,7 +20,7 @@ noindex: true
   <div class="container" style="max-width:720px">
     <div class="contact-form-card">
       <h2 class="form-heading">Your feedback on the preview</h2>
-      <p class="form-intro">You don't have to be polite or precise. Plain language beats polished notes every time.</p>
+      <p class="form-intro">You don't have to be polite or precise. Plain notes help more than polished ones.</p>
 
       <form data-web3forms data-redirect="/thank-you/?type=design-feedback" action="https://api.web3forms.com/submit" method="POST" class="form">
         <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
@@ -41,46 +41,46 @@ noindex: true
 
         <div class="form-group">
           <label for="reviewedPage">Which preview page did you review?</label>
-          <input type="text" id="reviewedPage" name="reviewedPage" placeholder="e.g. preview.pikespeak.dev/homepage/ or 'the whole site'">
+          <input type="text" id="reviewedPage" name="reviewedPage" placeholder="For example, preview.pikespeak.dev/homepage/ or 'the whole site'">
         </div>
 
         <div class="form-group">
           <label for="overallImpression">Overall impression? <span class="req">*</span></label>
           <select id="overallImpression" name="overallImpression" required>
             <option value="">Choose one…</option>
-            <option value="love-it">Love it; ready to launch</option>
-            <option value="close">Close; just a few tweaks</option>
+            <option value="love-it">Love it, and it's ready to launch</option>
+            <option value="close">Close, with a few tweaks</option>
             <option value="mostly-right">Mostly right, but one section needs rethinking</option>
-            <option value="not-there-yet">Not there yet; I want to step back and talk</option>
+            <option value="not-there-yet">Not there yet, and I'd like to step back and talk</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="whatsWorking">What's working well?</label>
-          <textarea id="whatsWorking" name="whatsWorking" rows="4" placeholder="What feels right, what you're excited about, what your team liked."></textarea>
+          <textarea id="whatsWorking" name="whatsWorking" rows="4" placeholder="What feels right, what you're excited about, and what your team liked."></textarea>
         </div>
 
         <div class="form-group">
           <label for="changes">What needs to change? <span class="req">*</span></label>
-          <textarea id="changes" name="changes" rows="8" placeholder="Be specific where you can. Examples:&#10;&#10;- The hero text should say 'serving Colorado Springs &amp; Pueblo' instead of just 'Colorado Springs'&#10;- The blue on the Services page feels too dark&#10;- Add our BBB logo next to the credentials&#10;- The team photo on About should be the one from the company picnic&#10;- I don't love how the testimonial section looks" required></textarea>
+          <textarea id="changes" name="changes" rows="8" placeholder="Be specific where you can. Examples:&#10;&#10;- The headline at the top should say 'serving Colorado Springs and Pueblo' instead of just 'Colorado Springs'&#10;- The blue on the Services page feels too dark&#10;- Add our BBB logo next to the credentials&#10;- The team photo on About should be the one from the company picnic&#10;- I don't love how the testimonial section looks" required></textarea>
         </div>
 
         <div class="form-group">
-          <label for="stakeholders">Anyone else we should hear from?</label>
-          <input type="text" id="stakeholders" name="stakeholders" placeholder="e.g. 'my wife looked at it and hated the footer' or 'my manager wants to see it Thursday'">
+          <label for="stakeholders">Anyone else I should hear from?</label>
+          <input type="text" id="stakeholders" name="stakeholders" placeholder="For example, 'my wife looked at it and hated the footer' or 'my manager wants to see it Thursday'">
         </div>
 
         <div class="form-group">
-          <label for="questions">Any questions for us?</label>
+          <label for="questions">Any questions for me?</label>
           <textarea id="questions" name="questions" rows="3" placeholder="Anything you're unsure about or want to understand better."></textarea>
         </div>
 
         <div id="form-error" role="alert" class="form-error">
-          Something went wrong. Please try again or email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+          Something went wrong. Please try again, or email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
         </div>
 
         <button type="submit" class="btn btn-primary btn-full btn-lg">Send feedback</button>
-        <p class="form-hint">Revision rounds tend to turn around quickly on most business days, with no charge attached and no limit on rounds.</p>
+        <p class="form-hint">I turn revisions around quickly on most business days, and you can have as many rounds as you need at no extra charge.</p>
       </form>
     </div>
   </div>

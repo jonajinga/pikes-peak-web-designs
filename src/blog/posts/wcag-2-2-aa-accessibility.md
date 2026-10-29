@@ -2,100 +2,96 @@
 title: "WCAG 2.2 AA: What Accessibility Means in Practice"
 date: 2026-05-24
 label: "Standards & Compliance"
-description: "WCAG 2.2 AA is the accessibility floor every U.S. small-business website should meet. Here is what it means in practice and why ADA lawsuits are accelerating."
+description: "WCAG 2.2 AA is the accessibility standard every U.S. small-business website should meet. Here's what it means in practice and why ADA lawsuits are accelerating."
 ctaLabel: "AA from launch, every site"
-ctaHeading: "Accessibility built in by construction."
-ctaText: "Real contrast, real focus rings, real keyboard navigation, real screen-reader support. Tested with WAVE before every launch. Part of the standard plan."
+ctaHeading: "Accessibility built into every site from the start"
+ctaText: "Strong color contrast, visible focus outlines, full keyboard navigation, and screen-reader support, tested with WAVE before every launch. Part of the standard plan."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>Web accessibility is one of those topics small business owners encounter only when something has gone wrong. A demand letter arrives from a law firm representing a visitor who could not use the website with a screen reader. An ADA-related lawsuit threatens an expensive settlement. A nonprofit grant requires a compliance certification the website cannot provide.</p>
+<p>Most small business owners think about web accessibility only when something goes wrong. A law firm sends a demand letter for a visitor who couldn't use the site with a screen reader. An ADA lawsuit threatens an expensive settlement. A nonprofit grant asks for a compliance certificate the website can't provide.</p>
 
-<p>The standard that governs almost all of these situations is WCAG 2.2 AA. This post explains what that standard actually requires, how I build to it from day one on every site, and why the legal pressure on small-business websites has been accelerating since 2020.</p>
+<p>Almost all of these come back to one standard: WCAG 2.2 AA. This post explains what it requires, how I build to it from day one, and why legal pressure on small-business websites has been accelerating since 2020.</p>
 
 <h2>What WCAG 2.2 AA is</h2>
 
-<p>WCAG stands for Web Content Accessibility Guidelines, maintained by the World Wide Web Consortium (W3C) since 1999. The most current major version is WCAG 2.2, published in October 2023. The "AA" is the conformance level: the W3C defines three levels (A, AA, AAA), and AA is the level that every U.S. court has cited as the practical baseline for ADA compliance and most international jurisdictions reference as the standard.</p>
+<p>WCAG stands for Web Content Accessibility Guidelines, which the World Wide Web Consortium (W3C) has maintained since 1999. The current major version, WCAG 2.2, came out in October 2023. "AA" is the middle of three conformance levels (A, AA, and AAA). It's the level every U.S. court has cited as the practical baseline for ADA compliance, and the one most other countries treat as the standard.</p>
 
-<p>The full specification covers thirteen guidelines under four principles (perceivable, operable, understandable, robust). Each guideline expands into specific testable criteria. AA conformance requires meeting fifty specific success criteria.</p>
-
-<p>For a small business owner, that level of technical detail is not the right entry point. The practical version of WCAG 2.2 AA is six categories of work, each with measurable outcomes.</p>
+<p>The full standard has 13 guidelines under four principles: people must be able to perceive the content, operate it, and understand it, and it must work with the tools they use, such as screen readers. AA means meeting 50 specific, testable criteria. In practice, they come down to six kinds of work, each with results you can measure.</p>
 
 <h2>The six categories that matter</h2>
 
 <h3>1. Color contrast</h3>
 
-<p>Every text element on the page must meet a minimum contrast ratio against its background: 4.5:1 for normal text, 3:1 for large text (18pt+ or 14pt+ bold). The same rule applies to interactive elements like buttons.</p>
+<p>All text must stand out from its background by a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text (18 point and up, or 14 point bold). The same rule applies to buttons and other controls.</p>
 
-<p>This is the single most common failure mode. Light gray text on white backgrounds, gold text on cream backgrounds, dark blue text on slightly-darker blue backgrounds — all of these are common in branded designs and most fail the contrast test.</p>
+<p>This is the most common failure. Light gray on white, gold on cream, and dark blue on slightly darker blue all turn up in branded designs, and most of them fail.</p>
 
-<p><strong>What I do:</strong> every color combination on every site I build is checked against WebAIM's Contrast Checker before it ships. If a color does not pass, the design changes. The brand can use whatever colors it likes for decorative purposes; the text on the page reads.</p>
+<p><strong>What I do:</strong> I check every color pairing against WebAIM's Contrast Checker before launch, and if a pairing fails, the design changes. Your brand colors can still appear as decoration, and the text stays easy to read.</p>
 
 <h3>2. Keyboard navigation</h3>
 
-<p>Every interactive element on the site (links, buttons, form fields, dropdowns, modals) must be reachable and operable via keyboard alone, without a mouse. The Tab key moves through interactive elements; Enter and Space activate them; Escape closes modals.</p>
+<p>Every link, button, form field, drop-down menu, and pop-up window must work with the keyboard alone. Tab moves between them, Enter and Space activate them, and Escape closes pop-ups.</p>
 
-<p>This matters for visitors who cannot use a mouse (motor disabilities, screen-reader users, repetitive-strain-injury sufferers, anyone using assistive tech), and it also matters for power users who prefer keyboard.</p>
+<p>This matters for anyone who can't use a mouse, including people with motor disabilities or repetitive strain injuries, screen-reader users, and others who rely on assistive technology. It also helps people who prefer the keyboard.</p>
 
-<p><strong>What I do:</strong> every site I build is keyboard-tested before launch. Every interactive element shows a visible focus ring when reached via Tab. Every modal traps focus appropriately. Every dropdown is keyboard-operable.</p>
+<p><strong>What I do:</strong> I test every site with the keyboard before launch. Each control shows a visible outline when you reach it, pop-up windows hold the keyboard focus while they're open, and every drop-down works from the keyboard.</p>
 
 <h3>3. Screen-reader support</h3>
 
-<p>Visitors using screen readers (VoiceOver on Mac/iOS, NVDA or JAWS on Windows, TalkBack on Android) need the page's structure to be conveyed correctly. Headings should be marked as headings (H1, H2, H3), not as styled paragraphs. Images should have descriptive alt text. Form fields should have associated labels. Buttons should be buttons, not divs with click handlers.</p>
+<p>People who use screen readers (VoiceOver on Mac and iPhone, NVDA or JAWS on Windows, TalkBack on Android) need the page's structure to come through. Headings must be coded as headings (H1, H2, H3), images need descriptions (alt text), form fields need labels, and buttons must be coded as buttons rather than as boxes that respond to clicks.</p>
 
-<p><strong>What I do:</strong> every site I build uses semantic HTML by default. Headings are real headings. Images have alt text written by hand (not auto-generated). Forms use real label elements with for/id pairs. Buttons are <code>&lt;button&gt;</code> elements, not styled divs.</p>
+<p><strong>What I do:</strong> I build every site with semantic HTML, meaning each element is coded as what it is. I write every image description by hand. Forms use proper label elements linked to their fields, and buttons are <code>&lt;button&gt;</code> elements, not styled boxes.</p>
 
 <h3>4. Focus indicators</h3>
 
-<p>When a visitor tabs to an interactive element, the element must show a visible indicator that it is focused. A blue outline, a brighter background, a different border — the specific styling does not matter, only that something visible changes.</p>
+<p>When a visitor tabs to a control, something visible must change, such as an outline, a brighter background, or a new border. Many designers remove the browser's plain default outline as a finishing touch. The fix is to restyle it to match the brand, not to remove it.</p>
 
-<p>This is one of the most common subtle failures. Many designers explicitly remove focus rings as a "polish" step because the default browser ring is ugly. The fix is to replace the default ring with a custom version that matches the brand, not to remove it entirely.</p>
-
-<p><strong>What I do:</strong> every interactive element on every site I build has a custom focus indicator that matches the brand. The indicator is intentional, visible, and consistent across the site.</p>
+<p><strong>What I do:</strong> every control on every site I build has a custom focus outline that matches the brand and looks the same across the site.</p>
 
 <h3>5. Skip links</h3>
 
-<p>A "skip to main content" link at the top of every page lets keyboard and screen-reader users jump past the navigation menu to the page content. Without it, every visit means tabbing through every navigation link before reaching the page's content.</p>
+<p>A "skip to main content" link at the top of each page lets keyboard and screen-reader users jump past the menu. Without it, they have to tab through every menu link on every page before reaching the content.</p>
 
-<p><strong>What I do:</strong> every site has a skip link. The link is visually hidden until a keyboard user tabs to it, at which point it becomes visible. Standard pattern, takes 5 minutes to implement, makes a meaningful difference for assistive-tech users.</p>
+<p><strong>What I do:</strong> every site has a skip link. It stays hidden until a keyboard user tabs to it. It takes five minutes to add and makes a big difference for people using assistive technology.</p>
 
 <h3>6. Form labels and error messages</h3>
 
-<p>Every form field needs an associated label that screen readers can announce. Required fields need to be marked as required. Error messages need to be programmatically associated with the field they refer to, so a screen reader announces "this field is required" alongside the field rather than reading the error message somewhere else on the page.</p>
+<p>Every form field needs a label a screen reader can announce, and required fields must be marked. Each error message must be tied to its field in the code, so a screen reader announces "this field is required" with the field, not somewhere else on the page.</p>
 
-<p><strong>What I do:</strong> every form on every site has explicit labels, required indicators, and aria-described-by attributes connecting error messages to fields.</p>
+<p><strong>What I do:</strong> every form has clear labels, required-field markers, and aria-describedby attributes that tie each error message to its field.</p>
 
 <h2>Why ADA lawsuits are accelerating</h2>
 
-<p>The legal environment around web accessibility has shifted dramatically since 2018. The Department of Justice's position is that the ADA applies to commercial websites, even though Title III of the ADA was written before the web existed and does not literally name websites. Federal courts have largely agreed.</p>
+<p>The legal picture has changed sharply since 2018. The Department of Justice holds that the ADA applies to business websites, even though Title III of the ADA was written before the web existed and doesn't name websites. Federal courts have largely agreed.</p>
 
-<p>The 2019 Supreme Court decision in Robles v. Domino's let stand a Ninth Circuit ruling that ADA Title III applies to Domino's website because it had a sufficient nexus to the company's physical pizza shops. Subsequent cases have extended the principle to most small businesses with both physical locations and websites.</p>
+<p>In 2019, the Supreme Court let stand a Ninth Circuit ruling in Robles v. Domino's that ADA Title III applies to Domino's website, because the site was closely tied to the company's physical pizza shops. Later cases have extended the principle to most small businesses with both physical locations and websites.</p>
 
-<p>The practical pattern: a plaintiff's law firm runs an automated accessibility check against thousands of small-business websites, identifies failures, and sends demand letters offering to settle for $5,000 to $25,000 per site. Most small businesses settle rather than litigate. The firms that run this practice have filed thousands of cases; California, New York, Florida, and Pennsylvania see the majority.</p>
+<p>The usual pattern: a plaintiff's law firm runs an automated accessibility check on thousands of small-business websites and sends demand letters offering to settle for $5,000 to $25,000 per site. Most small businesses settle rather than fight. These firms have filed thousands of cases, most of them in California, New York, Florida, and Pennsylvania.</p>
 
-<p>The defense against this is not a perfect site. The defense is a site that meets WCAG 2.2 AA in good faith, with documented testing and a published accessibility statement. A plaintiff's automated check that finds three small issues on a generally compliant site is meaningfully different from one that finds 200 issues on a site that has obviously never been tested.</p>
+<p>The defense isn't a perfect site. It's a site that meets WCAG 2.2 AA in good faith, with documented testing and a published accessibility statement. Three small issues on a site that generally complies look very different from 200 issues on a site that was plainly never tested.</p>
 
 <h2>How I test</h2>
 
-<p>Before any site I build goes live, the accessibility pass involves three tools:</p>
+<p>Before any site I build goes live, I check it three ways:</p>
 
 <ol>
-  <li><strong>WAVE (Web Accessibility Evaluation Tool).</strong> Free, browser-based, run by WebAIM. Catches roughly 40 percent of automated-detectable issues. The tool I rely on most.</li>
-  <li><strong>Lighthouse accessibility audit.</strong> Built into Chrome DevTools. Catches a different 30 percent of automated issues; the overlap with WAVE is partial.</li>
-  <li><strong>Manual keyboard test.</strong> I tab through every interactive element on every page, confirming the focus indicator is visible and the element responds to Enter/Space. This catches the issues WAVE and Lighthouse miss.</li>
+  <li><strong>WAVE (Web Accessibility Evaluation Tool).</strong> A free, browser-based checker from WebAIM. It catches roughly 40 percent of the issues an automated tool can find, and I rely on it most.</li>
+  <li><strong>Lighthouse accessibility check.</strong> Built into Chrome's developer tools. It catches a different 30 percent, overlapping only partly with WAVE.</li>
+  <li><strong>Manual keyboard test.</strong> I tab through every control on every page to confirm the focus outline shows and each control responds to Enter and Space. This catches what the automated tools miss.</li>
 </ol>
 
-<p>Automated tools find about 50 percent of accessibility issues; the rest require manual review. Sites I build pass both automated tools at zero errors and survive the manual review. The audit is part of the launch checklist on every project.</p>
+<p>Automated tools find about 50 percent of accessibility issues, and the rest need a person to review. Sites I build pass both tools with zero errors and pass the manual review before launch.</p>
 
 <h2>The accessibility statement</h2>
 
-<p>Every site I build ships with a published accessibility statement at <code>/accessibility/</code>. The statement names the standard the site is built to (WCAG 2.2 AA), describes how the site has been tested, identifies any known gaps, and provides contact information for visitors who encounter accessibility issues.</p>
+<p>Every site I build launches with an accessibility statement at <code>/accessibility/</code>. It names the standard (WCAG 2.2 AA), describes the testing, notes any known gaps, and tells visitors how to reach you if they run into a problem.</p>
 
-<p>This is partly a moral obligation (visitors who cannot use the site deserve to know how to reach you) and partly a legal one (a published statement signaling good faith is part of what courts have credited as evidence of compliance).</p>
+<p>That's partly a moral duty, since visitors who can't use the site deserve a way to reach you. It's also a legal one, because courts have credited a published statement as evidence of good-faith compliance.</p>
 
-<h2>If your current site has not been tested</h2>
+<h2>Testing your current site</h2>
 
-<p>The first step is the automated check. Visit <a href="https://wave.webaim.org" rel="noopener" class="inline-link">wave.webaim.org</a>, paste your homepage URL, and read the report. If WAVE finds errors (red circles on the report), those are the most significant issues and worth fixing first. Warnings (yellow triangles) are softer issues that may or may not be problems depending on context.</p>
+<p>Start with the automated check. Go to <a href="https://wave.webaim.org" rel="noopener" class="inline-link">wave.webaim.org</a>, paste in your home page address, and read the report. Errors (red circles) are the most serious, so fix those first. Warnings (yellow triangles) may or may not be problems, depending on context.</p>
 
-<p>For sites I build, accessibility is not an add-on or a remediation phase. It is part of how the site is constructed from the first commit. The fix path on a site already built without accessibility in mind is harder; building it in from the start is easier.</p>
+<p>On sites I build, accessibility isn't an add-on or a later repair job. I build it in from the first line of code, because fixing a finished site is harder.</p>

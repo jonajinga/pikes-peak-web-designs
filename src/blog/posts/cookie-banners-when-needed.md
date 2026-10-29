@@ -2,98 +2,96 @@
 title: "Cookie Banners: When You Actually Need One"
 date: 2026-05-25
 label: "Standards & Compliance"
-description: "Most service-business websites do not need a cookie banner. Here is when one is genuinely required and when it is just visual noise hurting conversion."
+description: "Most service-business websites don't need a cookie banner. Here's when one is required, and when it's visual noise that costs you calls."
 ctaLabel: "Banner-free by default"
-ctaHeading: "I build sites that don't need a banner."
-ctaText: "Cookie-free analytics, privacy-respecting fonts, no ad pixels, no tracker tax. The cookie banner that hurts your conversion rate goes away because it was never needed."
+ctaHeading: "I build sites that don't need a banner"
+ctaText: "I use analytics without cookies, fonts that respect privacy, and no ad pixels or outside trackers. The banner that costs you calls goes away, because your site never needed it."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>The cookie banner is one of the most universally hated user-interface elements on the web. Visitors click "Accept" without reading because the banner is in the way, the banner pops up again on the next visit, and the entire ritual is something almost no one understands the legal basis for. The banners exist because of European privacy law that most U.S. small businesses are technically subject to and almost none have read.</p>
+<p>The cookie banner is one of the most disliked features on the web. Visitors click "Accept" without reading because it's in the way, it pops up again on the next visit, and almost no one understands the legal reason for it. Banners exist because of a European privacy law that many U.S. small businesses technically fall under and almost none have read.</p>
 
-<p>The honest answer for most service-business websites is that they do not need a cookie banner at all. The trackers that require consent are not on the site. Adding a banner anyway is a self-imposed conversion drag on something that did not require the consent in the first place.</p>
+<p>Most service-business websites don't need a cookie banner at all, because the trackers that require consent aren't on the site. Adding a banner anyway costs you visitors for no reason.</p>
 
-<p>This post explains what cookie banners are actually for, when one is genuinely required, when one is theater, and how I build sites that legitimately do not need one.</p>
+<h2>What cookie banners are for</h2>
 
-<h2>What cookie banners are actually for</h2>
+<p>The cookie banner exists because of GDPR (the General Data Protection Regulation), the European Union's privacy law, which took effect in 2018. GDPR requires websites to get consent before they store certain cookies, small files that remember things about a visitor, or send certain personal data to outside companies.</p>
 
-<p>The cookie banner exists because of GDPR (General Data Protection Regulation), the European Union's privacy law that took effect in 2018. GDPR requires websites to obtain consent before storing certain cookies on visitors' devices or transferring certain personal data to third parties.</p>
+<p>The banner is how a site asks for that consent. Until the visitor accepts, the site can't legally set optional cookies or run outside trackers. Once the visitor accepts, or in stricter places opts in to specific categories, the cookies and trackers can run.</p>
 
-<p>The banner is the consent mechanism. Before the visitor accepts, the website cannot legally set non-essential cookies or fire third-party trackers. Once the visitor accepts (or, in stricter jurisdictions, opts in to specific categories), the cookies and trackers can run.</p>
+<p>Other privacy laws have followed the same pattern: the UK's version of GDPR, Quebec's Law 25, California's CCPA and CPRA, and a growing list of U.S. state laws (Virginia, Colorado, Connecticut, Utah, Texas, and more). The details vary, but the idea is the same: track visitors only with their informed consent.</p>
 
-<p>Several other privacy regimes have followed similar patterns: the UK's GDPR equivalent, Quebec's Law 25, California's CCPA/CPRA, the various other U.S. state privacy laws (Virginia, Colorado, Connecticut, Utah, Texas, and growing). The specific requirements vary, but the underlying premise is the same: track visitors only with their informed consent.</p>
+<h2>Which sites need consent</h2>
 
-<h2>Which sites genuinely need consent</h2>
+<p>Three kinds of small-business website clearly fall under these laws:</p>
 
-<p>Three categories of small-business website are clearly within the regulated zone:</p>
+<p><strong>Sites that run outside advertising or remarketing pixels.</strong> The Facebook Pixel, Google Ads conversion tracking, Bing Ads, AdRoll, Criteo, and similar tools all require consent under GDPR and most other privacy laws. They exist to follow people from site to site, which is exactly what consent was designed to control.</p>
 
-<p><strong>Sites that run third-party advertising or remarketing pixels.</strong> Facebook Pixel, Google Ads conversion tracking, Bing Ads, AdRoll, Criteo, and similar tools all require consent under GDPR and most other privacy laws. Their entire purpose is cross-site tracking, which is exactly what consent was designed to gate.</p>
+<p><strong>Sites that run session recording.</strong> Hotjar, FullStory, Mouseflow, and similar tools record everything a visitor does on the page. California has taken a hard line on these tools, and lawsuits under its wiretap laws have been expensive for the companies using them.</p>
 
-<p><strong>Sites that run session recording.</strong> Hotjar, FullStory, Mouseflow, and similar tools record everything the visitor does on the page. The legal posture on session recording has gotten aggressive in California; the wiretap-statute lawsuits against companies running these tools have been expensive.</p>
+<p><strong>Sites that do business in the EU or use EU customer data.</strong> A U.S. small business that sends products to EU customers, has EU clients, or runs ads aimed at the EU falls fully under GDPR and needs a complete consent system.</p>
 
-<p><strong>Sites that genuinely do business in the EU or use EU customer data.</strong> A U.S. small business that ships products to EU customers, has EU clients, or runs EU-targeted ads is fully within GDPR scope and needs the full consent infrastructure.</p>
-
-<p>For sites in these categories, the banner is not theater; it is required, and the implementation needs to be done correctly (with granular consent, with tracker blocking before consent, with documented data-processor agreements).</p>
+<p>For these sites, the banner is required, and it has to be done right. That means consent by category, trackers blocked until consent, and signed agreements with every company that handles the data.</p>
 
 <h2>Which sites do not need consent</h2>
 
-<p>The category most small-business websites fall into:</p>
+<p>Most small-business websites belong in this group:</p>
 
-<p><strong>Sites that use only first-party, privacy-respecting tools.</strong> The site uses cookie-free analytics (Cloudflare Web Analytics, Umami, Plausible). The site uses privacy-respecting fonts (Bunny Fonts or self-hosted, not Google Fonts). The site has no advertising pixels, no remarketing tags, no session recorders. The site's contact form goes to a server that does not retain visitor data (Web3Forms, Formspark, similar).</p>
+<p><strong>Sites that use only their own tools and tools that respect privacy.</strong> The site's analytics use no cookies (Cloudflare Web Analytics, Umami, or Plausible). Its fonts come from Bunny Fonts or its own server instead of Google Fonts. It has no ad pixels, remarketing tags, or session recorders, and its contact form goes through a service that keeps no visitor data, such as Web3Forms or Formspark.</p>
 
-<p>For sites in this category, GDPR's consent requirement does not apply because the site is not doing the things consent gates. Adding a banner anyway is meaningless from a legal perspective and harmful from a conversion perspective. The banner reduces engagement, increases bounce rate, and hurts the visitor experience for no actual privacy benefit.</p>
+<p>For these sites, GDPR's consent rule doesn't apply, because the site doesn't do what consent is meant to control. A banner adds nothing legally and does harm in practice. It drives more visitors away and makes the visit worse, with no gain for anyone's privacy.</p>
 
 <h2>How I build sites that don't need a banner</h2>
 
-<p>For every site I build, the default stack is designed to avoid the consent threshold. The choices that compound:</p>
+<p>On every site I build, the standard tools stay below the point where consent is needed. These choices add up:</p>
 
-<p><strong>Analytics.</strong> Cloudflare Web Analytics and Umami, both cookie-free, neither tracking individuals. No GDPR consent requirement.</p>
+<p><strong>Analytics.</strong> Cloudflare Web Analytics and Umami. Neither uses cookies or tracks individuals, so GDPR requires no consent.</p>
 
-<p><strong>Fonts.</strong> Bunny Fonts (or self-hosted), not Google Fonts. The IP-transmission issue that Google Fonts triggers does not apply.</p>
+<p><strong>Fonts.</strong> Bunny Fonts or self-hosted fonts instead of Google Fonts, so no visitor's IP address (the device's internet address) goes to Google.</p>
 
-<p><strong>Maps.</strong> When a site needs an embedded map (service-area page, location indicator), I use OpenStreetMap via Leaflet rather than Google Maps. Same visual outcome, no Google data exchange.</p>
+<p><strong>Maps.</strong> When a site needs a map, such as on a service-area page, I use OpenStreetMap through Leaflet instead of Google Maps. It looks the same and shares no data with Google.</p>
 
-<p><strong>Forms.</strong> Web3Forms, which routes submissions to email without retaining visitor data on its own servers.</p>
+<p><strong>Forms.</strong> Web3Forms, which sends submissions to email without storing visitor data on its own servers.</p>
 
-<p><strong>Embeds.</strong> Facebook posts, Instagram embeds, Twitter/X cards, and YouTube videos all set tracking cookies when embedded directly. For sites that need them, I use privacy-respecting alternatives: youtube-nocookie.com instead of youtube.com, native code rather than embedded widgets where possible.</p>
+<p><strong>Embeds.</strong> Facebook posts, Instagram posts, Twitter/X cards, and YouTube videos all set tracking cookies when placed directly on a page. When a site needs them, I use privacy-friendly versions, such as youtube-nocookie.com instead of youtube.com, and plain code instead of embedded widgets where I can.</p>
 
-<p>The result is a site whose only network requests are to its own host, plus the small number of strictly-essential third parties (the form backend, the privacy-first analytics, the privacy-first fonts). None of those require consent under GDPR or any U.S. state law I am aware of.</p>
+<p>The result is a site that talks only to its own host and a few essential services: the form service, the analytics, and the fonts, all chosen for privacy. None of them require consent under GDPR or any U.S. state law I know of.</p>
 
 <h2>The published privacy policy</h2>
 
-<p>Every site I build ships with a privacy policy at <code>/privacy-policy/</code>. Even when consent is not required, transparency is, and the privacy policy is where it lives. The policy plainly names every third party that touches visitor data (Cloudflare, the form backend, the analytics provider), what data each one sees, what they do with it, and how to contact me with privacy concerns.</p>
+<p>Every site I build comes with a privacy policy at <code>/privacy-policy/</code>. Even when consent isn't required, openness is, and the privacy policy is where it lives. It names every outside company that touches visitor data (Cloudflare, the form service, and the analytics provider), what data each one sees, and what it does with it. It also says how to contact me about privacy.</p>
 
-<p>This is the right disclosure regardless of whether a banner is needed. Visitors who care about privacy can read the policy and confirm the site is doing what it claims; visitors who do not care can ignore it. Either way the disclosure is published.</p>
+<p>That disclosure is right whether or not a banner is needed. Visitors who care about privacy can read the policy and confirm the site does what it claims, and those who don't can skip it.</p>
 
 <h2>The case for adding a banner anyway</h2>
 
-<p>Two situations where I do recommend a banner even when it is not strictly required:</p>
+<p>There are two situations where I plan for a banner even when the law doesn't yet require one:</p>
 
-<p><strong>The client wants to add Google Analytics later.</strong> A site set up with privacy-first analytics that may pivot to GA4 in the future should ship with banner infrastructure ready to flip on. The cleanest approach is to build the site without a banner, document the conditions under which a banner becomes necessary, and add it when those conditions are met.</p>
+<p><strong>The client wants to add Google Analytics later.</strong> A site that might switch to GA4, the current Google Analytics, should be ready to turn a banner on. The cleanest approach is to launch without a banner, write down when one becomes necessary, and add it when that happens.</p>
 
-<p><strong>The business genuinely operates internationally.</strong> A U.S. small business that does not currently serve EU customers but might in the future is on the right side of GDPR today. If international expansion becomes real, the banner becomes real with it.</p>
+<p><strong>The business operates internationally.</strong> A U.S. small business with no EU customers today is on the right side of GDPR. If it expands overseas, the banner becomes necessary too.</p>
 
-<p>For both cases, I add the banner when the trigger arrives, not preemptively.</p>
+<p>In both cases, I add the banner when the need arrives, not in advance.</p>
 
 <h2>What a "good" banner looks like, when one is required</h2>
 
-<p>If a site genuinely needs a consent banner, the implementation matters. A few patterns separate good banners from theater:</p>
+<p>If a site needs a consent banner, how it's built matters. A good banner does three things:</p>
 
-<p><strong>The banner blocks trackers before consent.</strong> The trackers should not fire at all until the visitor has actively accepted. A banner that just sits on top while the trackers run anyway is illegal in most jurisdictions and is increasingly the basis for litigation.</p>
+<p><strong>The banner blocks trackers before consent.</strong> Trackers shouldn't run at all until the visitor accepts. A banner that sits on top while trackers run anyway is illegal in most places and increasingly leads to lawsuits.</p>
 
-<p><strong>"Reject all" is as easy as "Accept all."</strong> A banner that prominently shows "Accept" while burying "Reject" three menus deep is non-compliant under GDPR's "freely given consent" requirement.</p>
+<p><strong>"Reject all" is as easy as "Accept all."</strong> A banner with a big "Accept" button and "Reject" buried three menus deep fails GDPR's rule that consent be freely given.</p>
 
-<p><strong>The banner does not reappear immediately.</strong> Visitors who reject should not see the banner again on every page load. The choice should be respected for a reasonable duration.</p>
+<p><strong>The banner does not reappear immediately.</strong> Visitors who reject shouldn't see it again on every page. Their choice should last a reasonable time.</p>
 
-<p>For sites that need a banner, I implement the full flow: tracker blocking before consent, equal accept/reject buttons, granular category controls, and persistence across sessions. The banner is built to actually do its job, not as visual cover.</p>
+<p>For sites that need a banner, I build the full system. Trackers stay blocked until consent, accept and reject get equal buttons, visitors can choose by category, and their choice carries over from visit to visit. The banner does its job instead of serving as cover.</p>
 
 <h2>How to check what your current site needs</h2>
 
 <p>Two free tools tell you most of what you need to know:</p>
 
-<p><strong><a href="https://themarkup.org/blacklight" rel="noopener" class="inline-link">Blacklight</a></strong> by The Markup. Paste your URL, see exactly which trackers are loading. If the report shows third-party trackers (Facebook Pixel, Google Tag Manager, Hotjar, etc.), you need a banner. If it shows no trackers and only the privacy-respecting tools, you do not.</p>
+<p><strong><a href="https://themarkup.org/blacklight" rel="noopener" class="inline-link">Blacklight</a></strong> by The Markup. Paste in your web address and see which trackers load. If the report shows outside trackers, such as the Facebook Pixel, Google Tag Manager, or Hotjar, you need a banner. If it shows only privacy-friendly tools, you don't.</p>
 
-<p><strong>Browser DevTools, "Application" tab, "Cookies" panel.</strong> Visit your homepage in a fresh incognito window, open DevTools, and check what cookies were set on the first page load. If only your own domain's cookies are present (session cookies, theme preference, etc.), you are likely fine without consent. If third-party domains have set cookies, you need consent.</p>
+<p><strong>Browser DevTools, "Application" tab, "Cookies" panel.</strong> DevTools are the developer tools built into your browser. Open your home page in a fresh private window, open DevTools, and check which cookies the first page load set. If only your own domain set cookies, such as for a session or a theme preference, you're likely fine without consent. If other domains set cookies, you need consent.</p>
 
-<p>Most small-business websites that have never been audited fall into one of three patterns: clean and don't need a banner (about a third), light tracking that could be removed to clean up the consent surface (about a third), or heavy tracking that genuinely needs a properly-configured banner (the remaining third).</p>
+<p>Most small-business websites that have never been checked fall into one of three groups, each about a third of the total. Some are clean and need no banner. Some have light tracking that could be removed to avoid the need for consent, and the rest have heavy tracking that needs a properly built banner.</p>

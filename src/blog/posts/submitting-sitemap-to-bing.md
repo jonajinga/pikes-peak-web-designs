@@ -2,97 +2,97 @@
 title: "Submitting Your Sitemap to Bing Webmaster Tools"
 date: 2026-05-09
 label: "SEO Operations"
-description: "Bing's index now powers DuckDuckGo, Yahoo, ChatGPT search, and Perplexity. Submitting your sitemap to Bing in 2026 reaches more of the internet than it used to."
+description: "Bing's index now feeds DuckDuckGo, Yahoo, ChatGPT search, and Perplexity, so submitting your sitemap to Bing in 2026 reaches more people than it used to."
 ctaLabel: "Bing handled on launch day"
-ctaHeading: "I do the Bing setup the same week I do Google."
-ctaText: "The Bing dashboard takes about three minutes once Google is verified, because Bing imports the verification automatically. Worth it for the 12% of effective search traffic Bing now powers, including the AI assistants. Part of the standard plan."
+ctaHeading: "I set up Bing the same week as Google"
+ctaText: "Once Google is verified, the Bing setup takes about three minutes, because Bing imports the verification. It's worth it for the 12% of search traffic Bing now feeds, including the AI assistants. Part of the standard plan."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>This is part three of a three-part series. The <a href="/blog/sitemap-submission-overview/" class="inline-link">overview post</a> covers the broader plan. The <a href="/blog/submitting-sitemap-to-google/" class="inline-link">Google post</a> covers the Search Console flow. This post covers Bing Webmaster Tools, which is genuinely worth doing in 2026 because Bing's index reaches further than its raw 7% search-share number suggests.</p>
+<p>This is part three of a three-part series, after the <a href="/blog/sitemap-submission-overview/" class="inline-link">overview post</a> and the <a href="/blog/submitting-sitemap-to-google/" class="inline-link">Google post</a>. This one covers Bing Webmaster Tools, which is worth your time in 2026 because Bing reaches further than its 7% share of searches suggests.</p>
 
-<h2>What Bing's index actually covers</h2>
+<h2>What Bing's index covers</h2>
 
-<p>Bing's headline US search-share number in 2026 is around 7%. That number alone would be an awkward case for any small business owner who is short on time. The reason to do the Bing setup anyway is that Bing's index is consumed by far more than just bing.com.</p>
+<p>On its own, Bing.com handles about 7% of U.S. searches. On that number alone, a busy owner could skip it. But many other services draw on Bing's index (its records of web pages):</p>
 
 <ul>
-  <li><strong>Bing.com</strong> itself, ~7% of US search.</li>
-  <li><strong>DuckDuckGo</strong> uses Bing as its primary index source. ~3% of US search, growing in privacy-conscious demographics.</li>
-  <li><strong>Yahoo</strong> Search has used Bing as its backend for years. Small but non-zero.</li>
-  <li><strong>ChatGPT search</strong> (OpenAI) uses Bing as one of its search providers. As ChatGPT integrates search more deeply, this share is climbing.</li>
-  <li><strong>Perplexity</strong>, the AI search assistant, uses a mix of providers but Bing is one of them.</li>
-  <li><strong>Microsoft Copilot</strong> in Edge, Office, Windows: all use Bing.</li>
-  <li><strong>Ecosia</strong> and several smaller engines: Bing-powered.</li>
+  <li><strong>Bing.com</strong> itself, about 7% of U.S. search.</li>
+  <li><strong>DuckDuckGo</strong>, which uses Bing as its main source. It has about 3% of U.S. search and is growing among privacy-minded people.</li>
+  <li><strong>Yahoo</strong> Search, which has run on Bing for years. Its share is small but not zero.</li>
+  <li><strong>ChatGPT search</strong>, which uses Bing as one of its sources, a share that grows as ChatGPT leans more on search.</li>
+  <li><strong>Perplexity</strong>, the AI search assistant, which counts Bing among its sources.</li>
+  <li><strong>Microsoft Copilot</strong> in Edge, Office, and Windows.</li>
+  <li><strong>Ecosia</strong> and several smaller engines.</li>
 </ul>
 
-<p>The effective reach of being well-indexed in Bing is closer to 12% of US search traffic and is meaningfully higher in AI-assistant search specifically. For a small business that wants to be the answer when somebody asks ChatGPT "what's a good roofer in Colorado Springs", being in Bing's index is the table-stakes infrastructure.</p>
+<p>All told, Bing reaches closer to 12% of U.S. search, and more than that in AI-assistant search. To be the answer when someone asks ChatGPT for "a good roofer in Colorado Springs," you need to be in Bing's index.</p>
 
 <h2>The "Import from Google Search Console" trick</h2>
 
-<p>Bing Webmaster Tools makes the cross-engine setup much faster than going through both flows independently, because it lets you import everything from your existing Search Console property in a single click. Specifically, if you have already verified your domain in Google and submitted your sitemap there, the Bing flow becomes:</p>
+<p>If you've already verified your domain with Google and submitted your sitemap there, Bing can copy all of it:</p>
 
 <ol>
-  <li>Sign into <a href="https://www.bing.com/webmasters" rel="noopener" class="inline-link">Bing Webmaster Tools</a>. The same Microsoft account works whether you have an existing Bing account or are signing in for the first time.</li>
+  <li>Sign in to <a href="https://www.bing.com/webmasters" rel="noopener" class="inline-link">Bing Webmaster Tools</a> with any Microsoft account.</li>
   <li>On the welcome screen, choose <strong>Import sites from Google Search Console</strong>.</li>
-  <li>Authorize Bing to read your Search Console properties. (Microsoft asks Google for read-only access to your property list and verification status. The OAuth scopes are limited to Search Console only.)</li>
-  <li>Pick which properties to import. For a single-site setup, this is one checkbox.</li>
-  <li>Click <strong>Import</strong>. Bing copies the verification status, the sitemaps you have already submitted, and the basic property settings.</li>
+  <li>Give Bing read-only access to your list of Search Console sites and their verification status. It asks for nothing else.</li>
+  <li>Pick the sites to import. For a single site, that's one checkbox.</li>
+  <li>Click <strong>Import</strong>. Bing copies the verification, your submitted sitemaps, and the basic settings.</li>
 </ol>
 
-<p>The import takes about thirty seconds. After it finishes, your Bing property is fully set up: domain verified, sitemap submitted, indexing report wired up. No DNS records, no separate verification flow, nothing.</p>
+<p>The import takes about 30 seconds, and your Bing property is then fully set up, with no DNS records to add and no separate verification.</p>
 
 <h2>Manual setup if you skip the import</h2>
 
-<p>If you prefer to set up Bing manually (sometimes desirable on a client engagement where you don't want to grant Bing OAuth access to your Search Console), the manual flow mirrors Google's:</p>
+<p>You might set up Bing by hand on a client's site, for example, so Bing doesn't get access to their Search Console. The steps mirror Google's:</p>
 
 <ol>
-  <li>Click <strong>Add Site</strong> in Bing Webmaster Tools. Enter the apex domain.</li>
-  <li>Verify ownership. Bing supports three methods: an XML file uploaded to your site root, a meta tag in the homepage <code>&lt;head&gt;</code>, or a DNS CNAME record. The DNS method is the cleanest because it works the same way Google's TXT method works and does not require touching your codebase.</li>
-  <li>Once verified, navigate to <strong>Sitemaps</strong> in the left nav.</li>
-  <li>Click <strong>Submit Sitemap</strong>. Enter the full URL of your sitemap (Bing wants the full URL, unlike Google which auto-fills the prefix).</li>
-  <li>Click <strong>Submit</strong>. Bing fetches the sitemap and queues every URL inside.</li>
+  <li>Click <strong>Add Site</strong> and enter the main domain, without "www."</li>
+  <li>Verify ownership with an XML file uploaded to the site, a meta tag in the home page's code (the <code>&lt;head&gt;</code>), or a DNS CNAME record. The DNS record is the cleanest, since it works like Google's TXT method and leaves your site's code alone.</li>
+  <li>Open <strong>Sitemaps</strong> in the left menu.</li>
+  <li>Click <strong>Submit Sitemap</strong> and enter the sitemap's full address. Unlike Google, Bing doesn't fill in the first part for you.</li>
+  <li>Click <strong>Submit</strong>, and Bing lines up every page in the sitemap for a visit.</li>
 </ol>
 
-<p>The whole manual setup takes about ten minutes. The imported setup takes thirty seconds.</p>
+<p>By hand, the setup takes about 10 minutes.</p>
 
 <h2>The Bing dashboard, in plain language</h2>
 
-<p>Bing Webmaster Tools has a similar shape to Search Console but the layout and naming are different. The reports worth checking after submission:</p>
+<p>The layout and names differ from Search Console. These reports are worth checking after you submit:</p>
 
 <ul>
-  <li><strong>Site Explorer.</strong> Bing's tree view of your site as it has crawled it. Shows every discovered URL, its status (indexed / pending / blocked), the inbound link count, and the most recent crawl date. Good for spotting URLs that should not be indexed (drafts, internal pages) that have leaked into the crawl.</li>
-  <li><strong>Search Performance.</strong> Bing's equivalent of Google's Performance report. Same four metrics: clicks, impressions, CTR, average position. The numbers are smaller (Bing's traffic is lower) but the queries are sometimes different from Google's, which is useful intelligence.</li>
-  <li><strong>Sitemaps.</strong> Status of submitted sitemaps. Last read date, URL count, indexed count. A typical small site indexes 60-90% of its sitemap on Bing within four weeks.</li>
-  <li><strong>SEO Reports.</strong> A genuinely useful Bing-specific feature: it crawls your site and flags technical SEO issues (missing meta descriptions, duplicate title tags, non-mobile-friendly pages, slow-loading pages). The reports are honest and the recommendations are actionable. I have caught real issues here that Google Search Console did not surface.</li>
-  <li><strong>URL Inspection.</strong> Same as Google's. Paste a URL, see whether it is indexed, request priority indexing if it is not.</li>
+  <li><strong>Site Explorer.</strong> A map of your site as Bing sees it, showing whether each page is indexed, waiting, or blocked, how many links point to it, and when Bing last visited. Use it to spot drafts or internal pages that shouldn't be in search.</li>
+  <li><strong>Search Performance.</strong> The same four numbers as Google's Performance report: clicks, impressions (times you appeared in results), click-through rate, and average position. The numbers are smaller, but the searches sometimes differ from Google's, which is worth knowing.</li>
+  <li><strong>Sitemaps.</strong> When Bing last read each sitemap, how many pages it lists, and how many are indexed. A typical small site reaches 60% to 90% indexed on Bing within four weeks.</li>
+  <li><strong>SEO Reports.</strong> A useful scan that only Bing offers. It flags technical problems such as missing page descriptions, repeated titles, pages that work poorly on phones, and slow pages. The advice is accurate and practical, and I've caught problems here that Google Search Console missed.</li>
+  <li><strong>URL Inspection.</strong> Paste a page address to see whether it's indexed, and ask for a priority visit if it isn't, just as on Google.</li>
 </ul>
 
-<h2>IndexNow: the Bing protocol that runs ongoing</h2>
+<h2>IndexNow: keeping Bing up to date</h2>
 
-<p>Bing supports a push protocol called IndexNow that turns sitemap submission from a one-shot setup into a continuous workflow. The pattern: every time a page on your site changes, your hosting infrastructure sends a tiny HTTP POST to the IndexNow endpoint announcing the URL. Bing re-crawls that specific URL within minutes (often seconds), much faster than the standard background crawl.</p>
+<p>Bing supports IndexNow, a free service that keeps your submission current. Each time a page changes, your host sends IndexNow a short message with that page's address. Bing then revisits the page within minutes, often seconds, instead of waiting for its regular visit.</p>
 
-<p>The setup, if your site is on Cloudflare, is one toggle:</p>
+<p>If your site runs on Cloudflare, setup is one switch:</p>
 
 <ol>
-  <li>In the Cloudflare dashboard, navigate to your site's <strong>Cache</strong> settings.</li>
+  <li>In the Cloudflare dashboard, open your site's <strong>Cache</strong> settings.</li>
   <li>Find <strong>Configure IndexNow</strong>.</li>
-  <li>Toggle it on.</li>
+  <li>Turn it on.</li>
 </ol>
 
-<p>That is the entire setup. Cloudflare watches for content changes (cache invalidations, new deploys) and automatically pings IndexNow for every changed URL. Bing and Yandex both consume IndexNow notifications. Google does not yet, though Microsoft has been lobbying for them to.</p>
+<p>Cloudflare then alerts IndexNow whenever a page changes, such as when a new version of the site goes live. Bing and Yandex both use these alerts. Google doesn't yet, though Microsoft has been pressing it to.</p>
 
-<p>The practical effect: a new blog post on a Cloudflare-hosted site appears in Bing search results within 5-15 minutes of publication, instead of waiting 1-3 days for the next scheduled crawl. For a small business that posts content regularly, the difference compounds over the year.</p>
+<p>A new blog post on a site hosted through Cloudflare shows up in Bing within five to 15 minutes, instead of one to three days. If you post often, that adds up over a year.</p>
 
 <h2>What I check after the Bing setup</h2>
 
-<p>About a week after submission, I take a quick pass through the Bing dashboard for every client site:</p>
+<p>About a week after setup, I check four things for every client site:</p>
 
 <ol>
-  <li><strong>Sitemap status.</strong> Was the sitemap fetched successfully? Is the indexed count climbing?</li>
-  <li><strong>SEO Reports.</strong> Any flagged issues to address? Often Bing surfaces things Google ignored: a missing alt text, a page over the recommended title length, a duplicated H1.</li>
-  <li><strong>Search Performance.</strong> Any impressions yet? For brand-new sites, no. For sites that already had visibility on Google, often yes — Bing's index can pick up established sites faster than its crawl-from-scratch flow suggests.</li>
-  <li><strong>IndexNow status.</strong> Is the protocol receiving notifications? The dashboard has a small section that shows the last few IndexNow pings, useful for confirming the toggle is working.</li>
+  <li><strong>Sitemap status.</strong> Did Bing read the sitemap, and is the indexed count climbing?</li>
+  <li><strong>SEO Reports.</strong> Is anything flagged? Bing often catches what Google ignores: a missing image description (alt text), a page title that runs too long, or a repeated main heading.</li>
+  <li><strong>Search Performance.</strong> Brand-new sites won't have impressions yet. Sites already showing up on Google often do, because Bing can pick up established sites faster than you'd expect.</li>
+  <li><strong>IndexNow status.</strong> The dashboard lists the latest alerts, which confirms the switch is working.</li>
 </ol>
 
-<p>That is the entire Bing operations rhythm. Two visits to the dashboard total: one for setup, one a week later for verification. After that the indexing runs in the background and IndexNow handles updates. The investment of effort is small, and the AI-assistant search visibility it unlocks is increasingly relevant in 2026.</p>
+<p>That's all the upkeep Bing needs: one visit to set it up and one a week later to check it. After that, indexing runs on its own and IndexNow handles updates. It takes little effort, and the reach it brings in AI-assistant search matters more every year.</p>

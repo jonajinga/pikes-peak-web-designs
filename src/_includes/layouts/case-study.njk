@@ -27,7 +27,7 @@ layout: layouts/base.njk
     <span class="case-study-print-cover-summary-label">Executive summary</span>
     <ul class="case-study-print-cover-bullets">
       {% for m in metrics %}
-        <li><strong>{{ m.label }}:</strong> {{ m.value or m.after }}{% if m.note %} &mdash; {{ m.note }}{% endif %}</li>
+        <li><strong>{{ m.label }}:</strong> {{ m.value or m.after }}{% if m.note %}. {{ m.note }}{% endif %}</li>
       {% endfor %}
     </ul>
   </div>
@@ -61,7 +61,7 @@ layout: layouts/base.njk
     <div class="case-study-toolbar" role="toolbar" aria-label="Case study actions">
       <button type="button" class="btn btn-outline btn-sm" onclick="window.print()" aria-label="Print or save as PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-        Print / Save as PDF
+        Print or save as PDF
       </button>
     </div>
   </div>
@@ -103,12 +103,13 @@ layout: layouts/base.njk
 
 <section class="cta-section case-study-cta">
   <div class="cta-inner">
-    <span class="section-label">Ready to see numbers like this on your site?</span>
-    <h2>Twenty minutes is plenty.</h2>
-    <p>Book a discovery call. Bring your URL and your goals. I will tell you honestly what is achievable and what is not.</p>
+    <span class="section-label">Ready for a site built the same way?</span>
+    <h2>Let's build yours</h2>
+    <p>Sign up when you're ready. If you'd like to talk first, bring your current site's address and your goals, and I'll tell you plainly what's achievable.</p>
     <div class="cta-buttons">
-      <a href="/contact/" class="btn btn-primary btn-lg">Book a discovery call</a>
+      <a href="/subscribe/" class="btn btn-primary btn-lg">Start now</a>
     </div>
+    <p class="cta-sub">Prefer to talk first? <a href="/contact/">Book a free call</a>. It takes 20 to 30 minutes on Google Meet.</p>
   </div>
 </section>
 
