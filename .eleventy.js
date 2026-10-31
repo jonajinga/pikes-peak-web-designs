@@ -75,6 +75,18 @@ export default function (eleventyConfig) {
     );
   });
 
+  // Mark every <script> with data-cfasync="false" so Cloudflare's Rocket
+  // Loader (a zone setting on pikespeakwebdesigns.com) leaves it alone.
+  // Rocket Loader holds scripts back until after the first paint and runs
+  // them in its own order, which delayed the light/dark theme script and
+  // the main script and made the first load flash and stutter. The site's
+  // scripts are already inline-and-tiny or deferred, so they gain nothing
+  // from it.
+  eleventyConfig.addTransform("cfasyncOff", (content, outputPath) => {
+    if (!outputPath || !outputPath.endsWith(".html")) return content;
+    return content.replace(/<script\b(?![^>]*\bdata-cfasync=)/gi, '<script data-cfasync="false"');
+  });
+
   // HTML minification (production only)
   if (process.env.NODE_ENV === "production") {
     eleventyConfig.addTransform("htmlmin", async (content, outputPath) => {
@@ -313,11 +325,12 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
       // arrives in parallel and upgrades the page. Cache hit means
       // 0 CSS network cost on every subsequent navigation.
       //
-      // The loop below is left in place but no-ops because base.njk
-      // now emits <link rel="preload" ...> instead of <link rel="stylesheet" ...>,
-      // so the regex on line 373 never matches anything and no file
-      // is rewritten. Keeping the loop disabled (early return) so the
-      // build doesn't waste time running PurgeCSS per page for nothing.
+      // October 2026: base.njk loads style.css as a normal render-blocking
+      // <link rel="stylesheet">. The async swap painted pages half-styled
+      // and then restyled them, which read as a flash on every first visit.
+      // The per-page inlining loop below stays disabled (if (false)); it
+      // would otherwise match that <link> and inline the CSS into every
+      // page, the approach rejected above.
       if (false) try {
         const purgedSiteCss = fs.readFileSync(cssFile, "utf8");
         const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true })
