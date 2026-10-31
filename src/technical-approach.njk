@@ -156,7 +156,6 @@ description: "The tools, targets, and reasons behind every site I build: Elevent
         <li><strong>CSS joined at build time.</strong> One stylesheet means one HTTP request and no chain of <code>@import</code> requests. A content-hash query string (<code>?v=4a701c154dc9</code>) handles cache busting.</li>
         <li><strong>Minified HTML, CSS, and JS.</strong> Production builds run through <code>html-minifier-terser</code> with <code>minifyCSS</code> and <code>minifyJS</code> turned on.</li>
         <li><strong>Cloudflare's edge.</strong> Static files come from the CDN location closest to the visitor, with HTTP/3, Brotli compression, and Early Hints where supported.</li>
-        <li><strong>Long-term caching.</strong> Asset URLs are content-hashed, so files can be cached for a year and still update the moment they change.</li>
         <li><strong>No web fonts on the first lines of content.</strong> The hero falls back to system fonts, so the first paint always has readable text.</li>
         <li><strong>Preconnect to the font server.</strong> A single <code>preconnect</code> hint to <code>fonts.bunny.net</code> in <code>&lt;head&gt;</code> saves about 200 ms on font loading for first-time visitors.</li>
         <li><strong>No critical-CSS extraction.</strong> The stylesheet is small enough (under 30 KB gzipped) to send in full, so the whole sheet arrives before the page renders.</li>
@@ -197,7 +196,6 @@ description: "The tools, targets, and reasons behind every site I build: Elevent
         <li><strong>Fluid type and spacing</strong> with <code>clamp()</code>. Most type tokens are <code>clamp(min, preferred, max)</code>, so they scale with the viewport without breakpoints.</li>
         <li><strong>Container queries</strong> for components that respond to their parent instead of the viewport, mostly cards in flexible grids.</li>
         <li><strong>Cascade layers</strong> (<code>@layer reset, tokens, utilities, components, pages</code>) keep specificity predictable, so a late utility never outranks a component by accident.</li>
-        <li><strong>Cache busting:</strong> the stylesheet carries a content-hash query string (<code>style.css?v=4a701c154dc9</code>), so each deploy refreshes the cache for returning visitors all at once.</li>
       </ul>
 
       <h3>Design system</h3>
@@ -223,7 +221,6 @@ description: "The tools, targets, and reasons behind every site I build: Elevent
       <ul>
         <li><strong>No framework, router, or state library.</strong> Every script is a small, self-contained module.</li>
         <li><strong>Deferred and module scripts.</strong> Every script loads with <code>defer</code> or as <code>type="module"</code>, so none blocks parsing.</li>
-        <li><strong>An inline theme script in <code>&lt;head&gt;</code>.</strong> It reads <code>localStorage</code> and <code>prefers-color-scheme</code> and sets <code>data-theme</code> on <code>&lt;html&gt;</code> before paint, which prevents a flash of the wrong theme.</li>
         <li><strong>Inline event handlers as a backup</strong> for the menu toggle, search, and theme toggle. The minifier can occasionally break event-listener binding on deferred scripts, so inline <code>onclick</code> attributes act as a safety net.</li>
         <li><strong>IntersectionObserver for the blog contents list.</strong> The sticky table of contents highlights the current section as the visitor scrolls, with no scroll-event listeners.</li>
         <li><strong>Pagefind UI</strong>: a small ESM module bundled by Pagefind, loaded only on pages with a <code>#search</code> container.</li>
@@ -320,7 +317,6 @@ description: "The tools, targets, and reasons behind every site I build: Elevent
         <li>Semantic HTML: proper <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code> landmarks, headings in order, lists that are lists, and buttons that are buttons.</li>
         <li>A skip-to-content link as the first focusable element.</li>
         <li>A visible focus ring (a 3 px gold ring at a 3 px offset) on every interactive control.</li>
-        <li>Tap targets of at least 44x44 CSS pixels.</li>
         <li>Form labels tied to their inputs with <code>for</code> and <code>id</code>, and errors announced through <code>role="alert"</code>.</li>
         <li>Radio and checkbox groups wrapped in <code>role="radiogroup"</code> or <code>role="group"</code>, with <code>aria-labelledby</code> pointing to the visible label.</li>
         <li>Decorative SVGs marked <code>aria-hidden="true"</code> and <code>focusable="false"</code>, and meaningful images given real <code>alt</code> text.</li>
@@ -329,7 +325,7 @@ description: "The tools, targets, and reasons behind every site I build: Elevent
       </ul>
 
       <h2 id="security">Security</h2>
-      <p>Code that doesn't exist can't be hacked. Staying static keeps the attack surface close to zero.</p>
+      <p>Code that doesn't exist can't be hacked, and a static site leaves almost nothing to attack.</p>
       <ul>
         <li><strong>No server-side runtime.</strong> There's no PHP, no Node runtime, and no application server in the request path, so there's nothing open to remote code execution, no database to SQL-inject, and no session store to hijack.</li>
         <li><strong>No plugins.</strong> WordPress plugins have produced CVEs for more than a decade. My sites have none.</li>
@@ -423,12 +419,12 @@ description: "The tools, targets, and reasons behind every site I build: Elevent
       <p>11ty handles it well, and I've done it. Build time grows roughly in line with the number of posts, and a 200-post blog builds in under 10 seconds on Cloudflare's CI. Incremental builds (the <code>--incremental</code> flag) take under a second locally while writing. Pagefind indexes the whole blog in milliseconds, because it reads the finished HTML, not the source templates.</p>
 
       <h3>What if I need a contact form that does more than send email?</h3>
-      <p>Web3Forms covers about 95% of small-business form needs. For the other 5% (CRM connections, routing by ZIP code, and conditional steps), I use Cloudflare Workers, which are serverless edge functions, so there's still no server to maintain. For anything that's really an application (booking calendars, live chat, or client portals with accounts), I connect a service built for the job, such as Calendly or Tawk.to, instead of building one from scratch.</p>
+      <p>Web3Forms covers about 95% of small-business form needs. For the other 5% (CRM connections, routing by ZIP code, and conditional steps), I use Cloudflare Workers, which are serverless edge functions, so there's still no server to maintain. For anything that works like an application (booking calendars, live chat, or client portals with accounts), I connect a service built for the job, such as Calendly or Tawk.to, instead of building one from scratch.</p>
 
       <h3>Can I see the source code before I buy?</h3>
       <p>Yes. The site you're reading is a fair sample of what I build, and you can view its source in your browser. I'm glad to share this site's GitHub repository on request.</p>
 
-      <h3>What do you do that a typical agency doesn't?</h3>
+      <h3>What do you do that other web designers don't?</h3>
       <p>Nothing exotic. I put more time into measurement (Lighthouse CI, real-user monitoring, and hands-on accessibility testing) than into new tools. The right tools for a marketing site have been stable for five years, and I've chosen to use them with discipline.</p>
 
       <h3>Can I run my own hosting?</h3>

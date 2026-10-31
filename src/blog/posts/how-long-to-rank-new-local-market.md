@@ -12,7 +12,7 @@ tags: [post]
 
 <p>Every service business owner asks me on the first call: how long until I rank? The answer is longer than sales pitches promise, shorter than skeptics warn, and predictable once you know what's happening at each stage.</p>
 
-<p>Here's the timeline for a new website in a new local market, with the milestones that show your search work (SEO, or search engine optimization) is paying off before the rankings appear.</p>
+<p>Here's the timeline for a new website in a new local market. It includes the milestones that show your search work (SEO, or search engine optimization) is paying off before the rankings appear.</p>
 
 <h2>The premise: a brand-new domain, freshly launched</h2>
 
@@ -30,7 +30,7 @@ tags: [post]
 
 <h2>Week 1: indexing begins</h2>
 
-<p>The first week is mostly invisible. The sitemap goes to Google Search Console and Bing Webmaster Tools, Google's crawler follows links from the homepage through the site, and Google verifies the Google Business Profile if it was just claimed.</p>
+<p>The first week is mostly invisible. The sitemap goes to Google Search Console and Bing Webmaster Tools, and Google's crawler follows links from the homepage through the site. If the Google Business Profile was just claimed, Google verifies it.</p>
 
 <p>By the end of week one, expect:</p>
 
@@ -75,7 +75,7 @@ tags: [post]
 
 <h2>Months 2-3: the local pack begins to respond</h2>
 
-<p>Around 60 to 90 days, most well-built local service sites start showing up meaningfully in Google's map results (the "local pack"). The site has earned some trust, and the profile has enough reviews and activity to compete for the top three spots on some searches.</p>
+<p>Around 60 to 90 days, most well-built local service sites start showing up regularly in Google's map results (the "local pack"). The site has earned some trust, and the profile has enough reviews and activity to compete for the top three spots on some searches.</p>
 
 <p>Expect by month three:</p>
 
@@ -90,7 +90,7 @@ tags: [post]
 
 <h2>Months 4-6: organic ranks climb into top 10</h2>
 
-<p>In months four to six, your main service searches move from page two to page one. Steady publishing has shown Google your expertise, the site has earned links from directories, local mentions, and the occasional partner, and the profile has enough reviews to contend in the map results.</p>
+<p>In months four to six, your main service searches move from page two to page one. Steady publishing has shown Google your expertise, and the site has earned links from directories, local mentions, and the occasional partner. The profile also has enough reviews to contend in the map results.</p>
 
 <p>Expect by month six:</p>
 
@@ -138,6 +138,6 @@ tags: [post]
 
 <h2>The summary</h2>
 
-<p>For a well-built site in a moderately competitive market without paid ads, expect meaningful search traffic by month three, steady leads by month six, and a strong place in the map results by month twelve. Faster promises usually cost more for the same result on a weaker footing, and "you can't rank without ads" is advice from before modern local search.</p>
+<p>For a well-built site in a moderately competitive market without paid ads, expect meaningful search traffic by month three and steady leads by month six. By month twelve, expect a strong place in the map results. Faster promises usually cost more for the same result on a weaker footing, and "you can't rank without ads" is advice from before modern local search.</p>
 
 <p>The biggest variable is a small monthly routine: one or two new pieces of content, a few new reviews, and a quarterly check of your listings. Sites that keep it up end year one well ahead, and the gains last.</p>

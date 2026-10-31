@@ -42,7 +42,7 @@ tags: [post]
 
 <p><strong>The site keeps working over time.</strong> Eleventy projects from five years ago still build today with small changes. By contrast, WordPress themes can break when the PHP version updates, and React-based tools have reinvented themselves between major versions.</p>
 
-<p><strong>Build times stay fast.</strong> Adding a hundred pages doesn't noticeably slow the build. Adding a blog post takes two steps: I save the file and watch the browser refresh in two seconds. That speed adds up across thousands of small updates over the years you're a client.</p>
+<p><strong>Build times stay fast.</strong> Adding 100 pages doesn't noticeably slow the build. Adding a blog post takes two steps: I save the file and watch the browser refresh in two seconds. That speed adds up across thousands of small updates over the years you're a client.</p>
 
 <h2>How a typical Eleventy project looks</h2>
 

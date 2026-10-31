@@ -45,7 +45,7 @@ tags: [post, local-seo]
 
 <h2>NAP Consistency Across the Web</h2>
 
-<p>NAP stands for your business name, address, and phone number. Google compares these details across dozens of online directories, such as Yelp, Angi, HomeAdvisor, BBB, and Yellow Pages, and when they match everywhere, Google is more confident your business is legitimate.</p>
+<p>NAP stands for your business name, address, and phone number. Google compares these details across dozens of online directories, such as Yelp, Angi, HomeAdvisor, BBB, and Yellow Pages. When they match everywhere, Google is more confident your business is legitimate.</p>
 
 <p>Mismatches, such as different phone numbers, slightly different names, or old addresses, confuse Google and hold your ranking down. Check your listings and make them match.</p>
 

@@ -83,7 +83,7 @@ tags: [post]
   <li>Do you offer financing?</li>
 </ul>
 
-<p>Customers ask these questions. Answering them on the page removes doubts and makes your site more useful than competitors' sites that skip them.</p>
+<p>Answering these common questions on the page removes doubts and makes your site more useful than competitors' sites.</p>
 
 <h2>Trust Signals on Every Service Page</h2>
 
@@ -99,7 +99,7 @@ tags: [post]
 
 <div class="post-cta-box">
   <h3>I write the pages, and you handle the calls</h3>
-  <p>Every site I build comes with service pages I write myself, in your voice, organized for search and for bringing in calls. It's part of the standard plan, with no separate copywriting fee. The first call is free: 20 to 30 minutes on Google Meet.</p>
+  <p>I write every service page myself, in your voice, as part of the standard plan. The first call is free: 20 to 30 minutes on Google Meet.</p>
   <a href="/contact/" class="btn btn-primary">Book a free call</a>
 </div>
 

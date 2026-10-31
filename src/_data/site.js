@@ -8,7 +8,6 @@ export default {
   voice: {
     signature: "A website you never have to worry about.",
     markline: "A website you never have to worry about",
-    signoff: "Boring is the feature.",
     methodology: "The Service Site Standard",
     forbiddenWords: [
       "synergy",

@@ -10,13 +10,13 @@ layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>Google Search Console (GSC, once called Webmaster Tools) is Google's free dashboard for site owners, and the most important tool for any site that wants to be found on Google. It shows which searches bring visitors, which pages Google has added to its index (the catalog it draws results from) or refused and why, problems it found on phones, and warnings about your structured data (code that describes your business to search engines). No other tool, including Google Analytics and Cloudflare, has this information.</p>
+<p>Google Search Console (GSC, once called Webmaster Tools) is Google's free dashboard for site owners, and the most important tool for any site that wants to be found on Google. It shows which searches bring visitors and which pages Google has added to its index (the catalog it draws results from) or refused, and why. It also flags problems on phones and warnings about your structured data (code that describes your business to search engines). No other tool, including Google Analytics and Cloudflare, has this information.</p>
 
 <p>I set it up on every site I build, as part of the standard plan. Most clients never open the dashboard, but without it I'd have no way to tell whether Google is finding the site. Here's what I set up and what I watch in the first 90 days.</p>
 
 <h2>Step 1: Verify the property</h2>
 
-<p>First I prove to Google that I run the domain. Of the several ways to do it, the best for a long-term client is a DNS TXT record (a short text note in your domain's settings), because it survives moves, redesigns, and platform changes. The others are uploading a file, adding a page tag, or linking Google Analytics or Google Tag Manager.</p>
+<p>First I prove to Google that I run the domain. Of the several ways to do it, a DNS TXT record (a short text note in your domain's settings) is best for a long-term client. It survives moves, redesigns, and platform changes. The others are uploading a file, adding a page tag, or linking Google Analytics or Google Tag Manager.</p>
 
 <ol>
   <li>Add the domain as a "Domain" property, not the "URL prefix" kind, so it covers every subdomain (such as shop.yourbusiness.com) and both http and https at once.</li>
@@ -52,7 +52,7 @@ tags: [post]
 
 <h2>Step 5: Save a baseline screenshot</h2>
 
-<p>Most agencies skip this. Before any improvement work, I save a screenshot of the Performance report for the past 28 days. On a new site it's mostly empty, but zero is still a starting point, and on an existing site it records the searches, appearances in results (impressions), and clicks before the rebuild.</p>
+<p>Most agencies skip this. Before any improvement work, I save a screenshot of the Performance report for the past 28 days. On a new site it's mostly empty, but zero is still a starting point. On an existing site, it records the searches, appearances in results (impressions), and clicks before the rebuild.</p>
 
 <p>Ninety days after launch, when a client asks whether the rebuild helped, comparing the new numbers with the old is the only rigorous answer. Without a baseline, it's a guess.</p>
 
@@ -78,7 +78,7 @@ tags: [post]
 
 <p><strong>Check the Performance report monthly.</strong> Set it to the past 28 days, sort by clicks, and read the top searches. It shows how people find your site far better than headline numbers like total visits.</p>
 
-<p><strong>Use URL Inspection when you publish a new page.</strong> Paste the page's address into the inspection box and click "Request Indexing." Google doesn't always need the prompt, and it takes 30 seconds.</p>
+<p><strong>Use URL Inspection when you publish a new page.</strong> Paste the page's address into the inspection box and click "Request Indexing." Google doesn't always need the prompt, but sometimes it does, and it takes 30 seconds.</p>
 
 <p>The deeper work, such as fixing Coverage errors and schema warnings or looking into a sudden traffic drop, is part of my regular maintenance and included in the monthly plan.</p>
 

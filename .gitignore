@@ -5,3 +5,7 @@ _site/
 *.log
 .DS_Store
 Thumbs.db
+
+# Local working files and review screenshots
+.work/
+screenshots/

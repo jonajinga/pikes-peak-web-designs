@@ -10,9 +10,9 @@ layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>The favicon is the small icon that stands for your site: 16 by 16 pixels in the browser tab, and a little larger on a phone's home screen and in the bookmarks bar. Few visitors look at it on purpose, yet a missing one is a clear sign of a careless website. The browser fills the gap with a generic page icon, and the visitor reads it as a business that didn't finish the job.</p>
+<p>The favicon is the small icon that stands for your site. It's 16 by 16 pixels in the browser tab, and a little larger on a phone's home screen and in the bookmarks bar. Few visitors look at it on purpose, yet a missing one is a clear sign of a careless website. The browser fills the gap with a generic page icon, and the visitor reads it as a business that didn't finish the job.</p>
 
-<p>Here's what a complete set looks like in 2026, why the old single icon file is no longer enough, how I make the set for every site, and how to check yours with a free tool I recommend, <a href="https://favicraft.com/check" rel="noopener" class="inline-link">Favicraft</a>.</p>
+<p>Here's what a complete set looks like in 2026, why one old icon file is no longer enough, and how I make the set for every site. You can check your own with a free tool I recommend, <a href="https://favicraft.com/check" rel="noopener" class="inline-link">Favicraft</a>.</p>
 
 <h2>Why the favicon matters</h2>
 
@@ -61,9 +61,9 @@ tags: [post]
 
 <ol>
   <li>I draw the master icon as an SVG at <code>src/assets/img/favicon.svg</code> and tune it by hand to read clearly at 16 pixels. If it doesn't read at 16, it doesn't go live.</li>
-  <li>A small script runs when the site is built. It opens the SVG in headless Chrome (a browser without a screen), saves it at 32, 180, 192, and 512 pixels, and writes the older <code>favicon.ico</code> and a <code>site.webmanifest</code> with the brand name and theme color.</li>
+  <li>A small script runs when the site is built. It opens the SVG in headless Chrome (a browser without a screen) and saves it at 32, 180, 192, and 512 pixels. It also writes the older <code>favicon.ico</code> and a <code>site.webmanifest</code> with the brand name and theme color.</li>
   <li>The page template's <code>&lt;head&gt;</code> section lists all six files with the right <code>rel</code> and <code>sizes</code> labels, so each browser picks the right icon.</li>
-  <li>A plugin for Eleventy (the tool that builds my sites) adds a fingerprint of each file's contents to its address, so browsers fetch a new icon as soon as it changes.</li>
+  <li>A plugin for Eleventy (the tool that builds my sites) adds a fingerprint of each file's contents to its address. When the icon changes, browsers fetch the new one at once.</li>
 </ol>
 
 <p>It's all one command (<code>npm run favicons</code>), run at the start and again only if you rebrand. After that, the favicon goes out with every update without anyone thinking about it.</p>

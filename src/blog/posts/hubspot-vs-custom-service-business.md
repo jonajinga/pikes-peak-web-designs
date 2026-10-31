@@ -16,7 +16,7 @@ tags: [post]
 
 <h2>What HubSpot is</h2>
 
-<p>HubSpot is a sales platform built around "inbound marketing," which draws customers in with content. It began as a marketing-automation tool and grew into a CRM, website hosting, and customer-service tools. Today it covers most of the marketing and sales software a mid-sized business-to-business (B2B) company needs.</p>
+<p>HubSpot is a marketing and sales platform built around "inbound marketing," which draws customers in with content. It began as a marketing-automation tool and grew into a CRM, website hosting, and customer-service tools. Today it covers most of the marketing and sales software a mid-sized business-to-business (B2B) company needs.</p>
 
 <p>Its pitch is one connected platform instead of five subscriptions. For a buyer who uses all five, a website lead becomes a CRM contact, is assigned to a salesperson, gets an email sequence, and is tracked in one dashboard. Separate tools can do the same, but connecting them is a lot of work.</p>
 
@@ -24,7 +24,7 @@ tags: [post]
 
 <p><strong>Everything connects.</strong> A lead's whole history (pages viewed, forms submitted, emails opened, notes from sales calls) sits on one contact record, and the reports cover the full customer journey without import scripts.</p>
 
-<p><strong>The marketing automation is mature.</strong> Timed campaigns, actions triggered by visitor behavior, lead scoring (ranking leads by how likely they are to buy), A/B tests, and conversion reports match dedicated tools such as Pardot, Marketo, and ActiveCampaign.</p>
+<p><strong>The marketing automation is mature.</strong> Timed campaigns, actions triggered by visitor behavior, lead scoring (ranking leads by how likely they are to buy), A/B tests, and conversion reports are all there. They match dedicated tools such as Pardot, Marketo, and ActiveCampaign.</p>
 
 <p><strong>The CRM is capable.</strong> Sales tracking, deals, activity logs, and Gmail and Outlook integration compare well with dedicated CRMs such as Pipedrive, Close, and Zoho for small and mid-sized businesses.</p>
 
@@ -63,7 +63,7 @@ tags: [post]
 
 <p>HubSpot's CMS Hub, the website-builder part of the platform, is capable. The templates look professional, the editor is comfortable, the search tools are built in, and pages load at an acceptable speed. As website builders go, it's near the top.</p>
 
-<p>It isn't the fastest, the cheapest, or the easiest to move. A site hosted on HubSpot stays tied to HubSpot: the content can't be exported in a form that runs cleanly elsewhere, page addresses must follow HubSpot's structure, and leaving the platform is hard.</p>
+<p>It isn't the fastest, the cheapest, or the easiest to move. A site hosted on HubSpot stays tied to HubSpot. The content can't be exported in a form that runs cleanly elsewhere, page addresses must follow HubSpot's structure, and leaving the platform is hard.</p>
 
 <p>For a buyer who uses the rest of HubSpot, that tie is a benefit. For one who's there mainly for the website builder, it becomes a cost later.</p>
 

@@ -24,7 +24,7 @@ tags: [post, comparison]
 
 <h3>1. Specificity</h3>
 
-<p>AI builders learn from existing template text, so your "About" page sounds like every other plumber's. A customer scanning ten sites in five minutes notices, and Google's "helpful content" updates target this kind of writing. Generic copy ranks worse over time.</p>
+<p>AI builders learn from existing template text, so your "About" page sounds like every other plumber's. A customer scanning 10 sites in five minutes notices, and Google's "helpful content" updates target this kind of writing. Generic copy ranks worse over time.</p>
 
 <p>A custom site speaks in the owner's voice, with specific stories ("we did the drainage on the McKinley house last summer"). It shows local knowledge ("anyone who has owned a home in Five Points knows the soil here") and opinions ("we don't install [thing] because it never lasts in this climate"). That content wins the click over a competitor's AI page.</p>
 
@@ -56,7 +56,7 @@ tags: [post, comparison]
 
 <h2>The math: what does "good enough" cost?</h2>
 
-<p>Here's a worked example for a typical local business. Your average job is worth $500, and a fast custom site turns one more mobile visitor a week into a phone call. That's 50 more jobs and $25,000 more work a year. At $5,000 a job, it's ten times that.</p>
+<p>Here's a worked example for a typical local business. Your average job is worth $500, and a fast custom site turns one more mobile visitor a week into a phone call. That's 50 more jobs and $25,000 more work a year. At $5,000 a job, it's 10 times that.</p>
 
 <p>That lost work never shows up on a bill. The owner of the AI-built site never sees the customers who almost called, only the leads that came in, and assumes that's the most the site can do.</p>
 

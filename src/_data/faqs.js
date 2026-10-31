@@ -18,7 +18,7 @@ export default [
 
   // The website
   { q: "How long does it take to build my site?", a: "Most sites are designed, built, and launched in two to three weeks. Work begins when your first payment clears, and the timing depends mostly on how soon you send your logo, photos, and service details." },
-  { q: "How many pages do I get?", a: "The plan includes up to 10 pages, and each extra page, for another service, another location, or new content, costs $100. Most service businesses need six to eight: home, about, services, service area, FAQ, and contact." },
+  { q: "How many pages do I get?", a: "The plan includes up to 10 pages, and each extra page, for another service, another location, or new content, costs $100 per page. Most service businesses need six to eight: home, about, services, service area, FAQ, and contact." },
   { q: "Do I own my website?", a: "You own your domain: it's registered in your name, and you control it. On the monthly plan, I own the code and host it for you, which is how I can build the site with nothing down. If you cancel, the site goes offline at the end of your term. There's no export of the site and no code buyout." },
   { q: "Can I update the site myself?", a: "You don't need to, because unlimited updates are part of the plan: email or text me what you want changed, and I make the change. If you'd like a simple editor for writing blog posts yourself (a CMS), I can add one." },
   { q: "What about my existing site?", a: "I time the launch so there's no downtime between the old site and the new one. Once the new site is live, you can take the old one offline or archive it privately, whichever you prefer." },

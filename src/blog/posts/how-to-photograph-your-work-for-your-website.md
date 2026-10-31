@@ -16,7 +16,7 @@ tags: [post]
 
 <h2>Why this matters more than any other content</h2>
 
-<p>For a service business, the website is a portfolio. Customers want to see your work on a property like theirs, in their climate, and stock photos can't show them that. Agencies that test this side by side (A/B testing) regularly see 1.5&ndash;2&times; more inquiries when stock photos give way to real work.</p>
+<p>For a service business, the website is a portfolio. Customers want to see your work on a property like theirs, in their climate, and stock photos can't show them that. Agencies that test this side by side (A/B testing) regularly see 1.5&ndash;2&times; more inquiries when stock photos give way to photos of actual jobs.</p>
 
 <p>It costs almost nothing: 10 phone photos per finished job, in 10 minutes. The skill is in taking them, not editing them.</p>
 
@@ -25,11 +25,11 @@ tags: [post]
 <p>Take the same five photos on every job. Consistency, more than artistry, makes a portfolio look professional.</p>
 
 <ol>
-  <li><strong>Wide before.</strong> From the curb or another wide spot, the whole scene before you start.</li>
-  <li><strong>Wide after.</strong> Same angle, distance, and lens, showing the finished work in context.</li>
+  <li><strong>Wide before.</strong> Capture the whole scene from the curb or another wide spot before you start.</li>
+  <li><strong>Wide after.</strong> Use the same angle, distance, and lens to show the finished work in context.</li>
   <li><strong>Detail shot.</strong> One close-up of what you fixed or installed: the valve, the ridge cap, the panel upgrade, the irrigation head.</li>
   <li><strong>You or your crew on site.</strong> One photo with a person in it, because customers buy from people.</li>
-  <li><strong>Truck or branded equipment.</strong> Your business name on a truck wrap, sign, or branded bin, which confirms the work is yours.</li>
+  <li><strong>Truck or branded equipment.</strong> Show your business name on a truck wrap, sign, or branded bin, which confirms the work is yours.</li>
 </ol>
 
 <p>Five photos a job adds up to 100 sets within a year.</p>
@@ -44,7 +44,7 @@ tags: [post]
 
 <h3>For interior work, open every blind and turn on every light</h3>
 
-<p>Indoor service photos (an HVAC closet, an electrical panel, the plumbing under a sink) are often dark, and most owners stand with their back to the only light, shadowing the subject. The fix:</p>
+<p>Indoor service photos (an HVAC closet, an electrical panel, the plumbing under a sink) are often dark. Most owners stand with their back to the only light, which shadows the subject. The fix:</p>
 
 <ul>
   <li>Open every blind in the room.</li>
@@ -87,7 +87,7 @@ tags: [post]
 
 <h3>Plumbers</h3>
 
-<p>Plumbing is the hardest trade for photos, because the work is hidden once it's done. Photograph the repair in progress with parts laid out on a drop cloth, the clean drywall cut with a small ruler showing how little damage you did, and the finished cabinet with the new fixture in pride of place.</p>
+<p>Plumbing is the hardest trade for photos, because the work is hidden once it's done. Photograph the repair in progress, with parts laid out on a drop cloth. Photograph the clean drywall cut, with a small ruler showing how little damage you did. Then photograph the finished cabinet with the new fixture in pride of place.</p>
 
 <h3>Electricians</h3>
 
@@ -146,6 +146,6 @@ tags: [post]
 
 <h2>Closing thought</h2>
 
-<p>Photography is the most valuable free thing you can do for your website. Within a year, 10 minutes per job gives you what no stock-photo site can match: a portfolio of your own work in your own market that earns trust before the visitor reaches the contact form.</p>
+<p>Photography is the most valuable free thing you can do for your website. Within a year, 10 minutes per job gives you what no stock-photo site can match. You'll have a portfolio of your own work in your own market that earns trust before the visitor reaches the contact form.</p>
 
 <p>If you have 10 good photos and want to see a site built around them, a <a href="/contact/" class="inline-link">free call</a> is the next step. I'll go through your photos and tell you which ones work, which need a retake, and what's missing.</p>

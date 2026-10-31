@@ -33,7 +33,7 @@ tags: [post]
 <p>Within its limits the profile is excellent. Beyond them, the website takes over.</p>
 
 <ul>
-  <li><strong>It can't tell your story.</strong> It's a fill-in form: name, address, hours, categories, photos. There's no room to explain what makes you different, how you work, or what customers can expect, which is what moves someone from "this looks legitimate" to "I'm calling them now."</li>
+  <li><strong>It can't tell your story.</strong> It's a fill-in form: name, address, hours, categories, photos. There's no room to explain what makes you different, how you work, or what customers can expect. Those are what move someone from "this looks legitimate" to "I'm calling them now."</li>
   <li><strong>It can't explain pricing.</strong> Some categories allow a priced services list, but it's awkward, not offered everywhere, and can't explain trade-offs such as which package suits which job or what costs extra.</li>
   <li><strong>It can't capture leads your way.</strong> The "Contact" button starts a call or an email, with no form, booking calendar, or screening questions. In trades where those questions matter (HVAC sizing, roofing scope, electrical capacity), it captures only the bare minimum.</li>
   <li><strong>It can't rank for detailed questions.</strong> "Roofer in Colorado Springs" brings up map results, where a strong profile appears. "How long does an asphalt shingle roof last in Colorado Springs" brings up ordinary results, where it doesn't. A website that answers these longer, specific searches ("long-tail" searches) gets those visits.</li>
@@ -47,7 +47,7 @@ tags: [post]
 <ul>
   <li><strong>A presence Google doesn't control.</strong> The website lives on a domain registered in your name. Google can't suspend it, nobody else can edit it, and a platform's rule change can't make it vanish.</li>
   <li><strong>Search traffic for detailed questions.</strong> Every service page, city page, and well-researched article can rank for the exact question a customer types. Added up, that traffic from a well-built site equals or beats the profile's map traffic.</li>
-  <li><strong>Content that builds trust.</strong> An about page, team bios, how you work, an FAQ, testimonials, and case studies close the gap between "I see them on Google" and "I trust them in my house." None of it fits in a profile.</li>
+  <li><strong>Content that builds trust.</strong> A profile has no room for an about page, team bios, how you work, an FAQ, testimonials, or case studies. On a website, they close the gap between "I see them on Google" and "I trust them in my house."</li>
   <li><strong>Ways to turn visitors into customers.</strong> Forms with the right questions, online booking, tap-to-call and tap-to-text buttons, and payment links for customers who want to pay a deposit online.</li>
   <li><strong>Visitor statistics.</strong> The website shows where visitors came from, what they did, how many became leads, and how your marketing channels compare. The profile shows only totals.</li>
   <li><strong>Visibility that builds over time.</strong> Website content keeps ranking for years, while the profile's standing is recalculated constantly from recent activity. The website's visibility lasts and grows on itself.</li>
@@ -65,7 +65,7 @@ tags: [post]
   <li>The photos on both look consistent, with the same branding and polish, so a customer who sees both gets one clear impression.</li>
 </ul>
 
-<p>Google's crawler (the program that reads websites for Google) compares the site's structured data with the profile side by side, and close agreement raises the prominence score behind your map ranking.</p>
+<p>Google's crawler (the program that reads websites for Google) compares the site's structured data with the profile side by side. Close agreement raises the prominence score behind your map ranking.</p>
 
 <h2>What I do for every site I build</h2>
 

@@ -3810,6 +3810,10 @@ a.inline-link:hover, .prose a:not(.btn):not(.post-share-btn):not(.post-toc-share
 .footer-bottom a { color: inherit; }
 .footer-bottom a:hover { color: var(--gold-400); }
 .footer-legal { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+/* Keep the last legal link clear of the fixed back-to-top button. */
+@media (min-width: 721px) {
+  .footer-bottom { padding-right: 4rem; }
+}
 
 /* ========== BACK TO TOP ========== */
 .back-to-top {

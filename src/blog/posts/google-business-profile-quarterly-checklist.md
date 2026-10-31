@@ -12,11 +12,11 @@ tags: [post, local-seo]
 
 <p>Your Google Business Profile, the free listing that puts you in Google's map results (the "local pack"), is the biggest source of unpaid search traffic for most service businesses. It's also the most neglected. Owners set it up once and forget it, while Google <em>specifically</em> rewards profiles that show recent activity.</p>
 
-<p>Four tasks, 15 minutes, on the first day of each quarter. This is the list I give every client, whatever the trade or city.</p>
+<p>It takes four tasks and 15 minutes on the first day of each quarter. This is the list I give every client, whatever the trade or city.</p>
 
 <h2>1. Confirm your hours are current</h2>
 
-<p>Wrong hours are the most common reason businesses lose calls. A customer who finds a locked door when Google said "open" leaves a one-star review, and one who skips calling because Google said "closed" never reaches you at all.</p>
+<p>Wrong hours are the most common reason businesses lose calls. A customer who finds a locked door when Google said "open" leaves a 1-star review, and one who skips calling because Google said "closed" never reaches you at all.</p>
 
 <ul>
   <li>Check that your regular weekly hours are still right.</li>

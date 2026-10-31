@@ -2,7 +2,7 @@
 title: "The 12-Point Website Self-Audit (Run It in 10 Minutes)"
 date: 2026-04-18
 label: "Self-Audit"
-description: "Twelve checks any small-business owner can run on their own website with a phone, a stopwatch, and 10 minutes. Fail any one, and you're leaving leads on the table."
+description: "Run these 12 checks on your own website with a phone, a stopwatch, and 10 minutes. Fail any one, and you're leaving leads on the table."
 ctaLabel: "Want a second opinion?"
 ctaHeading: "Bring your web address to a free call"
 ctaText: "If the self-check turns up red flags, bring your web address to a discovery call, 20 to 30 minutes on Google Meet. I'll tell you plainly whether your current site can be saved."

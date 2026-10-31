@@ -10,7 +10,7 @@ layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>Ask a developer how their work is organized and you may get a string of terms back: Git, GitHub, repos, branches, commits, pull requests. They name one of the most common tools in software in 2026. Every site I build lives in a Git repository on GitHub, and that repository supports everything else I do. This post is the explanation I'd like every client to read.</p>
+<p>Ask a developer how their work is organized and you may get a string of terms back: Git, GitHub, repos, branches, commits, and pull requests. They describe one of the most common tools in software development in 2026. Every site I build lives in a Git repository on GitHub, and that repository supports everything else I do. This post is the explanation I'd like every client to read.</p>
 
 <p>The short version: Git records every change to a set of files in a permanent, dated log, and GitHub stores that record online where you can browse it. Together they mean every line of code your site has ever had can be recovered, and every change can be inspected, undone, or traced at any time.</p>
 
@@ -32,7 +32,7 @@ tags: [post]
 
 <h2>What "deploy on push" means</h2>
 
-<p>The repository and the live site are linked. When I send ("push") a commit to the main version of the repository, Cloudflare Pages, the service that hosts the site, notices within seconds, builds the site from the new code, and publishes it. The whole process takes 30 seconds to two minutes.</p>
+<p>The repository and the live site are linked. When I send ("push") a commit to the repository's main version, Cloudflare Pages notices within seconds. That's the service that hosts the site, and it builds the site from the new code and publishes it. The whole process takes 30 seconds to two minutes.</p>
 
 <p>Nobody copies files to a server by hand or has to remember which files changed. For you, that means fast, reliable updates. For me, it means I can't forget to publish a change or upload the wrong files.</p>
 

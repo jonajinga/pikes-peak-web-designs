@@ -12,11 +12,11 @@ tags: [post, local-seo]
 
 <p>Every service-business owner whose site I've reviewed has one number they can't value: the customers who almost called, then closed the tab. They never show up on the books, and nobody notices the phone ringing less than it could.</p>
 
-<p>That silence has a price, and it's less fuzzy than people assume. The math below is rough, but the scale is right, and the answer usually pays for a custom build several times over.</p>
+<p>That lost work has a price, and it's less fuzzy than people assume. The math below is rough, but the scale is right, and the answer usually pays for a custom build several times over.</p>
 
 <h2>Step 1: how many people leave because of speed?</h2>
 
-<p>Google has published data on this for over a decade, and the studies agree: every extra second of load time on a phone loses roughly 7&ndash;10% of mobile visitors, who leave before the page finishes loading.</p>
+<p>Google has published data on this for over a decade, and the studies agree. Every extra second of load time on a phone loses roughly 7&ndash;10% of mobile visitors, who leave before the page finishes loading.</p>
 
 <p>To see where you stand:</p>
 
@@ -27,7 +27,7 @@ tags: [post, local-seo]
   <li>If the score is below 30, it takes six seconds or more, and a measurable share of phone visitors give up before the main image appears.</li>
 </ol>
 
-<p>The cost in bounces (visitors who leave without doing anything) is roughly 1.5% more mobile bounces per point below 95. That's conservative, since studies on patchy cell connections suggest more. A site scoring 55, typical for a popular site builder, loses about <code>(95 - 55) &times; 1.5% = 60% of mobile bounces</code> above the baseline, capped at the usual mobile-bounce ceiling of about 60%.</p>
+<p>The cost in bounces (visitors who leave without doing anything) is roughly 1.5% more mobile bounces per point below 95. That's conservative, since studies on patchy cell connections suggest more. A site scoring 55, typical for a popular site builder, loses about <code>(95 - 55) &times; 1.5% = 60% of mobile bounces</code> above the baseline. The loss is capped at the usual mobile-bounce ceiling of about 60%.</p>
 
 <p>In plain terms: with 1,000 visitors a month and 70% on phones, you have 700 mobile visits. A site scoring 55 loses roughly 35&ndash;50% of them before they engage. That's about 300 mobile visitors a month who never had a chance to become customers.</p>
 
@@ -37,7 +37,7 @@ tags: [post, local-seo]
 
 <p>Conversion rate = (form submissions + tracked calls) / total monthly visitors</p>
 
-<p>For service-business websites, the usual range is 1.5&ndash;3.5%. A form with good questions and a clear button lands near the top, and a bare "Name / Email / Message" form near the bottom, because visitors stare at the empty Message box and give up.</p>
+<p>For service-business websites, the usual range is 1.5&ndash;3.5%. A form with good questions and a clear button lands near the top. A bare "Name / Email / Message" form lands near the bottom, because visitors stare at the empty Message box and give up.</p>
 
 <p>Apply that rate to the visitors you lost: 300 lost mobile visitors × 2% = 6 missed leads a month, or 72 a year.</p>
 
@@ -65,7 +65,7 @@ tags: [post, local-seo]
 <p>The math is rough on purpose. It leaves out:</p>
 
 <ul>
-  <li><strong>Higher placement in the map results.</strong> A custom site with correct structured data (code that describes your business to Google) moves you up in the three businesses Google shows under its map. No single factor affects calls more in service-business search.</li>
+  <li><strong>Higher placement in the map results.</strong> A custom site with correct structured data (code that describes your business to Google) moves you up in Google's map results, the three businesses shown under the map. No single factor affects calls more in service-business search.</li>
   <li><strong>Better forms.</strong> A form built for your trade, with the right questions and a way to flag urgent jobs, typically brings in 1.5&ndash;2&times; the leads of a generic one.</li>
   <li><strong>Search traffic from city pages.</strong> Copy-and-paste service-area pages don't rank, while city pages with local content rank and grow over time.</li>
   <li><strong>A site that keeps working.</strong> A custom site doesn't break, get hacked, or stop working when a platform pushes an update, and that stability protects revenue.</li>
@@ -78,7 +78,7 @@ tags: [post, local-seo]
 <p>Two ways to use this:</p>
 
 <ol>
-  <li><strong>The <a href="/roi/" class="inline-link">return-on-investment page</a>.</strong> This post covers speed and conversion. The ROI page works through all four areas a well-built site improves (speed, local search, the path to contacting you, and upkeep) in a worked example for a typical local business, and compares the cost with the standard plan.</li>
+  <li><strong>The <a href="/roi/" class="inline-link">return-on-investment page</a>.</strong> This post covers speed and conversion. The ROI page works through all four areas a well-built site improves: speed, local search, the path to contacting you, and upkeep. It uses a worked example for a typical local business and compares the cost with the standard plan.</li>
   <li><strong>The <a href="/contact/" class="inline-link">free call</a>.</strong> It takes 20 to 30 minutes on Google Meet. Bring your numbers, and we'll go over where they come from and what a custom build would change.</li>
 </ol>
 

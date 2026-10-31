@@ -5,7 +5,7 @@ label: "Buying Guide"
 description: "A checklist for service-business owners about to hire someone to build their website: the questions to ask and the warning signs to watch for."
 ctaLabel: "Put me to the test"
 ctaHeading: "Ask me every question in this post"
-ctaText: "I'll answer all ten before you sign anything. The plan is $175 a month with $0 down, and my pricing and service agreement are public."
+ctaText: "I'll answer all 10 before you sign anything. The plan is $175 a month with $0 down, and my pricing and service agreement are public."
 layout: layouts/post.njk
 tags: [post]
 ---
@@ -150,14 +150,14 @@ tags: [post]
 
 <h2>The two questions that matter most</h2>
 
-<p>Of the ten above, two predict the outcome better than the rest combined:</p>
+<p>Of the 10 above, two predict the outcome better than the rest combined:</p>
 
 <ol>
   <li><strong>What is the mobile PageSpeed score on a site they built recently?</strong> It shows their technical ceiling.</li>
   <li><strong>Who, specifically, is doing the work?</strong> It shows whether the relationship will last past launch.</li>
 </ol>
 
-<p>If those answers are weak, no "we have a great team" or "we've been doing this for ten years" makes up for it. If they're strong, the rest usually falls in line.</p>
+<p>If those answers are weak, no "we have a great team" or "we've been doing this for 10 years" makes up for it. If they're strong, the rest usually falls in line.</p>
 
 <h2>One more thing the checklist does not cover</h2>
 
@@ -165,6 +165,6 @@ tags: [post]
 
 <p>Mine is open by design: <a href="/pricing/" class="inline-link">posted pricing</a>, a <a href="/agreement/" class="inline-link">public service agreement</a>, an <a href="/owners-guide/" class="inline-link">open Owner's Guide</a>, my <a href="/technical-approach/" class="inline-link">technical approach</a> in detail, and <a href="/samples/" class="inline-link">six demo sites</a> at full quality. Run any of them through PageSpeed, then test the agency you're considering. The comparison will tell you more than any sales call.</p>
 
-<p>To test these answers on me, book a <a href="/contact/" class="inline-link">free call</a>, 20 to 30 minutes on Google Meet. I'll answer all ten in writing before you sign anything.</p>
+<p>To test these answers on me, book a <a href="/contact/" class="inline-link">free call</a>, 20 to 30 minutes on Google Meet. I'll answer all 10 in writing before you sign anything.</p>
 
 <p>For a shorter list, see <a href="/blog/questions-to-ask-a-web-designer/" class="inline-link">Seven Questions to Ask Any Web Designer</a>. To compare every price range, <a href="/blog/how-much-does-a-small-business-website-cost/" class="inline-link">How Much Does a Small Business Website Actually Cost?</a> works out the lifetime cost.</p>

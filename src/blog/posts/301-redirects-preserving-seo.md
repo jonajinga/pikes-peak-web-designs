@@ -10,7 +10,7 @@ layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>The most common way a small business loses its Google rankings is a rebuild with no redirect plan, more often than weak search engine optimization (SEO). The new site goes live, and every old page address returns a 404, the "page not found" error. Google treats the site as brand new, and years of ranking drop to zero.</p>
+<p>The most common way a small business loses its Google rankings isn't weak search engine optimization (SEO). It's a rebuild with no redirect plan. The new site goes live, and every old page address returns a 404, the "page not found" error. Google treats the site as brand new, and years of ranking drop to zero.</p>
 
 <p>A 301 redirect prevents this. It tells search engines and bookmarks, "This page moved, and here's where it went," and the ranking carries over to the new address (the URL). The fix is simple. Most rebuilds skip it because the planning happens at the wrong time, by the wrong person, with the wrong information.</p>
 
@@ -20,7 +20,7 @@ tags: [post]
 
 <ol>
   <li>The browser follows the redirect on its own, and the visitor probably never notices.</li>
-  <li>Search engines update their index, the catalog of pages they know. The new address inherits the old one's ranking signals: backlinks (links from other sites), traffic history, and indexing depth. Google calls this "passing link equity."</li>
+  <li>Search engines update their index, the catalog of pages they know. The old address drops out of the results, and the new one inherits its ranking signals: backlinks (links from other sites), traffic history, and indexing depth. Google calls this "passing link equity."</li>
 </ol>
 
 <p>The code "301" means "permanent." The code "302" means temporary, as when a page points to a maintenance notice during an update. For a rebuild, use 301, because a 302 leaves the search engine guessing.</p>

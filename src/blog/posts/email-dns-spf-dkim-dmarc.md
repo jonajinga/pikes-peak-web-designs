@@ -10,7 +10,7 @@ layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>If your business email sometimes lands in spam, the cause is almost always four DNS records, the short entries stored with your domain that tell the internet how to handle it. Together, MX, SPF, DKIM, and DMARC prove your mail comes from you. Most small businesses have MX (or email wouldn't work at all) but skip the other three, so Gmail and Outlook treat their mail as suspicious.</p>
+<p>If your business email sometimes lands in spam, the cause is almost always four DNS records. These are short entries stored with your domain, and together MX, SPF, DKIM, and DMARC prove your mail comes from you. Most small businesses have MX (or email wouldn't work at all) but skip the other three, so Gmail and Outlook treat their mail as suspicious.</p>
 
 <p>Here's what each one does and how I set them up for every client.</p>
 
@@ -71,7 +71,7 @@ tags: [post]
 <ol>
   <li><strong>Confirm the email provider.</strong> Most clients use Google Workspace or Microsoft 365, and some use simple forwarding such as Cloudflare Email Routing. The provider determines each record's values.</li>
   <li><strong>Configure MX.</strong> I add the provider's MX values, with the right priority numbers, at the client's DNS host (Cloudflare DNS for most clients, or wherever the domain is registered). Some providers list several servers, and the numbers set the order.</li>
-  <li><strong>Configure SPF.</strong> I add the SPF record with the provider's value (for example, <code>include:_spf.google.com</code>), plus any other services that send mail for the client, such as a CRM (customer-tracking software) or a marketing-email tool.</li>
+  <li><strong>Configure SPF.</strong> I add the SPF record with the provider's value (for example, <code>include:_spf.google.com</code>). If other services send mail for the client, such as a CRM (customer-tracking software) or a marketing-email tool, I add those too.</li>
   <li><strong>Configure DKIM.</strong> I add the provider's public key as a TXT record at the address it names (usually <code>google._domainkey</code> or similar).</li>
   <li><strong>Configure DMARC, starting gently.</strong> I start at <code>p=none</code>, with reports sent to me for 30 days.</li>
   <li><strong>Tighten DMARC after 30 days of clean reports.</strong> If all legitimate mail passes, I move to <code>p=quarantine</code>, and after another clean 30 days, to <code>p=reject</code>.</li>

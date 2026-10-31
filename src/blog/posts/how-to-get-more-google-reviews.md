@@ -82,7 +82,7 @@ tags: [post, local-seo]
 
 <h2>The Compound Effect</h2>
 
-<p>Reviews build on themselves. Once you have 20 or more recent, solid reviews, people see you as the obvious choice because of what other customers say, which is worth more than any ad you can buy.</p>
+<p>Reviews build on themselves. Once you have 20 or more recent, solid reviews, people see you as the obvious choice because of what other customers say. That's worth more than any ad you can buy.</p>
 
 <p>With that many reviews, Google also ranks you higher for more searches. That brings more customers, who leave more reviews, and the cycle feeds itself.</p>
 
