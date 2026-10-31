@@ -24,12 +24,24 @@
 
   {% include "partials/critical-css.njk" %}
 
-  {# Preload the two woff2 files involved in LCP (h1 display + body)
-     so they overlap the HTML download. Same-origin, no third-party
+  {# The full stylesheet loads before the first paint. It used to load
+     asynchronously (preload + onload swap) behind the inlined critical
+     CSS, but the critical subset could never cover every page and
+     screen size: the page painted half-styled, then snapped into its
+     real layout when this file arrived, and every CSS transition fired
+     on the restyle (buttons fading in, the phone bar sliding). One
+     cacheable file; after the first visit it costs nothing. #}
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  {# Preload the woff2 files on every first screen: Playfair Display 700
+     (the h1 and the logo), Playfair Display 400 (the gold italic line in
+     every hero h1), and Inter 400 (body text), so they overlap the HTML
+     download and the heading doesn't visibly swap typefaces. Same-origin, no third-party
      DNS/TLS round-trip — Bunny was costing ~200-400ms on every cold
      visit before. @font-face declarations live in the inlined critical
      CSS above. #}
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/playfair-display-latin-600.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/playfair-display-latin-700.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/playfair-display-latin-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-400.woff2" crossorigin>
   {# Favicon stack. The SVG carries embedded prefers-color-scheme CSS
      so it adapts to dark browser UI in modern Safari / Firefox / Chrome.
@@ -45,20 +57,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  {# Non-critical CSS, loaded async so it doesn't block the first
-     paint. The critical-css partial above already inlines the
-     above-the-fold rules (fonts, tokens, reset, header, hero,
-     page-hero, section skeleton, sticky nav). This external file
-     carries everything else and arrives in parallel with the HTML.
-     The preload+onload pattern paints with critical CSS immediately,
-     then upgrades the page when the external CSS loads. The <noscript>
-     fallback covers browsers with JS disabled.
-
-     The site-wide purged style.css ships under one cacheable URL —
-     after the first page visit it's in the browser cache and every
-     subsequent navigation has 0 ms CSS cost. #}
-  <link rel="preload" as="style" href="/assets/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
   {# Pagefind's default UI (pagefind-ui.css/js) is no longer used; the
      custom .ppwd-search UI loads /pagefind/pagefind.js on demand. The
      two preloads were ~14 KiB of dead weight on every page. #}
