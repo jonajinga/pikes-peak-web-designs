@@ -168,7 +168,8 @@ export default function (eleventyConfig) {
 *,*::before,*::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
 html, body { margin: 0; padding: 0; }
-body { min-height: 100vh; }
+body { min-height: 100vh; overflow-wrap: break-word; }
+code, kbd, samp, a[href^="mailto:"] { overflow-wrap: anywhere; }
 img, svg { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }

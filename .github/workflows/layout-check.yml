@@ -1,0 +1,30 @@
+# Builds the site and fails if any page has content wider than the screen,
+# at phone, tablet, and desktop widths. See scripts/check-layout.mjs.
+name: Layout check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  layout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      # Playwright is installed here only, so Cloudflare's build stays as it is.
+      - name: Install Playwright and Chromium
+        run: |
+          npm install --no-save playwright@1.63.0
+          npx playwright install --with-deps chromium
+      - run: npm run check:layout
