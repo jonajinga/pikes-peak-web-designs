@@ -1,16 +1,12 @@
 <style>
-/* Self-hosted Inter + Playfair Display Latin subsets. Same-origin, no
-   third-party DNS/TLS round-trip. font-display: swap renders the
+/* Self-hosted Inter + Playfair Display Latin subsets, one variable file
+   per family (Fontsource 5.3, the same release as the old per-weight
+   files: identical widths and metrics). Two files instead of eight,
+   87 KB instead of 187 KB. Same-origin, no third-party DNS/TLS round-trip. font-display: swap renders the
    fallback metrics-matched face below immediately, so when the real
    woff2 loads there is zero layout shift on swap. */
-@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/inter-latin-400.woff2') format('woff2')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/inter-latin-500.woff2') format('woff2')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/inter-latin-600.woff2') format('woff2')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('/assets/fonts/inter-latin-700.woff2') format('woff2')}
-@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/playfair-display-latin-400.woff2') format('woff2')}
-@font-face{font-family:'Playfair Display';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/playfair-display-latin-500.woff2') format('woff2')}
-@font-face{font-family:'Playfair Display';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/playfair-display-latin-600.woff2') format('woff2')}
-@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url('/assets/fonts/playfair-display-latin-700.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('/assets/fonts/inter-latin-var.woff2') format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400 900;font-display:swap;src:url('/assets/fonts/playfair-display-latin-var.woff2') format('woff2')}
 /* Metrics-matched fallback faces. Browser uses these (with size-adjust
    tuned to the real font's metrics) until the real woff2 swaps in, so
    the swap is invisible and no CLS — no header shift on theme toggle

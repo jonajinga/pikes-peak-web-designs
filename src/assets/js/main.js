@@ -304,7 +304,8 @@
      tap + a11y). touch: true means a single tap on a term shows the
      tooltip; tapping outside hides it. */
   const initTippy = () => {
-    if (typeof tippy === 'undefined') return;
+    if (typeof tippy === 'undefined' || initTippy.done) return;
+    initTippy.done = true;
     const baseConfig = {
       theme: 'pikes',
       placement: 'top',
@@ -338,7 +339,9 @@
       }));
     }
   };
-  // Tippy loads with defer, so wait a tick
+  // The loader at the end of base.njk fetches Tippy on first use and
+  // then calls this.
+  window.ppInitTippy = initTippy;
   if (document.readyState === 'complete') initTippy();
   else window.addEventListener('load', initTippy);
 

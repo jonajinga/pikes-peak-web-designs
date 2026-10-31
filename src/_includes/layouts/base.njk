@@ -33,16 +33,12 @@
      cacheable file; after the first visit it costs nothing. #}
   <link rel="stylesheet" href="/assets/css/style.css">
 
-  {# Preload the woff2 files on every first screen: Playfair Display 700
-     (the h1 and the logo), Playfair Display 400 (the gold italic line in
-     every hero h1), and Inter 400 (body text), so they overlap the HTML
-     download and the heading doesn't visibly swap typefaces. Same-origin, no third-party
-     DNS/TLS round-trip — Bunny was costing ~200-400ms on every cold
-     visit before. @font-face declarations live in the inlined critical
+  {# Preload both font files. Each is a variable font that carries every
+     weight the site uses, so once these two arrive no text on the page
+     swaps typeface. @font-face declarations live in the inlined critical
      CSS above. #}
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/playfair-display-latin-700.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/playfair-display-latin-400.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/playfair-display-latin-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-var.woff2" crossorigin>
   {# Favicon stack. The SVG carries embedded prefers-color-scheme CSS
      so it adapts to dark browser UI in modern Safari / Firefox / Chrome.
      PNG variants cover everything else: 16/32/48 for tab and Windows
@@ -190,22 +186,41 @@
 </div>
 
 <script src="/assets/js/main.js" defer></script>
-{# Tippy/Popper only fetch on pages that actually have a glossary term;
-   they were costing two third-party requests on every page otherwise. #}
+{# Tooltips (Tippy + Popper) load on a visitor's first touch, hover, or
+   keyboard focus on a term, so they never compete with the first paint.
+   main.js exposes ppInitTippy() to switch them on once the files arrive;
+   the term that triggered the load then shows its tooltip. The URLs are
+   pinned, which also skips unpkg's version redirects. Before this, the
+   files loaded during page load and usually arrived after main.js had
+   already tried (and failed) to initialise them. #}
 <script>
 (function () {
-  if (!document.querySelector('.term[data-term]')) return;
+  var sel = '[data-term], [data-tooltip], a[href*="/glossary/#"]';
+  if (!document.querySelector(sel)) return;
+  var events = ['pointerover', 'focusin', 'touchstart'];
+  var started = false;
   function load(src) {
     return new Promise(function (resolve, reject) {
       var s = document.createElement('script');
-      s.src = src; s.defer = true;
+      s.src = src; s.async = true;
       s.onload = resolve; s.onerror = reject;
       document.head.appendChild(s);
     });
   }
-  load('https://unpkg.com/@popperjs/core@2')
-    .then(function () { return load('https://unpkg.com/tippy.js@6'); })
-    .catch(function () { /* tippy is enhancement-only; ignore */ });
+  function start(e) {
+    var t = e.target && e.target.closest ? e.target.closest(sel) : null;
+    if (started || !t) return;
+    started = true;
+    events.forEach(function (n) { document.removeEventListener(n, start, true); });
+    load('https://unpkg.com/@popperjs/core@2.11.8/dist/umd/popper.min.js')
+      .then(function () { return load('https://unpkg.com/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js'); })
+      .then(function () {
+        if (window.ppInitTippy) window.ppInitTippy();
+        if (t._tippy) t._tippy.show();
+      })
+      .catch(function () { /* tooltips are an enhancement; ignore */ });
+  }
+  events.forEach(function (n) { document.addEventListener(n, start, { capture: true, passive: true }); });
 })();
 </script>
 </body>

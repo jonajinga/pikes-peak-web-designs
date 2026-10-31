@@ -306,107 +306,62 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
       if (!minStyle.errors.length) fs.writeFileSync(cssFile, minStyle.styles);
       else console.warn("style.css minify errors:", minStyle.errors);
 
-      // PER-PAGE CSS INLINING IS DISABLED.
+      // PER-PAGE CSS, INLINED.
       //
-      // Previously this block ran a second PurgeCSS pass per HTML file
-      // and inlined the result as <style> in <head>, replacing the
-      // external stylesheet <link>. The intent was "0 ms CSS cost per
-      // page navigation" — but in practice it pushed 60-90 KB of CSS
-      // into every HTML response, so the home-page <head> grew to
-      // ~93 KB of inline <style> and the browser had to parse all of
-      // it before first paint. On Slow 4G + mid-range mobile, LCP
-      // stalled at 4.4-4.5 s.
+      // The site-wide stylesheet above is ~380 KB (47 KB compressed), and
+      // Lighthouse measured ~90% of it unused on any one page. As a
+      // render-blocking file it sat on every page's critical path, and the
+      // phone had to match all of it during style and layout. Here each
+      // page gets its own pass: PurgeCSS against that page's HTML plus
+      // every shipped script (so classes added at runtime survive), then
+      // the result (70-90 KB raw, 12-14 KB compressed) replaces the
+      // stylesheet <link> as an inline <style>. Inline costs no extra
+      // round trip; HTML of this size still arrives within the same TCP
+      // slow-start windows. An earlier attempt inlined the full site-wide
+      // file (~93 KB per page), which is what made it slow.
       //
-      // Switched to: site-wide purged style.css ships as ONE external
-      // file with `<link rel="preload" as="style" onload="...">` in
-      // base.njk. Critical above-the-fold rules stay inlined in the
-      // critical-css partial. First paint happens immediately from
-      // the small inlined critical block; the bigger external CSS
-      // arrives in parallel and upgrades the page. Cache hit means
-      // 0 CSS network cost on every subsequent navigation.
-      //
-      // October 2026: base.njk loads style.css as a normal render-blocking
-      // <link rel="stylesheet">. The async swap painted pages half-styled
-      // and then restyled them, which read as a flash on every first visit.
-      // The per-page inlining loop below stays disabled (if (false)); it
-      // would otherwise match that <link> and inline the CSS into every
-      // page, the approach rejected above.
-      if (false) try {
-        const purgedSiteCss = fs.readFileSync(cssFile, "utf8");
+      // The <style> keeps the same position as the <link> it replaces, so
+      // the cascade order (critical CSS, then the full rules) is unchanged.
+      // style.css itself is still written, for anything that links it.
+      try {
+        const siteCss = fs.readFileSync(cssFile, "utf8");
+        const jsDir = path.resolve("./_site/assets/js");
+        const shippedJs = fs.existsSync(jsDir)
+          ? fs.readdirSync(jsDir).filter((f) => f.endsWith(".js"))
+              .map((f) => fs.readFileSync(path.join(jsDir, f), "utf8")).join("\n")
+          : "";
         const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true })
-          .flatMap(d => d.isDirectory() ? walk(path.join(dir, d.name)) : [path.join(dir, d.name)]);
+          .flatMap((d) => d.isDirectory() ? walk(path.join(dir, d.name)) : [path.join(dir, d.name)]);
         const htmlFiles = walk(path.resolve("./_site"))
-          .filter(p => p.endsWith(".html") && !p.includes(`${path.sep}demo${path.sep}`));
-
-        let totalBytesBefore = 0;
-        let totalBytesAfter = 0;
-
+          .filter((p) => p.endsWith(".html") && !p.includes(`${path.sep}demo${path.sep}`));
+        const linkRe = /<link\s+rel="stylesheet"\s+href="\/assets\/css\/style\.css(?:\?v=[A-Za-z0-9]+)?"\s*\/?>/i;
+        let pages = 0, rawTotal = 0;
         for (const htmlPath of htmlFiles) {
           const html = fs.readFileSync(htmlPath, "utf8");
-          totalBytesBefore += purgedSiteCss.length;
-
-          // Per-page safelist. The site-wide pass already kept anything
-          // used on at least one page; this second pass shaves the rest
-          // per-page, so the safelist here only protects JS-toggled
-          // classes (which won't appear in static HTML) and patterns
-          // specific to the page type. Page-type detection is by URL
-          // path so we don't ship Leaflet rules on the home page or
-          // planner rules on a service page.
-          const deepSafelist = [
-            // Theme attribute — every :root rule.
-            /\[data-theme/,
-            // JS-rendered search UI is sitewide (header + modal).
-            /^ppwd-/,
-            // Pagefind result highlighting <mark>.
-            /^mark/,
-          ];
-          if (htmlPath.includes(`${path.sep}areas${path.sep}`) ||
-              htmlPath.includes(`${path.sep}service-areas${path.sep}`)) {
-            deepSafelist.push(/leaflet/);
-          }
-          if (htmlPath.includes(`${path.sep}glossary${path.sep}`) ||
-              htmlPath.includes(`${path.sep}faq${path.sep}`) ||
-              htmlPath.includes(`${path.sep}method${path.sep}`)) {
-            deepSafelist.push(/tippy/);
-          }
-          if (htmlPath.includes(`${path.sep}sop${path.sep}`)) {
-            deepSafelist.push(/^planner-/, /^sop-backlink/);
-          }
-
-          const pagePurge = await new PurgeCSS().purge({
-            content: [{ raw: html, extension: "html" }],
-            css: [{ raw: purgedSiteCss }],
+          if (!linkRe.test(html)) continue;
+          const [res] = await new PurgeCSS().purge({
+            content: [{ raw: html, extension: "html" }, { raw: shippedJs, extension: "js" }],
+            css: [{ raw: siteCss }],
             defaultExtractor: (content) => content.match(/[A-Za-z0-9_:/-]+/g) || [],
             safelist: {
               standard: [
                 "open", "is-open", "active", "is-active", "is-loading", "is-scrolled",
-                "show", "scrolled", "expanded", "collapsed", "is-fixed", "is-hidden", "is-revealed",
+                "show", "scrolled", "expanded", "collapsed", "is-fixed", "is-hidden",
+                "is-revealed", "is-visible",
               ],
-              deep: deepSafelist,
+              deep: [/\[data-theme/, /leaflet/, /tippy/, /^mark/, /^ppwd-/],
               keyframes: true,
               variables: false,
             },
           });
-          const pageCss = pagePurge?.[0]?.css || purgedSiteCss;
-          totalBytesAfter += pageCss.length;
-          // Replace the per-build stylesheet <link> with an inline
-          // <style> block. Match either the cache-buster-suffixed form
-          // or the bare /assets/css/style.css reference; both forms can
-          // appear depending on plugin run order.
-          const escapedCss = pageCss.replace(/<\/style/gi, "<\\/style");
-          const inlineBlock = `<style>${escapedCss}</style>`;
-          const updated = html
-            .replace(
-              /<link\s+rel="stylesheet"\s+href="\/assets\/css\/style\.css(?:\?v=[A-Za-z0-9]+)?"\s*\/?>/i,
-              inlineBlock
-            );
-          if (updated !== html) fs.writeFileSync(htmlPath, updated);
+          const pageCss = (res && res.css) || siteCss;
+          const inline = `<style>${pageCss.replace(/<\/style/gi, "<\\/style")}</style>`;
+          fs.writeFileSync(htmlPath, html.replace(linkRe, () => inline));
+          pages++; rawTotal += pageCss.length;
         }
-        const beforeKb = Math.round(totalBytesBefore / 1024);
-        const afterKb = Math.round(totalBytesAfter / 1024);
-        console.log(`[per-page-css] inlined into ${htmlFiles.length} pages; ${beforeKb} KB -> ${afterKb} KB shipped (${Math.round(100 - afterKb/beforeKb*100)}% reduction)`);
+        console.log(`[per-page-css] inlined into ${pages} pages; average ${Math.round(rawTotal / Math.max(pages, 1) / 1024)} KB raw (site-wide file ${Math.round(siteCss.length / 1024)} KB)`);
       } catch (e) {
-        console.warn("[per-page-css] failed:", e.message);
+        console.warn("[per-page-css] failed, pages keep the site-wide <link>:", e.message);
       }
     } catch (e) {
       console.warn("CSS build failed:", e.message);
