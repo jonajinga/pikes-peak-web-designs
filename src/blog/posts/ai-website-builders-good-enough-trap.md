@@ -2,78 +2,74 @@
 title: "How AI Website Builders Fool You With 'Good Enough'"
 date: 2026-05-03
 label: "Comparison: AI Builders"
-description: "AI website builders ship sites that look done. The problem is what 'looks done' is not measuring — and the leads that get quietly missed."
-ctaLabel: "An honest comparison"
-ctaHeading: "A real custom-coded site, no template, no AI."
-ctaText: "I build every site custom-coded, with one accountable person on every email for the life of the engagement. No template, no AI generator, no relay race. $175 a month, flat, no design deposit."
+description: "AI website builders make sites that look done. Here's what 'looks done' leaves unmeasured, and the leads it costs you."
+ctaLabel: "Built for your business"
+ctaHeading: "A custom-coded site, written for your business"
+ctaText: "I write every site from scratch instead of filling in a template or an AI draft, and you deal with one person on every email for as long as you're a client. It's $175 a month, with $0 down."
 layout: layouts/post.njk
 tags: [post, comparison]
 ---
 
-<p>"Build your business website in 30 seconds with AI." That is the pitch from Wix AI, Squarespace AI, Hostinger AI, Durable, GoDaddy AIO, and the dozen other tools currently advertising on every podcast you listen to. Type a few words, get a website. The pitch is genuinely impressive in the moment.</p>
+<p>"Build your business website in 30 seconds with AI." That's the pitch from Wix AI, Squarespace AI, Hostinger AI, Durable, GoDaddy AIO, and a dozen other tools advertised on every podcast. You type a few words, and you get a website. It's impressive to watch.</p>
 
-<p>The problem is not what AI builders deliver. The problem is what "looks done" is <em>not</em> measuring. An AI-generated site looks like a website. Headers, sections, photos, contact form, all in the right places. It looks done. <strong>Done is not the same as winning, and in service-business local search, the site that does not win is the site that quietly costs you customers without ever showing you the bill.</strong></p>
+<p>The site has headers, sections, photos, and a contact form, all in the right places, so it looks done. The trouble is what "looks done" leaves unmeasured. In local search, a site can look done and still lose to competitors, and that costs you customers without ever sending a bill.</p>
 
-<p>This post is about that gap. What "good enough" actually is, and what the gap to a real custom site costs over a year.</p>
+<h2>What an AI builder does</h2>
 
-<h2>What an AI builder actually does</h2>
+<p>An AI builder takes a little information (your trade, name, and location), picks a template, fills it with generic text, and sometimes adds stock-style images. The result is a Wix or Squarespace site you didn't have to lay out yourself. The "AI" part is the auto-fill.</p>
 
-<p>The pitch is "AI generates your website." The reality is more boring: AI builders take a small amount of business info (industry, name, location), pick a template, populate it with a generic copy generator, and sometimes generate stock-style imagery. The output is a Wix or Squarespace site you did not have to lay out yourself. The "AI" part is the auto-fill.</p>
+<p>That has value. If you've put off a website because you don't know where to start, an AI starter gets you past the blank page. The mistake is confusing "I have a draft" with "I have a site that brings in customers."</p>
 
-<p>That is not nothing. Removing the blank-page problem is real. If you have stalled on building a site because you do not know where to start, an AI starter is a useful unblock. The mistake is confusing "I have a draft" with "I have a site that brings in customers."</p>
-
-<h2>The five things AI builders do not do</h2>
+<h2>Five gaps in an AI-built site</h2>
 
 <h3>1. Specificity</h3>
 
-<p>AI builders train on existing template content. The copy reads like every other AI-builder copy because it is. Your "About" page sounds like every other plumber's About page. Your service pages read like every other electrician's service pages. Generic copy reads as generic to a customer scanning ten sites in five minutes, and Google's "helpful content" updates explicitly target this category. <strong>Generic copy ranks worse over time, not better.</strong></p>
+<p>AI builders learn from existing template text, so your "About" page sounds like every other plumber's. A customer scanning 10 sites in five minutes notices, and Google's "helpful content" updates target this kind of writing. Generic copy ranks worse over time.</p>
 
-<p>The thing a custom site can do that an AI cannot: write the page in the voice of the actual business owner, with specific anecdotes ("we did the drainage on the McKinley house last summer"), specific local references ("anyone who has owned a home in Five Points knows the soil here"), and specific points of view ("we do not install [thing] because it never lasts in this climate"). That is the content that wins clicks against a competitor's AI page.</p>
+<p>A custom site speaks in the owner's voice, with specific stories ("we did the drainage on the McKinley house last summer"). It shows local knowledge ("anyone who has owned a home in Five Points knows the soil here") and opinions ("we don't install [thing] because it never lasts in this climate"). That content wins the click over a competitor's AI page.</p>
 
 <h3>2. Page speed</h3>
 
-<p>The "AI" branding does not change the runtime. Wix AI sites get Wix performance: 50&ndash;70 mobile PageSpeed. Squarespace AI gets Squarespace performance: 60&ndash;75. Hostinger AI gets the underlying Hostinger Builder performance. The auto-fill AI that wrote your copy did not rewrite the page-builder's render engine.</p>
+<p>The AI label doesn't change the engine underneath. On Google's PageSpeed test, a 0 to 100 speed score, Wix AI sites score like Wix, 50&ndash;70 on mobile. Squarespace AI scores 60&ndash;75, and Hostinger AI performs like the Hostinger Builder beneath it.</p>
 
-<p>A custom-coded site sits at 95&ndash;100 mobile PageSpeed the day it ships. The difference is not a config setting; it is the architecture. <strong>The mobile visitor on a flaky connection, which is most of your visitors, experiences a measurable difference: they bounce off the AI builder before the hero image renders, and they stay on the custom site long enough to read a headline.</strong></p>
+<p>A custom-coded site scores 95&ndash;100 on mobile the day it launches, because speed is built into how it's made. Most of your visitors are on phones with spotty connections. They leave a slow site before its top image appears, and they stay on a fast one long enough to read the headline.</p>
 
 <h3>3. Local SEO depth</h3>
 
-<p>AI-generated schema is rarely accurate. AI-generated NAP (name, address, phone) often pulls outdated public data, an old phone number, a previous address, a business name that is close to but not exactly your Google Business Profile. Each inconsistency dilutes the local-pack ranking signal.</p>
+<p>Local SEO (search engine optimization) is the work of showing up in local searches, and AI builders get its details wrong. Their schema, the hidden labels that tell Google what a page is about, is rarely accurate. Their NAP (name, address, and phone) often comes from outdated public data, such as an old number or a near match to your Google Business Profile name. Each mismatch weakens your place in Google's map results (the "local pack").</p>
 
-<p>AI-generated service-area pages are exactly the doorway-page pattern Google's local algorithm penalizes: same paragraph rewritten with different city names, no real local content, no unique photos. A few of those pages tank the entire site's local visibility, not just the doorway pages themselves.</p>
+<p>AI-made service-area pages are "doorway pages," which Google penalizes: one paragraph repeated with a new city name and no local content or photos. A few of them can sink the whole site's local visibility.</p>
 
-<p>A custom-coded site builds each service-area page as a real, indexable page with locally-rooted content (real photos, real local references, real schema). That is the recipe Google rewards.</p>
+<p>A custom-coded site gives each service-area page local content, your own photos, and accurate schema. That's what Google rewards.</p>
 
 <h3>4. Form intelligence</h3>
 
-<p>The contact form on every AI-generated site is the same: Name, Email, Phone, Message. That form does not segment by trade, urgency, or job type. Every lead lands in the same bucket: the new-water-heater inquiry next to the "I need an emergency plumber, my basement is flooding right now" inquiry next to the "do you do commercial work" inquiry.</p>
+<p>Every AI-built contact form asks for a name, email, phone, and message, so every lead lands in one pile. The water-heater question sits beside "My basement is flooding right now" and "Do you do commercial work?"</p>
 
-<p>A custom-coded site asks the right four or five questions: what kind of work, what timeline, what budget tier, how urgent. The form does the first round of qualification automatically. <strong>That qualification is worth real hours every week, and the form's design alone changes the conversion rate measurably</strong>, a form that asks "what is the problem?" with a list of relevant options gets more completions than one that asks "Message".</p>
+<p>A custom-coded form asks four or five useful questions: the kind of work, the timeline, the budget range, and the urgency. It sorts leads for you, which saves hours every week. A form that asks "What's the problem?" with a list of options also gets more people to finish it than a blank "Message" box.</p>
 
 <h3>5. Ownership</h3>
 
-<p>The AI-generated site is locked into the platform that generated it. There is no "export to your own host" path. Quitting the AI builder means starting over from a blank page. If the platform raises prices, changes terms, sunsets a feature, or simply gets sold to another company, you have no leverage.</p>
+<p>An AI-built site is locked to the platform that made it, with no way to export it. Leaving means starting over. If the platform raises prices, changes its terms, drops a feature, or is sold, you have no say.</p>
 
-<p>A custom-coded site, with a clean static export available at any point if you ever decide to move on, is portable to any host, forever. The work belongs to you, not the vendor that generated it.</p>
+<p>On my plan, I own the code while you're a client, and there's no export of the site either. What's yours is set out in a plain-English service agreement: your domain, registered in your name and under your control, plus your photos, text, and brand assets. If you cancel, I help you move the domain to a registrar you choose.</p>
 
 <h2>The math: what does "good enough" cost?</h2>
 
-<p>If your service business has an average job value of $500, and a custom-coded site converts even one extra mobile visitor a week into a phone call (because it loads fast enough that they did not bounce), that is one additional job a week, fifty additional jobs a year, $25,000 of additional pipeline. If your average job is $5,000, the math is an order of magnitude bigger.</p>
+<p>Here's a worked example for a typical local business. Your average job is worth $500, and a fast custom site turns one more mobile visitor a week into a phone call. That's 50 more jobs and $25,000 more work a year. At $5,000 a job, it's 10 times that.</p>
 
-<p>That additional pipeline is invisible. It does not show up on a bill anywhere. The owner of the AI-built site never sees the customers who almost called and then closed the tab. The owner just sees the leads they did get and assumes that is the ceiling.</p>
+<p>That lost work never shows up on a bill. The owner of the AI-built site never sees the customers who almost called, only the leads that came in, and assumes that's the most the site can do.</p>
 
-<p><strong>"Good enough" is the trap because it tells you nothing.</strong> It cannot rank #1 in your local pack. It cannot win the click against a sharper competitor. The leads it does not generate never appear on a report. The owner finds out the cost only when they finally upgrade to a real site and discover that the lead volume doubles in three months, not because the new site is magic, but because the old site was leaving money on the floor.</p>
+<p>That's the trap: "good enough" tells you nothing. It can't rank first in your local pack or win the click over a sharper competitor, and the leads it misses never appear on a report. Owners find the cost when they move to a custom site and see their leads double in three months. The new site isn't magic; the old one was leaving money on the floor.</p>
 
 <h2>When an AI builder is the right call</h2>
 
-<p>An AI builder is genuinely useful for a one-day "do I even know what I want?" research step. Generate a draft for free, see if the rough shape of the site matches what you want, use it as inspiration. If the business has not yet hit product-market fit and you are still six months from knowing if it sticks, the AI builder buys you time without much downside.</p>
+<p>An AI builder is useful for a one-day research step, while you work out what you want. Make a free draft and use it for ideas. If the business is new and you're six months from knowing whether it will last, an AI builder buys you time at little cost.</p>
 
-<p>The mistake is treating that draft as a destination. The day the business has real traffic, real revenue, and real customers, the AI builder is leaving money on the table.</p>
+<p>The mistake is treating that draft as the finished site. Once the business has steady traffic, revenue, and customers, the AI builder is leaving money on the table.</p>
 
 <h2>What to do instead</h2>
 
-<p>If the math above suggests a custom site pays for itself, the next step is figuring out which kind makes sense for your business. <a href="/vs-ai-builders/" class="inline-link">The detailed comparison page</a> walks through the side-by-side, including a breakdown table on the things that move revenue.</p>
+<p>If the math says a custom site would pay for itself, the next step is choosing the right kind. <a href="/vs-ai-builders/" class="inline-link">The detailed comparison page</a> sets the options side by side, with a table of what brings in revenue.</p>
 
-<p>If you want a free, written audit of your current AI-built site, real Lighthouse numbers, real schema check, real conversion-flow review, the <a href="/audit/" class="inline-link">5-point audit</a> covers it. No obligation, no sales call required, deliverable is a written report you can act on with or without me.</p>
-
-<p>The site that ranks, loads fast, and converts is the site that pays for itself. The AI builder generates a draft of that site, not the site itself. Knowing the difference is the work.</p>
+<p>The site that ranks, loads fast, and turns visitors into calls is the one that pays for itself. An AI builder gives you a draft of that site, and knowing the difference is the work.</p>

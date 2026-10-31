@@ -2,78 +2,78 @@
 title: "Bunny Fonts: A Privacy-First Alternative to Google"
 date: 2026-05-16
 label: "The Stack"
-description: "Google Fonts looks free, but the privacy cost is the visitor's IP address logged to Google on every pageview. Bunny Fonts is the cleaner alternative I use."
+description: "Google Fonts looks free, but it sends each visitor's IP address to Google on every page view. Bunny Fonts is the cleaner choice I use."
 ctaLabel: "Privacy by default"
-ctaHeading: "Cookie-free fonts on every site I build."
-ctaText: "I serve every web font through Bunny Fonts so visitors never get logged to a third party. Part of the standard plan, no extra fee, no consent banner needed for fonts alone."
+ctaHeading: "Cookie-free fonts on every site I build"
+ctaText: "I serve every web font through Bunny Fonts, so no outside company logs your visitors. It's part of the standard plan at no extra fee, and fonts alone never need a consent banner."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>Web fonts are one of those parts of a website that look free until you read the fine print. Google Fonts is the dominant option, used on tens of millions of sites, marketed as a free service for designers. The actual transaction is that on every page load, the visitor's IP address gets sent to Google's servers in exchange for the font file. That data exchange is real, the privacy implications are real, and the legal exposure under EU and Canadian privacy laws is real enough that German courts have already issued judgments against websites for using Google Fonts without consent.</p>
+<p>Web fonts, the typefaces a site downloads to show its text, look free until you read the fine print. Google Fonts is the leading choice, used on tens of millions of sites and offered free to designers. But on every page load, the visitor's IP address (the device's internet address) goes to Google's servers in exchange for the font file. German courts have already ruled against websites for using Google Fonts without consent, so the legal risk under European and Canadian privacy laws is more than theory.</p>
 
-<p>Bunny Fonts is the cleaner alternative I run on every site I build. It serves the exact same open-source fonts as Google, with no logging, no IP tracking, no consent gate, and no measurable difference in performance. This post explains what it is, why I switched, and what the practical difference is for a small business website.</p>
+<p>Bunny Fonts is the cleaner choice I use on every site I build. It serves the same free, open-source fonts as Google with no logging, no IP tracking, no consent prompt, and no measurable loss of speed.</p>
 
 <h2>What Bunny Fonts is</h2>
 
-<p>Bunny Fonts is a privacy-respecting font CDN run by Bunny.net (a Slovenian content-delivery network). It hosts the same Google Fonts open-source library — the same families, the same weights, the same character sets — and serves them with the same browser-cacheable performance characteristics. The technical experience for the developer is nearly identical to Google Fonts: same syntax, same flexibility, same coverage.</p>
+<p>Bunny Fonts is a privacy-friendly font service from Bunny.net, a Slovenian content delivery network (CDN), meaning a worldwide set of servers that hand out files quickly. It hosts Google's open-source font library, with the same families, weights, and character sets, and browsers can store its files just as well. For the developer it works almost exactly like Google Fonts, with the same code, flexibility, and coverage.</p>
 
-<p>The difference is what happens at the network layer. Bunny Fonts logs nothing about the visitor. No IP address retention, no analytics about which fonts are loaded on which sites, no behavioral data collection of any kind. The font file gets served, the browser caches it, and the transaction ends there.</p>
+<p>The difference is what happens behind the scenes. Bunny Fonts logs nothing about the visitor: no stored IP addresses, no records of which sites load which fonts, and no data on behavior. The font file arrives, the browser saves it, and that's the end of it.</p>
 
 <h2>Why this matters in 2026</h2>
 
-<p>The Google Fonts privacy issue is not theoretical. In January 2022 a German court ruled that a website embedding Google Fonts without consent had violated GDPR by transmitting visitor IP addresses to a US company. The court awarded damages to the plaintiff, who promptly filed thousands of similar claims against German websites. The pattern repeated in Austria and France within the year, and copycat litigation has been spreading through the EU since.</p>
+<p>The privacy problem with Google Fonts is a practical one. In January 2022, a German court ruled that a website using Google Fonts without consent had broken GDPR, the European Union's privacy law, by sending visitor IP addresses to a U.S. company. The court awarded damages, and the plaintiff went on to file thousands of similar claims against German websites. The pattern repeated in Austria and France within the year, and copycat lawsuits have spread through the EU since.</p>
 
-<p>For a U.S. or Canadian small business that does not actively serve EU customers, the direct legal risk is low. But the broader privacy posture matters, and the global trajectory is clear: more jurisdictions are passing privacy laws that treat third-party data transmission as a regulated act. Quebec's Law 25, the various U.S. state privacy laws (California, Virginia, Colorado, Connecticut, Utah, and more arriving each year), and the federal data-broker rules all push in the same direction.</p>
+<p>For a U.S. or Canadian small business with no EU customers, the direct legal risk is low. But the wider trend is clear: more places are passing laws that regulate sending visitor data to outside companies. Quebec's Law 25, the U.S. state privacy laws (California, Virginia, Colorado, Connecticut, Utah, and more each year), and the federal data-broker rules all point the same way.</p>
 
-<p>The cleanest answer is to stop transmitting visitor data to third parties unless there is a genuine reason. Web fonts do not need to send anything to Google to function. They never did.</p>
+<p>The cleanest answer is to stop sending visitor data to outside companies without a good reason. Web fonts don't need to send anything to Google to work, and they never did.</p>
 
 <h2>Performance: the surprising part</h2>
 
-<p>The argument I see most for Google Fonts is that it is faster than self-hosting because Google's CDN is global and their files are heavily optimized. That argument was true a decade ago. It is not true today.</p>
+<p>The argument I hear most for Google Fonts is that it's faster than hosting fonts yourself, because Google's network is global and its files are well compressed. That was true a decade ago, and it isn't today.</p>
 
-<p>Bunny Fonts runs on Bunny.net's global CDN, which has the same edge-network distribution as Cloudflare, Fastly, and Google. The font files are byte-for-byte identical to Google's (same WOFF2 format, same compression). The browser-cache benefits Google used to claim are now mostly irrelevant because modern browsers partition cache by site, not by URL — meaning a cached Google Font from Site A is no longer reused on Site B in Chrome, Safari, or Firefox.</p>
+<p>Bunny Fonts runs on Bunny.net's global network, which reaches as widely as Cloudflare, Fastly, and Google. Its font files are identical to Google's, byte for byte, in the same WOFF2 format. Google's old advantage, a font saved by one site and reused on the next, is gone. Chrome, Safari, and Firefox now keep a separate store for each site, so a Google Font saved on Site A isn't reused on Site B.</p>
 
-<p>In real-world Lighthouse measurement on the sites I build, Bunny Fonts produces page loads indistinguishable from Google Fonts. The Largest Contentful Paint, the time to first byte, the font-display behavior — all measure the same. There is no performance trade for the privacy improvement.</p>
+<p>In Lighthouse, Google's page-speed testing tool, the sites I build load the same with Bunny Fonts as with Google Fonts. The time for the largest element to appear (Largest Contentful Paint), the time to the server's first reply, and how the fonts swap in all measure the same. The privacy gain costs no speed.</p>
 
 <h2>How I use it</h2>
 
-<p>The setup is one line per font family in the HTML head, the same shape as Google Fonts:</p>
+<p>The setup is one line per font family in the page's head section, in the same form as Google Fonts:</p>
 
 <pre><code>&lt;link rel="preconnect" href="https://fonts.bunny.net"&gt;
 &lt;link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,600|playfair:600,700"&gt;</code></pre>
 
-<p>The font request returns a CSS file with @font-face declarations pointing at the actual font files on Bunny's CDN, exactly like Google Fonts. Switching an existing site from Google to Bunny is a one-line change in most cases.</p>
+<p>That request returns a small style file whose @font-face rules point to the font files on Bunny's network, exactly as Google Fonts does. Switching an existing site from Google to Bunny is usually a one-line change.</p>
 
-<p>For sites I build, I additionally preload the two display fonts most likely to be involved in the Largest Contentful Paint (the headline font and the body font), which shaves another 100 to 300 ms off perceived load time. This optimization works the same on Google or Bunny; I default to it on every build.</p>
+<p>On sites I build, I also preload the two fonts most likely to affect how fast the main content appears: the headline font and the body font. That cuts another 100 to 300 milliseconds off the load time a visitor notices. It works the same with Google or Bunny, and I do it on every build.</p>
 
 <h2>What it costs</h2>
 
-<p>Free, with no asterisks. Bunny.net offers Bunny Fonts as a public service, with no signup required, no rate limit, no traffic cap, and no upsell to a paid version. The cost to Bunny is the bandwidth, which is small relative to their core CDN business and serves as a goodwill loss-leader for sites that might later become Bunny.net hosting customers.</p>
+<p>It's free, with no catch. Bunny.net offers Bunny Fonts as a public service, with no sign-up, no rate limit, no traffic cap, and no paid upgrade. Bunny pays for the bandwidth, which is small next to its main CDN business, as goodwill toward sites that might later host with Bunny.net.</p>
 
-<p>The free tier is the only tier. There is no premium version of Bunny Fonts.</p>
+<p>The free version is the only version. There is no premium Bunny Fonts.</p>
 
 <h2>The cookie-banner question</h2>
 
-<p>One concrete benefit worth naming: a website using only first-party tracking plus Bunny Fonts (not Google Fonts) has a meaningfully cleaner consent surface than the same site using Google Fonts. Several EU privacy regulators have explicitly named Google Fonts as a third-party data transmission that requires consent under GDPR. Bunny Fonts is not in that category.</p>
+<p>Here's one concrete benefit. A site that uses only its own analytics plus Bunny Fonts has far less that needs consent than the same site using Google Fonts. Several EU privacy regulators have named Google Fonts as a transfer of data to a third party that requires consent under GDPR. Bunny Fonts isn't in that group.</p>
 
-<p>Combine Bunny Fonts with Cloudflare Web Analytics and Umami (both cookie-free), and most small-business sites can legitimately operate without any cookie banner at all. That alone removes one of the visual disruptions that hurt conversion on every site that has them.</p>
+<p>Pair Bunny Fonts with Cloudflare Web Analytics and Umami, which both work without cookies, and most small-business sites can run with no cookie banner at all. That removes one of the interruptions that lowers the share of visitors who call, on every site that shows one.</p>
 
 <h2>If your current site uses Google Fonts</h2>
 
-<p>The migration is one of the cheapest privacy improvements available. The steps:</p>
+<p>The switch is one of the cheapest privacy improvements you can make. Here are the steps:</p>
 
 <ol>
   <li>Find every reference to <code>fonts.googleapis.com</code> or <code>fonts.gstatic.com</code> in your site.</li>
-  <li>Replace each with the equivalent <code>fonts.bunny.net</code> URL (the Bunny Fonts website has a translator that takes a Google Fonts URL and returns the Bunny equivalent).</li>
-  <li>Test the site to confirm the fonts render correctly.</li>
-  <li>Update your privacy policy if it specifically mentioned Google Fonts as a third-party processor.</li>
+  <li>Replace each with the matching <code>fonts.bunny.net</code> address. The Bunny Fonts website has a converter that turns a Google Fonts address into the Bunny one.</li>
+  <li>Test the site to confirm the fonts look right.</li>
+  <li>Update your privacy policy if it names Google Fonts as an outside processor of visitor data.</li>
 </ol>
 
-<p>For sites I build, this is part of the default stack at launch. For sites I do not build, the migration is usually 15 to 30 minutes of work and the result is one less third-party transmission on every page load for the lifetime of the site.</p>
+<p>Sites I build use Bunny Fonts from launch. On other sites, the switch usually takes 15 to 30 minutes, and it removes one outside data transfer from every page load for the life of the site.</p>
 
 <h2>One small note about self-hosting</h2>
 
-<p>The most private option is to self-host the font files alongside your own site, so no third party is involved at all. This is technically the cleanest answer and what some teams prefer. The trade-off is a small amount of additional setup work and the loss of Bunny's global CDN distribution (your fonts now serve from wherever your site serves from, which on Cloudflare Pages is the same global edge anyway).</p>
+<p>The most private choice is to host the font files yourself, on the same server as your site, so no third party is involved. Some developers prefer this cleanest option. The trade-off is a little more setup, and your fonts then load from wherever your site does. On Cloudflare Pages, my hosting service, that's the same global network anyway.</p>
 
-<p>For most small business sites, Bunny Fonts is the right balance: zero privacy issue, zero setup work, zero performance cost. For larger sites with custom font licensing or strict data-residency requirements, self-hosting is the next step up. I make the call per project; the default is Bunny.</p>
+<p>For most small-business sites, Bunny Fonts strikes the right balance, with no privacy issue, no setup work, and no speed cost. For larger sites with custom font licenses or strict rules on where data is stored, self-hosting is the next step up. I decide for each project, and Bunny is the default.</p>

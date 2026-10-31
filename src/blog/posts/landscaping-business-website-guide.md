@@ -2,36 +2,34 @@
 title: "Landscaping Website Guide: Photos, Tags, and Pages"
 date: 2026-05-03
 label: "Industry Guide: Landscaping"
-description: "Landscaping is a visual trade in a crowded local search market. Here is what your website needs to win on Google and turn lookers into signed-design clients."
+description: "Landscaping is a visual trade in a crowded local search market. Here's what your website needs to rank on Google and turn browsers into signed design clients."
 ctaLabel: "If you run a landscaping business"
-ctaHeading: "I build sites for landscape designers."
-ctaText: "I build custom-coded landscaping sites that load fast on phones, surface real portfolio depth, and shape themselves around the seasonal calendar your business actually runs on. $175 a month, flat."
+ctaHeading: "I build sites for landscape designers"
+ctaText: "I build custom-coded landscaping sites that load fast on phones, show the full depth of your portfolio, and follow the seasons your business runs on. It's $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, landscaping]
 ---
 
-<p>Landscaping is one of the trades where the website does some of the hardest work in the sales process. A homeowner is making a multi-thousand-dollar decision about a part of their property they live with every day. They want to see what you have built, in their kind of yard, in their climate, before they ever pick up a phone. The website is where that conviction gets built.</p>
+<p>In landscaping, the website does some of the hardest selling. A homeowner is spending thousands on a part of the property they see every day. Before calling, they want to see what you've built in yards and climates like theirs.</p>
 
-<p>It is also a brutally competitive local search market. Every metro has dozens of landscapers. Most of their websites look the same: stock photos, "transforming outdoor spaces since [year]" headlines, a contact form, a Facebook icon. The websites that actually win, the ones that book consultations with serious design clients month after month, do specific things the average site does not.</p>
+<p>It's also a crowded local market. Most landscaping sites look alike: stock photos, a "transforming outdoor spaces since [year]" headline, a contact form, and a Facebook icon. The sites that book serious design clients month after month do a few things differently.</p>
 
-<p>This is what those things are.</p>
+<h2>Build the site on your photography</h2>
 
-<h2>Photography is the foundation. Treat it that way.</h2>
-
-<p>Landscaping is a visual trade. Customers buy with their eyes. The biggest single thing separating great landscaping sites from forgettable ones is the photo library. Specifically:</p>
+<p>Customers buy landscaping with their eyes, so the photo library matters most. Specifically:</p>
 
 <ul>
-  <li><strong>Real, recent project photography.</strong> Stock photos read as inauthentic in this trade more than any other. A homeowner browsing for a designer can tell the difference between a stock photo and a photo of an actual finished install in twenty seconds. Stock photos signal "this person has not built enough work to fill a portfolio yet."</li>
-  <li><strong>Before / after pairs.</strong> The single most powerful piece of content a landscaping site can publish. Show the bare yard, the half-finished install, and the finished space. Pair them with one or two sentences about the constraint that drove the design (south-facing slope, drainage problem, kids and a dog, shade-tolerant only). The pairs do more selling than any copy.</li>
-  <li><strong>Seasonal coverage.</strong> A garden in May does not look like a garden in November. If every photo on your site is shot in peak summer, your work looks one-dimensional. Photograph a few signature projects in spring, summer, and fall, the maturity arc tells the customer what their yard will actually look like over time.</li>
-  <li><strong>Real photo optimization.</strong> A 4MB phone photo on every page is what kills landscaping site speed. Modern image formats (AVIF and WebP) compress those photos to 200&ndash;400KB at the same visual quality. A custom-coded site does this automatically; most builder platforms will only do part of it.</li>
+  <li><strong>Recent photos of your own projects.</strong> A homeowner can spot a stock photo in 20 seconds, and it suggests you haven't built enough to fill a portfolio.</li>
+  <li><strong>Before-and-after pairs.</strong> These are the most persuasive content a landscaping site can publish. Show the bare yard, the work in progress, and the finished space, with a sentence on what shaped the design (a south-facing slope, a drainage problem, kids and a dog, shade-tolerant plants only).</li>
+  <li><strong>Every season.</strong> A garden in May doesn't look like a garden in November. Photograph a few signature projects in spring, summer, and fall, so customers see how their yard will mature.</li>
+  <li><strong>Photos prepared for fast loading.</strong> A 4MB phone photo on every page slows a site badly. Modern image formats (AVIF and WebP) shrink it to 200&ndash;400KB at the same quality. A custom-coded site does this automatically; most builder platforms do only part of it.</li>
 </ul>
 
-<p>If you do nothing else from this guide, fix the photography. It is the single biggest lever available.</p>
+<p>If you do one thing from this guide, fix the photography.</p>
 
-<h2>Structure the work the way customers think about it</h2>
+<h2>Organize the work the way customers think</h2>
 
-<p>Most landscaping websites organize their portfolio chronologically ("our 2025 projects") or by service category ("hardscape / softscape / irrigation"). Customers think differently. They think:</p>
+<p>Most landscaping sites sort projects by year ("our 2025 projects") or by service ("hardscape / softscape / irrigation"). Customers ask different questions:</p>
 
 <ul>
   <li>"What does a yard like mine look like when this person finishes with it?"</li>
@@ -39,71 +37,69 @@ tags: [post, landscaping]
   <li>"What does their work cost in my range?"</li>
 </ul>
 
-<p>The portfolio that wins is organized around <em>those</em> questions. Tag projects by yard size, sun exposure, dominant feature (front-yard curb-appeal redesign, full backyard build, drystone wall, native pollinator garden, kid-and-dog-proof play space), and rough budget tier. Filter the gallery on those tags. A homeowner with a small shaded urban backyard wants to see your small shaded urban backyard work, not scroll past five acres of country property to find one example that fits.</p>
+<p>Organize the portfolio around <em>those</em> questions. Tag each project by yard size, sun, main feature (front-yard curb-appeal redesign, full backyard build, drystone wall, native pollinator garden, kid-and-dog-proof play space), and rough budget, and let visitors filter by tag. Someone with a small, shaded city backyard can then skip past five acres of country property.</p>
 
-<h2>Local SEO depth that the competition does not bother with</h2>
+<h2>Do the local search work your competitors skip</h2>
 
-<p>"Landscaper [city]" is the search every potential client will eventually run. The local pack is brutally competitive: typically dominated by Google Business Profiles with the most reviews, but the website behind the profile decides whether the click converts.</p>
+<p>Every potential client eventually searches "landscaper [city]". Google's map results (the "local pack") usually go to the business profiles with the most reviews, but your website decides whether the click becomes a call.</p>
 
-<p>The on-page work that moves the needle:</p>
-
-<ul>
-  <li><strong>Real city pages, not doorway pages.</strong> If you serve five towns, build five real pages, each one with photos of work in <em>that</em> town, references to local conditions (clay soil in this neighborhood, drought-zone restrictions in that one, HOA aesthetics in another), and at least one local landmark in the copy. Doorway pages where every paragraph is the same with the city name swapped in are the doorway pattern Google's local algorithm specifically penalizes.</li>
-  <li><strong>Service-specific pages with custom-coded schema.</strong> Page for "drystone walls", "native plant design", "irrigation install", "outdoor lighting", "patio build", each with its own page, its own photos, its own LocalBusiness + Service schema. A custom-coded site does this; most templates will not.</li>
-  <li><strong>Connection to your Google Business Profile.</strong> NAP (name, address, phone) on every page must match the GBP exactly. Phone numbers in a different format break this. Address truncated differently breaks this. The whole local-pack ranking signal pivots on consistency, sloppy NAP costs visibility.</li>
-  <li><strong>Reviews surface on the site.</strong> The Google Business Profile collects reviews. The website needs to surface the strongest of them on the relevant service pages and on the homepage. New visitors do not click out to Google Maps to find reviews; they leave.</li>
-</ul>
-
-<h2>Seasonal pages and seasonal calls-to-action</h2>
-
-<p>Landscaping demand is seasonal. Spring is when consultations are booked for summer installs. Late summer is when homeowners are scoping fall renovations. Late fall is when the firewood-leaf-cleanup-snow trio carries the off-season.</p>
-
-<p>The website should reflect that calendar:</p>
+<p>The work on your own pages that helps:</p>
 
 <ul>
-  <li><strong>Spring landing page</strong> for the design-consult booking surge. "Get on the spring install list" with a real, simple intake form. Time-boxed urgency that is true (capacity actually does fill up).</li>
-  <li><strong>Fall landing page</strong> for fall renovation, bulb planting, irrigation winterization. Different audience, the customer who missed spring and is salvaging the season.</li>
-  <li><strong>Off-season offer.</strong> Winter is when serious design clients have time to plan. Many landscapers under-use the off-season. A "design contracts signed in winter, installed in spring" page captures that audience.</li>
+  <li><strong>City pages with local substance.</strong> If you serve five towns, build five distinct pages. Give each one photos of work in <em>that</em> town, local conditions (clay soil here, drought rules there, HOA styles in a third), and a local landmark. Google's local ranking system penalizes "doorway pages", which repeat the same text with only the city name swapped.</li>
+  <li><strong>A page for each service, with schema.</strong> Give "drystone walls", "native plant design", "irrigation install", "outdoor lighting", and "patio build" each their own page and photos. Add schema to each: hidden code that tells Google the page describes a local business and a specific service. A custom-coded site does this; most templates don't.</li>
+  <li><strong>A match with your Google Business Profile.</strong> Your name, address, and phone number (NAP) must match your Google Business Profile (GBP) exactly on every page. A phone number in a different format or an address shortened differently breaks the match, and map rankings depend on it.</li>
+  <li><strong>Reviews on the site.</strong> Show your strongest Google reviews on the homepage and the matching service pages. New visitors won't go looking on Google Maps; they'll leave.</li>
 </ul>
 
-<p>None of these need to be full pages of copy. Each is a small landing page tied to a specific intake form, surfaced from the homepage during the relevant window, and removed (or quietly de-prioritized) when out of season. A custom-coded site with a date-driven banner system does this without the owner remembering to swap content.</p>
+<h2>Plan pages and offers around the seasons</h2>
 
-<h2>The intake form does the qualification work</h2>
-
-<p>A generic "Name / Email / Message" form on a landscaping site is a missed opportunity. The form is the first piece of project-fit qualification you will do. The right four or five questions on a landing-page form save hours on the phone:</p>
+<p>Homeowners book consultations in spring for summer installs and plan fall renovations in late summer. In late fall, leaf cleanup, firewood, and snow removal carry the off-season. The website should follow that calendar:</p>
 
 <ul>
-  <li><strong>What kind of project?</strong> One-time install, maintenance, design-build, ongoing seasonal. Pre-segments the intake immediately.</li>
-  <li><strong>Approximate yard size and feature.</strong> Front yard, backyard, full property; small / medium / large. Tells you whether to scope a $5K touch-up or a $50K full design.</li>
-  <li><strong>Budget tier.</strong> A simple range ("under $5K", "$5K&ndash;$15K", "$15K&ndash;$50K", "$50K+", "not sure yet"). Filters out the wrong fit before a phone call. This is the single highest-leverage form question for any service business with a wide pricing range.</li>
-  <li><strong>Timing.</strong> "I want this done in spring", "this fall", "next year", "still figuring out". Determines which queue the lead goes into.</li>
-  <li><strong>How they found you.</strong> One question, one click. Tells you which marketing channel is actually working.</li>
+  <li><strong>A spring landing page</strong> for the rush of design consultations: "Get on the spring install list", with a simple intake form. The urgency is true, because your schedule does fill up.</li>
+  <li><strong>A fall landing page</strong> for renovation, bulb planting, and irrigation winterization, aimed at the customer who missed spring and wants to save the season.</li>
+  <li><strong>An off-season offer.</strong> Serious design clients have time to plan in winter, and many landscapers miss them. A "design contracts signed in winter, installed in spring" page reaches them.</li>
 </ul>
 
-<p>The form should also offer the option of attaching photos of the existing space, a custom-coded site can do this cleanly with a third-party intake provider that handles file uploads.</p>
+<p>Each is a short page with its own intake form, featured on the homepage in its season and taken down afterward. A custom-coded site with a date-driven banner makes the switch for you.</p>
+
+<h2>Let the intake form screen your leads</h2>
+
+<p>A generic "Name / Email / Message" form wastes your first chance to see whether a project fits. Four or five good questions save hours on the phone:</p>
+
+<ul>
+  <li><strong>What kind of project?</strong> One-time install, maintenance, design-build, or ongoing seasonal work. This sorts each lead at once.</li>
+  <li><strong>Approximate yard size and feature.</strong> Front yard, backyard, or full property, and whether it's small, medium, or large. You'll know whether it's a $5K touch-up or a $50K full design.</li>
+  <li><strong>Budget range.</strong> A simple range ("under $5K", "$5K&ndash;$15K", "$15K&ndash;$50K", "$50K+", "not sure yet") filters out poor fits before a call. For any business with a wide price range, it's the most useful question on the form.</li>
+  <li><strong>Timing.</strong> "I want this done in spring", "this fall", "next year", or "still figuring out" decides which list the lead goes on.</li>
+  <li><strong>How they found you.</strong> One click tells you which marketing is working.</li>
+</ul>
+
+<p>The form should also accept photos of the existing space, which a custom-coded site handles through an outside form service built for file uploads.</p>
 
 <h2>Speed matters more in this trade than most</h2>
 
-<p>The customer browsing landscaping sites is almost always doing it from their phone, often outside, often standing in their yard. They are scrolling through ten or fifteen sites in one sitting. <strong>The site that paints first wins; the site that takes four seconds to render its hero image is closed before it even shows up.</strong></p>
+<p>People browse landscaping sites on their phones, often standing in the yard, and look at 10 or 15 sites in one sitting. A site that takes four seconds to show its main photo is closed before it loads.</p>
 
-<p>This is not a small-margin effect. Google's own data shows roughly 7&ndash;10% of mobile visitors bounce per additional second of load time. A landscaper site at 60 PageSpeed mobile is losing roughly half of its mobile traffic before the visitor reads a word. A landscaper site at 95+ keeps that traffic and gives the visitor a chance to actually see the portfolio.</p>
+<p>Google's own data shows that roughly 7&ndash;10% of phone visitors leave for each extra second of load time. A landscaping site that scores 60 on Google's phone speed test (PageSpeed, rated 0 to 100) loses roughly half its phone visitors before they read a word. A site at 95 or above keeps them.</p>
 
-<p>Page speed is structural. It cannot be fixed with a plugin. It comes from the way the site is built, AVIF / WebP images served at the right size, minimal JavaScript, no heavy template runtime, custom CSS. <a href="/vs-wix/" class="inline-link">A custom-coded site achieves it natively</a>; most templated platforms do not.</p>
+<p>Speed comes from how the site is built, not from a plugin added later. It takes right-sized AVIF or WebP images, very little JavaScript (the code that makes pages interactive), no heavy template code, and hand-written styles. <a href="/vs-wix/" class="inline-link">A custom-coded site is fast by design</a>, and most template platforms aren't.</p>
 
-<h2>Trust signals that mean something to landscape buyers</h2>
+<h2>Show the trust signals landscape buyers look for</h2>
 
-<p>Landscaping is a high-trust trade. The customer is letting strangers tear up their property. The site has to earn that trust quickly:</p>
+<p>The customer is letting strangers tear up their property, so the site has to earn trust quickly:</p>
 
 <ul>
-  <li><strong>License and insurance, prominently.</strong> Specific license number, specific insurance carrier, specific liability limit. "Licensed and insured" alone is not specific enough.</li>
-  <li><strong>The team, with faces.</strong> Even if it is just you and one helper, photos of the people doing the work and a short note about each one. Especially in this trade, customers want to know who is going to be in their yard for two weeks.</li>
-  <li><strong>Equipment and process.</strong> What machines come on a job, how the property is protected, how cleanup works at the end of each day. Customers fear bad neighbors complaining about a torn-up street more than they fear the cost.</li>
-  <li><strong>Real testimonials with project specifics.</strong> "Great work, recommended!" tells the next customer nothing. "They handled the drainage problem on our south slope and the front yard is the only one on the block that drains correctly after the spring snowmelt now" sells the next job.</li>
+  <li><strong>License and insurance, in plain view.</strong> Give the license number, insurance carrier, and liability limit. "Licensed and insured" alone is too vague.</li>
+  <li><strong>Your crew, with faces.</strong> Even if it's just you and one helper, show who does the work, with a short note about each person. Customers want to know who will be in their yard for two weeks.</li>
+  <li><strong>Equipment and process.</strong> Explain which machines come, how you protect the property, and how you clean up each day. Customers fear neighbors complaining about a torn-up street more than they fear the cost.</li>
+  <li><strong>Testimonials with project details.</strong> "Great work, recommended!" tells the next customer nothing. "They fixed the drainage on our south slope, and ours is the only front yard on the block that drains after the spring snowmelt" sells the next job.</li>
 </ul>
 
-<h2>Blog content that ranks for the searches landscape buyers actually run</h2>
+<h2>Write articles for the searches landscape buyers run</h2>
 
-<p>Landscaping has a clear set of searches that drive consideration-stage buyers. The website that has long-form, useful content on those topics earns the long tail of organic traffic that the local-pack alone does not:</p>
+<p>People weighing a project search a familiar set of topics. Useful articles on them bring steady visits from many small, specific searches (the "long tail") that map results alone won't:</p>
 
 <ul>
   <li>"What landscaping increases home value the most"</li>
@@ -113,10 +109,10 @@ tags: [post, landscaping]
   <li>"Do I need a landscape designer or just a maintenance company"</li>
 </ul>
 
-<p>None of these need to be 5,000-word pillar posts. A 1,000&ndash;1,500 word post that answers the question honestly, with photos of relevant work and a clear next step, ranks for years. Five or ten of them, written one per month, become the backbone of an organic traffic funnel that the GBP alone cannot match.</p>
+<p>These don't need to be 5,000-word guides. A 1,000&ndash;1,500 word post that answers the question plainly, with photos and a clear next step, ranks for years. Written one a month, five or ten of them bring in more search visitors than your business profile can alone.</p>
 
 <h2>The bottom line</h2>
 
-<p>Landscaping is a trade where the website earns its keep. Done well, it is the first qualifier, the portfolio, the seasonal demand-shaper, and the local-pack engine all at once. Done poorly, it is a Facebook-tier brochure that loses every search to the competitor who took the website seriously.</p>
+<p>Done well, a landscaping website screens leads, shows the portfolio, shapes seasonal demand, and lifts you in the map results. Done poorly, it's a thin brochure that loses every search to the competitor who took the website seriously.</p>
 
-<p>If you want to see what a real landscaping site looks like end-to-end, <a href="/demo/meadow-stone/" class="inline-link">Meadow &amp; Stone is a working sample</a>, full-portfolio gallery, real schema, seasonal landing pattern, real intake form. It is built on the same stack and pricing as the rest of the trades I serve.</p>
+<p>To see a full landscaping site, <a href="/demo/meadow-stone/" class="inline-link">Meadow &amp; Stone is a working sample</a>, with a portfolio gallery, schema, seasonal landing pages, and an intake form. It uses the same build and pricing as every trade I serve.</p>

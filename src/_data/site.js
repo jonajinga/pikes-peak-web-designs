@@ -1,14 +1,13 @@
 export default {
   name: "Pikes Peak Web Designs",
   shortName: "Pikes Peak",
-  tagline: "A website you never have to worry about.",
+  tagline: "A website you never have to worry about",
   // Brand voice constants. Used across templates so the signature line,
   // sign-off, and forbidden-word list are pulled programmatically rather
   // than copy-pasted (and drifting) page-to-page.
   voice: {
     signature: "A website you never have to worry about.",
-    markline: "Custom-coded. Custom-cared-for.",
-    signoff: "Boring is the feature.",
+    markline: "A website you never have to worry about",
     methodology: "The Service Site Standard",
     forbiddenWords: [
       "synergy",
@@ -23,11 +22,17 @@ export default {
     ],
   },
   url: "https://pikespeakwebdesigns.com",
-  description: "Custom-coded websites for small service businesses across the U.S. and Canada. I handle the design, the hosting, the updates, and everything else. $0 down, $175 a month flat.",
+  description: "Custom-coded websites for small service businesses across the U.S. and Canada. I design, build, host, and look after your site for $175 a month, with $0 down.",
   // Umami Cloud privacy-friendly analytics. The base.njk script tag is
   // gated on this value, so it's safe to flip on by setting the ID and
   // off by clearing the string.
   umamiWebsiteId: "8bb5417d-5a24-4126-9950-9fdbd61aa414",
+  // The blog ships hidden until it is ready. While false, every /blog/
+  // page is noindex (kept out of search engines, site search, and the
+  // XML sitemap), the Atom feed is not generated, and the area pages and
+  // /results/ do not link to it. Flip to true to publish, then restore
+  // the nav, footer, and sitemap links by hand.
+  blogPublic: false,
   // Optional social handles. Render twitter:site only if the handle is set;
   // empty strings cause platforms to ignore (or warn about) the meta tag.
   twitterHandle: "",
@@ -61,7 +66,6 @@ export default {
   //   4. /onboarding/ collects the build inputs.
   agreementSignUrl: "https://app.documenso.com/d/BA0T0nJ5mxGayQhTOIZny",
   subscribeUrl: "https://buy.stripe.com/",
-  hourlyUrl: "https://buy.stripe.com/",
   utilityPages: [
     "Privacy Policy",
     "Accessibility Statement",

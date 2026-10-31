@@ -2,87 +2,87 @@
 title: "Eleventy: The Static-Site Generator I Build On"
 date: 2026-05-14
 label: "The Stack"
-description: "Eleventy is the build tool that turns templates and content into the fast, static HTML every site I deliver runs on. Here is what it is and why I picked it."
-ctaLabel: "Boring infrastructure, by design"
-ctaHeading: "Every site I build runs on Eleventy."
-ctaText: "No CMS, no database, no plugin tax. Templates and Markdown compile to clean static HTML on every push. Stable, fast, and yours to take with you."
+description: "Eleventy is the build tool that turns templates and content into the fast, plain web pages every site I build runs on. Here's what it is and why I chose it."
+ctaLabel: "Proven tools, by design"
+ctaHeading: "Every site I build runs on Eleventy"
+ctaText: "Your site needs no content management system, no database, and no plugin bills. Every change I make becomes clean, plain web pages within minutes, so the site stays stable and fast."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>If you click "view source" on any page of any site I build, the HTML you see was produced by Eleventy, a small open-source tool that compiles templates and content into static HTML files. Eleventy is the build layer of every project I ship. It does not run in production (the visitor never touches it); it runs on my computer or on Cloudflare's build infrastructure to produce the files that then live on the edge network.</p>
+<p>If you click "View source" on any page of a site I build, the HTML code you see was made by Eleventy. It's a small, free, open-source tool that turns templates and content into static HTML files, plain pages that are built ahead of time. Eleventy is the build step of every project I launch. Visitors never touch it: it runs on my computer or on Cloudflare's build servers to make the files that then go out on Cloudflare's worldwide network.</p>
 
-<p>For a small-business client, the choice of build tool is invisible the way the choice of carpentry tools is invisible to a homeowner. What matters is the finished house. But the build tool shapes the lifetime cost of the site, the speed of changes, the ease of moving to another developer, and how quickly things break when the platform changes underneath. So I am going to walk through the choice once.</p>
+<p>For a small-business client, the build tool is as invisible as a carpenter's tools are to a homeowner, because what matters is the finished house. But the tool shapes the site's lifetime cost, how fast changes go live, and how easily another developer could work on it. It also decides how quickly things break when the platform underneath changes, so I'll explain the choice once.</p>
 
 <h2>What Eleventy is</h2>
 
-<p><a href="https://www.11ty.dev" rel="noopener" class="inline-link">Eleventy</a> (often shortened to 11ty) is a static-site generator. You write your site as a set of templates (the layout shared across pages) and content (the actual page-by-page words and structure), and Eleventy combines them into a folder of plain HTML files ready to deploy.</p>
+<p><a href="https://www.11ty.dev" rel="noopener" class="inline-link">Eleventy</a>, often shortened to 11ty, is a static-site generator. You write the site as templates (the layout shared across pages) and content (the words and structure of each page). Eleventy combines them into a folder of plain HTML files, ready to publish.</p>
 
-<p>The output is just files. No database. No server-side logic. No PHP runtime. No JavaScript framework hydrating in the browser. Just HTML that the browser can parse and render directly, the way the web was originally designed to work.</p>
+<p>The result is just files. There's no database, no code running on the server, no PHP, and no JavaScript framework rebuilding the page in the browser. The browser reads the HTML and shows it directly, the way the web was first designed to work.</p>
 
-<p>This sounds primitive in 2026. It is also the reason the sites I build score 95 to 100 on Google PageSpeed, sit comfortably in the green band on every Core Web Vital, and never need a security patch.</p>
+<p>That sounds primitive in 2026. It's also why the sites I build score 95 to 100 on Google's PageSpeed test and never need a security patch. They also sit well in the green on all of Google's Core Web Vitals speed scores.</p>
 
 <h2>Why I picked it over the alternatives</h2>
 
-<p>Static-site generators are a small and mature category. The leading options in 2026 are Astro, Eleventy, Hugo, Jekyll, and Next.js (in static-export mode). I have used most of them; I picked Eleventy for four specific reasons.</p>
+<p>Static-site generators are a small, mature category. The leading options in 2026 are Astro, Eleventy, Hugo, Jekyll, and Next.js (in its static-export mode). I've used most of them, and I picked Eleventy for four reasons.</p>
 
-<p><strong>It is genuinely small.</strong> The framework itself is around 250 KB of JavaScript. The build is fast (a 200-page site rebuilds in two seconds). I can read the entire codebase if something behaves unexpectedly. The minimum-viable-change loop on a site is the time to save a file.</p>
+<p><strong>It is small.</strong> The tool itself is about 250 KB of JavaScript, and it's fast: a 200-page site rebuilds in two seconds. I can read all of its code if something behaves oddly, and a change to a site takes only as long as saving a file.</p>
 
-<p><strong>It does not impose a programming model.</strong> Astro and Next.js both want you to use components in a specific way. Eleventy does not have an opinion. I can write templates in Nunjucks (which I do), in Liquid, in Handlebars, in Markdown, in plain HTML, or mix all of them in the same project. The flexibility shows up most when I need to do something the framework's authors did not anticipate.</p>
+<p><strong>It does not impose a programming model.</strong> Astro and Next.js want you to build with their components in a set way, and Eleventy has no such opinion. I can write templates in Nunjucks (which I do), Liquid, Handlebars, Markdown, or plain HTML, or mix them in one project. That freedom helps most when I need something the tool's authors didn't anticipate.</p>
 
-<p><strong>It produces clean HTML.</strong> Astro, Next.js, and Hugo all wrap the output in framework-specific markup, hydration scripts, or build-system breadcrumbs that bloat the bytes shipped to the browser. Eleventy outputs only what I wrote. If a page is 6 KB of HTML in source, it is 6 KB on the wire.</p>
+<p><strong>It produces clean HTML.</strong> Astro, Next.js, and Hugo wrap their output in extra code of their own, such as scripts and build leftovers, which adds weight to every page sent to the browser. Eleventy outputs only what I wrote, so a page that's 6 KB of HTML in my files is 6 KB when it reaches the visitor.</p>
 
-<p><strong>It is conservative about its dependencies.</strong> Eleventy itself has a short list of dependencies, and the maintainers are slow to add more. The result is a build tool that does not break every six weeks because some upstream package decided to rewrite its API. I have a build of mine running on Eleventy 0.7 in the way-back, and it still builds today.</p>
+<p><strong>It is conservative about its dependencies.</strong> Eleventy relies on only a short list of other software packages (its dependencies), and its maintainers are slow to add more. So it doesn't break every six weeks because some package it relies on rewrote itself. One of my old builds from Eleventy 0.7 still builds today.</p>
 
 <h2>What this means for a client</h2>
 
-<p>The build-tool choice produces three concrete client-facing benefits:</p>
+<p>The choice of build tool gives clients three concrete benefits:</p>
 
-<p><strong>The site is portable.</strong> If the client ever wants to move to another developer, Eleventy is a small enough framework that the next developer can learn it in a weekend if they have not already. There are no Eleventy-specific cloud services, no proprietary cloud build steps, no licensed templates to extricate. The repo is just a folder of files.</p>
+<p><strong>Nothing ties the site to one company.</strong> Eleventy is small enough that any developer can learn it in a weekend. It needs no Eleventy-only cloud services, private build steps, or licensed templates, and the project is just a folder of files. On my plan, I own that code while you're a client, and the service agreement spells out what happens if you cancel.</p>
 
-<p><strong>The site keeps working over time.</strong> Eleventy projects from five years ago still build today with minimal changes. Compare to WordPress sites where the theme breaks every PHP-version update, or to React-based stacks where the framework reinvented itself between major versions.</p>
+<p><strong>The site keeps working over time.</strong> Eleventy projects from five years ago still build today with small changes. By contrast, WordPress themes can break when the PHP version updates, and React-based tools have reinvented themselves between major versions.</p>
 
-<p><strong>Build times stay fast.</strong> Adding a hundred pages to a site does not slow the build noticeably. The dev loop on adding a new blog post is "save the markdown file, watch the browser refresh in two seconds." That speed compounds across thousands of small updates over the lifetime of the engagement.</p>
+<p><strong>Build times stay fast.</strong> Adding 100 pages doesn't noticeably slow the build. Adding a blog post takes two steps: I save the file and watch the browser refresh in two seconds. That speed adds up across thousands of small updates over the years you're a client.</p>
 
 <h2>How a typical Eleventy project looks</h2>
 
-<p>A small business website on Eleventy is a few directories of files:</p>
+<p>A small-business website on Eleventy is a few folders of files:</p>
 
 <ul>
-  <li><strong><code>src/_includes/layouts/</code></strong> — the shared layouts (header, footer, base wrapper).</li>
-  <li><strong><code>src/_includes/partials/</code></strong> — small reusable HTML fragments (the contact form, the navigation, the footer).</li>
-  <li><strong><code>src/_data/</code></strong> — JavaScript files exporting structured data (the site config, the navigation links, the service-area metadata).</li>
-  <li><strong><code>src/blog/posts/</code></strong> — blog posts as Markdown files, one per post.</li>
-  <li><strong><code>src/</code></strong> — every other page (home, about, contact, services), each as a single Nunjucks or Markdown file.</li>
-  <li><strong><code>src/assets/</code></strong> — images, CSS, JavaScript that pass through to the build output.</li>
+  <li><strong><code>src/_includes/layouts/</code></strong>: the shared layouts (header, footer, and the outer frame of each page).</li>
+  <li><strong><code>src/_includes/partials/</code></strong>: small reusable pieces, such as the contact form, the menu, and the footer.</li>
+  <li><strong><code>src/_data/</code></strong>: JavaScript files that hold structured data, such as the site settings, the menu links, and details about each service area.</li>
+  <li><strong><code>src/blog/posts/</code></strong>: blog posts as Markdown files, one per post.</li>
+  <li><strong><code>src/</code></strong>: every other page (home, about, contact, and services), each as a single Nunjucks or Markdown file.</li>
+  <li><strong><code>src/assets/</code></strong>: images, style files, and JavaScript that pass straight through to the finished site.</li>
 </ul>
 
-<p>The folder structure is the site structure. A new page is a new file. A new blog post is a new Markdown file in the posts directory. The mental model is the file system; there is no admin panel layered on top.</p>
+<p>The folder structure is the site structure. A new page is a new file, and a new blog post is a new Markdown file in the posts folder. You think in files and folders, with no admin panel on top.</p>
 
 <h2>What this skips</h2>
 
-<p>By building on Eleventy, I get to skip a category of work that platforms like WordPress require:</p>
+<p>Building on Eleventy lets me skip a whole category of work that platforms like WordPress require:</p>
 
 <ul>
   <li>No theme update cycle.</li>
-  <li>No plugin compatibility matrix.</li>
-  <li>No PHP version migrations.</li>
-  <li>No database migration when changing hosts.</li>
+  <li>No chart of which plugins work with which.</li>
+  <li>No PHP version upgrades.</li>
+  <li>No database to move when changing hosts.</li>
   <li>No admin-panel security patches.</li>
-  <li>No "WordPress core update bricked the site" emergency calls.</li>
+  <li>No emergency calls because a WordPress update broke the site.</li>
 </ul>
 
-<p>The site does not have surfaces for any of those things to break, so they do not break.</p>
+<p>The site has no parts where those problems can start, so they don't happen.</p>
 
 <h2>What it cannot do</h2>
 
-<p>Honest limits:</p>
+<p>Eleventy has two limits:</p>
 
-<p><strong>Eleventy cannot run server-side logic.</strong> A static site is, by definition, just files. Anything that needs to happen at request time (form processing, search, dynamic content) lives outside Eleventy. I use <a href="/blog/web3forms-contact-and-lead-forms/" class="inline-link">Web3Forms</a> for forms, Cloudflare Workers for dynamic endpoints, and Pagefind (built at deploy time, runs in the browser) for search.</p>
+<p><strong>Eleventy cannot run server-side logic.</strong> A static site is, by definition, just files, so anything that has to happen when a visitor asks for a page lives outside Eleventy. That includes form handling, search, and changing content. I use <a href="/blog/web3forms-contact-and-lead-forms/" class="inline-link">Web3Forms</a> for forms and Cloudflare Workers, small programs on Cloudflare's network, for live features. Search uses Pagefind, which builds its index when the site is published and runs in the browser.</p>
 
-<p><strong>Eleventy is not a CMS.</strong> Clients who want to edit pages through a web admin do not get that out of the box. For most of my clients, this is not an issue (they email me with changes and the change lands quickly), but for clients who specifically want to log in and edit pages themselves, I can layer a headless CMS like Decap or Statamic on top, or pivot to a different stack entirely.</p>
+<p><strong>Eleventy is not a CMS.</strong> A content management system (CMS) lets you edit pages through a web admin, and Eleventy doesn't include one. For most owners, that's no problem, since they email me their changes and I make them quickly. For clients who want to log in and edit pages themselves, I can add a separate editing tool such as Decap or Statamic, or switch to different tools entirely.</p>
 
-<p>For most service businesses, the static model is exactly right. The site changes a few times a month, the changes are small, and the email-driven update workflow is faster than logging into an admin panel.</p>
+<p>For most service businesses, the static approach is exactly right. The site changes a few times a month, the changes are small, and emailing me is faster than logging in to an admin panel.</p>
 
 <h2>Why this matters for the lifetime cost of the site</h2>
 
@@ -90,16 +90,16 @@ tags: [post]
 Plugin cost: zero.<br>
 Theme licensing cost: zero.<br>
 Database hosting cost: zero.<br>
-Performance optimization plugin cost: zero.<br>
+Speed plugin cost: zero.<br>
 Security plugin cost: zero.<br>
-Backup-service cost: zero (the source is in Git; the build is reproducible).</p>
+Backup service cost: zero (the code is stored in Git, which keeps every version, and the site can be rebuilt from it at any time).</p>
 
-<p>The infrastructure cost of running a typical Eleventy site is genuinely zero. The cost of the engagement is the cost of my time, on the standard plan, and the only third-party service that costs money is the optional Web3Forms paid tier when a client exceeds 250 form submissions per month.</p>
+<p>The behind-the-scenes cost of running a typical Eleventy site is zero. What you pay for is my time, on the standard plan. The only outside service that ever costs money is Web3Forms' optional paid tier, for a client who receives more than 250 form submissions a month.</p>
 
-<p>Compare to a typical WordPress small-business site, which often runs $30 to $80 per month in hosting + plugin licenses + premium theme + backup service + security service, and which typically needs a periodic developer engagement to handle the maintenance the platform layers create.</p>
+<p>A typical WordPress small-business site, by comparison, often costs $30 to $80 a month for hosting, plugin licenses, a premium theme, a backup service, and a security service. It also usually needs a developer now and then to handle the upkeep those layers create.</p>
 
 <h2>If your current site is on a heavier platform</h2>
 
-<p>The migration to a static-site generator like Eleventy is a real piece of work, but it pays back over the lifetime of the site. For sites I rebuild, the migration is just the rebuild itself. For sites that are otherwise healthy on their current platform, the migration is rarely worth doing on its own; the value comes when the rebuild is happening anyway.</p>
+<p>Moving to a static-site generator like Eleventy takes substantial work, but it pays for itself over the life of the site. When I rebuild a site, the move is part of the rebuild. For a site that's otherwise healthy on its current platform, the move is rarely worth it alone, and the value comes when a rebuild is happening anyway.</p>
 
-<p>If you are running a small-business site on WordPress and the maintenance overhead has become a recurring frustration, the conversation is worth having. The standard plan covers the rebuild, the migration, the new hosting, and the new analytics, all in one engagement, at one flat rate.</p>
+<p>If you run a small-business site on WordPress and its upkeep has become a steady frustration, it's worth a conversation. The standard plan covers the rebuild, the move, the new hosting, and the new analytics, all for one flat monthly rate.</p>

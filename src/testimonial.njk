@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Share a Testimonial | Pikes Peak Web Designs"
-description: "Leave a testimonial for Pikes Peak Web Designs. I read every one, and the best ones end up (with your permission) on the Samples page."
+description: "Leave a testimonial for Pikes Peak Web Designs. I read every one, and with your permission, the best ones appear on the Samples page."
 ---
 
 <section class="page-hero">
@@ -10,8 +10,8 @@ description: "Leave a testimonial for Pikes Peak Web Designs. I read every one, 
       <a href="/">Home</a><span class="sep">/</span><span>Share a testimonial</span>
     </nav>
     <span class="section-label">Testimonials</span>
-    <h1>Got something nice to say? <em>We'd love to hear it.</em></h1>
-    <p>If working with me has been good for your business, a short note helps us a lot; and, with your permission, might help another small business feel confident picking us.</p>
+    <h1>Tell me how it went, <em>and help another owner decide</em></h1>
+    <p>If working with me has been good for your business, a short note helps me a lot. With your permission, it may also help another small business owner feel confident choosing me.</p>
   </div>
 </section>
 
@@ -19,7 +19,7 @@ description: "Leave a testimonial for Pikes Peak Web Designs. I read every one, 
   <div class="container" style="max-width:720px">
     <div class="contact-form-card">
       <h2 class="form-heading">Share your experience</h2>
-      <p class="form-intro">Four short prompts, one or two sentences each is plenty. You control what is public; I never publish anything without your explicit yes.</p>
+      <p class="form-intro">There are four short prompts, and one or two sentences each is plenty. You control what's public, and I never publish anything without your clear yes.</p>
 
       <form data-web3forms data-redirect="/thank-you/?type=testimonial" action="https://api.web3forms.com/submit" method="POST" class="form">
         <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
@@ -41,10 +41,10 @@ description: "Leave a testimonial for Pikes Peak Web Designs. I read every one, 
         <div class="form-row">
           <div class="form-group">
             <label for="role">Your role</label>
-            <input type="text" id="role" name="role" placeholder="Owner, Office Manager, etc.">
+            <input type="text" id="role" name="role" placeholder="Owner, office manager, and so on">
           </div>
           <div class="form-group">
-            <label for="city">City / state</label>
+            <label for="city">City and state</label>
             <input type="text" id="city" name="city" placeholder="Colorado Springs, CO">
           </div>
         </div>
@@ -53,41 +53,41 @@ description: "Leave a testimonial for Pikes Peak Web Designs. I read every one, 
           <label for="rating">Overall rating <span class="req">*</span></label>
           <select id="rating" name="rating" required>
             <option value="">Choose one…</option>
-            <option value="5">5 stars; couldn't be happier</option>
-            <option value="4">4 stars; very good, minor notes</option>
-            <option value="3">3 stars; okay, could be better</option>
-            <option value="2">2 stars; struggled</option>
-            <option value="1">1 star; would not recommend</option>
+            <option value="5">5 stars: couldn't be happier</option>
+            <option value="4">4 stars: very good, with minor notes</option>
+            <option value="3">3 stars: okay, but could be better</option>
+            <option value="2">2 stars: it was a struggle</option>
+            <option value="1">1 star: wouldn't recommend</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="qBefore">What was broken before? <span class="req">*</span></label>
-          <textarea id="qBefore" name="qBefore" rows="3" placeholder="What was the website situation before we worked together? Slow site? No site? Stuck on Wix? Just one or two sentences." required></textarea>
+          <label for="qBefore">What wasn't working before? <span class="req">*</span></label>
+          <textarea id="qBefore" name="qBefore" rows="3" placeholder="What was your website like before we worked together? A slow site? No site? Stuck on a builder you'd outgrown? One or two sentences is plenty." required></textarea>
         </div>
 
         <div class="form-group">
-          <label for="qWhy">Why did you pick Pikes Peak? <span class="req">*</span></label>
-          <textarea id="qWhy" name="qWhy" rows="3" placeholder="What made you choose me over the alternatives? What specifically clicked? Honest beats polished." required></textarea>
+          <label for="qWhy">Why did you choose Pikes Peak? <span class="req">*</span></label>
+          <textarea id="qWhy" name="qWhy" rows="3" placeholder="What made you choose me over the alternatives? What clicked? Plain words beat polished ones." required></textarea>
         </div>
 
         <div class="form-group">
           <label for="qAfter">What changed after launch? <span class="req">*</span></label>
-          <textarea id="qAfter" name="qAfter" rows="3" placeholder="Numbers if you have them (calls, leads, ranking moves). A feeling is fine too: 'I stopped worrying about my website.'" required></textarea>
+          <textarea id="qAfter" name="qAfter" rows="3" placeholder="Numbers if you have them (calls, leads, rankings). A feeling is fine too: 'I stopped worrying about my website.'" required></textarea>
         </div>
 
         <div class="form-group">
           <label for="qAdvice">What would you tell another business owner? <span class="req">*</span></label>
-          <textarea id="qAdvice" name="qAdvice" rows="3" placeholder="Imagine someone running a business like yours, looking at this. What would you tell them?" required></textarea>
+          <textarea id="qAdvice" name="qAdvice" rows="3" placeholder="Picture someone running a business like yours, reading this. What would you tell them?" required></textarea>
         </div>
 
         <div class="form-group">
           <label for="quote">Anything else? (optional)</label>
-          <textarea id="quote" name="quote" rows="3" placeholder="Free space. A specific moment, a number, a story, a thank-you, anything that does not fit above."></textarea>
+          <textarea id="quote" name="quote" rows="3" placeholder="Free space for a moment, a number, a story, a thank-you, or anything that doesn't fit above."></textarea>
         </div>
 
         <div class="form-group">
-          <label id="publishPermissionLabel">May we publish this?</label>
+          <label id="publishPermissionLabel">May I publish this?</label>
           <div class="form-radio-group" role="radiogroup" aria-labelledby="publishPermissionLabel">
             <label><input type="radio" name="publishPermission" value="full"> Yes, with my name, business, and city</label>
             <label><input type="radio" name="publishPermission" value="first-name"> Yes, but use only my first name and city</label>
@@ -102,11 +102,11 @@ description: "Leave a testimonial for Pikes Peak Web Designs. I read every one, 
         </div>
 
         <div id="form-error" role="alert" class="form-error">
-          Something went wrong. Please try again or email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+          Something went wrong. Please try again, or email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
         </div>
 
-        <button type="submit" class="btn btn-primary btn-full btn-lg">Submit testimonial</button>
-        <p class="form-hint">Thank you, seriously. I read every one.</p>
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Send testimonial</button>
+        <p class="form-hint">Thank you. I read every one.</p>
       </form>
     </div>
   </div>

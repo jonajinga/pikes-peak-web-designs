@@ -2,94 +2,90 @@
 title: "PurgeCSS: How I Keep the CSS Bundle Under 80 KB"
 date: 2026-05-21
 label: "The Stack"
-description: "Most websites ship hundreds of KB of unused CSS. PurgeCSS removes the dead weight at build time. Here is how I run it on every site."
-ctaLabel: "Lean by construction"
-ctaHeading: "I ship only the CSS each page actually uses."
-ctaText: "PurgeCSS runs on every build and drops 60 to 80 percent of the CSS the original framework would have shipped. Smaller bundles, faster pages, no manual cleanup."
+description: "Most websites send hundreds of KB of style code they never use. PurgeCSS removes it when the site is built. Here's how I run it on every site."
+ctaLabel: "Lean from the start"
+ctaHeading: "Each page loads only the styles it uses"
+ctaText: "PurgeCSS runs on every build and removes 60 to 80 percent of the style code a framework would have sent. You get smaller files, faster pages, and no manual cleanup."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>If you open the developer tools on most small-business websites and look at the loaded resources, the largest single file is almost always a CSS bundle, somewhere between 250 KB and 1.2 MB. The site uses maybe 15 percent of that bundle. The rest is style rules for layouts, components, and patterns that exist on other pages of the same site, or in some cases on no page at all.</p>
+<p>CSS is the code that controls how a website looks: colors, fonts, spacing, and layout. On most small-business sites, the largest file a visitor downloads is the CSS bundle, the single file that holds all of it, at 250 KB to 1.2 MB. The site uses maybe 15 percent of it. The rest styles parts that appear on other pages, or on no page at all.</p>
 
-<p>That dead weight is the cost of using a CSS framework or a templated theme. Bootstrap ships 250 KB. Tailwind's full output ships about 3.2 MB compressed (yes, megabytes). The themes available for WordPress, Wix, and Squarespace ship enough CSS to cover every possible variation a customer might choose, and the customer typically uses one variation.</p>
+<p>That extra weight comes from using a CSS framework (a ready-made style kit) or a template theme. Bootstrap sends 250 KB. An untrimmed build from older versions of Tailwind runs to several megabytes. Themes for WordPress, Wix, and Squarespace carry styles for every variation a customer might pick, and each customer uses one.</p>
 
-<p>The fix is a small build-time tool called PurgeCSS, which scans the actual rendered HTML of the site and removes any CSS rules that are not referenced. The result is a bundle that contains only the styles the site actually uses. On the typical service-business site I build, the CSS bundle ends up around 60 to 80 KB after PurgeCSS, down from the 400 to 500 KB the source might otherwise produce.</p>
+<p>The fix is PurgeCSS, a small tool that runs when the site is built. It reads the finished pages and removes every style rule they don't use. On a typical service-business site I build, the CSS ends up at 60 to 80 KB instead of the 400 to 500 KB it would otherwise be.</p>
 
 <h2>What PurgeCSS does</h2>
 
 <p>PurgeCSS reads two inputs:</p>
 
 <ol>
-  <li>The full CSS bundle (whatever the build produced before optimization).</li>
-  <li>The full set of rendered HTML files (every page on the site).</li>
+  <li>The full CSS bundle, as the build produced it.</li>
+  <li>Every finished HTML page on the site.</li>
 </ol>
 
-<p>It walks through every CSS rule and checks whether the selector appears in any of the HTML files. If the selector appears, the rule is kept. If the selector does not appear anywhere, the rule is dropped.</p>
+<p>Each CSS rule starts with a selector, the name that says which part of the page it styles. PurgeCSS checks each selector against the pages. If it appears, the rule stays; if it appears nowhere, the rule goes. The pages look exactly the same, with only the unused styles removed.</p>
 
-<p>The output is a smaller CSS bundle that produces visually identical pages. Every style that the site actually uses is preserved. Every style that exists in the source but is never applied gets removed.</p>
-
-<p>The technical piece worth knowing: PurgeCSS uses string matching, not a full DOM parse. It is fast (runs in seconds even on large sites) and conservative by default (it errs on the side of keeping a rule if it cannot tell). For dynamic class names that are constructed at runtime in JavaScript, PurgeCSS supports a "safelist" of selectors to always keep.</p>
+<p>It works by matching text rather than fully analyzing each page, so it runs in seconds even on large sites. It's cautious by default and keeps a rule when it can't tell. For class names that JavaScript creates while the page runs, PurgeCSS accepts a "safelist" of selectors to always keep.</p>
 
 <h2>Why this matters</h2>
 
-<p>The CSS bundle is render-blocking. The browser cannot paint the page until the CSS has loaded and parsed. A 600 KB bundle on a phone connection takes 3 to 6 seconds to download and another 100 to 300 ms to parse. During that time, the page is invisible to the visitor.</p>
+<p>The browser can't show the page until the CSS has downloaded and been read, so CSS "blocks" the page. On a phone connection, a 600 KB bundle takes 3 to 6 seconds to download and another 100 to 300 ms to read, and the visitor sees nothing until then. An 80 KB bundle downloads in 200 to 400 ms and is read in 30 to 60 ms, so the page appears within half a second.</p>
 
-<p>An 80 KB bundle takes 200 to 400 ms to download and 30 to 60 ms to parse. The first paint happens within half a second of the request, and the visitor sees the page before they have time to lose interest.</p>
-
-<p>The Largest Contentful Paint metric (Google's core ranking signal) depends directly on this. Sites with bloated CSS bundles routinely fail LCP on phones. Sites that have been purged routinely pass it.</p>
+<p>Google's core ranking measure, Largest Contentful Paint (how long the largest item on screen takes to appear), depends on this. Sites with bloated CSS often fail it on phones, and trimmed sites usually pass.</p>
 
 <h2>How I integrate it on every build</h2>
 
-<p>PurgeCSS runs at the end of the Eleventy build, after all pages have been generated and after the CSS has been concatenated. The flow:</p>
+<p>PurgeCSS runs at the end of each build with Eleventy, the tool I build sites with, once the pages and the CSS are complete:</p>
 
 <ol>
-  <li>The build generates all the HTML pages from templates and content.</li>
-  <li>The build generates the full CSS bundle by concatenating all the CSS partials.</li>
-  <li>PurgeCSS reads the HTML and the CSS, removes unused rules, and writes the cleaned CSS back.</li>
-  <li>The cleaned CSS is what gets shipped to the CDN.</li>
+  <li>The build creates all the HTML pages from templates and content.</li>
+  <li>The build joins all the CSS files into one bundle.</li>
+  <li>PurgeCSS reads the HTML and the CSS, removes unused rules, and saves the trimmed CSS.</li>
+  <li>The trimmed CSS goes to the CDN, the network of servers that delivers the site.</li>
 </ol>
 
-<p>The whole step adds about a second to the build time and produces a 60 to 80 percent reduction in the CSS bundle size. The first time a site is built with PurgeCSS, the byte savings are usually shocking. After that, every deploy automatically maintains the lean bundle.</p>
+<p>The step adds about a second to the build and shrinks the CSS by 60 to 80 percent. The first savings are usually startling, and every later publish keeps the file small.</p>
 
 <h2>What the visitor experiences</h2>
 
-<p>The practical visitor-side impact:</p>
+<p>For visitors, it means:</p>
 
-<p><strong>Faster first paint.</strong> The CSS bundle is the most common render-blocker on a typical site. Cutting it from 600 KB to 80 KB is a 7-to-1 reduction in render-blocking bytes, and the visitor sees the page proportionally faster.</p>
+<p><strong>The page appears sooner.</strong> CSS is the most common thing that holds a page back. Cutting it from 600 KB to 80 KB is a 7-to-1 reduction, and the page appears that much faster.</p>
 
-<p><strong>Better Lighthouse score.</strong> The "Reduce unused CSS" line item on a Lighthouse report is a direct measurement of what PurgeCSS solves. A site without PurgeCSS typically loses 5 to 15 PageSpeed points to this single line. A site with PurgeCSS clears it.</p>
+<p><strong>A better Lighthouse score.</strong> Lighthouse, Google's testing tool, has a "Reduce unused CSS" item that measures exactly what PurgeCSS fixes. Without it, a site typically loses 5 to 15 points on PageSpeed, Google's 0-to-100 speed score, on this item alone. With it, the item passes.</p>
 
-<p><strong>Cheaper bandwidth on the CDN side.</strong> Smaller files cost less to serve at scale. For a small-business site this is rounding error, but the principle compounds.</p>
+<p><strong>Less data to serve.</strong> Smaller files cost less to deliver in large numbers. For a small-business site the savings are tiny, but they add up.</p>
 
 <h2>Why most websites don't run it</h2>
 
-<p>PurgeCSS has been around since 2017 and is well understood by professional developers. The reason it is not running on most small-business websites is structural:</p>
+<p>PurgeCSS has been around since 2017, and professional developers know it well. Most small-business sites don't run it because of how they're built:</p>
 
-<p><strong>Platform sites do not give you build-time access.</strong> Wix, Squarespace, and Shopify build the CSS at the platform level. The customer never sees the bundle, never controls the build pipeline, and cannot insert a step like PurgeCSS even if they wanted to. The platforms have their own internal optimizations that may or may not be as aggressive; in my experience they are not.</p>
+<p><strong>Platform sites don't let you change the build.</strong> Wix, Squarespace, and Shopify build the CSS themselves. The customer never sees or controls that process and can't add a step like PurgeCSS. The platforms have their own optimizations, which in my experience trim less.</p>
 
-<p><strong>WordPress themes ship pre-built CSS.</strong> The theme designer compiled the CSS once and shipped it. The site builder can install plugins like "Asset CleanUp" or "WP Rocket" that approximate PurgeCSS at runtime, but they are not as effective and they add their own performance cost.</p>
+<p><strong>WordPress themes come with finished CSS.</strong> The theme's designer built the CSS once and packaged it. Site owners can install plugins such as "Asset CleanUp" or "WP Rocket" that imitate PurgeCSS while the page loads, but they're less effective and add their own slowdown.</p>
 
-<p><strong>Custom-coded sites without build pipelines are rare.</strong> The kind of site that ships hand-written CSS without any optimization is increasingly unusual. Most custom-coded sites in 2026 have a build step, and adding PurgeCSS to a build step is straightforward.</p>
+<p><strong>Custom-coded sites without a build step are rare.</strong> Few sites today send hand-written CSS with no optimization. Most custom-coded sites in 2026 have a build step, and adding PurgeCSS to one is straightforward.</p>
 
-<p>The combination is that platform sites cannot run PurgeCSS, WordPress sites approximate it poorly, and only properly-built custom-coded sites run it cleanly. This is one of the reasons custom-coded sites have a measurable performance edge.</p>
+<p>Only well-built custom-coded sites run it cleanly, which is one reason they're measurably faster.</p>
 
-<h2>The honest limits</h2>
+<h2>Where PurgeCSS needs help</h2>
 
-<p>PurgeCSS is conservative by design, which means a few situations need explicit configuration:</p>
+<p>Because PurgeCSS is cautious, a few situations need setup:</p>
 
-<p><strong>Dynamic class names.</strong> If JavaScript adds a class to an element at runtime (a "is-active" class on a dropdown, for example), PurgeCSS may not see the class in the static HTML and may drop the rule. The fix is to add the class to the safelist. I do this for the small set of dynamic classes my sites use.</p>
+<p><strong>Class names added by JavaScript.</strong> If code adds a class while the page runs (an "is-active" class on a dropdown, for example), PurgeCSS may not see it in the finished HTML and may drop its rule. The fix is to safelist the class, and I do that for the few such classes my sites use.</p>
 
-<p><strong>Third-party widgets.</strong> If a site embeds a third-party widget that injects its own HTML at runtime, PurgeCSS will not see the widget's content during the static analysis. The fix is either to safelist the widget's classes or to keep the third-party CSS in a separate file that PurgeCSS does not touch.</p>
+<p><strong>Outside widgets.</strong> A widget from another company that adds its own HTML while the page runs is invisible to PurgeCSS. Either safelist its classes or keep its CSS in a separate file that PurgeCSS doesn't touch.</p>
 
-<p><strong>Aggressive class-name patterns.</strong> Some libraries (Tailwind in particular) generate class names dynamically based on configuration. PurgeCSS supports custom extractors for these patterns; configuring them takes some care.</p>
+<p><strong>Generated class names.</strong> Some libraries, Tailwind in particular, create class names from their settings. PurgeCSS supports custom "extractors" to find them, which take some care to set up.</p>
 
-<p>For the typical service-business site I build, the configuration is straightforward and the savings are large. The whole optimization is set up once during the initial build and runs automatically thereafter.</p>
+<p>On a typical service-business site, the setup is simple and the savings are large. I set it up once, and it runs automatically after that.</p>
 
 <h2>If your current site has a heavy CSS bundle</h2>
 
-<p>The diagnostic is one Lighthouse run. Open <a href="https://pagespeed.web.dev" rel="noopener" class="inline-link">pagespeed.web.dev</a>, paste your URL, look for "Reduce unused CSS" in the Opportunities section. If Lighthouse names a savings of 100 KB or more, you have a real opportunity.</p>
+<p>One Lighthouse test tells you. Open <a href="https://pagespeed.web.dev" rel="noopener" class="inline-link">pagespeed.web.dev</a>, paste your address, and look for "Reduce unused CSS" under Opportunities. If it shows savings of 100 KB or more, there's room to improve.</p>
 
-<p>For sites I build, this opportunity is closed by default. For sites I do not build, the fix path depends on the platform: Tailwind users can configure JIT mode (effectively built-in PurgeCSS); WordPress users can install Asset CleanUp; Wix and Squarespace users have the platform's built-in optimization and not much else. Each step takes effort proportional to the platform's flexibility.</p>
+<p>On sites I build, this is handled from the start. Elsewhere, it depends on the platform. Tailwind users can turn on JIT mode, which works like built-in PurgeCSS. WordPress users can install Asset CleanUp. Wix and Squarespace users have the platform's own optimization and little else. The more flexible the platform, the more you can do.</p>
 
-<p>The investment is small relative to the impact, and the optimization keeps paying out for the lifetime of the site.</p>
+<p>The effort is small for the gain, and the gain lasts for the life of the site.</p>

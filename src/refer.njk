@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Refer a Business | Pikes Peak Web Designs"
-description: "Know a small business that needs a real website? Send them my way. I will credit one month of hosting to your account when they sign on."
+description: "Know a small business that needs a website? Send them my way, and I'll credit one month of hosting to your account when they sign on."
 ---
 
 <section class="page-hero">
@@ -10,16 +10,16 @@ description: "Know a small business that needs a real website? Send them my way.
       <a href="/">Home</a><span class="sep">/</span><span>Refer a business</span>
     </nav>
     <span class="section-label">Referrals</span>
-    <h1>Know a business that <em>needs a real website?</em></h1>
-    <p>Send them our way. If they become a client, I credit one month of hosting to your account as a thank-you. If you're not currently a client yourself, I bank the credit on your name and apply it the day you sign on, no expiration. No cash payouts; the credit model keeps things simple and inside the engagement.</p>
+    <h1>Send me a business that needs a website, <em>and earn a month of credit</em></h1>
+    <p>If they become a client, I credit one month of hosting to your account as a thank-you. If you're not a client yet, I hold the credit in your name and apply it the day you sign on, and it never expires. I pay referrals in credit rather than cash, which keeps things simple.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container" style="max-width:720px">
     <div class="contact-form-card">
-      <h2 class="form-heading">Tell us about them</h2>
-      <p class="form-intro">Just a few details. I will reach out to them, mention you by name, and keep you in the loop.</p>
+      <h2 class="form-heading">Tell me about them</h2>
+      <p class="form-intro">A few details are all I need. I'll reach out to them, mention you by name, and keep you in the loop.</p>
 
       <form data-web3forms data-redirect="/thank-you/?type=referral" action="https://api.web3forms.com/submit" method="POST" class="form">
         <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
@@ -43,10 +43,10 @@ description: "Know a small business that needs a real website? Send them my way.
             <label for="yourRelationship">Are you a Pikes Peak client?</label>
             <select id="yourRelationship" name="yourRelationship">
               <option value="">Choose one…</option>
-              <option value="client">Yes, current client</option>
-              <option value="past-client">Past client</option>
-              <option value="friend">Friend / associate of the business</option>
-              <option value="industry">Peer in the industry</option>
+              <option value="client">Yes, a current client</option>
+              <option value="past-client">A past client</option>
+              <option value="friend">A friend or associate of the business</option>
+              <option value="industry">A peer in the industry</option>
               <option value="other">Other</option>
             </select>
           </div>
@@ -79,18 +79,18 @@ description: "Know a small business that needs a real website? Send them my way.
             <input type="url" id="referredWebsite" name="referredWebsite" placeholder="https://">
           </div>
           <div class="form-group">
-            <label for="referredIndustry">Industry / what they do</label>
+            <label for="referredIndustry">Industry, or what they do</label>
             <input type="text" id="referredIndustry" name="referredIndustry" placeholder="e.g. residential plumbing in Denver metro">
           </div>
         </fieldset>
 
         <div class="form-group">
-          <label for="context">Anything we should know before reaching out?</label>
-          <textarea id="context" name="context" rows="4" placeholder="Optional. What their pain is, who referred you to them, how you'd like us to position the intro, timing sensitivities, etc."></textarea>
+          <label for="context">Anything I should know before reaching out?</label>
+          <textarea id="context" name="context" rows="4" placeholder="Optional. What they're struggling with, how you know them, how you'd like me to frame the introduction, any timing concerns, and so on."></textarea>
         </div>
 
         <div class="form-group">
-          <label id="contactMethodLabel">How should we contact them?</label>
+          <label id="contactMethodLabel">How should I contact them?</label>
           <div class="form-checkbox-group" role="group" aria-labelledby="contactMethodLabel">
             <label><input type="checkbox" name="contactMethod" value="email"> Email</label>
             <label><input type="checkbox" name="contactMethod" value="phone"> Phone</label>
@@ -100,11 +100,11 @@ description: "Know a small business that needs a real website? Send them my way.
         </div>
 
         <div id="form-error" role="alert" class="form-error">
-          Something went wrong. Please try again or email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+          Something went wrong. Please try again, or email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
         </div>
 
-        <button type="submit" class="btn btn-primary btn-full btn-lg">Submit referral</button>
-        <p class="form-hint">I will email you when I reach out, and again if they sign on.</p>
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Send referral</button>
+        <p class="form-hint">I'll email you when I reach out, and again if they sign on.</p>
       </form>
     </div>
   </div>

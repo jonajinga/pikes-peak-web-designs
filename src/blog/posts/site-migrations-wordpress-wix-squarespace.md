@@ -2,122 +2,112 @@
 title: "Site Migrations: Moving from WordPress, Wix, or Squarespace"
 date: 2026-05-27
 label: "Process & Operations"
-description: "Most platform migrations are not about exporting data; they are about preserving what matters. Here is how I move clients off each major platform."
+description: "A platform move is less about exporting data and more about keeping what matters. Here's how I move clients off WordPress, Wix, and Squarespace."
 ctaLabel: "Migration in the standard plan"
-ctaHeading: "I handle every migration as part of the rebuild."
-ctaText: "URLs preserved with 301 redirects. Content audited and cleaned. Search ranking transferred. Old platform decommissioned cleanly. No surprise bills."
+ctaHeading: "I handle the move as part of the rebuild"
+ctaText: "I keep your old web addresses working with permanent redirects, clean up your content, carry your search ranking over, and close the old platform down cleanly. No surprise bills."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>Most small-business website migrations end with the new site being a brand-new domain in the eyes of Google, the old URLs returning 404, and the search ranking that took years to build resetting overnight. The migration was technically successful (the new site exists, the content is on it) and operationally a disaster (the leads stopped coming).</p>
+<p>Many small-business site moves go wrong the same way. The old addresses show "page not found" errors, Google treats the new site as a stranger, and rankings that took years to build reset overnight. The new site exists, but the leads stop coming.</p>
 
-<p>This is preventable. The work is not glamorous; it involves careful URL mapping, redirect planning, content auditing, DNS coordination, and a few hours of post-launch verification. None of those steps is hard on its own; missing any of them is what produces the disasters.</p>
+<p>That's preventable. The work is careful rather than hard: mapping old addresses to new ones, setting up redirects, reviewing content, switching the DNS, and checking everything after launch. DNS is the set of settings that point your domain at your site and your email.</p>
 
-<p>This post explains what a clean migration off WordPress, Wix, and Squarespace looks like, what gets preserved, what gets rebuilt, and the platform-specific gotchas to watch for.</p>
+<p>Here's how I handle a move off WordPress, Wix, or Squarespace: what carries over, what I rebuild, and what to watch for on each platform.</p>
 
-<h2>What "migration" actually means</h2>
+<h2>What a migration means</h2>
 
-<p>A site migration is moving a website from one platform to another while preserving as much of the existing site's value as possible. The values worth preserving:</p>
+<p>A migration moves a site to a new platform while keeping as much of its value as possible. Here's what's worth keeping:</p>
 
 <ul>
-  <li><strong>Content.</strong> The text, images, and structure of every page. Rebuilding from scratch is rarely worth the time.</li>
-  <li><strong>SEO.</strong> The search rankings, backlinks, and Google's accumulated knowledge of the site. Lost ranking takes 6 to 18 months to rebuild.</li>
-  <li><strong>Domain.</strong> The actual URL the business has been using. Domain changes during migration multiply the SEO cost.</li>
-  <li><strong>Email.</strong> The MX records pointing at the email provider. Often forgotten in migration planning; visible to the client only when email stops arriving.</li>
-  <li><strong>Contact-form continuity.</strong> Inbound leads should continue to arrive without interruption.</li>
-  <li><strong>Analytics history.</strong> The last few years of traffic data, kept for trend comparison.</li>
+  <li><strong>Content.</strong> The text, images, and structure of every page. Starting from nothing is rarely worth the time.</li>
+  <li><strong>Search ranking.</strong> Your rankings, the links from other sites, and what Google knows about you. Lost ranking takes six to 18 months to rebuild.</li>
+  <li><strong>Domain.</strong> Your web address. Changing it during a move multiplies the damage to your ranking.</li>
+  <li><strong>Email.</strong> The MX records (the DNS settings that route your email). They're easy to forget until email stops arriving.</li>
+  <li><strong>Contact forms.</strong> New leads keep arriving without a break.</li>
+  <li><strong>Analytics history.</strong> The last few years of traffic data, kept so you can compare trends.</li>
 </ul>
 
-<p>The migration plan addresses each of these explicitly. Skipping any one of them is how the disaster scenarios happen.</p>
+<p>Skipping any one of these is how a move goes wrong.</p>
 
 <h2>How I migrate from WordPress</h2>
 
-<p>WordPress is the most common source platform and the one with the most variability between sites. Some WordPress sites are clean, well-structured, and pleasant to migrate; others are tangled webs of plugin-generated URLs, custom-post-type content, and theme-locked layouts. The work scales with the source-site complexity.</p>
-
-<p>The standard flow:</p>
+<p>WordPress sites vary the most. Some are clean and easy to move. Others are tangles of plugin-made addresses, custom content types, and layouts tied to one theme, and the work grows with the tangle. The steps:</p>
 
 <ol>
-  <li><strong>Pull the URL list.</strong> WordPress publishes a sitemap.xml (often via Yoast or Rank Math) with every public URL. I pull this and use it as the canonical list of pages to migrate.</li>
-  <li><strong>Export the content.</strong> The WordPress XML export includes posts and pages with their text content, but excludes media files. I download the media library separately and re-import the relevant images during the rebuild.</li>
-  <li><strong>Map old URLs to new.</strong> Most WordPress sites have either pretty permalinks (e.g. /services/roof-repair/) or default ones (e.g. /?p=247). I map each one to its new-site equivalent. The default-permalink case is the slightly harder migration because the URL structure changes for almost every page.</li>
-  <li><strong>Build the new site.</strong> Eleventy + the standard stack. The content from the WordPress export becomes the source for new pages; I rewrite the copy where needed (most older WordPress sites have salesy or thin content that benefits from rework).</li>
-  <li><strong>Plan and implement 301 redirects.</strong> Every old URL that no longer exists on the new site (or has changed paths) gets a 301 redirect to its new equivalent. The redirects live in the new site's _redirects file.</li>
-  <li><strong>Coordinate DNS.</strong> The new site is built and tested at a preview URL while the old WordPress site is still live. On launch day, I switch the DNS to point at the new host. The old WordPress site is taken offline a few days later, after the new one is verified working.</li>
-  <li><strong>Decommission WordPress.</strong> The WordPress site, hosting, and database are kept for 30 days as a safety net, then archived. The hosting subscription is canceled.</li>
+  <li><strong>Pull the address list.</strong> The site's sitemap.xml file (often made by Yoast or Rank Math) lists every public page, and it becomes my master list.</li>
+  <li><strong>Export the content.</strong> The WordPress export holds the text of posts and pages but not the images, so I download the media library separately.</li>
+  <li><strong>Map old addresses to new ones.</strong> Readable addresses (such as /services/roof-repair/) are easy to match. Default numbered ones (such as /?p=247) take more work, since almost all of them change.</li>
+  <li><strong>Build the new site.</strong> I build it in Eleventy, the tool that turns my templates into finished pages. Most older WordPress sites have thin or pushy copy, so I rewrite it where it helps.</li>
+  <li><strong>Set up 301 redirects.</strong> A 301 redirect permanently forwards an old address to its new page. Every old address that moved or disappeared gets one, listed in the new site's _redirects file.</li>
+  <li><strong>Switch the DNS.</strong> I test the new site at a preview address while the old one stays live, then point the DNS at the new host on launch day. The old site goes offline a few days later, once the new one checks out.</li>
+  <li><strong>Close down WordPress.</strong> I keep the old site, hosting, and database for 30 days as a safety net. Then I archive them and cancel the hosting.</li>
 </ol>
 
 <h2>How I migrate from Wix</h2>
 
-<p>Wix is harder than WordPress because it does not export content cleanly. The platform locks customer content to its own builder; there is no XML export of pages, no API for bulk content extraction.</p>
-
-<p>The practical migration path:</p>
+<p>Wix is harder, because it has no export of pages and no way to pull content out in bulk. The move goes like this:</p>
 
 <ol>
-  <li>I copy the content from each Wix page manually, paying attention to text, image alt text, and metadata.</li>
-  <li>I save the images by right-clicking and downloading from each Wix page (or by using a tool like Wix Site Downloader for bulk extraction; the tools work but are imperfect).</li>
-  <li>I rebuild the content in Eleventy with cleaner markup, better structure, and updated copy.</li>
-  <li>The URL structure usually changes from Wix's default to a cleaner pattern; the redirect plan captures every old URL.</li>
-  <li>DNS coordination is the same as WordPress migration.</li>
-  <li>The Wix subscription is canceled after the new site has been verified for 30 days.</li>
+  <li>I copy each page's text, image descriptions (alt text), and page details by hand.</li>
+  <li>I save the images one by one, or with a bulk tool such as Wix Site Downloader, which works but isn't perfect.</li>
+  <li>I rebuild the content in Eleventy with cleaner code, better structure, and updated copy.</li>
+  <li>The addresses usually change to a cleaner pattern, and the redirect plan covers every old one.</li>
+  <li>The DNS switch works the same way as it does for WordPress.</li>
+  <li>I cancel the Wix subscription after the new site has run cleanly for 30 days.</li>
 </ol>
 
-<p>Wix migrations take meaningfully longer than WordPress migrations because the content extraction is manual. Build that into the timeline.</p>
+<p>The hand copying makes a Wix move take noticeably longer, so plan for that in your schedule.</p>
 
 <h2>How I migrate from Squarespace</h2>
 
-<p>Squarespace is between WordPress and Wix in difficulty. Squarespace 7.1 has improved content export over earlier versions, but the export is still partial: pages, blog posts, and metadata come through cleanly; images and custom layouts do not.</p>
+<p>Squarespace sits in between. Version 7.1 exports pages, blog posts, and page details, but not images or custom layouts. I export what I can, copy the rest, rebuild in Eleventy, set up redirects, switch the DNS, and close the account after a 30-day safety window. It takes about as long as a WordPress move.</p>
 
-<p>The flow is similar to WordPress: export what is exportable, manually pull what is not, rebuild in Eleventy, plan redirects, coordinate DNS, decommission Squarespace after a 30-day safety window. The total time is closer to a WordPress migration than to a Wix migration.</p>
-
-<p>One Squarespace-specific gotcha: the platform's URL structure for blog posts includes a date prefix in some configurations (<code>/blog/2024/05/post-title</code>). The redirect plan needs to handle every variation, including prefixed and non-prefixed versions.</p>
+<p>One catch: some setups put the date in blog addresses (<code>/blog/2024/05/post-title</code>), so the redirects have to cover each version, with and without the date.</p>
 
 <h2>What gets preserved</h2>
 
-<p>For every migration I run, the following are preserved without negotiation:</p>
+<p><strong>The domain.</strong> Visitors type the same address and see the new site.</p>
 
-<p><strong>The domain.</strong> Visitors keep typing the same URL; the only thing that changes is what they see.</p>
+<p><strong>Email.</strong> The MX records stay pointed at your email provider, so your email never stops, even briefly.</p>
 
-<p><strong>Email continuity.</strong> The MX records stay pointed at whichever email provider the client uses. Email never stops working, even briefly.</p>
+<p><strong>Search ranking.</strong> The redirects carry your ranking to the new addresses. Within a few weeks of launch, search traffic is at or above its old level.</p>
 
-<p><strong>Search ranking.</strong> The 301 redirect plan transfers ranking from old URLs to new ones. Within a few weeks of launch, search-engine traffic is at or above pre-migration levels.</p>
+<p><strong>The published content.</strong> Every page's words and images come across, improved where it helps.</p>
 
-<p><strong>The published content.</strong> The actual words, images, and pages from the old site appear on the new site, refined where appropriate but not lost.</p>
-
-<p><strong>Analytics history.</strong> The Google Analytics or other analytics data from before the migration is preserved by keeping the same property/profile and pointing the new site's tracking at it.</p>
+<p><strong>Analytics history.</strong> The new site reports to your existing Google Analytics (or other) account, so the history carries on.</p>
 
 <h2>What gets rebuilt</h2>
 
-<p>The list of things that get genuinely rebuilt rather than migrated:</p>
+<p><strong>The design.</strong> A new look, layout, and typography. The old design was tied to the old platform, and copying it would defeat the purpose of the move.</p>
 
-<p><strong>The visual design.</strong> The new site has a new look, a new layout, and new typography. The old design was tied to the old platform; bringing it forward verbatim defeats the point of the migration.</p>
+<p><strong>The contact forms.</strong> Plugins such as Contact Form 7 or WPForms, and the built-in Wix and Squarespace forms, give way to Web3Forms. It sends each message to your inbox and shows the visitor a thank-you page.</p>
 
-<p><strong>The contact form backend.</strong> WordPress sites usually have a Contact Form 7 or WPForms plugin; Wix and Squarespace have built-in forms. The new site uses Web3Forms with a clean redirect to a thank-you page.</p>
+<p><strong>The speed.</strong> The new site runs on Cloudflare's network, with compressed images and trimmed style code. Scores on Google's speed test (PageSpeed) usually rise from the 40s and 50s to 95 to 100. Every page also lands in the green on Core Web Vitals, Google's measures of how fast a page loads, responds, and settles.</p>
 
-<p><strong>The performance characteristics.</strong> The new site is on Cloudflare's edge, with optimized images and a purged CSS bundle. PageSpeed scores typically jump from the 40s and 50s on the old platform to 95 to 100 on the new one, and the site sits comfortably in the green band on every Core Web Vital.</p>
-
-<p><strong>The SEO infrastructure.</strong> robots.txt, sitemap.xml, schema markup, meta tags, OG cards. All authored fresh against the new site rather than carried forward.</p>
+<p><strong>The search setup.</strong> The robots.txt file, sitemap, structured data, page titles and descriptions, and social sharing cards are all written fresh for the new site.</p>
 
 <h2>The 30-day safety window</h2>
 
-<p>For every migration I run, the old platform stays alive for 30 days after launch. The reasoning:</p>
+<p>The old platform stays live for 30 days after launch, for three reasons:</p>
 
 <ol>
-  <li>If something on the new site turns out to be broken in a way that did not show up during testing, falling back to the old site is one DNS change away.</li>
-  <li>If a search engine has been slow to crawl the redirects, there is still a working site at the old URL until the redirects propagate.</li>
-  <li>If a customer has the old URL bookmarked from a year ago, the redirect catches them.</li>
+  <li>If the new site has a problem that testing missed, going back is one DNS change away.</li>
+  <li>If a search engine is slow to pick up the redirects, the old address still works in the meantime.</li>
+  <li>If a customer bookmarked an old page a year ago, the redirect catches them.</li>
 </ol>
 
-<p>After 30 days of clean operation, the old platform gets decommissioned: hosting subscription canceled, content archived, billing stopped. The cost of the safety window is one extra month of platform fees, which is rarely more than $50 to $200 total.</p>
+<p>After 30 clean days, I cancel the old hosting, archive the content, and stop the billing. The extra month of platform fees rarely comes to more than $50 to $200.</p>
 
 <h2>What it costs</h2>
 
-<p>For sites I rebuild, the migration is part of the rebuild itself; there is no separate migration fee. The standard plan covers the rebuild, the migration, the new hosting, and the new analytics, all in one engagement, at one flat rate.</p>
+<p>When I rebuild your site, the move is part of the rebuild, with no separate migration fee. The standard plan covers the rebuild, the move, the hosting, and the analytics for $175 a month.</p>
 
-<p>For platforms with particularly difficult migrations (a deep Wix site with hundreds of pages, a custom-coded site with no documentation), the work may push into the hourly rate if it goes beyond the standard plan's scope. I quote the additional hours up front and never invoice for surprise overages.</p>
+<p>Some moves are harder, such as a Wix site with hundreds of pages or a custom-coded site with no documentation. Work beyond the plan costs $100 an hour, and I send a written estimate before I start, so there are no surprise bills.</p>
 
 <h2>If your current site is on a platform you want to leave</h2>
 
-<p>The conversation starts with the discovery call. I ask which platform you are on, how many pages the site has, what content you want to preserve, and what timeline matters. From there I quote the rebuild + migration as a single engagement and estimate the timeline.</p>
+<p>If you'd like to talk first, book a free call (20 to 30 minutes on Google Meet). I'll ask about your platform, how many pages you have, what content you want to keep, and your timing. Then I'll tell you what the plan covers and whether anything falls outside it.</p>
 
-<p>For most service-business sites, the migration is a known shape and the timeline is two to four weeks from discovery call to launch. Larger or more complex sites take proportionally longer; I tell you up front rather than discovering the scope mid-engagement.</p>
+<p>Most moves follow a familiar pattern, and the build takes two to three weeks from the day your first payment clears. Larger or more complex sites take longer, and I tell you so at the start.</p>

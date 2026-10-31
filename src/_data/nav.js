@@ -4,12 +4,11 @@ export default {
     { label: "What's Included", url: "/whats-included/" },
     { label: "Sample Websites", url: "/samples/" },
     { label: "Pricing", url: "/pricing/" },
-    { label: "Blog", url: "/blog/" },
     { label: "About", url: "/about/" },
   ],
   megaMenu: {
     southwest: {
-      label: "Southwest & West",
+      label: "Southwest and West",
       // Sorted by state then city
       cities: [
         { label: "Phoenix, AZ", slug: "phoenix-az" },
@@ -23,7 +22,7 @@ export default {
       ],
     },
     south: {
-      label: "South & Texas",
+      label: "South and Texas",
       // Sorted by state then city
       cities: [
         { label: "Atlanta, GA", slug: "atlanta-ga" },
@@ -37,7 +36,7 @@ export default {
       ],
     },
     east: {
-      label: "Florida, Midwest & Northeast",
+      label: "Florida, Midwest, and Northeast",
       // Sorted by state then city
       cities: [
         { label: "Jacksonville, FL", slug: "jacksonville-fl" },

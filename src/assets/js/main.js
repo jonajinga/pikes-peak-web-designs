@@ -200,6 +200,44 @@
     }, { passive: true });
   }
 
+  /* -------- Mobile action bar (Start now + call) --------
+     Show once the page's top section has scrolled away; hide while a
+     closing call to action or the footer is on screen (they carry the
+     same buttons) and while a form field has focus (the keyboard needs
+     the room). The bar is display:none above phone width, so this only
+     has a visible effect on phones. */
+  const actionBar = $('[data-action-bar]');
+  if (actionBar && 'IntersectionObserver' in window) {
+    const top = $('.hero, .page-hero');
+    let topInView = Boolean(top);
+    let typing = false;
+    const endsInView = new Set();
+    const update = () => {
+      const show = !topInView && endsInView.size === 0 && !typing;
+      actionBar.classList.toggle('is-visible', show);
+      document.documentElement.classList.toggle('action-bar-visible', show);
+    };
+    if (top) {
+      new IntersectionObserver(([entry]) => {
+        topInView = entry.isIntersecting;
+        update();
+      }).observe(top);
+    }
+    const endsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) endsInView.add(entry.target);
+        else endsInView.delete(entry.target);
+      });
+      update();
+    });
+    $$('.cta-section, .footer').forEach((el) => endsObserver.observe(el));
+    document.addEventListener('focusin', (e) => {
+      if (e.target.closest('input, textarea, select')) { typing = true; update(); }
+    });
+    document.addEventListener('focusout', () => { typing = false; update(); });
+    update();
+  }
+
   /* -------- Glossary A-Z floater (mobile) --------
      Reveal the fixed-position A-Z rail only after the user scrolls past
      the hero region. Prevents it from covering the hero copy on load. */
@@ -333,7 +371,7 @@
     { key: 'podcast',    label: 'Podcast',      test: (u) => /^\/podcast\//.test(u) },
     { key: 'changelog',  label: 'Changelog',    test: (u) => /^\/changelog/.test(u) },
     { key: 'method',     label: 'Method',       test: (u) => /^\/(method|technical-approach|how-it-works)/.test(u) },
-    { key: 'pricing',    label: 'Pricing',      test: (u) => /^\/(pricing|hourly|rebuild|audit|grader|calm-site-audit)/.test(u) },
+    { key: 'pricing',    label: 'Pricing',      test: (u) => /^\/(pricing|hourly|rebuild)/.test(u) },
   ];
   const detectType = (url) => {
     for (const t of TYPE_DEFS) if (t.test(url)) return t;

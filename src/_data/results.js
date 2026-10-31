@@ -36,6 +36,20 @@ try {
   blogPostCount = 18;
 }
 
+// Count sample intake forms (one directory each under src/sample-forms/).
+let sampleFormCount = 0;
+try {
+  const formsDir = path.resolve("src/sample-forms");
+  if (fs.existsSync(formsDir)) {
+    sampleFormCount = fs
+      .readdirSync(formsDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .length;
+  }
+} catch {
+  sampleFormCount = 8;
+}
+
 // Count area pages from src/_data/areas.js entries.
 let areaCount = 30;
 try {
@@ -79,6 +93,7 @@ try {
 export default {
   demoCount,
   blogPostCount,
+  sampleFormCount,
   areaCount,
   glossaryEntryCount,
   comparisonCount,

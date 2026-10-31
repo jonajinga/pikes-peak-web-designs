@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Ask a Question | Pikes Peak Web Designs"
-description: "Have a quick question? Send a message and I will get back to you on most business days. For booking a 20-minute discovery call, see /contact/ instead."
+description: "Have a quick question? Send it straight to Jon. To book a free call about a new website, use the contact page instead."
 ---
 
 <section class="page-hero">
@@ -10,8 +10,8 @@ description: "Have a quick question? Send a message and I will get back to you o
       <a href="/">Home</a><span class="sep">/</span><span>Ask a question</span>
     </nav>
     <span class="section-label">Quick message</span>
-    <h1>Have a question? <em>Send it over.</em></h1>
-    <p>This form is for anything that is not a sales inquiry, whether that is a missing glossary term, an accessibility report, a clarification on something you read on the site, or a follow-up question after launch. I read every message that comes in, and I tend to reply quickly on most business days.</p>
+    <h1>Have a question? <em>Send it straight to me</em></h1>
+    <p>Use this form for anything other than a new website: a missing glossary term, an accessibility report, a question about something on the site, or a follow-up after launch. I read every message and reply quickly on most business days.</p>
   </div>
 </section>
 
@@ -20,33 +20,33 @@ description: "Have a quick question? Send a message and I will get back to you o
     <div class="contact-grid">
       <div>
         <span class="section-label">Form first</span>
-        <h2 class="section-title" style="max-width:24ch">A quick form is the fastest way to reach me.</h2>
-        <p>The form routes your message to the right place automatically, and it includes the context I need to give you a useful answer rather than a follow-up question.</p>
+        <h2 class="section-title" style="max-width:24ch">A short form is the fastest way to reach me</h2>
+        <p>The topic you choose tells me what you need, so my first reply can be an answer instead of a follow-up question.</p>
 
         <ul class="contact-info-list" style="margin-top:1.5rem">
           <li class="contact-info-item">
             <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
             <div>
               <h3>Looking for something specific?</h3>
-              <p style="font-size:0.92rem;line-height:1.6">If you are a current client, the <a href="/client-portal/" class="inline-link">client portal</a> has dedicated forms for content updates, emergencies, design feedback, referrals, and testimonials, faster than this generic form for those needs.</p>
-              <p style="font-size:0.92rem;line-height:1.6;margin-top:0.85rem">If you are interested in a new website, please use the <a href="/contact/" class="inline-link">discovery-call form</a>; it is built for that conversation.</p>
+              <p style="font-size:0.92rem;line-height:1.6">Current clients: the <a href="/client-portal/" class="inline-link">client portal</a> has faster forms for content updates, emergencies, design feedback, referrals, and testimonials.</p>
+              <p style="font-size:0.92rem;line-height:1.6;margin-top:0.85rem">Interested in a new website? Use the <a href="/contact/" class="inline-link">free-call form</a> instead. It's built for that conversation.</p>
             </div>
           </li>
         </ul>
 
         <div style="margin-top:2.5rem;padding:1.5rem 1.75rem;background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--radius)">
-          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:600;margin-bottom:0.85rem">If the form does not suit your situation</h3>
-          <p style="font-size:0.92rem;color:var(--text);line-height:1.6;margin-bottom:1rem">You can reach me directly through any of the lines below, all of which come to the same person.</p>
+          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:600;margin-bottom:0.85rem">If you'd rather not use the form</h3>
+          <p style="font-size:0.92rem;color:var(--text);line-height:1.6;margin-bottom:1rem">Each of these comes straight to me.</p>
           <ul style="display:flex;flex-direction:column;gap:0.65rem;font-size:0.92rem">
-            <li><strong>Call or text</strong> &middot; <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a> &middot; Available for quick turnarounds on most business days</li>
-            <li><strong>Email</strong> &middot; <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a> &middot; I tend to reply quickly on most business days</li>
+            <li><strong>Call or text</strong> &middot; <a href="tel:{{ site.phone }}" class="inline-link">{{ site.phoneDisplay }}</a> &middot; Best for quick turnarounds</li>
+            <li><strong>Email</strong> &middot; <a href="mailto:{{ site.email }}" class="inline-link">{{ site.email }}</a> &middot; The same inbox as the form</li>
           </ul>
         </div>
       </div>
 
       <div class="contact-form-card">
         <h2 class="form-heading">Send a quick message</h2>
-        <p class="form-intro">Three fields, and I tend to reply quickly on most business days.</p>
+        <p class="form-intro">Four short fields. A few sentences is plenty.</p>
 
         <form id="askForm" data-web3forms data-redirect="/thank-you/?type=ask" action="https://api.web3forms.com/submit" method="POST" class="form">
           <input type="hidden" name="access_key" value="b6c3454b-f07c-43f7-9070-0e0cb5286f55">
@@ -65,13 +65,13 @@ description: "Have a quick question? Send a message and I will get back to you o
           </div>
 
           <div class="form-group">
-            <label for="askTopic">What is this about?</label>
+            <label for="askTopic">What's this about?</label>
             <select id="askTopic" name="topic">
               <option value="">Choose one&hellip;</option>
               <option value="general">A general question</option>
               <option value="glossary">Missing or unclear glossary term</option>
               <option value="accessibility">Accessibility issue or feedback</option>
-              <option value="content">A correction on something you wrote</option>
+              <option value="content">A correction to something on the site</option>
               <option value="press">Press, partnership, or media</option>
               <option value="other">Something else</option>
             </select>
@@ -79,7 +79,7 @@ description: "Have a quick question? Send a message and I will get back to you o
 
           <div class="form-group">
             <label for="askMessage">Your message <span class="req">*</span></label>
-            <textarea id="askMessage" name="message" placeholder="Whatever's on your mind. A few sentences is plenty." required rows="5"></textarea>
+            <textarea id="askMessage" name="message" placeholder="Whatever's on your mind." required rows="5"></textarea>
           </div>
 
           <div id="form-error" role="alert" class="form-error">
@@ -87,7 +87,7 @@ description: "Have a quick question? Send a message and I will get back to you o
           </div>
 
           <button type="submit" class="btn btn-primary btn-full btn-lg">Send message</button>
-          <p class="form-hint">We respect your privacy. See our <a href="/privacy-policy/" class="inline-link">privacy policy</a>.</p>
+          <p class="form-hint">I respect your privacy. See my <a href="/privacy-policy/" class="inline-link">privacy policy</a>.</p>
         </form>
       </div>
     </div>

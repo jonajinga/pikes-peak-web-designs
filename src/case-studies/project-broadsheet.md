@@ -1,70 +1,68 @@
 ---
 layout: layouts/case-study.njk
 permalink: /case-studies/project-broadsheet/
-title: "Project Broadsheet — an open-source editorial framework"
+title: "Project Broadsheet: an open-source editorial framework"
 client: "Project Broadsheet"
 liveUrl: "https://projectbroadsheet.com"
 trade: "Editorial framework"
-metro: "Open-web project"
-summary: "An open-source editorial framework on Eleventy for long-form publishers. Nine editorial sections, a reviews stack, a public-domain library, search, and the full SEO + structured-data + reader-experience layer that ships with every site I build, designed and built from scratch with no prior version."
+metro: "Online project"
+summary: "An open-source framework for long-form publishers, built from scratch: nine sections, reviews, a public-domain library, site search, and the search-engine groundwork and reading features I build into every site."
 selfStudy: true
 greenfield: true
 metrics:
-  - label: "Editorial sections"
+  - label: "Sections"
     value: "9"
-    note: "Distinct content types each with their own listing, taxonomy, and template. Reviews, essays, dispatches, library, et al."
-  - label: "Mobile PageSpeed"
+    note: "Reviews, essays, dispatches, the library, and more, each with its own listing and page design."
+  - label: "Speed score on phones"
     value: "95–100"
-    note: "Every page, mobile and desktop. Verifiable in pagespeed.web.dev against projectbroadsheet.com."
-  - label: "Accessibility floor"
+    note: "Every page, on phones and computers. Check projectbroadsheet.com at pagespeed.web.dev."
+  - label: "Accessibility standard"
     value: "WCAG 2.2 AA"
-    note: "Long-form editorial layout with quote pulls, footnotes, and dropcaps, audited end-to-end."
-  - label: "Search"
-    value: "Pagefind static"
-    note: "Full-text client-side search across every published piece. No backend, no API key, no third-party dependency."
+    note: "A long-form layout with pull quotes, footnotes, and drop caps, checked from end to end."
+  - label: "Site search"
+    value: "Pagefind"
+    note: "A search tool that runs in the reader's browser and covers every piece, with no server or outside service."
   - label: "Public-domain library"
-    value: "Indexable per-work"
-    note: "Each library work is its own indexable URL with structured data — every entry available for direct linking and citation."
+    value: "One page per work"
+    note: "Each library work has its own page that search engines can find and readers can cite."
 ---
 
-## The brief, framed honestly
+## The project
 
-Project Broadsheet is an open-source editorial framework for long-form publishers. It is the answer to the question, "what would a serious independent magazine site look like in 2026, if you started from a blank file and refused every stack shortcut that produces a slow, accessibility-poor, SEO-thin site?"
+Project Broadsheet is an open-source framework for long-form publishers. It shows what a serious independent magazine site could look like in 2026, built from a blank file without the shortcuts that make sites slow, hard to use, and hard to find.
 
-The point of the project is to be reusable. Every layout, every taxonomy, every template is generic enough to belong to any long-form publisher who clones it. There was no "before" — the whole framework was designed and built specifically to be the reference shape.
+Every layout and page design is general enough for any publisher to reuse. There was no earlier version; I designed it to be the model.
 
-## The build, end to end
+## The build
 
-Nine editorial sections live alongside each other: essays, dispatches, reviews, the library, a search interface, plus support pages. Each section has its own listing template, its own per-item template, its own taxonomy, and its own rich-result schema. A piece in *Reviews* ships `Review` schema with the right `itemReviewed` and `reviewRating`; a piece in *Library* ships `CreativeWork` with the right `author` and `datePublished`; a dispatch ships `Article`. A search engine that crawls the site sees the right kind of content in the right kind of envelope on the right kind of URL.
+Nine sections sit side by side, including essays, dispatches, reviews, and the library. Each has its own listing, page design, categories, and search-engine labels, so Google can tell a review from a library work or an article.
 
-The reviews stack is a deliberate piece of work in its own right. Star ratings render as semantic markup, not background images. A reviewer byline pulls from a per-author data file. Every review's structured data validates in the Schema.org validator and produces a real rich result in test pages of the Google search console.
+Star ratings are text that screen readers and search engines can read, and every review's labels pass Google's rich-result tests. Each work in the public-domain library has its own page and a trail back to the library index.
 
-The public-domain library is a separate listing under `/library/` where each work is an indexable per-work URL. The library page itself is a paginated index. Each work carries its own metadata, its own canonical URL, its own structured data, and its own breadcrumb back to the library.
-
-The reader experience layer is the same one I install on every client site: sticky table of contents on long pieces, reading-progress bar at the top, share buttons, a clean prev/next pager, related-piece grid. Privacy-respecting: no Google Fonts on the visitor path, no third-party analytics by default, no cookie banner needed.
+The reading features match what I add to every client site: a table of contents, a reading-progress bar, share buttons, and related pieces. There are no outside fonts, no outside analytics by default, and no cookie banner.
 
 ## The principles applied
 
 ### Posted prices, posted process
 
-The framework is open source. The whole codebase is on a public repository. The README documents the section structure, the data model, and the deploy step. A publisher who wants to fork it can do so without asking for permission.
+The framework is open source, with all its code and a guide to its structure in public, so any publisher can copy it without asking.
 
 ### Custom code over CMSes
 
-Eleventy v3 (ESM), Nunjucks templates, vanilla CSS, vanilla JS. The whole framework is a static-site build. No WordPress, no Ghost, no Substack, no Medium. A publisher cloning it owns their content, their archive, and their entire stack.
+It's custom code throughout, with no content management system underneath, so a publisher who uses it owns their content, archive, and site.
 
 ### Fast by construction
 
-Mobile PageSpeed 95–100 on every page including the long-form review and essay templates. CSS per-page-purged at build. Image pipeline emits AVIF + WebP + JPEG at multiple widths. JavaScript on the reader path is minimal and deferred.
+Every page, including long reviews and essays, scores 95 to 100 on Google's speed test on phones. Pages load only the styles they use, and images come in several sizes.
 
 ### Accessible by default
 
-Long-form layout is the worst case for accessibility because every piece introduces new typography (quotes, pull-quotes, footnotes, footnote references, drop caps, end-of-piece glyphs). Each was solved by hand. WCAG 2.2 AA across the corpus.
+Long-form layouts are the hardest case for accessibility, because quotes, footnotes, drop caps, and end marks each need care. I handled each by hand, and the framework meets WCAG 2.2 AA.
 
-## Why it qualifies as a case study
+## Why it belongs here
 
-A typical service-business site is far simpler than this. If the engineering posture and the design system can produce a publication-grade editorial framework with nine sections, working search, structured data per content type, and 95–100 PageSpeed across the board, then a contractor's marketing site is a much smaller variant of the same job.
+A typical service-business site is far simpler. If I can build a publication with nine sections, search, labels for every kind of content, and top speed scores, a contractor's site is a much smaller version of the same job.
 
 ## Visit the live site
 
-The reference deployment is on the open web at <a href="https://projectbroadsheet.com" rel="noopener" class="inline-link">projectbroadsheet.com</a>. Inspect any URL. Run any page through PageSpeed Insights. The numbers and the engineering shape are auditable in the public tools.
+The model site is at <a href="https://projectbroadsheet.com" rel="noopener" class="inline-link">projectbroadsheet.com</a>. Look through any page, or run it through Google's speed test.

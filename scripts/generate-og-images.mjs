@@ -25,7 +25,7 @@ const VIEWPORT = { width: 1200, height: 630, deviceScaleFactor: 1 };
 
 // --- Brand template (inlined HTML + CSS, no fonts loaded over network) ---
 function template({ eyebrow, title, badge, cta }) {
-  cta = cta || "Get the free 5-point audit";
+  cta = cta || "Book a free discovery call";
   // Escape for safe HTML interpolation.
   const esc = (s) =>
     String(s)
@@ -187,7 +187,7 @@ try {
       eyebrow: "Pikes Peak Web Designs",
       title: "A website you never have to worry about.",
       badge: "$175 / month flat",
-      cta: "Start with a free 5-point audit",
+      cta: "Book a free discovery call",
     }),
     path.join(OUT_BASE, "default.png")
   );
@@ -203,7 +203,7 @@ try {
         eyebrow: p.label,
         title: p.title,
         badge: "Blog",
-        cta: "Get the free 5-point audit",
+        cta: "Book a free discovery call",
       }),
       out
     );

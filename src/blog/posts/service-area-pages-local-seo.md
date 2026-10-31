@@ -2,53 +2,51 @@
 title: "Service-Area Pages: How I Structure Them for Local SEO"
 date: 2026-05-29
 label: "Performance & SEO"
-description: "Service-area pages are how a local business shows up for 'near me' queries across multiple cities. Here is the pattern I use on every build."
-ctaLabel: "Service areas wired in"
-ctaHeading: "Each metro you serve gets its own page."
-ctaText: "Real local content per city, not duplicated boilerplate. Mapped to your Google Business Profile coverage and structured for local-pack ranking. Part of the standard plan."
+description: "Service-area pages help a local business show up in 'near me' searches across every town it serves. Here's the pattern I use on every site I build."
+ctaLabel: "Service-area pages included"
+ctaHeading: "Each area you serve gets its own page"
+ctaText: "Each page has local content written for that town. I match the pages to the areas on your Google Business Profile and set them up to compete in Google's map results. Part of the standard plan."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>Most service businesses serve a region rather than a single city. A roofing company based in Colorado Springs serves Monument, Falcon, Black Forest, and Pueblo. An HVAC operator covers a metro plus the surrounding small towns. A landscape designer takes projects across a wider arc than the city they list on Google.</p>
+<p>Most service businesses serve a region, not one city. A Colorado Springs roofer also works in Monument, Falcon, Black Forest, and Pueblo. An HVAC company covers a metro and the small towns around it.</p>
 
-<p>The website that ranks well for those surrounding areas is the one with dedicated, real content for each one. Without it, Google has to guess where the business actually serves; with it, the business shows up in the local pack for "near me" queries across the entire service area. The pattern is well understood and easy to abuse; this post walks through the version I run on every site I build.</p>
+<p>The site that ranks in those towns is the one with a page for each. Without those pages, Google has to guess where you work. With them, you can appear in Google's map results (the "local pack") for "near me" searches across your whole area. Here's the version I use on every site I build.</p>
 
 <h2>What a service-area page is for</h2>
 
-<p>A service-area page is a single URL on the website dedicated to one specific geographic location the business serves. The page tells visitors (and search engines) "yes, we serve this specific area, here is what that means in practice." For a homeowner in Black Forest searching for a roofer, the page is the entry point that says "yes, that includes you."</p>
+<p>A service-area page is one page on the site for one place the business serves. For a homeowner in Black Forest looking for a roofer, it's the page that says, "Yes, that includes you."</p>
 
-<p>For Google, the page is the structured signal that the business is relevant to that area. Google's local-pack algorithm weights several inputs: the business's primary location, the proximity of the searcher, the explicit areaServed declarations in schema, and the existence of pages on the business's website that name the area specifically. The service-area page is the on-site signal that contributes to all four.</p>
+<p>For Google, it's a clear sign that the business is relevant there. Google's local ranking weighs four things: the business's main location, how close the searcher is, the areas named in the site's structured data, and pages that name the area. Structured data, also called schema, is code that describes the business to search engines. A service-area page supports all four.</p>
 
-<h2>The version that works vs. the version that doesn't</h2>
+<h2>Telling a useful page from a copy</h2>
 
-<p>Service-area pages are one of the most common places small-business websites slip into spammy patterns. The wrong version is a page that takes the homepage and replaces every mention of "Colorado Springs" with the new city name, producing 30 pages that are 95 percent identical with only the place name changed. Google identifies this as duplicate content, devalues all of the pages, and may penalize the site.</p>
+<p>This is where many small-business sites slide into spam. The wrong version copies the home page and swaps in a new town name, producing 30 pages that are 95 percent identical. Google treats them as duplicate content, lowers the value of every one, and may penalize the whole site.</p>
 
-<p>The right version is a page that has real, specific content for the area: local landmarks, common housing stock in that area, regional weather patterns that affect the trade, recent projects in the neighborhood, drive time from the main office, and a personalized intro that references something genuine about the location.</p>
-
-<p>The line between the two versions is whether the page would still be useful if you removed everything that mentioned the trade. If yes, the page is worth keeping. If no (because the only content is templated trade copy with the place name swapped in), the page is duplicate content and Google will treat it as such.</p>
+<p>The right version has content specific to the area: local landmarks, the kind of houses there, the weather that affects the trade, recent nearby projects, and the drive time from the office. Here's a simple test: remove everything about the trade. If what's left is still useful, keep the page. If nothing is left, Google will treat it as duplicate content.</p>
 
 <h2>What I write for each service area</h2>
 
-<p>For every site I build, each service area gets a dedicated page that includes the following content (in roughly this order):</p>
+<p>Each page includes the following, in roughly this order:</p>
 
-<p><strong>A genuine intro about the area.</strong> A few sentences that describe the area, name something specific about it, and explain why the business serves it. "Black Forest sits at 7,200 feet on the eastern flank of the Rampart Range, with a mix of older log cabins and newer custom builds. The roofs up there take more wind and more snow than anywhere else in El Paso County, and the inspection patterns are different from valley properties." The kind of paragraph that could only be written by someone who actually works there.</p>
+<p><strong>An introduction to the area.</strong> A few sentences that name something specific about the place and explain why the business works there: "Black Forest sits at 7,200 feet on the eastern flank of the Rampart Range, with a mix of older log cabins and newer custom builds. The roofs up there take more wind and more snow than anywhere else in El Paso County, and the inspection patterns are different from valley properties." Only someone who works there could write it.</p>
 
-<p><strong>The drive-time and coverage detail.</strong> How long it takes to reach the area from the main office, whether there are any travel surcharges (typically no, but some businesses add a fee for distant projects), and any specific neighborhoods or sub-areas covered.</p>
+<p><strong>Drive time and coverage.</strong> How long it takes to get there, whether there's a travel fee (usually not), and which neighborhoods are covered.</p>
 
-<p><strong>The services available in that area.</strong> Most service-business sites offer the same services across their whole coverage area, but some do not. The page is the right place to specify if (for example) commercial roofing is only offered in the metro proper, not in the outlying small towns.</p>
+<p><strong>The services offered there.</strong> Most businesses offer the same work everywhere they go. If commercial roofing is offered only in the metro, this is the page that says so.</p>
 
-<p><strong>Recent local work, where possible.</strong> Photos and brief project descriptions from the area. A homeowner reading the page is more likely to call after seeing a recent job in their neighborhood.</p>
+<p><strong>Recent local work, where possible.</strong> Photos and short notes on nearby jobs. A homeowner who sees one in their own neighborhood is more likely to call.</p>
 
-<p><strong>Local-specific FAQs.</strong> Questions that come up specifically in that area. "Why do roofs in Black Forest need a Class 4 impact-rated shingle by default?" "Why do HOAs in Briargate restrict roof colors more than HOAs in Falcon?" The questions name the area and the answer is genuinely informative.</p>
+<p><strong>Local questions and answers.</strong> "Why do roofs in Black Forest need a Class 4 impact-rated shingle by default?" "Why do HOAs in Briargate restrict roof colors more than HOAs in Falcon?" Each question names the area, and each answer tells the reader something useful.</p>
 
-<p><strong>The contact path.</strong> A clear "next step" — a phone number, an inspection-request form, an address for the main office. Standard across all service-area pages but the form is sometimes pre-filled with the city name to indicate the lead is from that area.</p>
+<p><strong>The way to get in touch.</strong> A phone number, an inspection-request form, and the office address. The form can fill in the town name, so you know where the lead came from.</p>
 
-<p>The pages are not short — typically 600 to 1,200 words each. The investment per page is real but the cumulative effect is large. A site with 15 well-written service-area pages ranks across 15 areas; a site with one homepage ranks for the city the business is technically located in and not much else.</p>
+<p>The pages run 600 to 1,200 words each. A site with 15 well-written service-area pages ranks in 15 areas, while a site with only a home page ranks in its home city and little else.</p>
 
 <h2>What I write into the schema</h2>
 
-<p>Each service-area page declares structured data that explicitly names the area:</p>
+<p>Each page carries structured data that names the area:</p>
 
 <pre><code>{
   "@type": "Service",
@@ -63,36 +61,34 @@ tags: [post]
   }
 }</code></pre>
 
-<p>The schema is what tells Google in machine-readable form "this page is about a service offered in this specific city, by this specific business." Without the schema, the page's relevance to the area depends on Google's natural-language inference; with the schema, it is explicit.</p>
+<p>This code tells Google outright, in a form a machine can read, which city and which business the page is about. Without it, Google has to work that out from the wording.</p>
 
 <h2>How many service areas to have</h2>
 
-<p>The honest answer is "as many as you genuinely serve." Most small service businesses cover 5 to 25 distinct areas: the city they are based in, the immediate suburbs, and the outlying small towns within drive range. A service-area architecture that covers all of them is meaningful. One that adds 200 areas the business has never actually worked in is spam.</p>
+<p>Have one for every area you serve. Most small service businesses cover five to 25: the home city, the suburbs, and the small towns within driving range. Adding 200 areas you've never worked in is spam.</p>
 
-<p>For each area I add, the test is whether you have ever done a project there or would actively pursue work there. If yes, the area earns a page. If no, the page is fiction and Google will eventually treat it that way.</p>
+<p>My test for each area is simple: have you done a job there, or would you go after work there? If not, the page is fiction, and Google will eventually treat it that way.</p>
 
 <h2>The relationship to Google Business Profile</h2>
 
-<p>The Google Business Profile (formerly Google My Business) has its own areaServed setting, which is what feeds the local pack directly. The website's service-area pages are a parallel signal; they reinforce what the GBP declares but cannot substitute for it.</p>
+<p>Your Google Business Profile (your listing in Google Maps, formerly Google My Business) has its own service-area setting, which feeds the map results directly. The pages on your site back up the profile, but they can't replace it.</p>
 
-<p>The clean alignment: the GBP service area covers the same areas the website has pages for, with the same names. A GBP that lists "Colorado Springs and surrounding areas" should be paired with website pages for the specific surrounding areas. A GBP that lists 30 specific cities should have website pages for the same 30 cities.</p>
-
-<p>For sites I build, I configure both at launch and keep them aligned over time. Adding a new service area means a new page on the site plus a GBP update; the two are part of one operation, not separate tasks.</p>
+<p>The two should list the same areas with the same names. A profile that says "Colorado Springs and surrounding areas" needs pages for those towns, and a profile that lists 30 cities needs 30 pages. I set up both at launch and update them together whenever you add an area.</p>
 
 <h2>The internal linking pattern</h2>
 
-<p>Service-area pages do not exist in isolation. They link to:</p>
+<p>Each service-area page links to:</p>
 
 <ul>
-  <li>The main services pages (so a visitor on the Black Forest page can navigate to the specific service they need).</li>
-  <li>Each other, where adjacency makes sense (a Black Forest visitor might also serve Falcon, the next page over).</li>
-  <li>The contact page, with a query parameter that pre-fills the city in the form.</li>
+  <li>The main service pages, so a visitor can go straight to the service they need.</li>
+  <li>Neighboring area pages, where that makes sense (a Black Forest visitor may also want Falcon, the next page over).</li>
+  <li>The contact page, with a short code in the link (a query parameter) that fills in the town on the form.</li>
 </ul>
 
-<p>The internal-linking density also helps SEO; Google reads the links as relationship signals between pages, and a service-area page that links to (and is linked from) the main services pages is reinforced as part of the broader site rather than as an isolated landing page.</p>
+<p>Google reads these links as signs of how pages relate, so each area page counts as part of the site rather than a stray landing page.</p>
 
 <h2>If your current site has only a homepage</h2>
 
-<p>The opportunity is real. A small-business site that ranks for one city and has 15 surrounding cities it could serve is leaving 15 ranking surfaces unbuilt. The work is real (the writing is the bulk of it), but the cumulative effect on local-pack visibility compounds for years.</p>
+<p>A site that ranks in one city, with 15 nearby towns it could serve, is missing 15 chances to rank. The writing is most of the work, and the gain in map results keeps growing for years.</p>
 
-<p>For sites I build, service-area pages are part of the standard plan; the build includes whatever number of areas the client genuinely serves. For sites I do not build, the same architecture can be added retroactively to any platform that lets you add pages; the question is whether the platform produces fast pages with proper schema and accessible markup.</p>
+<p>On sites I build, service-area pages are part of the standard plan, which includes ten pages; each page beyond those costs $100. On another platform, you can add the same pages to any site that lets you create pages. What matters is whether the platform produces fast pages, with proper structured data and code that works for people with disabilities.</p>

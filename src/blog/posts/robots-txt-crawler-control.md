@@ -2,44 +2,42 @@
 title: "robots.txt: The Small File That Controls Crawlers"
 date: 2026-05-26
 label: "SEO Operations"
-description: "robots.txt tells search engines and bots what they can crawl on your site. Here is what it does, what mine looks like, and when to use it."
-ctaLabel: "Configured at every launch"
-ctaHeading: "Crawler access wired in by default."
-ctaText: "Every site I build ships with a clean robots.txt referencing the sitemap, blocking the right paths, and welcoming legitimate crawlers. Part of the standard plan."
+description: "robots.txt tells search engines and bots what they may read on your site. Here's what it does, what mine looks like, and when to use it."
+ctaLabel: "Set up at every launch"
+ctaHeading: "Crawler access set up from the start"
+ctaText: "Every site I build comes with a clean robots.txt that points to the sitemap, blocks the right pages, and welcomes legitimate search engines. It's part of the standard plan."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>Of all the small technical files that ship with a website, robots.txt is the one most often misunderstood and most often slightly wrong. It is a plain-text file that lives at the root of the domain (<code>yoursite.com/robots.txt</code>) and tells search engine crawlers what they can and cannot access. The format is simple. The implications are not.</p>
+<p>Of all the small technical files on a website, robots.txt is the most often misunderstood and slightly wrong. It's a plain-text file at the top level of your domain (<code>yoursite.com/robots.txt</code>) that tells crawlers, the programs search engines send to read websites, what they may and may not visit. The format is simple, but the effects aren't.</p>
 
-<p>This post explains what robots.txt actually does, what it does not do, what mine looks like for a typical service-business site, and the common ways it goes wrong.</p>
+<h2>What robots.txt is</h2>
 
-<h2>What robots.txt actually is</h2>
+<p>robots.txt follows the Robots Exclusion Protocol, an informal standard in use since 1994. The file is a polite request. It tells well-behaved crawlers (Googlebot, Bingbot, Yandex, DuckDuckBot, and others) which parts of the site to visit and which to skip.</p>
 
-<p>robots.txt is a file at the root of a website that follows the Robots Exclusion Protocol, an informal standard that has been in use since 1994. The file is a polite request: it tells well-behaved crawlers (Googlebot, Bingbot, Yandex, DuckDuckBot, etc.) what areas of the site they are welcome to crawl and what areas they should avoid.</p>
-
-<p>The format is plain text, one rule per line. A typical entry reads:</p>
+<p>It's plain text, one rule per line. A typical entry reads:</p>
 
 <pre><code>User-agent: *
 Disallow: /admin/
 
 Sitemap: https://example.com/sitemap.xml</code></pre>
 
-<p>That says "to all crawlers, avoid the /admin/ path, and the canonical sitemap is at this URL." The crawler reads the file, applies the rules to its crawl plan, and proceeds.</p>
+<p>That says "all crawlers, skip the /admin/ section, and the official sitemap (the list of the site's pages) is at this address." The crawler reads the file, applies the rules, and carries on.</p>
 
 <h2>What it does NOT do</h2>
 
-<p>Two common misunderstandings worth naming up front.</p>
+<p>Three common misunderstandings are worth clearing up first.</p>
 
-<p><strong>robots.txt does not provide security.</strong> The file is publicly readable; anyone can see what paths are listed. A "Disallow: /private-customer-data/" entry tells search engines not to crawl that path, but it also tells anyone reading robots.txt exactly where the private data lives. If something needs to be private, it needs server-side authentication, not a robots.txt entry.</p>
+<p><strong>robots.txt does not provide security.</strong> Anyone can read the file. A "Disallow: /private-customer-data/" line tells search engines to skip that section, but it also tells every reader where the private data is. Anything private needs a login on the server, not a robots.txt line.</p>
 
-<p><strong>robots.txt does not guarantee compliance.</strong> Well-behaved crawlers (the ones from Google, Bing, Yandex, etc.) respect the file. Less well-behaved crawlers (some scrapers, some AI training bots, some bad-actor bots) ignore it entirely. The file is a request, not an enforcement mechanism.</p>
+<p><strong>robots.txt does not guarantee compliance.</strong> Well-behaved crawlers from Google, Bing, Yandex, and the like respect it. Some scrapers, some AI training bots, and other bad actors ignore it. The file is a request that nothing enforces.</p>
 
-<p><strong>robots.txt does not remove pages from search results.</strong> If a page is already indexed and you add a Disallow entry, the page may stay in the index for some time (because the crawler is no longer visiting it to confirm it should be removed). To remove a page from search results, the right tool is the noindex meta tag or HTTP header on the page itself, not a robots.txt entry.</p>
+<p><strong>robots.txt does not remove pages from search results.</strong> If Google has already listed a page and you then block it, the page may stay listed for a while, because the crawler no longer visits to learn it should go. To remove a page from search, use the noindex tag (a hidden label on the page, or a matching server setting) instead.</p>
 
 <h2>What mine looks like for a typical small-business site</h2>
 
-<p>The robots.txt I ship on every site I build is short and conservative. The whole file is usually a dozen lines:</p>
+<p>The robots.txt on every site I build is short and cautious, usually about a dozen lines:</p>
 
 <pre><code>User-agent: *
 Allow: /
@@ -51,67 +49,65 @@ Disallow: /404.html
 
 Sitemap: https://yoursite.com/sitemap.xml</code></pre>
 
-<p>The breakdown:</p>
+<p>Line by line:</p>
 
-<p><strong>Allow: /</strong> explicitly welcomes all crawlers to all paths by default. This is the conservative starting point. Some templates start with <code>Disallow: /</code> (block everything) and then carve out specific allowed paths, which is the wrong default for a public marketing site.</p>
+<p><strong>Allow: /</strong> welcomes all crawlers to the whole site by default. Some templates start with <code>Disallow: /</code> (block everything) and then open specific sections, which is the wrong default for a public business site.</p>
 
-<p><strong>Disallow: /thank-you/</strong> blocks the post-form-submission thank-you page from search results. The page is meaningful only to visitors who just submitted a form; having it appear in search results would be confusing.</p>
+<p><strong>Disallow: /thank-you/</strong> keeps the page people see after sending a form out of search results, where it would only confuse.</p>
 
-<p><strong>Disallow: /client-portal/</strong> blocks the existing-client portal. Not because it contains private data (it does not; it is just a directory of client-side links and forms), but because there is no value in indexing it.</p>
+<p><strong>Disallow: /client-portal/</strong> blocks the page for existing clients. It holds no private data, only links and forms for clients, but there's no reason for search engines to list it.</p>
 
-<p><strong>Disallow: /onboarding/</strong> blocks the onboarding form. The form is meaningful only to clients who have signed up; appearing in search results would be misleading.</p>
+<p><strong>Disallow: /onboarding/</strong> blocks the sign-up details form, which would mislead anyone who found it in search.</p>
 
-<p><strong>Disallow: /404.html</strong> blocks the custom 404 page from appearing in search results as a real destination.</p>
+<p><strong>Disallow: /404.html</strong> keeps the "page not found" page from showing up in search as if it were a real page.</p>
 
-<p><strong>Sitemap: ...</strong> tells crawlers where the canonical XML sitemap is. This single line meaningfully accelerates discovery of new content; crawlers check the sitemap and find new pages quickly rather than waiting to discover them through link-following.</p>
+<p><strong>Sitemap: ...</strong> tells crawlers where the official sitemap is. This one line helps search engines find new pages much sooner, because they check the sitemap instead of waiting to find pages by following links.</p>
 
 <h2>What I do not include</h2>
 
-<p>A few patterns that show up in robots.txt files of inherited sites and that I generally remove:</p>
+<p>I usually remove a few patterns I find in robots.txt files on sites I take over:</p>
 
-<p><strong>Crawl-delay directives.</strong> Some templates include "Crawl-delay: 10" or similar, asking crawlers to space out their visits. Googlebot ignores this directive entirely; the only crawler that respects it is Bing. For a small site on a CDN, the crawl rate is never an issue, so the directive does not earn its keep.</p>
+<p><strong>Crawl-delay rules.</strong> Some templates include "Crawl-delay: 10" or similar, asking crawlers to space out their visits. Googlebot ignores the rule, and only Bing follows it. A small site served from a CDN, a network of fast servers, never has trouble with crawler traffic, so the rule doesn't earn its place.</p>
 
-<p><strong>Per-bot blocks.</strong> Some inherited sites have lists of specific User-agents to block (BadBotName, ScraperBot, etc.). The lists are perpetually out of date and the bad actors do not respect the rules anyway. Server-side rate-limiting at the CDN is a more effective tool.</p>
+<p><strong>Blocks for named bots.</strong> Some old sites list specific crawlers to block (BadBotName, ScraperBot, and so on). These lists are always out of date, and bad actors ignore them anyway. Limiting traffic at the CDN works better.</p>
 
-<p><strong>AI-training bot blocks.</strong> Whether to block GPTBot, Claude-Web, ChatGPT-User, and similar AI-training crawlers is a policy decision worth making explicitly. For most service-business sites, allowing them is fine (the AI training is unlikely to harm the business and may help it via inclusion in AI-powered search tools). For sites with strong opinions about AI training, the relevant rules are well-documented and easy to add.</p>
+<p><strong>AI-training bot blocks.</strong> Whether to block GPTBot, Claude-Web, ChatGPT-User, and similar AI-training crawlers is a policy choice worth making on purpose. For most service-business sites, allowing them is fine: the training is unlikely to hurt the business, and it may help by getting you into AI-powered search tools. Sites that object to AI training can add well-documented rules easily.</p>
 
-<p>For my own site, I currently allow all reasonable crawlers, including AI-training bots. The decision is reviewed annually as the AI landscape evolves.</p>
+<p>My own site allows all reasonable crawlers, including AI-training bots, and I review that choice each year.</p>
 
 <h2>How to check your own robots.txt</h2>
 
-<p>The fastest check is just to visit the URL directly. Go to <code>https://yoursite.com/robots.txt</code> in a browser. If you see a plain-text file, it exists. If you see a 404 or a redirect, your site does not have one.</p>
+<p>Go to <code>https://yoursite.com/robots.txt</code> in a browser. If you see a plain-text file, you have one. If you see a "not found" (404) page or get sent elsewhere, you don't.</p>
 
-<p>Three things to look for in the content:</p>
+<p>Then look for three things:</p>
 
-<p><strong>Is there a Sitemap line?</strong> Without one, crawlers have to discover the sitemap through other channels (Search Console submission, primarily). Adding the line meaningfully accelerates content discovery.</p>
+<p><strong>Is there a Sitemap line?</strong> Without one, crawlers find the sitemap mainly when you submit it in Search Console, Google's free site-report tool. Adding the line helps new pages get found much sooner.</p>
 
-<p><strong>Are private paths blocked?</strong> Thank-you pages, admin paths, internal-only directories. If they are not blocked, they may show up in search results in awkward ways.</p>
+<p><strong>Are private paths blocked?</strong> Thank-you pages, admin sections, and internal-only folders that aren't blocked may show up in search results in awkward ways.</p>
 
-<p><strong>Are public paths inadvertently blocked?</strong> The most common mistake is a stale "Disallow: /" left over from a development environment. If your robots.txt blocks everything, your site will not be indexed at all.</p>
+<p><strong>Are public paths blocked by mistake?</strong> The most common error is a leftover "Disallow: /" from when the site was being built. If robots.txt blocks everything, Google won't list your site at all.</p>
 
-<p>Google Search Console has a robots.txt Tester (under Settings) that lets you verify specific URLs against the file. Useful when investigating why a page is or is not being crawled.</p>
+<p>Google Search Console has a robots.txt report (under Settings) that shows the file Google last read and any errors in it. To check whether a particular page can be crawled, run a live test on it with the URL Inspection tool.</p>
 
 <h2>The relationship to noindex</h2>
 
-<p>robots.txt and the noindex meta tag are often confused but solve different problems:</p>
+<p>robots.txt and the noindex tag are often confused, but they solve different problems:</p>
 
 <p><strong>robots.txt controls crawling.</strong> It tells the crawler whether to fetch the page at all.</p>
 
-<p><strong>noindex controls indexing.</strong> It tells the crawler that, even after fetching the page, the page should not appear in search results.</p>
+<p><strong>noindex controls indexing.</strong> It tells the crawler that, even after fetching the page, it shouldn't list the page in search results.</p>
 
-<p>For a typical small-business site, the right tool is usually noindex on individual pages that should not appear in search results. robots.txt is the right tool for blocking entire directory trees from being crawled at all.</p>
-
-<p>For sites I build, every individual page that should not appear in search results carries a <code>noindex</code> meta tag. robots.txt is reserved for directory-level rules that apply to many pages at once. The two tools work together; neither replaces the other.</p>
+<p>On sites I build, every page that should stay out of search results carries a <code>noindex</code> tag, and robots.txt holds the rules that cover whole sections at once. The two work together, and neither replaces the other.</p>
 
 <h2>If your current site has no robots.txt</h2>
 
-<p>The fix is small. Create a plain-text file named <code>robots.txt</code>, put it at the root of your domain, and include at minimum:</p>
+<p>The fix is small. Create a plain-text file named <code>robots.txt</code>, put it at the top level of your domain, and include at least:</p>
 
 <pre><code>User-agent: *
 Allow: /
 
 Sitemap: https://yoursite.com/sitemap.xml</code></pre>
 
-<p>That is the minimum-viable file. It welcomes all crawlers to the entire site and points them at the sitemap. From there, you can add Disallow lines for any private paths.</p>
+<p>That smallest useful file welcomes all crawlers to the whole site and points them to the sitemap. From there, add Disallow lines for any private sections.</p>
 
-<p>For sites I build, the robots.txt is part of the build and ships at every deploy. For sites I do not build, the platform almost always handles robots.txt; the work is to find where it lives and verify it says what you want it to say.</p>
+<p>On sites I build, robots.txt is part of the build and goes live with every update. On other sites, the platform almost always creates it, and your job is to find it and confirm it says what you want.</p>

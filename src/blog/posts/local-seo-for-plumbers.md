@@ -4,17 +4,17 @@ date: 2025-03-03
 label: "Industry Guide: Plumbing"
 description: "Plumbing is one of the most competitive local search markets. Here's a practical guide to getting your plumbing business to the top of Google in your area."
 ctaLabel: "If you run a plumbing business"
-ctaHeading: "I build sites for plumbers."
-ctaText: "I build custom-coded sites for service businesses, with service pages, city pages, and an emergency call-out path included by default. $175 a month, flat."
+ctaHeading: "I build sites for plumbers"
+ctaText: "I build custom-coded sites for service businesses, with service pages, city pages, and an emergency call button included. It's $175 a month, flat."
 layout: layouts/post.njk
 tags: [post, plumbing, local-seo]
 ---
 
-<p>Plumbing is one of the highest-urgency service categories that exists. When a pipe bursts at 11 PM or a water heater stops working the morning of Thanksgiving, homeowners don't browse; they search, they look at the first few results, and they call. The entire decision cycle can happen in under two minutes.</p>
+<p>When a pipe bursts at 11 PM or the water heater quits on Thanksgiving morning, homeowners don't browse. They search, look at the first few results, and call, often within two minutes.</p>
 
-<p>That's why local SEO for plumbers isn't just about being online. It's about being in the right place at the right moment; the top of the local map pack, specifically; for searches that have purchase intent right now.</p>
+<p>Local SEO (the work of ranking in Google for your area) puts you at the top of Google's map results, the "local map pack", at that moment.</p>
 
-<h2>Understand What Plumbing Customers Actually Search For</h2>
+<h2>Learn What Plumbing Customers Search For</h2>
 
 <p>Homeowners don't search for "best plumber in [city]." They search for their problem:</p>
 
@@ -27,13 +27,11 @@ tags: [post, plumbing, local-seo]
   <li>"water heater installation [city]"</li>
 </ul>
 
-<p>These are high-intent searches. The person searching for "burst pipe [city]" is about to call someone. Your goal is to be the option they see.</p>
+<p>The person searching "burst pipe [city]" is about to call someone. Make sure it's you.</p>
 
-<h2>Your Website Needs Pages for Your Most Common Services</h2>
+<h2>Build a Page for Each Common Service</h2>
 
-<p>A single "Services" page that lists everything you do is not enough for SEO. Google ranks individual pages, not websites. If you want to rank for "water heater installation [your city]," you need a page that's specifically about water heater installation; with that phrase used naturally in the headline, the body copy, and the page title.</p>
-
-<p>The most important service pages for a plumbing company typically include:</p>
+<p>Google ranks pages, not whole websites. To rank for "water heater installation [your city]", you need a page about that service, with the phrase in its headline, text, and page title. The most important ones usually include:</p>
 
 <ul>
   <li>Emergency plumbing / 24-hour plumber</li>
@@ -46,54 +44,48 @@ tags: [post, plumbing, local-seo]
   <li>Bathroom and kitchen plumbing</li>
 </ul>
 
-<p>Each of these should be its own page, optimized for searches that include your city and the service.</p>
+<p>Write each page for searches that pair the service with your city.</p>
 
-<h2>Emergency Plumbing Is Your Most Valuable Traffic</h2>
+<h2>Make Emergency Service Impossible to Miss</h2>
 
-<p>Emergency plumbing searches convert at extremely high rates. Someone searching "emergency plumber near me" at midnight is not researching; they're calling within the next five minutes.</p>
+<p>Someone searching "emergency plumber near me" at midnight will call within five minutes, so these searches turn into calls at very high rates. If you offer 24-hour service, say so in the header, at the top of the homepage, on its own page, and in your Google Business Profile description.</p>
 
-<p>If you offer 24-hour emergency service, this should be prominent everywhere on your website: in the header, in the hero section, on a dedicated emergency plumbing page, and in your Google Business Profile description. Don't make people hunt for this information. It should be impossible to miss.</p>
+<h2>Add a Page for Each City You Serve</h2>
 
-<h2>Service Area Pages Drive Significant Traffic</h2>
+<p>Give each major city you serve its own page. A "Plumber in [City Name]" page with 300 or more words of useful content will rank for searches from that city. Each new page is another chance to appear, and that's how plumbing companies rank across a whole region instead of just their hometown.</p>
 
-<p>If you serve multiple cities, each major city you serve deserves its own page. A page titled "Plumber in [City Name]" with 300+ words of genuine content about your services in that area will rank for searches from that city.</p>
+<h2>Fill Out Your Google Business Profile for Plumbing Searches</h2>
 
-<p>This is how plumbing companies systematically dominate search in their entire service region instead of just their hometown. The effort compounds; each new page is another chance to appear in search results.</p>
-
-<h2>Optimize Your Google Business Profile for Plumbing-Specific Searches</h2>
-
-<p>Your Google Business Profile has several fields that most plumbers leave underutilized:</p>
+<p>Your Google Business Profile, the free listing in Google's map results, has fields most plumbers leave half empty:</p>
 
 <ul>
-  <li><strong>Services section</strong>; Add every service you offer with a description. Google uses this to match your profile to relevant searches.</li>
-  <li><strong>Business description</strong>; Write 250–300 words about your business. Include your main services and the cities you serve naturally within the text.</li>
-  <li><strong>Q&amp;A section</strong>; You can add your own questions and answers. Common questions like "Do you offer emergency plumbing?" with a thorough answer help your profile match more searches.</li>
-  <li><strong>Photos</strong>; Add photos of actual jobs. Before-and-afters of water heater replacements, drain work, sewer repairs. Real photos build trust and keep your profile active.</li>
+  <li><strong>Services section:</strong> Add every service, with a description. Google uses it to match your profile to searches.</li>
+  <li><strong>Business description:</strong> Write 250–300 words that name your main services and the cities you serve.</li>
+  <li><strong>Common questions:</strong> Google retired the profile's Q&amp;A section in late 2025 and now answers questions with AI, using your profile and your website. Put the answers to the questions customers ask, such as "Do you offer emergency plumbing?", in your business description and on your website's FAQ page.</li>
+  <li><strong>Photos:</strong> Add before-and-afters of your own water heater, drain, and sewer jobs. They build trust and keep the profile active.</li>
 </ul>
 
-<h2>License and Insurance: Display It Prominently</h2>
+<h2>Show Your License and Insurance Up Front</h2>
 
-<p>In most states, plumbers are required to be licensed. Homeowners who have been burned by unlicensed contractors specifically look for license numbers. Displaying your license number on your website and mentioning insurance coverage is a trust signal that converts hesitant visitors into callers.</p>
-
-<p>Some plumbing company websites bury this in the footer or leave it off entirely. Put it near the top of your homepage and on your contact page. "Licensed &amp; Insured · License #12345" takes up two words and does a lot of work.</p>
+<p>Most states require plumbers to be licensed, and homeowners who've been burned look for the number. Put "Licensed &amp; Insured · License #12345" near the top of your homepage and on your contact page, instead of in the footer. It takes a few words and turns hesitant visitors into callers.</p>
 
 <div class="post-cta-box">
-  <h3>We build plumbing websites that rank and convert.</h3>
-  <p>Service pages, city pages, emergency call-outs, license display; everything structured to bring in phone calls. $175/month flat rate.</p>
-  <a href="/contact/" class="btn btn-primary">Get Started</a>
+  <h3>I build plumbing websites that rank and bring in calls</h3>
+  <p>Service pages, city pages, an emergency call button, and your license in plain view, for $175 a month, flat. The first call is free and takes 20 to 30 minutes on Google Meet.</p>
+  <a href="/contact/" class="btn btn-primary">Book a free call</a>
 </div>
 
-<h2>Reviews From Specific Services and Cities Help Rankings</h2>
+<h2>Ask for Reviews That Name the Service and City</h2>
 
-<p>When you ask customers for reviews, encourage them to mention the specific service and their city in their review. A review that says "Called [company] for an emergency water heater replacement in [city name]; they arrived within an hour and the price was fair" is more SEO-valuable than a generic "Great service!" review.</p>
+<p>"Called [company] for an emergency water heater replacement in [city name]. They arrived within an hour and the price was fair." A review like that helps your rankings more than "Great service."</p>
 
-<p>You can't control what customers write, but you can mention it when asking: "If you have a moment to leave us a Google review, it really helps us out; even just mentioning what we did and your neighborhood makes a big difference."</p>
+<p>You can't control what customers write, but you can suggest it: "If you have a moment to leave us a Google review, it helps a lot. Mentioning what we did and your neighborhood makes a big difference."</p>
 
-<h2>The Plumbing Market Rewards Consistency</h2>
+<h2>Do the Basics Consistently</h2>
 
-<p>Plumbing is competitive in most cities. The companies that dominate local search didn't get there overnight; they got there by consistently doing the basics: complete Google profile, regular reviews, a fast well-structured website, service-specific pages, and consistent NAP data across directories.</p>
+<p>The plumbers at the top of local search kept doing the basics. They have a complete Google profile, steady reviews, a fast and well-organized website, a page for each service, and the same name, address, and phone number (NAP) in every directory.</p>
 
-<p>The good news is that most plumbing companies are doing this poorly or not at all. A business that does it consistently, even if slowly, will outrank competitors that ignore it.</p>
+<p>Most plumbing companies do this poorly or not at all. A business that does it steadily, even slowly, will outrank them.</p>
 
   </div>
   </div>

@@ -2,92 +2,90 @@
 title: "How Much Is Your Slow Website Costing You?"
 date: 2026-05-05
 label: "Local SEO & Performance"
-description: "A back-from-the-numbers guide to how many leads your slow website loses each month, what each was worth, and the revenue line nobody quantifies."
-ctaLabel: "See your number, then act"
-ctaHeading: "Plug your numbers into the calculator."
-ctaText: "The lead-leakage calculator does this math live against your traffic and average job value. The free five-point audit measures it on your real URL. $0 either way, no card asked for."
+description: "A step-by-step way to estimate how many leads your slow website loses each month, what each was worth, and the lost revenue nobody counts."
+ctaLabel: "Run the math, then act"
+ctaHeading: "Bring your numbers to a free call"
+ctaText: "Work through the math above with your own traffic and average job value, then book a free call. We'll go over where the numbers come from and what a custom build would change."
 layout: layouts/post.njk
 tags: [post, local-seo]
 ---
 
-<p>Every service-business owner I have ever audited has one number they cannot put a value on: the customers who almost called and then closed the tab. They never appear on the books. They do not bounce out of a CRM. The phone simply does not ring as much as it could, and the silence is invisible.</p>
+<p>Every service-business owner whose site I've reviewed has one number they can't value: the customers who almost called, then closed the tab. They never show up on the books, and nobody notices the phone ringing less than it could.</p>
 
-<p>That silence has a price. It is not as fuzzy as people assume. The math is rough, but the order of magnitude is honest. This post walks through how to actually quantify what your current website is costing you in unbooked work, and why the answer almost always justifies a custom build several times over.</p>
+<p>That lost work has a price, and it's less fuzzy than people assume. The math below is rough, but the scale is right, and the answer usually pays for a custom build several times over.</p>
 
 <h2>Step 1: how many people leave because of speed?</h2>
 
-<p>Google has been publishing data on this for over a decade. The number is consistent across studies: <strong>every additional second of mobile load time loses roughly 7&ndash;10% of mobile visitors before they read a word</strong>. Not "they bounce eventually", they leave during the load.</p>
+<p>Google has published data on this for over a decade, and the studies agree. Every extra second of load time on a phone loses roughly 7&ndash;10% of mobile visitors, who leave before the page finishes loading.</p>
 
-<p>The way to measure where you sit:</p>
+<p>To see where you stand:</p>
 
 <ol>
-  <li>Run your homepage through <a href="https://pagespeed.web.dev/" rel="noopener" class="inline-link">pagespeed.web.dev</a>. Note the mobile score.</li>
-  <li>If the score is 95+, you are at roughly 1 second of mobile load time. Skip to step 2.</li>
-  <li>If the score is 50, you are at roughly 4&ndash;5 seconds.</li>
-  <li>If the score is below 30, you are at 6+ seconds, which means a measurable share of mobile visitors give up before the hero image even appears.</li>
+  <li>Run your homepage through <a href="https://pagespeed.web.dev/" rel="noopener" class="inline-link">pagespeed.web.dev</a>, Google's free speed test, and note the mobile score.</li>
+  <li>If the score is 95 or higher, your page loads on a phone in about one second. Skip to step 2.</li>
+  <li>If the score is 50, it loads in about four to five seconds.</li>
+  <li>If the score is below 30, it takes six seconds or more, and a measurable share of phone visitors give up before the main image appears.</li>
 </ol>
 
-<p>The bounce-rate cost: roughly <strong>1.5% additional mobile bounce per PageSpeed point below 95</strong>. That is conservative; real-world studies on flaky cellular connections suggest higher. A site at PageSpeed 55 (the typical Wix score) is losing approximately <code>(95 - 55) &times; 1.5% = 60% of mobile bounces</code> over the floor, capped at the actual mobile-bounce ceiling, which is usually around 60%.</p>
+<p>The cost in bounces (visitors who leave without doing anything) is roughly 1.5% more mobile bounces per point below 95. That's conservative, since studies on patchy cell connections suggest more. A site scoring 55, typical for a popular site builder, loses about <code>(95 - 55) &times; 1.5% = 60% of mobile bounces</code> above the baseline. The loss is capped at the usual mobile-bounce ceiling of about 60%.</p>
 
-<p>Translation: if you have 1,000 monthly visitors and 70% are on mobile, you have 700 mobile visits. A site at 55 is losing roughly 35&ndash;50% of those before they engage. <strong>Three hundred mobile visitors per month who never had a chance to become customers.</strong></p>
+<p>In plain terms: with 1,000 visitors a month and 70% on phones, you have 700 mobile visits. A site scoring 55 loses roughly 35&ndash;50% of them before they engage. That's about 300 mobile visitors a month who never had a chance to become customers.</p>
 
 <h2>Step 2: what would those visitors have done?</h2>
 
-<p>The visitors who DID stay tell you the conversion rate. Pull from your form-submission count or call-tracking number:</p>
+<p>The visitors who stayed give you your conversion rate, the share who get in touch:</p>
 
-<p><strong>Conversion rate = (form submissions + tracked calls) / total monthly visitors</strong></p>
+<p>Conversion rate = (form submissions + tracked calls) / total monthly visitors</p>
 
-<p>For service-business websites, the typical range is 1.5&ndash;3.5%. If your form has good intake fields and a clear CTA, expect the high end. If your form is "Name / Email / Message" the conversion rate is closer to the low end, the visitor stares at the empty Message field and gives up.</p>
+<p>For service-business websites, the usual range is 1.5&ndash;3.5%. A form with good questions and a clear button lands near the top. A bare "Name / Email / Message" form lands near the bottom, because visitors stare at the empty Message box and give up.</p>
 
-<p>Apply that conversion rate to the visitors you LOST: 300 lost mobile visitors × 2% conversion = <strong>6 missed leads per month, or 72 per year</strong>.</p>
+<p>Apply that rate to the visitors you lost: 300 lost mobile visitors × 2% = 6 missed leads a month, or 72 a year.</p>
 
 <h2>Step 3: what is each lead worth?</h2>
 
-<p>Two numbers:</p>
+<p>You need two numbers:</p>
 
 <ul>
-  <li><strong>Lead-to-close rate.</strong> Of the qualified leads who do reach you, what percentage become paying customers? Most service businesses run 30&ndash;55%. Use 40% if you are not tracking it.</li>
-  <li><strong>Average job value.</strong> The dollar value of a typical close. A roofing job, an HVAC install, an inspection report, a landscape design contract.</li>
+  <li><strong>Close rate.</strong> Of the qualified leads who reach you, how many become paying customers? Most service businesses close 30&ndash;55%. Use 40% if you don't track it.</li>
+  <li><strong>Average job value.</strong> What a typical job brings in: a roofing job, an HVAC install, an inspection report, or a landscape design contract.</li>
 </ul>
 
-<p>Continue the example:</p>
+<p>Continuing the example:</p>
 
 <ul>
-  <li>72 missed leads × 40% close rate = <strong>29 missed jobs per year</strong>.</li>
-  <li>29 missed jobs × $500 average job value = <strong>$14,500 of revenue per year</strong>.</li>
-  <li>Or, if your average job is $5,000: <strong>$145,000 of revenue per year</strong>.</li>
+  <li>72 missed leads × 40% close rate = 29 missed jobs a year.</li>
+  <li>29 missed jobs × $500 average job value = $14,500 of revenue a year.</li>
+  <li>If your average job is $5,000, that's $145,000 of revenue a year.</li>
 </ul>
 
-<p>That is the silent line item. It does not appear on a P&amp;L because it is the customers who almost called and then closed the tab.</p>
+<p>That's the hidden line item, and it never appears on a profit-and-loss statement.</p>
 
-<h2>The honest caveats</h2>
+<h2>What this math leaves out</h2>
 
-<p>This math is rough on purpose. Several things I am NOT counting:</p>
+<p>The math is rough on purpose. It leaves out:</p>
 
 <ul>
-  <li><strong>Lower local-pack ranking from generic schema.</strong> A real custom site moves you up in the Google Maps three-pack, which has more conversion impact than any other single factor for service-business search. The calculator does not estimate this.</li>
-  <li><strong>Better forms.</strong> A trade-specific intake form (real fields, real urgency routing) converts measurably better than a generic Name/Email/Message form. The lift is typically 1.5&ndash;2&times;. Not in the calculator.</li>
-  <li><strong>Long-tail organic traffic from real city pages.</strong> Doorway service-area pages do not rank. Real, indexable city pages with local content compound over time. Not in the calculator.</li>
-  <li><strong>Retention impact of a maintained site.</strong> A custom site does not break, does not get hacked, does not regress when WordPress pushes an update. Stability is a real revenue protector. Not in the calculator.</li>
+  <li><strong>Higher placement in the map results.</strong> A custom site with correct structured data (code that describes your business to Google) moves you up in Google's map results, the three businesses shown under the map. No single factor affects calls more in service-business search.</li>
+  <li><strong>Better forms.</strong> A form built for your trade, with the right questions and a way to flag urgent jobs, typically brings in 1.5&ndash;2&times; the leads of a generic one.</li>
+  <li><strong>Search traffic from city pages.</strong> Copy-and-paste service-area pages don't rank, while city pages with local content rank and grow over time.</li>
+  <li><strong>A site that keeps working.</strong> A custom site doesn't break, get hacked, or stop working when a platform pushes an update, and that stability protects revenue.</li>
 </ul>
 
-<p>So the number you arrive at is the floor, the page-speed line alone, not counting any of the other levers a custom-coded site moves at the same time.</p>
+<p>So your number is the floor: page speed alone, before the other gains a custom-coded site brings at the same time.</p>
 
-<h2>Pull the actual lever</h2>
+<h2>Put the number to work</h2>
 
-<p>Three ways to apply this:</p>
+<p>Two ways to use this:</p>
 
 <ol>
-  <li><strong>The <a href="/calculator/" class="inline-link">interactive calculator</a>.</strong> Plug in your real numbers (visitors, mobile share, current PageSpeed, conversion rate, average job value, close rate). Get the annual leakage estimate in 30 seconds. Numbers run in your browser; nothing leaves your device.</li>
-  <li><strong>The <a href="/roi/" class="inline-link">return-on-investment page</a>.</strong> The calculator on this post handles the speed-and-conversion lever. The ROI page walks through all four levers a well-built site moves &mdash; speed, local search, conversion path, maintenance &mdash; with the worked-example math and the cost-side comparison against the standard plan.</li>
-  <li><strong>The <a href="/audit/" class="inline-link">free 5-point audit</a>.</strong> If you would rather have me run real Lighthouse numbers and a real schema check on your URL and write up the findings, that takes five business days, costs nothing, and the deliverable is a written report you can act on with or without me.</li>
-  <li><strong>The <a href="/contact/" class="inline-link">discovery call</a>.</strong> Twenty minutes. Bring the numbers from the calculator. We will talk through where they come from and what a custom build would actually change.</li>
+  <li><strong>The <a href="/roi/" class="inline-link">return-on-investment page</a>.</strong> This post covers speed and conversion. The ROI page works through all four areas a well-built site improves: speed, local search, the path to contacting you, and upkeep. It uses a worked example for a typical local business and compares the cost with the standard plan.</li>
+  <li><strong>The <a href="/contact/" class="inline-link">free call</a>.</strong> It takes 20 to 30 minutes on Google Meet. Bring your numbers, and we'll go over where they come from and what a custom build would change.</li>
 </ol>
 
-<h2>The thing nobody puts on a website</h2>
+<h2>The number nobody puts on a website</h2>
 
-<p>Most agencies will not write this post. The reason is simple: if a $1,800 Wix subscription is leaking $14,500 a year, the agency that recommended Wix has some explaining to do. The number does not flatter anyone except the alternative.</p>
+<p>Most agencies won't write this post. If a $1,800 site-builder subscription is losing you $14,500 a year, whoever recommended it has some explaining to do. The number flatters nobody except the alternative.</p>
 
-<p>The math is the math. The hardest line on a service-business P&amp;L to see is the one that does not appear, revenue that never happened because the website never gave a fair-shot mobile visitor a chance to become a customer. <strong>Quantifying that line is the work this post and the calculator are trying to make easier.</strong> Once you can see it, the budget conversation gets a lot simpler.</p>
+<p>The hardest line to see on your books is revenue lost because the website didn't give a mobile visitor a fair chance. Once you can count it, the budget conversation gets much simpler.</p>
 
-<p>If you would rather check the site yourself first, the <a href="/blog/diy-website-audit-checklist/" class="inline-link">12-point self-audit</a> takes ten minutes and catches the obvious problems. If the audit says the site needs more than a patch, the <a href="/blog/rebuild-or-patch/" class="inline-link">rebuild-or-patch decision framework</a> is the right next read.</p>
+<p>If you'd rather check your site yourself first, the <a href="/blog/diy-website-audit-checklist/" class="inline-link">12-point website self-check</a> takes 10 minutes and catches the obvious problems. If it shows the site needs more than a patch, read the <a href="/blog/rebuild-or-patch/" class="inline-link">guide to rebuilding or patching</a> next.</p>

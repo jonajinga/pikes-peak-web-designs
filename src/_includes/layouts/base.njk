@@ -154,6 +154,7 @@
 </main>
 
 {% include "partials/footer.njk" %}
+{% include "partials/mobile-action-bar.njk" %}
 
 <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="18 15 12 9 6 15"/></svg>
@@ -165,7 +166,7 @@
     <div class="search-modal-head">
       <div class="search-modal-head-text">
         <span class="section-label" style="margin:0">Search</span>
-        <p class="search-modal-sub">Search every page, blog post, service area, and FAQ on the site.</p>
+        <p class="search-modal-sub">Search every page, service area, and FAQ on the site.</p>
       </div>
       <button class="search-modal-close" type="button" aria-label="Close search" data-close-search>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -178,17 +179,14 @@
         <a href="/pricing/" class="search-chip">Pricing</a>
         <a href="/how-it-works/" class="search-chip">How it works</a>
         <a href="/samples/" class="search-chip">Sample sites</a>
-        <a href="/audit/" class="search-chip">Free audit</a>
-        <a href="/grader/" class="search-chip">Site grader</a>
-        <a href="/blog/" class="search-chip">Blog</a>
         <a href="/faq/" class="search-chip">FAQ</a>
-        <a href="/contact/" class="search-chip">Discovery call</a>
+        <a href="/contact/" class="search-chip">Free call</a>
         <a href="/subscribe/" class="search-chip">Sign up</a>
       </div>
     </div>
     <div class="search-modal-foot">
-      <span><kbd>/</kbd> to open search, anywhere on the site</span>
-      <span><kbd>Esc</kbd> to close</span>
+      <span>Press <kbd>/</kbd> to open search from any page</span>
+      <span>Press <kbd>Esc</kbd> to close</span>
     </div>
   </div>
 </div>

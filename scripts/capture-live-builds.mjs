@@ -19,7 +19,7 @@ const builds = [
   { url: "https://projectbroadsheet.com",     file: "live-project-broadsheet.png" },
   { url: "https://thefreethinkingtimes.com",  file: "live-freethinking-times.png" },
   { url: "https://thegreatagnostic.com",      file: "live-great-agnostic.png" },
-  { url: "https://titansofhistory.com",       file: "live-titans-of-history.png" },
+  { url: "https://kmceagles.org",             file: "live-kmc-eagles.png" },
 ];
 
 if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });

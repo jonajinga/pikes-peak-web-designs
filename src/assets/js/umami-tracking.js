@@ -173,8 +173,6 @@
     var isDocumenso = href.indexOf('app.documenso.com') !== -1
                   || /\b(sign\s*the\s*agreement|sign\s*up)\b/.test(text);
     var isContactForm = href.indexOf('/contact/') !== -1;
-    var isAudit = href.indexOf('/audit/') !== -1
-                  || /\b(free\s*audit|run\s*the\s*grader)\b/.test(text);
 
     if (isPayment) {
       track('payment_initiated', { section: PAGE_SECTION, text: text.slice(0, 80) });
@@ -184,13 +182,11 @@
       track('cta_start_now', { section: PAGE_SECTION, demo: DEMO_SLUG, text: text.slice(0, 80) });
     } else if (isBookCall) {
       track('cta_book_call', { section: PAGE_SECTION, demo: DEMO_SLUG, text: text.slice(0, 80) });
-    } else if (isAudit) {
-      track('cta_audit', { section: PAGE_SECTION, text: text.slice(0, 80) });
     } else if (isContactForm) {
       track('cta_contact', { section: PAGE_SECTION, demo: DEMO_SLUG, text: text.slice(0, 80) });
     }
 
-    // Demo entry from samples / walk-through / case-studies.
+    // Demo entry from samples / case-studies.
     if (/^\/demo\/([^/]+)\//.test(href)) {
       var slug = href.match(/^\/demo\/([^/]+)\//)[1];
       track('demo_open', {

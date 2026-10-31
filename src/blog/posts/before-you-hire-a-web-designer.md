@@ -2,167 +2,169 @@
 title: "Before You Hire a Web Designer"
 date: 2026-05-05
 label: "Buying Guide"
-description: "A pre-purchase due-diligence checklist for service-business owners about to hire someone to build their website. Questions to ask, red flags to watch for."
-ctaLabel: "Pass the test? Let's talk."
-ctaHeading: "If a vendor cannot answer the questions in this post, find another one."
-ctaText: "I will answer all of them on the discovery call before you sign anything. $0 down, no design deposit. The whole agency operates in public."
+description: "A checklist for service-business owners about to hire someone to build their website: the questions to ask and the warning signs to watch for."
+ctaLabel: "Put me to the test"
+ctaHeading: "Ask me every question in this post"
+ctaText: "I'll answer all 10 before you sign anything. The plan is $175 a month with $0 down, and my pricing and service agreement are public."
 layout: layouts/post.njk
 tags: [post]
 ---
 
-<p>You are about to spend somewhere between $1,500 and $15,000 on a website. Maybe ongoing too. The people pitching you all sound competent on the phone, that is the easy part of the job for a salesperson. The hard part for you is figuring out which of them will deliver something that actually brings in calls a year from now, and which will hand you a pretty file and disappear.</p>
+<p>You're about to spend $1,500 to $15,000 on a website, maybe with a monthly fee. Everyone pitching you sounds competent on the phone; that's the easy part of selling. The hard part is telling who will build a site that brings in calls a year from now and who will hand you a pretty file and disappear.</p>
 
-<p>This is the due-diligence checklist nobody hands service-business owners before they sign. Run any vendor through it, including me, and the answers will tell you most of what you need to know.</p>
+<p>Nobody hands service-business owners this checklist before they sign. Run any vendor through it, including me, and the answers will tell you most of what you need to know.</p>
 
 <h2>1. Who, specifically, is doing the work?</h2>
 
-<p>Ask: "Will the person I am talking to today write the code? If not, who will, and can I talk to them before I sign?"</p>
+<p>Ask: "Will the person I'm talking to today write the code? If not, who will, and can I talk to them before I sign?"</p>
 
-<p>You are looking for one of three honest answers:</p>
+<p>You're listening for one of three answers:</p>
 
 <ul>
-  <li><strong>"Me."</strong> The person on the call is the developer. Best answer for a small build.</li>
-  <li><strong>"A specific named teammate."</strong> They will introduce that teammate before you sign. Acceptable.</li>
-  <li><strong>"Our team."</strong> Vague. Means a junior or an offshore subcontractor will write the code while the salesperson moves on. Probe further.</li>
+  <li><strong>"Me."</strong> The best answer for a small build.</li>
+  <li><strong>"A specific named teammate."</strong> Acceptable, if you meet that person before you sign.</li>
+  <li><strong>"Our team."</strong> This vague answer usually means a junior or overseas subcontractor writes the code while the salesperson moves on. Ask more.</li>
 </ul>
 
-<p><strong>Red flag:</strong> they avoid the question, or they say "we use a proven team-based approach" without naming a single human. The person who closes you should be available to answer for the work after launch, that is what "accountability" actually means.</p>
+<p><strong>Red flag:</strong> they dodge the question, or they say "we use a proven team-based approach" without naming anyone. The person who signs you up should answer for the work after launch. That's what accountability means.</p>
 
 <h2>2. What stack are they using and why?</h2>
 
-<p>Ask: "What technology will my site be built on, and why that one specifically?"</p>
+<p>Ask: "What technology will my site be built on (the stack), and why that one?"</p>
 
-<p>Listen for whether they have an opinion. The answers fall into rough categories:</p>
-
-<ul>
-  <li><strong>"WordPress."</strong> Default answer. WordPress is fine for high-volume publishers; it is overkill, slow, and security-burdensome for a 5&ndash;15 page service business. If they cannot articulate why WordPress is right for YOUR situation specifically, they just default to WordPress because it is what they know how to sell.</li>
-  <li><strong>"Wix / Squarespace."</strong> They are not a developer; they are a Wix-template configurator. That is fine for a very small business or a side project, but understand what you are buying.</li>
-  <li><strong>"Webflow / Framer."</strong> No-code modern builder. Faster than WordPress, more design control than Squarespace. Reasonable middle ground if performance and SEO are not top priority.</li>
-  <li><strong>"Custom code on a static-site generator (Eleventy / Astro / Next)."</strong> Hand-written. Best performance ceiling, lowest security surface, highest level of skill required. What I do.</li>
-</ul>
-
-<p><strong>Red flag:</strong> they have never had to defend their stack choice. Anyone who has built a few sites has thought about this; the answer should come quickly and with reasons.</p>
-
-<h2>3. What is the real total cost over three years?</h2>
-
-<p>Ask: "Walk me through every dollar I will spend with you over the next three years."</p>
-
-<p>Most agencies will quote a build price ($3K&ndash;$8K) and forget to mention:</p>
+<p>Listen for whether they have an opinion. The answers fall into rough groups:</p>
 
 <ul>
-  <li>Hosting ($20&ndash;$80/month).</li>
-  <li>Maintenance retainer ($100&ndash;$300/month, often required to keep WordPress secure).</li>
-  <li>Plugin licenses (varies; can run $40&ndash;$200/month at scale).</li>
-  <li>SEO retainer (often pitched separately as $500&ndash;$3,000/month).</li>
-  <li>Per-change billing (some shops bill $100&ndash;$200 per content update).</li>
+  <li><strong>"WordPress."</strong> The default. It suits big publishers, but for a 5&ndash;15 page service business it's more than you need, slower, and harder to keep secure. If they can't say why it fits you, it's just what they know how to sell.</li>
+  <li><strong>"Wix or Squarespace."</strong> They set up templates rather than write code. That's fine for a very small business or a side project, as long as you know what you're buying.</li>
+  <li><strong>"Webflow or Framer."</strong> Modern builders that need no code: faster than WordPress, with more design control than Squarespace. A fair middle ground if speed and search ranking aren't top priorities.</li>
+  <li><strong>"Custom code on a static-site generator (Eleventy, Astro, or Next)."</strong> The generator turns hand-written code into plain, fast pages: the best speed, the fewest openings for attackers, and the most skill required. It's what I do.</li>
 </ul>
 
-<p>Get all of these in writing, in advance. The "I forgot to mention" line items are how a $4,000 quote becomes $15,000 over three years.</p>
+<p><strong>Red flag:</strong> they've never had to defend their choice. Anyone who has built a few sites has thought about it and should answer quickly, with reasons.</p>
 
-<p><strong>Green flag:</strong> the vendor sends you a written breakdown of everything before you ask for it.</p>
+<h2>3. What is the total cost over three years?</h2>
+
+<p>Ask: "Walk me through every dollar I'll spend with you over the next three years."</p>
+
+<p>Most agencies quote a build price ($3,000&ndash;$8,000) and leave out:</p>
+
+<ul>
+  <li>Hosting ($20&ndash;$80 a month).</li>
+  <li>A maintenance retainer ($100&ndash;$300 a month, often required to keep WordPress secure).</li>
+  <li>Plugin licenses for add-on features (they vary and can reach $40&ndash;$200 a month on a larger site).</li>
+  <li>An SEO retainer for search ranking work (often pitched separately at $500&ndash;$3,000 a month).</li>
+  <li>Charges per change (some shops bill $100&ndash;$200 for each content update).</li>
+</ul>
+
+<p>Get all of these in writing before you sign. Items they "forgot to mention" are how a $4,000 quote becomes $15,000 over three years.</p>
+
+<p><strong>Green flag:</strong> the vendor sends a written breakdown of everything before you ask.</p>
 
 <h2>4. Who owns the site if I leave?</h2>
 
 <p>Ask: "If I cancel after 12 months, what do I get to take with me?"</p>
 
-<p>The answer matters more than people realize. Three patterns:</p>
+<p>The answer matters more than most people realize. You'll hear one of these:</p>
 
 <ul>
-  <li><strong>"You own the source code, on your GitHub."</strong> Best answer. You can take the site to any host, any developer.</li>
-  <li><strong>"You get a static export / final files."</strong> Acceptable. The site can run anywhere, even if the source-code isn't transferred.</li>
-  <li><strong>"Nothing, the site is on our platform."</strong> Wix / Squarespace / proprietary builder. You are renting forever.</li>
-  <li><strong>"You own everything but you have to pay an offboarding fee."</strong> Hostage situation. Run.</li>
+  <li><strong>"You own the source code, in your GitHub account."</strong> The most portable answer: you can take the site to any host or developer.</li>
+  <li><strong>"You get a static export, the final files."</strong> The site can run anywhere, even without the source code.</li>
+  <li><strong>"Nothing. The site is on our platform."</strong> Wix, Squarespace, or a builder of their own. You rent for as long as you stay.</li>
+  <li><strong>"You own everything, but you pay a fee to leave."</strong> That fee holds your site hostage. Walk away.</li>
 </ul>
 
-<p><strong>Red flag:</strong> this question makes them uncomfortable. Plenty of agencies have built genuine vendor lock-in into the relationship and they know they cannot answer cleanly.</p>
+<p>Here's my answer for comparison. I own the code and host it, like leasing a storefront, which is how I can build with $0 down. Your domain is registered in your name and under your control, and your photos, text, and brand assets stay yours. If you cancel, I help you move the domain to a registrar you choose. The site goes offline at the end of the term, with no export or code buyout.</p>
 
-<h2>5. What does maintenance actually mean?</h2>
+<p><strong>Red flag:</strong> the question makes them uncomfortable. Plenty of agencies have built lock-in into the relationship and can't answer plainly.</p>
 
-<p>Ask: "Walk me through what 'maintenance' means in your monthly fee. What do you actually do?"</p>
+<h2>5. What does maintenance mean?</h2>
 
-<p>Listen for specifics, not platitudes:</p>
+<p>Ask: "What does 'maintenance' mean in your monthly fee? What do you do each month?"</p>
+
+<p>Listen for specifics:</p>
 
 <ul>
-  <li><strong>Specific:</strong> "Plugin updates checked weekly, a security scan monthly, content updates within 24 hours, performance regression testing on every deploy, uptime monitoring with SMS alerts." That is real maintenance.</li>
-  <li><strong>Vague:</strong> "We keep your site running smoothly." That is not maintenance; that is a marketing line. They probably do not log in to your site between launch day and the day it breaks.</li>
+  <li><strong>Specific:</strong> "Plugin updates checked weekly, a security scan monthly, content updates within 24 hours, speed tests on every update, and uptime monitoring with text alerts." That's maintenance.</li>
+  <li><strong>Vague:</strong> "We keep your site running smoothly." That's a marketing line, and they probably won't log in between launch day and the day it breaks.</li>
 </ul>
 
-<p><strong>Red flag:</strong> they do not have a written maintenance scope. The default is for the maintenance retainer to be free money for the agency until you complain.</p>
+<p><strong>Red flag:</strong> they have no written maintenance scope. Without one, the retainer is free money for the agency until you complain.</p>
 
-<h2>6. How fast does the site they will build for you actually load?</h2>
+<h2>6. How fast will the site they build for you load?</h2>
 
-<p>Ask: "Show me a site you have built recently. What is its mobile PageSpeed score?"</p>
+<p>Ask: "Show me a site you built recently. What's its mobile PageSpeed score?" PageSpeed is Google's free speed test, scored from 0 to 100.</p>
 
-<p>Run their reference site through <a href="https://pagespeed.web.dev/" rel="noopener" class="inline-link">pagespeed.web.dev</a> live on the call:</p>
+<p>Run their example through <a href="https://pagespeed.web.dev/" rel="noopener" class="inline-link">pagespeed.web.dev</a> live on the call:</p>
 
 <ul>
-  <li><strong>95+:</strong> They actually care about performance. Rare; impressive.</li>
-  <li><strong>80&ndash;94:</strong> Acceptable. They know about it but have not optimized hard.</li>
-  <li><strong>60&ndash;79:</strong> Below the real threshold. They have not internalized that page speed is a Google ranking factor and a conversion factor.</li>
-  <li><strong>Below 60:</strong> They will deliver the same to you. Get a different vendor.</li>
+  <li><strong>95+:</strong> They care about speed. Rare and impressive.</li>
+  <li><strong>80&ndash;94:</strong> Acceptable. They know about speed but haven't pushed hard.</li>
+  <li><strong>60&ndash;79:</strong> Below the bar. They haven't absorbed that speed affects both Google ranking and how many visitors call.</li>
+  <li><strong>Below 60:</strong> They'll build you the same. Find a different vendor.</li>
 </ul>
 
-<p>Page speed is non-negotiable in 2026. A site at 60 PageSpeed loses approximately a third of its mobile visitors before they engage. If their reference work is at 60, your future site will be too.</p>
+<p>In 2026, page speed is required. A site that scores 60 loses about a third of its mobile visitors before they do anything, and if their example scores 60, your site will too.</p>
 
 <h2>7. Will the site be accessible (WCAG 2.2 AA)?</h2>
 
-<p>Ask: "Is the site you are building me WCAG 2.2 AA compliant by default?"</p>
+<p>Ask: "Will my site meet WCAG 2.2 AA by default?" That's the standard for making a site usable by people with disabilities.</p>
 
-<p>The honest answers:</p>
+<p>The answers you'll hear:</p>
 
 <ul>
-  <li><strong>"Yes, that is our default; here is the test methodology we use."</strong> Best answer. Specifics matter (WAVE, Lighthouse, manual screen-reader testing).</li>
-  <li><strong>"We can do that as an add-on."</strong> Means it is not their default and you will pay extra. Acceptable but you should know upfront.</li>
-  <li><strong>"What is WCAG?"</strong> They have not done this work. ADA-compliance lawsuits against small business sites are real and rising. Get a different vendor.</li>
+  <li><strong>"Yes, that's our default, and here's how we test it."</strong> The best answer. Specifics matter: tools such as WAVE and Lighthouse, plus testing by hand with a screen reader.</li>
+  <li><strong>"We can do that as an add-on."</strong> You'll pay extra. Acceptable, if you know up front.</li>
+  <li><strong>"What's WCAG?"</strong> They haven't done this work, and lawsuits against small-business sites under the ADA (the Americans with Disabilities Act) are rising. Find a different vendor.</li>
 </ul>
 
 <h2>8. How do they handle local SEO?</h2>
 
-<p>Ask: "What specifically will my site do that helps me rank locally on Google?"</p>
+<p>Ask: "What will my site do, specifically, to help me rank in local Google searches?"</p>
 
 <p>Listen for:</p>
 
 <ul>
-  <li><strong>Hand-written schema markup</strong> (LocalBusiness, Service, FAQPage). Bonus for "matched to your Google Business Profile so the entities reconcile."</li>
-  <li><strong>Real city pages, not doorway pages.</strong> Each service-area page should have unique local content, not the same paragraph with city name swapped.</li>
-  <li><strong>NAP consistency check</strong>, name/address/phone identical between site and GBP, in the same format, on every page.</li>
+  <li><strong>Hand-written schema markup</strong>, the hidden labels that tell Google what each page is (LocalBusiness, Service, FAQPage). Bonus points if they match it to your Google Business Profile so the two agree.</li>
+  <li><strong>City pages with local content.</strong> Each service-area page should be written for its place, never the same paragraph with the city name swapped.</li>
+  <li><strong>A NAP consistency check</strong>, so your name, address, and phone match your Google Business Profile, in the same format, on every page.</li>
 </ul>
 
-<p><strong>Red flag:</strong> "We use a plugin for SEO" and that is the whole answer. Plugins generate template-grade schema; Google's local algorithm increasingly weights uniqueness.</p>
+<p><strong>Red flag:</strong> "We use a plugin for SEO," and that's the whole answer. Plugins produce template-grade schema, and Google's local ranking rewards uniqueness more each year.</p>
 
-<h2>9. What is the actual launch timeline, with milestones?</h2>
+<h2>9. What is the launch timeline, with milestones?</h2>
 
 <p>Ask: "What does the project plan look like, week by week, from today to launch?"</p>
 
-<p>Good vendors have a written process. Mine looks like: discovery call → proposal → onboarding (asset collection) → design preview → revisions → build → pre-launch QA → launch → post-launch check-in. Each of those is a week or so.</p>
+<p>Good vendors have a written process. Mine runs: an optional discovery call, a proposal, onboarding (gathering your photos and details), a design preview, revisions, the build, pre-launch checks, launch, and a check-in after launch. Work starts when the first payment clears, and the build takes two to three weeks.</p>
 
-<p><strong>Red flag:</strong> "Six weeks roughly" with no specifics. Means nobody owns the milestones; the project will slip.</p>
+<p><strong>Red flag:</strong> "Roughly six weeks," with no specifics. Nobody owns the milestones, so the project will slip.</p>
 
 <h2>10. Can you talk to a previous client?</h2>
 
-<p>Ask: "Who is a client you built a similar site for, and can I email them?"</p>
+<p>Ask: "Who did you build a similar site for, and can I email them?"</p>
 
-<p>This is the highest-signal reference check available. Vendors with happy clients introduce them readily; vendors without struggle to come up with a name. The conversation with the previous client is worth more than any pitch deck.</p>
+<p>This is the most telling reference check there is. Vendors with happy clients introduce them readily, and vendors without them struggle to name one. A talk with a past client is worth more than any pitch.</p>
 
-<p><strong>Note:</strong> a sole-prop or new agency might not have a long client list yet (transparently mine doesn't). In that case, the substitute is the agency's OWN site, the changelog, the open Owner's Guide, the public service agreement. If the agency's own site is fast, accessible, well-maintained, and transparent, that is a self-evident reference.</p>
+<p><strong>Note:</strong> a one-person business or a new one may not have a long client list yet, and mine doesn't. Then judge the business by its own site, its Owner's Guide, and its public service agreement. A fast, accessible, well-kept site that's open about how it works is a reference you can check yourself.</p>
 
 <h2>The two questions that matter most</h2>
 
-<p>Of the ten above, two predict outcomes more than the rest combined:</p>
+<p>Of the 10 above, two predict the outcome better than the rest combined:</p>
 
 <ol>
-  <li><strong>What is the mobile PageSpeed score on a site they built recently?</strong> Tells you the technical ceiling.</li>
-  <li><strong>Who, specifically, is doing the work?</strong> Tells you whether the relationship will survive launch.</li>
+  <li><strong>What is the mobile PageSpeed score on a site they built recently?</strong> It shows their technical ceiling.</li>
+  <li><strong>Who, specifically, is doing the work?</strong> It shows whether the relationship will last past launch.</li>
 </ol>
 
-<p>If those two answers are unsatisfying, no amount of "we have a great team" or "we have been doing this for ten years" will make up for it. If those two answers are strong, the rest of the checklist will usually fall in line.</p>
+<p>If those answers are weak, no "we have a great team" or "we've been doing this for 10 years" makes up for it. If they're strong, the rest usually falls in line.</p>
 
 <h2>One more thing the checklist does not cover</h2>
 
-<p>Read the agency's own website carefully. If it loads slow, has obvious accessibility failures, has a vague pricing page, or has a copy that reads like every other agency's copy, that is what you are about to buy. The agency's own site is the most reliable preview of the work you will get.</p>
+<p>Study the vendor's own website. If it loads slowly, fails obvious accessibility checks, hides its pricing, or reads like every other agency's site, that's what you're about to buy.</p>
 
-<p>Mine is open by design: <a href="/pricing/" class="inline-link">posted pricing</a>, <a href="/agreement/" class="inline-link">public service agreement</a>, <a href="/owners-guide/" class="inline-link">open Owner's Guide</a>, <a href="/changelog/" class="inline-link">live changelog</a>, <a href="/technical-approach/" class="inline-link">technical approach</a> documented in detail, and <a href="/samples/" class="inline-link">six demo sites</a> at full quality. Run any of them through PageSpeed, then run an agency you are evaluating through the same. The comparison will say more than any sales call.</p>
+<p>Mine is open by design: <a href="/pricing/" class="inline-link">posted pricing</a>, a <a href="/agreement/" class="inline-link">public service agreement</a>, an <a href="/owners-guide/" class="inline-link">open Owner's Guide</a>, my <a href="/technical-approach/" class="inline-link">technical approach</a> in detail, and <a href="/samples/" class="inline-link">six demo sites</a> at full quality. Run any of them through PageSpeed, then test the agency you're considering. The comparison will tell you more than any sales call.</p>
 
-<p>If you want to test the answers above against me directly, the <a href="/contact/" class="inline-link">discovery call</a> is the next step. I will answer all ten in writing before you sign anything.</p>
+<p>To test these answers on me, book a <a href="/contact/" class="inline-link">free call</a>, 20 to 30 minutes on Google Meet. I'll answer all 10 in writing before you sign anything.</p>
 
-<p>For a shorter list focused on the seven questions that matter most, see <a href="/blog/questions-to-ask-a-web-designer/" class="inline-link">The Seven Questions to Ask Any Web Designer Before Hiring Them</a>. And if the goal is to compare every realistic price tier head-to-head, <a href="/blog/how-much-does-a-small-business-website-cost/" class="inline-link">How Much Does a Small Business Website Actually Cost</a> runs the lifetime-cost math.</p>
+<p>For a shorter list, see <a href="/blog/questions-to-ask-a-web-designer/" class="inline-link">Seven Questions to Ask Any Web Designer</a>. To compare every price range, <a href="/blog/how-much-does-a-small-business-website-cost/" class="inline-link">How Much Does a Small Business Website Actually Cost?</a> works out the lifetime cost.</p>

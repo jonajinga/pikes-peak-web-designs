@@ -12,5 +12,6 @@ Disallow: /testimonials/
 Disallow: /events/
 Disallow: /newsletter/
 Disallow: /podcast/
+Disallow: /blog/
 
 Sitemap: https://pikespeakwebdesigns.com/sitemap.xml

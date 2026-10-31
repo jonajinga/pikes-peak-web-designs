@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects (copied to the site root at build time).
+# The three discount pages were merged into /discounts/ in October 2026.
+/veterans/ /discounts/#veterans 301
+/veterans /discounts/#veterans 301
+/first-responders/ /discounts/#first-responders 301
+/first-responders /discounts/#first-responders 301
+/medical/ /discounts/#medical 301
+/medical /discounts/#medical 301

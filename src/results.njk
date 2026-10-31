@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: layouts/base.njk
 title: "Results | Verifiable Numbers | Pikes Peak Web Designs"
 description: "The performance, accessibility, and content numbers behind every site I ship. Auto-derived where possible. Verifiable by running the same tools yourself."
@@ -53,11 +54,19 @@ description: "The performance, accessibility, and content numbers behind every s
         <strong>Live demo sites</strong>
         <span>One per trade. Six visual languages. Every page custom-coded. Real builds, not mockups.</span>
       </a>
+      {% if site.blogPublic %}
       <a href="/blog/" class="proof-card">
         <span class="proof-num">{{ results.blogPostCount }}</span>
         <strong>Blog posts published</strong>
         <span>Practical guides on local SEO, page speed, and service-business websites. New posts continuously.</span>
       </a>
+      {% else %}
+      <a href="/sample-forms/" class="proof-card">
+        <span class="proof-num">{{ results.sampleFormCount }}</span>
+        <strong>Working sample forms</strong>
+        <span>One intake form per trade, each a real submission rather than a screenshot. Try any of them.</span>
+      </a>
+      {% endif %}
       <a href="/service-areas/" class="proof-card">
         <span class="proof-num">{{ results.areaCount }}</span>
         <strong>Service-area pages</strong>
@@ -99,7 +108,7 @@ description: "The performance, accessibility, and content numbers behind every s
 
     <div style="margin-top:3rem;padding:1.5rem 1.75rem;background:var(--bg-alt);border-left:3px solid var(--gold-500);border-radius:0 var(--radius-sm) var(--radius-sm) 0">
       <h3 style="font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin:0 0 0.65rem">Verify any number on this page yourself.</h3>
-      <p style="margin:0;font-size:0.95rem;line-height:1.65">PageSpeed scores: <a href="https://pagespeed.web.dev/" rel="noopener" class="inline-link">pagespeed.web.dev</a>. Accessibility audits: <a href="https://wave.webaim.org/" rel="noopener" class="inline-link">wave.webaim.org</a>. Demo count: count the cards on <a href="/samples/" class="inline-link">/samples/</a>. Blog post count: count the entries on <a href="/blog/" class="inline-link">/blog/</a>. Every claim links back to its evidence.</p>
+      <p style="margin:0;font-size:0.95rem;line-height:1.65">PageSpeed scores: <a href="https://pagespeed.web.dev/" rel="noopener" class="inline-link">pagespeed.web.dev</a>. Accessibility audits: <a href="https://wave.webaim.org/" rel="noopener" class="inline-link">wave.webaim.org</a>. Demo count: count the cards on <a href="/samples/" class="inline-link">/samples/</a>.{% if site.blogPublic %} Blog post count: count the entries on <a href="/blog/" class="inline-link">/blog/</a>.{% else %} Sample form count: count the cards on <a href="/sample-forms/" class="inline-link">/sample-forms/</a>.{% endif %} Every claim links back to its evidence.</p>
     </div>
 
   </div>
@@ -109,11 +118,10 @@ description: "The performance, accessibility, and content numbers behind every s
   <div class="cta-inner">
     <span class="section-label">Ready for these numbers on your site?</span>
     <h2>Twenty minutes is plenty.</h2>
-    <p>If you want a custom-coded site that lives at the top of those metrics, the discovery call is the right place to start. If you would rather have the same audit run on your current site first, the free five-point audit is the right place to start. If you want the math on what those metrics translate to in revenue, the <a href="/roi/" class="inline-link" style="color:var(--gold-400)">return-on-investment page</a> walks through it.</p>
+    <p>If you want a custom-coded site that lives at the top of those metrics, the discovery call is the right place to start. If you want the math on what those metrics translate to in revenue, the <a href="/roi/" class="inline-link" style="color:var(--gold-400)">return-on-investment page</a> walks through it.</p>
     <div class="cta-buttons">
       <a href="/subscribe/" class="btn btn-primary btn-lg">Start Now</a>
       <a href="/contact/" class="btn btn-outline btn-lg">Or Book a Discovery Call</a>
-      <a href="/audit/" class="btn btn-outline btn-lg">Get a free audit</a>
     </div>
   </div>
 </section>

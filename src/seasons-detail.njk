@@ -11,7 +11,7 @@ eleventyComputed:
   title: "{{ page.metaTitle }}"
   description: "{{ page.metaDescription }}"
   ogImage: "/assets/img/og/seasons/{{ page.slug }}.png"
-  ogImageAlt: "{{ page.h1 }} {{ page.h1Em }} — Pikes Peak Web Designs"
+  ogImageAlt: "{{ page.h1 }} {{ page.h1Em }} | Pikes Peak Web Designs"
   noindex: false
 ---
 
@@ -21,9 +21,9 @@ eleventyComputed:
     <h1>{{ page.h1 }} <em>{{ page.h1Em }}</em></h1>
     <p class="season-hero-lead">{{ page.heroLead | safe }}</p>
     <div class="cta-buttons" style="justify-content:center;margin-top:2rem">
-      <a href="/subscribe/" class="btn btn-primary btn-lg">Sign up for the standard plan</a>
-      <a href="/contact/" class="btn btn-outline btn-lg">Book a discovery call first</a>
+      <a href="/subscribe/" class="btn btn-primary btn-lg">Start now</a>
     </div>
+    <p style="margin-top:1.25rem"><a href="/contact/" class="inline-link" style="color:var(--gold-400)">Prefer to talk first? Book a free call</a> (20 to 30 minutes on Google Meet).</p>
     <p class="season-hero-meta">{{ page.season }}</p>
   </div>
 </section>
@@ -45,14 +45,14 @@ eleventyComputed:
 <section class="section section--cream">
   <div class="container" style="max-width:760px">
     <div class="season-pitch">
-      <span class="section-label">The pitch in one paragraph</span>
+      <span class="section-label">The short version</span>
       <h2 class="season-pitch-title">{{ page.pitchTitle }}</h2>
       <p class="season-pitch-body">{{ page.pitchBody | safe }}</p>
       <div class="cta-buttons" style="justify-content:flex-start;margin-top:0.5rem">
-        <a href="/subscribe/" class="btn btn-primary btn-lg">Sign up for the standard plan &rarr;</a>
-        <a href="/contact/" class="btn btn-outline-dark">Book a discovery call</a>
+        <a href="/subscribe/" class="btn btn-primary btn-lg">Start now &rarr;</a>
       </div>
-      <p class="season-pitch-foot">$175/month flat, no design deposit, 12-month minimum. Stripe handles the first payment, the build kicks off the same week.</p>
+      <p style="margin-top:1rem"><a href="/contact/" class="inline-link">Prefer to talk first? Book a free call</a></p>
+      <p class="season-pitch-foot">$175 a month, flat, with no design deposit and a 12-month minimum. The build starts when your first payment clears.</p>
     </div>
   </div>
 </section>
@@ -77,11 +77,11 @@ eleventyComputed:
 <section class="cta-section">
   <div class="cta-inner">
     <span class="section-label">Ready when you are</span>
-    <h2>One flat rate. Two to three weeks to launch.</h2>
-    <p>Custom-coded, fast, accessible, and yours for $175 a month flat. Pay the first month with Stripe and the build kicks off the same week.</p>
+    <h2>One flat rate, and a launch in two to three weeks</h2>
+    <p>A custom-coded, fast, accessible site for $175 a month, flat. The build starts when your first payment clears.</p>
     <div class="cta-buttons">
-      <a href="/subscribe/" class="btn btn-primary btn-lg">Sign up &rarr;</a>
-      <a href="/contact/" class="btn btn-outline btn-lg">Book a discovery call</a>
+      <a href="/subscribe/" class="btn btn-primary btn-lg">Start now</a>
     </div>
+    <p style="margin-top:1.25rem"><a href="/contact/" class="inline-link" style="color:var(--gold-400)">Prefer to talk first? Book a free call</a></p>
   </div>
 </section>
