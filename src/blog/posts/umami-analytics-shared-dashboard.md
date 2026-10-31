@@ -51,7 +51,7 @@ tags: [post]
 
 <p><strong>Countries, regions, and cities.</strong> Where visitors are. For a local business, this shows whether your local search work brings in local visitors or passing traffic from elsewhere.</p>
 
-<p><strong>Events.</strong> Actions I can track for you, such as "contact form sent," "phone number tapped," or "quote request sent." Most clients don't need them. Each one takes a few minutes to set up.</p>
+<p><strong>Events.</strong> Actions I can track for you, such as "contact form sent," "phone number tapped," or "quote request sent." Most owners don't need them. Each one takes a few minutes to set up.</p>
 
 <p>A live visitor count sits at the top of the dashboard. During a promotion, you can refresh the page and watch it rise.</p>
 
@@ -60,8 +60,6 @@ tags: [post]
 <p>The data is about your business and your visitors, so it's yours, not mine. You get full access from launch day on, which means three things:</p>
 
 <p><strong>You can log in any time.</strong> There's no report to wait for. You can see how a Black Friday landing page did the moment the campaign ends.</p>
-
-<p><strong>You keep the history.</strong> If you ever leave, I export your analytics data as a file (in a format called JSON) and hand it over. You can import it into your own copy of Umami and carry on without a gap.</p>
 
 <p><strong>You can take a full export at any time.</strong> Not just a spreadsheet of last week's visits, but the complete record of every visit and event.</p>
 
@@ -75,13 +73,13 @@ tags: [post]
 
 <p><strong>Umami measures from the browser.</strong> Its data comes from a small script that runs in the visitor's browser, so it can record custom events and page details Cloudflare can't. It also means ad blockers sometimes block it, which Cloudflare's measurement avoids.</p>
 
-<p>Together, the two reports check each other. If they agree, both are working. If they don't, the gap tells you something: usually some visitors are blocking one tool, and the other catches what it missed. Most clients open Umami for traffic and pages and Cloudflare for speed and country breakdowns.</p>
+<p>Together, the two reports check each other. If they agree, both are working. If they don't, the gap tells you something: usually some visitors are blocking one tool, and the other catches what it missed. Most owners open Umami for traffic and pages and Cloudflare for speed and country breakdowns.</p>
 
 <h2>What it costs the client</h2>
 
 <p>Nothing extra. Umami is part of the standard plan, with no per-site fee, no traffic-based pricing, and no paid upgrade. It runs on the same setup I use for the rest of your site.</p>
 
-<p>If you'd rather run your own copy of Umami for full control, moving your data is straightforward. Most clients don't, but the option is there.</p>
+<p>If you'd rather run your own copy of Umami for full control, moving your data is straightforward. Most owners don't, but the option is there.</p>
 
 <h2>What clients should do with it</h2>
 
@@ -93,7 +91,7 @@ tags: [post]
   <li><strong>Referrers.</strong> Is search bringing in meaningful traffic?</li>
 </ol>
 
-<p>That's three numbers and 10 minutes a quarter. The dashboard supports far more detailed analysis, but most clients don't need it.</p>
+<p>That's three numbers and 10 minutes a quarter. The dashboard supports far more detailed analysis, but most owners don't need it.</p>
 
 <p>If you run a campaign, such as Google Ads, a podcast appearance, or a press mention, watch the daily visitor count while it runs. It's the simplest way to tell whether the campaign moved anything.</p>
 

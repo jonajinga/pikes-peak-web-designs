@@ -20,7 +20,7 @@ tags: [post]
 
 <p>The data sits in a <code>&lt;script type="application/ld+json"&gt;</code> tag in the page's head, the part of the code visitors don't see. It's written in JSON, a format machines read easily and people can follow. A few other tools also read it, such as LinkedIn link previews, Pinterest pins, and Apple Maps cards.</p>
 
-<p>Google uses the data to confirm what the page is about. It also builds "rich results" from it, the extras in search such as an FAQ dropdown, star ratings, or a business card with hours. And it feeds the Knowledge Graph, Google's database of known businesses, people, and places. Google can rank a site with clean schema with confidence; without schema, it has to guess.</p>
+<p>Google uses the data to confirm what the page is about. It also builds "rich results" from it, the extras in search such as star ratings or a business card with hours. And it feeds the Knowledge Graph, Google's database of known businesses, people, and places. Google can rank a site with clean schema with confidence; without schema, it has to guess.</p>
 
 <h2>The schema types that matter for a service business</h2>
 
@@ -30,7 +30,7 @@ tags: [post]
 
 <p>The main type tells Google "this site represents a local business with these details": name, address, phone, hours, map coordinates, payment methods, and, for many subtypes, the area served.</p>
 
-<p>It has dozens of subtypes, such as Plumber, Electrician, RoofingContractor, HVACBusiness, HomeAndConstructionBusiness, and GeneralContractor, each with slightly different recommended details. Picking the right one matters, because Google's map rankings (the "local pack") read it.</p>
+<p>It has dozens of subtypes, such as Plumber, Electrician, RoofingContractor, HVACBusiness, HomeAndConstructionBusiness, and GeneralContractor, each with slightly different recommended details. Picking the right one helps Google connect your site to your Business Profile, and the profile is what the map results (the "local pack") are built from.</p>
 
 <p>This block lives on the homepage, and every other page points to it through one shared ID, so no two pages ever disagree.</p>
 
@@ -40,7 +40,7 @@ tags: [post]
 
 <h3>FAQPage</h3>
 
-<p>On a page with an FAQ section, this type spells out the questions and answers. Google sometimes shows them as a dropdown under the search result, which can bring noticeably more clicks. It's an easy win: the page already has the content, and the schema adds a few lines of JSON. Google decides whether to show the dropdown, but the schema makes the page eligible.</p>
+<p>On a page with an FAQ section, this type spells out the questions and answers. Since 2023, Google has shown FAQ dropdowns in search only for a few well-known government and health sites, so for a trade business the schema no longer earns extra space in the results. It still describes your questions clearly to search engines, and it takes only a few lines of code.</p>
 
 <h3>BlogPosting / Article</h3>
 

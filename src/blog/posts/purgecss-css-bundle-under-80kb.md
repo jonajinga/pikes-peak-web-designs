@@ -12,7 +12,7 @@ tags: [post]
 
 <p>CSS is the code that controls how a website looks: colors, fonts, spacing, and layout. On most small-business sites, the largest file a visitor downloads is the CSS bundle, the single file that holds all of it, at 250 KB to 1.2 MB. The site uses maybe 15 percent of it. The rest styles parts that appear on other pages, or on no page at all.</p>
 
-<p>That extra weight comes from using a CSS framework (a ready-made style kit) or a template theme. Bootstrap sends 250 KB. Tailwind's full output is about 3.2 MB compressed. Themes for WordPress, Wix, and Squarespace carry styles for every variation a customer might pick, and each customer uses one.</p>
+<p>That extra weight comes from using a CSS framework (a ready-made style kit) or a template theme. Bootstrap sends 250 KB. An untrimmed build from older versions of Tailwind runs to several megabytes. Themes for WordPress, Wix, and Squarespace carry styles for every variation a customer might pick, and each customer uses one.</p>
 
 <p>The fix is PurgeCSS, a small tool that runs when the site is built. It reads the finished pages and removes every style rule they don't use. On a typical service-business site I build, the CSS ends up at 60 to 80 KB instead of the 400 to 500 KB it would otherwise be.</p>
 

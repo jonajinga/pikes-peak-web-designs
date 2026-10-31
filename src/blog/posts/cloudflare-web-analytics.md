@@ -33,7 +33,7 @@ tags: [post]
 <p>Setup takes about 10 minutes per site:</p>
 
 <ol>
-  <li><strong>Create a Cloudflare account or use the existing one.</strong> Most of my clients' sites are hosted on Cloudflare Pages, so the account already exists. Sites hosted elsewhere still work; they just need a Cloudflare account.</li>
+  <li><strong>Create a Cloudflare account or use the existing one.</strong> The sites I build are hosted on Cloudflare Pages, so the account already exists. Sites hosted elsewhere still work; they just need a Cloudflare account.</li>
   <li><strong>Add the site to Cloudflare Web Analytics.</strong> The dashboard creates a small piece of JavaScript code (a snippet) for the site's <code>&lt;head&gt;</code> section. It's about 1 KB and is the only outside request on the page.</li>
   <li><strong>Add the snippet to the base layout.</strong> On every site I build, the snippet lives in the main template and runs on every page automatically, with nothing to set per page.</li>
   <li><strong>Wait for data.</strong> Cloudflare starts logging visits within minutes, and the reports become useful after a few days.</li>
@@ -72,13 +72,13 @@ tags: [post]
 
 <h2>Why I pair it with Umami</h2>
 
-<p>For most clients, Cloudflare Web Analytics is the only analytics I install. Some clients want a second view of the same data, laid out a little differently. For them, I add <a href="/blog/umami-analytics-shared-dashboard/" class="inline-link">Umami</a>, an open-source, privacy-friendly analytics tool with nearly identical reports. The two agree on the big picture, and when they differ, the gap tells you something. It usually means an ad blocker affects one tool but not the other.</p>
+<p>For most sites, Cloudflare Web Analytics is the only analytics I install. Some clients want a second view of the same data, laid out a little differently. For them, I add <a href="/blog/umami-analytics-shared-dashboard/" class="inline-link">Umami</a>, an open-source, privacy-friendly analytics tool with nearly identical reports. The two agree on the big picture, and when they differ, the gap tells you something. It usually means an ad blocker affects one tool but not the other.</p>
 
 <p>Both work without cookies, and neither needs a consent banner. Together they cover the same everyday ground as Google Analytics without the extra privacy-policy work.</p>
 
 <h2>What clients should do with the dashboard</h2>
 
-<p>For most clients, the answer is to look at it once a quarter. The dashboards don't need daily attention, because they show the site's general health rather than sales figures.</p>
+<p>For most owners, the answer is to look at it once a quarter. The dashboards don't need daily attention, because they show the site's general health rather than sales figures.</p>
 
 <p>Three numbers are worth checking each quarter:</p>
 

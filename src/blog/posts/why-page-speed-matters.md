@@ -18,16 +18,15 @@ tags: [post]
 
 <h2>The Numbers Are Blunt</h2>
 
-<p>Google's own research has shown that as a page takes longer to load, its bounce rate (the share of visitors who leave without doing anything) rises sharply:</p>
+<p>Google's 2017 research on mobile pages found that as a page takes longer to load, the chance that a visitor leaves without doing anything (a "bounce") rises sharply:</p>
 
 <ul>
-  <li>A page that loads in 1 second has a bounce rate around 9%</li>
-  <li>At 3 seconds, that rate jumps to 32%</li>
-  <li>At 5 seconds, you're losing more than half your visitors</li>
-  <li>At 10 seconds, the chance a visitor leaves is more than 120% higher than at 1 second</li>
+  <li>From 1 second to 3 seconds, the chance of a bounce rises by 32%</li>
+  <li>From 1 second to 5 seconds, it rises by 90%</li>
+  <li>From 1 second to 10 seconds, it rises by 123%</li>
 </ul>
 
-<p>Think about what that means. If 100 people visit your site and it takes five seconds to load, more than half of them leave before they see your phone number, a single review, or even what you do.</p>
+<p>Think about what that means. If your page takes five seconds to load instead of one, each visitor is almost twice as likely to leave before seeing your phone number, a single review, or even what you do.</p>
 
 <p>All of those people found you on Google, and you lost them anyway.</p>
 

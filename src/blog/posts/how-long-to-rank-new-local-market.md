@@ -5,7 +5,7 @@ label: "Local SEO"
 description: "A new website doesn't rank on day one. Here's a realistic timeline for a service business in a new local market, week by week and month by month, with the signs that you're on track."
 ctaLabel: "A realistic search timeline"
 ctaHeading: "I give you the timeline before launch"
-ctaText: "Most websites I launch show measurable traffic from Google's map results and regular search within 60 to 90 days, and by month six the smaller searches start to add up. You'll know what to expect from day one. It's part of the standard plan."
+ctaText: "A new site usually starts to show measurable traffic from Google's map results and regular search within 60 to 90 days, and by month six the smaller searches start to add up. You'll know what to expect from day one. It's part of the standard plan."
 layout: layouts/post.njk
 tags: [post]
 ---

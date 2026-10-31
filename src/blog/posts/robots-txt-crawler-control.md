@@ -87,7 +87,7 @@ Sitemap: https://yoursite.com/sitemap.xml</code></pre>
 
 <p><strong>Are public paths blocked by mistake?</strong> The most common error is a leftover "Disallow: /" from when the site was being built. If robots.txt blocks everything, Google won't list your site at all.</p>
 
-<p>Google Search Console has a robots.txt Tester (under Settings) that checks page addresses against the file, which helps you work out why a page is or isn't being crawled.</p>
+<p>Google Search Console has a robots.txt report (under Settings) that shows the file Google last read and any errors in it. To check whether a particular page can be crawled, run a live test on it with the URL Inspection tool.</p>
 
 <h2>The relationship to noindex</h2>
 

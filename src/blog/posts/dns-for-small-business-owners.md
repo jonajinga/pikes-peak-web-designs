@@ -65,7 +65,7 @@ tags: [post]
 
 <p><strong>DMARC (Domain-based Message Authentication)</strong> tells receiving servers what to do with mail that fails the SPF or DKIM checks. Without it, each receiver decides alone, usually cautiously, so more of your legitimate mail goes to spam. A properly set DMARC record can say, "If my mail fails the checks, reject it." That protects your domain from impostors and tells receivers your own mail can be trusted.</p>
 
-<p><strong>What goes wrong:</strong> small-business email lands in spam. It's the most common problem I've seen across all my clients. Correct SPF, DKIM, and DMARC records fix it, and delivery improves measurably within days.</p>
+<p><strong>What goes wrong:</strong> small-business email lands in spam. It's one of the most common DNS problems small businesses run into. Correct SPF, DKIM, and DMARC records fix it, and delivery improves measurably within days.</p>
 
 <h3>5. TXT records (verification and other uses)</h3>
 

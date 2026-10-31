@@ -66,7 +66,6 @@ export default {
   //   4. /onboarding/ collects the build inputs.
   agreementSignUrl: "https://app.documenso.com/d/BA0T0nJ5mxGayQhTOIZny",
   subscribeUrl: "https://buy.stripe.com/",
-  hourlyUrl: "https://buy.stripe.com/",
   utilityPages: [
     "Privacy Policy",
     "Accessibility Statement",

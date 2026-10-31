@@ -19,7 +19,7 @@ export default [
     heroLead: "If you've been meaning to do something about your website, January is usually the right month to start. The reason is the calendar: it's quieter now than it will be in a few weeks, and a build that takes me two to three weeks is much easier to think through now than once the spring rush starts.",
     argumentTitle: "Why I often recommend January",
     argumentBody: [
-      "Most of my clients work in service trades, and most trades follow the same rhythm. There's the busy season, when the phone rings and there's no time to think past the next job, and there's the quieter stretch, when the schedule has some room. For many trades, January is that quieter stretch.",
+      "Most service trades follow the same rhythm. There's the busy season, when the phone rings and there's no time to think past the next job, and there's the quieter stretch, when the schedule has some room. For many trades, January is that quieter stretch.",
       "I need little from you during the build: about 20 minutes on a self-serve <a href=\"/onboarding/\" class=\"inline-link\">onboarding form</a> and an hour of review time spread over two weeks. I handle the rest. Every one of those minutes is easier to find in January than in May, and the new site is live and indexed before the busy stretch starts.",
       "If your slow stretch isn't in January, that's fine too. Pick whichever quiet month you have. Most of this page holds true whenever you read it.",
     ],
@@ -52,7 +52,7 @@ export default [
     metaTitle: "Your Website Subscription Is a Deductible Expense | Pikes Peak Web Designs",
     metaDescription: "Ask your accountant about your situation, but for most U.S. and Canadian small businesses, a monthly website fee is an ordinary, deductible expense.",
     shareCard: "/assets/img/og-default.jpg",
-    heroLead: "I'm not your accountant, so please ask yours about your situation. But for almost every small service business I've worked with, the monthly website fee sits on the books alongside the phone bill, the scheduling software, and the office internet: an ordinary, deductible operating expense.",
+    heroLead: "I'm not your accountant, so please ask yours about your situation. But for most small service businesses, the monthly website fee sits on the books alongside the phone bill, the scheduling software, and the office internet: an ordinary, deductible operating expense.",
     argumentTitle: "Why monthly billing keeps the tax side simple",
     argumentBody: [
       "The plan is $175 a month, flat, which comes to $2,100 a year on a line item almost any accountant has handled a thousand times. There's no software-classification question, no depreciation form, and no large one-time cost to fit into a single quarter. It's a website-and-hosting subscription, and that's the whole accounting story.",
@@ -66,11 +66,11 @@ export default [
     objections: [
       {
         q: "Can I prepay the year?",
-        a: "Yes. Most clients don't, but if your accountant prefers a single annual invoice, I can issue one for $2,100 instead of 12 monthly charges of $175. Send me a note through the <a href=\"/contact/\" class=\"inline-link\">contact page</a>, and I'll set it up."
+        a: "No. The plan is billed monthly at $175, so the cost on your books stays the same every month."
       },
       {
         q: "Card or ACH?",
-        a: "Both. My payment processor handles either one, and I never see or store your card number. ACH works the same way on the processor's end."
+        a: "Both. My payment processor handles either one, and I never see or store your card number. A card payment clears within minutes, and a bank (ACH) payment takes a few business days."
       },
       {
         q: "Will I get a proper invoice?",
@@ -278,7 +278,7 @@ export default [
     objections: [
       {
         q: "Can I prepay the entire year?",
-        a: "Yes. Send me a note through the <a href=\"/contact/\" class=\"inline-link\">contact page</a>, and I can issue a single annual invoice for $2,100 instead of 12 monthly charges. The rate is the same either way."
+        a: "No. The plan is billed monthly at $175, so the cost on your books stays the same every month."
       },
       {
         q: "Can the build start in December but launch in January?",

@@ -68,7 +68,7 @@ tags: [post]
 
 <p><strong>Every page is searchable from launch.</strong> There's no separate step to add a page to search. The next publish after a new page goes up includes it automatically.</p>
 
-<p><strong>Search statistics are limited.</strong> Because Pagefind runs in the browser, I can't easily see what visitors search for. Clients who want that data can have me record each search in their visitor statistics, which adds a little complexity. Most clients don't need it.</p>
+<p><strong>Search statistics are limited.</strong> Because Pagefind runs in the browser, I can't easily see what visitors search for. Clients who want that data can have me record each search in their visitor statistics, which adds a little complexity. Most owners don't need it.</p>
 
 <p><strong>Pages can be left out of search.</strong> Thank-you pages, hidden landing pages, and other behind-the-scenes pages can skip the index. Any page already marked <code>noindex</code>, the setting that keeps it out of search engines, is left out automatically.</p>
 

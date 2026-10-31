@@ -69,8 +69,8 @@ tags: [post]
 <p>Email setup is on the launch checklist for every site I build:</p>
 
 <ol>
-  <li><strong>Confirm the email provider.</strong> Most clients use Google Workspace or Microsoft 365, and some use simple forwarding such as Cloudflare Email Routing. The provider determines each record's values.</li>
-  <li><strong>Configure MX.</strong> I add the provider's MX values, with the right priority numbers, at the client's DNS host (Cloudflare DNS for most clients, or wherever the domain is registered). Some providers list several servers, and the numbers set the order.</li>
+  <li><strong>Confirm the email provider.</strong> Most small businesses use Google Workspace or Microsoft 365, and some use simple forwarding such as Cloudflare Email Routing. The provider determines each record's values.</li>
+  <li><strong>Configure MX.</strong> I add the provider's MX values, with the right priority numbers, at the client's DNS host (Cloudflare DNS for the sites I host, or wherever the domain is registered). Some providers list several servers, and the numbers set the order.</li>
   <li><strong>Configure SPF.</strong> I add the SPF record with the provider's value (for example, <code>include:_spf.google.com</code>). If other services send mail for the client, such as a CRM (customer-tracking software) or a marketing-email tool, I add those too.</li>
   <li><strong>Configure DKIM.</strong> I add the provider's public key as a TXT record at the address it names (usually <code>google._domainkey</code> or similar).</li>
   <li><strong>Configure DMARC, starting gently.</strong> I start at <code>p=none</code>, with reports sent to me for 30 days.</li>

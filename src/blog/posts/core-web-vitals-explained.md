@@ -64,7 +64,7 @@ tags: [post]
 
 <p><strong>Search Console "Core Web Vitals" report.</strong> Google Search Console, Google's free tool for site owners, has a report showing which pages pass all three scores, which fail, and which lack data. This page-by-page view is more useful than a single test, because it reveals problems shared across a type of page.</p>
 
-<p><strong>Chrome DevTools "Performance" tab.</strong> For the deepest detail, the Performance tab in Chrome's built-in developer tools can record a full page load and show every event behind the scores. I use it when I'm tracking down a specific failure, and for most clients it's more than they need.</p>
+<p><strong>Chrome DevTools "Performance" tab.</strong> For the deepest detail, the Performance tab in Chrome's built-in developer tools can record a full page load and show every event behind the scores. I use it when I'm tracking down a specific failure, and for most owners it's more than they need.</p>
 
 <h2>What "passing" means for ranking</h2>
 

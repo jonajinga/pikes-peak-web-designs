@@ -78,3 +78,13 @@ Approved by Jon Ajinga on October 29, 2026. Every visitor-facing page on pikespe
 - **Ownership.** The client's domain is registered in the client's name, and the client controls it. On the monthly plan, Jon owns the code. At cancellation, Jon helps move the domain to a registrar of the client's choice and the website goes offline at the end of the term. There is no export of the site and no code buyout.
 - **Case studies.** There are no paid-client case studies yet. Don't promise "real-client before-and-after numbers".
 - **Agreement.** Describe it as a plain-English service agreement, not a "one-page" agreement; it has 12 sections.
+- **Clients.** There are no paying clients yet. Describe what clients can expect; don't claim a client history, client statistics, or past incidents.
+- **Refunds.** A full refund of the first payment any time before work begins; nothing is refundable once work has begun.
+- **Payment.** Card or US bank account (ACH), in US dollars for every client. Card payments clear within minutes; bank payments take a few business days, and work begins when the payment clears. No annual prepay option.
+- **Hourly work.** Paid by an invoice sent after the client approves the written estimate; there is no public pay button.
+- **Moving an old site.** Moving content and redirects from an existing website is part of the build at no extra cost.
+- **New pages.** Free while the client is within the ten included pages; $100 per page after that. Say so wherever a new page comes up.
+- **Leaving.** At cancellation the client keeps control of the domain and receives nothing else: no export of the site, no code, and no analytics data.
+- **Referral credit.** A client who refers a new client earns one month's credit ($175). A partner earns one month's credit ($175) for each referred client who signs, added when that client's first payment clears. A referral counts when the client names the partner or referrer on the call form or the onboarding form.
+- **Signing.** Clients and partners sign in Documenso.
+- **Domains.** For sites Jon hosts, the domain's name servers point to Cloudflare; the domain stays registered in the client's name.

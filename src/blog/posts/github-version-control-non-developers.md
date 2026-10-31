@@ -28,7 +28,7 @@ tags: [post]
 
 <p>The commits read like a project log. Six months or six years after launch, you can scroll through and see what changed on which day.</p>
 
-<p>Most clients never see the log. You email me an update, I make the change and save the commit, and the site updates. The log is there whenever you want it, though, and a question like "who removed the Saturday hours from the contact page?" takes one search to answer.</p>
+<p>Most owners never need to see the log. You email me an update, I make the change and save the commit, and the site updates. The log is there whenever you want it, though, and a question like "who removed the Saturday hours from the contact page?" takes one search to answer.</p>
 
 <h2>What "deploy on push" means</h2>
 
@@ -46,7 +46,7 @@ tags: [post]
 
 <h2>Where the repository lives</h2>
 
-<p>On the monthly plan I own the code, so each client's repository is private and kept in my own GitHub account, with access for the client where it's useful. I do it this way for two reasons:</p>
+<p>On the monthly plan I own the code, so each client's repository is private and kept in my own GitHub account. I do it this way for two reasons:</p>
 
 <p><strong>I can act right away.</strong> I can make changes without sorting out passwords with you first. If a fix is needed at midnight on a Saturday during storm season, I don't have to wait for access.</p>
 
@@ -56,7 +56,7 @@ tags: [post]
 
 <h2>What clients interact with</h2>
 
-<p>For most clients, nothing. The repository is my tool. You send updates by email or through the content-update form, I make the changes, and they go live.</p>
+<p>For most owners, nothing. The repository is my tool. You send updates by email or through the content-update form, I make the changes, and they go live.</p>
 
 <p>Clients who want to look can use GitHub's web pages to browse the files, read the log, search, and compare any two versions. Reading takes no technical knowledge; making changes takes some.</p>
 

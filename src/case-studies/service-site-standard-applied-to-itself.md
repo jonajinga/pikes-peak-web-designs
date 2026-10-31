@@ -61,7 +61,7 @@ Every page meets WCAG 2.2 AA, with checked contrast, buttons large enough to tap
 
 ### Principle 6: Local before global
 
-My business depends less on Google's map results (the "local pack") than a typical service business, but the site is built the same way: business labels on the home page, matching contact details on every page, city pages where my clients work, and maps with no Google tracking.
+My business depends less on Google's map results (the "local pack") than a typical service business, but the site is built the same way: business labels on the home page, matching contact details on every page, city pages for the metros I serve, and maps with no Google tracking.
 
 ### Principle 7: Boring infrastructure
 

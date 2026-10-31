@@ -12,7 +12,7 @@ tags: [post]
 
 <p>Google Search Console (GSC, once called Webmaster Tools) is Google's free dashboard for site owners, and the most important tool for any site that wants to be found on Google. It shows which searches bring visitors and which pages Google has added to its index (the catalog it draws results from) or refused, and why. It also flags problems on phones and warnings about your structured data (code that describes your business to search engines). No other tool, including Google Analytics and Cloudflare, has this information.</p>
 
-<p>I set it up on every site I build, as part of the standard plan. Most clients never open the dashboard, but without it I'd have no way to tell whether Google is finding the site. Here's what I set up and what I watch in the first 90 days.</p>
+<p>I set it up on every site I build, as part of the standard plan. Most owners never open the dashboard, but without it I'd have no way to tell whether Google is finding the site. Here's what I set up and what I watch in the first 90 days.</p>
 
 <h2>Step 1: Verify the property</h2>
 
@@ -48,7 +48,7 @@ tags: [post]
 
 <h2>Step 4: Connect to Google Analytics 4 (if used)</h2>
 
-<p>Most of my clients use the privacy-friendly visitor statistics I set up by default (Cloudflare Web Analytics plus Umami, both without cookies), so they don't need Google Analytics 4 (GA4). For clients who want GA4, often because a marketing team requires it, I link it to Search Console in one click so search data appears beside their other statistics.</p>
+<p>The sites I build use privacy-friendly visitor statistics by default (Cloudflare Web Analytics plus Umami, both without cookies), so they don't need Google Analytics 4 (GA4). For clients who want GA4, often because a marketing team requires it, I link it to Search Console in one click so search data appears beside their other statistics.</p>
 
 <h2>Step 5: Save a baseline screenshot</h2>
 
@@ -74,7 +74,7 @@ tags: [post]
 
 <h2>What clients should do in Search Console</h2>
 
-<p>Most of my clients never log in, and that's fine. I watch the property and send a short summary on the quarterly review call. If you'd like to use it yourself, two habits help:</p>
+<p>Most owners never log in, and that's fine. I watch the property and send a short summary on the quarterly review call. If you'd like to use it yourself, two habits help:</p>
 
 <p><strong>Check the Performance report monthly.</strong> Set it to the past 28 days, sort by clicks, and read the top searches. It shows how people find your site far better than headline numbers like total visits.</p>
 

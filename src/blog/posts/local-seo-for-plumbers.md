@@ -61,7 +61,7 @@ tags: [post, plumbing, local-seo]
 <ul>
   <li><strong>Services section:</strong> Add every service, with a description. Google uses it to match your profile to searches.</li>
   <li><strong>Business description:</strong> Write 250–300 words that name your main services and the cities you serve.</li>
-  <li><strong>Q&amp;A section:</strong> Post your own questions and answers, such as "Do you offer emergency plumbing?", so your profile matches more searches.</li>
+  <li><strong>Common questions:</strong> Google retired the profile's Q&amp;A section in late 2025 and now answers questions with AI, using your profile and your website. Put the answers to the questions customers ask, such as "Do you offer emergency plumbing?", in your business description and on your website's FAQ page.</li>
   <li><strong>Photos:</strong> Add before-and-afters of your own water heater, drain, and sewer jobs. They build trust and keep the profile active.</li>
 </ul>
 

@@ -18,7 +18,7 @@ tags: [post]
 
 <p>Most people reach first for Google's map service for websites (the Google Maps JavaScript API, which lets a page request maps from Google). For a small business service-area map in 2026, it's the wrong default, for three reasons.</p>
 
-<p><strong>It costs money.</strong> Google allows about 28,000 free map loads a month, then charges $7 per 1,000. That's rarely a problem on day one. It becomes one the month a news story sends 50,000 visitors to the page in a week, and the bill arrives 30 days later. I don't want to ask a client whether to remove the map to control the cost.</p>
+<p><strong>It costs money.</strong> Since March 2025, Google gives each account 10,000 free loads of its interactive maps a month, then charges for every 1,000 after that. That's rarely a problem on day one. It becomes one the month a news story sends 50,000 visitors to the page in a week, and the bill arrives 30 days later. I don't want to ask a client whether to remove the map to control the cost.</p>
 
 <p><strong>It requires an API key.</strong> The key, a password that identifies your account to Google, needs billing turned on and a credit card attached, even for the free allowance. It can be locked to your site, but it's still a credential in the page's code, and I'd rather not put every client through the setup.</p>
 

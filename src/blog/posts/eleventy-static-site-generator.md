@@ -80,7 +80,7 @@ tags: [post]
 
 <p><strong>Eleventy cannot run server-side logic.</strong> A static site is, by definition, just files, so anything that has to happen when a visitor asks for a page lives outside Eleventy. That includes form handling, search, and changing content. I use <a href="/blog/web3forms-contact-and-lead-forms/" class="inline-link">Web3Forms</a> for forms and Cloudflare Workers, small programs on Cloudflare's network, for live features. Search uses Pagefind, which builds its index when the site is published and runs in the browser.</p>
 
-<p><strong>Eleventy is not a CMS.</strong> A content management system (CMS) lets you edit pages through a web admin, and Eleventy doesn't include one. For most of my clients, that's no problem, since they email me their changes and I make them quickly. For clients who want to log in and edit pages themselves, I can add a separate editing tool such as Decap or Statamic, or switch to different tools entirely.</p>
+<p><strong>Eleventy is not a CMS.</strong> A content management system (CMS) lets you edit pages through a web admin, and Eleventy doesn't include one. For most owners, that's no problem, since they email me their changes and I make them quickly. For clients who want to log in and edit pages themselves, I can add a separate editing tool such as Decap or Statamic, or switch to different tools entirely.</p>
 
 <p>For most service businesses, the static approach is exactly right. The site changes a few times a month, the changes are small, and emailing me is faster than logging in to an admin panel.</p>
 

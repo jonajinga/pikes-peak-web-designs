@@ -12,7 +12,7 @@ tags: [post]
 
 <p>The day a site I built goes live, the client receives an Owner's Guide: a written reference for everything after launch. It covers who maintains what, how to ask for changes, and what counts as an emergency. It also explains the monthly invoice, how to recover the domain if a renewal lapses, where the site's search index lives, and how to reach me.</p>
 
-<p>Most clients read only parts of it at first, then open it now and then for years. Having the answers in writing saves us both the "What did Jon say about X?" emails.</p>
+<p>You'll probably read only parts of it at first, then open it now and then for years. Having the answers in writing saves us both the "What did Jon say about X?" emails.</p>
 
 <h2>Why a written guide rather than email follow-ups</h2>
 
@@ -56,7 +56,7 @@ tags: [post]
 
 <p><strong>15. Your monthly invoice.</strong> What the $175 covers and doesn't, when invoices arrive, what happens if a payment fails, and how to update the payment method.</p>
 
-<p><strong>16. Leaving the relationship.</strong> The exit terms in plain words. After the 12-month minimum, either of us can end the plan with 30 days' written notice. I help move your domain to a registrar of your choice and provide the analytics export, and the website goes offline at the end of the term. None of it is expensive or complicated, and the guide lists the steps.</p>
+<p><strong>16. Leaving the relationship.</strong> The exit terms in plain words. After the 12-month minimum, either of us can end the plan with 30 days' written notice. I help move your domain to a registrar of your choice, and the website goes offline at the end of the term. None of it is expensive or complicated, and the guide lists the steps.</p>
 
 <p><strong>17. Quick contact card.</strong> Phone, email, the client portal link, and the four ways to reach me. Clients bookmark and use this page most.</p>
 
@@ -74,7 +74,7 @@ tags: [post]
 
 <h2>How clients use it</h2>
 
-<p>Most clients skim it at launch, bookmark it, and come back three to five times a year with a specific question. That's the right use for a reference manual.</p>
+<p>Skim it at launch, bookmark it, and come back when you have a specific question. That's the right use for a reference manual.</p>
 
 <p>Clients who read it all at launch ask better questions later. They know the boundaries, the schedules, and what's billed by the hour, and their first 90 days go more smoothly.</p>
 

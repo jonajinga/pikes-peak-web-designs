@@ -48,7 +48,7 @@ tags: [post]
   <li><strong>Check old domains and subdomains.</strong> If an old website on a different address still loads, update its NAP or send its visitors to the new site with a permanent redirect (a "301").</li>
 </ol>
 
-<p>The result is a short log of every listing, its NAP, and what to fix. When I check for new clients, I usually find between three and 12 mismatches, almost always in old listings the owner forgot about.</p>
+<p>The result is a short log of every listing, its NAP, and what to fix. Most businesses that check turn up a few mismatches, almost always in old listings the owner forgot about.</p>
 
 <h2>What schema markup adds</h2>
 

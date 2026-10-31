@@ -24,7 +24,7 @@ tags: [post]
   <li><strong>JPEG format, the same three sizes</strong>. The traditional format, the last backup for browsers with neither.</li>
 </ul>
 
-<p>That's nine files for one image. A piece of page code called the <code>&lt;picture&gt;</code> element lists them, and the browser picks one. A phone gets the 480px version and a desktop the 1200px. A current Chrome user gets AVIF, a current Safari user gets WebP, and an obscure built-in browser gets JPEG. The visitor downloads one file of typically 20 to 60 KB instead of the original 4 MB.</p>
+<p>That's nine files for one image. A piece of page code called the <code>&lt;picture&gt;</code> element lists them, and the browser picks one. A phone gets the 480px version and a desktop the 1200px. A current browser gets AVIF, a slightly older one gets WebP, and an obscure built-in browser gets JPEG. The visitor downloads one file of typically 20 to 60 KB instead of the original 4 MB.</p>
 
 <h2>Why this matters</h2>
 
